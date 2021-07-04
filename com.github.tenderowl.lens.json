@@ -1,0 +1,129 @@
+{
+    "app-id" : "com.github.tenderowl.lens",
+    "runtime" : "io.elementary.Platform",
+    "runtime-version" : "daily",
+    "sdk" : "io.elementary.Sdk",
+    "command" : "lens",
+    "finish-args" : [
+        "--share=network",
+        "--share=ipc",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--socket=session-bus"
+    ],
+    "cleanup" : [
+        "/include",
+        "/lib/pkgconfig",
+        "/man",
+        "/share/doc",
+        "/share/gtk-doc",
+        "/share/man",
+        "/share/pkgconfig",
+        "*.la",
+        "*.a"
+    ],
+    "modules" : [
+        "leptonica.json",
+        "tesseract.json",
+        {
+            "name" : "libhandy",
+            "buildsystem" : "meson",
+            "builddir" : true,
+            "config-opts" : [
+                "-Dexamples=false",
+                "-Dtests=false"
+            ],
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "https://gitlab.gnome.org/GNOME/libhandy.git"
+                }
+            ]
+        },
+        {
+            "name" : "python3-pydbus",
+            "buildsystem" : "simple",
+            "build-commands" : [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pydbus\" --no-build-isolation"
+            ],
+            "sources" : [
+                {
+                    "type" : "file",
+                    "url" : "https://files.pythonhosted.org/packages/58/56/3e84f2c1f2e39b9ea132460183f123af41e3b9c8befe222a35636baa6a5a/pydbus-0.6.0.tar.gz",
+                    "sha256" : "4207162eff54223822c185da06c1ba8a34137a9602f3da5a528eedf3f78d0f2c"
+                }
+            ]
+        },
+        {
+            "name" : "python3-pytesseract",
+            "buildsystem" : "simple",
+            "build-commands" : [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pytesseract\" --no-build-isolation"
+            ],
+            "sources" : [
+                {
+                    "type" : "file",
+                    "url" : "https://files.pythonhosted.org/packages/a3/c9/d6e8903482bd6fb994c32722831d15842dd8b614f94ad9ca735807252671/pytesseract-0.3.8.tar.gz",
+                    "sha256" : "6148a01e4375760862e8f56ea718e22b5d13b281454df46ea8dac9807793fc5a"
+                },
+                {
+                    "type" : "file",
+                    "url" : "https://files.pythonhosted.org/packages/dc/c2/72349bb3a995fda8f4a064ee5dc92903b21886f27be4f5f1ed8c7b7174e4/Pillow-8.3.0.tar.gz",
+                    "sha256" : "803606e206f3e366eea46b1e7ab4dac74cfac770d04de9c35319814e11e47c46"
+                }
+            ]
+        },
+        {
+            "name" : "elementary-theme",
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "archive",
+                    "url" : "https://github.com/elementary/stylesheet/archive/5.4.2.tar.gz",
+                    "sha256" : "3bc37723daf4ce0b7c9ce4c125ef0055affe8d6654981388ec87d4a23a1ae0ec"
+                }
+            ]
+        },
+        {
+            "name" : "elementary-icons",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dpalettes=false"
+            ],
+            "sources" : [
+                {
+                    "type" : "archive",
+                    "url" : "https://github.com/elementary/icons/archive/5.3.1.tar.gz",
+                    "sha256" : "67b349453f8990e399521bb8d96f4caf4c23a27cf22cbc18ddacf0e817c59e12"
+                }
+            ],
+            "modules" : [
+                {
+                    "name" : "xcursorgen",
+                    "cleanup" : "*",
+                    "sources" : [
+                        {
+                            "type" : "archive",
+                            "url" : "https://gitlab.freedesktop.org/xorg/app/xcursorgen/-/archive/xcursorgen-1.0.7/xcursorgen-xcursorgen-1.0.7.tar.gz",
+                            "sha256" : "7fb30a052b63e3ed02c9e43bd70fe1bf8189f2f3d702ab43b5b0726a2dbafccd"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name" : "lens",
+            "builddir" : true,
+            "buildsystem" : "meson",
+            "sources" : [
+                {
+                    "type" : "git",
+                    "url" : "file:///home/andrey/Projects/Lens"
+                }
+            ]
+        }
+    ],
+    "build-options" : {
+        "env" : {        }
+    }
+}

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=lens
+Exec=lens
+Icon=com.github.tenderowl.lens
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true

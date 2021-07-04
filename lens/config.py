@@ -1,0 +1,1 @@
+tessdata_dir_config = r'--tessdata-dir "/app/share/tesseract/tessdata"'

@@ -1,0 +1,7 @@
+data/com.github.tenderowl.lens.desktop.in
+data/com.github.tenderowl.lens.appdata.xml.in
+data/com.github.tenderowl.lens.gschema.xml
+src/window.ui
+src/main.py
+src/window.py
+
