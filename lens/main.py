@@ -30,10 +30,11 @@ import sys
 import gi
 
 gi.require_version('Gtk', '3.0')
+gi.require_version('Granite', '1.0')
 gi.require_version('Handy', '1')
 
 from gi.repository import Gtk, Gio
-
+from .settings import Settings
 from .window import LensWindow
 
 
@@ -42,10 +43,13 @@ class Application(Gtk.Application):
         super().__init__(application_id='com.github.tenderowl.lens',
                          flags=Gio.ApplicationFlags.FLAGS_NONE)
 
+        # Init GSettings
+        self.settings = Settings.new()
+
     def do_activate(self):
         win = self.props.active_window
         if not win:
-            win = LensWindow(application=self)
+            win = LensWindow(settings=self.settings, application=self)
         win.present()
 
 

@@ -1,4 +1,4 @@
-# screenshot_backend.py
+# settings.py
 #
 # Copyright 2021 Andrey Maksimov
 #
@@ -26,44 +26,25 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-import os
 
-from typing import Optional
+from gi.repository import Gio
 
-from pydbus import SessionBus
-from gi.repository import GObject, Gio
-
-from .config import tessdata_dir_config
-
-try:
-    from PIL import Image
-except ImportError:
-    import Image
-import pytesseract
+from lens.config import APP_ID
 
 
-class ScreenshotBackend(GObject.GObject):
+class Settings(Gio.Settings):
+    """Settings
+    """
+
     def __init__(self):
-        GObject.GObject.__init__(self)
+        """Init Settings
+        """
+        Gio.Settings.__init__(self)
 
-        self.bus = SessionBus()
-        self.cancelable = Gio.Cancellable.new()
-        self.proxy = self.bus.get("org.gnome.Shell.Screenshot",
-                                  "/org/gnome/Shell/Screenshot")
-
-    def capture(self, lang: str) -> Optional[str]:
-        if not self.proxy:
-            return
-        x, y, width, height = self.proxy.SelectArea()
-        print(f'SELECTED_AREA: {x}:{y} of {width}:{height}')
-
-        result, filename = self.proxy.ScreenshotArea(x, y, width, height, True, 'lens-text-recognition')
-
-        if result:
-            # Simple image to string
-            text = pytesseract.image_to_string(filename, lang=lang, config=tessdata_dir_config)
-
-            # Do some cleanup
-            os.remove(filename)
-
-            return text.strip()
+    @classmethod
+    def new(cls):
+        """Return a new Settings object
+        """
+        settings = Gio.Settings.new(APP_ID)
+        settings.__class__ = Settings
+        return settings

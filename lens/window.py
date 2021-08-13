@@ -25,44 +25,127 @@
 # holders shall not be used in advertising or otherwise to promote the sale,
 # use or other dealings in this Software without prior written
 # authorization.
-import pytesseract
-from gi.repository import Gtk, GdkPixbuf, Gdk, Handy
 
-from lens.config import tessdata_dir_config
-from lens.language_model import LanguageModel
-from lens.screenshot_backend import ScreenshotBackend, CaptureType
+from gettext import gettext as _
+from gi.repository import Gtk, Handy, Gio, Gdk, GLib, Granite
+
+from .config import RESOURCE_PREFIX
+from .screenshot_backend import ScreenshotBackend
 
 
 @Gtk.Template(resource_path='/com/github/tenderowl/lens/ui/window.ui')
 class LensWindow(Handy.ApplicationWindow):
     __gtype_name__ = 'LensWindow'
 
-    lang_cmb: Gtk.ComboBox = Gtk.Template.Child()
+    toast: Granite.WidgetsToast
+    main_overlay: Gtk.Overlay = Gtk.Template.Child()
+    main_stack: Gtk.Stack = Gtk.Template.Child()
+    lang_combo: Gtk.ComboBoxText = Gtk.Template.Child()
     shot_btn: Gtk.Button = Gtk.Template.Child()
     shot_text: Gtk.TextView = Gtk.Template.Child()
-    language_model: Gtk.ListStore = Gtk.Template.Child()
+    toolbox: Gtk.Revealer = Gtk.Template.Child()
+    text_clear_btn: Gtk.Button = Gtk.Template.Child()
+    text_copy_btn: Gtk.Button = Gtk.Template.Child()
 
-    def __init__(self, **kwargs):
+    # Helps to call save_window_state not more often than 500ms
+    delayed_state: bool = False
+    clipboard: Gtk.Clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
+
+    def __init__(self, settings: Gio.Settings, **kwargs):
         Handy.init()
         super().__init__(**kwargs)
 
-        self.set_default_size(364, 264)
+        self.settings = settings
 
-        self.language_model.append(["eng", "English"])
-        self.language_model.append(["rus", "Russian"])
+        self.toast = Granite.WidgetsToast()
+        self.toast.set_
+        self.main_overlay.add_overlay(self.toast)
+        self.main_overlay.show_all()
 
+        # Add Granite widget - Welcome screen.
+        welcome_widget = Granite.WidgetsWelcome.new(_("Lens"), _("Snap the area to extract some text."))
+        welcome_widget.set_visible(True)
+        welcome_widget.show_all()
+        self.main_stack.add_named(welcome_widget, 'welcome')
+        self.main_stack.set_visible_child_name("welcome")
+
+        # self.set_default_icon(Pixbuf.new_from_resource_at_scale(
+        #     f'{RESOURCE_PREFIX}/icons/com.github.tenderowl.lens.svg',
+        #     128, 128, True
+        # ))
+        # Setup application
+        self.current_size = (450, 400)
+        self.resize(*self.settings.get_value('window-size'))
+
+        # Set default language.
+        self.active_lang = "eng"
+        self.lang_combo.set_active_id(self.settings.get_string("active-language"))
+
+        # Initialize screenshot backend
         self.backend = ScreenshotBackend()
-        self.shot_btn.connect('clicked', self.on_shot_btn_clicked)
 
-    def on_shot_btn_clicked(self, widget: Gtk.Button) -> None:
-        self.get_screenshot()
+        # Connect signals
+        self.shot_btn.connect('clicked', self.shot_btn_clicked)
+        self.text_clear_btn.connect('clicked', self.text_clear_btn_clicked)
+        self.text_copy_btn.connect('clicked', self.text_copy_btn_clicked)
+        self.lang_combo.connect('changed', self.on_language_change)
+        self.connect('configure-event', self.on_configure_event)
+        self.connect('destroy', self.on_window_delete_event)
 
-    def get_screenshot(self):
-        position = self
+    def shot_btn_clicked(self, widget: Gtk.Button) -> None:
+        GLib.idle_add(
+            self.get_screenshot
+        )
+
+    def on_language_change(self, widget: Gtk.ComboBoxText) -> None:
+        self.settings.set_string("active-language", self.lang_combo.get_active_id())
+
+    def get_screenshot(self) -> bool:
+        self.active_lang = self.lang_combo.get_active_id()
+
+        # Just in case. Probably better add primary language in settings
+        extra_lang = self.settings.get_string("extra-language")
+        if self.active_lang != extra_lang:
+            self.active_lang += "+" + extra_lang
+
+        try:
+            text = self.backend.capture(lang=self.active_lang)
+            buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
+            buffer.set_text(text)
+
+            self.main_stack.set_visible_child_name("extracted")
+            self.toolbox.set_reveal_child(True)
+
+        except Exception as e:
+            print(f"ERROR: {e}")
+
+        return False
+
+    def on_configure_event(self, window, event: Gdk.EventConfigure):
+        if not self.delayed_state:
+            GLib.timeout_add(500, self.save_window_state, window)
+            self.delayed_state = True
+
+    def save_window_state(self, user_data) -> bool:
+        self.current_size = user_data.get_size()
+        self.delayed_state = False
+        return False
+
+    def on_window_delete_event(self, sender: Gtk.Widget = None) -> None:
+        if not self.is_maximized():
+            self.settings.set_value("window-size", GLib.Variant("ai", self.current_size))
+            # self.settings.set_value("window-position", GLib.Variant("ai", self.current_position))
+
+    def text_clear_btn_clicked(self, button: Gtk.Button) -> None:
         buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
-        # tree_iter = self.lang_cmb.get_active_iter()
-        # model = self.lang_model
-        # print(model[tree_iter])
-        # row_id, name = model[tree_iter][:2]
-        text = self.backend.capture(CaptureType=CaptureType.AREA, lang="eng")
-        buffer.set_text(text)
+        buffer.set_text("")
+        self.toolbox.set_reveal_child(False)
+        self.main_stack.set_visible_child_name("welcome")
+
+    def text_copy_btn_clicked(self, button: Gtk.Button) -> None:
+        buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
+        text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
+        self.clipboard.set_text(text, -1)
+
+        self.toast.set_title(_("Copied!"))
+        self.toast.send_notification()

@@ -1,0 +1,14 @@
+{
+  "name": "leptonica",
+  "rm-configure": true,
+  "config-opts": [
+    "--disable-static"
+  ],
+  "sources": [
+    {
+      "type": "archive",
+      "url": "https://github.com/DanBloomberg/leptonica/releases/download/1.81.1/leptonica-1.81.1.tar.gz",
+      "sha256": "0f4eb315e9bdddd797f4c55fdea4e1f45fca7e3b358a2fc693fd957ce2c43ca9"
+    }
+  ]
+}

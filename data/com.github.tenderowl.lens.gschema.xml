@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="lens">
 	<schema id="com.github.tenderowl.lens" path="/com/github/tenderowl/lens/">
+	  <!-- Window params -->
+    <key name="window-size" type="ai">
+      <default>[960, 600]</default>
+      <summary>Window size in px</summary>
+      <description>Window size (width and height).</description>
+    </key>
+    <key name="window-position" type="ai">
+      <default>[-1, -1 ]</default>
+      <summary>Window position on screen in px</summary>
+      <description>Window position on screen.</description>
+    </key>
+
+	  <key name="extra-language" type="s">
+      <default>"eng"</default>
+      <summary>Extra language</summary>
+      <description>Language to detect alongside with the active one.</description>
+    </key>
+	  <key name="active-language" type="s">
+      <default>"eng"</default>
+      <summary>Active language</summary>
+      <description>Active language to extract the text.</description>
+    </key>
 	</schema>
 </schemalist>
