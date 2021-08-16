@@ -1,4 +1,4 @@
-project('lens',
+project('frog',
           version: '0.1.0',
     meson_version: '>= 0.50.0',
   default_options: [ 'warning_level=2',
@@ -23,7 +23,7 @@ pythondir = join_paths(prefix, python.sysconfig_path('purelib'))
 localedir = join_paths(prefix, get_option('localedir'))
 
 
-install_subdir('lens', install_dir: pythondir)
+install_subdir('frog', install_dir: pythondir)
 subdir('bin')
 subdir('data')
 subdir('po')

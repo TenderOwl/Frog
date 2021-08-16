@@ -1,9 +1,9 @@
 {
-    "app-id" : "com.github.tenderowl.lens",
+    "app-id" : "com.github.tenderowl.frog",
     "runtime" : "io.elementary.Platform",
-    "runtime-version" : "daily",
+    "runtime-version" : "6",
     "sdk" : "io.elementary.Sdk",
-    "command" : "lens",
+    "command" : "frog",
     "finish-args" : [
         "--share=network",
         "--share=ipc",
@@ -85,13 +85,13 @@
             ]
         },
         {
-            "name" : "lens",
+            "name" : "frog",
             "builddir" : true,
             "buildsystem" : "meson",
             "sources" : [
                 {
                     "type" : "git",
-                    "url" : "https://github.com/TenderOwl/Lens.git"
+                    "url" : "https://github.com/TenderOwl/frog.git"
                 }
             ]
         }

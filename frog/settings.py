@@ -1,4 +1,4 @@
-# main.py
+# settings.py
 #
 # Copyright 2021 Andrey Maksimov
 #
@@ -26,33 +26,25 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-import sys
-import gi
 
-gi.require_version('Gtk', '3.0')
-gi.require_version('Granite', '1.0')
-gi.require_version('Handy', '1')
+from gi.repository import Gio
 
-from gi.repository import Gtk, Gio
-from .settings import Settings
-from .window import LensWindow
+from frog.config import APP_ID
 
 
-class Application(Gtk.Application):
+class Settings(Gio.Settings):
+    """Settings
+    """
+
     def __init__(self):
-        super().__init__(application_id='com.github.tenderowl.lens',
-                         flags=Gio.ApplicationFlags.FLAGS_NONE)
+        """Init Settings
+        """
+        Gio.Settings.__init__(self)
 
-        # Init GSettings
-        self.settings = Settings.new()
-
-    def do_activate(self):
-        win = self.props.active_window
-        if not win:
-            win = LensWindow(settings=self.settings, application=self)
-        win.present()
-
-
-def main(version):
-    app = Application()
-    return app.run(sys.argv)
+    @classmethod
+    def new(cls):
+        """Return a new Settings object
+        """
+        settings = Gio.Settings.new(APP_ID)
+        settings.__class__ = Settings
+        return settings

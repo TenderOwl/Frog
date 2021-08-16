@@ -1,12 +1,12 @@
-# Lens
+# frog
 
 > Text extraction tool for elementary OS.
 
-[![Build Status](https://github.com/tenderowl/lens/workflows/CI/badge.svg)](https://github.com/tenderowl/lens/action)
+[![Build Status](https://github.com/tenderowl/frog/workflows/CI/badge.svg)](https://github.com/tenderowl/frog/action)
 
 <div align="center">
 <figure>
-<img alt="Lens" src="data/screenshots/lens-screenshot.png" />
+<img alt="frog" src="data/screenshots/frog-screenshot.png" />
 </figure>
 </div>
 
@@ -19,7 +19,7 @@ Will be available soon!
 Will be available soon!
 
 ## Install it from source
-You can install Lens by compiling from source, here's the list of dependencies required:
+You can install frog by compiling from source, here's the list of dependencies required:
  - `gtk+-3.0>=3.22.29`
  - `granite>=6.1`
  - `glib-2.0`
@@ -30,5 +30,5 @@ You can install Lens by compiling from source, here's the list of dependencies r
 ## Building
 
 I'm the guy who loves GUI tools instead of command-line thus I recommend using [Builder](https://wiki.gnome.org/Apps/Builder) to develop applications.
-To build the Lens application just open project folder in Builder and press "Execute" (F5). It will download requirements and build the app.
+To build the frog application just open project folder in Builder and press "Execute" (F5). It will download requirements and build the app.
 

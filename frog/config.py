@@ -1,4 +1,4 @@
-# screenshot_backend.py
+# config.py
 #
 # Copyright 2021 Andrey Maksimov
 #
@@ -26,44 +26,7 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-import os
+APP_ID = "com.github.tenderowl.frog"
+RESOURCE_PREFIX = "/com/github/tenderowl/frog"
 
-from typing import Optional
-
-from pydbus import SessionBus
-from gi.repository import GObject, Gio
-
-from .config import tessdata_dir_config
-
-try:
-    from PIL import Image
-except ImportError:
-    import Image
-import pytesseract
-
-
-class ScreenshotBackend(GObject.GObject):
-    def __init__(self):
-        GObject.GObject.__init__(self)
-
-        self.bus = SessionBus()
-        self.cancelable = Gio.Cancellable.new()
-        self.proxy = self.bus.get("org.gnome.Shell.Screenshot",
-                                  "/org/gnome/Shell/Screenshot")
-
-    def capture(self, lang: str) -> Optional[str]:
-        if not self.proxy:
-            return
-        x, y, width, height = self.proxy.SelectArea()
-        print(f'SELECTED_AREA: {x}:{y} of {width}:{height}')
-
-        result, filename = self.proxy.ScreenshotArea(x, y, width, height, True, 'lens-text-recognition')
-
-        if result:
-            # Simple image to string
-            text = pytesseract.image_to_string(filename, lang=lang, config=tessdata_dir_config)
-
-            # Do some cleanup
-            os.remove(filename)
-
-            return text.strip()
+tessdata_dir_config = r'--tessdata-dir "/app/share/tesseract/tessdata"'

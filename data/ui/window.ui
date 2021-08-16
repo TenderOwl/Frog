@@ -10,7 +10,7 @@
     <property name="icon-name">image-crop</property>
     <property name="icon_size">2</property>
   </object>
-  <template class="LensWindow" parent="HdyApplicationWindow">
+  <template class="FrogWindow" parent="HdyApplicationWindow">
     <property name="width-request">364</property>
     <property name="height-request">264</property>
     <property name="can-focus">False</property>
@@ -26,7 +26,7 @@
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="tooltip-text" translatable="yes">Extract text from anywhere</property>
-            <property name="title" translatable="yes">Lens</property>
+            <property name="title" translatable="yes">frog</property>
             <property name="show-close-button">True</property>
             <child type="title">
               <object class="GtkComboBoxText" id="lang_combo">

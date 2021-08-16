@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-	<id>com.github.tenderowl.lens.desktop</id>
+	<id>com.github.tenderowl.frog.desktop</id>
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>MIT</project_license>
 	<description>
@@ -12,15 +12,20 @@
 
 	<screenshots>
 		<screenshot type="default">
-			<image>https://raw.githubusercontent.com/tenderowl/lens/master/data/screenshots/lens-screenshot.png</image>
+			<image>https://raw.githubusercontent.com/tenderowl/frog/master/data/screenshots/frog-screenshot.png</image>
 		</screenshot>
 	</screenshots>
 
+  <releases>
+    <release>
+    </release>
+  </releases>
+
 	<developer_name>Tender Owl</developer_name>
 	<launchable type="desktop-id">@appid@.desktop</launchable>
-	<url type="homepage">https://github.com/tenderowl/lens</url>
-	<url type="bugtracker">https://github.com/tenderowl/lens/issues</url>
-	<url type="help">https://github.com/tenderowl/lens/issues</url>
+	<url type="homepage">https://tenderowl.com/work/frog</url>
+	<url type="bugtracker">https://github.com/tenderowl/frog/issues</url>
+	<url type="help">https://github.com/tenderowl/frog/issues</url>
 	<update_contact>andrey@tenderowl.com</update_contact>
 
 

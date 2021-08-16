@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="lens">
-	<schema id="com.github.tenderowl.lens" path="/com/github/tenderowl/lens/">
+<schemalist gettext-domain="frog">
+	<schema id="com.github.tenderowl.frog" path="/com/github/tenderowl/frog/">
 	  <!-- Window params -->
     <key name="window-size" type="ai">
       <default>[960, 600]</default>

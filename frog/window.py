@@ -35,9 +35,9 @@ from .config import RESOURCE_PREFIX
 from .screenshot_backend import ScreenshotBackend
 
 
-@Gtk.Template(resource_path='/com/github/tenderowl/lens/ui/window.ui')
-class LensWindow(Handy.ApplicationWindow):
-    __gtype_name__ = 'LensWindow'
+@Gtk.Template(resource_path='/com/github/tenderowl/frog/ui/window.ui')
+class FrogWindow(Handy.ApplicationWindow):
+    __gtype_name__ = 'FrogWindow'
 
     toast: Granite.WidgetsToast
     main_overlay: Gtk.Overlay = Gtk.Template.Child()
@@ -64,14 +64,14 @@ class LensWindow(Handy.ApplicationWindow):
         self.main_overlay.show_all()
 
         # Add Granite widget - Welcome screen.
-        welcome_widget = Granite.WidgetsWelcome.new(_("Lens"), _("Snap the area to extract some text."))
+        welcome_widget = Granite.WidgetsWelcome.new(_("Frog"), _("Grab the area to extract some text."))
         welcome_widget.set_visible(True)
         welcome_widget.show_all()
         self.main_stack.add_named(welcome_widget, 'welcome')
         self.main_stack.set_visible_child_name("welcome")
 
         self.set_default_icon(Pixbuf.new_from_resource_at_scale(
-            f'{RESOURCE_PREFIX}/icons/com.github.tenderowl.lens.svg',
+            f'{RESOURCE_PREFIX}/icons/com.github.tenderowl.frog.svg',
             128, 128, True
         ))
 

@@ -5,8 +5,8 @@ app_id = '.'.join([
 ])
 
 desktop_file = i18n.merge_file(
-  input: 'com.github.tenderowl.lens.desktop.in',
-  output: 'com.github.tenderowl.lens.desktop',
+  input: 'com.github.tenderowl.frog.desktop.in',
+  output: 'com.github.tenderowl.frog.desktop',
   type: 'desktop',
   po_dir: '../po',
   install: true,
@@ -21,8 +21,8 @@ if desktop_utils.found()
 endif
 
 appstream_file = i18n.merge_file(
-  input: 'com.github.tenderowl.lens.appdata.xml.in',
-  output: 'com.github.tenderowl.lens.appdata.xml',
+  input: 'com.github.tenderowl.frog.appdata.xml.in',
+  output: 'com.github.tenderowl.frog.appdata.xml',
   po_dir: '../po',
   install: true,
   install_dir: join_paths(get_option('datadir'), 'appdata')
@@ -35,7 +35,7 @@ if appstream_util.found()
   )
 endif
 
-install_data('com.github.tenderowl.lens.gschema.xml',
+install_data('com.github.tenderowl.frog.gschema.xml',
   install_dir: join_paths(get_option('datadir'), 'glib-2.0/schemas')
 )
 

@@ -1,6 +1,4 @@
-#!@PYTHON@
-
-# lens.in
+# screenshot_backend.py
 #
 # Copyright 2021 Andrey Maksimov
 #
@@ -29,24 +27,43 @@
 # authorization.
 
 import os
-import sys
-import signal
-import gettext
 
-VERSION = '@VERSION@'
-pkgdatadir = '@pkgdatadir@'
-localedir = '@localedir@'
+from typing import Optional
 
-sys.path.insert(1, pkgdatadir)
-signal.signal(signal.SIGINT, signal.SIG_DFL)
-gettext.install('lens', localedir)
+from pydbus import SessionBus
+from gi.repository import GObject, Gio
 
-if __name__ == '__main__':
-    import gi
+from .config import tessdata_dir_config
 
-    from gi.repository import Gio
-    resource = Gio.Resource.load(os.path.join(pkgdatadir, '@appid@.gresource'))
-    resource._register()
+try:
+    from PIL import Image
+except ImportError:
+    import Image
+import pytesseract
 
-    from lens import main
-    sys.exit(main.main(VERSION))
+
+class ScreenshotBackend(GObject.GObject):
+    def __init__(self):
+        GObject.GObject.__init__(self)
+
+        self.bus = SessionBus()
+        self.cancelable = Gio.Cancellable.new()
+        self.proxy = self.bus.get("org.gnome.Shell.Screenshot",
+                                  "/org/gnome/Shell/Screenshot")
+
+    def capture(self, lang: str) -> Optional[str]:
+        if not self.proxy:
+            return
+        x, y, width, height = self.proxy.SelectArea()
+        print(f'SELECTED_AREA: {x}:{y} of {width}:{height}')
+
+        result, filename = self.proxy.ScreenshotArea(x, y, width, height, True, 'frog-text-recognition')
+
+        if result:
+            # Simple image to string
+            text = pytesseract.image_to_string(filename, lang=lang, config=tessdata_dir_config)
+
+            # Do some cleanup
+            os.remove(filename)
+
+            return text.strip()

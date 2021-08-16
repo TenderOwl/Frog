@@ -1,4 +1,4 @@
-application_id = 'com.github.tenderowl.lens'
+application_id = 'com.github.tenderowl.frog'
 
 icon_sizes = ['32', '48', '64', '128']
 

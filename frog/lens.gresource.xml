@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/com/github/tenderowl/lens">
+  <gresource prefix="/com/github/tenderowl/frog">
     <file>window.ui</file>
   </gresource>
 </gresources>
