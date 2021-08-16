@@ -58,7 +58,6 @@ class LensWindow(Handy.ApplicationWindow):
         self.settings = settings
 
         self.toast = Granite.WidgetsToast()
-        self.toast.set_
         self.main_overlay.add_overlay(self.toast)
         self.main_overlay.show_all()
 
