@@ -27,6 +27,8 @@
 # authorization.
 
 from gettext import gettext as _
+
+from gi.overrides.GdkPixbuf import Pixbuf
 from gi.repository import Gtk, Handy, Gio, Gdk, GLib, Granite
 
 from .config import RESOURCE_PREFIX
@@ -68,10 +70,11 @@ class LensWindow(Handy.ApplicationWindow):
         self.main_stack.add_named(welcome_widget, 'welcome')
         self.main_stack.set_visible_child_name("welcome")
 
-        # self.set_default_icon(Pixbuf.new_from_resource_at_scale(
-        #     f'{RESOURCE_PREFIX}/icons/com.github.tenderowl.lens.svg',
-        #     128, 128, True
-        # ))
+        self.set_default_icon(Pixbuf.new_from_resource_at_scale(
+            f'{RESOURCE_PREFIX}/icons/com.github.tenderowl.lens.svg',
+            128, 128, True
+        ))
+
         # Setup application
         self.current_size = (450, 400)
         self.resize(*self.settings.get_value('window-size'))

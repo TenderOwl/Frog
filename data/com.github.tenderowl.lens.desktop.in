@@ -1,8 +1,11 @@
 [Desktop Entry]
-Name=lens
+Name=Lens
+GenericName=Text extraction tool
+Comment=Extract text from any image, video or web page
 Exec=lens
 Icon=com.github.tenderowl.lens
 Terminal=false
 Type=Application
-Categories=GTK;
+Categories=GTK;Productivity;Office
 StartupNotify=true
+

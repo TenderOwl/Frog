@@ -2,5 +2,6 @@
 <gresources>
     <gresource prefix="/com/github/tenderowl/lens">
         <file preprocess="xml-stripblanks">ui/window.ui</file>
+        <file alias="icons/com.github.tenderowl.lens.svg">icons/128x128/com.github.tenderowl.lens.svg</file>
     </gresource>
 </gresources>
