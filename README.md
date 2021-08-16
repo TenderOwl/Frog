@@ -19,6 +19,13 @@ Grab the image and get the text.
 </figure>
 </div>
 
+## See it in action
+
+<div align="center">
+<video controls src="https://user-images.githubusercontent.com/519146/129591083-b846c776-9616-48b3-8d4f-0565b220e4c1.mp4" />
+</div>
+
+
 ## Get it from the elementary OS AppCenter!
 
 Will be available soon!
@@ -40,4 +47,9 @@ You can install frog by compiling from source, here's the list of dependencies r
 
 I'm the guy who loves GUI tools instead of command-line thus I recommend using [Builder](https://wiki.gnome.org/Apps/Builder) to develop applications.
 To build the frog application just open project folder in Builder and press "Execute" (F5). It will download requirements and build the app.
+
+
+# Contribution
+
+Any help is appreciated :)
 
