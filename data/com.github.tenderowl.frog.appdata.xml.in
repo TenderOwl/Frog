@@ -3,6 +3,8 @@
 	<id>com.github.tenderowl.frog.desktop</id>
 	<metadata_license>CC0-1.0</metadata_license>
 	<project_license>MIT</project_license>
+	<name>Frog</name>
+    <summary>Extract text from anywhere</summary>
 	<description>
 	  <p>Extract text from any image, website or video.
 		</p>
@@ -17,7 +19,11 @@
 	</screenshots>
 
   <releases>
-    <release>
+    <release version="1.0.0"  date="2021-16-08">
+      <description>
+        <p>Launch release. Frog is ready to serve and extract any text from anywhere you need it: webpages, videos, photos, etc.
+        </p>
+      </description>
     </release>
   </releases>
 

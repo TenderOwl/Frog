@@ -6,6 +6,6 @@ Exec=frog
 Icon=com.github.tenderowl.frog
 Terminal=false
 Type=Application
-Categories=GTK;Productivity;Office
+Categories=GTK;Utility;Office;
 StartupNotify=true
 
