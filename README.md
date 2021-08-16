@@ -1,8 +1,17 @@
-# frog
+# Frog
 
 > Text extraction tool for elementary OS.
 
 [![Build Status](https://github.com/tenderowl/frog/workflows/CI/badge.svg)](https://github.com/tenderowl/frog/action)
+
+<div align="center">
+<figure>
+<img alt="frog" src="data/icons/com.github.tenderowl.frog.svg" width="128" />
+</figure>
+</div>
+
+Quickly extract text from almost any source: youtube, screencasts, PDFs, webpages, photos, etc.
+Grab the image and get the text.
 
 <div align="center">
 <figure>
