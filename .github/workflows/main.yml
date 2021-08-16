@@ -26,7 +26,7 @@ jobs:
         # This is the name of the Bundle file we're building and can be anything you like
         bundle: Frog.flatpak
         # This uses your app's RDNN ID
-        manifest-path: com.github.tenderowl.frog.json
+        manifest-path: flatpak/com.github.tenderowl.frog.json
 
         # You can automatically run any of the tests you've created as part of this workflow
         run-tests: true
