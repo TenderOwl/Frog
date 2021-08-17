@@ -1,8 +1,6 @@
-application_id = 'com.github.tenderowl.frog'
+application_id = '.'.join([domain, author, meson.project_name()])
 
-scalable_dir = join_paths('hicolor', 'scalable',  '@0@.svg'.format(application_id))
 install_data(
   join_paths( ('@0@.svg').format(application_id)),
-  install_dir: join_paths(get_option('datadir'), 'icons', scalable_dir)
+  install_dir: join_paths(get_option('datadir'), 'icons', 'hicolor', 'scalable', 'apps')
 )
-
