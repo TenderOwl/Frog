@@ -25,13 +25,17 @@
 # holders shall not be used in advertising or otherwise to promote the sale,
 # use or other dealings in this Software without prior written
 # authorization.
-
+import os
+import tempfile
+from urllib import request
 from gettext import gettext as _
 
 from gi.overrides.GdkPixbuf import Pixbuf
 from gi.repository import Gtk, Handy, Gio, Gdk, GLib, Granite
 
-from .config import RESOURCE_PREFIX
+from .config import RESOURCE_PREFIX, tessdata_dir
+from .language_dialog import LanguagePacksDialog
+from .language_manager import language_manager
 from .screenshot_backend import ScreenshotBackend
 
 
@@ -39,11 +43,15 @@ from .screenshot_backend import ScreenshotBackend
 class FrogWindow(Handy.ApplicationWindow):
     __gtype_name__ = 'FrogWindow'
 
+    granite_settings: Granite.Settings = Granite.Settings.get_default()
+    gtk_settings: Gtk.Settings = Gtk.Settings.get_default()
+
     toast: Granite.WidgetsToast
+    spinner: Gtk.Spinner = Gtk.Template.Child()
     main_overlay: Gtk.Overlay = Gtk.Template.Child()
     main_stack: Gtk.Stack = Gtk.Template.Child()
     lang_combo: Gtk.ComboBoxText = Gtk.Template.Child()
-    shot_btn: Gtk.Button = Gtk.Template.Child()
+    # shot_btn: Gtk.Button = Gtk.Template.Child()
     shot_text: Gtk.TextView = Gtk.Template.Child()
     toolbox: Gtk.Revealer = Gtk.Template.Child()
     text_clear_btn: Gtk.Button = Gtk.Template.Child()
@@ -64,10 +72,15 @@ class FrogWindow(Handy.ApplicationWindow):
         self.main_overlay.show_all()
 
         # Add Granite widget - Welcome screen.
-        welcome_widget = Granite.WidgetsWelcome.new(_("Frog"), _("Grab the area to extract some text."))
-        welcome_widget.set_visible(True)
-        welcome_widget.show_all()
-        self.main_stack.add_named(welcome_widget, 'welcome')
+        self.welcome_widget: Granite.WidgetsWelcome = Granite.WidgetsWelcome.new(_("Frog"),
+                                                                                 _("Extract text from anywhere"))
+        self.welcome_widget.append("image-crop", "Grab the area", "Select area to extract the text")
+        self.welcome_widget.append("preferences-desktop-locale", "Configure languages",
+                                   "Download language packs to recognize")
+        self.welcome_widget.connect('activated', self.welcome_action_activated)
+        self.welcome_widget.set_visible(True)
+        self.welcome_widget.show_all()
+        self.main_stack.add_named(self.welcome_widget, 'welcome')
         self.main_stack.set_visible_child_name("welcome")
 
         self.set_default_icon(Pixbuf.new_from_resource_at_scale(
@@ -80,27 +93,58 @@ class FrogWindow(Handy.ApplicationWindow):
         self.resize(*self.settings.get_value('window-size'))
 
         # Set default language.
-        self.active_lang = "eng"
-        self.lang_combo.set_active_id(self.settings.get_string("active-language"))
+        language_manager.connect('downloading', self.on_language_downloading)
+        language_manager.connect('downloaded', self.on_language_downloaded)
+        language_manager.connect('removed', self.on_language_removed)
+        self.fill_lang_combo()
+        if not language_manager.get_downloaded_codes():
+            self.welcome_widget.set_item_sensitivity(0, False)
 
         # Initialize screenshot backend
         self.backend = ScreenshotBackend()
 
         # Connect signals
-        self.shot_btn.connect('clicked', self.shot_btn_clicked)
+        # self.shot_btn.connect('clicked', self.shot_btn_clicked)
         self.text_clear_btn.connect('clicked', self.text_clear_btn_clicked)
         self.text_copy_btn.connect('clicked', self.text_copy_btn_clicked)
         self.lang_combo.connect('changed', self.on_language_change)
         self.connect('configure-event', self.on_configure_event)
         self.connect('destroy', self.on_window_delete_event)
 
-    def shot_btn_clicked(self, widget: Gtk.Button) -> None:
-        GLib.idle_add(
-            self.get_screenshot
-        )
+    @property
+    def active_lang(self):
+        return self.settings.get_string("active-language")
+
+    @active_lang.setter
+    def active_lang(self, lang_code: str):
+        self.settings.set_string("active-language", lang_code)
+
+    def welcome_action_activated(self, widget: Granite.WidgetsWelcome, index: int) -> None:
+        if index == 0:
+            self.get_screenshot()
+        elif index == 1:
+            self.lang_prefs_btn_clicked()
+
+    def fill_lang_combo(self):
+        self.lang_combo.remove_all()
+
+        downloaded_languages = language_manager.get_downloaded_languages(force=True)
+        for lang in downloaded_languages:
+            self.lang_combo.append(language_manager.get_language_code(lang), lang)
+        if self.active_lang:
+            self.lang_combo.set_active_id(self.active_lang)
+
+        if not downloaded_languages:
+            self.lang_combo.append("-1", _("No languages"))
+            self.lang_combo.set_active_id("-1")
 
     def on_language_change(self, widget: Gtk.ComboBoxText) -> None:
-        self.settings.set_string("active-language", self.lang_combo.get_active_id())
+        active_id = self.lang_combo.get_active_id()
+        if active_id and active_id != "-1":
+            self.settings.set_string("active-language", active_id)
+            self.welcome_widget.set_item_sensitivity(0, True)
+        else:
+            self.welcome_widget.set_item_sensitivity(0, False)
 
     def get_screenshot(self) -> bool:
         self.active_lang = self.lang_combo.get_active_id()
@@ -108,7 +152,7 @@ class FrogWindow(Handy.ApplicationWindow):
         # Just in case. Probably better add primary language in settings
         extra_lang = self.settings.get_string("extra-language")
         if self.active_lang != extra_lang:
-            self.active_lang += "+" + extra_lang
+            self.active_lang = f'{self.active_lang}+{extra_lang}'
 
         try:
             text = self.backend.capture(lang=self.active_lang)
@@ -151,3 +195,23 @@ class FrogWindow(Handy.ApplicationWindow):
 
         self.toast.set_title(_("Copied!"))
         self.toast.send_notification()
+
+    def lang_prefs_btn_clicked(self) -> None:
+        dialog = LanguagePacksDialog(self)
+        if dialog.run():
+            dialog.destroy()
+        # GObjectWorker.call(self.download_begin, ('rus',), self.download_done, self.download_error)
+
+    def on_language_downloading(self, sender, lang_code: str):
+        print('on_language_downloading: ' + lang_code)
+
+    def on_language_downloaded(self, sender, lang_code: str):
+        language = language_manager.get_language(lang_code)
+        print('on_language_downloaded: ' + language)
+        self.toast.set_title(_(f"{language} downloaded"))
+        self.toast.send_notification()
+        self.fill_lang_combo()
+
+    def on_language_removed(self, sender, lang_code: str):
+        print('on_language_removed: ' + lang_code)
+        self.fill_lang_combo()

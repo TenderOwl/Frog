@@ -25,8 +25,14 @@
 # holders shall not be used in advertising or otherwise to promote the sale,
 # use or other dealings in this Software without prior written
 # authorization.
+import os
 
 APP_ID = "com.github.tenderowl.frog"
 RESOURCE_PREFIX = "/com/github/tenderowl/frog"
 
-tessdata_dir_config = r'--tessdata-dir "/app/share/tesseract/tessdata"'
+if not os.path.exists(os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata')):
+    os.mkdir(os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata'))
+
+tessdata_url = "https://github.com/tesseract-ocr/tessdata_best/raw/master/"
+tessdata_dir = os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata')
+tessdata_dir_config = f'--tessdata-dir {tessdata_dir}'

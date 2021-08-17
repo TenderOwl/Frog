@@ -4,11 +4,57 @@
   <requires lib="gtk+" version="3.24"/>
   <requires lib="Handy" version="3.24"/>
   <requires lib="libhandy" version="0.0"/>
-  <object class="GtkImage" id="area_image">
+  <object class="GtkBox">
     <property name="visible">True</property>
     <property name="can-focus">False</property>
-    <property name="icon-name">image-crop</property>
-    <property name="icon_size">2</property>
+    <child>
+      <object class="GtkLabel">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="valign">center</property>
+        <property name="label" translatable="yes">Language</property>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkSpinner">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton">
+        <property name="label" translatable="yes">button</property>
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <property name="receives-default">True</property>
+        <property name="valign">center</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">2</property>
+      </packing>
+    </child>
+  </object>
+  <object class="GtkImage" id="clear_image">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">edit-clear</property>
+  </object>
+  <object class="GtkImage" id="copy_image">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">edit-copy</property>
   </object>
   <template class="FrogWindow" parent="HdyApplicationWindow">
     <property name="width-request">364</property>
@@ -26,154 +72,24 @@
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="tooltip-text" translatable="yes">Extract text from anywhere</property>
-            <property name="title" translatable="yes">frog</property>
+            <property name="title" translatable="yes">Frog</property>
             <property name="show-close-button">True</property>
-            <child type="title">
+            <child>
               <object class="GtkComboBoxText" id="lang_combo">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="tooltip-text" translatable="yes">Select language to extract</property>
                 <property name="active-id">eng</property>
-                <items>
-                  <item id="afr" translatable="yes">Afrikaans</item>
-                  <item id="amh" translatable="yes">Amharic</item>
-                  <item id="ara" translatable="yes">Arabic</item>
-                  <item id="asm" translatable="yes">Assamese</item>
-                  <item id="aze" translatable="yes">Azerbaijani</item>
-                  <item id="aze_cyrl" translatable="yes">Azerbaijani - Cyrilic</item>
-                  <item id="bel" translatable="yes">Belarusian</item>
-                  <item id="ben" translatable="yes">Bengali</item>
-                  <item id="bod" translatable="yes">Tibetan</item>
-                  <item id="bos" translatable="yes">Bosnian</item>
-                  <item id="bre" translatable="yes">Breton</item>
-                  <item id="bul" translatable="yes">Bulgarian</item>
-                  <item id="cat" translatable="yes">Catalan; Valencian</item>
-                  <item id="ceb" translatable="yes">Cebuano</item>
-                  <item id="ces" translatable="yes">Czech</item>
-                  <item id="chi_sim" translatable="yes">Chinese simplified</item>
-                  <item id="chi_tra" translatable="yes">Chinese traditional</item>
-                  <item id="chr" translatable="yes">Cherokee</item>
-                  <item id="cos" translatable="yes">Corsican</item>
-                  <item id="cym" translatable="yes">Welsh</item>
-                  <item id="dan" translatable="yes">Danish</item>
-                  <item id="deu" translatable="yes">German</item>
-                  <item id="div" translatable="yes">Dhivehi</item>
-                  <item id="dzo" translatable="yes">Dzongkha</item>
-                  <item id="ell" translatable="yes">Greek</item>
-                  <item id="eng" translatable="yes">English</item>
-                  <item id="epo" translatable="yes">Esperanto</item>
-                  <item id="est" translatable="yes">Estonian</item>
-                  <item id="eus" translatable="yes">Basque</item>
-                  <item id="fas" translatable="yes">Persian</item>
-                  <item id="fao" translatable="yes">Faroese</item>
-                  <item id="fil" translatable="yes">Filipino</item>
-                  <item id="fin" translatable="yes">Finnish</item>
-                  <item id="fra" translatable="yes">French</item>
-                  <item id="frk" translatable="yes">Frankish</item>
-                  <item id="fry" translatable="yes">West Frisian</item>
-                  <item id="gla" translatable="yes">Scottish Gaelic</item>
-                  <item id="gle" translatable="yes">Irish</item>
-                  <item id="glg" translatable="yes">Galician</item>
-                  <item id="guj" translatable="yes">Gujarati</item>
-                  <item id="hat" translatable="yes">Haitian; Haitian Creole</item>
-                  <item id="heb" translatable="yes">Hebrew</item>
-                  <item id="hin" translatable="yes">Hindi</item>
-                  <item id="hrv" translatable="yes">Croatian</item>
-                  <item id="hun" translatable="yes">Hungarian</item>
-                  <item id="hye" translatable="yes">Armenian</item>
-                  <item id="iku" translatable="yes">Inuktitut</item>
-                  <item id="ind" translatable="yes">Indonesian</item>
-                  <item id="isl" translatable="yes">Icelandic</item>
-                  <item id="ita" translatable="yes">Italian</item>
-                  <item id="jav" translatable="yes">Javanese</item>
-                  <item id="jpn" translatable="yes">Japanese</item>
-                  <item id="kan" translatable="yes">Kannada</item>
-                  <item id="kat" translatable="yes">Georgian</item>
-                  <item id="kaz" translatable="yes">Kazakh</item>
-                  <item id="khm" translatable="yes">Central Khmer</item>
-                  <item id="kir" translatable="yes">Kirghiz; Kyrgyz</item>
-                  <item id="kmr" translatable="yes">Kurdish Kurmanji</item>
-                  <item id="kor" translatable="yes">Korean</item>
-                  <item id="kor_vert" translatable="yes">Korean vertical</item>
-                  <item id="lao" translatable="yes">Lao</item>
-                  <item id="lat" translatable="yes">Latin</item>
-                  <item id="lav" translatable="yes">Latvian</item>
-                  <item id="lit" translatable="yes">Lithuanian</item>
-                  <item id="ltz" translatable="yes">Luxembourgish</item>
-                  <item id="mal" translatable="yes">Malayalam</item>
-                  <item id="mar" translatable="yes">Marathi</item>
-                  <item id="mkd" translatable="yes">Macedonian</item>
-                  <item id="mlt" translatable="yes">Maltese</item>
-                  <item id="mon" translatable="yes">Mongolian</item>
-                  <item id="mri" translatable="yes">Maori</item>
-                  <item id="msa" translatable="yes">Malay</item>
-                  <item id="mya" translatable="yes">Burmese</item>
-                  <item id="nep" translatable="yes">Nepali</item>
-                  <item id="nld" translatable="yes">Dutch; Flemish</item>
-                  <item id="nor" translatable="yes">Norwegian</item>
-                  <item id="oci" translatable="yes">Occitan post 1500</item>
-                  <item id="ori" translatable="yes">Oriya</item>
-                  <item id="pan" translatable="yes">Panjabi; Punjabi</item>
-                  <item id="pol" translatable="yes">Polish</item>
-                  <item id="por" translatable="yes">Portuguese</item>
-                  <item id="pus" translatable="yes">Pushto; Pashto</item>
-                  <item id="que" translatable="yes">Quechua</item>
-                  <item id="ron" translatable="yes">Romanian; Moldavian; Moldovan</item>
-                  <item id="rus" translatable="yes">Russian</item>
-                  <item id="san" translatable="yes">Sanskrit</item>
-                  <item id="sin" translatable="yes">Sinhala; Sinhalese</item>
-                  <item id="slk" translatable="yes">Slovak</item>
-                  <item id="slv" translatable="yes">Slovenian</item>
-                  <item id="snd" translatable="yes">Sindhi</item>
-                  <item id="spa" translatable="yes">Spanish; Castilian</item>
-                  <item id="sqi" translatable="yes">Albanian</item>
-                  <item id="srp" translatable="yes">Serbian</item>
-                  <item id="srp_latn" translatable="yes">Serbian - Latin</item>
-                  <item id="sun" translatable="yes">Sundanese</item>
-                  <item id="swa" translatable="yes">Swahili</item>
-                  <item id="swe" translatable="yes">Swedish</item>
-                  <item id="syr" translatable="yes">Syriac</item>
-                  <item id="tam" translatable="yes">Tamil</item>
-                  <item id="tat" translatable="yes">Tatar</item>
-                  <item id="tel" translatable="yes">Telugu</item>
-                  <item id="tgk" translatable="yes">Tajik</item>
-                  <item id="tha" translatable="yes">Thai</item>
-                  <item id="tir" translatable="yes">Tigrinya</item>
-                  <item id="ton" translatable="yes">Tonga</item>
-                  <item id="tur" translatable="yes">Turkish</item>
-                  <item id="uig" translatable="yes">Uighur; Uyghur</item>
-                  <item id="ukr" translatable="yes">Ukrainian</item>
-                  <item id="urd" translatable="yes">Urdu</item>
-                  <item id="uzb" translatable="yes">Uzbek</item>
-                  <item id="uzb_cyrl" translatable="yes">Uzbek - Cyrilic</item>
-                  <item id="vie" translatable="yes">Vietnamese</item>
-                  <item id="yid" translatable="yes">Yiddish</item>
-                  <item id="yor" translatable="yes">Yoruba</item>
-                </items>
               </object>
-              <packing>
-                <property name="pack-type">end</property>
-              </packing>
             </child>
             <child>
-              <object class="GtkButton" id="shot_btn">
-                <property name="label" translatable="yes">Snap!</property>
+              <object class="GtkSpinner" id="spinner">
                 <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="receives-default">True</property>
-                <property name="tooltip-markup" translatable="yes">Select area to extract the text.
-Press &lt;b&gt;Escape&lt;/b&gt; to cancel.</property>
-                <property name="halign">center</property>
-                <property name="valign">center</property>
-                <property name="image">area_image</property>
-                <property name="always-show-image">True</property>
+                <property name="can-focus">False</property>
               </object>
               <packing>
-                <property name="pack-type">end</property>
+                <property name="position">1</property>
               </packing>
-            </child>
-            <child>
-              <placeholder/>
             </child>
           </object>
           <packing>
@@ -198,9 +114,6 @@ Press &lt;b&gt;Escape&lt;/b&gt; to cancel.</property>
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="transition-type">crossfade</property>
-                    <child>
-                      <placeholder/>
-                    </child>
                     <child>
                       <object class="GtkScrolledWindow">
                         <property name="visible">True</property>
@@ -229,7 +142,6 @@ Press &lt;b&gt;Escape&lt;/b&gt; to cancel.</property>
                       </object>
                       <packing>
                         <property name="name">extracted</property>
-                        <property name="position">1</property>
                       </packing>
                     </child>
                   </object>
@@ -322,16 +234,6 @@ Press &lt;b&gt;Escape&lt;/b&gt; to cancel.</property>
       </object>
     </child>
   </template>
-  <object class="GtkImage" id="clear_image">
-    <property name="visible">True</property>
-    <property name="can-focus">False</property>
-    <property name="icon-name">edit-clear</property>
-  </object>
-  <object class="GtkImage" id="copy_image">
-    <property name="visible">True</property>
-    <property name="can-focus">False</property>
-    <property name="icon-name">edit-copy</property>
-  </object>
   <object class="GtkListStore" id="language_model">
     <columns>
       <!-- column-name code -->

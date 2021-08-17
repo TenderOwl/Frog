@@ -9,7 +9,7 @@ author = 'tenderowl'
 domain = 'com.github'
 # app_id built as: domain.author.project_name
 gitrepo = 'https://github.com/'+author+'/'+meson.project_name()
-website = 'http://tenderowl.com'
+website = 'https://tenderowl.com'
 
 
 i18n = import('i18n')
