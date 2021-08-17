@@ -11,7 +11,7 @@
         "--socket=wayland",
         "--socket=session-bus",
         "--system-talk-name=org.freedesktop.Accounts",
-        "--filesystem=xdg-pictures:ro"
+        "--filesystem=xdg-pictures"
     ],
     "cleanup" : [
         "/include",
