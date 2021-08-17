@@ -10,17 +10,9 @@
       "type": "archive",
       "url": "https://github.com/tesseract-ocr/tesseract/archive/4.1.1.tar.gz",
       "sha256": "2a66ff0d8595bff8f04032165e6c936389b1e5727c3ce5a27b3e059d218db1cb"
-    },
-    {
-      "type": "git",
-      "url": "https://github.com/tesseract-ocr/tessdata_best.git",
-      "commit": "9e8aeef07ce8c4f6e6519577cee76363246bc6de",
-      "dest": "traineddata"
     }
   ],
   "post-install": [
-    "install -p -D -m 0644 \"traineddata\"/*.traineddata -t \"${FLATPAK_DEST}/share/tesseract/tessdata/\";",
-    "install -p -D -m 0644 \"traineddata/script\"/*.traineddata -t \"${FLATPAK_DEST}/share/tesseract/tessdata/script/\";",
     "chmod +x /app/bin/tesseract"
   ],
   "modules": [
