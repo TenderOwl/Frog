@@ -28,32 +28,6 @@
         "leptonica.json",
         "tesseract.json",
         {
-            "name" : "libhandy",
-            "buildsystem" : "meson",
-            "builddir" : true,
-            "config-opts" : [
-                "-Dexamples=false",
-                "-Dtests=false"
-            ],
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libhandy.git"
-                }
-            ]
-        },
-        {
-            "name" : "granite",
-            "buildsystem" : "meson",
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://github.com/elementary/granite.git",
-                    "tag" : "6.1.0"
-                }
-            ]
-        },
-        {
             "name" : "python3-pydbus",
             "buildsystem" : "simple",
             "build-commands" : [
