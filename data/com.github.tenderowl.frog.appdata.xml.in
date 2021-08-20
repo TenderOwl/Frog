@@ -64,11 +64,4 @@
 		<content_attribute id="money-purchasing">none</content_attribute>
 		<content_attribute id="money-gambling">none</content_attribute>
 	</content_rating>
-
-	<custom>
-		<value key="x-appcenter-color-primary">#3f3f3f</value>
-		<value key="x-appcenter-color-primary-text">#ffffff</value>
-		<value key="x-appcenter-suggested-price">25</value>
-		<value key="x-appcenter-stripe">pk_live_Arrxw947rfYpLQK7VcSv4766</value>
-	</custom>
 </component>
