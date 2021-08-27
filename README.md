@@ -2,7 +2,7 @@
 
 > Text extraction tool for elementary OS.
 
-[![Build Status](https://github.com/tenderowl/frog/workflows/CI/badge.svg)](https://github.com/tenderowl/frog/action)
+[![Build Status](https://github.com/tenderowl/frog/workflows/CI/badge.svg)](https://github.com/tenderowl/frog/actions)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Made for elementary OS](https://img.shields.io/badge/for-elementary_OS-64BAFF?style=flat&logo=elementary)](https://elementry.io)
 
