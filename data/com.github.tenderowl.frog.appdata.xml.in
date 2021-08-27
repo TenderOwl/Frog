@@ -28,7 +28,7 @@
   </releases>
 
 	<developer_name>Tender Owl</developer_name>
-	<launchable type="desktop-id">@appid@.desktop</launchable>
+	<launchable type="desktop-id">com.github.tenderowl.frog.desktop</launchable>
 	<url type="homepage">https://tenderowl.com/work/frog</url>
 	<url type="bugtracker">https://github.com/tenderowl/frog/issues</url>
 	<url type="help">https://github.com/tenderowl/frog/issues</url>
