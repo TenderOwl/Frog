@@ -8,4 +8,4 @@ Terminal=false
 Type=Application
 Categories=GTK;Utility;Office;
 StartupNotify=true
-
+Keywords=OCR;Text;Extraction;
