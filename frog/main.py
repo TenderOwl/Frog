@@ -33,12 +33,15 @@ gi.require_version('Gtk', '3.0')
 gi.require_version('Granite', '1.0')
 gi.require_version('Handy', '1')
 
-from gi.repository import Gtk, Gio
+from gi.repository import Gtk, Gio, Granite
 from .settings import Settings
 from .window import FrogWindow
 
 
 class Application(Gtk.Application):
+    granite_settings: Granite.Settings
+    gtk_settings: Gtk.Settings
+
     def __init__(self):
         super().__init__(application_id='com.github.tenderowl.frog',
                          flags=Gio.ApplicationFlags.FLAGS_NONE)
@@ -47,10 +50,25 @@ class Application(Gtk.Application):
         self.settings = Settings.new()
 
     def do_activate(self):
+        self.granite_settings = Granite.Settings.get_default()
+        self.gtk_settings = Gtk.Settings.get_default()
+
+        # Then, we check if the user's preference is for the dark style and set it if it is
+        self.gtk_settings.props.gtk_application_prefer_dark_theme = \
+            self.granite_settings.props.prefers_color_scheme == Granite.SettingsColorScheme.DARK
+
+        # Finally, we listen to changes in Granite.Settings and update our app if the user changes their preference
+        self.granite_settings.connect("notify::prefers-color-scheme",
+                                      self.color_scheme_changed)
+
         win = self.props.active_window
         if not win:
             win = FrogWindow(settings=self.settings, application=self)
         win.present()
+
+    def color_scheme_changed(self, _old, _new):
+        self.gtk_settings.props.gtk_application_prefer_dark_theme = \
+            self.granite_settings.props.prefers_color_scheme == Granite.SettingsColorScheme.DARK
 
 
 def main(version):
