@@ -112,7 +112,8 @@ class FrogWindow(Handy.ApplicationWindow):
 
     @property
     def active_lang(self):
-        return self.settings.get_string("active-language")
+        lang: str = self.settings.get_string("active-language")
+        return lang.rsplit('+')[0]
 
     @active_lang.setter
     def active_lang(self, lang_code: str):
