@@ -112,8 +112,7 @@ class FrogWindow(Handy.ApplicationWindow):
 
     @property
     def active_lang(self):
-        lang: str = self.settings.get_string("active-language")
-        return lang.rsplit('+')[0]
+        return self.settings.get_string("active-language")
 
     @active_lang.setter
     def active_lang(self, lang_code: str):
@@ -135,7 +134,7 @@ class FrogWindow(Handy.ApplicationWindow):
         for lang in downloaded_languages:
             self.lang_combo.append(language_manager.get_language_code(lang), lang)
         if self.active_lang:
-            self.lang_combo.set_active_id(self.active_lang)
+            self.lang_combo.set_active_id(self.active_lang.rsplit('+')[0])
 
         if not downloaded_languages:
             self.lang_combo.append("-1", _("No languages"))

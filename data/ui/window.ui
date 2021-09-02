@@ -50,11 +50,13 @@
     <property name="visible">True</property>
     <property name="can-focus">False</property>
     <property name="icon-name">edit-clear</property>
+    <property name="icon_size">3</property>
   </object>
   <object class="GtkImage" id="copy_image">
     <property name="visible">True</property>
     <property name="can-focus">False</property>
     <property name="icon-name">edit-copy</property>
+    <property name="icon_size">3</property>
   </object>
   <template class="FrogWindow" parent="HdyApplicationWindow">
     <property name="width-request">364</property>
@@ -161,8 +163,6 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="double-buffered">False</property>
-                        <property name="margin-left">8</property>
-                        <property name="margin-right">8</property>
                         <property name="margin-start">8</property>
                         <property name="margin-end">8</property>
                         <property name="margin-top">8</property>
@@ -271,5 +271,6 @@
     <property name="visible">True</property>
     <property name="can-focus">False</property>
     <property name="icon-name">image-crop</property>
+    <property name="icon_size">3</property>
   </object>
 </interface>
