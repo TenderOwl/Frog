@@ -169,6 +169,21 @@
                         <property name="margin-bottom">8</property>
                         <property name="spacing">8</property>
                         <child>
+                          <object class="GtkButton" id="text_shot_btn">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="tooltip-text" translatable="yes">Clear the extraction results</property>
+                            <property name="image">shot_image</property>
+                            <property name="always-show-image">True</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
                           <object class="GtkLayout">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
@@ -177,7 +192,7 @@
                           <packing>
                             <property name="expand">False</property>
                             <property name="fill">True</property>
-                            <property name="position">0</property>
+                            <property name="position">1</property>
                           </packing>
                         </child>
                         <child>
@@ -192,7 +207,7 @@
                           <packing>
                             <property name="expand">False</property>
                             <property name="fill">True</property>
-                            <property name="position">1</property>
+                            <property name="position">2</property>
                           </packing>
                         </child>
                         <child>
@@ -207,7 +222,7 @@
                           <packing>
                             <property name="expand">False</property>
                             <property name="fill">True</property>
-                            <property name="position">2</property>
+                            <property name="position">3</property>
                           </packing>
                         </child>
                       </object>
@@ -251,5 +266,10 @@
         <col id="1" translatable="yes">Russian</col>
       </row>
     </data>
+  </object>
+  <object class="GtkImage" id="shot_image">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">image-crop</property>
   </object>
 </interface>

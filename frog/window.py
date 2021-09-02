@@ -25,15 +25,13 @@
 # holders shall not be used in advertising or otherwise to promote the sale,
 # use or other dealings in this Software without prior written
 # authorization.
-import os
-import tempfile
-from urllib import request
+
 from gettext import gettext as _
 
 from gi.overrides.GdkPixbuf import Pixbuf
 from gi.repository import Gtk, Handy, Gio, Gdk, GLib, Granite
 
-from .config import RESOURCE_PREFIX, tessdata_dir
+from .config import RESOURCE_PREFIX
 from .language_dialog import LanguagePacksDialog
 from .language_manager import language_manager
 from .screenshot_backend import ScreenshotBackend
@@ -54,6 +52,7 @@ class FrogWindow(Handy.ApplicationWindow):
     # shot_btn: Gtk.Button = Gtk.Template.Child()
     shot_text: Gtk.TextView = Gtk.Template.Child()
     toolbox: Gtk.Revealer = Gtk.Template.Child()
+    text_shot_btn: Gtk.Button = Gtk.Template.Child()
     text_clear_btn: Gtk.Button = Gtk.Template.Child()
     text_copy_btn: Gtk.Button = Gtk.Template.Child()
 
@@ -104,7 +103,7 @@ class FrogWindow(Handy.ApplicationWindow):
         self.backend = ScreenshotBackend()
 
         # Connect signals
-        # self.shot_btn.connect('clicked', self.shot_btn_clicked)
+        self.text_shot_btn.connect('clicked', self.text_shot_btn_clicked)
         self.text_clear_btn.connect('clicked', self.text_clear_btn_clicked)
         self.text_copy_btn.connect('clicked', self.text_copy_btn_clicked)
         self.lang_combo.connect('changed', self.on_language_change)
@@ -124,6 +123,9 @@ class FrogWindow(Handy.ApplicationWindow):
             self.get_screenshot()
         elif index == 1:
             self.lang_prefs_btn_clicked()
+
+    def text_shot_btn_clicked(self, button: Gtk.Button):
+        self.get_screenshot()
 
     def fill_lang_combo(self):
         self.lang_combo.remove_all()
