@@ -61,9 +61,9 @@ class ScreenshotBackend(GObject.GObject):
 
         if result:
             # Simple image to string
-            text = pytesseract.image_to_string(filename, lang=lang, config=tessdata_dir_config)
-
-            # Do some cleanup
-            os.remove(filename)
-
-            return text.strip()
+            try:
+                text = pytesseract.image_to_string(filename, lang=lang, config=tessdata_dir_config)
+                return text.strip()
+            finally:
+                # Do some cleanup in any case
+                os.remove(filename)

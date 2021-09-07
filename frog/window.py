@@ -149,7 +149,7 @@ class FrogWindow(Handy.ApplicationWindow):
         else:
             self.welcome_widget.set_item_sensitivity(0, False)
 
-    def get_screenshot(self) -> bool:
+    def get_screenshot(self) -> None:
         self.active_lang = self.lang_combo.get_active_id()
 
         self.hide()
@@ -161,7 +161,7 @@ class FrogWindow(Handy.ApplicationWindow):
 
         GObjectWorker.call(self.backend.capture, (self.active_lang,), self.on_shot_done, self.on_shot_error)
 
-    def on_shot_done(self, text):
+    def on_shot_done(self, text) -> None:
         try:
             # text = self.backend.capture(lang=self.active_lang)
             buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
@@ -174,10 +174,9 @@ class FrogWindow(Handy.ApplicationWindow):
             print(f"ERROR: {e}")
 
         self.present()
-        return False
 
-    def on_shot_error(self, error):
-        print(error)
+    def on_shot_error(self, error) -> None:
+        print(f"ERROR: {error}")
         self.present()
 
     def on_configure_event(self, window, event: Gdk.EventConfigure):
