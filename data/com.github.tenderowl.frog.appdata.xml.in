@@ -1,66 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
-	<id>com.github.tenderowl.frog</id>
-	<metadata_license>CC0-1.0</metadata_license>
-	<project_license>MIT</project_license>
-	<name>Frog</name>
+    <id>com.github.tenderowl.frog</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>MIT</project_license>
+    <name>Frog</name>
     <summary>Extract text from anywhere</summary>
-	<description>
-	  <p>Extract text from any image, website or video.
-		</p>
-		<p>Quickly extract text from any source such as images, websites, even video - everywhere you can grab an image shot.
-		</p>
-	</description>
+    <description>
+        <p>Quickly extract text from any source such as images, websites, even video - everywhere you can grab an image
+            shot.
+        </p>
+    </description>
 
-	<screenshots>
-		<screenshot type="default">
-			<image>https://raw.githubusercontent.com/tenderowl/frog/master/data/screenshots/frog-screenshot.png</image>
-		</screenshot>
-	</screenshots>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/tenderowl/frog/master/data/screenshots/frog-screenshot.png</image>
+        </screenshot>
+    </screenshots>
 
-  <releases>
-    <release version="0.1.5" timestamp="1630132049"  date="2021-08-28">
-      <description>
-        <p>Quickly extract any text from anywhere you need it: webpages, videos, photos, etc.</p>
-      </description>
-    </release>
-  </releases>
+    <releases>
+        <release version="0.1.6" timestamp="1631035973" date="2021-09-07">
+            <description>
+                <p>Dark mode+</p>
+                <ul>
+                    <li>Dark mode support.</li>
+                    <li>Application will hide the main window for the cleaner shots. #11</li>
+                </ul>
+            </description>
+        </release>
+        <release version="0.1.5" timestamp="1630132049" date="2021-08-28">
+            <description>
+                <p>Quickly extract any text from anywhere you need it: webpages, videos, photos, etc.</p>
+            </description>
+        </release>
+    </releases>
 
-	<developer_name>Tender Owl</developer_name>
-	<launchable type="desktop-id">com.github.tenderowl.frog.desktop</launchable>
-	<url type="homepage">https://tenderowl.com/work/frog</url>
-	<url type="bugtracker">https://github.com/tenderowl/frog/issues</url>
-	<url type="help">https://github.com/tenderowl/frog/issues</url>
-	<update_contact>andrey@tenderowl.com</update_contact>
+    <developer_name>Tender Owl</developer_name>
+    <launchable type="desktop-id">com.github.tenderowl.frog.desktop</launchable>
+    <url type="homepage">https://tenderowl.com/work/frog</url>
+    <url type="bugtracker">https://github.com/tenderowl/frog/issues</url>
+    <url type="help">https://github.com/tenderowl/frog/issues</url>
+    <update_contact>andrey@tenderowl.com</update_contact>
 
 
-	<content_rating type="oars-1.1">
-		<content_attribute id="violence-cartoon">none</content_attribute>
-		<content_attribute id="violence-fantasy">none</content_attribute>
-		<content_attribute id="violence-realistic">none</content_attribute>
-		<content_attribute id="violence-bloodshed">none</content_attribute>
-		<content_attribute id="violence-sexual">none</content_attribute>
-		<content_attribute id="violence-desecration">none</content_attribute>
-		<content_attribute id="violence-slavery">none</content_attribute>
-		<content_attribute id="violence-worship">none</content_attribute>
-		<content_attribute id="drugs-alcohol">none</content_attribute>
-		<content_attribute id="drugs-narcotics">none</content_attribute>
-		<content_attribute id="drugs-tobacco">none</content_attribute>
-		<content_attribute id="sex-nudity">none</content_attribute>
-		<content_attribute id="sex-themes">none</content_attribute>
-		<content_attribute id="sex-homosexuality">none</content_attribute>
-		<content_attribute id="sex-prostitution">none</content_attribute>
-		<content_attribute id="sex-adultery">none</content_attribute>
-		<content_attribute id="sex-appearance">none</content_attribute>
-		<content_attribute id="language-profanity">none</content_attribute>
-		<content_attribute id="language-humor">none</content_attribute>
-		<content_attribute id="language-discrimination">none</content_attribute>
-		<content_attribute id="social-chat">none</content_attribute>
-		<content_attribute id="social-info">none</content_attribute>
-		<content_attribute id="social-audio">none</content_attribute>
-		<content_attribute id="social-location">none</content_attribute>
-		<content_attribute id="social-contacts">none</content_attribute>
-		<content_attribute id="money-purchasing">none</content_attribute>
-		<content_attribute id="money-gambling">none</content_attribute>
-	</content_rating>
+    <content_rating type="oars-1.1">
+        <content_attribute id="violence-cartoon">none</content_attribute>
+        <content_attribute id="violence-fantasy">none</content_attribute>
+        <content_attribute id="violence-realistic">none</content_attribute>
+        <content_attribute id="violence-bloodshed">none</content_attribute>
+        <content_attribute id="violence-sexual">none</content_attribute>
+        <content_attribute id="violence-desecration">none</content_attribute>
+        <content_attribute id="violence-slavery">none</content_attribute>
+        <content_attribute id="violence-worship">none</content_attribute>
+        <content_attribute id="drugs-alcohol">none</content_attribute>
+        <content_attribute id="drugs-narcotics">none</content_attribute>
+        <content_attribute id="drugs-tobacco">none</content_attribute>
+        <content_attribute id="sex-nudity">none</content_attribute>
+        <content_attribute id="sex-themes">none</content_attribute>
+        <content_attribute id="sex-homosexuality">none</content_attribute>
+        <content_attribute id="sex-prostitution">none</content_attribute>
+        <content_attribute id="sex-adultery">none</content_attribute>
+        <content_attribute id="sex-appearance">none</content_attribute>
+        <content_attribute id="language-profanity">none</content_attribute>
+        <content_attribute id="language-humor">none</content_attribute>
+        <content_attribute id="language-discrimination">none</content_attribute>
+        <content_attribute id="social-chat">none</content_attribute>
+        <content_attribute id="social-info">none</content_attribute>
+        <content_attribute id="social-audio">none</content_attribute>
+        <content_attribute id="social-location">none</content_attribute>
+        <content_attribute id="social-contacts">none</content_attribute>
+        <content_attribute id="money-purchasing">none</content_attribute>
+        <content_attribute id="money-gambling">none</content_attribute>
+    </content_rating>
 </component>
