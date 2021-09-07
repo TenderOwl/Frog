@@ -55,7 +55,7 @@ class ScreenshotBackend(GObject.GObject):
         if not self.proxy:
             return
         x, y, width, height = self.proxy.SelectArea()
-        print(f'SELECTED_AREA: {x}:{y} of {width}:{height}')
+        # print(f'SELECTED_AREA: {x}:{y} of {width}:{height}')
 
         result, filename = self.proxy.ScreenshotArea(x, y, width, height, True, 'frog-text-recognition')
 

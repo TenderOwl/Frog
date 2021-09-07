@@ -32,6 +32,7 @@ from gi.overrides.GdkPixbuf import Pixbuf
 from gi.repository import Gtk, Handy, Gio, Gdk, GLib, Granite
 
 from .config import RESOURCE_PREFIX
+from .gobject_worker import GObjectWorker
 from .language_dialog import LanguagePacksDialog
 from .language_manager import language_manager
 from .screenshot_backend import ScreenshotBackend
@@ -151,13 +152,18 @@ class FrogWindow(Handy.ApplicationWindow):
     def get_screenshot(self) -> bool:
         self.active_lang = self.lang_combo.get_active_id()
 
+        self.hide()
+
         # Just in case. Probably better add primary language in settings
         extra_lang = self.settings.get_string("extra-language")
         if self.active_lang != extra_lang:
             self.active_lang = f'{self.active_lang}+{extra_lang}'
 
+        GObjectWorker.call(self.backend.capture, (self.active_lang,), self.on_shot_done, self.on_shot_error)
+
+    def on_shot_done(self, text):
         try:
-            text = self.backend.capture(lang=self.active_lang)
+            # text = self.backend.capture(lang=self.active_lang)
             buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
             buffer.set_text(text)
 
@@ -167,7 +173,12 @@ class FrogWindow(Handy.ApplicationWindow):
         except Exception as e:
             print(f"ERROR: {e}")
 
+        self.present()
         return False
+
+    def on_shot_error(self, error):
+        print(error)
+        self.present()
 
     def on_configure_event(self, window, event: Gdk.EventConfigure):
         if not self.delayed_state:
