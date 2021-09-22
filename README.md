@@ -5,6 +5,7 @@
 [![Build Status](https://github.com/tenderowl/frog/workflows/CI/badge.svg)](https://github.com/tenderowl/frog/actions)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Made for elementary OS](https://img.shields.io/badge/for-elementary_OS-64BAFF?style=flat&logo=elementary)](https://elementry.io)
+<a href="https://liberapay.com/tenderowl/donate"><img src="https://img.shields.io/liberapay/patrons/tenderowl.svg?logo=liberapay"></a>
 
 <div align="center">
 <figure>
@@ -24,7 +25,8 @@ Grab the image and get the text.
 ## See it in action
 
 <div align="center">
-<video controls src="https://user-images.githubusercontent.com/519146/129591083-b846c776-9616-48b3-8d4f-0565b220e4c1.mp4" />
+<video controls src="https://user-images<script src="https://liberapay.com/tenderowl/widgets/button.js"></script>
+<noscript><a href="https://liberapay.com/tenderowl/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>.githubusercontent.com/519146/129591083-b846c776-9616-48b3-8d4f-0565b220e4c1.mp4" />
 </div>
 
 
@@ -35,6 +37,10 @@ Will be available soon!
 ## Get it from Flathub!
 
 Will be available soon!
+
+## :tada: Support
+If you like Frog and you want to support its development, consider donating via Liberapay:  
+<a href="https://liberapay.com/tenderowl/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
 
 ## Install it from source
 You can install frog by compiling from source, here's the list of dependencies required:
