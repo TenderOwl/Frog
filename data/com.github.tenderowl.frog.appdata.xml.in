@@ -18,6 +18,11 @@
     </screenshots>
 
     <releases>
+        <release version="0.1.7" timestamp="1632324626" date="2021-09-22">
+            <description>
+                <p>Fix language packs download.</p>
+            </description>
+        </release>
         <release version="0.1.6" timestamp="1631035973" date="2021-09-07">
             <description>
                 <p>Dark mode+</p>
