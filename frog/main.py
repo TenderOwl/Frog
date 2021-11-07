@@ -81,7 +81,7 @@ class Application(Gtk.Application):
                 if not winOpen:
                     # If no Instance was opend before
                     # Wait for the Clipboard to store the text then exit
-                    GObject.timeout_add(500, self.quit)
+                    self.quit()
                 return 0
 
             self.activate()
