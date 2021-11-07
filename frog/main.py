@@ -32,10 +32,12 @@ import gi
 gi.require_version('Gtk', '3.0')
 gi.require_version('Granite', '1.0')
 gi.require_version('Handy', '1')
+gi.require_version('Notify', '0.7')
 
-from gi.repository import Gtk, Gio, Granite
+from gi.repository import Gtk, Gio, Granite, GObject
 from .settings import Settings
 from .window import FrogWindow
+from .shortcut import  get_shortcut_text
 
 
 class Application(Gtk.Application):
@@ -44,7 +46,7 @@ class Application(Gtk.Application):
 
     def __init__(self):
         super().__init__(application_id='com.github.tenderowl.frog',
-                         flags=Gio.ApplicationFlags.FLAGS_NONE)
+                         flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE)
 
         # Init GSettings
         self.settings = Settings.new()
@@ -70,6 +72,20 @@ class Application(Gtk.Application):
         self.gtk_settings.props.gtk_application_prefer_dark_theme = \
             self.granite_settings.props.prefers_color_scheme == Granite.SettingsColorScheme.DARK
 
+    def do_command_line(self, command_line):
+            if "--shortcut" in command_line.get_arguments():
+
+                get_shortcut_text(self.settings)
+
+                winOpen = self.props.active_window
+                if not winOpen:
+                    # If no Instance was opend before
+                    # Wait for the Clipboard to store the text then exit
+                    GObject.timeout_add(500, self.quit)
+                return 0
+
+            self.activate()
+            return 0
 
 def main(version):
     app = Application()
