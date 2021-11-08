@@ -9,3 +9,8 @@ Type=Application
 Categories=GTK;Utility;Office;
 StartupNotify=true
 Keywords=OCR;Text;Extraction;
+Actions=extractToClipboard;
+
+[Desktop Action extractToClipboard]
+Name=Extract text from any image, video or web page directly to your clipboard
+Exec=frog --extractToClipboard

@@ -34,7 +34,7 @@ gi.require_version('Granite', '1.0')
 gi.require_version('Handy', '1')
 gi.require_version('Notify', '0.7')
 
-from gi.repository import Gtk, Gio, Granite, GObject
+from gi.repository import Gtk, Gio, Granite, GObject, GLib
 from .settings import Settings
 from .window import FrogWindow
 from .extractToClipboard import  get_shortcut_text
@@ -51,7 +51,20 @@ class Application(Gtk.Application):
         # Init GSettings
         self.settings = Settings.new()
 
+        # create command line option entries
+        shortcut_entry = GLib.OptionEntry()
+        shortcut_entry.long_name = 'extractToClipboard'
+        shortcut_entry.short_name = ord('e')
+        shortcut_entry.flags = 0
+        shortcut_entry.arg = GLib.OptionArg.NONE
+        shortcut_entry.arg_date = None
+        shortcut_entry.description = _('Extract directly into the clipboard')
+        shortcut_entry.arg_description = None
+
+        self.add_main_option_entries([shortcut_entry])
+
     def do_activate(self):
+
         self.granite_settings = Granite.Settings.get_default()
         self.gtk_settings = Gtk.Settings.get_default()
 
@@ -73,19 +86,20 @@ class Application(Gtk.Application):
             self.granite_settings.props.prefers_color_scheme == Granite.SettingsColorScheme.DARK
 
     def do_command_line(self, command_line):
-            if "--shortcut" in command_line.get_arguments():
+        options = command_line.get_options_dict()
+        if options.contains("extractToClipboard"):
 
-                get_shortcut_text(self.settings)
+            get_shortcut_text(self.settings)
 
-                winOpen = self.props.active_window
-                if not winOpen:
-                    # If no Instance was opend before
-                    # Wait for the Clipboard to store the text then exit
-                    self.quit()
-                return 0
-
-            self.activate()
+            winOpen = self.props.active_window
+            if not winOpen:
+                # If no Instance was opend before
+                # Wait for the Clipboard to store the text then exit
+                self.quit()
             return 0
+
+        self.activate()
+        return 0
 
 def main(version):
     app = Application()
