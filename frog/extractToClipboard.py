@@ -35,6 +35,8 @@ from gi.repository import Notify
 from .config import RESOURCE_PREFIX
 from .screenshot_backend import ScreenshotBackend
 
+
+
 import time
 
 def get_shortcut_text(settings: Gio.Settings) -> None:
@@ -63,15 +65,11 @@ def get_shortcut_text(settings: Gio.Settings) -> None:
         # Copy to Clipboard
         clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
 
-        clipboard.set_text("",-1)
-        clipboard.store()
-
         clipboard.set_text(text,-1)
         clipboard.store()
 
         Notify.init("Text copied")
-        notification = Notify.Notification.new(text)
-
+        notification = Notify.Notification.new(clipboard.wait_for_text())
 
     icon = Pixbuf.new_from_resource_at_scale(
         f'{RESOURCE_PREFIX}/icons/com.github.tenderowl.frog.svg',
