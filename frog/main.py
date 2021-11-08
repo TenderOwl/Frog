@@ -87,15 +87,9 @@ class Application(Gtk.Application):
 
     def do_command_line(self, command_line):
         options = command_line.get_options_dict()
+
         if options.contains("extractToClipboard"):
-
             get_shortcut_text(self.settings)
-
-            winOpen = self.props.active_window
-            if not winOpen:
-                # If no Instance was opend before
-                # Wait for the Clipboard to store the text then exit
-                self.quit()
             return 0
 
         self.activate()
