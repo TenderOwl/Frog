@@ -37,7 +37,7 @@ gi.require_version('Notify', '0.7')
 from gi.repository import Gtk, Gio, Granite, GObject
 from .settings import Settings
 from .window import FrogWindow
-from .shortcut import  get_shortcut_text
+from .extractToClipboard import  get_shortcut_text
 
 
 class Application(Gtk.Application):

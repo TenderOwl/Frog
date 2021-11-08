@@ -1,4 +1,4 @@
-# shortcut.py
+# extractToClipboard.py
 #
 # Copyright 2021 FilePhil
 #
@@ -63,6 +63,8 @@ def get_shortcut_text(settings: Gio.Settings) -> None:
         # Copy to Clipboard
         clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
 
+        clipboard.set_text("",-1)
+        clipboard.store()
 
         clipboard.set_text(text,-1)
         clipboard.store()
