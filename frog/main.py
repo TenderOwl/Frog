@@ -37,7 +37,7 @@ gi.require_version('Notify', '0.7')
 from gi.repository import Gtk, Gio, Granite, GObject, GLib
 from .settings import Settings
 from .window import FrogWindow
-from .extractToClipboard import  get_shortcut_text
+from .extract_to_clipboard import  get_shortcut_text
 
 
 class Application(Gtk.Application):
@@ -53,7 +53,7 @@ class Application(Gtk.Application):
 
         # create command line option entries
         shortcut_entry = GLib.OptionEntry()
-        shortcut_entry.long_name = 'extractToClipboard'
+        shortcut_entry.long_name = 'extract_to_clipboard'
         shortcut_entry.short_name = ord('e')
         shortcut_entry.flags = 0
         shortcut_entry.arg = GLib.OptionArg.NONE
@@ -88,7 +88,7 @@ class Application(Gtk.Application):
     def do_command_line(self, command_line):
         options = command_line.get_options_dict()
 
-        if options.contains("extractToClipboard"):
+        if options.contains("extract_to_clipboard"):
             get_shortcut_text(self.settings)
             return 0
 

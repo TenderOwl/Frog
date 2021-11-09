@@ -1,4 +1,4 @@
-# extractToClipboard.py
+# extract_to_clipboard.py
 #
 # Copyright 2021 FilePhil
 #
@@ -25,6 +25,7 @@
 # holders shall not be used in advertising or otherwise to promote the sale,
 # use or other dealings in this Software without prior written
 # authorization.
+import time
 
 from gettext import gettext as _
 
@@ -34,10 +35,6 @@ from gi.repository import Notify
 
 from .config import RESOURCE_PREFIX
 from .screenshot_backend import ScreenshotBackend
-
-
-
-import time
 
 def get_shortcut_text(settings: Gio.Settings) -> None:
     """ Extract the text from the screenshot and copy it directly into the Clipboad."""
