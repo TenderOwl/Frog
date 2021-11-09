@@ -136,6 +136,8 @@ class FrogWindow(Handy.ApplicationWindow):
             self.lang_combo.append(language_manager.get_language_code(lang), lang)
         if self.active_lang:
             self.lang_combo.set_active_id(self.active_lang.rsplit('+')[0])
+        else:
+            self.lang_combo.set_active(0)
 
         if not downloaded_languages:
             self.lang_combo.append("-1", _("No languages"))
