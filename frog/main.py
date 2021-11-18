@@ -32,10 +32,12 @@ import gi
 gi.require_version('Gtk', '3.0')
 gi.require_version('Granite', '1.0')
 gi.require_version('Handy', '1')
+gi.require_version('Notify', '0.7')
 
-from gi.repository import Gtk, Gio, Granite
+from gi.repository import Gtk, Gio, Granite, GObject, GLib
 from .settings import Settings
 from .window import FrogWindow
+from .extract_to_clipboard import  get_shortcut_text
 
 
 class Application(Gtk.Application):
@@ -44,12 +46,25 @@ class Application(Gtk.Application):
 
     def __init__(self):
         super().__init__(application_id='com.github.tenderowl.frog',
-                         flags=Gio.ApplicationFlags.FLAGS_NONE)
+                         flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE)
 
         # Init GSettings
         self.settings = Settings.new()
 
+        # create command line option entries
+        shortcut_entry = GLib.OptionEntry()
+        shortcut_entry.long_name = 'extract_to_clipboard'
+        shortcut_entry.short_name = ord('e')
+        shortcut_entry.flags = 0
+        shortcut_entry.arg = GLib.OptionArg.NONE
+        shortcut_entry.arg_date = None
+        shortcut_entry.description = _('Extract directly into the clipboard')
+        shortcut_entry.arg_description = None
+
+        self.add_main_option_entries([shortcut_entry])
+
     def do_activate(self):
+
         self.granite_settings = Granite.Settings.get_default()
         self.gtk_settings = Gtk.Settings.get_default()
 
@@ -70,6 +85,15 @@ class Application(Gtk.Application):
         self.gtk_settings.props.gtk_application_prefer_dark_theme = \
             self.granite_settings.props.prefers_color_scheme == Granite.SettingsColorScheme.DARK
 
+    def do_command_line(self, command_line):
+        options = command_line.get_options_dict()
+
+        if options.contains("extract_to_clipboard"):
+            get_shortcut_text(self.settings)
+            return 0
+
+        self.activate()
+        return 0
 
 def main(version):
     app = Application()

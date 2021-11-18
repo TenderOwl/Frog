@@ -13,6 +13,9 @@
         "--system-talk-name=org.freedesktop.Accounts",
         "--filesystem=xdg-pictures"
     ],
+      "x-run-args" : [
+
+    ],
     "cleanup" : [
         "/include",
         "/lib/pkgconfig",
