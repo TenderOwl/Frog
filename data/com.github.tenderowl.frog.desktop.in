@@ -9,8 +9,8 @@ Type=Application
 Categories=GTK;Utility;Office;
 StartupNotify=true
 Keywords=OCR;Text;Extraction;
-Actions=extract_to_clipboard;
+Actions=extractToClipboard;
 
-[Desktop Action extract_to_clipboard]
+[Desktop Action extractToClipboard]
 Name=Extract Text to your Clipboard
 Exec=frog --extract_to_clipboard
