@@ -134,12 +134,20 @@ class FrogWindow(Handy.ApplicationWindow):
         downloaded_languages = language_manager.get_downloaded_languages(force=True)
         for lang in downloaded_languages:
             self.lang_combo.append(language_manager.get_language_code(lang), lang)
+
+        self.lang_combo.set_active(0)
+
         if self.active_lang:
             self.lang_combo.set_active_id(self.active_lang.rsplit('+')[0])
+
+        # Show "Grab the area" button if any language is available
+        self.welcome_widget.set_item_visible(0, True)
 
         if not downloaded_languages:
             self.lang_combo.append("-1", _("No languages"))
             self.lang_combo.set_active_id("-1")
+            # Hide "Grab the area" button if not languages is available
+            self.welcome_widget.set_item_visible(0, False)
 
     def on_language_change(self, widget: Gtk.ComboBoxText) -> None:
         active_id = self.lang_combo.get_active_id()
