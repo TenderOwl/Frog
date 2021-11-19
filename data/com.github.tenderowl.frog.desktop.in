@@ -12,5 +12,5 @@ Keywords=OCR;Text;Extraction;
 Actions=extractToClipboard;
 
 [Desktop Action extractToClipboard]
-Name=Extract Text to your Clipboard
+Name=Extract Text to the Clipboard
 Exec=frog --extract_to_clipboard
