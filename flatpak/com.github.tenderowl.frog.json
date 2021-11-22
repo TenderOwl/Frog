@@ -13,9 +13,6 @@
         "--system-talk-name=org.freedesktop.Accounts",
         "--filesystem=xdg-pictures"
     ],
-      "x-run-args" : [
-
-    ],
     "cleanup" : [
         "/include",
         "/lib/pkgconfig",
@@ -69,8 +66,8 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://github.com/TenderOwl/frog.git"
+                    "type" : "dir",
+                    "path" : ".."
                 }
             ]
         }
