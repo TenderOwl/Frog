@@ -55,8 +55,8 @@
                 },
                 {
                     "type" : "file",
-                    "url" : "https://files.pythonhosted.org/packages/8f/7d/1e9c2d8989c209edfd10f878da1af956059a1caab498e5bc34fa11b83f71/Pillow-8.3.1.tar.gz",
-                    "sha256" : "2cac53839bfc5cece8fdbe7f084d5e3ee61e1303cccc86511d351adcb9e2c792"
+                    "url" : "https://files.pythonhosted.org/packages/7d/2a/2fc11b54e2742db06297f7fa7f420a0e3069fdcf0e4b57dfec33f0b08622/Pillow-8.4.0.tar.gz",
+                    "sha256" : "b8e2f83c56e141920c39464b852de3719dfbfb6e3c99a2d8da0edf4fb33176ed"
                 }
             ]
         },
@@ -66,8 +66,8 @@
             "buildsystem" : "meson",
             "sources" : [
                 {
-                    "type" : "dir",
-                    "path" : ".."
+                    "type" : "git",
+                    "url" : "https://github.com/TenderOwl/frog.git"
                 }
             ]
         }
