@@ -93,6 +93,8 @@ class FrogWindow(Handy.ApplicationWindow):
         self.text_scrollview.remove(self.shot_text)
         self.text_scrollview.add(self.shot_text)
 
+        self.text_shot_btn.set_tooltip_markup(Granite.markup_accel_tooltip(('<Control>g', ), "Take a shot"))
+
         self.main_stack.add_named(self.welcome_widget, 'welcome')
         self.main_stack.set_visible_child_name("welcome")
 

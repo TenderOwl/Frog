@@ -22,6 +22,7 @@ Grab the image and get the text.
 </figure>
 </div>
 
+
 ## See it in action
 
 <div align="center">
@@ -32,11 +33,8 @@ Grab the image and get the text.
 
 ## Get it from the elementary OS AppCenter!
 
-Will be available soon!
+[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.tenderowl.frog)
 
-## Get it from Flathub!
-
-Will be available soon!
 
 ## :tada: Support
 If you like Frog and you want to support its development, consider donating via Liberapay:  

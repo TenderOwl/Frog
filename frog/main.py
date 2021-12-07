@@ -27,6 +27,9 @@
 # authorization.
 
 import sys
+from gettext import gettext as _
+from typing import Optional
+
 import gi
 
 gi.require_version('Gtk', '3.0')
@@ -34,10 +37,10 @@ gi.require_version('Granite', '1.0')
 gi.require_version('Handy', '1')
 gi.require_version('Notify', '0.7')
 
-from gi.repository import Gtk, Gio, Granite, GObject, GLib
+from gi.repository import Gtk, Gio, Granite, GLib
 from .settings import Settings
 from .window import FrogWindow
-from .extract_to_clipboard import  get_shortcut_text
+from .extract_to_clipboard import get_shortcut_text
 
 
 class Application(Gtk.Application):
@@ -60,6 +63,11 @@ class Application(Gtk.Application):
         shortcut_entry.arg_date = None
         shortcut_entry.description = _('Extract directly into the clipboard')
         shortcut_entry.arg_description = None
+
+        shot_action: Gio.SimpleAction = Gio.SimpleAction.new("get_screenshot", None)
+        shot_action.connect("activate", self.get_screenshot)
+        self.add_action(shot_action)
+        self.set_accels_for_action("app.get_screenshot", ("<Control>g",))
 
         self.add_main_option_entries([shortcut_entry])
 
@@ -94,6 +102,14 @@ class Application(Gtk.Application):
 
         self.activate()
         return 0
+
+    def get_screenshot(self, simple_action: Gio.SimpleAction, parameter: Optional[GLib.Variant]):
+        self.do_activate()
+        win: FrogWindow = self.props.active_window
+        win.present()
+
+        win.get_screenshot()
+
 
 def main(version):
     app = Application()
