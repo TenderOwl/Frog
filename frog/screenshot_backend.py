@@ -40,10 +40,19 @@ try:
 except ImportError:
     import Image
 import pytesseract
+from pyzbar.pyzbar import decode
 
 
 class ScreenshotBackend(GObject.GObject):
+    """
+    ScreenshotBackend class
+
+    This class is used to capture screenshots and recognize text from them.
+    """
     def __init__(self):
+        """
+        Initialize ScreenshotBackend class
+        """
         GObject.GObject.__init__(self)
 
         self.bus = SessionBus()
@@ -52,18 +61,40 @@ class ScreenshotBackend(GObject.GObject):
                                   "/org/gnome/Shell/Screenshot")
 
     def capture(self, lang: str) -> Optional[str]:
+        """
+        Captures screenshot using gnome-screenshot, extract text from it and returns it.
+
+        If image contains QR code, it will be decoded and returned.
+        Otherwise, it will be treated as image with text and processed by pytesseract and returned.
+        
+        If image is not recognized, returns None.
+
+        :param lang: language to recognize text
+        """
         if not self.proxy:
             return
         x, y, width, height = self.proxy.SelectArea()
         # print(f'SELECTED_AREA: {x}:{y} of {width}:{height}')
 
-        result, filename = self.proxy.ScreenshotArea(x, y, width, height, True, 'frog-text-recognition')
+        result, filename = self.proxy.ScreenshotArea(x, y, width, height, True,
+                                                     'frog-text-recognition')
 
         if result:
-            # Simple image to string
             try:
-                text = pytesseract.image_to_string(filename, lang=lang, config=tessdata_dir_config)
+                # Try to find a QR code in the image
+                data = decode(Image.open(filename))
+                print(f"Image data:\n{data}")
+                if len(data) > 0:
+                    return data[0].data.decode('utf-8')
+
+                # If no QR code found, try to recognize text
+                text = pytesseract.image_to_string(filename,
+                                                   lang=lang,
+                                                   config=tessdata_dir_config)
                 return text.strip()
+
+            except Exception as e:
+                print(f'Failed to decode QR code: {e}')
             finally:
                 # Do some cleanup in any case
                 os.remove(filename)

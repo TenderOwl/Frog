@@ -1,10 +1,10 @@
 {
-    "app-id" : "com.github.tenderowl.frog",
-    "runtime" : "io.elementary.Platform",
-    "runtime-version" : "6",
-    "sdk" : "io.elementary.Sdk",
-    "command" : "frog",
-    "finish-args" : [
+    "app-id": "com.github.tenderowl.frog",
+    "runtime": "io.elementary.Platform",
+    "runtime-version": "6",
+    "sdk": "io.elementary.Sdk",
+    "command": "frog",
+    "finish-args": [
         "--share=network",
         "--share=ipc",
         "--socket=fallback-x11",
@@ -13,7 +13,7 @@
         "--system-talk-name=org.freedesktop.Accounts",
         "--filesystem=xdg-pictures"
     ],
-    "cleanup" : [
+    "cleanup": [
         "/include",
         "/lib/pkgconfig",
         "/man",
@@ -24,55 +24,100 @@
         "*.la",
         "*.a"
     ],
-    "modules" : [
+    "modules": [
         "leptonica.json",
         "tesseract.json",
         {
-            "name" : "python3-pydbus",
-            "buildsystem" : "simple",
-            "build-commands" : [
+            "name": "python3-pydbus",
+            "buildsystem": "simple",
+            "build-commands": [
                 "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pydbus\" --no-build-isolation"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "file",
-                    "url" : "https://files.pythonhosted.org/packages/58/56/3e84f2c1f2e39b9ea132460183f123af41e3b9c8befe222a35636baa6a5a/pydbus-0.6.0.tar.gz",
-                    "sha256" : "4207162eff54223822c185da06c1ba8a34137a9602f3da5a528eedf3f78d0f2c"
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/58/56/3e84f2c1f2e39b9ea132460183f123af41e3b9c8befe222a35636baa6a5a/pydbus-0.6.0.tar.gz",
+                    "sha256": "4207162eff54223822c185da06c1ba8a34137a9602f3da5a528eedf3f78d0f2c"
                 }
             ]
         },
         {
-            "name" : "python3-pytesseract",
-            "buildsystem" : "simple",
-            "build-commands" : [
+            "name": "python3-pytesseract",
+            "buildsystem": "simple",
+            "build-commands": [
                 "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pytesseract\" --no-build-isolation"
             ],
-            "sources" : [
+            "sources": [
                 {
-                    "type" : "file",
-                    "url" : "https://files.pythonhosted.org/packages/a3/c9/d6e8903482bd6fb994c32722831d15842dd8b614f94ad9ca735807252671/pytesseract-0.3.8.tar.gz",
-                    "sha256" : "6148a01e4375760862e8f56ea718e22b5d13b281454df46ea8dac9807793fc5a"
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/a3/c9/d6e8903482bd6fb994c32722831d15842dd8b614f94ad9ca735807252671/pytesseract-0.3.8.tar.gz",
+                    "sha256": "6148a01e4375760862e8f56ea718e22b5d13b281454df46ea8dac9807793fc5a"
                 },
                 {
-                    "type" : "file",
-                    "url" : "https://files.pythonhosted.org/packages/7d/2a/2fc11b54e2742db06297f7fa7f420a0e3069fdcf0e4b57dfec33f0b08622/Pillow-8.4.0.tar.gz",
-                    "sha256" : "b8e2f83c56e141920c39464b852de3719dfbfb6e3c99a2d8da0edf4fb33176ed"
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/7d/2a/2fc11b54e2742db06297f7fa7f420a0e3069fdcf0e4b57dfec33f0b08622/Pillow-8.4.0.tar.gz",
+                    "sha256": "b8e2f83c56e141920c39464b852de3719dfbfb6e3c99a2d8da0edf4fb33176ed"
                 }
             ]
         },
         {
-            "name" : "frog",
-            "builddir" : true,
-            "buildsystem" : "meson",
-            "sources" : [
+            "name": "zbar",
+            "config-opts": [
+                "--without-qt",
+                "--without-qt5",
+                "--without-gtk",
+                "--without-xv",
+                "--without-imagemagick",
+                "--without-dbus",
+                "--disable-video",
+                "--without-java",
+                "--without-python",
+                "--with-doc=no",
+                "--disable-doc",
+                "--with-introspection=no",
+                "--enable-codes=qrcode"
+            ],
+            "sources": [{
+                    "type": "archive",
+                    "url": "https://linuxtv.org/downloads/zbar/zbar-0.23.tar.gz",
+                    "sha256": "ac52763a7dd6ddc53ca6cd75ccee14f7abf6ae46ecb31137d025af123edd33bf"
+                },
                 {
-                    "type" : "git",
-                    "url" : "https://github.com/TenderOwl/frog.git"
+                    "type": "script",
+                    "dest-filename": "autogen.sh",
+                    "commands": [
+                        "autoreconf -vfi -W none"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "python3-pyzbar",
+            "buildsystem": "simple",
+            "build-commands": [
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyzbar\" --no-build-isolation"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/46/7e/d2ad702facc47c0b3106a494f5dfbc3f296aab7a07dac05d1f30bdad0fab/pyzbar-0.1.8-py2.py3-none-any.whl",
+                    "sha256": "0e204b904e093e5e75aa85e0203bb0e02888105732a509b51f31cff400f34265"
+                }
+            ]
+        },
+        {
+            "name": "frog",
+            "builddir": true,
+            "buildsystem": "meson",
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": ".."
                 }
             ]
         }
     ],
-    "build-options" : {
-        "env" : {        }
+    "build-options": {
+        "env": {}
     }
 }
