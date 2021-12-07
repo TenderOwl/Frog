@@ -58,6 +58,30 @@
     <property name="icon-name">edit-copy</property>
     <property name="icon_size">3</property>
   </object>
+  <object class="GtkListStore" id="language_model">
+    <columns>
+      <!-- column-name code -->
+      <column type="gchararray"/>
+      <!-- column-name title -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">eng</col>
+        <col id="1" translatable="yes">English</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">rus</col>
+        <col id="1" translatable="yes">Russian</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkImage" id="shot_image">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">image-crop</property>
+    <property name="icon_size">3</property>
+  </object>
   <template class="FrogWindow" parent="HdyApplicationWindow">
     <property name="width-request">364</property>
     <property name="height-request">264</property>
@@ -117,7 +141,7 @@
                     <property name="can-focus">False</property>
                     <property name="transition-type">crossfade</property>
                     <child>
-                      <object class="GtkScrolledWindow">
+                      <object class="GtkScrolledWindow" id="text_scrollview">
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="double-buffered">False</property>
@@ -125,21 +149,7 @@
                         <property name="vexpand">True</property>
                         <property name="shadow-type">in</property>
                         <child>
-                          <object class="GtkViewport">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <child>
-                              <object class="GtkTextView" id="shot_text">
-                                <property name="visible">True</property>
-                                <property name="can-focus">True</property>
-                                <property name="left-margin">8</property>
-                                <property name="right-margin">8</property>
-                                <property name="top-margin">8</property>
-                                <property name="bottom-margin">8</property>
-                                <property name="input-hints">GTK_INPUT_HINT_NO_SPELLCHECK | GTK_INPUT_HINT_NO_EMOJI | GTK_INPUT_HINT_NONE</property>
-                              </object>
-                            </child>
-                          </object>
+                          <placeholder/>
                         </child>
                       </object>
                       <packing>
@@ -249,28 +259,4 @@
       </object>
     </child>
   </template>
-  <object class="GtkListStore" id="language_model">
-    <columns>
-      <!-- column-name code -->
-      <column type="gchararray"/>
-      <!-- column-name title -->
-      <column type="gchararray"/>
-    </columns>
-    <data>
-      <row>
-        <col id="0" translatable="yes">eng</col>
-        <col id="1" translatable="yes">English</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">rus</col>
-        <col id="1" translatable="yes">Russian</col>
-      </row>
-    </data>
-  </object>
-  <object class="GtkImage" id="shot_image">
-    <property name="visible">True</property>
-    <property name="can-focus">False</property>
-    <property name="icon-name">image-crop</property>
-    <property name="icon_size">3</property>
-  </object>
 </interface>

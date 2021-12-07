@@ -49,9 +49,10 @@ class FrogWindow(Handy.ApplicationWindow):
     spinner: Gtk.Spinner = Gtk.Template.Child()
     main_overlay: Gtk.Overlay = Gtk.Template.Child()
     main_stack: Gtk.Stack = Gtk.Template.Child()
+    text_scrollview: Gtk.ScrolledWindow = Gtk.Template.Child()
     lang_combo: Gtk.ComboBoxText = Gtk.Template.Child()
     # shot_btn: Gtk.Button = Gtk.Template.Child()
-    shot_text: Gtk.TextView = Gtk.Template.Child()
+    # shot_text: Gtk.TextView = Gtk.Template.Child()
     toolbox: Gtk.Revealer = Gtk.Template.Child()
     text_shot_btn: Gtk.Button = Gtk.Template.Child()
     text_clear_btn: Gtk.Button = Gtk.Template.Child()
@@ -80,6 +81,18 @@ class FrogWindow(Handy.ApplicationWindow):
         self.welcome_widget.connect('activated', self.welcome_action_activated)
         self.welcome_widget.set_visible(True)
         self.welcome_widget.show_all()
+
+        self.shot_text = Granite.HyperTextView()
+        self.shot_text.set_editable(False)
+        self.shot_text.set_visible(True)
+        self.shot_text.set_left_margin(8)
+        self.shot_text.set_right_margin(8)
+        self.shot_text.set_top_margin(8)
+        self.shot_text.set_bottom_margin(8)
+
+        self.text_scrollview.remove(self.shot_text)
+        self.text_scrollview.add(self.shot_text)
+
         self.main_stack.add_named(self.welcome_widget, 'welcome')
         self.main_stack.set_visible_child_name("welcome")
 
