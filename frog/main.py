@@ -39,8 +39,7 @@ gi.require_version('Granite', '1.0')
 gi.require_version('Handy', '1')
 gi.require_version('Notify', '0.7')
 
-from gi.repository import Gtk, Gio, Granite, GLib
-from .config import tessdata_dir
+from gi.repository import Gtk, Gio, Granite, GLib, Notify
 from .extract_to_clipboard import get_shortcut_text
 from .settings import Settings
 from .window import FrogWindow
@@ -59,6 +58,9 @@ class Application(Gtk.Application):
 
         # Initialize tesseract data files storage.
         language_manager.init_tessdata()
+
+        # Initialized libnotify.
+        Notify.init("Frog")
 
         # create command line option entries
         shortcut_entry = GLib.OptionEntry()

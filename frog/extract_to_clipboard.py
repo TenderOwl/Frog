@@ -26,18 +26,19 @@
 # use or other dealings in this Software without prior written
 # authorization.
 import time
-
 from gettext import gettext as _
 
-from gi.overrides.GdkPixbuf import Pixbuf
-from gi.repository import Gtk, Handy, Gio, Gdk, GLib, Granite
-from gi.repository import Notify
+from gi.repository.GdkPixbuf import Pixbuf
+from gi.repository import Gtk, Gio, Gdk, Notify
 
 from .config import RESOURCE_PREFIX
 from .screenshot_backend import ScreenshotBackend
 
+
 def get_shortcut_text(settings: Gio.Settings) -> None:
-    """ Extract the text from the screenshot and copy it directly into the Clipboad."""
+    """
+    Extract the text from the screenshot and copy it directly into the Clipboard.
+    """
 
     # Initialize screenshot backend
     backend = ScreenshotBackend()
@@ -45,46 +46,45 @@ def get_shortcut_text(settings: Gio.Settings) -> None:
         backend.init_proxy()
     except Exception as e:
         print(e)
-        show_notification("Failed Attempt", "Failed to initialize screenshot service.")
+        show_notification(_("Failed Attempt"), _("Failed to initialize screenshot service."))
         return
 
-    # get the used languges
+    # get the used languages
     extra_lang = settings.get_string("extra-language")
-    active_lang =  settings.get_string("active-language")
+    active_lang = settings.get_string("active-language")
 
-    languge  = f"{active_lang}+{extra_lang}"
+    language = f"{active_lang}+{extra_lang}"
 
     # Capture the text
     try:
-        text = backend.capture(languge)
-
-    except Exception as e:
+        text = backend.capture(language)
+    except Exception:
         text = ""
 
-    if text=="" or type(text) != str:
-        show_notification("No Text found")
+    if not isinstance(text, str) or not text:
+        show_notification(_("No text found"))
     else:
         # Copy to Clipboard
         clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
 
-        clipboard.set_text(text,-1)
+        clipboard.set_text(text, -1)
         clipboard.store()
 
-        show_notification("Text copied", clipboard.wait_for_text())
-
+        show_notification(_("Text copied"), clipboard.wait_for_text())
 
     # Wait for the Clipboard to store the text
     time.sleep(1)
 
 
-def show_notification(title,description=""):
-    """ Show a Notification with the Application Logo. """
+def show_notification(title, description=""):
+    """
+    Show a Notification with the Application Logo.
+    """
 
     icon = Pixbuf.new_from_resource_at_scale(
         f"{RESOURCE_PREFIX}/icons/com.github.tenderowl.frog.svg",
         128, 128, True
     )
-    Notify.init(title)
     notification = Notify.Notification.new(description)
 
     notification.set_icon_from_pixbuf(icon)
