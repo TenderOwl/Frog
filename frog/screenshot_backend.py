@@ -27,11 +27,11 @@
 # authorization.
 
 import os
-
+from gettext import gettext as _
 from typing import Optional
 
-from pydbus import SessionBus
 from gi.repository import GObject, Gio
+from pydbus import SessionBus
 
 from .config import tessdata_dir_config
 
@@ -49,6 +49,12 @@ class ScreenshotBackend(GObject.GObject):
 
     This class is used to capture screenshots and recognize text from them.
     """
+
+    __gtype_name__ = 'ScreenshotBackend'
+    __gsignals__ = {
+        'error': (GObject.SignalFlags.ACTION, None, (str,)),
+    }
+
     def __init__(self):
         """
         Initialize ScreenshotBackend class
@@ -57,6 +63,9 @@ class ScreenshotBackend(GObject.GObject):
 
         self.bus = SessionBus()
         self.cancelable = Gio.Cancellable.new()
+        self.proxy = None
+
+    def init_proxy(self):
         self.proxy = self.bus.get("org.gnome.Shell.Screenshot",
                                   "/org/gnome/Shell/Screenshot")
 
@@ -68,13 +77,13 @@ class ScreenshotBackend(GObject.GObject):
         Otherwise, it will be treated as image with text and processed by pytesseract and returned.
         
         If image is not recognized, returns None.
-
-        :param lang: language to recognize text
         """
         if not self.proxy:
+            self.emit('error', _('Screenshot service unavailable.'))
             return
+
+        # Get selected area
         x, y, width, height = self.proxy.SelectArea()
-        # print(f'SELECTED_AREA: {x}:{y} of {width}:{height}')
 
         result, filename = self.proxy.ScreenshotArea(x, y, width, height, True,
                                                      'frog-text-recognition')
@@ -83,7 +92,6 @@ class ScreenshotBackend(GObject.GObject):
             try:
                 # Try to find a QR code in the image
                 data = decode(Image.open(filename))
-                print(f"Image data:\n{data}")
                 if len(data) > 0:
                     return data[0].data.decode('utf-8')
 
@@ -94,7 +102,7 @@ class ScreenshotBackend(GObject.GObject):
                 return text.strip()
 
             except Exception as e:
-                print(f'Failed to decode QR code: {e}')
+                self.emit('error', f'Failed to decode QR code.')
             finally:
                 # Do some cleanup in any case
                 os.remove(filename)

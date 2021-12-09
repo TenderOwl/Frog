@@ -48,6 +48,7 @@ class FrogWindow(Handy.ApplicationWindow):
     toast: Granite.WidgetsToast
     spinner: Gtk.Spinner = Gtk.Template.Child()
     main_overlay: Gtk.Overlay = Gtk.Template.Child()
+    main_box: Gtk.Box = Gtk.Template.Child()
     main_stack: Gtk.Stack = Gtk.Template.Child()
     text_scrollview: Gtk.ScrolledWindow = Gtk.Template.Child()
     lang_combo: Gtk.ComboBoxText = Gtk.Template.Child()
@@ -72,6 +73,16 @@ class FrogWindow(Handy.ApplicationWindow):
         self.main_overlay.add_overlay(self.toast)
         self.main_overlay.show_all()
 
+        self.infobar = Gtk.InfoBar(visible=True, revealed=False)
+        self.infobar.set_show_close_button(True)
+        self.infobar.connect('response', self.on_infobar_response)
+
+        infobox: Gtk.Box = self.infobar.get_content_area()
+        self.infobar_label = Gtk.Label('', visible=True)
+        infobox.add(self.infobar_label)
+
+        self.main_box.add(self.infobar) #, False, True, 2)
+
         # Add Granite widget - Welcome screen.
         self.welcome_widget: Granite.WidgetsWelcome = Granite.WidgetsWelcome.new(_("Frog"),
                                                                                  _("Extract text from anywhere"))
@@ -93,7 +104,7 @@ class FrogWindow(Handy.ApplicationWindow):
         self.text_scrollview.remove(self.shot_text)
         self.text_scrollview.add(self.shot_text)
 
-        self.text_shot_btn.set_tooltip_markup(Granite.markup_accel_tooltip(('<Control>g', ), "Take a shot"))
+        self.text_shot_btn.set_tooltip_markup(Granite.markup_accel_tooltip(('<Control>g',), _("Take a shot")))
 
         self.main_stack.add_named(self.welcome_widget, 'welcome')
         self.main_stack.set_visible_child_name("welcome")
@@ -117,6 +128,12 @@ class FrogWindow(Handy.ApplicationWindow):
 
         # Initialize screenshot backend
         self.backend = ScreenshotBackend()
+        self.backend.connect('error', self.on_screenshot_error)
+        try:
+            self.backend.init_proxy()
+        except Exception as e:
+            print(e)
+            self.on_screenshot_error(self, _('Failed to initialize screenshot service.'))
 
         # Connect signals
         self.text_shot_btn.connect('clicked', self.text_shot_btn_clicked)
@@ -200,12 +217,24 @@ class FrogWindow(Handy.ApplicationWindow):
 
     def on_shot_error(self, error) -> None:
         print(f"ERROR: {error}")
+        if error:
+            self.on_screenshot_error(error)
         self.present()
+
+    def on_screenshot_error(self, sender, error) -> None:
+        self.infobar_label.set_text(error)
+        self.infobar.set_revealed(True)
+        self.infobar.set_visible(True)
+        self.infobar.set_message_type(Gtk.MessageType.ERROR)
 
     def on_configure_event(self, window, event: Gdk.EventConfigure):
         if not self.delayed_state:
             GLib.timeout_add(500, self.save_window_state, window)
             self.delayed_state = True
+
+    def on_infobar_response(self, infobar: Gtk.InfoBar, response_type: Gtk.ResponseType):
+        if response_type == Gtk.ResponseType.CLOSE:
+            self.infobar.set_revealed(False)
 
     def save_window_state(self, user_data) -> bool:
         self.current_size = user_data.get_size()
