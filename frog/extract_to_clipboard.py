@@ -56,8 +56,7 @@ def get_shortcut_text(settings: Gio.Settings) -> None:
         text = ""
 
     if text=="" or type(text) != str:
-        Notify.init("No Text found")
-        notification = Notify.Notification.new("")
+        show_notification("No Text found")
     else:
         # Copy to Clipboard
         clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
@@ -65,14 +64,22 @@ def get_shortcut_text(settings: Gio.Settings) -> None:
         clipboard.set_text(text,-1)
         clipboard.store()
 
-        Notify.init("Text copied")
-        notification = Notify.Notification.new(clipboard.wait_for_text())
+        show_notification("Text copied", clipboard.wait_for_text())
 
-    icon = Pixbuf.new_from_resource_at_scale(
-        f'{RESOURCE_PREFIX}/icons/com.github.tenderowl.frog.svg',
-        128, 128, True
-    )
-    notification.set_icon_from_pixbuf(icon)
-    notification.show()
+
     # Wait for the Clipboard to store the text
     time.sleep(1)
+
+
+def show_notification(title,description=""):
+    """ Show a Notification with the Application Logo. """
+
+    icon = Pixbuf.new_from_resource_at_scale(
+        f"{RESOURCE_PREFIX}/icons/com.github.tenderowl.frog.svg",
+        128, 128, True
+    )
+    Notify.init(title)
+    notification = Notify.Notification.new(description)
+
+    notification.set_icon_from_pixbuf(icon)
+    notification.show()
