@@ -32,15 +32,18 @@ from typing import Optional
 
 import gi
 
+from .language_manager import language_manager
+
 gi.require_version('Gtk', '3.0')
 gi.require_version('Granite', '1.0')
 gi.require_version('Handy', '1')
 gi.require_version('Notify', '0.7')
 
 from gi.repository import Gtk, Gio, Granite, GLib
+from .config import tessdata_dir
+from .extract_to_clipboard import get_shortcut_text
 from .settings import Settings
 from .window import FrogWindow
-from .extract_to_clipboard import get_shortcut_text
 
 
 class Application(Gtk.Application):
@@ -53,6 +56,9 @@ class Application(Gtk.Application):
 
         # Init GSettings
         self.settings = Settings.new()
+
+        # Initialize tesseract data files storage.
+        language_manager.init_tessdata()
 
         # create command line option entries
         shortcut_entry = GLib.OptionEntry()

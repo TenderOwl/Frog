@@ -39,6 +39,11 @@ install_data('com.github.tenderowl.frog.gschema.xml',
   install_dir: join_paths(get_option('datadir'), 'glib-2.0/schemas')
 )
 
+# Default tesseract trained model
+install_data('tessdata/eng.traineddata',
+  install_dir: join_paths(get_option('datadir'), 'appdata')
+)
+
 compile_schemas = find_program('glib-compile-schemas', required: false)
 if compile_schemas.found()
   test('Validate schema file', compile_schemas,
@@ -54,3 +59,4 @@ app_resources = gnome.compile_resources(app_id,
     install: true,
     install_dir: pkgdatadir
 )
+

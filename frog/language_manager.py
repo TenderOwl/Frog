@@ -1,6 +1,8 @@
 import os
+import pathlib
 from dataclasses import dataclass
 from gettext import gettext as _
+from shutil import copyfile
 from typing import List
 from urllib import request
 
@@ -148,6 +150,17 @@ class LanguageManager(GObject.GObject):
         self._languages["vie"] = _("Vietnamese")
         self._languages["yid"] = _("Yiddish")
         self._languages["yor"] = _("Yoruba")
+
+    def init_tessdata(self) -> None:
+        if not os.path.exists(tessdata_dir):
+            os.mkdir(tessdata_dir)
+
+        dest_path = os.path.join(tessdata_dir, 'eng.traineddata')
+        source_path = pathlib.Path('/app/share/appdata/eng.traineddata')
+        if os.path.exists(dest_path):
+            return
+
+        copyfile(source_path, dest_path)
 
     def get_available_codes(self):
         return [code for code in sorted(self._languages.keys())]
