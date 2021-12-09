@@ -7,8 +7,7 @@
     <summary>Extract text from anywhere</summary>
     <description>
         <p>Quickly extract text from any source such as images, websites, even video - everywhere you can grab an image
-            shot.
-        </p>
+            shot.  Even if it is encoded in a QR code!</p>
     </description>
 
     <screenshots>
@@ -18,6 +17,17 @@
     </screenshots>
 
     <releases>
+        <release version="0.2.0" timestamp="1639071856">
+            <description>
+                <p>What's new:</p>
+                <ul>
+                    <li>English model included with Frog itself</li>
+                    <li>QR code detection. If one in the selected area - it will be decoded.</li>
+                    <li>New command line shortcut to run with "Extract to clipboard" feature.</li>
+                    <li>Granite.HyperTextView to support QR encoded links</li>
+                </ul>
+            </description>
+        </release>
         <release version="0.1.7" timestamp="1632324626" date="2021-09-22">
             <description>
                 <p>Fix language packs download.</p>
