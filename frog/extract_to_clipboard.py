@@ -41,12 +41,18 @@ def get_shortcut_text(settings: Gio.Settings) -> None:
 
     # Initialize screenshot backend
     backend = ScreenshotBackend()
+    try:
+        backend.init_proxy()
+    except Exception as e:
+        print(e)
+        show_notification("Failed Attempt", "Failed to initialize screenshot service.")
+        return
 
     # get the used languges
     extra_lang = settings.get_string("extra-language")
     active_lang =  settings.get_string("active-language")
 
-    languge  = f'{active_lang}+{extra_lang}'
+    languge  = f"{active_lang}+{extra_lang}"
 
     # Capture the text
     try:
