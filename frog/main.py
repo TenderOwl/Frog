@@ -39,9 +39,8 @@ gi.require_version('Granite', '1.0')
 gi.require_version('Handy', '1')
 gi.require_version('Notify', '0.7')
 
-from gi.repository import Gtk, Gio, Granite, GLib
-from .config import tessdata_dir
-from .extract_to_clipboard import get_shortcut_text
+from gi.repository import Gtk, Gio, Granite, GLib, Notify
+from .extract_to_clipboard import extract_to_clipboard
 from .settings import Settings
 from .window import FrogWindow
 
@@ -60,6 +59,9 @@ class Application(Gtk.Application):
         # Initialize tesseract data files storage.
         language_manager.init_tessdata()
 
+        # Initialized libnotify.
+        Notify.init("Frog")
+
         # create command line option entries
         shortcut_entry = GLib.OptionEntry()
         shortcut_entry.long_name = 'extract_to_clipboard'
@@ -70,15 +72,18 @@ class Application(Gtk.Application):
         shortcut_entry.description = _('Extract directly into the clipboard')
         shortcut_entry.arg_description = None
 
-        shot_action: Gio.SimpleAction = Gio.SimpleAction.new("get_screenshot", None)
+        shot_action: Gio.SimpleAction = Gio.SimpleAction.new(name="get_screenshot", parameter_type=None)
         shot_action.connect("activate", self.get_screenshot)
         self.add_action(shot_action)
         self.set_accels_for_action("app.get_screenshot", ("<Control>g",))
 
+        shot_action: Gio.SimpleAction = Gio.SimpleAction.new(name="open_url", parameter_type=None)
+        shot_action.connect("activate", print)
+        self.add_action(shot_action)
+
         self.add_main_option_entries([shortcut_entry])
 
     def do_activate(self):
-
         self.granite_settings = Granite.Settings.get_default()
         self.gtk_settings = Gtk.Settings.get_default()
 
@@ -103,7 +108,7 @@ class Application(Gtk.Application):
         options = command_line.get_options_dict()
 
         if options.contains("extract_to_clipboard"):
-            get_shortcut_text(self.settings)
+            extract_to_clipboard(self.settings)
             return 0
 
         self.activate()
