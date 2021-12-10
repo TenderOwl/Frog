@@ -32,6 +32,7 @@ from typing import Optional
 
 import gi
 
+from .about_dialog import AboutDialog
 from .language_manager import language_manager
 
 gi.require_version('Gtk', '3.0')
@@ -49,9 +50,10 @@ class Application(Gtk.Application):
     granite_settings: Granite.Settings
     gtk_settings: Gtk.Settings
 
-    def __init__(self):
+    def __init__(self, version=None):
         super().__init__(application_id='com.github.tenderowl.frog',
                          flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE)
+        self.version = version
 
         # Init GSettings
         self.settings = Settings.new()
@@ -80,6 +82,10 @@ class Application(Gtk.Application):
         shot_action: Gio.SimpleAction = Gio.SimpleAction.new(name="open_url", parameter_type=None)
         shot_action.connect("activate", print)
         self.add_action(shot_action)
+
+        action = Gio.SimpleAction.new(name="about", parameter_type=None)
+        action.connect("activate", self.on_about)
+        self.add_action(action)
 
         self.add_main_option_entries([shortcut_entry])
 
@@ -114,6 +120,10 @@ class Application(Gtk.Application):
         self.activate()
         return 0
 
+    def on_about(self, action, param):
+        about_dialog = AboutDialog(transient_for=self.props.active_window, modal=True, version=self.version)
+        about_dialog.present()
+
     def get_screenshot(self, simple_action: Gio.SimpleAction, parameter: Optional[GLib.Variant]):
         self.do_activate()
         win: FrogWindow = self.props.active_window
@@ -123,5 +133,5 @@ class Application(Gtk.Application):
 
 
 def main(version):
-    app = Application()
+    app = Application(version)
     return app.run(sys.argv)

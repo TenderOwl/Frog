@@ -46,6 +46,11 @@
       </packing>
     </child>
   </object>
+  <object class="GtkImage" id="about_image">
+    <property name="visible">True</property>
+    <property name="can-focus">False</property>
+    <property name="icon-name">help-about</property>
+  </object>
   <object class="GtkImage" id="clear_image">
     <property name="visible">True</property>
     <property name="can-focus">False</property>
@@ -115,6 +120,21 @@
               </object>
               <packing>
                 <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="about_btn">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="receives-default">True</property>
+                <property name="tooltip-text" translatable="yes">About the Frog</property>
+                <property name="action-name">app.about</property>
+                <property name="image">about_image</property>
+                <property name="always-show-image">True</property>
+              </object>
+              <packing>
+                <property name="pack-type">end</property>
+                <property name="position">2</property>
               </packing>
             </child>
           </object>
