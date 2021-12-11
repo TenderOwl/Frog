@@ -249,7 +249,6 @@
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
                             <property name="tooltip-text" translatable="yes">Copy extracted text to clipboard</property>
-                            <property name="action-name">get_screenshot</property>
                             <property name="image">copy_image</property>
                             <property name="always-show-image">True</property>
                           </object>
