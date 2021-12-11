@@ -5,7 +5,7 @@
 [![Build Status](https://github.com/tenderowl/frog/workflows/CI/badge.svg)](https://github.com/tenderowl/frog/actions)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Made for elementary OS](https://img.shields.io/badge/for-elementary_OS-64BAFF?style=flat&logo=elementary)](https://elementry.io)
-<a href="https://liberapay.com/tenderowl/donate"><img src="https://img.shields.io/liberapay/patrons/tenderowl.svg?logo=liberapay"></a>
+<!-- <a href="https://liberapay.com/tenderowl/donate"><img src="https://img.shields.io/liberapay/patrons/tenderowl.svg?logo=liberapay"></a> -->
 
 <div align="center">
 <figure>
@@ -16,11 +16,11 @@
 Quickly extract text from almost any source: youtube, screencasts, PDFs, webpages, photos, etc.
 Grab the image and get the text.
 
-By the way, it can read QR codes! 
+The Frog could help you to deal with QR codes helping you to get them decoded!
 
 <div align="center">
 <figure>
-<img alt="frog" src="data/screenshots/frog-screenshot.png" />
+<img src="https://user-images.githubusercontent.com/519146/145669642-286f275a-e1c0-465c-8653-1c5ef2fede7a.png" />
 </figure>
 </div>
 
@@ -28,8 +28,7 @@ By the way, it can read QR codes!
 ## See it in action
 
 <div align="center">
-<video controls src="https://user-images<script src="https://liberapay.com/tenderowl/widgets/button.js"></script>
-<noscript><a href="https://liberapay.com/tenderowl/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>.githubusercontent.com/519146/129591083-b846c776-9616-48b3-8d4f-0565b220e4c1.mp4" />
+<video controls src="https://user-images.githubusercontent.com/519146/145669866-20981f86-3bb3-4c10-a49b-6282d8e57029.mp4" />
 </div>
 
 
@@ -39,9 +38,9 @@ By the way, it can read QR codes!
 
 
 ## :tada: Support
-If you like Frog and you want to support its development, consider donating via Liberapay:  
-<a href="https://liberapay.com/tenderowl/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+If you like Frog and you want to support its development, you can buy me a coffee:
 
+<a href="https://www.buymeacoffee.com/tenderowl" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## Install it from source
 You can install frog by compiling from source, here's the list of dependencies required:
