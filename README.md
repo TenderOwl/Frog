@@ -16,6 +16,8 @@
 Quickly extract text from almost any source: youtube, screencasts, PDFs, webpages, photos, etc.
 Grab the image and get the text.
 
+By the way, it can read QR codes! 
+
 <div align="center">
 <figure>
 <img alt="frog" src="data/screenshots/frog-screenshot.png" />
@@ -39,6 +41,7 @@ Grab the image and get the text.
 ## :tada: Support
 If you like Frog and you want to support its development, consider donating via Liberapay:  
 <a href="https://liberapay.com/tenderowl/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>
+
 
 ## Install it from source
 You can install frog by compiling from source, here's the list of dependencies required:
