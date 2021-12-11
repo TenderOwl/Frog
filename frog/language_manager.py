@@ -172,7 +172,7 @@ class LanguageManager(GObject.GObject):
         return self._languages.get(code)
 
     def get_language_code(self, language: str) -> str:
-        for code, lang in self._languages.items():  # for name, age in dictionary.iteritems():  (for Python 2.x)
+        for code, lang in self._languages.items():
             if lang == language:
                 return code
 

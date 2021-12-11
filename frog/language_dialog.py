@@ -25,11 +25,10 @@
 # holders shall not be used in advertising or otherwise to promote the sale,
 # use or other dealings in this Software without prior written
 # authorization.
-import os
 from gettext import gettext as _
-from gi.repository import Gtk, Granite, Handy
 
-from .config import tessdata_dir
+from gi.repository import Gtk, Granite
+
 from .language_manager import language_manager
 
 
@@ -47,6 +46,7 @@ class LanguagePacksDialog(Granite.Dialog):
         scrolled_view = Gtk.ScrolledWindow(vexpand=True)
         self.language_listbox = Gtk.ListBox()
         self.language_listbox.set_selection_mode(Gtk.SelectionMode.NONE)
+        self.language_listbox.set_sort_func(self.sort_rows)
 
         for lang_code in language_manager.get_available_codes():
             self.language_listbox.add(LanguageRow(lang_code))
@@ -59,6 +59,23 @@ class LanguagePacksDialog(Granite.Dialog):
         self.add_button(_("OK"), Gtk.ResponseType.OK)
 
         self.show_all()
+
+    def sort_rows(self, row1: Gtk.ListBoxRow, row2: Gtk.ListBoxRow) -> int:
+        """
+        Used to sort languages list by its name not code.
+
+        See https://lazka.github.io/pgi-docs/index.html#Gtk-3.0/callbacks.html#Gtk.ListBoxSortFunc for details.
+        """
+        lang_row1: LanguageRow = row1.get_child().lang_code
+        lang_row2: LanguageRow = row2.get_child().lang_code
+        lang1 = language_manager.get_language(lang_row1.lang_code)
+        lang2 = language_manager.get_language(lang_row2.lang_code)
+
+        if lang1 > lang2:
+            return 1
+        elif lang1 < lang2:
+            return -1
+        return 0
 
 
 class LanguageRow(Gtk.Box):
