@@ -7,7 +7,8 @@
     <summary>Extract text from anywhere</summary>
     <description>
         <p>Quickly extract text from any source such as images, websites, even video - everywhere you can grab an image
-            shot.  Even if it is encoded in a QR code!</p>
+            shot. Even if it is encoded in a QR code!
+        </p>
     </description>
 
     <screenshots>
@@ -17,6 +18,11 @@
     </screenshots>
 
     <releases>
+        <release version="0.2.1" date="2021-12-11">
+            <description>
+                <p>Now you're free to run Frog with `-e` option to extract text and instantly copy it to the clipboard.</p>
+            </description>
+        </release>
         <release version="0.2.0" timestamp="1639071856">
             <description>
                 <p>What's new:</p>
