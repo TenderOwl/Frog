@@ -66,8 +66,8 @@ class LanguagePacksDialog(Granite.Dialog):
 
         See https://lazka.github.io/pgi-docs/index.html#Gtk-3.0/callbacks.html#Gtk.ListBoxSortFunc for details.
         """
-        lang_row1: LanguageRow = row1.get_child().lang_code
-        lang_row2: LanguageRow = row2.get_child().lang_code
+        lang_row1: LanguageRow = row1.get_child()
+        lang_row2: LanguageRow = row2.get_child()
         lang1 = language_manager.get_language(lang_row1.lang_code)
         lang2 = language_manager.get_language(lang_row2.lang_code)
 
