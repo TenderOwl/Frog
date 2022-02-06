@@ -218,11 +218,14 @@ class FrogWindow(Handy.ApplicationWindow):
     def on_shot_error(self, error) -> None:
         print(f"ERROR: {error}")
         if error:
-            self.on_screenshot_error(error)
+            self.on_screenshot_error(self, error)
         self.present()
 
     def on_screenshot_error(self, sender, error) -> None:
-        self.infobar_label.set_text(error)
+        if not isinstance(error, str):
+            self.infobar_label.set_text(str(error).split(':')[-1])
+        else:
+            self.infobar_label.set_text(error)
         self.infobar.set_revealed(True)
         self.infobar.set_visible(True)
         self.infobar.set_message_type(Gtk.MessageType.ERROR)
