@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Frog\n"
 "POT-Creation-Date: 2022-02-20 22:29+0900\n"
-"PO-Revision-Date: 2022-02-20 22:34+0900\n"
+"PO-Revision-Date: 2022-02-20 22:43+0900\n"
 "Last-Translator: 小山田 純 <oyamadajun@outlook.jp>\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -99,7 +99,7 @@ msgstr "クリップボードに検出結果をコピー"
 
 #: frog/about_dialog.py:37
 msgid "Text extraction tool"
-msgstr "検出"
+msgstr "画面上の文字を検出"
 
 #: frog/about_dialog.py:40
 msgid "Learn more about Frog"
