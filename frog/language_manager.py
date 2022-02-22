@@ -8,7 +8,7 @@ from urllib import request
 
 from gi.repository import GObject
 
-from frog.config import tessdata_dir, tessdata_url
+from frog.config import tessdata_dir, tessdata_url, tessdata_best_url
 from frog.gobject_worker import GObjectWorker
 
 
@@ -200,10 +200,17 @@ class LanguageManager(GObject.GObject):
         tessfile_path = os.path.join(tessdata_dir, tessfile)
         print(f'Data will be extracted to: {tessfile_path}')
         try:
-            request.urlretrieve(tessdata_url + tessfile, tessfile_path)
+            request.urlretrieve(tessdata_best_url + tessfile, tessfile_path)
             return code
         except Exception as e:
             print(e)
+            try:
+                print(f"{code} not found in tessdata_best, checking tessdata")
+                request.urlretrieve(tessdata_url + tessfile, tessfile_path)
+                return code
+            except Exception as e2:
+                print(e2)
+                print(f"{code} was not found at tessdata")
 
     def download_done(self, code):
         self.emit('downloaded', code)
