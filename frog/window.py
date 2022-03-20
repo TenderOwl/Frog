@@ -81,7 +81,7 @@ class FrogWindow(Handy.ApplicationWindow):
         self.infobar_label = Gtk.Label('', visible=True)
         infobox.add(self.infobar_label)
 
-        self.main_box.add(self.infobar) #, False, True, 2)
+        self.main_box.add(self.infobar)  # , False, True, 2)
 
         # Add Granite widget - Welcome screen.
         self.welcome_widget: Granite.WidgetsWelcome = Granite.WidgetsWelcome.new(_("Frog"),
@@ -129,11 +129,6 @@ class FrogWindow(Handy.ApplicationWindow):
         # Initialize screenshot backend
         self.backend = ScreenshotBackend()
         self.backend.connect('error', self.on_screenshot_error)
-        try:
-            self.backend.init_proxy()
-        except Exception as e:
-            print(e)
-            self.on_screenshot_error(self, _('Failed to initialize screenshot service.'))
 
         # Connect signals
         self.text_shot_btn.connect('clicked', self.text_shot_btn_clicked)
@@ -199,9 +194,10 @@ class FrogWindow(Handy.ApplicationWindow):
         if self.active_lang != extra_lang:
             self.active_lang = f'{self.active_lang}+{extra_lang}'
 
-        GObjectWorker.call(self.backend.capture, (self.active_lang,), self.on_shot_done, self.on_shot_error)
+        self.backend.connect('decoded', self.on_shot_done)
+        self.backend.capture(self.active_lang)
 
-    def on_shot_done(self, text) -> None:
+    def on_shot_done(self, sender,  text) -> None:
         try:
             # text = self.backend.capture(lang=self.active_lang)
             buffer: Gtk.TextBuffer = self.shot_text.get_buffer()

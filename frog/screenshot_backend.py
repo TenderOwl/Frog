@@ -30,8 +30,7 @@ import os
 from gettext import gettext as _
 from typing import Optional
 
-from gi.repository import GObject, Gio
-from pydbus import SessionBus
+from gi.repository import GObject, Gio, Xdp
 
 from .config import tessdata_dir_config
 
@@ -53,6 +52,7 @@ class ScreenshotBackend(GObject.GObject):
     __gtype_name__ = 'ScreenshotBackend'
     __gsignals__ = {
         'error': (GObject.SignalFlags.ACTION, None, (str,)),
+        'decoded': (GObject.SignalFlags.RUN_FIRST, None, (str,))
     }
 
     def __init__(self):
@@ -61,15 +61,10 @@ class ScreenshotBackend(GObject.GObject):
         """
         GObject.GObject.__init__(self)
 
-        self.bus = SessionBus()
         self.cancelable = Gio.Cancellable.new()
-        self.proxy = None
+        self.portal = Xdp.Portal()
 
-    def init_proxy(self):
-        self.proxy = self.bus.get("org.gnome.Shell.Screenshot",
-                                  "/org/gnome/Shell/Screenshot")
-
-    def capture(self, lang: str) -> Optional[str]:
+    def capture(self, lang: str) -> None:
         """
         Captures screenshot using gnome-screenshot, extract text from it and returns it.
 
@@ -78,31 +73,29 @@ class ScreenshotBackend(GObject.GObject):
         
         If image is not recognized, returns None.
         """
-        if not self.proxy:
-            self.emit('error', _('Screenshot service unavailable.'))
-            return
+        self.portal.take_screenshot(None,
+                                    Xdp.ScreenshotFlags.INTERACTIVE,
+                                    self.cancelable,
+                                    self.take_screenshot_finish, lang)
 
-        # Get selected area
-        x, y, width, height = self.proxy.SelectArea()
+    def take_screenshot_finish(self, source_object, res, lang):
+        filename = self.portal.take_screenshot_finish(res)[7:]  # Remove file:// from the path
+        self._decode(lang, filename)
 
-        result, filename = self.proxy.ScreenshotArea(x, y, width, height, True,
-                                                     'frog-text-recognition')
+    def _decode(self, lang: str, filename: str) -> None:
+        try:
+            # Try to find a QR code in the image
+            data = decode(Image.open(filename))
+            if len(data) > 0:
+                self.emit('decoded', data[0].data.decode('utf-8'))
 
-        if result:
-            try:
-                # Try to find a QR code in the image
-                data = decode(Image.open(filename))
-                if len(data) > 0:
-                    return data[0].data.decode('utf-8')
-
-                # If no QR code found, try to recognize text
+            # If no QR code found, try to recognize text
+            else:
                 text = pytesseract.image_to_string(filename,
                                                    lang=lang,
                                                    config=tessdata_dir_config)
-                return text.strip()
+                self.emit('decoded', text.strip())
 
-            except Exception as e:
-                self.emit('error', f'Failed to decode QR code.')
-            finally:
-                # Do some cleanup in any case
-                os.remove(filename)
+        except Exception as e:
+            print('ERROR: ', e)
+            self.emit('error', f'Failed to decode data.')

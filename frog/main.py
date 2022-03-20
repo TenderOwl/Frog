@@ -39,6 +39,8 @@ gi.require_version('Gtk', '3.0')
 gi.require_version('Granite', '1.0')
 gi.require_version('Handy', '1')
 gi.require_version('Notify', '0.7')
+gi.require_version('Xdp', '1.0')
+
 
 from gi.repository import Gtk, Gio, Granite, GLib, Notify
 from .extract_to_clipboard import extract_to_clipboard
