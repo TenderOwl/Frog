@@ -96,7 +96,7 @@ class LanguageRow(Gtk.Box):
     def update_ui(self):
         # Downloaded
         if self.lang_code in language_manager.get_downloaded_codes():
-            self.download_widget.set_image(Gtk.Image.new_from_icon_name('user-trash', Gtk.IconSize.BUTTON))
+            self.download_widget.set_image(Gtk.Image.new_from_icon_name('user-trash-symbolic', Gtk.IconSize.BUTTON))
             self.download_widget.set_visible(True)
             self.get_style_context().add_class("downloaded")
             self.spinner.stop()
@@ -108,8 +108,8 @@ class LanguageRow(Gtk.Box):
         # Not yet
         else:
             self.download_widget.set_visible(True)
-            self.spinner.stop()
-            self.download_widget.set_image(Gtk.Image.new_from_icon_name('folder-download', Gtk.IconSize.BUTTON))
+            self.download_widget.set_image(
+                Gtk.Image.new_from_icon_name('folder-download-symbolic', Gtk.IconSize.BUTTON))
 
         self.pack_start(self.label, True, True, 8)
         self.pack_end(self.download_widget, False, True, 8)

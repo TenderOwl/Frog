@@ -52,8 +52,6 @@ class FrogWindow(Handy.ApplicationWindow):
     main_stack: Gtk.Stack = Gtk.Template.Child()
     text_scrollview: Gtk.ScrolledWindow = Gtk.Template.Child()
     lang_combo: Gtk.ComboBoxText = Gtk.Template.Child()
-    # shot_btn: Gtk.Button = Gtk.Template.Child()
-    # shot_text: Gtk.TextView = Gtk.Template.Child()
     toolbox: Gtk.Revealer = Gtk.Template.Child()
     text_shot_btn: Gtk.Button = Gtk.Template.Child()
     text_clear_btn: Gtk.Button = Gtk.Template.Child()
@@ -64,7 +62,6 @@ class FrogWindow(Handy.ApplicationWindow):
     clipboard: Gtk.Clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
 
     def __init__(self, settings: Gio.Settings, **kwargs):
-        Handy.init()
         super().__init__(**kwargs)
 
         self.settings = settings
@@ -78,7 +75,7 @@ class FrogWindow(Handy.ApplicationWindow):
         self.infobar.connect('response', self.on_infobar_response)
 
         infobox: Gtk.Box = self.infobar.get_content_area()
-        self.infobar_label = Gtk.Label('', visible=True)
+        self.infobar_label = Gtk.Label()
         infobox.add(self.infobar_label)
 
         self.main_box.add(self.infobar)  # , False, True, 2)
@@ -86,9 +83,20 @@ class FrogWindow(Handy.ApplicationWindow):
         # Add Granite widget - Welcome screen.
         self.welcome_widget: Granite.WidgetsWelcome = Granite.WidgetsWelcome.new(_("Frog"),
                                                                                  _("Extract text from anywhere"))
-        self.welcome_widget.append("image-crop", "Grab the area", "Select area to extract the text")
-        self.welcome_widget.append("preferences-desktop-locale", "Configure languages",
-                                   "Download language packs to recognize")
+
+        css_provider = Gtk.CssProvider()
+        css_provider.load_from_resource(f'{RESOURCE_PREFIX}/frog.css')
+        self.welcome_widget.get_style_context().add_provider(css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+
+        self.welcome_widget.append_with_image(
+            Gtk.Image.new_from_resource(f'{RESOURCE_PREFIX}/icons/ocr.png'),
+            "Grab the area",
+            "Select area to extract the text")
+
+        self.welcome_widget.append_with_image(
+            Gtk.Image.new_from_resource(f'{RESOURCE_PREFIX}/icons/translation.png'),
+            "Configure languages",
+            "Download language packs to recognize")
         self.welcome_widget.connect('activated', self.welcome_action_activated)
         self.welcome_widget.set_visible(True)
         self.welcome_widget.show_all()
@@ -128,7 +136,8 @@ class FrogWindow(Handy.ApplicationWindow):
 
         # Initialize screenshot backend
         self.backend = ScreenshotBackend()
-        self.backend.connect('error', self.on_screenshot_error)
+        self.backend.connect('decoded', self.on_shot_done)
+        self.backend.connect('error', self.on_shot_error)
 
         # Connect signals
         self.text_shot_btn.connect('clicked', self.text_shot_btn_clicked)
@@ -194,10 +203,9 @@ class FrogWindow(Handy.ApplicationWindow):
         if self.active_lang != extra_lang:
             self.active_lang = f'{self.active_lang}+{extra_lang}'
 
-        self.backend.connect('decoded', self.on_shot_done)
         self.backend.capture(self.active_lang)
 
-    def on_shot_done(self, sender,  text) -> None:
+    def on_shot_done(self, sender, text) -> None:
         try:
             # text = self.backend.capture(lang=self.active_lang)
             buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
@@ -209,13 +217,13 @@ class FrogWindow(Handy.ApplicationWindow):
         except Exception as e:
             print(f"ERROR: {e}")
 
-        self.present()
+        self.show()
 
-    def on_shot_error(self, error) -> None:
-        print(f"ERROR: {error}")
-        if error:
-            self.on_screenshot_error(self, error)
-        self.present()
+    def on_shot_error(self, sender, message: str) -> None:
+        print(f"ERROR: '{message}'")
+        if message:
+            self.on_screenshot_error(self, 'Whoops')
+        self.show()
 
     def on_screenshot_error(self, sender, error) -> None:
         if not isinstance(error, str):
