@@ -21,7 +21,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
-
+import datetime
 from gettext import gettext as _
 
 import gi
@@ -34,9 +34,9 @@ class AboutDialog(Gtk.AboutDialog):
     def __init__(self, version, transient_for, modal=False):
         super().__init__(transient_for=transient_for, modal=modal)
         self.set_program_name("Frog")
-        self.set_comments(_('Text extraction tool'))
-        self.set_copyright('© 2021, Tender Owl')
-        self.set_website("https://tenderowl.com/work/frog")
+        self.set_comments(_('Frog can help you to instantly extract text\nfrom any QR code, image, video, PDF, etc.'))
+        self.set_copyright(f'© {datetime.date.today().year}, Tender Owl')
+        self.set_website("https://getfrog.app")
         self.set_website_label(_('Learn more about Frog'))
         self.set_license_type(Gtk.License.MIT_X11)
         self.set_version(version)
