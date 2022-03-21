@@ -1,0 +1,8 @@
+.welcome .h1 {
+    font-size: 32px;
+}
+
+.downloaded label {
+    font-weight: bold;
+    color: #3584e4;
+}
