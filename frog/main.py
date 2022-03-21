@@ -41,8 +41,8 @@ gi.require_version('Handy', '1')
 gi.require_version('Notify', '0.7')
 gi.require_version('Xdp', '1.0')
 
-
-from gi.repository import Gtk, Gio, Granite, GLib, Notify
+from gi.repository import Gtk, Gio, Granite, GLib, Notify, Handy, Gdk
+from .config import RESOURCE_PREFIX
 from .extract_to_clipboard import extract_to_clipboard
 from .settings import Settings
 from .window import FrogWindow
@@ -55,6 +55,7 @@ class Application(Gtk.Application):
     def __init__(self, version=None):
         super().__init__(application_id='com.github.tenderowl.frog',
                          flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE)
+        Handy.init()
         self.version = version
 
         # Init GSettings
@@ -62,6 +63,13 @@ class Application(Gtk.Application):
 
         # Initialize tesseract data files storage.
         language_manager.init_tessdata()
+
+        css_provider = Gtk.CssProvider()
+        css_provider.load_from_resource(f"{RESOURCE_PREFIX}/frog.css")
+        screen = Gdk.Screen.get_default()
+        style_context = Gtk.StyleContext()
+        style_context.add_provider_for_screen(
+            screen, css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
         # Initialized libnotify.
         Notify.init("Frog")

@@ -180,7 +180,7 @@ class LanguageManager(GObject.GObject):
         if self._need_update_cache or force:
             self._downloaded_codes = [os.path.splitext(lang_file)[0] for lang_file in sorted(os.listdir(tessdata_dir))]
             self._need_update_cache = False
-            print(f"Cache downloaded codes, {self._downloaded_codes}")
+            print(f"Cache downloaded codes: {self._downloaded_codes}")
         return self._downloaded_codes
 
     def get_downloaded_languages(self, force: bool = False) -> List[str]:

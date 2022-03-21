@@ -61,7 +61,8 @@ class ScreenshotBackend(GObject.GObject):
         """
         GObject.GObject.__init__(self)
 
-        self.cancelable = Gio.Cancellable.new()
+        self.cancelable: Gio.Cancellable = Gio.Cancellable.new()
+        self.cancelable.connect(self.capture_cancelled)
         self.portal = Xdp.Portal()
 
     def capture(self, lang: str) -> None:
@@ -78,8 +79,13 @@ class ScreenshotBackend(GObject.GObject):
                                     self.cancelable,
                                     self.take_screenshot_finish, lang)
 
-    def take_screenshot_finish(self, source_object, res, lang):
-        filename = self.portal.take_screenshot_finish(res)[7:]  # Remove file:// from the path
+    def take_screenshot_finish(self, source_object, res: Gio.Task, lang):
+        if res.had_error():
+            return self.emit('error', '')
+
+        filename = self.portal.take_screenshot_finish(res)
+        # Remove file:// from the path
+        filename = filename[7:]
         self._decode(lang, filename)
 
     def _decode(self, lang: str, filename: str) -> None:
@@ -99,3 +105,6 @@ class ScreenshotBackend(GObject.GObject):
         except Exception as e:
             print('ERROR: ', e)
             self.emit('error', f'Failed to decode data.')
+
+    def capture_cancelled(self, cancellable: Gio.Cancellable) -> None:
+        self.emit('error', 'Cancelled')
