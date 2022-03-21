@@ -20,7 +20,7 @@ The Frog could help you to deal with QR codes helping you to get them decoded!
 
 <div align="center">
 <figure>
-<img src="https://user-images.githubusercontent.com/519146/145669642-286f275a-e1c0-465c-8653-1c5ef2fede7a.png" />
+<img src="https://user-images.githubusercontent.com/519146/159361162-14f155c3-b195-484e-9e5b-dab4c617f2c8.png" />
 </figure>
 </div>
 
