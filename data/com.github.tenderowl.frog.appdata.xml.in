@@ -4,20 +4,31 @@
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>MIT</project_license>
     <name>Frog</name>
-    <summary>Extract text from anywhere</summary>
+    <summary>Extract text from anywhere, even QR code</summary>
     <description>
         <p>Quickly extract text from any source such as images, websites, even video - everywhere you can grab an image
-            shot. Even if it is encoded in a QR code!
-        </p>
+            shot. Even if it is encoded in a QR code!</p>
     </description>
 
     <screenshots>
         <screenshot type="default">
-            <image>https://raw.githubusercontent.com/tenderowl/frog/master/data/screenshots/frog-screenshot.png</image>
+            <image>https://raw.githubusercontent.com/tenderowl/frog/master/data/screenshots/frog-window.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/tenderowl/frog/master/data/screenshots/frog-decoded.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/tenderowl/frog/master/data/screenshots/frog-config.png</image>
         </screenshot>
     </screenshots>
 
     <releases>
+        <release version="0.3.0" type="stable" date="2022-03-21">
+            <description>
+                <p>Frog now is available on the Flathub and use modern Portal implementation.
+                We also updated the UI accordingly to the GNOME HIG and fixed some bugs we've found :)</p>
+            </description>
+        </release>
         <release version="0.2.1" date="2021-12-11">
             <description>
                 <p>Now you're free to run Frog with `-e` option to extract text and instantly copy it to the clipboard.</p>
@@ -57,9 +68,10 @@
 
     <developer_name>Tender Owl</developer_name>
     <launchable type="desktop-id">com.github.tenderowl.frog.desktop</launchable>
-    <url type="homepage">https://tenderowl.com/work/frog</url>
+    <url type="homepage">https://getfrog.app</url>
     <url type="bugtracker">https://github.com/tenderowl/frog/issues</url>
     <url type="help">https://github.com/tenderowl/frog/issues</url>
+    <url type="donation">https://www.buymeacoffee.com/tenderowl/</url>
     <update_contact>andrey@tenderowl.com</update_contact>
 
 
