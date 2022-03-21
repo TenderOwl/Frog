@@ -269,9 +269,7 @@ class FrogWindow(Handy.ApplicationWindow):
 
     def lang_prefs_btn_clicked(self) -> None:
         dialog = LanguagePacksDialog(self)
-        if dialog.run():
-            dialog.destroy()
-        # GObjectWorker.call(self.download_begin, ('rus',), self.download_done, self.download_error)
+        dialog.show()
 
     def on_language_downloading(self, sender, lang_code: str):
         print('on_language_downloading: ' + lang_code)

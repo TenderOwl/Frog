@@ -27,38 +27,52 @@
 # authorization.
 from gettext import gettext as _
 
-from gi.repository import Gtk, Granite
+from gi.repository import Gtk, Granite, Handy
 
 from .language_manager import language_manager
 
 
-class LanguagePacksDialog(Granite.Dialog):
+class LanguagePacksDialog(Handy.Window):
+    downloaded_list = []
+
     def __init__(self, transient_for: Gtk.Window, **kwargs):
         super().__init__(transient_for=transient_for, **kwargs)
 
         self.resize(400, 450)
+        self.set_modal(True)
 
-        header_label = Granite.HeaderLabel(label=_("Available Languages"), halign=Gtk.Align.CENTER)
+        self.main_box: Gtk.Box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, vexpand=True)
 
-        self.main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, vexpand=True)
-        self.main_box.pack_start(header_label, False, True, 8)
+        self.header_bar = Handy.HeaderBar()
+        self.header_bar.set_title('Available Languages')
+        self.header_bar.set_show_close_button(True)
+        self.main_box.pack_start(self.header_bar, False, True, 0)
+        # self.main_box.pack_start(header_label, False, True, 8)
 
         scrolled_view = Gtk.ScrolledWindow(vexpand=True)
         self.language_listbox = Gtk.ListBox()
         self.language_listbox.set_selection_mode(Gtk.SelectionMode.NONE)
         self.language_listbox.set_sort_func(self.sort_rows)
 
+        self.reload_language_list()
+
+        language_manager.connect('downloaded', lambda sender, code: self.reload_language_list())
+        language_manager.connect('removed', lambda sender, code: self.reload_language_list())
+
+        scrolled_view.add(self.language_listbox)
+        self.main_box.pack_start(scrolled_view, True, True, 8)
+
+        self.add(self.main_box)
+        self.show_all()
+
+    def reload_language_list(self):
+        for child in self.language_listbox.get_children():
+            self.language_listbox.remove(child)
+
         for lang_code in language_manager.get_available_codes():
             self.language_listbox.add(LanguageRow(lang_code))
 
-        scrolled_view.add(self.language_listbox)
-
-        self.main_box.pack_start(scrolled_view, True, True, 8)
-
-        self.get_content_area().add(self.main_box)
-        self.add_button(_("OK"), Gtk.ResponseType.OK)
-
-        self.show_all()
+        self.language_listbox.show_all()
 
     def sort_rows(self, row1: Gtk.ListBoxRow, row2: Gtk.ListBoxRow) -> int:
         """
@@ -83,9 +97,9 @@ class LanguageRow(Gtk.Box):
         super().__init__(margin_top=8, margin_bottom=8, **kwargs)
 
         self.lang_code = lang_code
+        self.set_size_request(-1, 34)
 
         self.label = Gtk.Label(_(language_manager.get_language(self.lang_code)), halign=Gtk.Align.START)
-        self.spinner = Gtk.Spinner(margin_end=5)
 
         self.download_widget: Gtk.Button = Gtk.Button()
         self.download_widget.connect('clicked', self.download_clicked)
@@ -99,21 +113,19 @@ class LanguageRow(Gtk.Box):
             self.download_widget.set_image(Gtk.Image.new_from_icon_name('user-trash-symbolic', Gtk.IconSize.BUTTON))
             self.download_widget.set_visible(True)
             self.get_style_context().add_class("downloaded")
-            self.spinner.stop()
         # In progress
         elif self.lang_code in language_manager.loading_languages:
-            # self.progress.set_visible(True)
-            self.spinner.start()
-            self.download_widget.set_visible(False)
+            self.download_widget.set_sensitive(False)
+            self.get_style_context().remove_class("downloaded")
         # Not yet
         else:
+            self.get_style_context().remove_class("downloaded")
             self.download_widget.set_visible(True)
             self.download_widget.set_image(
                 Gtk.Image.new_from_icon_name('folder-download-symbolic', Gtk.IconSize.BUTTON))
 
         self.pack_start(self.label, True, True, 8)
         self.pack_end(self.download_widget, False, True, 8)
-        self.pack_end(self.spinner, False, True, 8)
 
     def download_clicked(self, widget) -> None:
         if self.lang_code in language_manager.loading_languages:
