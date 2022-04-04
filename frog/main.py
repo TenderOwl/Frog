@@ -33,14 +33,16 @@ from typing import Optional
 import gi
 
 from .about_dialog import AboutDialog
+from .config import RESOURCE_PREFIX
 from .language_manager import language_manager
+from .screenshot_backend import ScreenshotBackend
 
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 gi.require_version('Notify', '0.7')
 gi.require_version('Xdp', '1.0')
 
-from gi.repository import Gtk, Gio, GLib, Notify, Adw
+from gi.repository import Gtk, Gio, GLib, Notify, Adw, Gdk, GdkPixbuf
 from .extract_to_clipboard import extract_to_clipboard
 from .settings import Settings
 from .window import FrogWindow
@@ -60,8 +62,11 @@ class Application(Adw.Application):
         # Initialize tesseract data files storage.
         language_manager.init_tessdata()
 
-        # Initialized libnotify.
+        # Initialize libnotify.
         Notify.init("Frog")
+
+    def do_startup(self, *args, **kwargs):
+        Adw.Application.do_startup(self)
 
         # create command line option entries
         shortcut_entry = GLib.OptionEntry()
@@ -78,9 +83,18 @@ class Application(Adw.Application):
         self.add_action(shot_action)
         self.set_accels_for_action("app.get_screenshot", ("<Control>g",))
 
+        shot_action: Gio.SimpleAction = Gio.SimpleAction.new(name="get_screenshot_and_copy", parameter_type=None)
+        shot_action.connect("activate", self.get_screenshot_and_copy)
+        self.add_action(shot_action)
+        self.set_accels_for_action("app.get_screenshot_and_copy", ("<Control><Shift>g",))
+
         shot_action: Gio.SimpleAction = Gio.SimpleAction.new(name="open_url", parameter_type=None)
         shot_action.connect("activate", print)
         self.add_action(shot_action)
+
+        action = Gio.SimpleAction.new("shortcuts", None)
+        action.connect("activate", self.on_shortcuts)
+        self.add_action(action)
 
         action = Gio.SimpleAction.new(name="about", parameter_type=None)
         action.connect("activate", self.on_about)
@@ -89,32 +103,19 @@ class Application(Adw.Application):
         self.add_main_option_entries([shortcut_entry])
 
     def do_activate(self):
-        # self.granite_settings = Granite.Settings.get_default()
-        self.gtk_settings = Gtk.Settings.get_default()
-
-        # # Then, we check if the user's preference is for the dark style and set it if it is
-        # self.gtk_settings.props.gtk_application_prefer_dark_theme = \
-        #     self.granite_settings.props.prefers_color_scheme == Granite.SettingsColorScheme.DARK
-        #
-        # # Finally, we listen to changes in Granite.Settings and update our app if the user changes their preference
-        # self.granite_settings.connect("notify::prefers-color-scheme",
-        #                               self.color_scheme_changed)
-
         win = self.props.active_window
         if not win:
             win = FrogWindow(settings=self.settings, application=self)
         win.present()
 
-    def color_scheme_changed(self, _old, _new):
-        # self.gtk_settings.props.gtk_application_prefer_dark_theme = \
-        #     self.granite_settings.props.prefers_color_scheme == Granite.SettingsColorScheme.DARK
-        pass
-
     def do_command_line(self, command_line):
         options = command_line.get_options_dict()
 
         if options.contains("extract_to_clipboard"):
-            extract_to_clipboard(self.settings)
+            backend = ScreenshotBackend()
+            backend.connect('decoded', Application.on_decoded)
+            backend.capture(self.settings.get_string("active-language"))
+            # extract_to_clipboard(self.settings)
             return 0
 
         self.activate()
@@ -124,12 +125,47 @@ class Application(Adw.Application):
         about_dialog = AboutDialog(transient_for=self.props.active_window, modal=True, version=self.version)
         about_dialog.present()
 
-    def get_screenshot(self, simple_action: Gio.SimpleAction, parameter: Optional[GLib.Variant]):
+    def on_shortcuts(self, _action, _param):
+        builder = Gtk.Builder()
+        builder.add_from_resource(
+            f"{RESOURCE_PREFIX}/ui/shortcuts.ui")
+        builder.get_object("shortcuts").set_transient_for(self.get_active_window())
+        builder.get_object("shortcuts").show()
+
+    def get_screenshot(self, action: Gio.SimpleAction, parameter: Optional[GLib.Variant]) -> None:
         self.do_activate()
         win: FrogWindow = self.props.active_window
         win.present()
 
         win.get_screenshot()
+
+    def get_screenshot_and_copy(self, action: Gio.SimpleAction, parameter: Optional[GLib.Variant]) -> None:
+        self.do_activate()
+        win: FrogWindow = self.props.active_window
+        win.present()
+
+        win.get_screenshot(copy=True)
+
+    @staticmethod
+    def on_decoded(sender, text: str, copy: bool) -> None:
+        if text and copy:
+            Gdk.Display.get_default().get_clipboard().set(text)
+
+            icon = GdkPixbuf.Pixbuf.new_from_resource_at_scale(
+                f"{RESOURCE_PREFIX}/icons/com.github.tenderowl.frog.svg",
+                128, 128, True
+            )
+            notification: Notify.Notification = Notify.Notification.new(
+                summary='Frog',
+                body=_('Text extracted. You can paste it with Ctrl+V')
+            )
+            notification.set_icon_from_pixbuf(icon)
+
+            # TODO: make callback works
+            # if url:
+            #     notification.add_action('clicked', 'Open URL', notification_callback, url)
+
+            notification.show()
 
 
 def main(version):

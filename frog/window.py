@@ -29,7 +29,7 @@
 from gettext import gettext as _
 
 from gi.overrides.GdkPixbuf import Pixbuf
-from gi.repository import Gtk, Adw, Gio, Gdk, GLib
+from gi.repository import Gtk, Adw, Gio, Gdk, GLib, GObject
 
 from .config import RESOURCE_PREFIX
 from .gobject_worker import GObjectWorker
@@ -57,12 +57,13 @@ class FrogWindow(Adw.ApplicationWindow):
 
     # Helps to call save_window_state not more often than 500ms
     delayed_state: bool = False
-    clipboard: Gdk.Clipboard = Gdk.Display().get_clipboard()
+    clipboard: Gdk.Clipboard
 
     def __init__(self, settings: Gio.Settings, **kwargs):
         super().__init__(**kwargs)
 
         self.settings = settings
+        self.clipboard = self.get_clipboard()
 
         self.infobar = Gtk.InfoBar(visible=True, revealed=False)
         self.infobar.set_show_close_button(True)
@@ -160,7 +161,7 @@ class FrogWindow(Adw.ApplicationWindow):
         else:
             self.text_shot_btn.set_sensitive(False)
 
-    def get_screenshot(self) -> None:
+    def get_screenshot(self, copy: bool = False) -> None:
         self.active_lang = self.lang_combo.get_active_id()
 
         self.hide()
@@ -170,13 +171,16 @@ class FrogWindow(Adw.ApplicationWindow):
         if self.active_lang != extra_lang:
             self.active_lang = f'{self.active_lang}+{extra_lang}'
 
-        self.backend.capture(self.active_lang)
+        self.backend.capture(self.active_lang, copy)
 
-    def on_shot_done(self, sender, text) -> None:
+    def on_shot_done(self, sender, text: str, copy: bool) -> None:
         try:
             # text = self.backend.capture(lang=self.active_lang)
             buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
             buffer.set_text(text)
+
+            if copy:
+                self.copy_to_clipboard(text)
 
             self.main_stack.set_visible_child_name("extracted")
             self.toolbox.set_reveal_child(True)
@@ -226,11 +230,13 @@ class FrogWindow(Adw.ApplicationWindow):
         self.toolbox.set_reveal_child(False)
         self.main_stack.set_visible_child_name("welcome")
 
-    def text_copy_btn_clicked(self, button: Gtk.Button) -> None:
+    def text_copy_btn_clicked(self, button: Gtk.Widget) -> None:
         buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
         text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
-        self.clipboard.set_text(text, -1)
+        self.copy_to_clipboard(text)
 
+    def copy_to_clipboard(self, text):
+        self.clipboard.set(text)
         self.show_toast(_("Copied!"))
 
     def lang_prefs_btn_clicked(self) -> None:

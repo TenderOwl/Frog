@@ -30,7 +30,7 @@ import os
 from gettext import gettext as _
 from typing import Optional
 
-from gi.repository import GObject, Gio, Xdp
+from gi.repository import GObject, Gio, Xdp, Gdk
 
 from .config import tessdata_dir_config
 
@@ -52,7 +52,7 @@ class ScreenshotBackend(GObject.GObject):
     __gtype_name__ = 'ScreenshotBackend'
     __gsignals__ = {
         'error': (GObject.SignalFlags.ACTION, None, (str,)),
-        'decoded': (GObject.SignalFlags.RUN_FIRST, None, (str,))
+        'decoded': (GObject.SignalFlags.RUN_FIRST, None, (str, bool,))
     }
 
     def __init__(self):
@@ -65,7 +65,7 @@ class ScreenshotBackend(GObject.GObject):
         self.cancelable.connect(self.capture_cancelled)
         self.portal = Xdp.Portal()
 
-    def capture(self, lang: str) -> None:
+    def capture(self, lang: str, copy: bool = False) -> None:
         """
         Captures screenshot using gnome-screenshot, extract text from it and returns it.
 
@@ -77,36 +77,42 @@ class ScreenshotBackend(GObject.GObject):
         self.portal.take_screenshot(None,
                                     Xdp.ScreenshotFlags.INTERACTIVE,
                                     self.cancelable,
-                                    self.take_screenshot_finish, lang)
+                                    self.take_screenshot_finish, [lang, copy])
 
-    def take_screenshot_finish(self, source_object, res: Gio.Task, lang):
+    def take_screenshot_finish(self, source_object, res: Gio.Task, user_data):
         if res.had_error():
             return self.emit('error', '')
+
+        lang, copy = user_data
 
         filename = self.portal.take_screenshot_finish(res)
         # Remove file:// from the path
         filename = filename[7:]
-        self._decode(lang, filename)
+        self._decode(lang, filename, copy)
 
-    def _decode(self, lang: str, filename: str) -> None:
+    def _decode(self, lang: str, filename: str, copy: bool = False) -> None:
         print(f'Decoding with {lang} language.')
+        extracted = None
         try:
             # Try to find a QR code in the image
             data = decode(Image.open(filename))
             print(f'data: {data}')
             if len(data) > 0:
-                self.emit('decoded', data[0].data.decode('utf-8'))
+                extracted = data[0].data.decode('utf-8')
 
             # If no QR code found, try to recognize text
             else:
                 text = pytesseract.image_to_string(filename,
                                                    lang=lang,
                                                    config=tessdata_dir_config)
-                self.emit('decoded', text.strip())
+                extracted = text.strip()
 
         except Exception as e:
             print('ERROR: ', e)
             self.emit('error', f'Failed to decode data.')
+
+        if extracted:
+            self.emit('decoded', extracted, copy)
 
     def capture_cancelled(self, cancellable: Gio.Cancellable) -> None:
         self.emit('error', 'Cancelled')
