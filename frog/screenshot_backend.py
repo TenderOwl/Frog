@@ -89,9 +89,11 @@ class ScreenshotBackend(GObject.GObject):
         self._decode(lang, filename)
 
     def _decode(self, lang: str, filename: str) -> None:
+        print(f'Decoding with {lang} language.')
         try:
             # Try to find a QR code in the image
             data = decode(Image.open(filename))
+            print(f'data: {data}')
             if len(data) > 0:
                 self.emit('decoded', data[0].data.decode('utf-8'))
 

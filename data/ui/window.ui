@@ -1,288 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.38.2 -->
 <interface>
-    <requires lib="gtk+" version="3.24"/>
-    <requires lib="libhandy" version="1.0"/>
-    <object class="GtkBox">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.0"/>
+  <template class="FrogWindow" parent="AdwApplicationWindow">
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
         <child>
-            <object class="GtkLabel">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="valign">center</property>
-                <property name="label" translatable="yes">Language</property>
-            </object>
-            <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-            </packing>
+          <object class="GtkHeaderBar">
+            <property name="visible">1</property>
+            <property name="tooltip-text" translatable="yes">Extract text from anywhere</property>
+            <property name="title-widget">
+              <object class="AdwWindowTitle">
+                <property name="title">Frog</property>
+              </object>
+            </property>
+            <child>
+              <object class="GtkComboBoxText" id="lang_combo">
+                <property name="tooltip-text" translatable="yes">Select language to extract</property>
+                <property name="active-id">eng</property>
+                <property name="css-classes">flat</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkSpinner" id="spinner"/>
+            </child>
+            <child type="end">
+              <object class="GtkMenuButton">
+                <property name="icon-name">open-menu-symbolic</property>
+                <property name="menu-model">primary_menu</property>
+              </object>
+            </child>
+          </object>
         </child>
         <child>
-            <object class="GtkSpinner">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-            </object>
-            <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">1</property>
-            </packing>
-        </child>
-        <child>
-            <object class="GtkButton">
-                <property name="label" translatable="yes">button</property>
-                <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="receives-default">True</property>
-                <property name="valign">center</property>
-            </object>
-            <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">2</property>
-            </packing>
-        </child>
-    </object>
-    <object class="GtkImage" id="about_image">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="icon-name">help-about</property>
-    </object>
-    <object class="GtkImage" id="shot_image">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="icon-name">camera-photo-symbolic</property>
-    </object>
-    <object class="GtkImage" id="clear_image">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="icon-name">edit-clear-symbolic</property>
-    </object>
-    <object class="GtkImage" id="copy_image">
-        <property name="visible">True</property>
-        <property name="can-focus">False</property>
-        <property name="icon-name">edit-copy-symbolic</property>
-    </object>
-    <object class="GtkListStore" id="language_model">
-        <columns>
-            <!-- column-name code -->
-            <column type="gchararray"/>
-            <!-- column-name title -->
-            <column type="gchararray"/>
-        </columns>
-        <data>
-            <row>
-                <col id="0" translatable="yes">eng</col>
-                <col id="1" translatable="yes">English</col>
-            </row>
-            <row>
-                <col id="0" translatable="yes">rus</col>
-                <col id="1" translatable="yes">Russian</col>
-            </row>
-        </data>
-    </object>
-
-    <template class="FrogWindow" parent="HdyApplicationWindow">
-        <property name="width-request">364</property>
-        <property name="height-request">264</property>
-        <property name="can-focus">False</property>
-        <property name="default-width">450</property>
-        <property name="default-height">400</property>
-        <child>
-            <object class="GtkBox">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
+          <object class="AdwToastOverlay" id="toast_overlay">
+            <property name="vexpand">1</property>
+            <property name="child">
+              <object class="GtkBox" id="main_box">
+                <property name="hexpand">1</property>
+                <property name="vexpand">1</property>
                 <property name="orientation">vertical</property>
                 <child>
-                    <object class="HdyHeaderBar">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
-                        <property name="tooltip-text" translatable="yes">Extract text from anywhere</property>
-                        <property name="title" translatable="yes">Frog</property>
-                        <property name="show-close-button">True</property>
-                        <child>
-                            <object class="GtkComboBoxText" id="lang_combo">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <property name="tooltip-text" translatable="yes">Select language to extract</property>
-                                <property name="active-id">eng</property>
-                            </object>
-                        </child>
-                        <child>
-                            <object class="GtkSpinner" id="spinner">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                            </object>
-                            <packing>
-                                <property name="position">1</property>
-                            </packing>
-                        </child>
-                        <child>
-                            <object class="GtkButton" id="about_btn">
-                                <property name="visible">True</property>
-                                <property name="can-focus">True</property>
-                                <property name="receives-default">True</property>
-                                <property name="tooltip-text" translatable="yes">About the Frog</property>
-                                <property name="action-name">app.about</property>
-                                <property name="image">about_image</property>
-                                <property name="always-show-image">True</property>
-                            </object>
-                            <packing>
-                                <property name="pack-type">end</property>
-                                <property name="position">2</property>
-                            </packing>
-                        </child>
-                    </object>
-                    <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">0</property>
-                    </packing>
+                  <object class="AdwViewStack" id="main_stack">
+                    <child>
+                      <object class="AdwViewStackPage">
+                        <property name="name">welcome</property>
+                        <property name="title">Welcome</property>
+                        <property name="child">
+                          <object class="AdwStatusPage" id="welcome">
+                            <property name="title">Frog</property>
+                            <property name="description">Extract text from anywhere</property>
+                            <child>
+                              <object class="AdwClamp">
+                                <property name="maximum-size">240</property>
+                                <property name="child">
+                                  <object class="GtkBox">
+                                    <property name="orientation">vertical</property>
+                                    <child>
+                                      <object class="GtkButton">
+                                        <signal name="clicked" handler="on_take_shot_clicked"/>
+                                        <property name="css_classes">flat</property>
+                                        <property name="height_request">40</property>
+                                        <property name="child">
+                                          <object class="AdwButtonContent">
+                                            <property name="label">Take a shot</property>
+                                            <property name="icon-name">camera-focus-symbolic</property>
+                                          </object>
+                                        </property>
+                                      </object>
+                                    </child>
+                                    <child>
+                                      <object class="GtkButton">
+                                        <signal name="clicked" handler="on_configure_language_clicked"/>
+                                        <property name="css_classes">flat</property>
+                                        <property name="height_request">40</property>
+                                        <property name="child">
+                                          <object class="AdwButtonContent">
+                                            <property name="label">_Configure languages</property>
+                                            <property name="icon-name">language-symbolic</property>
+                                            <property name="use-underline">True</property>
+                                          </object>
+                                        </property>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </property>
+                              </object>
+                            </child>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwViewStackPage">
+                        <property name="name">extracted</property>
+                        <property name="title">Extracted</property>
+                        <property name="child">
+                        <object class="GtkScrolledWindow" id="text_scrollview">
+                          <property name="focusable">1</property>
+                          <property name="hexpand">1</property>
+                          <property name="vexpand">1</property>
+                        </object>
+                        </property>
+                      </object>
+                    </child>
+                  </object>
                 </child>
                 <child>
-                    <object class="GtkOverlay" id="main_overlay">
-                        <property name="visible">True</property>
-                        <property name="can-focus">False</property>
+                  <object class="GtkRevealer" id="toolbox">
+                    <property name="transition-type">slide-up</property>
+                    <property name="child">
+                      <object class="GtkBox">
+                        <property name="margin-start">8</property>
+                        <property name="margin-end">8</property>
+                        <property name="margin-top">8</property>
+                        <property name="margin-bottom">8</property>
+                        <property name="spacing">8</property>
                         <child>
-                            <object class="GtkBox" id="main_box">
-                                <property name="visible">True</property>
-                                <property name="can-focus">False</property>
-                                <property name="hexpand">True</property>
-                                <property name="vexpand">True</property>
-                                <property name="orientation">vertical</property>
-                                <child>
-                                    <placeholder/>
-                                </child>
-                                <child>
-                                    <object class="GtkStack" id="main_stack">
-                                        <property name="visible">True</property>
-                                        <property name="can-focus">False</property>
-                                        <property name="transition-type">crossfade</property>
-                                        <child>
-                                            <object class="GtkScrolledWindow" id="text_scrollview">
-                                                <property name="visible">True</property>
-                                                <property name="can-focus">True</property>
-                                                <property name="double-buffered">False</property>
-                                                <property name="hexpand">True</property>
-                                                <property name="vexpand">True</property>
-                                                <property name="shadow-type">in</property>
-                                                <child>
-                                                    <placeholder/>
-                                                </child>
-                                            </object>
-                                            <packing>
-                                                <property name="name">extracted</property>
-                                            </packing>
-                                        </child>
-                                    </object>
-                                    <packing>
-                                        <property name="expand">True</property>
-                                        <property name="fill">True</property>
-                                        <property name="position">1</property>
-                                    </packing>
-                                </child>
-                                <child>
-                                    <object class="GtkRevealer" id="toolbox">
-                                        <property name="visible">True</property>
-                                        <property name="can-focus">False</property>
-                                        <property name="transition-type">slide-up</property>
-                                        <child>
-                                            <object class="GtkBox">
-                                                <property name="visible">True</property>
-                                                <property name="can-focus">False</property>
-                                                <property name="double-buffered">False</property>
-                                                <property name="margin-start">8</property>
-                                                <property name="margin-end">8</property>
-                                                <property name="margin-top">8</property>
-                                                <property name="margin-bottom">8</property>
-                                                <property name="spacing">8</property>
-                                                <child>
-                                                    <object class="GtkButton" id="text_shot_btn">
-                                                        <property name="visible">True</property>
-                                                        <property name="can-focus">True</property>
-                                                        <property name="receives-default">True</property>
-                                                        <property name="tooltip-text" translatable="yes">Clear the
-                                                            extraction results
-                                                        </property>
-                                                        <property name="image">shot_image</property>
-                                                        <property name="always-show-image">True</property>
-                                                    </object>
-                                                    <packing>
-                                                        <property name="expand">False</property>
-                                                        <property name="fill">True</property>
-                                                        <property name="position">0</property>
-                                                    </packing>
-                                                </child>
-                                                <child>
-                                                    <object class="GtkLayout">
-                                                        <property name="visible">True</property>
-                                                        <property name="can-focus">False</property>
-                                                        <property name="hexpand">True</property>
-                                                    </object>
-                                                    <packing>
-                                                        <property name="expand">False</property>
-                                                        <property name="fill">True</property>
-                                                        <property name="position">1</property>
-                                                    </packing>
-                                                </child>
-                                                <child>
-                                                    <object class="GtkButton" id="text_clear_btn">
-                                                        <property name="visible">True</property>
-                                                        <property name="can-focus">True</property>
-                                                        <property name="receives-default">True</property>
-                                                        <property name="tooltip-text" translatable="yes">Clear the
-                                                            extraction results
-                                                        </property>
-                                                        <property name="image">clear_image</property>
-                                                        <property name="always-show-image">True</property>
-                                                    </object>
-                                                    <packing>
-                                                        <property name="expand">False</property>
-                                                        <property name="fill">True</property>
-                                                        <property name="position">2</property>
-                                                    </packing>
-                                                </child>
-                                                <child>
-                                                    <object class="GtkButton" id="text_copy_btn">
-                                                        <property name="visible">True</property>
-                                                        <property name="can-focus">True</property>
-                                                        <property name="receives-default">True</property>
-                                                        <property name="tooltip-text" translatable="yes">Copy extracted
-                                                            text to clipboard
-                                                        </property>
-                                                        <property name="image">copy_image</property>
-                                                        <property name="always-show-image">True</property>
-                                                    </object>
-                                                    <packing>
-                                                        <property name="expand">False</property>
-                                                        <property name="fill">True</property>
-                                                        <property name="position">3</property>
-                                                    </packing>
-                                                </child>
-                                            </object>
-                                        </child>
-                                    </object>
-                                    <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">True</property>
-                                        <property name="position">2</property>
-                                    </packing>
-                                </child>
-                            </object>
-                            <packing>
-                                <property name="index">-1</property>
-                            </packing>
+                          <object class="GtkButton" id="text_shot_btn">
+                            <property name="focusable">1</property>
+                            <property name="receives-default">1</property>
+                            <property name="tooltip-text" translatable="yes">Take a shot</property>
+                            <property name="child">
+                              <object class="AdwButtonContent">
+                                <property name="icon-name">camera-focus-symbolic</property>
+                              </object>
+                            </property>
+                          </object>
                         </child>
-                    </object>
-                    <packing>
-                        <property name="expand">True</property>
-                        <property name="fill">True</property>
-                        <property name="position">1</property>
-                    </packing>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="text_clear_btn">
+                            <property name="focusable">1</property>
+                            <property name="receives-default">1</property>
+                            <property name="tooltip-text" translatable="yes">Clear the extraction results</property>
+                            <property name="child">
+                              <object class="AdwButtonContent">
+                                <property name="icon-name">edit-clear-symbolic</property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="text_copy_btn">
+                            <property name="focusable">1</property>
+                            <property name="receives-default">1</property>
+                            <property name="tooltip-text" translatable="yes">Copy extracted text to clipboard</property>
+                            <property name="child">
+                              <object class="AdwButtonContent">
+                                <property name="icon-name">edit-copy-symbolic</property>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                      </object>
+                    </property>
+                  </object>
                 </child>
-            </object>
+              </object>
+            </property>
+          </object>
         </child>
-    </template>
+      </object>
+    </child>
+  </template>
+
+  <menu id="primary_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Configure</attribute>
+        <attribute name="action">app.preferences</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_About Frog</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
 </interface>

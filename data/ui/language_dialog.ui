@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.0"/>
+
+  <template class="LanguageDialog" parent="GtkWindow">
+    <property name="default-width">340</property>
+    <property name="default-height">400</property>
+    <child type="titlebar">
+      <object class="GtkHeaderBar" id="header_bar">
+        <style>
+          <class name="flat"/>
+        </style>
+        <property name="title-widget">
+          <object class="GtkLabel">
+            <property name="label" translatable="yes">Available Languages</property>
+            <property name="single-line-mode">True</property>
+            <property name="ellipsize">end</property>
+            <property name="width-chars">5</property>
+            <style>
+              <class name="title"/>
+            </style>
+          </object>
+        </property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox" id="main_box">
+        <property name="margin-top">8</property>
+        <property name="margin-bottom">8</property>
+        <property name="margin-start">8</property>
+        <property name="margin-end">8</property>
+        <child>
+          <object class="AdwClamp">
+            <property name="maximum-size">420</property>
+            <child>
+              <object class="GtkScrolledWindow">
+                <property name="hscrollbar-policy">never</property>
+                <property name="hexpand">1</property>
+                <property name="child">
+                  <object class="GtkListBox" id="language_listbox">
+                    <property name="show-separators">True</property>
+                    <style>
+                      <class name="boxed-list"/>
+                    </style>
+                  </object>
+                </property>
+              </object>
+            </child>
+          </object>
+          </child>
+        </object>
+    </child>
+  </template>
+</interface>
+  

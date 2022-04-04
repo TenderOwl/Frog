@@ -2,7 +2,7 @@
 #
 # MIT License
 #
-# Copyright (c) 2021 Andrey Maksimov <meamka@ya.ru>
+# Copyright (c) 2021-2022 Andrey Maksimov <meamka@ya.ru>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,7 @@ from gettext import gettext as _
 
 import gi
 
-gi.require_version('Gtk', '3.0')
+gi.require_version('Gtk', '4.0')
 from gi.repository import Gtk
 
 
@@ -41,7 +41,3 @@ class AboutDialog(Gtk.AboutDialog):
         self.set_license_type(Gtk.License.MIT_X11)
         self.set_version(version)
 
-        self.connect('response', self.on_close)
-
-    def on_close(self, sender: Gtk.Widget, response_id: int) -> None:
-        self.destroy()

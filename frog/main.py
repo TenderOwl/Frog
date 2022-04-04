@@ -35,27 +35,23 @@ import gi
 from .about_dialog import AboutDialog
 from .language_manager import language_manager
 
-gi.require_version('Gtk', '3.0')
-gi.require_version('Granite', '1.0')
-gi.require_version('Handy', '1')
+gi.require_version('Gtk', '4.0')
+gi.require_version('Adw', '1')
 gi.require_version('Notify', '0.7')
 gi.require_version('Xdp', '1.0')
 
-from gi.repository import Gtk, Gio, Granite, GLib, Notify, Handy, Gdk
-from .config import RESOURCE_PREFIX
+from gi.repository import Gtk, Gio, GLib, Notify, Adw
 from .extract_to_clipboard import extract_to_clipboard
 from .settings import Settings
 from .window import FrogWindow
 
 
-class Application(Gtk.Application):
-    granite_settings: Granite.Settings
+class Application(Adw.Application):
     gtk_settings: Gtk.Settings
 
     def __init__(self, version=None):
         super().__init__(application_id='com.github.tenderowl.frog',
                          flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE)
-        Handy.init()
         self.version = version
 
         # Init GSettings
@@ -63,13 +59,6 @@ class Application(Gtk.Application):
 
         # Initialize tesseract data files storage.
         language_manager.init_tessdata()
-
-        css_provider = Gtk.CssProvider()
-        css_provider.load_from_resource(f"{RESOURCE_PREFIX}/frog.css")
-        screen = Gdk.Screen.get_default()
-        style_context = Gtk.StyleContext()
-        style_context.add_provider_for_screen(
-            screen, css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
         # Initialized libnotify.
         Notify.init("Frog")
@@ -100,16 +89,16 @@ class Application(Gtk.Application):
         self.add_main_option_entries([shortcut_entry])
 
     def do_activate(self):
-        self.granite_settings = Granite.Settings.get_default()
+        # self.granite_settings = Granite.Settings.get_default()
         self.gtk_settings = Gtk.Settings.get_default()
 
-        # Then, we check if the user's preference is for the dark style and set it if it is
-        self.gtk_settings.props.gtk_application_prefer_dark_theme = \
-            self.granite_settings.props.prefers_color_scheme == Granite.SettingsColorScheme.DARK
-
-        # Finally, we listen to changes in Granite.Settings and update our app if the user changes their preference
-        self.granite_settings.connect("notify::prefers-color-scheme",
-                                      self.color_scheme_changed)
+        # # Then, we check if the user's preference is for the dark style and set it if it is
+        # self.gtk_settings.props.gtk_application_prefer_dark_theme = \
+        #     self.granite_settings.props.prefers_color_scheme == Granite.SettingsColorScheme.DARK
+        #
+        # # Finally, we listen to changes in Granite.Settings and update our app if the user changes their preference
+        # self.granite_settings.connect("notify::prefers-color-scheme",
+        #                               self.color_scheme_changed)
 
         win = self.props.active_window
         if not win:
@@ -117,8 +106,9 @@ class Application(Gtk.Application):
         win.present()
 
     def color_scheme_changed(self, _old, _new):
-        self.gtk_settings.props.gtk_application_prefer_dark_theme = \
-            self.granite_settings.props.prefers_color_scheme == Granite.SettingsColorScheme.DARK
+        # self.gtk_settings.props.gtk_application_prefer_dark_theme = \
+        #     self.granite_settings.props.prefers_color_scheme == Granite.SettingsColorScheme.DARK
+        pass
 
     def do_command_line(self, command_line):
         options = command_line.get_options_dict()

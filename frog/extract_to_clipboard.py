@@ -45,12 +45,7 @@ def extract_to_clipboard(settings: Gio.Settings) -> None:
 
     # Initialize screenshot backend
     backend = ScreenshotBackend()
-    try:
-        backend.init_proxy()
-    except Exception as e:
-        print(e)
-        show_notification(_("Failed Attempt"), _("Failed to initialize screenshot service."))
-        return
+    backend.connect('decoded', )
 
     # get the used languages
     extra_lang = settings.get_string("extra-language")
@@ -60,7 +55,7 @@ def extract_to_clipboard(settings: Gio.Settings) -> None:
 
     # Capture the text
     try:
-        text = backend.capture(language)
+        backend.capture(language)
     except Exception as e:
         print(type(e))
         text = ""

@@ -29,7 +29,7 @@
 from gettext import gettext as _
 
 from gi.overrides.GdkPixbuf import Pixbuf
-from gi.repository import Gtk, Handy, Gio, Gdk, GLib, Granite
+from gi.repository import Gtk, Adw, Gio, Gdk, GLib
 
 from .config import RESOURCE_PREFIX
 from .gobject_worker import GObjectWorker
@@ -39,17 +39,15 @@ from .screenshot_backend import ScreenshotBackend
 
 
 @Gtk.Template(resource_path='/com/github/tenderowl/frog/ui/window.ui')
-class FrogWindow(Handy.ApplicationWindow):
+class FrogWindow(Adw.ApplicationWindow):
     __gtype_name__ = 'FrogWindow'
 
-    granite_settings: Granite.Settings = Granite.Settings.get_default()
     gtk_settings: Gtk.Settings = Gtk.Settings.get_default()
 
-    toast: Granite.WidgetsToast
     spinner: Gtk.Spinner = Gtk.Template.Child()
-    main_overlay: Gtk.Overlay = Gtk.Template.Child()
+    toast_overlay: Adw.ToastOverlay = Gtk.Template.Child()
     main_box: Gtk.Box = Gtk.Template.Child()
-    main_stack: Gtk.Stack = Gtk.Template.Child()
+    main_stack: Adw.ViewStack = Gtk.Template.Child()
     text_scrollview: Gtk.ScrolledWindow = Gtk.Template.Child()
     lang_combo: Gtk.ComboBoxText = Gtk.Template.Child()
     toolbox: Gtk.Revealer = Gtk.Template.Child()
@@ -59,49 +57,23 @@ class FrogWindow(Handy.ApplicationWindow):
 
     # Helps to call save_window_state not more often than 500ms
     delayed_state: bool = False
-    clipboard: Gtk.Clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
+    clipboard: Gdk.Clipboard = Gdk.Display().get_clipboard()
 
     def __init__(self, settings: Gio.Settings, **kwargs):
         super().__init__(**kwargs)
 
         self.settings = settings
 
-        self.toast = Granite.WidgetsToast()
-        self.main_overlay.add_overlay(self.toast)
-        self.main_overlay.show_all()
-
         self.infobar = Gtk.InfoBar(visible=True, revealed=False)
         self.infobar.set_show_close_button(True)
         self.infobar.connect('response', self.on_infobar_response)
 
-        infobox: Gtk.Box = self.infobar.get_content_area()
         self.infobar_label = Gtk.Label()
-        infobox.add(self.infobar_label)
+        self.infobar.add_child(self.infobar_label)
 
-        self.main_box.add(self.infobar)  # , False, True, 2)
+        self.main_box.append(self.infobar)  # , False, True, 2)
 
-        # Add Granite widget - Welcome screen.
-        self.welcome_widget: Granite.WidgetsWelcome = Granite.WidgetsWelcome.new(_("Frog"),
-                                                                                 _("Extract text from anywhere"))
-
-        css_provider = Gtk.CssProvider()
-        css_provider.load_from_resource(f'{RESOURCE_PREFIX}/frog.css')
-        self.welcome_widget.get_style_context().add_provider(css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
-
-        self.welcome_widget.append_with_image(
-            Gtk.Image.new_from_resource(f'{RESOURCE_PREFIX}/icons/ocr.png'),
-            "Grab the area",
-            "Select area to extract the text")
-
-        self.welcome_widget.append_with_image(
-            Gtk.Image.new_from_resource(f'{RESOURCE_PREFIX}/icons/translation.png'),
-            "Configure languages",
-            "Download language packs to recognize")
-        self.welcome_widget.connect('activated', self.welcome_action_activated)
-        self.welcome_widget.set_visible(True)
-        self.welcome_widget.show_all()
-
-        self.shot_text = Granite.HyperTextView()
+        self.shot_text = Gtk.TextView()
         self.shot_text.set_editable(False)
         self.shot_text.set_visible(True)
         self.shot_text.set_left_margin(8)
@@ -109,22 +81,22 @@ class FrogWindow(Handy.ApplicationWindow):
         self.shot_text.set_top_margin(8)
         self.shot_text.set_bottom_margin(8)
 
-        self.text_scrollview.remove(self.shot_text)
-        self.text_scrollview.add(self.shot_text)
+        self.text_scrollview.set_child(self.shot_text)
 
-        self.text_shot_btn.set_tooltip_markup(Granite.markup_accel_tooltip(('<Control>g',), _("Take a shot")))
+        self.text_shot_btn.set_tooltip_markup(f'{_("Take a shot")}\n<small>&lt;Control&gt;g</small>')
 
-        self.main_stack.add_named(self.welcome_widget, 'welcome')
         self.main_stack.set_visible_child_name("welcome")
 
-        self.set_default_icon(Pixbuf.new_from_resource_at_scale(
-            f'{RESOURCE_PREFIX}/icons/com.github.tenderowl.frog.svg',
-            128, 128, True
-        ))
+        # self.set_default_icon(Pixbuf.new_from_resource_at_scale(
+        #     f'{RESOURCE_PREFIX}/icons/com.github.tenderowl.frog.svg',
+        #     128, 128, True
+        # ))
 
         # Setup application
         self.current_size = (450, 400)
-        self.resize(*self.settings.get_value('window-size'))
+        saved_width, saved_height = self.settings.get_value('window-size')
+        self.props.default_width = saved_width
+        self.props.default_height = saved_height
 
         # Set default language.
         language_manager.connect('downloading', self.on_language_downloading)
@@ -132,7 +104,7 @@ class FrogWindow(Handy.ApplicationWindow):
         language_manager.connect('removed', self.on_language_removed)
         self.fill_lang_combo()
         if not language_manager.get_downloaded_codes():
-            self.welcome_widget.set_item_sensitivity(0, False)
+            self.text_shot_btn.set_sensitive(False)
 
         # Initialize screenshot backend
         self.backend = ScreenshotBackend()
@@ -140,11 +112,12 @@ class FrogWindow(Handy.ApplicationWindow):
         self.backend.connect('error', self.on_shot_error)
 
         # Connect signals
-        self.text_shot_btn.connect('clicked', self.text_shot_btn_clicked)
+        self.text_shot_btn.connect('clicked', self.on_take_shot_clicked)
         self.text_clear_btn.connect('clicked', self.text_clear_btn_clicked)
         self.text_copy_btn.connect('clicked', self.text_copy_btn_clicked)
         self.lang_combo.connect('changed', self.on_language_change)
-        self.connect('configure-event', self.on_configure_event)
+        self.connect('notify::default-width', self.on_configure_event)
+        self.connect('notify::default-height', self.on_configure_event)
         self.connect('destroy', self.on_window_delete_event)
 
     @property
@@ -155,14 +128,13 @@ class FrogWindow(Handy.ApplicationWindow):
     def active_lang(self, lang_code: str):
         self.settings.set_string("active-language", lang_code)
 
-    def welcome_action_activated(self, widget: Granite.WidgetsWelcome, index: int) -> None:
-        if index == 0:
-            self.get_screenshot()
-        elif index == 1:
-            self.lang_prefs_btn_clicked()
-
-    def text_shot_btn_clicked(self, button: Gtk.Button):
+    @Gtk.Template.Callback()
+    def on_take_shot_clicked(self, button: Gtk.Button):
         self.get_screenshot()
+
+    @Gtk.Template.Callback()
+    def on_configure_language_clicked(self, button: Gtk.Button):
+        self.lang_prefs_btn_clicked()
 
     def fill_lang_combo(self):
         self.lang_combo.remove_all()
@@ -176,22 +148,17 @@ class FrogWindow(Handy.ApplicationWindow):
         if self.active_lang:
             self.lang_combo.set_active_id(self.active_lang.rsplit('+')[0])
 
-        # Show "Grab the area" button if any language is available
-        self.welcome_widget.set_item_visible(0, True)
-
         if not downloaded_languages:
             self.lang_combo.append("-1", _("No languages"))
             self.lang_combo.set_active_id("-1")
-            # Hide "Grab the area" button if not languages is available
-            self.welcome_widget.set_item_visible(0, False)
 
     def on_language_change(self, widget: Gtk.ComboBoxText) -> None:
         active_id = self.lang_combo.get_active_id()
         if active_id and active_id != "-1":
             self.settings.set_string("active-language", active_id)
-            self.welcome_widget.set_item_sensitivity(0, True)
+            self.text_shot_btn.set_sensitive(True)
         else:
-            self.welcome_widget.set_item_sensitivity(0, False)
+            self.text_shot_btn.set_sensitive(False)
 
     def get_screenshot(self) -> None:
         self.active_lang = self.lang_combo.get_active_id()
@@ -234,7 +201,7 @@ class FrogWindow(Handy.ApplicationWindow):
         self.infobar.set_visible(True)
         self.infobar.set_message_type(Gtk.MessageType.ERROR)
 
-    def on_configure_event(self, window, event: Gdk.EventConfigure):
+    def on_configure_event(self, window, event):
         if not self.delayed_state:
             GLib.timeout_add(500, self.save_window_state, window)
             self.delayed_state = True
@@ -243,15 +210,15 @@ class FrogWindow(Handy.ApplicationWindow):
         if response_type == Gtk.ResponseType.CLOSE:
             self.infobar.set_revealed(False)
 
-    def save_window_state(self, user_data) -> bool:
-        self.current_size = user_data.get_size()
+    def save_window_state(self, window: Gtk.Window) -> bool:
+        self.current_size = window.get_default_size()
         self.delayed_state = False
         return False
 
     def on_window_delete_event(self, sender: Gtk.Widget = None) -> None:
         if not self.is_maximized():
             self.settings.set_value("window-size", GLib.Variant("ai", self.current_size))
-            # self.settings.set_value("window-position", GLib.Variant("ai", self.current_position))
+            self.settings.set_value("window-position", GLib.Variant("ai", self.current_position))
 
     def text_clear_btn_clicked(self, button: Gtk.Button) -> None:
         buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
@@ -264,23 +231,24 @@ class FrogWindow(Handy.ApplicationWindow):
         text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
         self.clipboard.set_text(text, -1)
 
-        self.toast.set_title(_("Copied!"))
-        self.toast.send_notification()
+        self.show_toast(_("Copied!"))
 
     def lang_prefs_btn_clicked(self) -> None:
         dialog = LanguagePacksDialog(self)
         dialog.show()
 
     def on_language_downloading(self, sender, lang_code: str):
-        print('on_language_downloading: ' + lang_code)
+        print(f'on_language_downloading: {lang_code}')
 
     def on_language_downloaded(self, sender, lang_code: str):
         language = language_manager.get_language(lang_code)
         print('on_language_downloaded: ' + language)
-        self.toast.set_title(_(f"{language} downloaded"))
-        self.toast.send_notification()
+        self.show_toast(_(f'{language} language downloaded.'))
         self.fill_lang_combo()
 
     def on_language_removed(self, sender, lang_code: str):
         print('on_language_removed: ' + lang_code)
         self.fill_lang_combo()
+
+    def show_toast(self, title, timeout: int = 2) -> None:
+        self.toast_overlay.add_toast(Adw.Toast(title=title, timeout=timeout))

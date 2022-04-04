@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.0"/>
+  <template class="LanguageRow" parent="AdwActionRow">
+    <child>
+      <object class="GtkLabel" id="label">
+        <property name="label" translatable="yes"></property>
+        <property name="hexpand">1</property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkSwitch" id="download_widget">
+        <signal name="activate" handler="download_clicked"/>
+        <property name="state">0</property>
+      </object>
+      </child>
+  </template>
+</interface>
+  
