@@ -26,8 +26,10 @@ from gettext import gettext as _
 
 import gi
 
+from frog.config import APP_ID, RESOURCE_PREFIX
+
 gi.require_version('Gtk', '4.0')
-from gi.repository import Gtk
+from gi.repository import Gtk, Gdk
 
 
 class AboutDialog(Gtk.AboutDialog):
@@ -41,3 +43,5 @@ class AboutDialog(Gtk.AboutDialog):
         self.set_license_type(Gtk.License.MIT_X11)
         self.set_version(version)
 
+        logo = Gdk.Texture.new_from_resource(f'{RESOURCE_PREFIX}/icons/{APP_ID}.svg')
+        self.set_logo(logo)

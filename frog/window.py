@@ -76,7 +76,6 @@ class FrogWindow(Adw.ApplicationWindow):
         self.main_box.append(self.infobar)  # , False, True, 2)
 
         self.shot_text = Gtk.TextView()
-        self.shot_text.set_editable(False)
         self.shot_text.set_visible(True)
         self.shot_text.set_left_margin(8)
         self.shot_text.set_right_margin(8)
@@ -88,11 +87,6 @@ class FrogWindow(Adw.ApplicationWindow):
         self.text_shot_btn.set_tooltip_markup(f'{_("Take a shot")}\n<small>&lt;Control&gt;g</small>')
 
         self.main_stack.set_visible_child_name("welcome")
-
-        # self.set_default_icon(Pixbuf.new_from_resource_at_scale(
-        #     f'{RESOURCE_PREFIX}/icons/com.github.tenderowl.frog.svg',
-        #     128, 128, True
-        # ))
 
         # Setup application
         self.current_size = (450, 400)
