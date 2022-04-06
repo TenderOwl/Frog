@@ -8,7 +8,8 @@
         "--share=network",
         "--share=ipc",
         "--socket=fallback-x11",
-        "--socket=wayland"
+        "--socket=wayland",
+        "--talk-name=org.freedesktop.Notifications"
     ],
     "cleanup" : [
         "/include",
@@ -21,6 +22,7 @@
         "*.la",
         "*.a"
     ],
+    "x-run-args": ["-e"],
     "modules" : [
         "leptonica.json",
         "tesseract.json",

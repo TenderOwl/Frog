@@ -213,10 +213,10 @@ class LanguageManager(GObject.GObject):
                 print(f"{code} was not found at tessdata")
 
     def download_done(self, code):
-        self.emit('downloaded', code)
         self._need_update_cache = True
         if code:
-            del self.loading_languages[code]
+            self.loading_languages.pop(code)
+        self.emit('downloaded', code)
 
     def remove_language(self, code):
         os.remove(os.path.join(tessdata_dir, f"{code}.traineddata"))

@@ -33,8 +33,7 @@ RESOURCE_PREFIX = "/com/github/tenderowl/frog"
 if not os.path.exists(os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata')):
     os.mkdir(os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata'))
 
-
 tessdata_url = "https://github.com/tesseract-ocr/tessdata/raw/main/"
 tessdata_best_url = "https://github.com/tesseract-ocr/tessdata_best/raw/main/"
 tessdata_dir = os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata')
-tessdata_dir_config = f'--tessdata-dir {tessdata_dir}'
+tessdata_config = f'--tessdata-dir {tessdata_dir} –psm 6'

@@ -132,7 +132,7 @@
                         <child>
                           <placeholder/>
                         </child>
-                        <child>
+                        <child type="end">
                           <object class="GtkButton" id="text_clear_btn">
                             <property name="focusable">1</property>
                             <property name="receives-default">1</property>
@@ -144,7 +144,7 @@
                             </property>
                           </object>
                         </child>
-                        <child>
+                        <child type="end">
                           <object class="GtkButton" id="text_copy_btn">
                             <property name="focusable">1</property>
                             <property name="receives-default">1</property>

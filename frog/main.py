@@ -32,18 +32,17 @@ from typing import Optional
 
 import gi
 
-from .about_dialog import AboutDialog
-from .config import RESOURCE_PREFIX
-from .language_manager import language_manager
-from .screenshot_backend import ScreenshotBackend
-
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 gi.require_version('Notify', '0.7')
 gi.require_version('Xdp', '1.0')
 
-from gi.repository import Gtk, Gio, GLib, Notify, Adw, Gdk, GdkPixbuf
-from .extract_to_clipboard import extract_to_clipboard
+from gi.repository import Gtk, Gio, GLib, Notify, Adw, GdkPixbuf
+from .about_dialog import AboutDialog
+from .clipboard_service import clipboard_service
+from .config import RESOURCE_PREFIX
+from .language_manager import language_manager
+from .screenshot_backend import ScreenshotBackend
 from .settings import Settings
 from .window import FrogWindow
 
@@ -114,8 +113,7 @@ class Application(Adw.Application):
         if options.contains("extract_to_clipboard"):
             backend = ScreenshotBackend()
             backend.connect('decoded', Application.on_decoded)
-            backend.capture(self.settings.get_string("active-language"))
-            # extract_to_clipboard(self.settings)
+            backend.capture(self.settings.get_string("active-language"), True)
             return 0
 
         self.activate()
@@ -148,24 +146,32 @@ class Application(Adw.Application):
 
     @staticmethod
     def on_decoded(sender, text: str, copy: bool) -> None:
-        if text and copy:
-            Gdk.Display.get_default().get_clipboard().set(text)
+        icon = GdkPixbuf.Pixbuf.new_from_resource_at_scale(
+            f"{RESOURCE_PREFIX}/icons/com.github.tenderowl.frog.svg",
+            128, 128, True
+        )
 
-            icon = GdkPixbuf.Pixbuf.new_from_resource_at_scale(
-                f"{RESOURCE_PREFIX}/icons/com.github.tenderowl.frog.svg",
-                128, 128, True
+        if not text:
+            notification: Notify.Notification = Notify.Notification.new(
+                summary='Frog',
+                body=_('No text found. Try to grab another region.')
             )
+            notification.set_icon_from_pixbuf(icon)
+            notification.show()
+
+        if copy:
+            clipboard_service.set(text)
+            # clipboard.store_async(GLib.PRIORITY_DEFAULT, callback=Application.clipboard_stored)
+
             notification: Notify.Notification = Notify.Notification.new(
                 summary='Frog',
                 body=_('Text extracted. You can paste it with Ctrl+V')
             )
             notification.set_icon_from_pixbuf(icon)
-
-            # TODO: make callback works
-            # if url:
-            #     notification.add_action('clicked', 'Open URL', notification_callback, url)
-
             notification.show()
+
+        else:
+            print(f'{text}\n')
 
 
 def main(version):

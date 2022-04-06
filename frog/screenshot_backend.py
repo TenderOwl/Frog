@@ -32,7 +32,7 @@ from typing import Optional
 
 from gi.repository import GObject, Gio, Xdp, Gdk
 
-from .config import tessdata_dir_config
+from .config import tessdata_config
 
 try:
     from PIL import Image
@@ -96,7 +96,6 @@ class ScreenshotBackend(GObject.GObject):
         try:
             # Try to find a QR code in the image
             data = decode(Image.open(filename))
-            print(f'data: {data}')
             if len(data) > 0:
                 extracted = data[0].data.decode('utf-8')
 
@@ -104,7 +103,7 @@ class ScreenshotBackend(GObject.GObject):
             else:
                 text = pytesseract.image_to_string(filename,
                                                    lang=lang,
-                                                   config=tessdata_dir_config)
+                                                   config=tessdata_config)
                 extracted = text.strip()
 
         except Exception as e:

@@ -31,6 +31,7 @@ from gettext import gettext as _
 from gi.overrides.GdkPixbuf import Pixbuf
 from gi.repository import Gtk, Adw, Gio, Gdk, GLib, GObject
 
+from .clipboard_service import clipboard_service
 from .config import RESOURCE_PREFIX
 from .gobject_worker import GObjectWorker
 from .language_dialog import LanguagePacksDialog
@@ -57,13 +58,13 @@ class FrogWindow(Adw.ApplicationWindow):
 
     # Helps to call save_window_state not more often than 500ms
     delayed_state: bool = False
-    clipboard: Gdk.Clipboard
+    clipboard: Gdk.Clipboard = Gdk.Display.get_default().get_clipboard()
 
     def __init__(self, settings: Gio.Settings, **kwargs):
         super().__init__(**kwargs)
 
         self.settings = settings
-        self.clipboard = self.get_clipboard()
+        # self.clipboard = Gdk.Display.get_default().get_clipboard()
 
         self.infobar = Gtk.InfoBar(visible=True, revealed=False)
         self.infobar.set_show_close_button(True)
@@ -180,7 +181,7 @@ class FrogWindow(Adw.ApplicationWindow):
             buffer.set_text(text)
 
             if copy:
-                self.copy_to_clipboard(text)
+                clipboard_service.set(text)
 
             self.main_stack.set_visible_child_name("extracted")
             self.toolbox.set_reveal_child(True)
@@ -233,11 +234,7 @@ class FrogWindow(Adw.ApplicationWindow):
     def text_copy_btn_clicked(self, button: Gtk.Widget) -> None:
         buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
         text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
-        self.copy_to_clipboard(text)
-
-    def copy_to_clipboard(self, text):
-        self.clipboard.set(text)
-        self.show_toast(_("Copied!"))
+        clipboard_service.set(text)
 
     def lang_prefs_btn_clicked(self) -> None:
         dialog = LanguagePacksDialog(self)
@@ -245,12 +242,16 @@ class FrogWindow(Adw.ApplicationWindow):
 
     def on_language_downloading(self, sender, lang_code: str):
         print(f'on_language_downloading: {lang_code}')
+        self.spinner.start()
 
     def on_language_downloaded(self, sender, lang_code: str):
         language = language_manager.get_language(lang_code)
         print('on_language_downloaded: ' + language)
         self.show_toast(_(f'{language} language downloaded.'))
         self.fill_lang_combo()
+
+        if not language_manager.loading_languages:
+            self.spinner.stop()
 
     def on_language_removed(self, sender, lang_code: str):
         print('on_language_removed: ' + lang_code)
