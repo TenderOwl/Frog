@@ -65,20 +65,20 @@
                                         <property name="child">
                                           <object class="AdwButtonContent">
                                             <property name="label">Take a shot</property>
-                                            <property name="icon-name">camera-focus-symbolic</property>
+                                            <property name="icon-name">camera-photo-symbolic</property>
                                           </object>
                                         </property>
                                       </object>
                                     </child>
                                     <child>
                                       <object class="GtkButton">
-                                        <signal name="clicked" handler="on_configure_language_clicked"/>
+                                        <property name="action_name">app.preferences</property>
                                         <property name="css_classes">flat</property>
                                         <property name="height_request">40</property>
                                         <property name="child">
                                           <object class="AdwButtonContent">
                                             <property name="label">_Configure languages</property>
-                                            <property name="icon-name">language-symbolic</property>
+                                            <property name="icon-name">preferences-desktop-locale-symbolic</property>
                                             <property name="use-underline">True</property>
                                           </object>
                                         </property>
@@ -119,9 +119,10 @@
                         <property name="spacing">8</property>
                         <child>
                           <object class="GtkButton" id="text_shot_btn">
+                            <property name="action_name">app.get_screenshot</property>
                             <property name="focusable">1</property>
                             <property name="receives-default">1</property>
-                            <property name="tooltip-text" translatable="yes">Take a shot</property>
+                            <property name="tooltip-markup" translatable="yes">Take a shot</property>
                             <property name="child">
                               <object class="AdwButtonContent">
                                 <property name="icon-name">camera-focus-symbolic</property>

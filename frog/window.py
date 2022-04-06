@@ -28,12 +28,10 @@
 
 from gettext import gettext as _
 
-from gi.overrides.GdkPixbuf import Pixbuf
-from gi.repository import Gtk, Adw, Gio, Gdk, GLib, GObject
+from gi.repository import Gtk, Adw, Gio, GLib, Gdk
 
 from .clipboard_service import clipboard_service
-from .config import RESOURCE_PREFIX
-from .gobject_worker import GObjectWorker
+from .config import RESOURCE_PREFIX, APP_ID
 from .language_dialog import LanguagePacksDialog
 from .language_manager import language_manager
 from .screenshot_backend import ScreenshotBackend
@@ -49,6 +47,7 @@ class FrogWindow(Adw.ApplicationWindow):
     toast_overlay: Adw.ToastOverlay = Gtk.Template.Child()
     main_box: Gtk.Box = Gtk.Template.Child()
     main_stack: Adw.ViewStack = Gtk.Template.Child()
+    welcome: Adw.StatusPage = Gtk.Template.Child()
     text_scrollview: Gtk.ScrolledWindow = Gtk.Template.Child()
     lang_combo: Gtk.ComboBoxText = Gtk.Template.Child()
     toolbox: Gtk.Revealer = Gtk.Template.Child()
@@ -58,13 +57,11 @@ class FrogWindow(Adw.ApplicationWindow):
 
     # Helps to call save_window_state not more often than 500ms
     delayed_state: bool = False
-    clipboard: Gdk.Clipboard = Gdk.Display.get_default().get_clipboard()
 
     def __init__(self, settings: Gio.Settings, **kwargs):
         super().__init__(**kwargs)
 
         self.settings = settings
-        # self.clipboard = Gdk.Display.get_default().get_clipboard()
 
         self.infobar = Gtk.InfoBar(visible=True, revealed=False)
         self.infobar.set_show_close_button(True)
@@ -86,6 +83,8 @@ class FrogWindow(Adw.ApplicationWindow):
 
         self.text_shot_btn.set_tooltip_markup(f'{_("Take a shot")}\n<small>&lt;Control&gt;g</small>')
 
+        logo = Gdk.Texture.new_from_resource(f'{RESOURCE_PREFIX}/icons/{APP_ID}.svg')
+        self.welcome.set_paintable(logo)
         self.main_stack.set_visible_child_name("welcome")
 
         # Setup application
@@ -127,10 +126,6 @@ class FrogWindow(Adw.ApplicationWindow):
     @Gtk.Template.Callback()
     def on_take_shot_clicked(self, button: Gtk.Button):
         self.get_screenshot()
-
-    @Gtk.Template.Callback()
-    def on_configure_language_clicked(self, button: Gtk.Button):
-        self.lang_prefs_btn_clicked()
 
     def fill_lang_combo(self):
         self.lang_combo.remove_all()
@@ -230,7 +225,7 @@ class FrogWindow(Adw.ApplicationWindow):
         text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
         clipboard_service.set(text)
 
-    def lang_prefs_btn_clicked(self) -> None:
+    def show_preferences(self) -> None:
         dialog = LanguagePacksDialog(self)
         dialog.show()
 

@@ -91,6 +91,11 @@ class Application(Adw.Application):
         shot_action.connect("activate", print)
         self.add_action(shot_action)
 
+        action = Gio.SimpleAction.new("preferences", None)
+        action.connect("activate", self.on_preferences)
+        self.add_action(action)
+        self.set_accels_for_action("app.preferences", ("<Control>comma",))
+
         action = Gio.SimpleAction.new("shortcuts", None)
         action.connect("activate", self.on_shortcuts)
         self.add_action(action)
@@ -119,33 +124,27 @@ class Application(Adw.Application):
         self.activate()
         return 0
 
-    def on_about(self, action, param):
+    def on_preferences(self, _action, _param) -> None:
+        self.get_active_window().show_preferences()
+
+    def on_about(self, _action, _param):
         about_dialog = AboutDialog(transient_for=self.props.active_window, modal=True, version=self.version)
         about_dialog.present()
 
     def on_shortcuts(self, _action, _param):
         builder = Gtk.Builder()
-        builder.add_from_resource(
-            f"{RESOURCE_PREFIX}/ui/shortcuts.ui")
+        builder.add_from_resource(f"{RESOURCE_PREFIX}/ui/shortcuts.ui")
         builder.get_object("shortcuts").set_transient_for(self.get_active_window())
         builder.get_object("shortcuts").show()
 
-    def get_screenshot(self, action: Gio.SimpleAction, parameter: Optional[GLib.Variant]) -> None:
-        self.do_activate()
-        win: FrogWindow = self.props.active_window
-        win.present()
+    def get_screenshot(self, _action, _param) -> None:
+        self.get_active_window().get_screenshot()
 
-        win.get_screenshot()
-
-    def get_screenshot_and_copy(self, action: Gio.SimpleAction, parameter: Optional[GLib.Variant]) -> None:
-        self.do_activate()
-        win: FrogWindow = self.props.active_window
-        win.present()
-
-        win.get_screenshot(copy=True)
+    def get_screenshot_and_copy(self, _action, _param) -> None:
+        self.get_active_window().get_screenshot(copy=True)
 
     @staticmethod
-    def on_decoded(sender, text: str, copy: bool) -> None:
+    def on_decoded(_sender, text: str, copy: bool) -> None:
         icon = GdkPixbuf.Pixbuf.new_from_resource_at_scale(
             f"{RESOURCE_PREFIX}/icons/com.github.tenderowl.frog.svg",
             128, 128, True
@@ -161,7 +160,6 @@ class Application(Adw.Application):
 
         if copy:
             clipboard_service.set(text)
-            # clipboard.store_async(GLib.PRIORITY_DEFAULT, callback=Application.clipboard_stored)
 
             notification: Notify.Notification = Notify.Notification.new(
                 summary='Frog',
