@@ -2,24 +2,36 @@
 <interface>
   <object class="GtkWindow" id="shortcuts">
     <property name="modal">1</property>
-    <property name="title" translatable="yes">Shortcuts</property>
+    <property name="title" translatable="yes" context="shortcut window">Shortcuts</property>
     <child>
       <object class="GtkShortcutsSection">
         <property name="section-name">shortcuts</property>
         <property name="max-height">10</property>
         <child>
           <object class="GtkShortcutsGroup">
-            <property name="title" translatable="yes">General</property>
+            <property name="title" translatable="yes" context="shortcut window">General</property>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="accelerator">&lt;ctrl&gt;G</property>
-                <property name="title" translatable="yes">Get screenshot and extract text.</property>
+                <property name="title" translatable="yes" context="shortcut window">Get screenshot and extract text</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="accelerator">&lt;ctrl&gt;&lt;shift&gt;G</property>
-                <property name="title" translatable="yes">Get screenshot and extract text.</property>
+                <property name="title" translatable="yes" context="shortcut window">Get screenshot and extract text</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">&lt;ctrl&gt;C</property>
+                <property name="title" translatable="yes" context="shortcut window">Copy extracted text to clipboard</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">&lt;ctrl&gt;comma</property>
+                <property name="title" translatable="yes" context="shortcut window">Display preferences</property>
               </object>
             </child>
           </object>
