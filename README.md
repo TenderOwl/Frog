@@ -24,11 +24,10 @@ The Frog could help you to deal with QR codes helping you to get them decoded!
 </figure>
 </div>
 
-
 ## See it in action
 
 <div align="center">
-<video controls src="https://user-images.githubusercontent.com/519146/145669866-20981f86-3bb3-4c10-a49b-6282d8e57029.mp4" />
+<video controls src="https://user-images.githubusercontent.com/519146/162445469-bedeed49-ebb8-4b9c-8bb5-f65d4d97d1fe.mp4" />
 </div>
 
 
