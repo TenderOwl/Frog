@@ -128,15 +128,18 @@
                             <property name="tooltip-markup" translatable="yes">Take a shot</property>
                             <property name="child">
                               <object class="AdwButtonContent">
-                                <property name="icon-name">camera-focus-symbolic</property>
+                                <property name="label">Take a shot</property>
+                                <property name="icon-name">camera-photo-symbolic</property>
                               </object>
                             </property>
                           </object>
                         </child>
                         <child>
-                          <placeholder/>
+                          <object class="GtkBox">
+                            <property name="hexpand">1</property>
+                          </object>
                         </child>
-                        <child type="end">
+                        <child>
                           <object class="GtkButton" id="text_clear_btn">
                             <property name="focusable">1</property>
                             <property name="receives-default">1</property>
@@ -148,7 +151,7 @@
                             </property>
                           </object>
                         </child>
-                        <child type="end">
+                        <child>
                           <object class="GtkButton" id="text_copy_btn">
                             <property name="focusable">1</property>
                             <property name="receives-default">1</property>
