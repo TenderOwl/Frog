@@ -32,7 +32,7 @@ from gi.repository import Gtk, Adw, Gio, GLib, Gdk
 
 from .clipboard_service import clipboard_service
 from .config import RESOURCE_PREFIX, APP_ID
-from .language_dialog import LanguagePacksDialog
+from .language_dialog import LanguagePacksDialog, LanguageItem, LanguageRow
 from .language_manager import language_manager
 from .screenshot_backend import ScreenshotBackend
 
@@ -49,7 +49,7 @@ class FrogWindow(Adw.ApplicationWindow):
     main_stack: Adw.ViewStack = Gtk.Template.Child()
     welcome: Adw.StatusPage = Gtk.Template.Child()
     text_scrollview: Gtk.ScrolledWindow = Gtk.Template.Child()
-    lang_combo: Gtk.ComboBoxText = Gtk.Template.Child()
+    lang_combo: Gtk.MenuButton = Gtk.Template.Child()
     toolbox: Gtk.Revealer = Gtk.Template.Child()
     text_shot_btn: Gtk.Button = Gtk.Template.Child()
     text_clear_btn: Gtk.Button = Gtk.Template.Child()
@@ -93,6 +93,11 @@ class FrogWindow(Adw.ApplicationWindow):
         self.props.default_width = saved_width
         self.props.default_height = saved_height
 
+        self.language_store: Gio.ListStore = Gio.ListStore.new(LanguageItem)
+        self.language_model: Gtk.SingleSelection = Gtk.SingleSelection.new(self.language_store)
+        self.languages_list = Gtk.ListBox(selection_mode=Gtk.SelectionMode.SINGLE)
+        self.languages_list.bind_model(self.language_model, create_widget_func=ListMenuRow)
+
         # Set default language.
         language_manager.connect('downloading', self.on_language_downloading)
         language_manager.connect('downloaded', self.on_language_downloaded)
@@ -100,6 +105,11 @@ class FrogWindow(Adw.ApplicationWindow):
         self.fill_lang_combo()
         if not language_manager.get_downloaded_codes():
             self.text_shot_btn.set_sensitive(False)
+
+        popover = Gtk.Popover()
+        popover.set_child(self.languages_list)
+        popover.get_style_context().add_class('menu')
+        self.lang_combo.set_popover(popover)
 
         # Initialize screenshot backend
         self.backend = ScreenshotBackend()
@@ -110,7 +120,7 @@ class FrogWindow(Adw.ApplicationWindow):
         self.text_shot_btn.connect('clicked', self.on_take_shot_clicked)
         self.text_clear_btn.connect('clicked', self.text_clear_btn_clicked)
         self.text_copy_btn.connect('clicked', self.text_copy_btn_clicked)
-        self.lang_combo.connect('changed', self.on_language_change)
+        self.languages_list.connect('row-activated', self.on_language_change)
         self.connect('notify::default-width', self.on_configure_event)
         self.connect('notify::default-height', self.on_configure_event)
         self.connect('destroy', self.on_window_delete_event)
@@ -128,26 +138,29 @@ class FrogWindow(Adw.ApplicationWindow):
         self.get_screenshot()
 
     def fill_lang_combo(self):
-        self.lang_combo.remove_all()
+        self.language_store.remove_all()
 
         downloaded_languages = language_manager.get_downloaded_languages(force=True)
         for lang in downloaded_languages:
-            self.lang_combo.append(language_manager.get_language_code(lang), lang)
+            self.language_store.append(LanguageItem(code=language_manager.get_language_code(lang), title=lang))
 
-        self.lang_combo.set_active(0)
+        self.lang_combo.set_label(_('Language'))
 
         if self.active_lang:
-            self.lang_combo.set_active_id(self.active_lang.rsplit('+')[0])
+            self.lang_combo.set_label(language_manager.get_language(self.active_lang.rsplit('+')[0]))
 
         if not downloaded_languages:
-            self.lang_combo.append("-1", _("No languages"))
-            self.lang_combo.set_active_id("-1")
+            self.lang_combo.set_label(_('Language'))
 
-    def on_language_change(self, widget: Gtk.ComboBoxText) -> None:
-        active_id = self.lang_combo.get_active_id()
+    def on_language_change(self, widget: Gtk.ListBox, row: Gtk.ListBoxRow) -> None:
+        child: ListMenuRow = row.get_child()
+        active_id = child.item.code if child.item else None
+
         if active_id and active_id != "-1":
             self.settings.set_string("active-language", active_id)
             self.text_shot_btn.set_sensitive(True)
+            self.lang_combo.set_label(child.item.title)
+            widget.get_parent().get_parent().hide()
         else:
             self.text_shot_btn.set_sensitive(False)
 
@@ -248,3 +261,11 @@ class FrogWindow(Adw.ApplicationWindow):
 
     def show_toast(self, title, timeout: int = 2) -> None:
         self.toast_overlay.add_toast(Adw.Toast(title=title, timeout=timeout))
+
+
+class ListMenuRow(Gtk.Label):
+    def __init__(self, item: LanguageItem):
+        super(ListMenuRow, self).__init__()
+
+        self.item = item
+        self.set_label(item.title)

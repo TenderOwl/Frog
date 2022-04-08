@@ -16,10 +16,9 @@
               </object>
             </property>
             <child>
-              <object class="GtkComboBoxText" id="lang_combo">
+              <object class="GtkMenuButton" id="lang_combo">
+                <property name="label" translatable="yes">Language</property>
                 <property name="tooltip-text" translatable="yes">Select language to extract</property>
-                <property name="active-id">eng</property>
-                <property name="css-classes">flat</property>
               </object>
             </child>
             <child>
