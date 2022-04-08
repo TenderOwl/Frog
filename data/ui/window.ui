@@ -58,9 +58,11 @@
                                     <property name="orientation">vertical</property>
                                     <child>
                                       <object class="GtkButton">
-                                        <signal name="clicked" handler="on_take_shot_clicked"/>
-                                        <property name="css_classes">flat</property>
+                                        <property name="action_name">app.get_screenshot</property>
                                         <property name="height_request">40</property>
+                                        <style>
+                                          <class name="pill" />
+                                        </style>
                                         <property name="child">
                                           <object class="AdwButtonContent">
                                             <property name="label">Take a shot</property>
@@ -72,8 +74,10 @@
                                     <child>
                                       <object class="GtkButton">
                                         <property name="action_name">app.preferences</property>
-                                        <property name="css_classes">flat</property>
                                         <property name="height_request">40</property>
+                                        <style>
+                                          <class name="pill" />
+                                        </style>
                                         <property name="child">
                                           <object class="AdwButtonContent">
                                             <property name="label">_Configure languages</property>

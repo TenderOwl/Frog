@@ -117,7 +117,6 @@ class FrogWindow(Adw.ApplicationWindow):
         self.backend.connect('error', self.on_shot_error)
 
         # Connect signals
-        self.text_shot_btn.connect('clicked', self.on_take_shot_clicked)
         self.text_clear_btn.connect('clicked', self.text_clear_btn_clicked)
         self.text_copy_btn.connect('clicked', self.text_copy_btn_clicked)
         self.languages_list.connect('row-activated', self.on_language_change)
@@ -132,10 +131,6 @@ class FrogWindow(Adw.ApplicationWindow):
     @active_lang.setter
     def active_lang(self, lang_code: str):
         self.settings.set_string("active-language", lang_code)
-
-    @Gtk.Template.Callback()
-    def on_take_shot_clicked(self, button: Gtk.Button):
-        self.get_screenshot()
 
     def fill_lang_combo(self):
         self.language_store.remove_all()
@@ -165,7 +160,7 @@ class FrogWindow(Adw.ApplicationWindow):
             self.text_shot_btn.set_sensitive(False)
 
     def get_screenshot(self, copy: bool = False) -> None:
-        self.active_lang = self.lang_combo.get_active_id()
+        self.active_lang = language_manager.get_language_code(self.lang_combo.get_label())
 
         self.hide()
 
