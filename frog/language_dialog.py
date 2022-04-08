@@ -60,41 +60,19 @@ class LanguagePacksDialog(Gtk.Window):
 
         self.store: Gio.ListStore = Gio.ListStore.new(LanguageItem)
         self.model: Gtk.SingleSelection = Gtk.SingleSelection.new(self.store)
-        # self.main_box: Gtk.Box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, vexpand=True)
-
-        # self.header_bar = Gtk.HeaderBar()
-        # self.header_bar.get_style_context().add_class('flat')
-        # self.header_bar.set_title_widget(Gtk.Label(label=_('Available Languages')))
-        # self.header_bar.set_show_title_buttons(True)
-        # self.main_box.append(self.header_bar)
-        # self.main_box.pack_start(header_label, False, True, 8)
-
-        # scrolled_view = Gtk.ScrolledWindow(vexpand=True)
-        # self.language_listbox = Gtk.ListBox()
-        # self.language_listbox.set_show_separators(True)
-        # self.language_listbox.set_model(self.model)
         self.language_listbox.bind_model(self.store, create_widget_func=LanguagePacksDialog.create_list_widget)
         self.language_listbox.set_selection_mode(Gtk.SelectionMode.SINGLE)
-        self.language_listbox.set_sort_func(self.sort_rows)
 
         self.reload_language_list()
 
         language_manager.connect('downloaded', lambda sender, code: self.reload_language_list())
         language_manager.connect('removed', lambda sender, code: self.reload_language_list())
 
-        # scrolled_view.set_child(self.language_listbox)
-        # self.main_box.append(scrolled_view)
-
     def reload_language_list(self):
         self.store.remove_all()
 
-        # for child in self.language_listbox.get_:
-        #     self.language_listbox.remove(child)
-        #
         for lang_code in language_manager.get_available_codes():
             self.store.append(LanguageItem(code=lang_code, title=language_manager.get_language(lang_code)))
-        #
-        # self.language_listbox.show_all()
 
     @staticmethod
     def create_list_widget(item: LanguageItem):
