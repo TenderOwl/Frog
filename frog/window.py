@@ -139,13 +139,13 @@ class FrogWindow(Adw.ApplicationWindow):
         for lang in downloaded_languages:
             self.language_store.append(LanguageItem(code=language_manager.get_language_code(lang), title=lang))
 
-        self.lang_combo.set_label(_('Language'))
+        self.lang_combo.set_label(_('English'))
 
-        if self.active_lang:
+        if self.active_lang and self.active_lang in downloaded_languages:
             self.lang_combo.set_label(language_manager.get_language(self.active_lang.rsplit('+')[0]))
 
-        if not downloaded_languages:
-            self.lang_combo.set_label(_('Language'))
+        else:
+            self.lang_combo.set_label(_('English'))
 
     def on_language_change(self, widget: Gtk.ListBox, row: Gtk.ListBoxRow) -> None:
         child: ListMenuRow = row.get_child()
