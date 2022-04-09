@@ -2,6 +2,10 @@
 
 > Intuitive text extraction tool (OCR) for GNOME.
 
+<a href="https://hosted.weblate.org/engage/frog/">
+<img src="https://hosted.weblate.org/widgets/frog/-/default/svg-badge.svg" alt="Translation status" />
+</a>
+
 <div align="center">
 <figure>
 <img src="https://user-images.githubusercontent.com/519146/162587823-61becc3a-1726-4797-ad5a-3260ff132c6f.png" alt="Frog window" />
