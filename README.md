@@ -1,26 +1,20 @@
 # Frog
 
-> Text extraction tool for GNOME.
-
-[![Build Status](https://github.com/tenderowl/frog/workflows/CI/badge.svg)](https://github.com/tenderowl/frog/actions)
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+> Intuitive text extraction tool (OCR) for GNOME.
 
 <div align="center">
 <figure>
-<img alt="frog" src="data/icons/com.github.tenderowl.frog.svg" width="128" />
+<img src="https://user-images.githubusercontent.com/519146/162587823-61becc3a-1726-4797-ad5a-3260ff132c6f.png" alt="Frog window" />
 </figure>
 </div>
+
 
 Quickly extract text from almost any source: youtube, screencasts, PDFs, webpages, photos, etc.
 Grab the image and get the text.
 
 The Frog could help you to deal with QR codes helping you to get them decoded!
 
-<div align="center">
-<figure>
-<img src="https://user-images.githubusercontent.com/519146/159361162-14f155c3-b195-484e-9e5b-dab4c617f2c8.png" />
-</figure>
-</div>
+<a href='https://flathub.org/apps/details/org.gimp.GIMP'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
 
 ## See it in action
 
@@ -55,7 +49,7 @@ To build the frog application just open project folder in Builder and press "Exe
 
 ## Localization
 
-If you want to provide localization for your language you may use [Poedit](https://poedit.net) to create translations. Source files listed in `po/POTFILES`.
+If you want to provide localization for your language you may use [webplate project](https://hosted.weblate.org/projects/frog/default/) or [Poedit](https://poedit.net) to create translations. Source files listed in `po/POTFILES`.
 
 # Contribution
 
