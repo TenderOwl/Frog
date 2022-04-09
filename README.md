@@ -53,6 +53,10 @@ I'm the guy who loves GUI tools instead of command-line thus I recommend using [
 To build the frog application just open project folder in Builder and press "Execute" (F5). It will download requirements and build the app.
 
 
+## Localization
+
+If you want to provide localization for your language you may use [Poedit](https://poedit.net) to create translations. Source files listed in `po/POTFILES`.
+
 # Contribution
 
 Any help is appreciated :)
