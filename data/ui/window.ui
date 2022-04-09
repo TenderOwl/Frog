@@ -65,7 +65,7 @@
                                         </style>
                                         <property name="child">
                                           <object class="AdwButtonContent">
-                                            <property name="label">Take a shot</property>
+                                            <property name="label" translatable="yes">Take a shot</property>
                                             <property name="icon-name">camera-photo-symbolic</property>
                                           </object>
                                         </property>
@@ -80,7 +80,7 @@
                                         </style>
                                         <property name="child">
                                           <object class="AdwButtonContent">
-                                            <property name="label">_Configure languages</property>
+                                            <property name="label" translatable="yes">_Configure languages</property>
                                             <property name="icon-name">preferences-desktop-locale-symbolic</property>
                                             <property name="use-underline">True</property>
                                           </object>
