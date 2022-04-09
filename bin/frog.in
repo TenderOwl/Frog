@@ -2,7 +2,7 @@
 
 # frog.in
 #
-# Copyright 2021 Andrey Maksimov
+# Copyright 2021-2022 Andrey Maksimov
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -32,14 +32,22 @@ import os
 import sys
 import signal
 import gettext
+import locale
 
 VERSION = '@VERSION@'
 pkgdatadir = '@pkgdatadir@'
 localedir = '@localedir@'
+project_name = '@projectname@'
 
 sys.path.insert(1, pkgdatadir)
 signal.signal(signal.SIGINT, signal.SIG_DFL)
-gettext.install('frog', localedir)
+
+# L10n
+locale.textdomain(project_name)
+locale.bindtextdomain(project_name, localedir)
+gettext.textdomain(project_name)
+gettext.bindtextdomain(project_name, localedir)
+
 
 if __name__ == '__main__':
     import gi

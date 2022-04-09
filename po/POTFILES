@@ -1,7 +1,10 @@
-data/com.github.tenderowl.frog.desktop.in
 data/com.github.tenderowl.frog.appdata.xml.in
-data/com.github.tenderowl.frog.gschema.xml
-src/window.ui
-src/main.py
-src/window.py
-
+data/com.github.tenderowl.frog.desktop.in
+data/ui/language_dialog.ui
+data/ui/shortcuts.ui
+data/ui/window.ui
+frog/about_dialog.py
+frog/language_manager.py
+frog/window.py
+frog/main.py
+frog/window.py
