@@ -27,11 +27,14 @@
 # authorization.
 
 from gettext import gettext as _
+from mimetypes import guess_type
+from typing import List
 
-from gi.repository import Gtk, Adw, Gio, GLib, Gdk
+from gi.repository import Gtk, Adw, Gio, GLib, Gdk, GObject
 
 from .clipboard_service import clipboard_service
 from .config import RESOURCE_PREFIX, APP_ID
+from .gobject_worker import GObjectWorker
 from .language_dialog import LanguagePacksDialog, LanguageItem, LanguageRow
 from .language_manager import language_manager
 from .screenshot_backend import ScreenshotBackend
@@ -72,14 +75,26 @@ class FrogWindow(Adw.ApplicationWindow):
 
         self.main_box.append(self.infobar)  # , False, True, 2)
 
-        self.shot_text = Gtk.TextView()
-        self.shot_text.set_visible(True)
+        self.shot_text = Gtk.TextView(editable=False)
         self.shot_text.set_left_margin(8)
         self.shot_text.set_right_margin(8)
         self.shot_text.set_top_margin(8)
         self.shot_text.set_bottom_margin(8)
 
         self.text_scrollview.set_child(self.shot_text)
+
+        # Init drag-n-drop controller
+        drop_target_main: Gtk.DropTarget = Gtk.DropTarget.new(type=Gdk.FileList, actions=Gdk.DragAction.COPY)
+        drop_target_main.connect('drop', self.on_dnd_drop)
+        drop_target_main.connect('enter', self.on_dnd_enter)
+        drop_target_main.connect('leave', self.on_dnd_leave)
+        self.main_box.add_controller(drop_target_main)
+
+        drop_target_textview: Gtk.DropTarget = Gtk.DropTarget.new(type=Gdk.FileList, actions=Gdk.DragAction.COPY)
+        drop_target_textview.connect('drop', self.on_dnd_drop)
+        drop_target_textview.connect('enter', self.on_dnd_enter)
+        drop_target_textview.connect('leave', self.on_dnd_leave)
+        self.shot_text.add_controller(drop_target_textview)
 
         self.text_shot_btn.set_tooltip_markup(f'{_("Take a shot")}\n<small>&lt;Control&gt;g</small>')
 
@@ -160,16 +175,19 @@ class FrogWindow(Adw.ApplicationWindow):
             self.text_shot_btn.set_sensitive(False)
 
     def get_screenshot(self, copy: bool = False) -> None:
-        self.active_lang = language_manager.get_language_code(self.lang_combo.get_label())
-
+        lang = self.get_language()
+        self.spinner.start()
         self.hide()
+        self.backend.capture(lang, copy)
 
+    def get_language(self) -> str:
+        self.active_lang = language_manager.get_language_code(self.lang_combo.get_label())
         # Just in case. Probably better add primary language in settings
         extra_lang = self.settings.get_string("extra-language")
         if self.active_lang != extra_lang:
             self.active_lang = f'{self.active_lang}+{extra_lang}'
 
-        self.backend.capture(self.active_lang, copy)
+        return self.active_lang
 
     def on_shot_done(self, sender, text: str, copy: bool) -> None:
         try:
@@ -187,12 +205,14 @@ class FrogWindow(Adw.ApplicationWindow):
             print(f"ERROR: {e}")
 
         self.show()
+        self.spinner.stop()
 
     def on_shot_error(self, sender, message: str) -> None:
         print(f"ERROR: '{message}'")
         if message:
             self.on_screenshot_error(self, 'Whoops')
         self.show()
+        self.spinner.stop()
 
     def on_screenshot_error(self, sender, error) -> None:
         if not isinstance(error, str):
@@ -202,6 +222,31 @@ class FrogWindow(Adw.ApplicationWindow):
         self.infobar.set_revealed(True)
         self.infobar.set_visible(True)
         self.infobar.set_message_type(Gtk.MessageType.ERROR)
+        self.spinner.stop()
+
+    def on_dnd_enter(self, drop_target, x, y):
+        print('DND Enter', drop_target)
+        self.get_style_context().add_class('drop_hover')
+        return Gdk.DragAction.COPY
+
+    def on_dnd_leave(self, user_data=None):
+        print('DND Leave')
+        self.get_style_context().remove_class('drop_hover')
+
+    def on_dnd_drop(self, drop_target, value: Gdk.FileList, x, y, user_data=None) -> None:
+        files: List[Gio.File] = value.get_files()
+        if not files:
+            return
+
+        item = files[0]
+        (mimetype, encoding) = guess_type(item.get_path())
+        print(f'Dropped item ({mimetype}): {item.get_path()}')
+        if not mimetype or not mimetype.startswith('image'):
+            return self.show_toast(_('Only images can be processed.'))
+
+        lang = self.get_language()
+        self.spinner.start()
+        GObjectWorker.call(self.backend.decode_image, (lang, item.get_path()))
 
     def on_configure_event(self, window, event):
         if not self.delayed_state:

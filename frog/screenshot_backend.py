@@ -88,9 +88,9 @@ class ScreenshotBackend(GObject.GObject):
         filename = self.portal.take_screenshot_finish(res)
         # Remove file:// from the path
         filename = filename[7:]
-        self._decode(lang, filename, copy)
+        self.decode_image(lang, filename, copy)
 
-    def _decode(self, lang: str, filename: str, copy: bool = False) -> None:
+    def decode_image(self, lang: str, filename: str, copy: bool = False) -> None:
         print(f'Decoding with {lang} language.')
         extracted = None
         try:
