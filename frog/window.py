@@ -242,7 +242,7 @@ class FrogWindow(Adw.ApplicationWindow):
         (mimetype, encoding) = guess_type(item.get_path())
         print(f'Dropped item ({mimetype}): {item.get_path()}')
         if not mimetype or not mimetype.startswith('image'):
-            return self.show_toast(_('Only images can be processed.'))
+            return self.show_toast(_('Only images can be processed that way.'))
 
         lang = self.get_language()
         self.spinner.start()
