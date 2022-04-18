@@ -2,15 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "POT-Creation-Date: 2022-04-09 21:41+0300\n"
-"PO-Revision-Date: 2022-04-09 21:41+0300\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2022-04-19 00:05+0000\n"
+"Last-Translator: 刘韬 <lyuutau@outlook.com>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
+"frog/default/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Weblate 4.12-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: data/ui\n"
@@ -20,7 +21,7 @@ msgstr ""
 
 #: data/ui/language_dialog.ui:16
 msgid "Available Languages"
-msgstr ""
+msgstr "可用的语言"
 
 #: data/ui/shortcuts.ui:5
 msgctxt "shortcut window"
@@ -35,12 +36,12 @@ msgstr ""
 #: data/ui/shortcuts.ui:16 data/ui/shortcuts.ui:22
 msgctxt "shortcut window"
 msgid "Get screenshot and extract text"
-msgstr ""
+msgstr "获取屏幕截图并提取文本"
 
 #: data/ui/shortcuts.ui:28
 msgctxt "shortcut window"
 msgid "Copy extracted text to clipboard"
-msgstr ""
+msgstr "将提取的文本复制到剪贴板上"
 
 #: data/ui/shortcuts.ui:34
 msgctxt "shortcut window"
@@ -48,16 +49,17 @@ msgid "Display preferences"
 msgstr ""
 
 #: data/ui/window.ui:12
+#, fuzzy
 msgid "Extract text from anywhere"
-msgstr ""
+msgstr "从任何地方提取文本"
 
 #: data/ui/window.ui:20
 msgid "Language"
-msgstr ""
+msgstr "语言"
 
 #: data/ui/window.ui:21
 msgid "Select language to extract"
-msgstr ""
+msgstr "选择要提取的语言"
 
 #: data/ui/window.ui:68 data/ui/window.ui:128
 msgid "Take a shot"
@@ -69,11 +71,11 @@ msgstr ""
 
 #: data/ui/window.ui:146
 msgid "Clear the extraction results"
-msgstr ""
+msgstr "清除提取结果"
 
 #: data/ui/window.ui:158
 msgid "Copy extracted text to clipboard"
-msgstr ""
+msgstr "将提取的文本复制到剪贴板上"
 
 #: data/ui/window.ui:181
 msgid "_Configure"
@@ -81,11 +83,11 @@ msgstr ""
 
 #: data/ui/window.ui:187
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "键盘快捷键(_K)"
 
 #: data/ui/window.ui:191
 msgid "_About Frog"
-msgstr ""
+msgstr "关于 Frog(_A)"
 
 #: frog/about_dialog.py:39
 msgid ""
@@ -95,7 +97,7 @@ msgstr ""
 
 #: frog/about_dialog.py:42
 msgid "Learn more about Frog"
-msgstr ""
+msgstr "了解更多关于 Frog 的信息"
 
 #: frog/language_manager.py:32
 msgid "Afrikaans"
@@ -159,11 +161,11 @@ msgstr ""
 
 #: frog/language_manager.py:47
 msgid "Chinese - Simplified"
-msgstr ""
+msgstr "简体中文"
 
 #: frog/language_manager.py:48
 msgid "Chinese - Traditional"
-msgstr ""
+msgstr "繁体中文"
 
 #: frog/language_manager.py:49
 msgid "Cherokee"
@@ -583,17 +585,18 @@ msgstr ""
 
 #: frog/main.py:77
 msgid "Extract directly into the clipboard"
-msgstr ""
+msgstr "直接提取到剪贴板中"
 
 #: frog/main.py:156
+#, fuzzy
 msgid "No text found. Try to grab another region."
-msgstr ""
+msgstr "没有找到文本。尝试抓取另一个区域。"
 
 #: frog/main.py:166
 msgid "Text extracted. You can paste it with Ctrl+V"
-msgstr ""
+msgstr "提取的文本。你可以用 Ctrl+V 粘贴它"
 
 #: frog/window.py:247
 #, python-brace-format
 msgid "{language} language downloaded."
-msgstr ""
+msgstr "{language} 语言已下载。"
