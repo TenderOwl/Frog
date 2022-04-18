@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "POT-Creation-Date: 2022-04-09 21:41+0300\n"
-"PO-Revision-Date: 2022-04-14 00:11+0000\n"
-"Last-Translator: Daimar Stein <570cxat11@relay.firefox.com>\n"
+"PO-Revision-Date: 2022-04-18 14:39+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/frog/"
 "default/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -599,4 +599,7 @@ msgstr "Texto extraído. Você pode colá-lo com Ctrl+V"
 #: frog/window.py:247
 #, python-brace-format
 msgid "{language} language downloaded."
+msgstr ""
+
+msgid "Only images can be processed that way."
 msgstr ""
