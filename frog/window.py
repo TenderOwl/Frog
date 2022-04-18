@@ -1,6 +1,6 @@
 # window.py
 #
-# Copyright 2021 Andrey Maksimov
+# Copyright 2021-2022 Andrey Maksimov
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -156,7 +156,7 @@ class FrogWindow(Adw.ApplicationWindow):
 
         self.lang_combo.set_label(_('English'))
 
-        if self.active_lang and self.active_lang in downloaded_languages:
+        if self.active_lang and self.active_lang in language_manager.get_downloaded_codes():
             self.lang_combo.set_label(language_manager.get_language(self.active_lang.rsplit('+')[0]))
 
         else:
