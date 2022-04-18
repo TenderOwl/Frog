@@ -20,6 +20,16 @@
     </screenshots>
 
     <releases>
+        <release version="1.0.0" type="stable" date="2022-04-18">
+            <description>
+                <p>What's new:</p>
+                <ul>
+                    <li>Updated UI</li>
+                    <li>Drag-n-drop support. For images only.</li>
+                    <li>Dark mode support</li>
+                </ul>
+            </description>
+        </release>
         <release version="0.3.0" type="stable" date="2022-03-21">
             <description>
                 <p>Frog now is available on the Flathub and use modern Portal implementation.
@@ -70,7 +80,6 @@
     <url type="help">https://github.com/tenderowl/frog/issues</url>
     <url type="donation">https://www.buymeacoffee.com/tenderowl/</url>
     <update_contact>andrey@tenderowl.com</update_contact>
-
 
     <content_rating type="oars-1.1">
         <content_attribute id="violence-cartoon">none</content_attribute>
