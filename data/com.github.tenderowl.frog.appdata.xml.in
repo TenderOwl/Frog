@@ -25,8 +25,9 @@
                 <p>What's new:</p>
                 <ul>
                     <li>Updated UI</li>
-                    <li>Drag-n-drop support. For images only.</li>
+                    <li>Drag-n-drop support. For images only</li>
                     <li>Dark mode support</li>
+                    <li>Localized interface</li>
                 </ul>
             </description>
         </release>
