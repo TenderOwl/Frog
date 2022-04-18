@@ -53,7 +53,7 @@ To build the frog application just open project folder in Builder and press "Exe
 
 ## Localization
 
-If you want to provide localization for your language you may use [webplate project](https://hosted.weblate.org/projects/frog/default/) or [Poedit](https://poedit.net) to create translations. Source files listed in `po/POTFILES`.
+If you want to provide localization for your language you may use [weblate project](https://hosted.weblate.org/projects/frog/default/) or [Poedit](https://poedit.net) to create translations. Source files listed in `po/POTFILES`.
 
 # Contribution
 
