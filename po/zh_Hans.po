@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "POT-Creation-Date: 2022-04-09 21:41+0300\n"
-"PO-Revision-Date: 2022-04-19 07:19+0000\n"
+"PO-Revision-Date: 2022-04-19 07:20+0000\n"
 "Last-Translator: 刘韬 <lyuutau@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "frog/default/zh_Hans/>\n"
@@ -570,7 +570,7 @@ msgstr "乌兹别克语"
 
 #: frog/language_manager.py:149
 msgid "Uzbek - Cyrilic"
-msgstr "乌兹别克语 - 西里尔字母"
+msgstr "乌兹别克语 - 西里尔"
 
 #: frog/language_manager.py:150
 msgid "Vietnamese"
