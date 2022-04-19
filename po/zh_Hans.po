@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "POT-Creation-Date: 2022-04-09 21:41+0300\n"
-"PO-Revision-Date: 2022-04-19 00:05+0000\n"
-"Last-Translator: 刘韬 <lyuutau@outlook.com>\n"
+"PO-Revision-Date: 2022-04-19 07:19+0000\n"
+"Last-Translator: Eric <alchemillatruth@purelymail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "frog/default/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -26,7 +26,7 @@ msgstr "可用的语言"
 #: data/ui/shortcuts.ui:5
 msgctxt "shortcut window"
 msgid "Shortcuts"
-msgstr ""
+msgstr "快捷方式"
 
 #: data/ui/shortcuts.ui:12
 msgctxt "shortcut window"
@@ -49,7 +49,6 @@ msgid "Display preferences"
 msgstr ""
 
 #: data/ui/window.ui:12
-#, fuzzy
 msgid "Extract text from anywhere"
 msgstr "从任何地方提取文本"
 
@@ -63,7 +62,7 @@ msgstr "选择要提取的语言"
 
 #: data/ui/window.ui:68 data/ui/window.ui:128
 msgid "Take a shot"
-msgstr ""
+msgstr "截屏"
 
 #: data/ui/window.ui:83
 msgid "_Configure languages"
@@ -94,6 +93,8 @@ msgid ""
 "Frog can help you to instantly extract text\n"
 "from any QR code, image, video, PDF, etc."
 msgstr ""
+"Frog 可以帮你立即\n"
+"从任何二维码、图像、视频、PDF 等中提取文本。"
 
 #: frog/about_dialog.py:42
 msgid "Learn more about Frog"
@@ -201,7 +202,7 @@ msgstr ""
 
 #: frog/language_manager.py:57
 msgid "English, Middle (1100-1500)"
-msgstr ""
+msgstr "中古英语 (1100-1500)"
 
 #: frog/language_manager.py:58
 msgid "Esperanto"
@@ -229,7 +230,7 @@ msgstr ""
 
 #: frog/language_manager.py:64
 msgid "Filipino (old - Tagalog)"
-msgstr ""
+msgstr "菲律宾语（旧 - 他加禄语）"
 
 #: frog/language_manager.py:65
 msgid "Finnish"
@@ -241,11 +242,11 @@ msgstr ""
 
 #: frog/language_manager.py:67
 msgid "German - Fraktur"
-msgstr ""
+msgstr "德文 - 尖角体"
 
 #: frog/language_manager.py:68
 msgid "French, Middle (ca.1400-1600)"
-msgstr ""
+msgstr "中古法语（约 1400-1600 年）"
 
 #: frog/language_manager.py:69
 msgid "Western Frisian"
@@ -313,7 +314,7 @@ msgstr ""
 
 #: frog/language_manager.py:85
 msgid "Italian - Old"
-msgstr ""
+msgstr "意大利文 - 旧式"
 
 #: frog/language_manager.py:86
 msgid "Javanese"
@@ -333,7 +334,7 @@ msgstr ""
 
 #: frog/language_manager.py:90
 msgid "Georgian - Old"
-msgstr ""
+msgstr "格鲁吉亚文 - 旧式"
 
 #: frog/language_manager.py:91
 msgid "Kazakh"
@@ -341,7 +342,7 @@ msgstr ""
 
 #: frog/language_manager.py:92
 msgid "Central Khmer"
-msgstr ""
+msgstr "中部高棉语"
 
 #: frog/language_manager.py:93
 msgid "Kirghiz; Kyrgyz"
@@ -349,7 +350,7 @@ msgstr ""
 
 #: frog/language_manager.py:94
 msgid "Kurmanji (Kurdish - Latin Script)"
-msgstr ""
+msgstr "Kurmanji（库尔德语 - 拉丁文字）"
 
 #: frog/language_manager.py:95
 msgid "Korean"
@@ -357,7 +358,7 @@ msgstr ""
 
 #: frog/language_manager.py:96
 msgid "Korean (vertical)"
-msgstr ""
+msgstr "朝鲜文 (竖体)"
 
 #: frog/language_manager.py:97
 msgid "Lao"
@@ -489,7 +490,7 @@ msgstr ""
 
 #: frog/language_manager.py:129
 msgid "Spanish; Castilian - Old"
-msgstr ""
+msgstr "西班牙语; 卡斯蒂利亚 - 旧"
 
 #: frog/language_manager.py:130
 msgid "Albanian"
@@ -501,7 +502,7 @@ msgstr ""
 
 #: frog/language_manager.py:132
 msgid "Serbian - Latin"
-msgstr ""
+msgstr "塞尔维亚语 - 拉丁"
 
 #: frog/language_manager.py:133
 msgid "Sundanese"
@@ -569,7 +570,7 @@ msgstr ""
 
 #: frog/language_manager.py:149
 msgid "Uzbek - Cyrilic"
-msgstr ""
+msgstr "乌兹别克语 - 西里尔字母"
 
 #: frog/language_manager.py:150
 msgid "Vietnamese"
@@ -588,7 +589,6 @@ msgid "Extract directly into the clipboard"
 msgstr "直接提取到剪贴板中"
 
 #: frog/main.py:156
-#, fuzzy
 msgid "No text found. Try to grab another region."
 msgstr "没有找到文本。尝试抓取另一个区域。"
 
