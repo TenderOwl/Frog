@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "POT-Creation-Date: 2022-04-09 21:41+0300\n"
-"PO-Revision-Date: 2022-05-22 18:15+0000\n"
+"PO-Revision-Date: 2022-05-24 08:18+0000\n"
 "Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
 "Language-Team: Occitan <https://hosted.weblate.org/projects/frog/default/oc/>"
 "\n"
@@ -50,7 +50,7 @@ msgstr "Preferéncias d’afichatge"
 
 #: data/ui/window.ui:12
 msgid "Extract text from anywhere"
-msgstr ""
+msgstr "Traire lo tèxt d’ont que venga"
 
 #: data/ui/window.ui:20
 msgid "Language"
@@ -93,6 +93,8 @@ msgid ""
 "Frog can help you to instantly extract text\n"
 "from any QR code, image, video, PDF, etc."
 msgstr ""
+"Frog pòt vos ajudar a traire de tèxt rapidament a partir\n"
+"d’un còdi QR, un imatge, una vidèo, un PDF, etc."
 
 #: frog/about_dialog.py:42
 msgid "Learn more about Frog"
@@ -140,7 +142,7 @@ msgstr ""
 
 #: frog/language_manager.py:42
 msgid "Breton"
-msgstr ""
+msgstr "Breton"
 
 #: frog/language_manager.py:43
 msgid "Bulgarian"
