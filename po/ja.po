@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Frog\n"
 "POT-Creation-Date: 2022-02-20 22:29+0900\n"
-"PO-Revision-Date: 2022-04-18 14:39+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"PO-Revision-Date: 2022-06-03 14:17+0000\n"
+"Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/frog/default/ja/"
 ">\n"
 "Language: ja\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.12-dev\n"
+"X-Generator: Weblate 4.13-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -64,7 +64,7 @@ msgstr ""
 
 #: data/ui/window.ui:76 frog/language_manager.py:56
 msgid "English"
-msgstr ""
+msgstr "英語"
 
 #: data/ui/window.ui:79
 msgid "rus"
@@ -232,7 +232,7 @@ msgstr ""
 
 #: frog/language_manager.py:58
 msgid "Esperanto"
-msgstr ""
+msgstr "エスペラント"
 
 #: frog/language_manager.py:59
 msgid "Math / equation detection module"
@@ -348,7 +348,7 @@ msgstr ""
 
 #: frog/language_manager.py:87
 msgid "Japanese"
-msgstr ""
+msgstr "日本語"
 
 #: frog/language_manager.py:88
 msgid "Kannada"
@@ -596,7 +596,7 @@ msgstr ""
 
 #: frog/language_manager.py:150
 msgid "Vietnamese"
-msgstr ""
+msgstr "ベトナム語"
 
 #: frog/language_manager.py:151
 msgid "Yiddish"
