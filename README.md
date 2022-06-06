@@ -18,7 +18,7 @@ Grab the image and get the text.
 
 The Frog could help you to deal with QR codes helping you to get them decoded!
 
-<a href='https://flathub.org/apps/details/org.gimp.GIMP'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
+<a href='https://flathub.org/apps/details/com.github.tenderowl.frog'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
 
 ## See it in action
 

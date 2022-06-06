@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "POT-Creation-Date: 2022-04-09 21:41+0300\n"
-"PO-Revision-Date: 2022-05-22 18:15+0000\n"
-"Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/frog/default/es/>"
-"\n"
-"Language: es\n"
+"PO-Revision-Date: 2022-04-20 08:09+0000\n"
+"Last-Translator: Eric <alchemillatruth@purelymail.com>\n"
+"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
+"frog/default/zh_Hans/>\n"
+"Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.13-dev\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.12-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: data/ui\n"
@@ -21,585 +21,582 @@ msgstr ""
 
 #: data/ui/language_dialog.ui:16
 msgid "Available Languages"
-msgstr "Idiomas disponibles"
+msgstr "可用的语言"
 
 #: data/ui/shortcuts.ui:5
 msgctxt "shortcut window"
 msgid "Shortcuts"
-msgstr "Atajos"
+msgstr "快捷方式"
 
 #: data/ui/shortcuts.ui:12
 msgctxt "shortcut window"
 msgid "General"
-msgstr "General"
+msgstr "常规"
 
 #: data/ui/shortcuts.ui:16 data/ui/shortcuts.ui:22
 msgctxt "shortcut window"
 msgid "Get screenshot and extract text"
-msgstr "Obtener una captura de pantalla y extraer el texto"
+msgstr "获取屏幕截图并提取文本"
 
 #: data/ui/shortcuts.ui:28
 msgctxt "shortcut window"
 msgid "Copy extracted text to clipboard"
-msgstr "Copiar el texto extraído en el portapapeles"
+msgstr "将提取的文本复制到剪贴板上"
 
 #: data/ui/shortcuts.ui:34
 msgctxt "shortcut window"
 msgid "Display preferences"
-msgstr "Mostrar preferencias"
+msgstr "显示首选项"
 
 #: data/ui/window.ui:12
 msgid "Extract text from anywhere"
-msgstr "Extraer texto de cualquier lugar"
+msgstr "从任何地方提取文本"
 
 #: data/ui/window.ui:20
 msgid "Language"
-msgstr "Idioma"
+msgstr "语言"
 
 #: data/ui/window.ui:21
 msgid "Select language to extract"
-msgstr "Seleccione el idioma a extraer"
+msgstr "选择要提取的语言"
 
 #: data/ui/window.ui:68 data/ui/window.ui:128
 msgid "Take a shot"
-msgstr "Tomar una foto"
+msgstr "截屏"
 
 #: data/ui/window.ui:83
 msgid "_Configure languages"
-msgstr "_Configurar idiomas"
+msgstr "配置语言(_C)"
 
 #: data/ui/window.ui:146
 msgid "Clear the extraction results"
-msgstr "Limpiar los resultados de la extracción"
+msgstr "清除提取结果"
 
 #: data/ui/window.ui:158
 msgid "Copy extracted text to clipboard"
-msgstr "Copiar el texto extraído al portapapeles"
+msgstr "将提取的文本复制到剪贴板上"
 
 #: data/ui/window.ui:181
 msgid "_Configure"
-msgstr "_Configurar"
+msgstr "配置(_C)"
 
 #: data/ui/window.ui:187
 msgid "_Keyboard Shortcuts"
-msgstr "_Atajos del teclado"
+msgstr "键盘快捷键(_K)"
 
 #: data/ui/window.ui:191
 msgid "_About Frog"
-msgstr "_Acerca de Frog"
+msgstr "关于 Frog(_A)"
 
 #: frog/about_dialog.py:39
 msgid ""
 "Frog can help you to instantly extract text\n"
 "from any QR code, image, video, PDF, etc."
 msgstr ""
-"Frog puede ayudarle a extraer instantáneamente el texto\n"
-"de cualquier código QR, imagen, vídeo, PDF, etc."
+"Frog 可以帮你立即\n"
+"从任何二维码、图像、视频、PDF 等中提取文本。"
 
 #: frog/about_dialog.py:42
 msgid "Learn more about Frog"
-msgstr "Más información sobre Frog"
+msgstr "了解更多关于 Frog 的信息"
 
 #: frog/language_manager.py:32
 msgid "Afrikaans"
-msgstr "Afrikáans"
+msgstr "南非荷兰语"
 
 #: frog/language_manager.py:33
 msgid "Amharic"
-msgstr "Amhárico"
+msgstr "阿姆哈拉语"
 
 #: frog/language_manager.py:34
 msgid "Arabic"
-msgstr "Árabe"
+msgstr "阿拉伯语"
 
 #: frog/language_manager.py:35
 msgid "Assamese"
-msgstr "Asamés"
+msgstr "阿萨姆语"
 
 #: frog/language_manager.py:36
 msgid "Azerbaijani"
-msgstr "Azerí"
+msgstr "阿塞拜疆语"
 
 #: frog/language_manager.py:37
 msgid "Azerbaijani - Cyrilic"
-msgstr "Azerí - cirílico"
+msgstr "阿塞拜疆语 - 西里尔"
 
 #: frog/language_manager.py:38
 msgid "Belarusian"
-msgstr "Bielorruso"
+msgstr "白罗斯语"
 
 #: frog/language_manager.py:39
 msgid "Bengali"
-msgstr "Bengalí"
+msgstr "孟加拉语"
 
 #: frog/language_manager.py:40
 msgid "Tibetan"
-msgstr "Tibetano"
+msgstr "藏文"
 
 #: frog/language_manager.py:41
 msgid "Bosnian"
-msgstr "Bosnio"
+msgstr "波斯尼亚语"
 
 #: frog/language_manager.py:42
 msgid "Breton"
-msgstr "Bretón"
+msgstr "布列塔尼语"
 
 #: frog/language_manager.py:43
 msgid "Bulgarian"
-msgstr "Búlgaro"
+msgstr "保加利亚语"
 
 #: frog/language_manager.py:44
 msgid "Catalan; Valencian"
-msgstr "Catalán; Valenciano"
+msgstr "加泰罗尼亚语；巴伦西亚语"
 
 #: frog/language_manager.py:45
 msgid "Cebuano"
-msgstr "Cebuano"
+msgstr "宿雾语"
 
 #: frog/language_manager.py:46
 msgid "Czech"
-msgstr "Checo"
+msgstr "捷克语"
 
 #: frog/language_manager.py:47
 msgid "Chinese - Simplified"
-msgstr "Chino - Simplificado"
+msgstr "中文 - 简体"
 
 #: frog/language_manager.py:48
 msgid "Chinese - Traditional"
-msgstr "Chino - Tradicional"
+msgstr "中文 - 繁体"
 
 #: frog/language_manager.py:49
 msgid "Cherokee"
-msgstr "Cheroqui"
+msgstr "切罗基语"
 
 #: frog/language_manager.py:50
 msgid "Corsican"
-msgstr "Corso"
+msgstr "科西嘉语"
 
 #: frog/language_manager.py:51
 msgid "Welsh"
-msgstr "Galés"
+msgstr "威尔士语"
 
 #: frog/language_manager.py:52
 msgid "Danish"
-msgstr "Danés"
+msgstr "丹麦语"
 
 #: frog/language_manager.py:53
 msgid "German"
-msgstr "Alemán"
+msgstr "德语"
 
 #: frog/language_manager.py:54
 msgid "Dzongkha"
-msgstr "Dzongkha"
+msgstr "宗喀语"
 
 #: frog/language_manager.py:55
 msgid "Greek, Modern (1453-)"
-msgstr "Griego, Moderno (1453-)"
+msgstr "希腊语， 现代 （1453-）"
 
 #: frog/language_manager.py:56 frog/window.py:142 frog/window.py:148
 msgid "English"
-msgstr "Inglés"
+msgstr "英语"
 
 #: frog/language_manager.py:57
 msgid "English, Middle (1100-1500)"
-msgstr "Inglés, Medio (1100-1500)"
+msgstr "中古英语 (1100-1500)"
 
 #: frog/language_manager.py:58
 msgid "Esperanto"
-msgstr "Esperanto"
+msgstr "世界语"
 
 #: frog/language_manager.py:59
 msgid "Math / equation detection module"
-msgstr "Matemático / módulo de detección de ecuaciones"
+msgstr "数学/方程式检测模块"
 
 #: frog/language_manager.py:60
 msgid "Estonian"
-msgstr "Estonio"
+msgstr "爱沙尼亚语"
 
 #: frog/language_manager.py:61
 msgid "Basque"
-msgstr "Euskera"
+msgstr "巴斯克语"
 
 #: frog/language_manager.py:62
 msgid "Faroese"
-msgstr "Feroés"
+msgstr "法罗语"
 
 #: frog/language_manager.py:63
 msgid "Persian"
-msgstr "Persa"
+msgstr "波斯语"
 
 #: frog/language_manager.py:64
 msgid "Filipino (old - Tagalog)"
-msgstr "Filipino (tradicional - Tagalo)"
+msgstr "菲律宾语（旧 - 他加禄语）"
 
 #: frog/language_manager.py:65
 msgid "Finnish"
-msgstr "Finés"
+msgstr "芬兰语"
 
 #: frog/language_manager.py:66
 msgid "French"
-msgstr "Francés"
+msgstr "法语"
 
 #: frog/language_manager.py:67
 msgid "German - Fraktur"
-msgstr "Alemán - Fraktur"
+msgstr "德文 - 尖角体"
 
 #: frog/language_manager.py:68
 msgid "French, Middle (ca.1400-1600)"
-msgstr "Francés, Medio (c. 1400-1600)"
+msgstr "中古法语（约 1400-1600 年）"
 
 #: frog/language_manager.py:69
 msgid "Western Frisian"
-msgstr "Frisón occidental"
+msgstr "西弗里斯兰语"
 
 #: frog/language_manager.py:70
 msgid "Scottish Gaelic"
-msgstr "Gaélico escocés"
+msgstr "苏格兰盖尔语"
 
 #: frog/language_manager.py:71
 msgid "Irish"
-msgstr "Irlandés"
+msgstr "爱尔兰语"
 
 #: frog/language_manager.py:72
 msgid "Galician"
-msgstr "Gallego"
+msgstr "加利西亚语"
 
 #: frog/language_manager.py:73
 msgid "Greek, Ancient (to 1453) (contrib)"
-msgstr "Griego, Antiguo (hasta 1453) (contrib)"
+msgstr "希腊语，古代（至 1453 年）（贡献）"
 
 #: frog/language_manager.py:74
 msgid "Gujarati"
-msgstr "Guyaratí"
+msgstr "古吉拉特语"
 
 #: frog/language_manager.py:75
 msgid "Haitian; Haitian Creole"
-msgstr "Haitiano; Criollo haitiano"
+msgstr "海地语；海地克里奥尔语"
 
 #: frog/language_manager.py:76
 msgid "Hebrew"
-msgstr "Hebreo"
+msgstr "希伯来语"
 
 #: frog/language_manager.py:77
 msgid "Hindi"
-msgstr "Hindi"
+msgstr "印地语"
 
 #: frog/language_manager.py:78
 msgid "Croatian"
-msgstr "Croata"
+msgstr "克罗地亚语"
 
 #: frog/language_manager.py:79
 msgid "Hungarian"
-msgstr "Húngaro"
+msgstr "匈牙利语"
 
 #: frog/language_manager.py:80
 msgid "Armenian"
-msgstr "Armenio"
+msgstr "亚美尼亚语"
 
 #: frog/language_manager.py:81
 msgid "Inuktitut"
-msgstr "Inuit"
+msgstr "伊努克图语"
 
 #: frog/language_manager.py:82
 msgid "Indonesian"
-msgstr "Indonesio"
+msgstr "印度尼西亚语"
 
 #: frog/language_manager.py:83
 msgid "Icelandic"
-msgstr "Islandés"
+msgstr "冰岛语"
 
 #: frog/language_manager.py:84
 msgid "Italian"
-msgstr "Italiano"
+msgstr "意大利语"
 
 #: frog/language_manager.py:85
 msgid "Italian - Old"
-msgstr "Italiano - Antiguo"
+msgstr "意大利文 - 旧式"
 
 #: frog/language_manager.py:86
 msgid "Javanese"
-msgstr "Javanés"
+msgstr "爪哇语"
 
 #: frog/language_manager.py:87
 msgid "Japanese"
-msgstr "Japonés"
+msgstr "日语"
 
 #: frog/language_manager.py:88
 msgid "Kannada"
-msgstr "Canarés"
+msgstr "卡纳达语"
 
 #: frog/language_manager.py:89
 msgid "Georgian"
-msgstr "Georgiano"
+msgstr "格鲁吉亚语"
 
 #: frog/language_manager.py:90
 msgid "Georgian - Old"
-msgstr "Georgiano - Antiguo"
+msgstr "格鲁吉亚文 - 旧式"
 
 #: frog/language_manager.py:91
 msgid "Kazakh"
-msgstr "Kazajo"
+msgstr "哈萨克语"
 
 #: frog/language_manager.py:92
 msgid "Central Khmer"
-msgstr "Jémer Central"
+msgstr "中部高棉语"
 
 #: frog/language_manager.py:93
 msgid "Kirghiz; Kyrgyz"
-msgstr "Kirghiz; Kirguís"
+msgstr "柯尔克孜语；吉尔吉斯语"
 
 #: frog/language_manager.py:94
 msgid "Kurmanji (Kurdish - Latin Script)"
-msgstr "Kurmanyi (Kurdo - Alfabeto latino)"
+msgstr "Kurmanji（库尔德语 - 拉丁文字）"
 
 #: frog/language_manager.py:95
 msgid "Korean"
-msgstr "Coreano"
+msgstr "朝鲜语；韩语"
 
 #: frog/language_manager.py:96
 msgid "Korean (vertical)"
-msgstr "Coreano (vertical)"
+msgstr "朝鲜文 (竖体)"
 
 #: frog/language_manager.py:97
 msgid "Lao"
-msgstr "Lao"
+msgstr "老挝语"
 
 #: frog/language_manager.py:98
 msgid "Latin"
-msgstr "Latín"
+msgstr "拉丁语"
 
 #: frog/language_manager.py:99
 msgid "Latvian"
-msgstr "Letón"
+msgstr "拉脱维亚语"
 
 #: frog/language_manager.py:100
 msgid "Lithuanian"
-msgstr "Lituano"
+msgstr "立陶宛语"
 
 #: frog/language_manager.py:101
 msgid "Luxembourgish"
-msgstr "Luxemburgués"
+msgstr "卢森堡语"
 
 #: frog/language_manager.py:102
 msgid "Malayalam"
-msgstr "Malabar"
+msgstr "马拉雅拉姆语"
 
 #: frog/language_manager.py:103
 msgid "Marathi"
-msgstr "Maratí"
+msgstr "马拉地语"
 
 #: frog/language_manager.py:104
 msgid "Macedonian"
-msgstr "Macedonio"
+msgstr "马其顿语"
 
 #: frog/language_manager.py:105
 msgid "Maltese"
-msgstr "Maltés"
+msgstr "马耳他语"
 
 #: frog/language_manager.py:106
 msgid "Mongolian"
-msgstr "Mongol"
+msgstr "蒙古语"
 
 #: frog/language_manager.py:107
 msgid "Maori"
-msgstr "Maorí"
+msgstr "毛利语"
 
 #: frog/language_manager.py:108
 msgid "Malay"
-msgstr "Malayo"
+msgstr "马来语"
 
 #: frog/language_manager.py:109
 msgid "Burmese"
-msgstr "Birmano"
+msgstr "缅甸语"
 
 #: frog/language_manager.py:110
 msgid "Nepali"
-msgstr "Nepalí"
+msgstr "尼泊尔语"
 
 #: frog/language_manager.py:111
 msgid "Dutch; Flemish"
-msgstr "Neerlandés; Flamenco"
+msgstr "荷兰语；佛兰芒语"
 
 #: frog/language_manager.py:112
 msgid "Norwegian"
-msgstr "Noruego"
+msgstr "挪威语"
 
 #: frog/language_manager.py:113
 msgid "Occitan (post 1500)"
-msgstr "Occitano"
+msgstr "奥克西坦语（1500 年后）"
 
 #: frog/language_manager.py:114
 msgid "Oriya"
-msgstr "Oriya"
+msgstr "奥里亚语"
 
 #: frog/language_manager.py:115
 msgid "Orientation and script detection module"
-msgstr "Módulo de orientación y detección de escrituras"
+msgstr "方向和脚本检测模块"
 
 #: frog/language_manager.py:116
 msgid "Panjabi; Punjabi"
-msgstr "Panyabí; Punyabí"
+msgstr "潘贾比语；旁遮普语"
 
 #: frog/language_manager.py:117
 msgid "Polish"
-msgstr "Polaco"
+msgstr "波兰语"
 
 #: frog/language_manager.py:118
 msgid "Portuguese"
-msgstr "Portugués"
+msgstr "葡萄牙语"
 
 #: frog/language_manager.py:119
 msgid "Pushto; Pashto"
-msgstr "Pastún; Pashtun"
+msgstr "普什图语"
 
 #: frog/language_manager.py:120
 msgid "Quechua"
-msgstr "Quechua"
+msgstr "克丘亚语"
 
 #: frog/language_manager.py:121
 msgid "Romanian; Moldavian; Moldovan"
-msgstr "Rumano; Moldavo; Dacorrumano"
+msgstr "罗马尼亚语；摩尔达维亚语；摩尔多瓦语"
 
 #: frog/language_manager.py:122
 msgid "Russian"
-msgstr "Ruso"
+msgstr "俄语"
 
 #: frog/language_manager.py:123
 msgid "Sanskrit"
-msgstr "Sánscrito"
+msgstr "梵文"
 
 #: frog/language_manager.py:124
 msgid "Sinhala; Sinhalese"
-msgstr "Cingalés; Singalés; Sinhala"
+msgstr "僧伽罗语"
 
 #: frog/language_manager.py:125
 msgid "Slovak"
-msgstr "Eslovaco"
+msgstr "斯洛伐克语"
 
 #: frog/language_manager.py:126
 msgid "Slovenian"
-msgstr "Esloveno"
+msgstr "斯洛文尼亚语"
 
 #: frog/language_manager.py:127
 msgid "Sindhi"
-msgstr "Sindi"
+msgstr "信德语"
 
 #: frog/language_manager.py:128
 msgid "Spanish; Castilian"
-msgstr "Español; Castellano"
+msgstr "西班牙语；卡斯蒂利亚语"
 
 #: frog/language_manager.py:129
 msgid "Spanish; Castilian - Old"
-msgstr "Español; Castellano - Antiguo"
+msgstr "西班牙语; 卡斯蒂利亚 - 旧"
 
 #: frog/language_manager.py:130
 msgid "Albanian"
-msgstr "Albanés"
+msgstr "阿尔巴尼亚语"
 
 #: frog/language_manager.py:131
 msgid "Serbian"
-msgstr "Serbio"
+msgstr "塞尔维亚语"
 
 #: frog/language_manager.py:132
 msgid "Serbian - Latin"
-msgstr "Serbio - Latín"
+msgstr "塞尔维亚语 - 拉丁字母"
 
 #: frog/language_manager.py:133
 msgid "Sundanese"
-msgstr "Sondanés"
+msgstr "巽他语"
 
 #: frog/language_manager.py:134
 msgid "Swahili"
-msgstr "Suajili"
+msgstr "斯瓦希里语"
 
 #: frog/language_manager.py:135
 msgid "Swedish"
-msgstr "Sueco"
+msgstr "瑞典语"
 
 #: frog/language_manager.py:136
 msgid "Syriac"
-msgstr "Siríaco"
+msgstr "叙利亚语"
 
 #: frog/language_manager.py:137
 msgid "Tamil"
-msgstr "Tamil"
+msgstr "泰米尔语"
 
 #: frog/language_manager.py:138
 msgid "Tatar"
-msgstr "Tártaro"
+msgstr "鞑靼语"
 
 #: frog/language_manager.py:139
 msgid "Telugu"
-msgstr "Télugu"
+msgstr "泰卢固语"
 
 #: frog/language_manager.py:140
 msgid "Tajik"
-msgstr "Tayiko"
+msgstr "塔吉克语"
 
 #: frog/language_manager.py:141
 msgid "Thai"
-msgstr "Tailandés"
+msgstr "泰语"
 
 #: frog/language_manager.py:142
 msgid "Tigrinya"
-msgstr "Tigriña"
+msgstr "提格里尼亚语"
 
 #: frog/language_manager.py:143
 msgid "Tonga"
-msgstr "Tongano"
+msgstr "汤加语"
 
 #: frog/language_manager.py:144
 msgid "Turkish"
-msgstr "Turco"
+msgstr "土耳其语"
 
 #: frog/language_manager.py:145
 msgid "Uighur; Uyghur"
-msgstr "Uigur; Uighur; Uyghur"
+msgstr "维吾尔语"
 
 #: frog/language_manager.py:146
 msgid "Ukrainian"
-msgstr "Ucraniano"
+msgstr "乌克兰语"
 
 #: frog/language_manager.py:147
 msgid "Urdu"
-msgstr "Urdu"
+msgstr "乌尔都语"
 
 #: frog/language_manager.py:148
 msgid "Uzbek"
-msgstr "Uzbeko"
+msgstr "乌兹别克语"
 
 #: frog/language_manager.py:149
 msgid "Uzbek - Cyrilic"
-msgstr "Uzbeko - Cirílico"
+msgstr "乌兹别克语 - 西里尔字母"
 
 #: frog/language_manager.py:150
 msgid "Vietnamese"
-msgstr "Vietnamita"
+msgstr "越南语"
 
 #: frog/language_manager.py:151
 msgid "Yiddish"
-msgstr "Yidis"
+msgstr "意第绪语"
 
 #: frog/language_manager.py:152
 msgid "Yoruba"
-msgstr "Yoruba"
+msgstr "约鲁巴语"
 
 #: frog/main.py:77
 msgid "Extract directly into the clipboard"
-msgstr "Extraer directamente al portapapeles"
+msgstr "直接提取到剪贴板中"
 
 #: frog/main.py:156
 msgid "No text found. Try to grab another region."
-msgstr "No se ha encontrado ningún texto. Intente capturar otra región."
+msgstr "没有找到文本。尝试抓取另一个区域。"
 
 #: frog/main.py:166
 msgid "Text extracted. You can paste it with Ctrl+V"
-msgstr "Texto extraído. Puede pegarlo con Ctrl+V"
+msgstr "提取的文本。你可以用 Ctrl+V 粘贴它"
 
 #: frog/window.py:247
 #, python-brace-format
 msgid "{language} language downloaded."
-msgstr "{language} descargado."
-
-msgid "Only images can be processed that way."
-msgstr "Sólo se pueden procesar imágenes de esa manera."
+msgstr "{language} 语言已下载。"
