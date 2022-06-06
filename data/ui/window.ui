@@ -65,7 +65,7 @@
                                         </style>
                                         <property name="child">
                                           <object class="AdwButtonContent">
-                                            <property name="label" translatable="yes">Take a shot</property>
+                                            <property name="label" translatable="yes">Take a Screenshot</property>
                                             <property name="icon-name">camera-photo-symbolic</property>
                                           </object>
                                         </property>
@@ -80,7 +80,7 @@
                                         </style>
                                         <property name="child">
                                           <object class="AdwButtonContent">
-                                            <property name="label" translatable="yes">_Configure languages</property>
+                                            <property name="label" translatable="yes">_Configure Languages</property>
                                             <property name="icon-name">preferences-desktop-locale-symbolic</property>
                                             <property name="use-underline">True</property>
                                           </object>
@@ -115,6 +115,12 @@
                     <property name="transition-type">slide-up</property>
                     <property name="child">
                       <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <child>
+                          <object class="GtkSeparator" />
+                        </child>
+                        <child>
+                          <object class="GtkBox">
                         <property name="margin-start">8</property>
                         <property name="margin-end">8</property>
                         <property name="margin-top">8</property>
@@ -125,10 +131,13 @@
                             <property name="action_name">app.get_screenshot</property>
                             <property name="focusable">1</property>
                             <property name="receives-default">1</property>
-                            <property name="tooltip-markup" translatable="yes">Take a shot</property>
+                            <property name="tooltip-markup" translatable="yes">Take a screenshot</property>
+                            <style>
+                              <class name="suggested-action" />
+                            </style>
                             <property name="child">
                               <object class="AdwButtonContent">
-                                <property name="label">Take a shot</property>
+                                <property name="label">Take a Screenshot</property>
                                 <property name="icon-name">camera-photo-symbolic</property>
                               </object>
                             </property>
@@ -144,6 +153,9 @@
                             <property name="focusable">1</property>
                             <property name="receives-default">1</property>
                             <property name="tooltip-text" translatable="yes">Clear the extraction results</property>
+                            <style>
+                              <class name="flat" />
+                            </style>
                             <property name="child">
                               <object class="AdwButtonContent">
                                 <property name="icon-name">edit-clear-symbolic</property>
@@ -156,12 +168,17 @@
                             <property name="focusable">1</property>
                             <property name="receives-default">1</property>
                             <property name="tooltip-text" translatable="yes">Copy extracted text to clipboard</property>
+                            <style>
+                              <class name="flat" />
+                            </style>
                             <property name="child">
                               <object class="AdwButtonContent">
                                 <property name="icon-name">edit-copy-symbolic</property>
                               </object>
                             </property>
                           </object>
+                        </child>
+                      </object>
                         </child>
                       </object>
                     </property>
