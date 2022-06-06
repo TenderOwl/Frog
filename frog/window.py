@@ -204,17 +204,19 @@ class FrogWindow(Adw.ApplicationWindow):
         except Exception as e:
             print(f"ERROR: {e}")
 
-        self.show()
-        self.spinner.stop()
+        finally:
+            self.show()
+            self.spinner.stop()
 
     def on_shot_error(self, sender, message: str) -> None:
-        print(f"ERROR: '{message}'")
-        if message:
-            self.on_screenshot_error(self, 'Whoops')
         self.show()
         self.spinner.stop()
+        print('on_shot_error?', message)
+        if message:
+            self.display_error(self, 'Whoops')
 
-    def on_screenshot_error(self, sender, error) -> None:
+    def display_error(self, sender, error) -> None:
+        print('on_screenshot_error?', error)
         if not isinstance(error, str):
             self.infobar_label.set_text(str(error).split(':')[-1])
         else:
@@ -222,7 +224,6 @@ class FrogWindow(Adw.ApplicationWindow):
         self.infobar.set_revealed(True)
         self.infobar.set_visible(True)
         self.infobar.set_message_type(Gtk.MessageType.ERROR)
-        self.spinner.stop()
 
     def on_dnd_enter(self, drop_target, x, y):
         print('DND Enter', drop_target)
