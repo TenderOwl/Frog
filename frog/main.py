@@ -1,6 +1,6 @@
 # main.py
 #
-# Copyright 2021 Andrey Maksimov
+# Copyright 2021-2022 Andrey Maksimov
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -28,7 +28,6 @@
 
 import sys
 from gettext import gettext as _
-from typing import Optional
 
 import gi
 
@@ -53,10 +52,20 @@ class Application(Adw.Application):
     def __init__(self, version=None):
         super().__init__(application_id='com.github.tenderowl.frog',
                          flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE)
+        self.backend = None
         self.version = version
 
         # Init GSettings
         self.settings = Settings.new()
+
+        self.add_main_option(
+            'extract_to_clipboard',
+            ord('e'),
+            GLib.OptionFlags.NONE,
+            GLib.OptionArg.NONE,
+            _('Extract directly into the clipboard'),
+            None
+        )
 
         # Initialize tesseract data files storage.
         language_manager.init_tessdata()
@@ -76,6 +85,9 @@ class Application(Adw.Application):
         shortcut_entry.arg_date = None
         shortcut_entry.description = _('Extract directly into the clipboard')
         shortcut_entry.arg_description = None
+
+        self.backend = ScreenshotBackend()
+        self.backend.connect('decoded', Application.on_decoded)
 
         shot_action: Gio.SimpleAction = Gio.SimpleAction.new(name="get_screenshot", parameter_type=None)
         shot_action.connect("activate", self.get_screenshot)
@@ -104,8 +116,6 @@ class Application(Adw.Application):
         action.connect("activate", self.on_about)
         self.add_action(action)
 
-        self.add_main_option_entries([shortcut_entry])
-
     def do_activate(self):
         win = self.props.active_window
         if not win:
@@ -114,12 +124,11 @@ class Application(Adw.Application):
 
     def do_command_line(self, command_line):
         options = command_line.get_options_dict()
+        options = options.end().unpack()
 
-        if options.contains("extract_to_clipboard"):
-            backend = ScreenshotBackend()
-            backend.connect('decoded', Application.on_decoded)
-            backend.capture(self.settings.get_string("active-language"), True)
-            return 0
+        if "extract_to_clipboard" in options:
+            self.backend.capture(self.settings.get_string("active-language"), True)
+            return 1
 
         self.activate()
         return 0
