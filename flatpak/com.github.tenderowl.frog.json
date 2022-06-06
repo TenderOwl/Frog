@@ -29,17 +29,6 @@
         "libportal.json",
         "zbar.json",
         {
-            "name" : "granite",
-            "buildsystem" : "meson",
-            "sources" : [
-                {
-                    "type" : "git",
-                    "url" : "https://github.com/elementary/granite.git",
-                    "tag" : "6.2.0"
-                }
-            ]
-        },
-        {
             "name" : "python3-pytesseract",
             "buildsystem" : "simple",
             "build-commands" : [
