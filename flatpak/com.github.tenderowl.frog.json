@@ -9,6 +9,7 @@
         "--share=ipc",
         "--socket=fallback-x11",
         "--socket=wayland",
+        "--device=dri",
         "--talk-name=org.freedesktop.Notifications"
     ],
     "cleanup" : [
@@ -22,7 +23,6 @@
         "*.la",
         "*.a"
     ],
-    "x-run-args": ["-e"],
     "modules" : [
         "leptonica.json",
         "tesseract.json",
