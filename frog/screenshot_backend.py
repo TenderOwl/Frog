@@ -1,6 +1,6 @@
 # screenshot_backend.py
 #
-# Copyright 2021 Andrey Maksimov
+# Copyright 2022 Andrey Maksimov
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -112,6 +112,9 @@ class ScreenshotBackend(GObject.GObject):
 
         if extracted:
             self.emit('decoded', extracted, copy)
+        
+        else:
+            self.emit('erorr', f'No text found.')
 
     def capture_cancelled(self, cancellable: Gio.Cancellable) -> None:
         self.emit('error', 'Cancelled')
