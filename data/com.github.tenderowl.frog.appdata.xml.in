@@ -20,6 +20,15 @@
     </screenshots>
 
     <releases>
+        <release version="1.1.1" type="stable" date="2022-06-07">
+            <description>
+                <p>What's new:</p>
+                <ul>
+                    <li>When no text is found, Frog returns to the main window.</li>
+                    <li>Translations updated.</li>
+                </ul>
+            </description>
+        </release>
         <release version="1.1.0" type="stable" date="2022-06-06">
             <description>
                 <p>What's new:</p>
