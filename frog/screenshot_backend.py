@@ -114,7 +114,7 @@ class ScreenshotBackend(GObject.GObject):
             self.emit('decoded', extracted, copy)
         
         else:
-            self.emit('erorr', f'No text found.')
+            self.emit('error', f'No text found.')
 
     def capture_cancelled(self, cancellable: Gio.Cancellable) -> None:
         self.emit('error', 'Cancelled')
