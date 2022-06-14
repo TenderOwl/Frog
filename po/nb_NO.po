@@ -4,9 +4,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Frog\n"
-"POT-Creation-Date: 2022-02-20 22:29+0900\n"
-"PO-Revision-Date: 2022-04-18 14:39+0000\n"
-"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"POT-Creation-Date: 2022-06-15 00:52+0300\n"
+"PO-Revision-Date: 2022-06-15 00:52+0300\n"
+"Last-Translator: Andrey Maksimov <andrey@tenderowl.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/frog/"
 "default/nb_NO/>\n"
 "Language: nb_NO\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.12-dev\n"
+"X-Generator: Poedit 3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -51,84 +51,89 @@ msgstr ""
 msgid "Active language to extract the text."
 msgstr ""
 
-#: data/ui/window.ui:15
-msgid "Language"
-msgstr ""
-
-#: data/ui/window.ui:36
-msgid "button"
-msgstr ""
-
-#: data/ui/window.ui:75
-msgid "eng"
-msgstr ""
-
-#: data/ui/window.ui:76 frog/language_manager.py:56
-msgid "English"
-msgstr ""
-
-#: data/ui/window.ui:79
-msgid "rus"
-msgstr ""
-
-#: data/ui/window.ui:80 frog/language_manager.py:122
-msgid "Russian"
-msgstr ""
-
-#: data/ui/window.ui:105 frog/window.py:88
-msgid "Extract text from anywhere"
-msgstr ""
-
-#: data/ui/window.ui:106 frog/window.py:87
-msgid "Frog"
-msgstr ""
-
-#: data/ui/window.ui:112
-msgid "Select language to extract"
-msgstr ""
-
-#: data/ui/window.ui:130
-msgid "About the Frog"
-msgstr ""
-
-#: data/ui/window.ui:209 data/ui/window.ui:236
-msgid "Clear the extraction results"
-msgstr ""
-
-#: data/ui/window.ui:251
-msgid "Copy extracted text to clipboard"
-msgstr ""
-
-#: frog/about_dialog.py:37
-msgid "Text extraction tool"
-msgstr ""
-
-#: frog/about_dialog.py:40
-msgid "Learn more about Frog"
-msgstr ""
-
-#: frog/extract_to_clipboard.py:52
-msgid "Failed Attempt"
-msgstr ""
-
-#: frog/extract_to_clipboard.py:52 frog/window.py:136
-msgid "Failed to initialize screenshot service."
-msgstr ""
-
-#: frog/extract_to_clipboard.py:69
-msgid "No text found"
-msgstr ""
-
-#: frog/extract_to_clipboard.py:82
-msgid "Text copied"
-msgstr ""
-
-#: frog/language_dialog.py:41
+#: data/ui/language_dialog.ui:16
 msgid "Available Languages"
 msgstr ""
 
-#: frog/language_dialog.py:59
-msgid "OK"
+#: data/ui/shortcuts.ui:5
+msgctxt "shortcut window"
+msgid "Shortcuts"
+msgstr ""
+
+#: data/ui/shortcuts.ui:12
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: data/ui/shortcuts.ui:16 data/ui/shortcuts.ui:22
+msgctxt "shortcut window"
+msgid "Get screenshot and extract text"
+msgstr ""
+
+#: data/ui/shortcuts.ui:28
+msgctxt "shortcut window"
+msgid "Copy extracted text to clipboard"
+msgstr ""
+
+#: data/ui/shortcuts.ui:34
+msgctxt "shortcut window"
+msgid "Display preferences"
+msgstr ""
+
+#: data/ui/window.ui:12
+msgid "Extract text from anywhere"
+msgstr ""
+
+#: data/ui/window.ui:20
+msgid "Language"
+msgstr ""
+
+#: data/ui/window.ui:21
+msgid "Select language to extract"
+msgstr ""
+
+#: data/ui/window.ui:77
+msgid "Take a Screenshot"
+msgstr ""
+
+#: data/ui/window.ui:102
+msgid "Configure Languages"
+msgstr ""
+
+#: data/ui/window.ui:153
+msgid "Take a screenshot"
+msgstr ""
+
+#: data/ui/window.ui:174
+msgid "Clear the extraction results"
+msgstr ""
+
+#: data/ui/window.ui:189
+msgid ""
+"Copy extracted text to clipboard\n"
+"                                "
+msgstr ""
+
+#: data/ui/window.ui:218
+msgid "_Configure Languages"
+msgstr ""
+
+#: data/ui/window.ui:224
+msgid "_Keyboard Shortcuts"
+msgstr ""
+
+#: data/ui/window.ui:228
+msgid "_About Frog"
+msgstr ""
+
+#: frog/about_dialog.py:39
+msgid ""
+"Frog can help you to instantly extract text\n"
+"from any QR code, image, video, PDF, etc."
+msgstr ""
+
+#: frog/about_dialog.py:42
+msgid "Learn more about Frog"
 msgstr ""
 
 #: frog/language_manager.py:32
@@ -225,6 +230,10 @@ msgstr ""
 
 #: frog/language_manager.py:55
 msgid "Greek, Modern (1453-)"
+msgstr ""
+
+#: frog/language_manager.py:56 frog/window.py:157 frog/window.py:163
+msgid "English"
 msgstr ""
 
 #: frog/language_manager.py:57
@@ -487,6 +496,10 @@ msgstr ""
 msgid "Romanian; Moldavian; Moldovan"
 msgstr ""
 
+#: frog/language_manager.py:122
+msgid "Russian"
+msgstr ""
+
 #: frog/language_manager.py:123
 msgid "Sanskrit"
 msgstr ""
@@ -607,30 +620,23 @@ msgstr ""
 msgid "Yoruba"
 msgstr ""
 
-#: frog/main.py:74
+#: frog/main.py:66 frog/main.py:86
 msgid "Extract directly into the clipboard"
 msgstr ""
 
-#: frog/screenshot_backend.py:82
-msgid "Screenshot service unavailable."
+#: frog/main.py:165
+msgid "No text found. Try to grab another region."
 msgstr ""
 
-#: frog/window.py:107
-msgid "Take a shot"
+#: frog/main.py:175
+msgid "Text extracted. You can paste it with Ctrl+V"
 msgstr ""
 
-#: frog/window.py:179
-msgid "No languages"
-msgstr ""
-
-#: frog/window.py:260
-msgid "Copied!"
-msgstr ""
-
-#: frog/window.py:275
-#, python-brace-format
-msgid "{language} downloaded"
-msgstr ""
-
+#: frog/window.py:246
 msgid "Only images can be processed that way."
+msgstr ""
+
+#: frog/window.py:293
+#, python-brace-format
+msgid "{language} language downloaded."
 msgstr ""

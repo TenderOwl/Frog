@@ -1,17 +1,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
-"POT-Creation-Date: 2022-04-09 21:41+0300\n"
-"PO-Revision-Date: 2022-05-28 16:19+0000\n"
-"Last-Translator: musiclover382 <mattiagiovanni.borda@icloud.com>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/frog/default/it/>"
-"\n"
+"POT-Creation-Date: 2022-06-15 00:51+0300\n"
+"PO-Revision-Date: 2022-06-15 00:51+0300\n"
+"Last-Translator: Andrey Maksimov <andrey@tenderowl.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/frog/default/it/"
+">\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.13-dev\n"
+"X-Generator: Poedit 3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: data/ui\n"
@@ -60,31 +60,37 @@ msgstr "Lingua"
 msgid "Select language to extract"
 msgstr "Seleziona la lingua da riconoscere"
 
-#: data/ui/window.ui:68 data/ui/window.ui:128
-msgid "Take a shot"
+#: data/ui/window.ui:77
+msgid "Take a Screenshot"
 msgstr "Cattura schermata"
 
-#: data/ui/window.ui:83
-msgid "_Configure languages"
+#: data/ui/window.ui:102
+msgid "Configure Languages"
 msgstr "Configura lingue"
 
-#: data/ui/window.ui:146
+#: data/ui/window.ui:153
+msgid "Take a screenshot"
+msgstr "Cattura schermata"
+
+#: data/ui/window.ui:174
 msgid "Clear the extraction results"
 msgstr "Torna alla schermata iniziale"
 
-#: data/ui/window.ui:158
-msgid "Copy extracted text to clipboard"
+#: data/ui/window.ui:189
+msgid ""
+"Copy extracted text to clipboard\n"
+"                                "
 msgstr "Copia negli appunti il testo riconosciuto"
 
-#: data/ui/window.ui:181
-msgid "_Configure"
+#: data/ui/window.ui:218
+msgid "_Configure Languages"
 msgstr "Configura lingue"
 
-#: data/ui/window.ui:187
+#: data/ui/window.ui:224
 msgid "_Keyboard Shortcuts"
 msgstr "Scorciatoie da tastiera"
 
-#: data/ui/window.ui:191
+#: data/ui/window.ui:228
 msgid "_About Frog"
 msgstr "Informazioni su Frog"
 
@@ -196,7 +202,7 @@ msgstr "Dzongkha"
 msgid "Greek, Modern (1453-)"
 msgstr "Greco moderno (dal 1453)"
 
-#: frog/language_manager.py:56 frog/window.py:142 frog/window.py:148
+#: frog/language_manager.py:56 frog/window.py:157 frog/window.py:163
 msgid "English"
 msgstr "Inglese"
 
@@ -584,19 +590,26 @@ msgstr "Yiddish"
 msgid "Yoruba"
 msgstr "Yoruba"
 
-#: frog/main.py:77
+#: frog/main.py:66 frog/main.py:86
 msgid "Extract directly into the clipboard"
 msgstr "Copia direttamente il testo riconosciuto"
 
-#: frog/main.py:156
+#: frog/main.py:165
 msgid "No text found. Try to grab another region."
 msgstr "Nessun testo trovato. Prova a fare un'altra schermata."
 
-#: frog/main.py:166
+#: frog/main.py:175
 msgid "Text extracted. You can paste it with Ctrl+V"
 msgstr "Testo riconosciuto. Puoi incollarlo con Ctrl+V"
 
-#: frog/window.py:247
+#: frog/window.py:246
+msgid "Only images can be processed that way."
+msgstr ""
+
+#: frog/window.py:293
 #, python-brace-format
 msgid "{language} language downloaded."
 msgstr "{language} scaricato."
+
+#~ msgid "_Configure"
+#~ msgstr "Configura lingue"
