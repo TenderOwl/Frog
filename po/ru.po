@@ -102,8 +102,7 @@ msgstr "Выберите язык"
 msgid "Take a Screenshot"
 msgstr "Сделать снимок"
 
-#: data/ui/window.ui:102
-#: data/ui/window.ui:218
+#: data/ui/window.ui:102 data/ui/window.ui:218
 msgid "Configure Languages"
 msgstr "Параметры"
 
@@ -111,7 +110,7 @@ msgstr "Параметры"
 msgid "Take a screenshot"
 msgstr "Сделать снимок"
 
-#: data/ui/window.ui:174
+#: data/ui/window.ui:174 data/ui/window.ui:146
 msgid "Clear the extraction results"
 msgstr "Очистить результаты"
 
@@ -135,7 +134,7 @@ msgid ""
 "from any QR code, image, video, PDF, etc."
 msgstr ""
 "Frog поможет мгновенно извлечь текст\n"
-"из  QR кода, картинки, видео, PDF и др."
+"из QR кода, картинки, видео, PDF и др."
 
 #: frog/about_dialog.py:42
 msgid "Learn more about Frog"
@@ -238,6 +237,7 @@ msgid "Greek, Modern (1453-)"
 msgstr "Греческий"
 
 #: frog/language_manager.py:56 frog/window.py:157 frog/window.py:163
+#: frog/window.py:142 frog/window.py:148
 msgid "English"
 msgstr "Английский"
 
@@ -625,15 +625,15 @@ msgstr "Идиш"
 msgid "Yoruba"
 msgstr "Йоруба"
 
-#: frog/main.py:66 frog/main.py:86
+#: frog/main.py:66 frog/main.py:86 frog/main.py:77
 msgid "Extract directly into the clipboard"
 msgstr "Извлечь в буфер обмена"
 
-#: frog/main.py:165
+#: frog/main.py:165 frog/main.py:156
 msgid "No text found. Try to grab another region."
 msgstr "Текст не найден. Попробуйте выбрать другую область."
 
-#: frog/main.py:175
+#: frog/main.py:175 frog/main.py:166
 msgid "Text extracted. You can paste it with Ctrl+V"
 msgstr "Текст извлечен. Вы можете вставить его с помощью Ctrl+V"
 
@@ -641,10 +641,34 @@ msgstr "Текст извлечен. Вы можете вставить его �
 msgid "Only images can be processed that way."
 msgstr "Так можно обработать только изображения."
 
-#: frog/window.py:293
+#: frog/window.py:293 frog/window.py:247
 #, python-brace-format
 msgid "{language} language downloaded."
 msgstr "{language} язык скачан."
+
+#: data/ui/window.ui:68 data/ui/window.ui:128
+msgid "Take a shot"
+msgstr "Сделать снимок"
+
+#: data/ui/window.ui:83
+msgid "_Configure languages"
+msgstr "_Параметры"
+
+#: data/ui/window.ui:158
+msgid "Copy extracted text to clipboard"
+msgstr "Скопировать в буфер обмена"
+
+#: data/ui/window.ui:181
+msgid "_Configure"
+msgstr "_Параметры"
+
+#: data/ui/window.ui:187
+msgid "_Keyboard Shortcuts"
+msgstr "_Клавиатурные сочетания"
+
+#: data/ui/window.ui:191
+msgid "_About Frog"
+msgstr "_О Frog"
 
 #~ msgid "Configure"
 #~ msgstr "Параметры"
