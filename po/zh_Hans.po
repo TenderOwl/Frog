@@ -83,15 +83,15 @@ msgid ""
 msgstr "将提取的文本复制到剪贴板上"
 
 #: data/ui/window.ui:218
-msgid "_Configure Languages"
+msgid "Configure Languages"
 msgstr "配置语言(_C)"
 
 #: data/ui/window.ui:224
-msgid "_Keyboard Shortcuts"
+msgid "Keyboard Shortcuts"
 msgstr "键盘快捷键(_K)"
 
 #: data/ui/window.ui:228
-msgid "_About Frog"
+msgid "About Frog"
 msgstr "关于 Frog(_A)"
 
 #: frog/about_dialog.py:39
@@ -611,5 +611,5 @@ msgstr ""
 msgid "{language} language downloaded."
 msgstr "{language} 语言已下载。"
 
-#~ msgid "_Configure"
+#~ msgid "Configure"
 #~ msgstr "配置(_C)"

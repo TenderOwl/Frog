@@ -66,7 +66,7 @@ msgstr ""
 
 #: data/ui/window.ui:102
 msgid "Configure Languages"
-msgstr "_Configurar idiomas"
+msgstr "Configurar idiomas"
 
 #: data/ui/window.ui:153
 msgid "Take a screenshot"
@@ -83,16 +83,16 @@ msgid ""
 msgstr "Copiar texto extraído para a área de transferência"
 
 #: data/ui/window.ui:218
-msgid "_Configure Languages"
-msgstr "_Configurar idiomas"
+msgid "Configure Languages"
+msgstr "Configurar idiomas"
 
 #: data/ui/window.ui:224
-msgid "_Keyboard Shortcuts"
-msgstr "_Atalhos de Teclado"
+msgid "Keyboard Shortcuts"
+msgstr "Atalhos de Teclado"
 
 #: data/ui/window.ui:228
-msgid "_About Frog"
-msgstr "_Sobre o Frog"
+msgid "About Frog"
+msgstr "Sobre o Frog"
 
 #: frog/about_dialog.py:39
 msgid ""
@@ -611,5 +611,5 @@ msgstr ""
 msgid "{language} language downloaded."
 msgstr ""
 
-#~ msgid "_Configure"
-#~ msgstr "_Configurar"
+#~ msgid "Configure"
+#~ msgstr "Configurar"

@@ -67,7 +67,7 @@ msgstr "Знімкувати"
 
 #: data/ui/window.ui:102
 msgid "Configure Languages"
-msgstr "_Налаштувати мови"
+msgstr "Налаштувати мови"
 
 #: data/ui/window.ui:153
 msgid "Take a screenshot"
@@ -84,15 +84,15 @@ msgid ""
 msgstr "Копіювати до буфера обміну"
 
 #: data/ui/window.ui:218
-msgid "_Configure Languages"
-msgstr "_Налаштувати мови"
+msgid "Configure Languages"
+msgstr "Налаштувати мови"
 
 #: data/ui/window.ui:224
-msgid "_Keyboard Shortcuts"
+msgid "Keyboard Shortcuts"
 msgstr ""
 
 #: data/ui/window.ui:228
-msgid "_About Frog"
+msgid "About Frog"
 msgstr ""
 
 #: frog/about_dialog.py:39
@@ -610,5 +610,5 @@ msgstr ""
 msgid "{language} language downloaded."
 msgstr ""
 
-#~ msgid "_Configure"
-#~ msgstr "_Налаштувати"
+#~ msgid "Configure"
+#~ msgstr "Налаштувати"

@@ -83,15 +83,15 @@ msgid ""
 msgstr "Copia negli appunti il testo riconosciuto"
 
 #: data/ui/window.ui:218
-msgid "_Configure Languages"
+msgid "Configure Languages"
 msgstr "Configura lingue"
 
 #: data/ui/window.ui:224
-msgid "_Keyboard Shortcuts"
+msgid "Keyboard Shortcuts"
 msgstr "Scorciatoie da tastiera"
 
 #: data/ui/window.ui:228
-msgid "_About Frog"
+msgid "About Frog"
 msgstr "Informazioni su Frog"
 
 #: frog/about_dialog.py:39
@@ -611,5 +611,5 @@ msgstr ""
 msgid "{language} language downloaded."
 msgstr "{language} scaricato."
 
-#~ msgid "_Configure"
+#~ msgid "Configure"
 #~ msgstr "Configura lingue"

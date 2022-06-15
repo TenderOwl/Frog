@@ -66,7 +66,7 @@ msgstr "Tomar una foto"
 
 #: data/ui/window.ui:102
 msgid "Configure Languages"
-msgstr "_Configurar idiomas"
+msgstr "Configurar idiomas"
 
 #: data/ui/window.ui:153
 msgid "Take a screenshot"
@@ -83,16 +83,16 @@ msgid ""
 msgstr "Copiar el texto extraído al portapapeles"
 
 #: data/ui/window.ui:218
-msgid "_Configure Languages"
-msgstr "_Configurar idiomas"
+msgid "Configure Languages"
+msgstr "Configurar idiomas"
 
 #: data/ui/window.ui:224
-msgid "_Keyboard Shortcuts"
-msgstr "_Atajos del teclado"
+msgid "Keyboard Shortcuts"
+msgstr "Atajos del teclado"
 
 #: data/ui/window.ui:228
-msgid "_About Frog"
-msgstr "_Acerca de Frog"
+msgid "About Frog"
+msgstr "Acerca de Frog"
 
 #: frog/about_dialog.py:39
 msgid ""
@@ -611,5 +611,5 @@ msgstr "Sólo se pueden procesar imágenes de esa manera."
 msgid "{language} language downloaded."
 msgstr "{language} descargado."
 
-#~ msgid "_Configure"
-#~ msgstr "_Configurar"
+#~ msgid "Configure"
+#~ msgstr "Configurar"

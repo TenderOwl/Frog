@@ -83,16 +83,16 @@ msgid ""
 msgstr "Geëxtraheerde tekst naar het klembord kopiëren"
 
 #: data/ui/window.ui:218
-msgid "_Configure Languages"
+msgid "Configure Languages"
 msgstr "Talen _configureren"
 
 #: data/ui/window.ui:224
-msgid "_Keyboard Shortcuts"
-msgstr "_Sneltoetsen"
+msgid "Keyboard Shortcuts"
+msgstr "Sneltoetsen"
 
 #: data/ui/window.ui:228
-msgid "_About Frog"
-msgstr "_Over Frog"
+msgid "About Frog"
+msgstr "Over Frog"
 
 #: frog/about_dialog.py:39
 msgid ""
@@ -611,5 +611,5 @@ msgstr ""
 msgid "{language} language downloaded."
 msgstr "{language} gedownload"
 
-#~ msgid "_Configure"
-#~ msgstr "_Configureren"
+#~ msgid "Configure"
+#~ msgstr "Configureren"

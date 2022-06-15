@@ -114,15 +114,15 @@ msgid ""
 msgstr "クリップボードに検出結果をコピー"
 
 #: data/ui/window.ui:218
-msgid "_Configure Languages"
+msgid "Configure Languages"
 msgstr "言語なし"
 
 #: data/ui/window.ui:224
-msgid "_Keyboard Shortcuts"
+msgid "Keyboard Shortcuts"
 msgstr ""
 
 #: data/ui/window.ui:228
-msgid "_About Frog"
+msgid "About Frog"
 msgstr "Frogについて"
 
 #: frog/about_dialog.py:39
