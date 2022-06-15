@@ -96,6 +96,7 @@ msgid "Take a Screenshot"
 msgstr "再度検出する"
 
 #: data/ui/window.ui:102
+#: data/ui/window.ui:218
 msgid "Configure Languages"
 msgstr "言語なし"
 
@@ -112,10 +113,6 @@ msgid ""
 "Copy extracted text to clipboard\n"
 "                                "
 msgstr "クリップボードに検出結果をコピー"
-
-#: data/ui/window.ui:218
-msgid "Configure Languages"
-msgstr "言語なし"
 
 #: data/ui/window.ui:224
 msgid "Keyboard Shortcuts"
