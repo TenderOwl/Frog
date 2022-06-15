@@ -20,6 +20,14 @@
     </screenshots>
 
     <releases>
+        <release version="1.1.2" type="stable" date="2022-06-15">
+            <description>
+                <p>What's new:</p>
+                <ul>
+                    <li>Translations updated.</li>
+                </ul>
+            </description>
+        </release>
         <release version="1.1.1" type="stable" date="2022-06-07">
             <description>
                 <p>What's new:</p>
