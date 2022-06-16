@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "POT-Creation-Date: 2022-06-15 00:51+0300\n"
-"PO-Revision-Date: 2022-06-15 00:51+0300\n"
-"Last-Translator: Andrey Maksimov <andrey@tenderowl.com>\n"
+"PO-Revision-Date: 2022-06-16 19:51+0100\n"
+"Last-Translator: Albano Battistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/frog/default/it/"
 ">\n"
 "Language: it\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: data/ui/language_dialog.ui:16
 msgid "Available Languages"
-msgstr "Linguaggi disponibili"
+msgstr "Lingue disponibili"
 
 #: data/ui/shortcuts.ui:5
 msgctxt "shortcut window"
@@ -36,7 +36,7 @@ msgstr "Generale"
 #: data/ui/shortcuts.ui:16 data/ui/shortcuts.ui:22
 msgctxt "shortcut window"
 msgid "Get screenshot and extract text"
-msgstr "Cattura e riconosci il testo"
+msgstr "Fai uno screenshot ed estrai il testo"
 
 #: data/ui/shortcuts.ui:28
 msgctxt "shortcut window"
@@ -604,7 +604,7 @@ msgstr "Testo riconosciuto. Puoi incollarlo con Ctrl+V"
 
 #: frog/window.py:246
 msgid "Only images can be processed that way."
-msgstr ""
+msgstr "Solo le immagini possono essere elaborate in questo modo."
 
 #: frog/window.py:293
 #, python-brace-format
