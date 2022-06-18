@@ -213,7 +213,7 @@ class FrogWindow(Adw.ApplicationWindow):
         self.spinner.stop()
         print('on_shot_error?', message)
         if message:
-            self.display_error(self, 'Whoops')
+            self.display_error(self, 'Could not access your file!')
 
     def display_error(self, sender, error) -> None:
         print('on_screenshot_error?', error)
