@@ -65,6 +65,7 @@ msgid "Take a Screenshot"
 msgstr ""
 
 #: data/ui/window.ui:102
+#: data/ui/window.ui:218
 msgid "Configure Languages"
 msgstr "Configurar idiomas"
 
@@ -81,10 +82,6 @@ msgid ""
 "Copy extracted text to clipboard\n"
 "                                "
 msgstr "Copiar texto extraído para a área de transferência"
-
-#: data/ui/window.ui:218
-msgid "Configure Languages"
-msgstr "Configurar idiomas"
 
 #: data/ui/window.ui:224
 msgid "Keyboard Shortcuts"

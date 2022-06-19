@@ -66,6 +66,7 @@ msgid "Take a Screenshot"
 msgstr "Знімкувати"
 
 #: data/ui/window.ui:102
+#: data/ui/window.ui:218
 msgid "Configure Languages"
 msgstr "Налаштувати мови"
 
@@ -82,10 +83,6 @@ msgid ""
 "Copy extracted text to clipboard\n"
 "                                "
 msgstr "Копіювати до буфера обміну"
-
-#: data/ui/window.ui:218
-msgid "Configure Languages"
-msgstr "Налаштувати мови"
 
 #: data/ui/window.ui:224
 msgid "Keyboard Shortcuts"

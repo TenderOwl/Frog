@@ -176,6 +176,7 @@ msgid "Take a Screenshot"
 msgstr ""
 
 #: data/ui/window.ui:102
+#: data/ui/window.ui:218
 msgid "Configure Languages"
 msgstr ""
 
@@ -193,16 +194,12 @@ msgid ""
 "                                "
 msgstr ""
 
-#: data/ui/window.ui:218
-msgid "_Configure Languages"
-msgstr ""
-
 #: data/ui/window.ui:224
-msgid "_Keyboard Shortcuts"
+msgid "Keyboard Shortcuts"
 msgstr ""
 
 #: data/ui/window.ui:228
-msgid "_About Frog"
+msgid "About Frog"
 msgstr ""
 
 #: frog/about_dialog.py:39
