@@ -104,9 +104,8 @@ class FrogWindow(Adw.ApplicationWindow):
 
         # Setup application
         self.current_size = (450, 400)
-        saved_width, saved_height = self.settings.get_value('window-size')
-        self.props.default_width = saved_width
-        self.props.default_height = saved_height
+        self.props.default_width = self.settings.get_int('window-width')
+        self.props.default_height = self.settings.get_int('window-height')
 
         self.language_store: Gio.ListStore = Gio.ListStore.new(LanguageItem)
         self.language_model: Gtk.SingleSelection = Gtk.SingleSelection.new(self.language_store)
@@ -260,13 +259,16 @@ class FrogWindow(Adw.ApplicationWindow):
 
     def save_window_state(self, window: Gtk.Window) -> bool:
         self.current_size = window.get_default_size()
+        self.settings.set_int("window-width", self.current_size[0])
+        self.settings.set_int("window-height", self.current_size[1])
+        self.settings.sync()
         self.delayed_state = False
         return False
 
     def on_window_delete_event(self, sender: Gtk.Widget = None) -> None:
         if not self.is_maximized():
-            self.settings.set_value("window-size", GLib.Variant("ai", self.current_size))
-            self.settings.set_value("window-position", GLib.Variant("ai", self.current_position))
+            self.settings.set_int("window-width", self.current_size[0])
+            self.settings.set_int("window-height", self.current_size[1])
 
     def text_clear_btn_clicked(self, button: Gtk.Button) -> None:
         buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
