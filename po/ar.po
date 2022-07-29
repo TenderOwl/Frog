@@ -8,55 +8,61 @@ msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-06 17:05+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2022-07-30 06:15+0000\n"
+"Last-Translator: Ibrahim Muhammad <ebraheem010@gmail.com>\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/frog/default/ar/>"
+"\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 4.14-dev\n"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:6
 #: data/com.github.tenderowl.frog.desktop.in:3
 msgid "Frog"
-msgstr ""
+msgstr "فروج"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:7
 msgid "Extract text from anywhere, even QR code"
-msgstr ""
+msgstr "استخراج النص من أي مكان، حتى رموز QR"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:9
 msgid ""
 "Quickly extract text from any source such as images, websites, even video - "
 "everywhere you can grab an image shot. Even if it is encoded in a QR code!"
 msgstr ""
+"استخراج النص سريعا من أي مصدر كالصور والمواقع وحتى مقاطع الفيديو - يمكنك أخذ "
+"لقطة من أي مكان. حتى إذا كان النص ضمن رمز QR!"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:25
 #: data/com.github.tenderowl.frog.appdata.xml.in:34
 #: data/com.github.tenderowl.frog.appdata.xml.in:56
 msgid "What's new:"
-msgstr ""
+msgstr "التحديثات:"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:27
 #: data/com.github.tenderowl.frog.appdata.xml.in:36
 msgid "Updated UI"
-msgstr ""
+msgstr "تحديث الواجهة"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:28
 msgid "Translated to a bunch of new languages"
-msgstr ""
+msgstr "الترجمة إلى بضعة لغات جديدة"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:37
 msgid "Drag-n-drop support. For images only"
-msgstr ""
+msgstr "دعم السحب والإفلات. للصور فقط"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:38
 msgid "Dark mode support"
-msgstr ""
+msgstr "دعم المظهر الداكن"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:39
 msgid "Localized interface"
-msgstr ""
+msgstr "واجهة محلية"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:45
 msgid ""
@@ -64,50 +70,53 @@ msgid ""
 "We also updated the UI accordingly to the GNOME HIG and fixed some bugs "
 "we've found :)"
 msgstr ""
+"فروج متوفر الآن عبر فلات هب ويطبق بورتال حديث. لقد حدثنا الواجهة تبعا لقواعد "
+"واجهة جنوم وأصلحنا بعض الأخطاء التي وجدناها :)"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:51
 msgid ""
 "Now you're free to run Frog with `-e` option to extract text and instantly "
 "copy it to the clipboard."
-msgstr ""
+msgstr "يمكنك الآن تشغل فروج بخيار `-e` لاستخراج النص ونسخه فورا إلى الحافظة."
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:58
 msgid "English model included with Frog itself"
-msgstr ""
+msgstr "نموذج اللغة الإنجليزية مضمن مع فروج نفسه"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:59
 msgid "QR code detection. If one in the selected area - it will be decoded."
-msgstr ""
+msgstr "التعرف على رموز QR. إذا كان هناك رمز QR في المنطقة المحددة - سيتم فكه."
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:60
 msgid "New command line shortcut to run with \"Extract to clipboard\" feature."
-msgstr ""
+msgstr "اختصارجديد من سطر الأوامر للتشغيل مع خاصية \"استخراج إلى الحافظة\"."
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:61
 msgid "Granite.HyperTextView to support QR encoded links"
-msgstr ""
+msgstr "Granite.HyperTextView لدعم الروابط المضمنة في رموز QR"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:67
 msgid "Fix language packs download."
-msgstr ""
+msgstr "إصلاح تحميل حزم اللغات."
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:72
 msgid "Dark mode+"
-msgstr ""
+msgstr "المظهر الداكن+"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:74
 msgid "Dark mode support."
-msgstr ""
+msgstr "دعم المظهر الداكن."
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:75
 msgid "Application will hide the main window for the cleaner shots. #11"
-msgstr ""
+msgstr "سيخفي التطبيق النافذة الرئيسية للحصول على لقطات أنظف. #11"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:81
 msgid ""
 "Quickly extract any text from anywhere you need it: webpages, videos, "
 "photos, etc."
 msgstr ""
+"استخراج أي نص من أي مكان تحتاجه: صفحات الويت، مقاطع الفيديو، الصور، إلخ."
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:86
 msgid "Tender Owl"
