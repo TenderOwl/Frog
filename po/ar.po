@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-06 17:05+0200\n"
-"PO-Revision-Date: 2022-07-30 06:15+0000\n"
+"PO-Revision-Date: 2022-08-25 04:16+0000\n"
 "Last-Translator: Ibrahim Muhammad <ebraheem010@gmail.com>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/frog/default/ar/>"
 "\n"
@@ -27,15 +27,15 @@ msgstr "فروج"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:7
 msgid "Extract text from anywhere, even QR code"
-msgstr "استخراج النص من أي مكان، حتى رموز QR"
+msgstr "استخراج النصوص من أي مكان، حتى رموز QR"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:9
 msgid ""
 "Quickly extract text from any source such as images, websites, even video - "
 "everywhere you can grab an image shot. Even if it is encoded in a QR code!"
 msgstr ""
-"استخراج النص سريعا من أي مصدر كالصور والمواقع وحتى مقاطع الفيديو - يمكنك أخذ "
-"لقطة من أي مكان. حتى إذا كان النص ضمن رمز QR!"
+"استخراج النصوص سريعا من أي مصدر كالصور والمواقع وحتى مقاطع الفيديو - يمكنك "
+"أخذ لقطة من أي مكان. حتى إذا كان النص ضمن رمز QR!"
 
 #: data/com.github.tenderowl.frog.appdata.xml.in:25
 #: data/com.github.tenderowl.frog.appdata.xml.in:34
@@ -124,11 +124,11 @@ msgstr ""
 
 #: data/com.github.tenderowl.frog.desktop.in:4
 msgid "Text extraction tool"
-msgstr ""
+msgstr "أداة لاستخراج النصوص"
 
 #: data/com.github.tenderowl.frog.desktop.in:5
 msgid "Extract text from any image, video or web page"
-msgstr ""
+msgstr "استخراج النصوص من أي صورة أو مقطع فيديو أو موقع"
 
 #: data/com.github.tenderowl.frog.desktop.in:12
 msgid "OCR;Text;Extraction;"
