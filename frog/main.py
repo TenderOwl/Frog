@@ -108,6 +108,11 @@ class Application(Adw.Application):
         self.add_action(action)
         self.set_accels_for_action("app.preferences", ("<Control>comma",))
 
+        action = Gio.SimpleAction.new("open_image", None)
+        action.connect("activate", self.open_image)
+        self.add_action(action)
+        self.set_accels_for_action("app.open_image", ("<Control>o",))
+
         action = Gio.SimpleAction.new("shortcuts", None)
         action.connect("activate", self.on_shortcuts)
         self.add_action(action)
@@ -151,6 +156,9 @@ class Application(Adw.Application):
 
     def get_screenshot_and_copy(self, _action, _param) -> None:
         self.get_active_window().get_screenshot(copy=True)
+
+    def open_image(self, _action, _param) -> None:
+        self.get_active_window().open_image()
 
     @staticmethod
     def on_decoded(_sender, text: str, copy: bool) -> None:
