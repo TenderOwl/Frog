@@ -64,6 +64,7 @@ class FrogWindow(Adw.ApplicationWindow):
     def __init__(self, settings: Gio.Settings, **kwargs):
         super().__init__(**kwargs)
 
+        self.open_file_dlg = None
         self.settings = settings
 
         self.infobar = Gtk.InfoBar(visible=True, revealed=False)
@@ -215,20 +216,23 @@ class FrogWindow(Adw.ApplicationWindow):
             self.display_error(self, 'Could not access your file!')
 
     def open_image(self):
-        dlg: Gtk.FileChooserDialog = Gtk.FileChooserDialog(
+        self.open_file_dlg: Gtk.FileChooserNative = Gtk.FileChooserNative.new(
             title=_('Open image to extract text'),
             parent=self,
-            action=Gtk.FileChooserAction.OPEN
+            action=Gtk.FileChooserAction.OPEN,
+            accept_label=_('Open'),
+            cancel_label=_('Cancel')
         )
-        dlg.add_buttons(
-            _('Cancel'), Gtk.ResponseType.CANCEL,
-            _('Open'), Gtk.ResponseType.ACCEPT
-        )
-        dlg.set_default_response(Gtk.ResponseType.ACCEPT)
-        dlg.connect('response', self.on_open_image)
-        dlg.show()
+        self.open_file_dlg.set_transient_for(self)
+        # dlg.add_buttons(
+        #     _('Cancel'), Gtk.ResponseType.CANCEL,
+        #     _('Open'), Gtk.ResponseType.ACCEPT
+        # )
+        # dlg.set_default_response(Gtk.ResponseType.ACCEPT)
+        self.open_file_dlg.connect('response', self.on_open_image)
+        self.open_file_dlg.show()
 
-    def on_open_image(self, dialog: Gtk.FileChooserDialog, response_id: int) -> None:
+    def on_open_image(self, dialog: Gtk.FileChooserNative, response_id: int) -> None:
         if response_id == Gtk.ResponseType.ACCEPT:
             item = dialog.get_file()
             lang = self.get_language()
