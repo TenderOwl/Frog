@@ -9,7 +9,7 @@
     {
       "type": "git",
       "url": "https://github.com/tesseract-ocr/tesseract.git",
-      "tag": "5.1.0"
+      "tag": "5.2.0"
     }
   ],
   "post-install": [
