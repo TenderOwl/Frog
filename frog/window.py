@@ -37,6 +37,7 @@ from .config import RESOURCE_PREFIX, APP_ID
 from .gobject_worker import GObjectWorker
 from .language_dialog import LanguagePacksDialog, LanguageItem, LanguageRow
 from .language_manager import language_manager
+from .preferences import PreferencesDialog
 from .screenshot_backend import ScreenshotBackend
 
 
@@ -282,7 +283,8 @@ class FrogWindow(Adw.ApplicationWindow):
         clipboard_service.set(text)
 
     def show_preferences(self) -> None:
-        dialog = LanguagePacksDialog(self)
+        # dialog = LanguagePacksDialog(self)
+        dialog = PreferencesDialog(self)
         dialog.show()
 
     def on_language_downloading(self, sender, lang_code: str):
