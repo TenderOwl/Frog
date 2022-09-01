@@ -339,3 +339,4 @@ class ListMenuRow(Gtk.Label):
 
         self.item = item
         self.set_label(item.title)
+        self.set_halign(Gtk.Align.START)
