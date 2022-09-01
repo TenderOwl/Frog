@@ -4,7 +4,7 @@
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>MIT</project_license>
     <name>Frog</name>
-    <summary>Extract text from anywhere, even QR code</summary>
+    <summary>Extract text from images</summary>
     <description>
         <p>Quickly extract text from any source such as images, websites, even video - everywhere you can grab an image
             shot. Even if it is encoded in a QR code!</p>
@@ -20,6 +20,15 @@
     </screenshots>
 
     <releases>
+        <release version="1.2.0" type="stable" date="2022-08-31">
+            <description>
+                <p>What's new:</p>
+                <ul>
+                    <li>Open image button now available.</li>
+                    <li>Translations updated.</li>
+                </ul>
+            </description>
+        </release>
         <release version="1.1.3" type="stable" date="2022-06-15">
             <description>
                 <p>What's new:</p>
