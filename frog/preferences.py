@@ -30,6 +30,7 @@ from gettext import gettext as _
 from gi.repository import Gtk, Adw, Gdk, Gio, GObject
 
 from frog.config import RESOURCE_PREFIX
+from .language_dialog import LanguagePacksDialog
 
 from .language_manager import language_manager
 
@@ -39,7 +40,46 @@ class PreferencesDialog(Adw.PreferencesWindow):
     __gtype_name__ = 'PreferencesWindow'
 
     general_page: Adw.PreferencesPage
-    languages_page = Adw.PreferencesPage
+    languages_page: Adw.PreferencesPage
+    installed_languages_list: Gtk.ListBox
+    installed_switch: Gtk.Switch
 
     def __init__(self, parent: Adw.Window = None):
         super(PreferencesDialog, self).__init__()
+        self.set_modal(True)
+        self.set_transient_for(parent)
+        self.set_default_size(480, 400)
+
+        builder = Gtk.Builder()
+        builder.add_from_resource(f'{RESOURCE_PREFIX}/ui/preferences_general.ui')
+        builder.add_from_resource(f'{RESOURCE_PREFIX}/ui/preferences_languages.ui')
+
+        self.general_page = builder.get_object('general_page')
+        self.languages_page = builder.get_object('languages_page')
+        self.installed_switch = builder.get_object('installed_switch')
+        self.installed_switch.connect('activate', self.on_installed_switched)
+        self.installed_languages_list = builder.get_object('installed_languages_list')
+
+        self.add(self.general_page)
+        self.add(self.languages_page)
+
+        self.store: Gio.ListStore = Gio.ListStore.new(LanguageItem)
+        self.model: Gtk.SingleSelection = Gtk.SortListModel.new(self.store)
+        self.installed_languages_list.bind_model(self.model, LanguagePacksDialog.create_list_widget)
+
+        for lang_code in language_manager.get_available_codes():
+            self.store.append(LanguageItem(lang_code, title=language_manager.get_language(lang_code)))
+
+    def on_installed_switched(self, sender, event):
+        print('on_installed_switched')
+
+
+class LanguageItem(GObject.GObject):
+    title: str
+    code: str
+    progress: int = 0
+
+    def __init__(self, code: str, title: str):
+        GObject.GObject.__init__(self)
+        self.title = title
+        self.code = code

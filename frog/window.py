@@ -35,7 +35,8 @@ from gi.repository import Gtk, Adw, Gio, GLib, Gdk, GObject
 from .clipboard_service import clipboard_service
 from .config import RESOURCE_PREFIX, APP_ID
 from .gobject_worker import GObjectWorker
-from .language_dialog import LanguagePacksDialog, LanguageItem, LanguageRow
+from .language_dialog import LanguagePacksDialog, LanguageItem
+from .language_row import LanguageRow
 from .language_manager import language_manager
 from .preferences import PreferencesDialog
 from .screenshot_backend import ScreenshotBackend
@@ -115,7 +116,7 @@ class FrogWindow(Adw.ApplicationWindow):
         self.languages_list.bind_model(self.language_model, create_widget_func=ListMenuRow)
 
         # Set default language.
-        language_manager.connect('downloading', self.on_language_downloading)
+        # language_manager.connect('downloading', self.on_language_downloading)
         language_manager.connect('downloaded', self.on_language_downloaded)
         language_manager.connect('removed', self.on_language_removed)
         self.fill_lang_combo()

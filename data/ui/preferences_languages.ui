@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="AdwPreferencesPage" id="languages_page">
+    <property name="title" translatable="yes">Languages</property>
+    <property name="icon_name">preferences-desktop-locale-symbolic</property>
+    <child>
+      <object class="AdwPreferencesGroup">
+        <property name="title" translatable="yes">Installed</property>
+        <property name="description" translatable="yes">Use this languages extract text</property>
+        <property name="header_suffix">
+          <object class="GtkSwitch" id="installed_switch">
+            <property name="valign">center</property>
+          </object>
+        </property>
+        <child>
+          <object class="GtkListBox" id="installed_languages_list">
+            <property name="selection-mode">none</property>
+            <style>
+              <class name="boxed-list"/>
+            </style>
+
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
