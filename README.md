@@ -8,17 +8,15 @@
 
 <div align="center">
 <figure>
-<img src="https://user-images.githubusercontent.com/519146/162587823-61becc3a-1726-4797-ad5a-3260ff132c6f.png" alt="Frog window" />
+<img src="https://user-images.githubusercontent.com/519146/188137868-202d2b71-0e42-4614-8489-99ec09e032ea.png" alt="Frog window" />
 </figure>
 </div>
-
 
 Quickly extract text from almost any source: youtube, screencasts, PDFs, webpages, photos, etc.
 Grab the image and get the text.
 
 The Frog could help you to deal with QR codes helping you to get them decoded!
 
-<a href='https://flathub.org/apps/details/com.github.tenderowl.frog'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
 
 ## See it in action
 
@@ -26,11 +24,9 @@ The Frog could help you to deal with QR codes helping you to get them decoded!
 <video controls src="https://user-images.githubusercontent.com/519146/162445469-bedeed49-ebb8-4b9c-8bb5-f65d4d97d1fe.mp4" />
 </div>
 
+## Get it from Flathub
 
-## Get it from the elementary OS AppCenter!
-
-[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.tenderowl.frog)
-
+<a href='https://flathub.org/apps/details/com.github.tenderowl.frog'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
 
 ## :tada: Support
 If you like Frog and you want to support its development, you can buy me a coffee:
