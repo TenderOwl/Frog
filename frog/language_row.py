@@ -29,22 +29,22 @@ class LanguageRow(Gtk.Overlay):
         GLib.idle_add(self.update_ui)
 
     def update_ui(self):
+        # English is a default language, therefore, should be no way to remove it
+        if self.lang_code == "eng":
+            self.download_widget.set_sensitive(False)
+            self.download_widget.set_icon_name('user-trash-symbolic')
+            return
+
         # Downloaded
         if self.lang_code in language_manager.get_downloaded_codes():
             self.download_widget.set_icon_name('user-trash-symbolic')
             self.download_widget.set_sensitive(True)
-            self.get_style_context().add_class("downloaded")
-            self.download_widget.get_style_context().add_class("destructive-action")
         # In progress
         elif self.lang_code in language_manager.loading_languages:
             self.download_widget.set_sensitive(False)
-            self.get_style_context().remove_class("downloaded")
         # Not yet
         else:
-            self.get_style_context().remove_class("downloaded")
             self.download_widget.set_sensitive(True)
-            self.download_widget.get_style_context().remove_class("destructive-action")
-            self.download_widget.set_icon_name('folder-download-symbolic')
             self.revealer.set_reveal_child(False)
 
     def update_progress(self, sender, code: str, progress: float) -> None:

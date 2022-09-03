@@ -4,9 +4,9 @@
     <property name="title" translatable="yes">Languages</property>
     <property name="icon_name">preferences-desktop-locale-symbolic</property>
     <child>
-      <object class="AdwPreferencesGroup">
-        <property name="title" translatable="yes">Installed</property>
-        <property name="description" translatable="yes">Use this languages extract text</property>
+      <object class="AdwPreferencesGroup" id="languages_list_group">
+        <property name="title" translatable="yes">Available</property>
+        <property name="description" translatable="yes">Languages of the extracted text</property>
         <property name="header_suffix">
           <object class="GtkSwitch" id="installed_switch">
             <property name="valign">center</property>
@@ -18,7 +18,6 @@
             <style>
               <class name="boxed-list"/>
             </style>
-
           </object>
         </child>
       </object>

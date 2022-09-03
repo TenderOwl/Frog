@@ -27,7 +27,7 @@
 # authorization.
 from gettext import gettext as _
 
-from gi.repository import Gtk, Adw, Gdk, Gio, GObject
+from gi.repository import Gtk, Adw, Gdk, Gio, GObject, GLib
 
 from frog.config import RESOURCE_PREFIX
 from .language_dialog import LanguagePacksDialog
@@ -41,8 +41,8 @@ class PreferencesDialog(Adw.PreferencesWindow):
 
     general_page: Adw.PreferencesPage
     languages_page: Adw.PreferencesPage
+    languages_list_group: Adw.PreferencesGroup
     installed_languages_list: Gtk.ListBox
-    installed_switch: Gtk.Switch
 
     def __init__(self, parent: Adw.Window = None):
         super(PreferencesDialog, self).__init__()
@@ -57,21 +57,46 @@ class PreferencesDialog(Adw.PreferencesWindow):
         self.general_page = builder.get_object('general_page')
         self.languages_page = builder.get_object('languages_page')
         self.installed_switch = builder.get_object('installed_switch')
-        self.installed_switch.connect('activate', self.on_installed_switched)
+        self.languages_list_group = builder.get_object('languages_list_group')
         self.installed_languages_list = builder.get_object('installed_languages_list')
+        self.installed_switch.connect('notify::active', self.on_installed_switched)
 
         self.add(self.general_page)
         self.add(self.languages_page)
 
         self.store: Gio.ListStore = Gio.ListStore.new(LanguageItem)
-        self.model: Gtk.SingleSelection = Gtk.SortListModel.new(self.store)
+        self.model: Gtk.FilterListModel = Gtk.FilterListModel.new(self.store, None)
         self.installed_languages_list.bind_model(self.model, LanguagePacksDialog.create_list_widget)
 
         for lang_code in language_manager.get_available_codes():
             self.store.append(LanguageItem(lang_code, title=language_manager.get_language(lang_code)))
 
-    def on_installed_switched(self, sender, event):
-        print('on_installed_switched')
+        language_manager.connect('removed', self.on_language_removed)
+
+    def on_installed_switched(self, switch: Gtk.Switch, gparam) -> None:
+
+        if switch.get_active():
+            self.languages_list_group.set_title(_("Installed"))
+
+            GLib.idle_add(self.activate_filter)
+        else:
+            self.languages_list_group.set_title(_("Available"))
+            GLib.idle_add(self.deactivate_filter)
+
+    @staticmethod
+    def filter_func(item) -> bool:
+        return item.code in language_manager.get_downloaded_codes()
+
+    def activate_filter(self):
+        _filter: Gtk.CustomFilter = Gtk.CustomFilter.new(PreferencesDialog.filter_func)
+        self.model.set_filter(_filter)
+
+    def deactivate_filter(self):
+        self.model.set_filter(None)
+
+    def on_language_removed(self, sender, code):
+        if self.installed_switch.get_active():
+            GLib.idle_add(self.activate_filter)
 
 
 class LanguageItem(GObject.GObject):

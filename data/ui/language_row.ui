@@ -5,10 +5,10 @@
   <template class="LanguageRow" parent="GtkOverlay">
     <child>
       <object class="GtkBox">
-        <property name="margin-bottom">8</property>
+        <property name="margin-bottom">6</property>
         <property name="margin-end">8</property>
         <property name="margin-start">8</property>
-        <property name="margin-top">8</property>
+        <property name="margin-top">6</property>
         <child>
           <object class="GtkLabel" id="label">
             <property name="hexpand">true</property>
@@ -32,7 +32,6 @@
     <child type="overlay">
       <object class="GtkRevealer" id="revealer">
         <property name="valign">end</property>
-        <property name="child-revealed">false</property>
         <child>
           <object class="GtkProgressBar" id="progress_bar">
             <property name="valign">end</property>
