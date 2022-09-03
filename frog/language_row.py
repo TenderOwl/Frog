@@ -47,8 +47,9 @@ class LanguageRow(Gtk.Overlay):
             self.download_widget.set_icon_name('folder-download-symbolic')
             self.revealer.set_reveal_child(False)
 
-    def update_progress(self, event, code: str, progress: float) -> None:
-        GLib.idle_add(self.late_update, code, progress)
+    def update_progress(self, sender, code: str, progress: float) -> None:
+        if code == self.lang_code:
+            GLib.idle_add(self.late_update, code, progress)
 
     def late_update(self, code, progress):
         if self.lang_code == code:
