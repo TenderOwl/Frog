@@ -163,7 +163,7 @@ class LanguageManager(GObject.GObject):
         copyfile(source_path, dest_path)
 
     def get_available_codes(self):
-        return [code for code in sorted(self._languages.keys())]
+        return [code for code in sorted(self._languages.keys(), key=lambda x: self.get_language(x))]
 
     def get_available_languages(self):
         return [code for code in sorted(self._languages.values())]
@@ -178,10 +178,10 @@ class LanguageManager(GObject.GObject):
 
     def get_downloaded_codes(self, force: bool = False) -> List[str]:
         if self._need_update_cache or force:
-            self._downloaded_codes = [os.path.splitext(lang_file)[0] for lang_file in sorted(os.listdir(tessdata_dir))]
+            self._downloaded_codes = [os.path.splitext(lang_file)[0] for lang_file in os.listdir(tessdata_dir)]
             self._need_update_cache = False
             print(f"Cache downloaded codes: {self._downloaded_codes}")
-        return self._downloaded_codes
+        return sorted(self._downloaded_codes, key=lambda x: self.get_language(x))
 
     def get_downloaded_languages(self, force: bool = False) -> List[str]:
         languages = []
