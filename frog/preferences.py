@@ -62,6 +62,8 @@ class PreferencesDialog(Adw.PreferencesWindow):
         for lang_code in language_manager.get_available_codes():
             self.store.append(LanguageItem(lang_code, title=language_manager.get_language(lang_code)))
 
+        language_manager.connect('removed', self.on_language_removed)
+
         builder = Gtk.Builder()
         builder.add_from_resource(f'{RESOURCE_PREFIX}/ui/preferences_general.ui')
         builder.add_from_resource(f'{RESOURCE_PREFIX}/ui/preferences_languages.ui')
@@ -114,6 +116,10 @@ class PreferencesDialog(Adw.PreferencesWindow):
         self.model.set_filter(None)
 
     def on_language_removed(self, sender, code):
+        if self.installed_switch.get_active():
+            GLib.idle_add(self.activate_filter)
+
+    def on_language_removed(self, _sender, _code):
         if self.installed_switch.get_active():
             GLib.idle_add(self.activate_filter)
 
