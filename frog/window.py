@@ -99,8 +99,6 @@ class FrogWindow(Adw.ApplicationWindow):
         drop_target_textview.connect('leave', self.on_dnd_leave)
         self.shot_text.add_controller(drop_target_textview)
 
-        self.text_shot_btn.set_tooltip_markup(f'{_("Take a shot")}\n<small>&lt;Control&gt;g</small>')
-
         logo = Gdk.Texture.new_from_resource(f'{RESOURCE_PREFIX}/icons/{APP_ID}.svg')
         self.welcome.set_paintable(logo)
         self.main_stack.set_visible_child_name("welcome")
