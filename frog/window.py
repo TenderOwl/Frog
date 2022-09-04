@@ -334,10 +334,10 @@ class FrogWindow(Adw.ApplicationWindow):
         self.toast_overlay.add_toast(Adw.Toast(title=title, timeout=timeout))
 
 
-class ListMenuRow(Gtk.Label):
-    def __init__(self, item: LanguageItem):
-        super(ListMenuRow, self).__init__()
-
-        self.item = item
-        self.set_label(item.title)
-        self.set_halign(Gtk.Align.START)
+    def uri_validator(self, link) -> bool:
+        try:
+            result = urlparse(link)
+            return all([result.scheme, result.netloc])
+        except Exception as e:
+            print(e)
+            return False
