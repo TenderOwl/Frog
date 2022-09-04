@@ -199,6 +199,7 @@ class FrogWindow(Adw.ApplicationWindow):
 
             if self.settings.get_boolean('autocopy') or copy:
                 clipboard_service.set(text)
+                self.show_toast(_('Text copied to clipboard'))
 
             self.main_stack.set_visible_child_name("extracted")
             self.toolbox.set_reveal_child(True)
@@ -215,7 +216,8 @@ class FrogWindow(Adw.ApplicationWindow):
         self.spinner.stop()
         print('on_shot_error?', message)
         if message:
-            self.display_error(self, 'Could not access your file!')
+            self.show_toast(message)
+            # self.display_error(self, message)
 
     def open_image(self):
         self.open_file_dlg: Gtk.FileChooserNative = Gtk.FileChooserNative.new(
