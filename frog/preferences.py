@@ -94,14 +94,12 @@ class PreferencesDialog(Adw.PreferencesWindow):
 
         self.installed_languages_list.bind_model(self.model, LanguagePacksDialog.create_list_widget)
 
-    def on_installed_switched(self, switch: Gtk.Switch, gparam) -> None:
-
+    def on_installed_switched(self, switch: Gtk.Switch, param) -> None:
         if switch.get_active():
-            self.languages_list_group.set_title(_("Installed"))
-
+            self.languages_list_group.set_title(_("Installed languages"))
             GLib.idle_add(self.activate_filter)
         else:
-            self.languages_list_group.set_title(_("Available"))
+            self.languages_list_group.set_title(_("Available languages"))
             GLib.idle_add(self.deactivate_filter)
 
     @staticmethod
