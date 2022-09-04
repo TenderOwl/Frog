@@ -25,19 +25,19 @@
 # holders shall not be used in advertising or otherwise to promote the sale,
 # use or other dealings in this Software without prior written
 # authorization.
-
 from gettext import gettext as _
 from mimetypes import guess_type
 from typing import List
+from urllib.parse import urlparse
 
-from gi.repository import Gtk, Adw, Gio, GLib, Gdk, GObject
+from gi.repository import Gtk, Adw, Gio, GLib, Gdk
 
 from .clipboard_service import clipboard_service
 from .config import RESOURCE_PREFIX, APP_ID
 from .gobject_worker import GObjectWorker
-from .language_dialog import LanguagePacksDialog, LanguageItem
-from .language_row import LanguageRow
+from .language_dialog import LanguageItem
 from .language_manager import language_manager
+from .list_menu_row import ListMenuRow
 from .preferences import PreferencesDialog
 from .screenshot_backend import ScreenshotBackend
 
@@ -192,6 +192,7 @@ class FrogWindow(Adw.ApplicationWindow):
         return f'{self.active_lang}+{extra_lang}'
 
     def on_shot_done(self, sender, text: str, copy: bool) -> None:
+        is_url = self.uri_validator(text)
         try:
             # text = self.backend.capture(lang=self.active_lang)
             buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
@@ -200,6 +201,20 @@ class FrogWindow(Adw.ApplicationWindow):
             if self.settings.get_boolean('autocopy') or copy:
                 clipboard_service.set(text)
                 self.show_toast(_('Text copied to clipboard'))
+
+            # If text is a URL we could show user Toast with suggestion to open it
+            # Or automatically open it, if this setting is set.
+            if is_url:
+                if self.settings.get_boolean('autolinks'):
+                    Gtk.show_uri(None, text, Gdk.CURRENT_TIME)
+                    self.show_toast(_('QR-code URL opened'), priority=Adw.ToastPriority.HIGH)
+                else:
+                    toast = Adw.Toast(
+                        title=_('QR-code contains URL.'),
+                        button_label=_('Open'),
+                        priority=Adw.ToastPriority.HIGH)
+                    toast.set_detailed_action_name(f'app.show_uri("{text}")')
+                    self.toast_overlay.add_toast(toast)
 
             self.main_stack.set_visible_child_name("extracted")
             self.toolbox.set_reveal_child(True)
@@ -310,7 +325,7 @@ class FrogWindow(Adw.ApplicationWindow):
 
     def show_preferences(self) -> None:
         # dialog = LanguagePacksDialog(self)
-        dialog = PreferencesDialog(self)
+        dialog = PreferencesDialog(settings=self.settings, parent=self)
         dialog.show()
 
     def on_language_downloading(self, sender, lang_code: str):
@@ -330,9 +345,8 @@ class FrogWindow(Adw.ApplicationWindow):
         print('on_language_removed: ' + lang_code)
         self.fill_lang_combo()
 
-    def show_toast(self, title, timeout: int = 2) -> None:
-        self.toast_overlay.add_toast(Adw.Toast(title=title, timeout=timeout))
-
+    def show_toast(self, title, timeout: int = 2, priority: Adw.ToastPriority = Adw.ToastPriority.NORMAL) -> None:
+        self.toast_overlay.add_toast(Adw.Toast(title=title, timeout=timeout, priority=priority))
 
     def uri_validator(self, link) -> bool:
         try:

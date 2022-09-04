@@ -26,5 +26,10 @@
       <summary>Autocopy text to clipboard</summary>
       <description>Automatically copy the extracted text to the clipboard.</description>
     </key>
+    <key name="autolinks" type="b">
+      <default>false</default>
+      <summary>Open QR-code links</summary>
+      <description>Automatically open links from QR-codes</description>
+    </key>
   </schema>
 </schemalist>

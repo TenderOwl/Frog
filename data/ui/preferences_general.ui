@@ -4,18 +4,24 @@
     <property name="title" translatable="yes">General</property>
     <property name="icon_name">emblem-system-symbolic</property>
     <child>
-      <object class="AdwPreferencesGroup" id="dark_group">
-        <property name="title" translatable="yes">Extracting</property>
+      <object class="AdwPreferencesGroup">
+        <property name="title" translatable="yes">Text Extracting</property>
         <child>
           <object class="AdwComboRow" id="extra_language_combo">
             <property name="title" translatable="yes">Extra language</property>
             <property name="subtitle" translatable="yes">Extra language to use in extracting</property>
           </object>
         </child>
+
+      </object>
+    </child>
+    <child>
+      <object class="AdwPreferencesGroup">
+        <property name="title" translatable="yes">Behavior</property>
         <child>
           <object class="AdwActionRow">
             <property name="title" translatable="yes">Copy to clipboard</property>
-            <property name="subtitle" translatable="yes">Automatically copy the  extracted text to clipboard</property>
+            <property name="subtitle" translatable="yes">Automatically copy the extracted text to clipboard</property>
             <property name="activatable_widget">autocopy_switch</property>
             <child>
               <object class="GtkSwitch" id="autocopy_switch">
@@ -24,17 +30,13 @@
             </child>
           </object>
         </child>
-      </object>
-    </child>
-    <child>
-      <object class="AdwPreferencesGroup">
-        <property name="title" translatable="yes">Behavior</property>
         <child>
           <object class="AdwActionRow">
-            <property name="title" translatable="yes">Autostart in background</property>
-            <property name="activatable_widget">autostart</property>
+            <property name="title" translatable="yes">Open QR-code links</property>
+            <property name="subtitle" translatable="yes">Automatically open links from QR-codes</property>
+            <property name="activatable_widget">autolinks_switch</property>
             <child>
-              <object class="GtkSwitch" id="autostart">
+              <object class="GtkSwitch" id="autolinks_switch">
                 <property name="valign">center</property>
               </object>
             </child>
