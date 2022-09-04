@@ -9,6 +9,7 @@
         <property name="description" translatable="yes">Languages of the extracted text</property>
         <property name="header_suffix">
           <object class="GtkSwitch" id="installed_switch">
+            <property name="tooltip_text" translatable="yes">Switch between available and installed languages</property>
             <property name="valign">center</property>
           </object>
         </property>
