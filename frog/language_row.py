@@ -31,8 +31,8 @@ class LanguageRow(Gtk.Overlay):
     def update_ui(self):
         # English is a default language, therefore, should be no way to remove it
         if self.lang_code == "eng":
-            self.download_widget.set_sensitive(False)
             self.download_widget.set_icon_name('user-trash-symbolic')
+            self.download_widget.set_sensitive(False)
             return
 
         # Downloaded
@@ -44,6 +44,7 @@ class LanguageRow(Gtk.Overlay):
             self.download_widget.set_sensitive(False)
         # Not yet
         else:
+            self.download_widget.set_icon_name('folder-download-symbolic')
             self.download_widget.set_sensitive(True)
             self.revealer.set_reveal_child(False)
 
