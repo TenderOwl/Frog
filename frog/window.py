@@ -159,7 +159,7 @@ class FrogWindow(Adw.ApplicationWindow):
         self.lang_combo.set_label(_('English'))
 
         if self.active_lang and self.active_lang in language_manager.get_downloaded_codes():
-            self.lang_combo.set_label(language_manager.get_language(self.active_lang.rsplit('+')[0]))
+            self.lang_combo.set_label(language_manager.get_language(self.active_lang))
 
         else:
             self.lang_combo.set_label(_('English'))
@@ -186,10 +186,10 @@ class FrogWindow(Adw.ApplicationWindow):
         self.active_lang = language_manager.get_language_code(self.lang_combo.get_label())
         # Just in case. Probably better add primary language in settings
         extra_lang = self.settings.get_string("extra-language")
-        if self.active_lang != extra_lang:
-            self.active_lang = f'{self.active_lang}+{extra_lang}'
+        # if self.active_lang != extra_lang:
+        #     self.active_lang = f'{self.active_lang}+{extra_lang}'
 
-        return self.active_lang
+        return f'{self.active_lang}+{extra_lang}'
 
     def on_shot_done(self, sender, text: str, copy: bool) -> None:
         try:
