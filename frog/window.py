@@ -197,7 +197,7 @@ class FrogWindow(Adw.ApplicationWindow):
             buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
             buffer.set_text(text)
 
-            if copy:
+            if self.settings.get_boolean('autocopy') or copy:
                 clipboard_service.set(text)
 
             self.main_stack.set_visible_child_name("extracted")
