@@ -225,12 +225,10 @@ class FrogWindow(Adw.ApplicationWindow):
             accept_label=_('Open'),
             cancel_label=_('Cancel')
         )
+        image_filter = Gtk.FileFilter()
+        image_filter.add_pixbuf_formats()
+        self.open_file_dlg.set_filter(image_filter)
         self.open_file_dlg.set_transient_for(self)
-        # dlg.add_buttons(
-        #     _('Cancel'), Gtk.ResponseType.CANCEL,
-        #     _('Open'), Gtk.ResponseType.ACCEPT
-        # )
-        # dlg.set_default_response(Gtk.ResponseType.ACCEPT)
         self.open_file_dlg.connect('response', self.on_open_image)
         self.open_file_dlg.show()
 
@@ -240,8 +238,6 @@ class FrogWindow(Adw.ApplicationWindow):
             lang = self.get_language()
             self.spinner.start()
             GObjectWorker.call(self.backend.decode_image, (lang, item.get_path()))
-
-        dialog.close()
 
     def display_error(self, sender, error) -> None:
         print('on_screenshot_error?', error)
