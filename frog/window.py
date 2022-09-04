@@ -133,7 +133,7 @@ class FrogWindow(Adw.ApplicationWindow):
 
         # Connect signals
         self.text_clear_btn.connect('clicked', self.text_clear_btn_clicked)
-        self.text_copy_btn.connect('clicked', self.text_copy_btn_clicked)
+        # self.text_copy_btn.connect('clicked', self.text_copy_btn_clicked)
         self.languages_list.connect('row-activated', self.on_language_change)
         self.connect('notify::default-width', self.on_configure_event)
         self.connect('notify::default-height', self.on_configure_event)
@@ -316,10 +316,11 @@ class FrogWindow(Adw.ApplicationWindow):
         self.toolbox.set_reveal_child(False)
         self.main_stack.set_visible_child_name("welcome")
 
-    def text_copy_btn_clicked(self, button: Gtk.Widget) -> None:
+    def on_copy_to_clipboard(self, sender) -> None:
         buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
         text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
         clipboard_service.set(text)
+        self.show_toast(_('Text copied to clipboard'))
 
     def show_preferences(self) -> None:
         # dialog = LanguagePacksDialog(self)
