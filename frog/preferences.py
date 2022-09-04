@@ -33,6 +33,7 @@ from frog.config import RESOURCE_PREFIX
 from .language_dialog import LanguagePacksDialog
 
 from .language_manager import language_manager
+from .settings import Settings
 
 
 @Gtk.Template(resource_path=f'{RESOURCE_PREFIX}/ui/preferences.ui')
@@ -49,7 +50,7 @@ class PreferencesDialog(Adw.PreferencesWindow):
     autocopy_switch: Gtk.Switch
     autolinks_switch: Gtk.Switch
 
-    def __init__(self, settings: Gio.Settings, parent: Adw.Window = None):
+    def __init__(self, settings: Settings, parent: Adw.Window = None):
         super(PreferencesDialog, self).__init__()
         self.settings = settings
         self.set_modal(True)
@@ -82,6 +83,7 @@ class PreferencesDialog(Adw.PreferencesWindow):
         extra_language_index = downloaded_langs.index(
             language_manager.get_language(settings.get_string('extra-language')))
         self.extra_language_combo.set_selected(extra_language_index)
+        self.extra_language_combo.connect('notify::selected-item', self.on_extra_language_changed)
 
         # Language page widgets
         self.languages_page = builder.get_object('languages_page')
@@ -115,13 +117,19 @@ class PreferencesDialog(Adw.PreferencesWindow):
     def deactivate_filter(self):
         self.model.set_filter(None)
 
-    def on_language_removed(self, sender, code):
+    def on_language_added(self, _sender, _code):
         if self.installed_switch.get_active():
             GLib.idle_add(self.activate_filter)
 
     def on_language_removed(self, _sender, _code):
         if self.installed_switch.get_active():
             GLib.idle_add(self.activate_filter)
+
+    def on_extra_language_changed(self, combo_row: Adw.ComboRow, _param) -> None:
+        lang_name = combo_row.get_selected_item().get_string()
+        lang_code = language_manager.get_language_code(lang_name)
+        print(f'Extra language: {lang_name}:{lang_code}')
+        self.settings.set_string('extra-language', lang_code)
 
 
 class LanguageItem(GObject.GObject):
