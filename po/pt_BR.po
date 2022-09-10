@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "POT-Creation-Date: 2022-06-15 00:54+0300\n"
-"PO-Revision-Date: 2022-09-10 14:24-0300\n"
+"PO-Revision-Date: 2022-09-10 14:58-0300\n"
 "Last-Translator: Vinícius Augusto Silva Brasileiro <v247391@dac.unicamp.br>\n"
 "Language-Team: Brazilian Portuguese <v247391@dac.unicamp.br>\n"
 "Language: pt_BR\n"
@@ -72,7 +72,7 @@ msgstr "Configurar idiomas"
 
 #: data/ui/window.ui:153
 msgid "Take a screenshot"
-msgstr "Tirar captura de tela"
+msgstr "Tirar uma captura de tela"
 
 #: data/ui/window.ui:174
 msgid "Clear the extraction results"
@@ -206,7 +206,7 @@ msgstr "Inglês"
 
 #: frog/language_manager.py:57
 msgid "English, Middle (1100-1500)"
-msgstr ""
+msgstr "Inglês, Médio (1100-1500)"
 
 #: frog/language_manager.py:58
 msgid "Esperanto"
@@ -234,7 +234,7 @@ msgstr "Persa"
 
 #: frog/language_manager.py:64
 msgid "Filipino (old - Tagalog)"
-msgstr ""
+msgstr "Filipino (antigo - Tagalo)"
 
 #: frog/language_manager.py:65
 msgid "Finnish"
@@ -250,7 +250,7 @@ msgstr "Alemão - Fraktur"
 
 #: frog/language_manager.py:68
 msgid "French, Middle (ca.1400-1600)"
-msgstr ""
+msgstr "Francês, Médio (aprox.1400-1600)"
 
 #: frog/language_manager.py:69
 msgid "Western Frisian"
@@ -270,7 +270,7 @@ msgstr "Galego"
 
 #: frog/language_manager.py:73
 msgid "Greek, Ancient (to 1453) (contrib)"
-msgstr ""
+msgstr "Grego, Clássico (até 1453) (contrib)"
 
 #: frog/language_manager.py:74
 msgid "Gujarati"
@@ -350,7 +350,7 @@ msgstr "Khmer Central"
 
 #: frog/language_manager.py:93
 msgid "Kirghiz; Kyrgyz"
-msgstr ""
+msgstr "Quirguiz"
 
 #: frog/language_manager.py:94
 msgid "Kurmanji (Kurdish - Latin Script)"
@@ -390,7 +390,7 @@ msgstr "Malaiala"
 
 #: frog/language_manager.py:103
 msgid "Marathi"
-msgstr ""
+msgstr "Marati"
 
 #: frog/language_manager.py:104
 msgid "Macedonian"
@@ -442,7 +442,7 @@ msgstr "Módulo de detecção de orientação e script"
 
 #: frog/language_manager.py:116
 msgid "Panjabi; Punjabi"
-msgstr ""
+msgstr "Panjábi; Punjábi"
 
 #: frog/language_manager.py:117
 msgid "Polish"
@@ -454,7 +454,7 @@ msgstr "Português"
 
 #: frog/language_manager.py:119
 msgid "Pushto; Pashto"
-msgstr ""
+msgstr "Pastó;Pachto"
 
 #: frog/language_manager.py:120
 msgid "Quechua"
