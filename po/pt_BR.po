@@ -1,4 +1,7 @@
-#
+# BRAZILIAN PORTUGUES TRANSLATION
+# Copyright (C) 2022 Andrey Maksimov
+# This file is distributed under the same license as the frog package.
+# Andrey Maksimov <andrey@tenderowl.com>, 2022.
 # Vinícius Augusto Silva Brasileiro <v247391@dac.unicamp.br>, 2022.
 #
 msgid ""
