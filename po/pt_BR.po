@@ -1,17 +1,19 @@
+#
+# Ian <ianloron00@gmail.com>, 2022.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "POT-Creation-Date: 2022-06-15 00:54+0300\n"
-"PO-Revision-Date: 2022-06-15 00:54+0300\n"
-"Last-Translator: Andrey Maksimov <andrey@tenderowl.com>\n"
-"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/frog/"
-"default/pt_BR/>\n"
+"PO-Revision-Date: 2022-09-10 14:24-0300\n"
+"Last-Translator: Ian <ianloron00@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <i198933@dac.unicamp.br>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Poedit 3.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"X-Generator: Gtranslator 3.36.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: data/ui\n"
@@ -46,7 +48,7 @@ msgstr "Copiar texto extraído para a área de transferência"
 #: data/ui/shortcuts.ui:34
 msgctxt "shortcut window"
 msgid "Display preferences"
-msgstr ""
+msgstr "Mostrar preferênciass"
 
 #: data/ui/window.ui:12
 msgid "Extract text from anywhere"
@@ -54,7 +56,7 @@ msgstr "Extraia texto de qualquer lugar"
 
 #: data/ui/window.ui:20
 msgid "Language"
-msgstr ""
+msgstr "Lingua"
 
 #: data/ui/window.ui:21
 msgid "Select language to extract"
@@ -64,8 +66,7 @@ msgstr "Selecione idioma para extrair"
 msgid "Take a Screenshot"
 msgstr ""
 
-#: data/ui/window.ui:102
-#: data/ui/window.ui:218
+#: data/ui/window.ui:102 data/ui/window.ui:218
 msgid "Configure Languages"
 msgstr "Configurar idiomas"
 
