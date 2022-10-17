@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "POT-Creation-Date: 2022-06-15 00:54+0300\n"
-"PO-Revision-Date: 2022-06-15 00:54+0300\n"
-"Last-Translator: Andrey Maksimov <andrey@tenderowl.com>\n"
+"PO-Revision-Date: 2022-10-18 11:14+0000\n"
+"Last-Translator: Gab <loopredesocial@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/frog/"
 "default/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Weblate 4.15-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: data/ui\n"
@@ -46,7 +46,7 @@ msgstr "Copiar texto extraído para a área de transferência"
 #: data/ui/shortcuts.ui:34
 msgctxt "shortcut window"
 msgid "Display preferences"
-msgstr ""
+msgstr "Preferências de exibição"
 
 #: data/ui/window.ui:12
 msgid "Extract text from anywhere"
@@ -54,7 +54,7 @@ msgstr "Extraia texto de qualquer lugar"
 
 #: data/ui/window.ui:20
 msgid "Language"
-msgstr ""
+msgstr "Idioma"
 
 #: data/ui/window.ui:21
 msgid "Select language to extract"
@@ -62,7 +62,7 @@ msgstr "Selecione idioma para extrair"
 
 #: data/ui/window.ui:77
 msgid "Take a Screenshot"
-msgstr ""
+msgstr "Tirar uma captura de tela"
 
 #: data/ui/window.ui:102
 #: data/ui/window.ui:218
@@ -71,7 +71,7 @@ msgstr "Configurar idiomas"
 
 #: data/ui/window.ui:153
 msgid "Take a screenshot"
-msgstr ""
+msgstr "Tirar uma captura de tela"
 
 #: data/ui/window.ui:174
 msgid "Clear the extraction results"
