@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "POT-Creation-Date: 2022-04-09 21:41+0300\n"
-"PO-Revision-Date: 2022-06-09 10:15+0000\n"
-"Last-Translator: Lasse Palm <galmi04+weblate@gmail.com>\n"
+"PO-Revision-Date: 2023-01-31 17:41+0100\n"
+"Last-Translator: gregorni <gregorniehl@web.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/frog/default/de/>"
 "\n"
 "Language: de\n"
@@ -62,11 +62,11 @@ msgstr "Sprachen zum Extrahieren auswählen"
 
 #: data/ui/window.ui:68 data/ui/window.ui:128
 msgid "Take a shot"
-msgstr ""
+msgstr "Bildschirmfoto aufnehmen"
 
 #: data/ui/window.ui:83
 msgid "_Configure languages"
-msgstr ""
+msgstr "Sprachen _konfigurieren"
 
 #: data/ui/window.ui:146
 msgid "Clear the extraction results"
@@ -74,11 +74,11 @@ msgstr "Extraktionsergebnisse leeren"
 
 #: data/ui/window.ui:158
 msgid "Copy extracted text to clipboard"
-msgstr ""
+msgstr "Text in die Zwischenablage kopieren"
 
 #: data/ui/window.ui:181
 msgid "_Configure"
-msgstr ""
+msgstr "_Konfigurieren"
 
 #: data/ui/window.ui:187
 msgid "_Keyboard Shortcuts"
