@@ -26,6 +26,7 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
+import datetime
 import sys
 from gettext import gettext as _
 
@@ -37,7 +38,6 @@ gi.require_version('Notify', '0.7')
 gi.require_version('Xdp', '1.0')
 
 from gi.repository import Gtk, Gio, GLib, Notify, Adw, GdkPixbuf
-from .about_dialog import AboutDialog
 from .clipboard_service import clipboard_service
 from .config import RESOURCE_PREFIX
 from .language_manager import language_manager
@@ -143,8 +143,19 @@ class Application(Adw.Application):
         self.get_active_window().show_preferences()
 
     def on_about(self, _action, _param):
-        about_dialog = AboutDialog(transient_for=self.props.active_window, modal=True, version=self.version)
-        about_dialog.present()
+        about_window = Adw.AboutWindow(
+            application_name="Frog",
+            application_icon="com.github.tenderowl.frog",
+            version=self.version,
+            copyright=f'© {datetime.date.today().year} Tender Owl',
+            website="https://getfrog.app",
+            issue_url="https://github.com/TenderOwl/Frog/issues/new",
+            license_type=Gtk.License.MIT_X11,
+            developer_name="TenderOwl Team",
+            developers=["Andrey Maksimov"],
+            transient_for=self.props.active_window
+        )
+        about_window.present()
 
     def on_shortcuts(self, _action, _param):
         builder = Gtk.Builder()
