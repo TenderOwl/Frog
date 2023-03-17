@@ -116,6 +116,7 @@ class Application(Adw.Application):
         action = Gio.SimpleAction.new("shortcuts", None)
         action.connect("activate", self.on_shortcuts)
         self.add_action(action)
+        self.set_accels_for_action("app.shortcuts", ("<Control>question",))
 
         action = Gio.SimpleAction.new(name="about", parameter_type=None)
         action.connect("activate", self.on_about)
