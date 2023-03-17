@@ -121,6 +121,11 @@ class Application(Adw.Application):
         action.connect("activate", self.on_about)
         self.add_action(action)
 
+        action = Gio.SimpleAction.new(name="quit", parameter_type=None)
+        action.connect("activate", self.on_quit)
+        self.add_action(action)
+        self.set_accels_for_action("app.quit", ("<Control>q",))
+
     def do_activate(self):
         win = self.props.active_window
         if not win:
@@ -155,6 +160,9 @@ class Application(Adw.Application):
             transient_for=self.props.active_window
         )
         about_window.present()
+
+    def on_quit(self, _action, _param):
+        self.quit()
 
     def on_shortcuts(self, _action, _param):
         builder = Gtk.Builder()
