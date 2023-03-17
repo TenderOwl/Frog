@@ -40,6 +40,12 @@
                 <property name="title" translatable="yes" context="shortcut window">Display Shortcuts</property>
               </object>
             </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="accelerator">&lt;ctrl&gt;q</property>
+                <property name="title" translatable="yes" context="shortcut window">Quit</property>
+              </object>
+            </child>
           </object>
         </child>
       </object>
