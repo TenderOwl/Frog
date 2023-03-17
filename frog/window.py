@@ -307,6 +307,7 @@ class FrogWindow(Adw.ApplicationWindow):
         buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
         text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
         clipboard_service.set(text)
+        self.show_toast(_('Text copied'))
 
     def show_preferences(self) -> None:
         dialog = LanguagePacksDialog(self)
