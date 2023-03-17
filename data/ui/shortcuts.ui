@@ -28,10 +28,15 @@
                 <property name="title" translatable="yes" context="shortcut window">Copy extracted text to clipboard</property>
               </object>
             </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="title" translatable="yes" context="shortcut window">General</property>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="accelerator">&lt;ctrl&gt;comma</property>
-                <property name="title" translatable="yes" context="shortcut window">Display preferences</property>
+                <property name="title" translatable="yes" context="shortcut window">Configure languages</property>
               </object>
             </child>
             <child>
@@ -40,6 +45,11 @@
                 <property name="title" translatable="yes" context="shortcut window">Display Shortcuts</property>
               </object>
             </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkShortcutsGroup">
+            <property name="title" translatable="yes" context="shortcut window">General</property>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="accelerator">&lt;ctrl&gt;q</property>
@@ -52,4 +62,3 @@
     </child>
   </object>
 </interface>
-
