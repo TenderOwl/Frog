@@ -21,7 +21,7 @@ The Frog could help you to deal with QR codes helping you to get them decoded!
 ## See it in action
 
 <div align="center">
-<video controls src="https://user-images.githubusercontent.com/519146/162445469-bedeed49-ebb8-4b9c-8bb5-f65d4d97d1fe.mp4" />
+<video controls src="https://user-images.githubusercontent.com/519146/226143395-74676db4-90ff-49b5-98af-35a284f327bb.webm" />
 </div>
 
 ## Get it from Flathub
