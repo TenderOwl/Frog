@@ -14,6 +14,7 @@ from frog.gobject_worker import GObjectWorker
 
 class LanguageManager(GObject.GObject):
     __gsignals__ = {
+        'added': (GObject.SIGNAL_RUN_FIRST, None, (str,)),
         'downloading': (GObject.SIGNAL_RUN_FIRST, None, (str, int)),
         'downloaded': (GObject.SIGNAL_RUN_FIRST, None, (str,)),
         'removed': (GObject.SIGNAL_RUN_FIRST, None, (str,)),
@@ -191,6 +192,7 @@ class LanguageManager(GObject.GObject):
         return sorted(languages)
 
     def download(self, code):
+        self.emit('added', code)
         self.loading_languages[code] = DownloadState()
         GObjectWorker.call(self.download_begin, (code,), self.download_done)
         self.emit('downloading', code, 0)

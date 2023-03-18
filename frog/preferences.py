@@ -43,9 +43,11 @@ class PreferencesDialog(Adw.PreferencesWindow):
     settings: Gio.Settings
     general_page: Adw.PreferencesPage
     languages_page: Adw.PreferencesPage
-    languages_list_group: Adw.PreferencesGroup
+    # languages_list_group: Adw.PreferencesGroup
     installed_languages_list: Gtk.ListBox
 
+    search_revealer: Gtk.Revealer
+    language_search_entry: Gtk.SearchEntry
     second_language_combo: Adw.ComboRow
     autocopy_switch: Gtk.Switch
     autolinks_switch: Gtk.Switch
@@ -62,6 +64,8 @@ class PreferencesDialog(Adw.PreferencesWindow):
         for lang_code in language_manager.get_available_codes():
             self.store.append(LanguageItem(lang_code, title=language_manager.get_language(lang_code)))
 
+        language_manager.connect('added', self.on_language_added)
+        language_manager.connect('downloaded', self.on_language_added)
         language_manager.connect('removed', self.on_language_removed)
 
         builder = Gtk.Builder()
@@ -85,12 +89,14 @@ class PreferencesDialog(Adw.PreferencesWindow):
         self.extra_language_combo.connect('notify::selected-item', self.on_extra_language_changed)
 
         # Language page widgets
+        self.search_revealer = builder.get_object('search_revealer')
+        self.language_search_entry = builder.get_object('language_search_entry')
         self.languages_page = builder.get_object('languages_page')
-        # self.installed_switch = builder.get_object('installed_switch')
-        self.languages_list_group = builder.get_object('languages_list_group')
         self.installed_languages_list = builder.get_object('installed_languages_list')
 
         # self.installed_switch.connect('notify::active', self.on_installed_switched)
+        self.language_search_entry.connect('search-changed', self.on_language_search)
+        self.language_search_entry.connect('stop-search', self.on_language_search_stop)
 
         self.add(self.general_page)
         self.add(self.languages_page)
@@ -111,27 +117,49 @@ class PreferencesDialog(Adw.PreferencesWindow):
 
         self.installed_languages_list.append(view_more_langs_row)
 
-    def langs_list_row_activated(self, list_box: Gtk.ListBox, row: Gtk.ListBoxRow, user_data: dict = None) -> None:
-        print(f'row-activated {row.get_index()} of {self.model.get_n_items()}')
-        if row.get_index() == self.model.get_n_items():
-            self.deactivate_filter()
+    @property
+    def is_search_mode(self):
+        return self.search_revealer.get_child_revealed()
 
-    def activate_filter(self):
-        _filter: Gtk.CustomFilter = Gtk.CustomFilter.new(PreferencesDialog.filter_func)
+    def langs_list_row_activated(self, list_box: Gtk.ListBox, row: Gtk.ListBoxRow, user_data: dict = None) -> None:
+        if row.get_index() == self.model.get_n_items():
+            if not self.is_search_mode:
+                self.deactivate_filter()
+                self.search_revealer.set_reveal_child(True)
+                self.language_search_entry.grab_focus()
+            else:
+                self.activate_filter()
+                self.search_revealer.set_reveal_child(False)
+
+    def activate_filter(self, search_text: str = None) -> None:
+        _filter: Gtk.CustomFilter = Gtk.CustomFilter.new(PreferencesDialog.filter_func, search_text)
         self.model.set_filter(_filter)
 
     def deactivate_filter(self):
         self.model.set_filter(None)
 
-    @staticmethod
-    def filter_func(item) -> bool:
-        return item.code in language_manager.get_downloaded_codes()
+    def on_language_search(self, entry: Gtk.SearchEntry, user_data: object = None) -> None:
+        self.activate_filter(entry.get_text())
 
-    def on_language_added(self, _sender, _code) -> None:
+    def on_language_search_stop(self, entry: Gtk.SearchEntry) -> None:
+        entry.set_text('')
+        self.search_revealer.set_reveal_child(False)
         self.activate_filter()
+
+    @staticmethod
+    def filter_func(item, user_data: str) -> bool:
+        if user_data:
+            return user_data.lower() in item.title.lower()
+        else:
+            return item.code in language_manager.get_downloaded_codes()
+
+    def on_language_added(self, _sender, _code: str = None) -> None:
+        if not self.search_revealer.get_reveal_child():
+            self.activate_filter()
 
     def on_language_removed(self, _sender, _code) -> None:
-        self.activate_filter()
+        if not self.search_revealer.get_reveal_child():
+            self.activate_filter()
 
     def on_extra_language_changed(self, combo_row: Adw.ComboRow, _param) -> None:
         lang_name = combo_row.get_selected_item().get_string()

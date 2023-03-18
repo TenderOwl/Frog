@@ -4,13 +4,41 @@
     <property name="title" translatable="yes">Languages</property>
     <property name="icon_name">preferences-desktop-locale-symbolic</property>
     <child>
-      <object class="AdwPreferencesGroup" id="languages_list_group">
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
         <child>
-          <object class="GtkListBox" id="installed_languages_list">
-            <property name="selection-mode">none</property>
-            <style>
-              <class name="boxed-list"/>
-            </style>
+          <object class="GtkRevealer" id="search_revealer">
+            <property name="margin-top">8</property>
+            <property name="margin-bottom">8</property>
+            <property name="margin-start">8</property>
+            <property name="margin-end">8</property>
+            <child>
+              <object class="GtkSearchEntry" id="language_search_entry">
+                <property name="margin-start">4</property>
+                <property name="margin-end">4</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="vexpand">True</property>
+            <child>
+              <object class="AdwPreferencesGroup" id="languages_list_group">
+                <property name="margin-top">12</property>
+                <property name="margin-start">12</property>
+                <property name="margin-end">12</property>
+                <property name="margin-bottom">12</property>
+                <child>
+                  <object class="GtkListBox" id="installed_languages_list">
+                    <property name="selection-mode">none</property>
+                    <style>
+                      <class name="boxed-list"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
           </object>
         </child>
       </object>
