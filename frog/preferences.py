@@ -55,7 +55,6 @@ class PreferencesDialog(Adw.PreferencesWindow):
         self.settings = settings
         self.set_modal(True)
         self.set_transient_for(parent)
-        self.set_default_size(480, 400)
 
         # Init language model
         self.store: Gio.ListStore = Gio.ListStore.new(LanguageItem)
