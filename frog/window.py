@@ -240,22 +240,15 @@ class FrogWindow(Adw.ApplicationWindow):
             accept_label=_('Open'),
             cancel_label=_('Cancel')
         )
-        image_filter = Gtk.FileFilter()
-        image_filter.add_pixbuf_formats()
-        self.open_file_dlg.set_filter(image_filter)
-        self.open_file_dlg.set_transient_for(self)
-        # dlg.add_buttons(
-        #     _('Cancel'), Gtk.ResponseType.CANCEL,
-        #     _('Open'), Gtk.ResponseType.ACCEPT
-        # )
-        # dlg.set_default_response(Gtk.ResponseType.ACCEPT)
 
-        file_filter = Gtk.FileFilter.new()
+        file_filter = Gtk.FileFilter()
         file_filter.set_name(_('Supported image files'))
         file_filter.add_mime_type('image/png')
         file_filter.add_mime_type('image/jpeg')
         file_filter.add_mime_type('image/jpg')
         self.open_file_dlg.add_filter(file_filter)
+
+        self.open_file_dlg.set_transient_for(self)
 
         self.open_file_dlg.connect('response', self.on_open_image)
         self.open_file_dlg.show()
