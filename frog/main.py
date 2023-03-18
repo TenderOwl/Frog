@@ -37,7 +37,7 @@ gi.require_version('Adw', '1')
 gi.require_version('Notify', '0.7')
 gi.require_version('Xdp', '1.0')
 
-from gi.repository import Gtk, Gio, GLib, Notify, Adw, GdkPixbuf
+from gi.repository import Gtk, Gio, GLib, Notify, Adw, GdkPixbuf, Gdk
 from .clipboard_service import clipboard_service
 from .config import RESOURCE_PREFIX
 from .language_manager import language_manager
@@ -94,14 +94,16 @@ class Application(Adw.Application):
         self.add_action(shot_action)
         self.set_accels_for_action("app.get_screenshot", ("<Control>g",))
 
-        shot_action: Gio.SimpleAction = Gio.SimpleAction.new(name="get_screenshot_and_copy", parameter_type=None)
-        shot_action.connect("activate", self.get_screenshot_and_copy)
-        self.add_action(shot_action)
-        self.set_accels_for_action("app.get_screenshot_and_copy", ("<Control><Shift>g",))
+        copy_action: Gio.SimpleAction = Gio.SimpleAction.new(name="copy_to_clipboard", parameter_type=None)
+        copy_action.connect("activate", self.on_copy_to_clipboard)
+        self.add_action(copy_action)
+        self.set_accels_for_action("app.copy_to_clipboard", ("<Control>c",))
 
-        shot_action: Gio.SimpleAction = Gio.SimpleAction.new(name="open_url", parameter_type=None)
-        shot_action.connect("activate", print)
-        self.add_action(shot_action)
+        shot_action_and_copy: Gio.SimpleAction = Gio.SimpleAction.new(name="get_screenshot_and_copy",
+                                                                      parameter_type=None)
+        shot_action_and_copy.connect("activate", self.get_screenshot_and_copy)
+        self.add_action(shot_action_and_copy)
+        self.set_accels_for_action("app.get_screenshot_and_copy", ("<Control><Shift>g",))
 
         action = Gio.SimpleAction.new("preferences", None)
         action.connect("activate", self.on_preferences)
@@ -112,6 +114,10 @@ class Application(Adw.Application):
         action.connect("activate", self.open_image)
         self.add_action(action)
         self.set_accels_for_action("app.open_image", ("<Control>o",))
+
+        action = Gio.SimpleAction.new("show_uri", GLib.VariantType.new('s'))
+        action.connect("activate", self.on_show_uri)
+        self.add_action(action)
 
         action = Gio.SimpleAction.new("shortcuts", None)
         action.connect("activate", self.on_shortcuts)
@@ -170,6 +176,12 @@ class Application(Adw.Application):
         builder.add_from_resource(f"{RESOURCE_PREFIX}/ui/shortcuts.ui")
         builder.get_object("shortcuts").set_transient_for(self.get_active_window())
         builder.get_object("shortcuts").show()
+
+    def on_copy_to_clipboard(self, _action, _param) -> None:
+        self.get_active_window().on_copy_to_clipboard(self)
+
+    def on_show_uri(self, _action, param) -> None:
+        Gtk.show_uri(None, param.get_string(), Gdk.CURRENT_TIME)
 
     def get_screenshot(self, _action, _param) -> None:
         self.get_active_window().get_screenshot()

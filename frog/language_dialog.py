@@ -25,13 +25,13 @@
 # holders shall not be used in advertising or otherwise to promote the sale,
 # use or other dealings in this Software without prior written
 # authorization.
-from gettext import gettext as _
 
-from gi.repository import Gtk, Adw, Gdk, Gio, GObject
+from gi.repository import Gtk, Gio, GObject
 
 from frog.config import RESOURCE_PREFIX
 
 from .language_manager import language_manager
+from .language_row import LanguageRow
 
 
 class LanguageItem(GObject.GObject):
@@ -95,55 +95,3 @@ class LanguagePacksDialog(Gtk.Window):
         elif lang1 < lang2:
             return -1
         return 0
-
-
-# @Gtk.Template(resource_path=f'{RESOURCE_PREFIX}/ui/language_row.ui')
-class LanguageRow(Adw.ActionRow):
-    __gtype_name__ = 'LanguageRow'
-
-    label: Gtk.Label = Gtk.Template.Child()
-    download_widget: Gtk.Button
-
-    def __init__(self, lang_code, lang_title, **kwargs):
-        super().__init__(**kwargs)
-
-        self.lang_code = lang_code
-        self.lang_title = lang_title
-
-        self.download_widget = Gtk.Button(valign=Gtk.Align.CENTER)
-        self.download_widget.connect('clicked', self.download_clicked)
-
-        self.set_title(lang_title)
-        self.add_suffix(self.download_widget)
-
-        self.update_ui()
-
-    def update_ui(self):
-        # Downloaded
-        if self.lang_code in language_manager.get_downloaded_codes():
-            self.download_widget.set_icon_name('user-trash-symbolic')
-            self.download_widget.set_sensitive(True)
-            self.get_style_context().add_class("downloaded")
-            self.download_widget.get_style_context().add_class("destructive-action")
-        # In progress
-        elif self.lang_code in language_manager.loading_languages:
-            self.download_widget.set_sensitive(False)
-            self.get_style_context().remove_class("downloaded")
-        # Not yet
-        else:
-            self.get_style_context().remove_class("downloaded")
-            self.download_widget.set_sensitive(True)
-            self.download_widget.get_style_context().remove_class("destructive-action")
-            self.download_widget.set_icon_name('folder-download-symbolic')
-
-    def download_clicked(self, widget: Gtk.Button) -> None:
-        if self.lang_code in language_manager.loading_languages:
-            return
-
-        if self.lang_code in language_manager.get_downloaded_codes():
-            language_manager.remove_language(self.lang_code)
-            self.update_ui()
-            return
-
-        language_manager.download(self.lang_code)
-        self.update_ui()

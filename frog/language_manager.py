@@ -3,7 +3,7 @@ import pathlib
 from dataclasses import dataclass
 from gettext import gettext as _
 from shutil import copyfile
-from typing import List
+from typing import List, Dict
 from urllib import request
 
 from gi.repository import GObject
@@ -14,7 +14,7 @@ from frog.gobject_worker import GObjectWorker
 
 class LanguageManager(GObject.GObject):
     __gsignals__ = {
-        'downloading': (GObject.SIGNAL_RUN_FIRST, None, (str,)),
+        'downloading': (GObject.SIGNAL_RUN_FIRST, None, (str, int)),
         'downloaded': (GObject.SIGNAL_RUN_FIRST, None, (str,)),
         'removed': (GObject.SIGNAL_RUN_FIRST, None, (str,)),
     }
@@ -22,7 +22,7 @@ class LanguageManager(GObject.GObject):
     def __init__(self):
         GObject.GObject.__init__(self)
 
-        self.loading_languages = dict()
+        self.loading_languages: Dict[str, DownloadState] = dict()
 
         # Cached codes of downloaded languages
         self._downloaded_codes = []
@@ -163,7 +163,7 @@ class LanguageManager(GObject.GObject):
         copyfile(source_path, dest_path)
 
     def get_available_codes(self):
-        return [code for code in sorted(self._languages.keys())]
+        return [code for code in sorted(self._languages.keys(), key=lambda x: self.get_language(x))]
 
     def get_available_languages(self):
         return [code for code in sorted(self._languages.values())]
@@ -178,10 +178,10 @@ class LanguageManager(GObject.GObject):
 
     def get_downloaded_codes(self, force: bool = False) -> List[str]:
         if self._need_update_cache or force:
-            self._downloaded_codes = [os.path.splitext(lang_file)[0] for lang_file in sorted(os.listdir(tessdata_dir))]
+            self._downloaded_codes = [os.path.splitext(lang_file)[0] for lang_file in os.listdir(tessdata_dir)]
             self._need_update_cache = False
             print(f"Cache downloaded codes: {self._downloaded_codes}")
-        return self._downloaded_codes
+        return sorted(self._downloaded_codes, key=lambda x: self.get_language(x))
 
     def get_downloaded_languages(self, force: bool = False) -> List[str]:
         languages = []
@@ -193,14 +193,19 @@ class LanguageManager(GObject.GObject):
     def download(self, code):
         self.loading_languages[code] = DownloadState()
         GObjectWorker.call(self.download_begin, (code,), self.download_done)
-        self.emit('downloading', code)
+        self.emit('downloading', code, 0)
 
     def download_begin(self, code):
+
+        def update_progress(block_num, block_size, total_size):
+            progress = int(block_num * block_size * 100 / total_size)
+            self.emit('downloading', code, progress)
+
         tessfile = f'{code}.traineddata'
         tessfile_path = os.path.join(tessdata_dir, tessfile)
         print(f'Data will be extracted to: {tessfile_path}')
         try:
-            request.urlretrieve(tessdata_best_url + tessfile, tessfile_path)
+            request.urlretrieve(tessdata_best_url + tessfile, tessfile_path, update_progress)
             return code
         except Exception as e:
             print(e)

@@ -2,19 +2,59 @@
 <interface>
   <requires lib="gtk" version="4.0"/>
   <requires lib="libadwaita" version="1.0"/>
-  <template class="LanguageRow" parent="AdwActionRow">
+  <template class="LanguageRow" parent="GtkOverlay">
     <child>
-      <object class="GtkLabel" id="label">
-        <property name="label" translatable="yes"></property>
-        <property name="hexpand">1</property>
+      <object class="GtkBox">
+        <property name="margin-bottom">6</property>
+        <property name="margin-end">8</property>
+        <property name="margin-start">8</property>
+        <property name="margin-top">6</property>
+        <child>
+          <object class="GtkLabel" id="label">
+            <property name="hexpand">true</property>
+            <property name="halign">start</property>
+            <style>
+              <class name="title"/>
+            </style>
+          </object>
+        </child>
+        <child>
+          <object class="GtkButton" id="download_widget">
+<!--            <property name="tooltip" translatable="yes">Download language</property>-->
+            <property name="icon-name">folder-download-symbolic</property>
+            <style>
+              <class name="flat"/>
+            </style>
+          </object>
+        </child>
       </object>
     </child>
-    <child>
-      <object class="GtkSwitch" id="download_widget">
-        <signal name="activate" handler="download_clicked"/>
-        <property name="state">0</property>
+    <child type="overlay">
+      <object class="GtkRevealer" id="revealer">
+        <property name="valign">end</property>
+        <child>
+          <object class="GtkProgressBar" id="progress_bar">
+            <property name="valign">end</property>
+            <property name="fraction">0.14</property>
+            <style>
+              <class name="osd"/>
+            </style>
+          </object>
+        </child>
       </object>
-      </child>
+    </child>
+
+    <!--    <child>-->
+    <!--      <object class="GtkLabel" id="label">-->
+    <!--        <property name="label" translatable="yes">Label</property>-->
+    <!--      </object>-->
+    <!--    </child>-->
+    <!--    <child>-->
+    <!--      <object class="GtkButton" id="download_widget">-->
+    <!--&lt;!&ndash;        <signal name="activate" handler="download_clicked"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;        <property name="state">0</property>&ndash;&gt;-->
+    <!--      </object>-->
+    <!--    </child>-->
   </template>
 </interface>
   

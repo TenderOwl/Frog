@@ -12,14 +12,21 @@
             <property name="title" translatable="yes" context="shortcut window">General</property>
             <child>
               <object class="GtkShortcutsShortcut">
+                <property name="accelerator">&lt;ctrl&gt;o</property>
+                <property name="title" translatable="yes" context="shortcut window">Open image</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
                 <property name="accelerator">&lt;ctrl&gt;G</property>
-                <property name="title" translatable="yes" context="shortcut window">Get screenshot and extract text</property>
+                <property name="title" translatable="yes" context="shortcut window">Take screenshot and extract text</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="accelerator">&lt;ctrl&gt;&lt;shift&gt;G</property>
-                <property name="title" translatable="yes" context="shortcut window">Get screenshot and extract text</property>
+                <property name="title" translatable="yes" context="shortcut window">Extract text and copy it to clipboard</property>
+                <property name="subtitle" translatable="yes" context="shortcut window">May not work properly on wayland</property>
               </object>
             </child>
             <child>
@@ -32,28 +39,28 @@
         </child>
         <child>
           <object class="GtkShortcutsGroup">
-            <property name="title" translatable="yes" context="shortcut window">General</property>
+            <property name="title" translatable="yes" context="shortcut window">Application</property>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="accelerator">&lt;ctrl&gt;comma</property>
-                <property name="title" translatable="yes" context="shortcut window">Configure languages</property>
+                <property name="title" translatable="yes" context="shortcut window">Preferences</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="accelerator">&lt;ctrl&gt;question</property>
-                <property name="title" translatable="yes" context="shortcut window">Display Shortcuts</property>
+                <property name="accelerator">&lt;ctrl&gt;q</property>
+                <property name="title" translatable="yes" context="shortcut window">Quit</property>
               </object>
             </child>
           </object>
         </child>
         <child>
           <object class="GtkShortcutsGroup">
-            <property name="title" translatable="yes" context="shortcut window">General</property>
+            <property name="title" translatable="yes" context="shortcut window">Help</property>
             <child>
               <object class="GtkShortcutsShortcut">
-                <property name="accelerator">&lt;ctrl&gt;q</property>
-                <property name="title" translatable="yes" context="shortcut window">Quit</property>
+                <property name="accelerator">&lt;ctrl&gt;question</property>
+                <property name="title" translatable="yes" context="shortcut window">Display Shortcuts</property>
               </object>
             </child>
           </object>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="PreferencesWindow" parent="AdwPreferencesWindow">
+    <property name="default_height">300</property>
+    <property name="default_width">500</property>
+    <property name="modal">True</property>
+    <property name="search-enabled">False</property>
+    <child>
+      <placeholder />
+    </child>
+  </template>
+</interface>

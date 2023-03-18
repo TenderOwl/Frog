@@ -25,18 +25,20 @@
 # holders shall not be used in advertising or otherwise to promote the sale,
 # use or other dealings in this Software without prior written
 # authorization.
-
 from gettext import gettext as _
 from mimetypes import guess_type
 from typing import List
+from urllib.parse import urlparse
 
-from gi.repository import Gtk, Adw, Gio, GLib, Gdk, GObject
+from gi.repository import Gtk, Adw, Gio, GLib, Gdk
 
 from .clipboard_service import clipboard_service
 from .config import RESOURCE_PREFIX, APP_ID
 from .gobject_worker import GObjectWorker
-from .language_dialog import LanguagePacksDialog, LanguageItem, LanguageRow
+from .language_dialog import LanguageItem
 from .language_manager import language_manager
+from .list_menu_row import ListMenuRow
+from .preferences import PreferencesDialog
 from .screenshot_backend import ScreenshotBackend
 
 
@@ -97,8 +99,6 @@ class FrogWindow(Adw.ApplicationWindow):
         drop_target_textview.connect('leave', self.on_dnd_leave)
         self.shot_text.add_controller(drop_target_textview)
 
-        self.text_shot_btn.set_tooltip_markup(f'{_("Take a shot")}\n<small>&lt;Control&gt;g</small>')
-
         logo = Gdk.Texture.new_from_resource(f'{RESOURCE_PREFIX}/icons/{APP_ID}.svg')
         self.welcome.set_paintable(logo)
         self.main_stack.set_visible_child_name("welcome")
@@ -114,7 +114,7 @@ class FrogWindow(Adw.ApplicationWindow):
         self.languages_list.bind_model(self.language_model, create_widget_func=ListMenuRow)
 
         # Set default language.
-        language_manager.connect('downloading', self.on_language_downloading)
+        # language_manager.connect('downloading', self.on_language_downloading)
         language_manager.connect('downloaded', self.on_language_downloaded)
         language_manager.connect('removed', self.on_language_removed)
         self.fill_lang_combo()
@@ -133,7 +133,7 @@ class FrogWindow(Adw.ApplicationWindow):
 
         # Connect signals
         self.text_clear_btn.connect('clicked', self.text_clear_btn_clicked)
-        self.text_copy_btn.connect('clicked', self.text_copy_btn_clicked)
+        # self.text_copy_btn.connect('clicked', self.text_copy_btn_clicked)
         self.languages_list.connect('row-activated', self.on_language_change)
         self.connect('notify::default-width', self.on_configure_event)
         self.connect('notify::default-height', self.on_configure_event)
@@ -157,7 +157,7 @@ class FrogWindow(Adw.ApplicationWindow):
         self.lang_combo.set_label(_('English'))
 
         if self.active_lang and self.active_lang in language_manager.get_downloaded_codes():
-            self.lang_combo.set_label(language_manager.get_language(self.active_lang.rsplit('+')[0]))
+            self.lang_combo.set_label(language_manager.get_language(self.active_lang))
 
         else:
             self.lang_combo.set_label(_('English'))
@@ -184,19 +184,35 @@ class FrogWindow(Adw.ApplicationWindow):
         self.active_lang = language_manager.get_language_code(self.lang_combo.get_label())
         # Just in case. Probably better add primary language in settings
         extra_lang = self.settings.get_string("extra-language")
-        if self.active_lang != extra_lang:
-            self.active_lang = f'{self.active_lang}+{extra_lang}'
+        # if self.active_lang != extra_lang:
+        #     self.active_lang = f'{self.active_lang}+{extra_lang}'
 
-        return self.active_lang
+        return f'{self.active_lang}+{extra_lang}'
 
     def on_shot_done(self, sender, text: str, copy: bool) -> None:
+        is_url = self.uri_validator(text)
         try:
             # text = self.backend.capture(lang=self.active_lang)
             buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
             buffer.set_text(text)
 
-            if copy:
+            if self.settings.get_boolean('autocopy') or copy:
                 clipboard_service.set(text)
+                self.show_toast(_('Text copied to clipboard'))
+
+            # If text is a URL we could show user Toast with suggestion to open it
+            # Or automatically open it, if this setting is set.
+            if is_url:
+                if self.settings.get_boolean('autolinks'):
+                    Gtk.show_uri(None, text, Gdk.CURRENT_TIME)
+                    self.show_toast(_('QR-code URL opened'), priority=Adw.ToastPriority.HIGH)
+                else:
+                    toast = Adw.Toast(
+                        title=_('QR-code contains URL.'),
+                        button_label=_('Open'),
+                        priority=Adw.ToastPriority.HIGH)
+                    toast.set_detailed_action_name(f'app.show_uri("{text}")')
+                    self.toast_overlay.add_toast(toast)
 
             self.main_stack.set_visible_child_name("extracted")
             self.toolbox.set_reveal_child(True)
@@ -213,7 +229,8 @@ class FrogWindow(Adw.ApplicationWindow):
         self.spinner.stop()
         print('on_shot_error?', message)
         if message:
-            self.display_error(self, 'Could not access your file!')
+            self.show_toast(message)
+            # self.display_error(self, message)
 
     def open_image(self):
         self.open_file_dlg: Gtk.FileChooserNative = Gtk.FileChooserNative.new(
@@ -223,6 +240,9 @@ class FrogWindow(Adw.ApplicationWindow):
             accept_label=_('Open'),
             cancel_label=_('Cancel')
         )
+        image_filter = Gtk.FileFilter()
+        image_filter.add_pixbuf_formats()
+        self.open_file_dlg.set_filter(image_filter)
         self.open_file_dlg.set_transient_for(self)
         # dlg.add_buttons(
         #     _('Cancel'), Gtk.ResponseType.CANCEL,
@@ -246,8 +266,6 @@ class FrogWindow(Adw.ApplicationWindow):
             lang = self.get_language()
             self.spinner.start()
             GObjectWorker.call(self.backend.decode_image, (lang, item.get_path()))
-
-        dialog.close()
 
     def display_error(self, sender, error) -> None:
         print('on_screenshot_error?', error)
@@ -311,14 +329,15 @@ class FrogWindow(Adw.ApplicationWindow):
         self.toolbox.set_reveal_child(False)
         self.main_stack.set_visible_child_name("welcome")
 
-    def text_copy_btn_clicked(self, button: Gtk.Widget) -> None:
+    def on_copy_to_clipboard(self, sender) -> None:
         buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
         text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
         clipboard_service.set(text)
         self.show_toast(_('Text copied'))
 
     def show_preferences(self) -> None:
-        dialog = LanguagePacksDialog(self)
+        # dialog = LanguagePacksDialog(self)
+        dialog = PreferencesDialog(settings=self.settings, parent=self)
         dialog.show()
 
     def on_language_downloading(self, sender, lang_code: str):
@@ -338,14 +357,13 @@ class FrogWindow(Adw.ApplicationWindow):
         print('on_language_removed: ' + lang_code)
         self.fill_lang_combo()
 
-    def show_toast(self, title, timeout: int = 2) -> None:
-        self.toast_overlay.add_toast(Adw.Toast(title=title, timeout=timeout))
+    def show_toast(self, title, timeout: int = 2, priority: Adw.ToastPriority = Adw.ToastPriority.NORMAL) -> None:
+        self.toast_overlay.add_toast(Adw.Toast(title=title, timeout=timeout, priority=priority))
 
-
-class ListMenuRow(Gtk.Label):
-    def __init__(self, item: LanguageItem):
-        super(ListMenuRow, self).__init__()
-
-        self.item = item
-        self.set_label(item.title)
-        self.set_halign(Gtk.Align.START)
+    def uri_validator(self, link) -> bool:
+        try:
+            result = urlparse(link)
+            return all([result.scheme, result.netloc])
+        except Exception as e:
+            print(e)
+            return False

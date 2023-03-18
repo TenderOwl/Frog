@@ -5,6 +5,9 @@
         <file preprocess="xml-stripblanks">ui/language_dialog.ui</file>
         <file preprocess="xml-stripblanks">ui/language_row.ui</file>
         <file preprocess="xml-stripblanks">ui/shortcuts.ui</file>
+        <file preprocess="xml-stripblanks">ui/preferences.ui</file>
+        <file preprocess="xml-stripblanks">ui/preferences_general.ui</file>
+        <file preprocess="xml-stripblanks">ui/preferences_languages.ui</file>
         <file preprocess="xml-stripblanks" alias="icons/com.github.tenderowl.frog.svg">icons/com.github.tenderowl.frog.svg</file>
         <file preprocess="xml-stripblanks" alias="icons/language-symbolic.svg">icons/symbolic/language-symbolic.svg</file>
         <file preprocess="xml-stripblanks" alias="icons/camera-focus-symbolic.svg">icons/symbolic/camera-focus-symbolic.svg</file>
