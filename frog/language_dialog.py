@@ -28,8 +28,7 @@
 
 from gi.repository import Gtk, Gio, GObject
 
-from frog.config import RESOURCE_PREFIX
-
+from .config import RESOURCE_PREFIX
 from .language_manager import language_manager
 from .language_row import LanguageRow
 

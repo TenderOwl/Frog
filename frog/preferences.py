@@ -87,28 +87,35 @@ class PreferencesDialog(Adw.PreferencesWindow):
 
         # Language page widgets
         self.languages_page = builder.get_object('languages_page')
-        self.installed_switch = builder.get_object('installed_switch')
+        # self.installed_switch = builder.get_object('installed_switch')
         self.languages_list_group = builder.get_object('languages_list_group')
         self.installed_languages_list = builder.get_object('installed_languages_list')
 
-        self.installed_switch.connect('notify::active', self.on_installed_switched)
+        # self.installed_switch.connect('notify::active', self.on_installed_switched)
 
         self.add(self.general_page)
         self.add(self.languages_page)
 
         self.installed_languages_list.bind_model(self.model, LanguagePacksDialog.create_list_widget)
+        self.installed_languages_list.connect('row-activated', self.langs_list_row_activated)
 
-    def on_installed_switched(self, switch: Gtk.Switch, param) -> None:
-        if switch.get_active():
-            self.languages_list_group.set_title(_("Installed languages"))
-            GLib.idle_add(self.activate_filter)
-        else:
-            self.languages_list_group.set_title(_("Available languages"))
-            GLib.idle_add(self.deactivate_filter)
+        # Append "view more" button to the end of the language list
+        self.add_view_more_langs()
+        self.activate_filter()
 
-    @staticmethod
-    def filter_func(item) -> bool:
-        return item.code in language_manager.get_downloaded_codes()
+    def add_view_more_langs(self) -> None:
+        view_more_langs_row = Gtk.ListBoxRow(tooltip_text=_('View all available languages'))
+        view_more_image: Gtk.Image = Gtk.Image.new_from_icon_name('view-more-symbolic')
+        view_more_image.set_margin_top(14)
+        view_more_image.set_margin_bottom(14)
+        view_more_langs_row.set_child(view_more_image)
+
+        self.installed_languages_list.append(view_more_langs_row)
+
+    def langs_list_row_activated(self, list_box: Gtk.ListBox, row: Gtk.ListBoxRow, user_data: dict = None) -> None:
+        print(f'row-activated {row.get_index()} of {self.model.get_n_items()}')
+        if row.get_index() == self.model.get_n_items():
+            self.deactivate_filter()
 
     def activate_filter(self):
         _filter: Gtk.CustomFilter = Gtk.CustomFilter.new(PreferencesDialog.filter_func)
@@ -116,6 +123,10 @@ class PreferencesDialog(Adw.PreferencesWindow):
 
     def deactivate_filter(self):
         self.model.set_filter(None)
+
+    @staticmethod
+    def filter_func(item) -> bool:
+        return item.code in language_manager.get_downloaded_codes()
 
     def on_language_added(self, _sender, _code):
         if self.installed_switch.get_active():
