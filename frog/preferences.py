@@ -127,13 +127,11 @@ class PreferencesDialog(Adw.PreferencesWindow):
     def filter_func(item) -> bool:
         return item.code in language_manager.get_downloaded_codes()
 
-    def on_language_added(self, _sender, _code):
-        if self.installed_switch.get_active():
-            GLib.idle_add(self.activate_filter)
+    def on_language_added(self, _sender, _code) -> None:
+        self.activate_filter()
 
-    def on_language_removed(self, _sender, _code):
-        if self.installed_switch.get_active():
-            GLib.idle_add(self.activate_filter)
+    def on_language_removed(self, _sender, _code) -> None:
+        self.activate_filter()
 
     def on_extra_language_changed(self, combo_row: Adw.ComboRow, _param) -> None:
         lang_name = combo_row.get_selected_item().get_string()

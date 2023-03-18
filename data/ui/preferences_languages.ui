@@ -5,8 +5,6 @@
     <property name="icon_name">preferences-desktop-locale-symbolic</property>
     <child>
       <object class="AdwPreferencesGroup" id="languages_list_group">
-        <property name="title" translatable="yes">Languages</property>
-        <property name="description" translatable="yes">Languages of the extracted text</property>
         <child>
           <object class="GtkListBox" id="installed_languages_list">
             <property name="selection-mode">none</property>
