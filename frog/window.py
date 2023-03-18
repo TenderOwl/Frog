@@ -244,6 +244,19 @@ class FrogWindow(Adw.ApplicationWindow):
         image_filter.add_pixbuf_formats()
         self.open_file_dlg.set_filter(image_filter)
         self.open_file_dlg.set_transient_for(self)
+        # dlg.add_buttons(
+        #     _('Cancel'), Gtk.ResponseType.CANCEL,
+        #     _('Open'), Gtk.ResponseType.ACCEPT
+        # )
+        # dlg.set_default_response(Gtk.ResponseType.ACCEPT)
+
+        file_filter = Gtk.FileFilter.new()
+        file_filter.set_name(_('Supported image files'))
+        file_filter.add_mime_type('image/png')
+        file_filter.add_mime_type('image/jpeg')
+        file_filter.add_mime_type('image/jpg')
+        self.open_file_dlg.add_filter(file_filter)
+
         self.open_file_dlg.connect('response', self.on_open_image)
         self.open_file_dlg.show()
 
@@ -320,7 +333,7 @@ class FrogWindow(Adw.ApplicationWindow):
         buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
         text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
         clipboard_service.set(text)
-        self.show_toast(_('Text copied to clipboard'))
+        self.show_toast(_('Text copied'))
 
     def show_preferences(self) -> None:
         # dialog = LanguagePacksDialog(self)
