@@ -9,7 +9,7 @@
         <child>
           <object class="AdwComboRow" id="extra_language_combo">
             <property name="title" translatable="yes">Extra language</property>
-            <property name="subtitle" translatable="yes">Extra language to extract</property>
+            <property name="subtitle" translatable="yes">Additional language used in text recognition</property>
           </object>
         </child>
 
