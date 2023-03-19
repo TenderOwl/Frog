@@ -7,11 +7,8 @@
       <object class="GtkBox">
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkRevealer" id="search_revealer">
-            <property name="margin-top">8</property>
-            <property name="margin-bottom">8</property>
-            <property name="margin-start">8</property>
-            <property name="margin-end">8</property>
+          <object class="GtkSearchBar" id="search_revealer">
+            <property name="show-close-button">True</property>
             <child>
               <object class="GtkSearchEntry" id="language_search_entry">
                 <property name="margin-start">4</property>
