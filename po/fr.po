@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "POT-Creation-Date: 2022-06-15 00:50+0300\n"
-"PO-Revision-Date: 2022-08-17 09:21+0000\n"
+"PO-Revision-Date: 2022-10-18 11:14+0000\n"
 "Last-Translator: rene-coty <irenee.thirion@e.email>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/frog/default/fr/>"
 "\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.14-dev\n"
+"X-Generator: Weblate 4.15-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: data/ui\n"
@@ -36,7 +36,7 @@ msgstr "Général"
 #: data/ui/shortcuts.ui:16 data/ui/shortcuts.ui:22
 msgctxt "shortcut window"
 msgid "Get screenshot and extract text"
-msgstr "Prendre une capture d'écran et extraire le texte"
+msgstr "Prendre une capture d’écran et extraire le texte"
 
 #: data/ui/shortcuts.ui:28
 msgctxt "shortcut window"
@@ -75,7 +75,7 @@ msgstr "Prenez une capture"
 
 #: data/ui/window.ui:174
 msgid "Clear the extraction results"
-msgstr "Effacer les résultats de l'extraction"
+msgstr "Effacer les résultats de l’extraction"
 
 #: data/ui/window.ui:189
 msgid ""
