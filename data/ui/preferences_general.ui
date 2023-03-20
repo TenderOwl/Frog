@@ -8,7 +8,7 @@
         <property name="title" translatable="yes">Text Extracting</property>
         <child>
           <object class="AdwComboRow" id="extra_language_combo">
-            <property name="title" translatable="yes">Extra language</property>
+            <property name="title" translatable="yes">Second language</property>
             <property name="subtitle" translatable="yes">Additional language used in text recognition</property>
           </object>
         </child>
