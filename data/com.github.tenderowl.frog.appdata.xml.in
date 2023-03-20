@@ -23,6 +23,20 @@
     </screenshots>
 
     <releases>
+        <release version="1.3.0" type="stable" date="2023-03-21">
+            <description>
+                <p>In this update, we've made a number of improvements to our app.</p>
+                <ul>
+                    <li>We have redesigned the settings dialog to make it more user-friendly and understandable.</li>
+                    <li>Now you can easily find the language you want by searching.</li>
+                    <li>In addition, we have added the ability to select a second language for extracting text from images.</li>
+                    <li>The Frog can automatically follow links extracted from QR codes.</li>
+                    <li>We also updated the localization and improved the overall performance of the app.</li>
+                    <li>Fixed some bugs and bugs.</li>
+                </ul>
+                <p>We hope you enjoy our work!</p>
+            </description>
+        </release>
         <release version="1.2.0" type="stable" date="2022-08-31">
             <description>
                 <p>What's new:</p>

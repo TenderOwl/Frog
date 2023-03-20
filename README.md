@@ -33,14 +33,6 @@ If you like Frog and you want to support its development, you can buy me a coffe
 
 <a href="https://www.buymeacoffee.com/tenderowl" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
-## Install it from source
-You can install frog by compiling from source, here's the list of dependencies required:
- - `gtk+-3.0>=3.22.29`
- - `glib-2.0`
- - `gobject-2.0`
- - `meson`
- - `python>=3.6`
-
 ## Building
 
 I'm the guy who loves GUI tools instead of command-line thus I recommend using [Builder](https://wiki.gnome.org/Apps/Builder) to develop applications.
