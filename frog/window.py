@@ -221,11 +221,11 @@ class FrogWindow(Adw.ApplicationWindow):
             print(f"ERROR: {e}")
 
         finally:
-            self.show()
+            self.present()
             self.spinner.stop()
 
     def on_shot_error(self, sender, message: str) -> None:
-        self.show()
+        self.present()
         self.spinner.stop()
         print('on_shot_error?', message)
         if message:
@@ -251,7 +251,7 @@ class FrogWindow(Adw.ApplicationWindow):
         self.open_file_dlg.set_transient_for(self)
 
         self.open_file_dlg.connect('response', self.on_open_image)
-        self.open_file_dlg.show()
+        self.open_file_dlg.present()
 
     def on_open_image(self, dialog: Gtk.FileChooserNative, response_id: int) -> None:
         if response_id == Gtk.ResponseType.ACCEPT:
@@ -331,7 +331,7 @@ class FrogWindow(Adw.ApplicationWindow):
     def show_preferences(self) -> None:
         # dialog = LanguagePacksDialog(self)
         dialog = PreferencesDialog(settings=self.settings, parent=self)
-        dialog.show()
+        dialog.present()
 
     def on_language_downloading(self, sender, lang_code: str):
         print(f'on_language_downloading: {lang_code}')
