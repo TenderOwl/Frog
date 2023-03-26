@@ -233,32 +233,31 @@ class FrogWindow(Adw.ApplicationWindow):
             # self.display_error(self, message)
 
     def open_image(self):
-        self.open_file_dlg: Gtk.FileChooserNative = Gtk.FileChooserNative.new(
-            title=_('Open image to extract text'),
-            parent=self,
-            action=Gtk.FileChooserAction.OPEN,
-            accept_label=_('Open'),
-            cancel_label=_('Cancel')
-        )
+        self.open_file_dlg: Gtk.FileDialog = Gtk.FileDialog()
 
+        file_filters: Gio.ListStore = Gio.ListStore.new(Gtk.FileFilter)
         file_filter = Gtk.FileFilter()
         file_filter.set_name(_('Supported image files'))
         file_filter.add_mime_type('image/png')
         file_filter.add_mime_type('image/jpeg')
         file_filter.add_mime_type('image/jpg')
-        self.open_file_dlg.add_filter(file_filter)
+        file_filters.append(file_filter)
 
-        self.open_file_dlg.set_transient_for(self)
+        self.open_file_dlg.set_title(_('Open image to extract text'))
+        self.open_file_dlg.set_filters(file_filters)
 
-        self.open_file_dlg.connect('response', self.on_open_image)
-        self.open_file_dlg.present()
 
-    def on_open_image(self, dialog: Gtk.FileChooserNative, response_id: int) -> None:
-        if response_id == Gtk.ResponseType.ACCEPT:
-            item = dialog.get_file()
+        self.open_file_dlg.open(self, None, self.on_open_image)
+
+    def on_open_image(self, dialog: Gtk.FileDialog, result: Gio.AsyncResult) -> None:
+        try:
+            item = dialog.open_finish(result)
             lang = self.get_language()
             self.spinner.start()
             GObjectWorker.call(self.backend.decode_image, (lang, item.get_path()))
+        except GLib.Error as e:
+            if not e.matches(Gio.io_error_quark(), Gio.IOErrorEnum.DISMISSED):
+                print(e)
 
     def display_error(self, sender, error) -> None:
         print('on_screenshot_error?', error)
