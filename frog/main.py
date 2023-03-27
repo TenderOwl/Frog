@@ -186,7 +186,7 @@ class Application(Adw.Application):
         builder = Gtk.Builder()
         builder.add_from_resource(f"{RESOURCE_PREFIX}/ui/shortcuts.ui")
         builder.get_object("shortcuts").set_transient_for(self.get_active_window())
-        builder.get_object("shortcuts").show()
+        builder.get_object("shortcuts").present()
 
     def on_copy_to_clipboard(self, _action, _param) -> None:
         self.get_active_window().on_copy_to_clipboard(self)
