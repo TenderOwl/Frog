@@ -99,7 +99,7 @@
                                             </child>
                                             <child>
                                               <object class="GtkLabel">
-                                                <property name="label" translatable="yes">Open image</property>
+                                                <property name="label" translatable="yes">Open Image</property>
                                               </object>
                                             </child>
                                           </object>
