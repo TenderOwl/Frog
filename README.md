@@ -47,3 +47,7 @@ If you want to provide localization for your language you may use [weblate proje
 
 Any help is appreciated :)
 
+# Thanks
+
+[JetBrains](https://www.jetbrains.com/) for supporting Open-Source projects  
+![JetBrains Logo (Main) logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)
