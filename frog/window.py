@@ -123,7 +123,7 @@ class FrogWindow(Adw.ApplicationWindow):
 
         popover = Gtk.Popover()
         popover.set_child(self.languages_list)
-        popover.get_style_context().add_class('menu')
+        popover.add_css_class('menu')
         self.lang_combo.set_popover(popover)
 
         # Initialize screenshot backend
@@ -271,12 +271,12 @@ class FrogWindow(Adw.ApplicationWindow):
 
     def on_dnd_enter(self, drop_target, x, y):
         print('DND Enter', drop_target)
-        self.get_style_context().add_class('drop_hover')
+        self.add_css_class('drop_hover')
         return Gdk.DragAction.COPY
 
     def on_dnd_leave(self, user_data=None):
         print('DND Leave')
-        self.get_style_context().remove_class('drop_hover')
+        self.remove_css_class('drop_hover')
 
     def on_dnd_drop(self, drop_target, value: Gdk.FileList, x, y, user_data=None) -> None:
         files: List[Gio.File] = value.get_files()
