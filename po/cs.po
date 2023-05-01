@@ -1,0 +1,735 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the frog package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: frog\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-06 17:05+0200\n"
+"PO-Revision-Date: 2023-04-12 11:50+0000\n"
+"Last-Translator: Fjuro <ifjuro@proton.me>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/frog/default/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.17-dev\n"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:6
+#: data/com.github.tenderowl.frog.desktop.in:3
+msgid "Frog"
+msgstr "Frog"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:7
+msgid "Extract text from anywhere, even QR code"
+msgstr "Extrahujte text odkudkoli, dokonce i z QR kódu"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:9
+msgid ""
+"Quickly extract text from any source such as images, websites, even video - "
+"everywhere you can grab an image shot. Even if it is encoded in a QR code!"
+msgstr ""
+"Rychle extrahujte text z jakéhokoli zdroje, například z obrázků, webových "
+"stránek, dokonce i z videa - všude tam, kde můžete pořídit snímek. Dokonce i "
+"když je zakódován v QR kódu!"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:25
+#: data/com.github.tenderowl.frog.appdata.xml.in:34
+#: data/com.github.tenderowl.frog.appdata.xml.in:56
+msgid "What's new:"
+msgstr "Co je nového:"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:27
+#: data/com.github.tenderowl.frog.appdata.xml.in:36
+msgid "Updated UI"
+msgstr "Aktualizované uživatelské rozhraní"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:28
+msgid "Translated to a bunch of new languages"
+msgstr "Přeloženo do několika nových jazyků"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:37
+msgid "Drag-n-drop support. For images only"
+msgstr "Podpora přetažení. Pouze pro obrázky"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:38
+msgid "Dark mode support"
+msgstr "Podpora tmavého režimu"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:39
+msgid "Localized interface"
+msgstr "Lokalizované rozhraní"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:45
+msgid ""
+"Frog now is available on the Flathub and use modern Portal implementation. "
+"We also updated the UI accordingly to the GNOME HIG and fixed some bugs "
+"we've found :)"
+msgstr ""
+"Frog je nyní k dispozici na Flathubu a používá moderní implementaci Portalu. "
+"Také jsme aktualizovali uživatelské rozhraní podle GNOME HIG a opravili "
+"některé nalezené chyby :)"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:51
+msgid ""
+"Now you're free to run Frog with `-e` option to extract text and instantly "
+"copy it to the clipboard."
+msgstr ""
+"Nyní můžete spustit program Frog s možností `-e` pro extrakci textu a jeho "
+"okamžité zkopírování do schránky."
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:58
+msgid "English model included with Frog itself"
+msgstr "Anglický model dodávaný s programem Frog"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:59
+msgid "QR code detection. If one in the selected area - it will be decoded."
+msgstr ""
+"Detekce QR kódu. Pokud se ve vybrané oblasti nějaký nachází - bude dekódován."
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:60
+msgid "New command line shortcut to run with \"Extract to clipboard\" feature."
+msgstr ""
+"Nový zástupce příkazového řádku pro spuštění s funkcí „Extrakce do schránky“."
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:61
+msgid "Granite.HyperTextView to support QR encoded links"
+msgstr "Granite.HyperTextView pro podporu odkazů kódovaných QR"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:67
+msgid "Fix language packs download."
+msgstr "Oprava stahování jazykových balíčků."
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:72
+msgid "Dark mode+"
+msgstr "Tmavý režim+"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:74
+msgid "Dark mode support."
+msgstr "Podpora tmavého režimu."
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:75
+msgid "Application will hide the main window for the cleaner shots. #11"
+msgstr "Aplikace skryje hlavní okno pro čistší snímky. #11"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:81
+msgid ""
+"Quickly extract any text from anywhere you need it: webpages, videos, "
+"photos, etc."
+msgstr ""
+"Rychle extrahujte jakýkoli text odkudkoli, kde ho potřebujete: z webových "
+"stránek, videí, fotografií atd."
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:86
+msgid "Tender Owl"
+msgstr "Tender Owl"
+
+#: data/com.github.tenderowl.frog.desktop.in:4
+msgid "Text extraction tool"
+msgstr "Nástroj pro extrakci textu"
+
+#: data/com.github.tenderowl.frog.desktop.in:5
+msgid "Extract text from any image, video or web page"
+msgstr "Extrahujte text z libovolného obrázku, videa nebo webové stránky"
+
+#: data/com.github.tenderowl.frog.desktop.in:12
+msgid "OCR;Text;Extraction;"
+msgstr "OCR;Text;Extrakce;"
+
+#: data/com.github.tenderowl.frog.desktop.in:16
+msgid "Extract Text to the Clipboard"
+msgstr "Extrahování textu do schránky"
+
+#: data/ui/language_dialog.ui:16
+msgid "Available Languages"
+msgstr "Dostupné jazyky"
+
+#: data/ui/shortcuts.ui:5
+msgctxt "shortcut window"
+msgid "Shortcuts"
+msgstr "Zkratky"
+
+#: data/ui/shortcuts.ui:12
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Obecné"
+
+#: data/ui/shortcuts.ui:16 data/ui/shortcuts.ui:22
+msgctxt "shortcut window"
+msgid "Get screenshot and extract text"
+msgstr "Získání snímku obrazovky a extrakce textu"
+
+#: data/ui/shortcuts.ui:28
+msgctxt "shortcut window"
+msgid "Copy extracted text to clipboard"
+msgstr "Kopírování extrahovaného textu do schránky"
+
+#: data/ui/shortcuts.ui:34
+msgctxt "shortcut window"
+msgid "Display preferences"
+msgstr "Předvolby zobrazení"
+
+#: data/ui/window.ui:12
+msgid "Extract text from anywhere"
+msgstr "Extrakce textu odkudkoli"
+
+#: data/ui/window.ui:20
+msgid "Language"
+msgstr "Jazyk"
+
+#: data/ui/window.ui:21
+msgid "Select language to extract"
+msgstr "Vyberte jazyk pro extrakci"
+
+#: data/ui/window.ui:77
+msgid "Take a Screenshot"
+msgstr "Pořídit snímek obrazovky"
+
+#: data/ui/window.ui:102
+#: data/ui/window.ui:218
+msgid "Configure Languages"
+msgstr "Konfigurace jazyků"
+
+#: data/ui/window.ui:153
+msgid "Take a screenshot"
+msgstr "Pořídit snímek obrazovky"
+
+#: data/ui/window.ui:174
+msgid "Clear the extraction results"
+msgstr "Vymazat výsledky extrakce"
+
+#: data/ui/window.ui:189
+msgid ""
+"Copy extracted text to clipboard\n"
+"                                "
+msgstr ""
+"Zkopírovat extrahovaný text do schránky\n"
+"                                "
+
+#: data/ui/window.ui:224
+msgid "Keyboard Shortcuts"
+msgstr "Klávesové zkratky"
+
+#: data/ui/window.ui:228
+msgid "About Frog"
+msgstr "O Frogu"
+
+#: frog/about_dialog.py:39
+msgid ""
+"Frog can help you to instantly extract text\n"
+"from any QR code, image, video, PDF, etc."
+msgstr ""
+"Frog vám pomůže okamžitě extrahovat text\n"
+"z jakéhokoli QR kódu, obrázku, videa, PDF atd."
+
+#: frog/about_dialog.py:42
+msgid "Learn more about Frog"
+msgstr "Další informace o Frogu"
+
+#: frog/language_manager.py:32
+msgid "Afrikaans"
+msgstr "afrikánština"
+
+#: frog/language_manager.py:33
+msgid "Amharic"
+msgstr "amharština"
+
+#: frog/language_manager.py:34
+msgid "Arabic"
+msgstr "arabština"
+
+#: frog/language_manager.py:35
+msgid "Assamese"
+msgstr "ásámština"
+
+#: frog/language_manager.py:36
+msgid "Azerbaijani"
+msgstr "ázerbájdžánština"
+
+#: frog/language_manager.py:37
+msgid "Azerbaijani - Cyrilic"
+msgstr "Ázerbájdžánština - azbuka"
+
+#: frog/language_manager.py:38
+msgid "Belarusian"
+msgstr "běloruština"
+
+#: frog/language_manager.py:39
+msgid "Bengali"
+msgstr "bengálština"
+
+#: frog/language_manager.py:40
+msgid "Tibetan"
+msgstr "tibetština"
+
+#: frog/language_manager.py:41
+msgid "Bosnian"
+msgstr "bosenština"
+
+#: frog/language_manager.py:42
+msgid "Breton"
+msgstr "bretonština"
+
+#: frog/language_manager.py:43
+msgid "Bulgarian"
+msgstr "bulharština"
+
+#: frog/language_manager.py:44
+msgid "Catalan; Valencian"
+msgstr "katalánština; valencijština"
+
+#: frog/language_manager.py:45
+msgid "Cebuano"
+msgstr "cebuano"
+
+#: frog/language_manager.py:46
+msgid "Czech"
+msgstr "čeština"
+
+#: frog/language_manager.py:47
+msgid "Chinese - Simplified"
+msgstr "čínština - zjednodušená"
+
+#: frog/language_manager.py:48
+msgid "Chinese - Traditional"
+msgstr "čínština - tradiční"
+
+#: frog/language_manager.py:49
+msgid "Cherokee"
+msgstr "čerokézština"
+
+#: frog/language_manager.py:50
+msgid "Corsican"
+msgstr "korsičtina"
+
+#: frog/language_manager.py:51
+msgid "Welsh"
+msgstr "velština"
+
+#: frog/language_manager.py:52
+msgid "Danish"
+msgstr "dánština"
+
+#: frog/language_manager.py:53
+msgid "German"
+msgstr "němčina"
+
+#: frog/language_manager.py:54
+msgid "Dzongkha"
+msgstr "dzongkha"
+
+#: frog/language_manager.py:55
+msgid "Greek, Modern (1453-)"
+msgstr "řečtina, moderní (1453-)"
+
+#: frog/language_manager.py:56 frog/window.py:157 frog/window.py:163
+msgid "English"
+msgstr "angličtina"
+
+#: frog/language_manager.py:57
+msgid "English, Middle (1100-1500)"
+msgstr "angličtina, středověká (1100-1500)"
+
+#: frog/language_manager.py:58
+msgid "Esperanto"
+msgstr "esperanto"
+
+#: frog/language_manager.py:59
+msgid "Math / equation detection module"
+msgstr "Modul pro detekci matematiky / rovnic"
+
+#: frog/language_manager.py:60
+msgid "Estonian"
+msgstr "estonština"
+
+#: frog/language_manager.py:61
+msgid "Basque"
+msgstr "baskičtina"
+
+#: frog/language_manager.py:62
+msgid "Faroese"
+msgstr "faerština"
+
+#: frog/language_manager.py:63
+msgid "Persian"
+msgstr "perština"
+
+#: frog/language_manager.py:64
+msgid "Filipino (old - Tagalog)"
+msgstr "filipínština (stará - tagalština)"
+
+#: frog/language_manager.py:65
+msgid "Finnish"
+msgstr "finština"
+
+#: frog/language_manager.py:66
+msgid "French"
+msgstr "francouzština"
+
+#: frog/language_manager.py:67
+msgid "German - Fraktur"
+msgstr "němčina - Fraktur"
+
+#: frog/language_manager.py:68
+msgid "French, Middle (ca.1400-1600)"
+msgstr "francouzština, středověká (cca. 1400-1600)"
+
+#: frog/language_manager.py:69
+msgid "Western Frisian"
+msgstr "západofríština"
+
+#: frog/language_manager.py:70
+msgid "Scottish Gaelic"
+msgstr "skotská gaelština"
+
+#: frog/language_manager.py:71
+msgid "Irish"
+msgstr "irština"
+
+#: frog/language_manager.py:72
+msgid "Galician"
+msgstr "galicijština"
+
+#: frog/language_manager.py:73
+msgid "Greek, Ancient (to 1453) (contrib)"
+msgstr "řečtina, starověká (do roku 1453) (příspěvek)"
+
+#: frog/language_manager.py:74
+msgid "Gujarati"
+msgstr "gudžarátština"
+
+#: frog/language_manager.py:75
+msgid "Haitian; Haitian Creole"
+msgstr "haitština; haitská kreolština"
+
+#: frog/language_manager.py:76
+msgid "Hebrew"
+msgstr "hebrejština"
+
+#: frog/language_manager.py:77
+msgid "Hindi"
+msgstr "hindština"
+
+#: frog/language_manager.py:78
+msgid "Croatian"
+msgstr "chorvatština"
+
+#: frog/language_manager.py:79
+msgid "Hungarian"
+msgstr "maďarština"
+
+#: frog/language_manager.py:80
+msgid "Armenian"
+msgstr "arménština"
+
+#: frog/language_manager.py:81
+msgid "Inuktitut"
+msgstr "inuktitut"
+
+#: frog/language_manager.py:82
+msgid "Indonesian"
+msgstr "indonéština"
+
+#: frog/language_manager.py:83
+msgid "Icelandic"
+msgstr "islandština"
+
+#: frog/language_manager.py:84
+msgid "Italian"
+msgstr "italština"
+
+#: frog/language_manager.py:85
+msgid "Italian - Old"
+msgstr "italština - stará"
+
+#: frog/language_manager.py:86
+msgid "Javanese"
+msgstr "javánština"
+
+#: frog/language_manager.py:87
+msgid "Japanese"
+msgstr "japonština"
+
+#: frog/language_manager.py:88
+msgid "Kannada"
+msgstr "kannadština"
+
+#: frog/language_manager.py:89
+msgid "Georgian"
+msgstr "gruzínština"
+
+#: frog/language_manager.py:90
+msgid "Georgian - Old"
+msgstr "gruzínština - stará"
+
+#: frog/language_manager.py:91
+msgid "Kazakh"
+msgstr "kazaština"
+
+#: frog/language_manager.py:92
+msgid "Central Khmer"
+msgstr "centrální khmérština"
+
+#: frog/language_manager.py:93
+msgid "Kirghiz; Kyrgyz"
+msgstr "kirgizština; kyrgyzština"
+
+#: frog/language_manager.py:94
+msgid "Kurmanji (Kurdish - Latin Script)"
+msgstr "kurmándží (kurdština - latinka)"
+
+#: frog/language_manager.py:95
+msgid "Korean"
+msgstr "korejština"
+
+#: frog/language_manager.py:96
+msgid "Korean (vertical)"
+msgstr "korejština (vertikální)"
+
+#: frog/language_manager.py:97
+msgid "Lao"
+msgstr "laoština"
+
+#: frog/language_manager.py:98
+msgid "Latin"
+msgstr "latina"
+
+#: frog/language_manager.py:99
+msgid "Latvian"
+msgstr "lotyština"
+
+#: frog/language_manager.py:100
+msgid "Lithuanian"
+msgstr "litevština"
+
+#: frog/language_manager.py:101
+msgid "Luxembourgish"
+msgstr "lucemburština"
+
+#: frog/language_manager.py:102
+msgid "Malayalam"
+msgstr "malajalámština"
+
+#: frog/language_manager.py:103
+msgid "Marathi"
+msgstr "maráthština"
+
+#: frog/language_manager.py:104
+msgid "Macedonian"
+msgstr "makedonština"
+
+#: frog/language_manager.py:105
+msgid "Maltese"
+msgstr "maltština"
+
+#: frog/language_manager.py:106
+msgid "Mongolian"
+msgstr "mongolština"
+
+#: frog/language_manager.py:107
+msgid "Maori"
+msgstr "maorština"
+
+#: frog/language_manager.py:108
+msgid "Malay"
+msgstr "malajština"
+
+#: frog/language_manager.py:109
+msgid "Burmese"
+msgstr "barmština"
+
+#: frog/language_manager.py:110
+msgid "Nepali"
+msgstr "nepálština"
+
+#: frog/language_manager.py:111
+msgid "Dutch; Flemish"
+msgstr "nizozemština; vlámština"
+
+#: frog/language_manager.py:112
+msgid "Norwegian"
+msgstr "norština"
+
+#: frog/language_manager.py:113
+msgid "Occitan (post 1500)"
+msgstr "okcitánština (po roce 1500)"
+
+#: frog/language_manager.py:114
+msgid "Oriya"
+msgstr "urijština"
+
+#: frog/language_manager.py:115
+msgid "Orientation and script detection module"
+msgstr "Modul pro detekci orientace a skriptů"
+
+#: frog/language_manager.py:116
+msgid "Panjabi; Punjabi"
+msgstr "pandžábština; paňdžábština"
+
+#: frog/language_manager.py:117
+msgid "Polish"
+msgstr "polština"
+
+#: frog/language_manager.py:118
+msgid "Portuguese"
+msgstr "portugalština"
+
+#: frog/language_manager.py:119
+msgid "Pushto; Pashto"
+msgstr "puštunština; paštunština"
+
+#: frog/language_manager.py:120
+msgid "Quechua"
+msgstr "kečuánština"
+
+#: frog/language_manager.py:121
+msgid "Romanian; Moldavian; Moldovan"
+msgstr "rumunština; moldavština; moldovština"
+
+#: frog/language_manager.py:122
+msgid "Russian"
+msgstr "ruština"
+
+#: frog/language_manager.py:123
+msgid "Sanskrit"
+msgstr "sanskrt"
+
+#: frog/language_manager.py:124
+msgid "Sinhala; Sinhalese"
+msgstr "sinhálština"
+
+#: frog/language_manager.py:125
+msgid "Slovak"
+msgstr "slovenština"
+
+#: frog/language_manager.py:126
+msgid "Slovenian"
+msgstr "slovinština"
+
+#: frog/language_manager.py:127
+msgid "Sindhi"
+msgstr "sindhština"
+
+#: frog/language_manager.py:128
+msgid "Spanish; Castilian"
+msgstr "španělština; kastilština"
+
+#: frog/language_manager.py:129
+msgid "Spanish; Castilian - Old"
+msgstr "španělština; kastilština - stará"
+
+#: frog/language_manager.py:130
+msgid "Albanian"
+msgstr "albánština"
+
+#: frog/language_manager.py:131
+msgid "Serbian"
+msgstr "srbština"
+
+#: frog/language_manager.py:132
+msgid "Serbian - Latin"
+msgstr "srbština - latinka"
+
+#: frog/language_manager.py:133
+msgid "Sundanese"
+msgstr "sundánština"
+
+#: frog/language_manager.py:134
+msgid "Swahili"
+msgstr "svahilština"
+
+#: frog/language_manager.py:135
+msgid "Swedish"
+msgstr "švédština"
+
+#: frog/language_manager.py:136
+msgid "Syriac"
+msgstr "syrština"
+
+#: frog/language_manager.py:137
+msgid "Tamil"
+msgstr "tamilština"
+
+#: frog/language_manager.py:138
+msgid "Tatar"
+msgstr "tatarština"
+
+#: frog/language_manager.py:139
+msgid "Telugu"
+msgstr "telugština"
+
+#: frog/language_manager.py:140
+msgid "Tajik"
+msgstr "tádžičtina"
+
+#: frog/language_manager.py:141
+msgid "Thai"
+msgstr "thajština"
+
+#: frog/language_manager.py:142
+msgid "Tigrinya"
+msgstr "tigrinya"
+
+#: frog/language_manager.py:143
+msgid "Tonga"
+msgstr "tonga"
+
+#: frog/language_manager.py:144
+msgid "Turkish"
+msgstr "turečtina"
+
+#: frog/language_manager.py:145
+msgid "Uighur; Uyghur"
+msgstr "ujgurština"
+
+#: frog/language_manager.py:146
+msgid "Ukrainian"
+msgstr "ukrajinština"
+
+#: frog/language_manager.py:147
+msgid "Urdu"
+msgstr "urdština"
+
+#: frog/language_manager.py:148
+msgid "Uzbek"
+msgstr "uzbečtina"
+
+#: frog/language_manager.py:149
+msgid "Uzbek - Cyrilic"
+msgstr "uzbečtina - azbuka"
+
+#: frog/language_manager.py:150
+msgid "Vietnamese"
+msgstr "vietnamština"
+
+#: frog/language_manager.py:151
+msgid "Yiddish"
+msgstr "jidiš"
+
+#: frog/language_manager.py:152
+msgid "Yoruba"
+msgstr "jorubština"
+
+#: frog/window.py:246
+msgid "Only images can be processed that way."
+msgstr "Tímto způsobem lze zpracovávat pouze obrázky."
+
+#: frog/window.py:293
+#, python-brace-format
+msgid "{language} language downloaded."
+msgstr "Jazyk {language} stažen."
+
+#: frog/main.py:66 frog/main.py:86
+msgid "Extract directly into the clipboard"
+msgstr "Extrahovat přímo do schránky"
+
+#: frog/main.py:165
+msgid "No text found. Try to grab another region."
+msgstr "Nebyl nalezen žádný text. Zkuste zachytit jinou oblast."
+
+#: frog/main.py:175
+msgid "Text extracted. You can paste it with Ctrl+V"
+msgstr "Text extrahován. Můžete jej vložit pomocí Ctrl+V"
