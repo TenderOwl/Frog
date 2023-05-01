@@ -110,7 +110,7 @@ class Application(Adw.Application):
         self.add_action(action)
         self.set_accels_for_action("app.preferences", ("<Control>comma",))
 
-        action = Gio.SimpleAction.new("open_image", None)
+        action = Gio.SimpleAction.new(name="open_image", parameter_type=None)
         action.connect("activate", self.open_image)
         self.add_action(action)
         self.set_accels_for_action("app.open_image", ("<Control>o",))

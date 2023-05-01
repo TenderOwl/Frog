@@ -163,6 +163,22 @@
                               </object>
                             </child>
                             <child>
+                              <object class="GtkButton">
+                                <property name="action_name">app.open_image</property>
+                                <property name="focusable">1</property>
+                                <property name="receives-default">1</property>
+                                <property name="tooltip-markup" translatable="yes">Open Image to extract text</property>
+                                <style>
+                                  <class name="flat"/>
+                                </style>
+                                <property name="child">
+                                  <object class="AdwButtonContent">
+                                    <property name="icon-name">folder-open-symbolic</property>
+                                  </object>
+                                </property>
+                              </object>
+                            </child>
+                            <child>
                               <object class="GtkBox">
                                 <property name="hexpand">1</property>
                               </object>
