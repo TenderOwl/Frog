@@ -188,8 +188,7 @@ msgstr "Vyberte jazyk pro extrakci"
 msgid "Take a Screenshot"
 msgstr "Pořídit snímek obrazovky"
 
-#: data/ui/window.ui:102
-#: data/ui/window.ui:218
+#: data/ui/window.ui:102 data/ui/window.ui:218
 msgid "Configure Languages"
 msgstr "Konfigurace jazyků"
 

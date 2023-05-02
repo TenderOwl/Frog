@@ -1,11 +1,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
-"POT-Creation-Date: 2022-04-09 21:41+0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-06 17:05+0200\n"
 "PO-Revision-Date: 2023-01-31 17:41+0100\n"
 "Last-Translator: gregorni <gregorniehl@web.de>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/frog/default/de/>"
-"\n"
+"Language-Team: German <https://hosted.weblate.org/projects/frog/default/de/"
+">\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,6 +19,129 @@ msgstr ""
 "X-Poedit-SearchPath-1: data/com.github.tenderowl.frog.desktop.in\n"
 "X-Poedit-SearchPath-2: data/com.github.tenderowl.frog.appdata.xml.in\n"
 "X-Poedit-SearchPath-3: frog\n"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:6
+#: data/com.github.tenderowl.frog.desktop.in:3
+msgid "Frog"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:7
+#, fuzzy
+#| msgid "Extract text from anywhere"
+msgid "Extract text from anywhere, even QR code"
+msgstr "Text von überall extrahieren"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:9
+msgid ""
+"Quickly extract text from any source such as images, websites, even video - "
+"everywhere you can grab an image shot. Even if it is encoded in a QR code!"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:25
+#: data/com.github.tenderowl.frog.appdata.xml.in:34
+#: data/com.github.tenderowl.frog.appdata.xml.in:56
+msgid "What's new:"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:27
+#: data/com.github.tenderowl.frog.appdata.xml.in:36
+msgid "Updated UI"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:28
+msgid "Translated to a bunch of new languages"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:37
+msgid "Drag-n-drop support. For images only"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:38
+msgid "Dark mode support"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:39
+msgid "Localized interface"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:45
+msgid ""
+"Frog now is available on the Flathub and use modern Portal implementation. "
+"We also updated the UI accordingly to the GNOME HIG and fixed some bugs "
+"we've found :)"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:51
+msgid ""
+"Now you're free to run Frog with `-e` option to extract text and instantly "
+"copy it to the clipboard."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:58
+msgid "English model included with Frog itself"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:59
+msgid "QR code detection. If one in the selected area - it will be decoded."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:60
+msgid "New command line shortcut to run with \"Extract to clipboard\" feature."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:61
+msgid "Granite.HyperTextView to support QR encoded links"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:67
+#, fuzzy
+#| msgid "{language} language downloaded."
+msgid "Fix language packs download."
+msgstr "Sprache »{language}« heruntergeladen."
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:72
+msgid "Dark mode+"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:74
+msgid "Dark mode support."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:75
+msgid "Application will hide the main window for the cleaner shots. #11"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:81
+msgid ""
+"Quickly extract any text from anywhere you need it: webpages, videos, "
+"photos, etc."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:86
+msgid "Tender Owl"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.desktop.in:4
+#, fuzzy
+#| msgid "Clear the extraction results"
+msgid "Text extraction tool"
+msgstr "Extraktionsergebnisse leeren"
+
+#: data/com.github.tenderowl.frog.desktop.in:5
+#, fuzzy
+#| msgid "Extract text from anywhere"
+msgid "Extract text from any image, video or web page"
+msgstr "Text von überall extrahieren"
+
+#: data/com.github.tenderowl.frog.desktop.in:12
+msgid "OCR;Text;Extraction;"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.desktop.in:16
+#, fuzzy
+#| msgid "Extract directly into the clipboard"
+msgid "Extract Text to the Clipboard"
+msgstr "Direkt in Zwischenablage extrahieren"
 
 #: data/ui/language_dialog.ui:16
 msgid "Available Languages"
@@ -60,32 +184,46 @@ msgstr "Sprache"
 msgid "Select language to extract"
 msgstr "Sprachen zum Extrahieren auswählen"
 
-#: data/ui/window.ui:68 data/ui/window.ui:128
-msgid "Take a shot"
+#: data/ui/window.ui:77
+#, fuzzy
+#| msgid "Take a shot"
+msgid "Take a Screenshot"
 msgstr "Bildschirmfoto aufnehmen"
 
-#: data/ui/window.ui:83
-msgid "_Configure languages"
+#: data/ui/window.ui:102 data/ui/window.ui:218
+#, fuzzy
+#| msgid "_Configure languages"
+msgid "Configure Languages"
 msgstr "Sprachen _konfigurieren"
 
-#: data/ui/window.ui:146
+#: data/ui/window.ui:153
+#, fuzzy
+#| msgid "Take a shot"
+msgid "Take a screenshot"
+msgstr "Bildschirmfoto aufnehmen"
+
+#: data/ui/window.ui:174
 msgid "Clear the extraction results"
 msgstr "Extraktionsergebnisse leeren"
 
-#: data/ui/window.ui:158
-msgid "Copy extracted text to clipboard"
+#: data/ui/window.ui:189
+#, fuzzy
+#| msgid "Copy extracted text to clipboard"
+msgid ""
+"Copy extracted text to clipboard\n"
+"                                "
 msgstr "Text in die Zwischenablage kopieren"
 
-#: data/ui/window.ui:181
-msgid "_Configure"
-msgstr "_Konfigurieren"
-
-#: data/ui/window.ui:187
-msgid "_Keyboard Shortcuts"
+#: data/ui/window.ui:224
+#, fuzzy
+#| msgid "_Keyboard Shortcuts"
+msgid "Keyboard Shortcuts"
 msgstr "_Tastenkürzel"
 
-#: data/ui/window.ui:191
-msgid "_About Frog"
+#: data/ui/window.ui:228
+#, fuzzy
+#| msgid "_About Frog"
+msgid "About Frog"
 msgstr "_Info zu Frog"
 
 #: frog/about_dialog.py:39
@@ -196,7 +334,7 @@ msgstr "Dzongkha"
 msgid "Greek, Modern (1453-)"
 msgstr "Griechisch, Modern (1453–)"
 
-#: frog/language_manager.py:56 frog/window.py:142 frog/window.py:148
+#: frog/language_manager.py:56 frog/window.py:157 frog/window.py:163
 msgid "English"
 msgstr "Englisch"
 
@@ -584,19 +722,26 @@ msgstr "Jiddisch"
 msgid "Yoruba"
 msgstr "Yoruba"
 
-#: frog/main.py:77
-msgid "Extract directly into the clipboard"
-msgstr "Direkt in Zwischenablage extrahieren"
+#: frog/window.py:246
+msgid "Only images can be processed that way."
+msgstr ""
 
-#: frog/main.py:156
-msgid "No text found. Try to grab another region."
-msgstr "Kein Text gefunden. Versuchen Sie eine andere Region zu wählen."
-
-#: frog/main.py:166
-msgid "Text extracted. You can paste it with Ctrl+V"
-msgstr "Text extrahiert. Sie können diesen mit Strg+V einfügen"
-
-#: frog/window.py:247
+#: frog/window.py:293
 #, python-brace-format
 msgid "{language} language downloaded."
 msgstr "Sprache »{language}« heruntergeladen."
+
+#: frog/main.py:66 frog/main.py:86
+msgid "Extract directly into the clipboard"
+msgstr "Direkt in Zwischenablage extrahieren"
+
+#: frog/main.py:165
+msgid "No text found. Try to grab another region."
+msgstr "Kein Text gefunden. Versuchen Sie eine andere Region zu wählen."
+
+#: frog/main.py:175
+msgid "Text extracted. You can paste it with Ctrl+V"
+msgstr "Text extrahiert. Sie können diesen mit Strg+V einfügen"
+
+#~ msgid "_Configure"
+#~ msgstr "_Konfigurieren"

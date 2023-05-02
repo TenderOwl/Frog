@@ -4,7 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Frog\n"
-"POT-Creation-Date: 2022-06-15 00:51+0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-06 17:05+0200\n"
 "PO-Revision-Date: 2022-06-15 00:52+0300\n"
 "Last-Translator: Andrey Maksimov <andrey@tenderowl.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/frog/default/ja/"
@@ -18,37 +19,128 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: data/com.github.tenderowl.frog.gschema.xml:7
-msgid "Window size in px"
-msgstr "ウィンドウサイズ(px)"
+#: data/com.github.tenderowl.frog.appdata.xml.in:6
+#: data/com.github.tenderowl.frog.desktop.in:3
+msgid "Frog"
+msgstr "Frog"
 
-#: data/com.github.tenderowl.frog.gschema.xml:8
-msgid "Window size (width and height)."
-msgstr "ウィンドウサイズ(横幅と高さ)"
+#: data/com.github.tenderowl.frog.appdata.xml.in:7
+#, fuzzy
+#| msgid "Extract text from anywhere"
+msgid "Extract text from anywhere, even QR code"
+msgstr "画面上の文字やQRコードを検出します"
 
-#: data/com.github.tenderowl.frog.gschema.xml:12
-msgid "Window position on screen in px"
-msgstr "画面上のウィンドウの位置(px)"
+#: data/com.github.tenderowl.frog.appdata.xml.in:9
+msgid ""
+"Quickly extract text from any source such as images, websites, even video - "
+"everywhere you can grab an image shot. Even if it is encoded in a QR code!"
+msgstr ""
 
-#: data/com.github.tenderowl.frog.gschema.xml:13
-msgid "Window position on screen."
-msgstr "画面上のウィンドウの位置"
+#: data/com.github.tenderowl.frog.appdata.xml.in:25
+#: data/com.github.tenderowl.frog.appdata.xml.in:34
+#: data/com.github.tenderowl.frog.appdata.xml.in:56
+msgid "What's new:"
+msgstr ""
 
-#: data/com.github.tenderowl.frog.gschema.xml:18
-msgid "Extra language"
-msgstr "第二言語"
+#: data/com.github.tenderowl.frog.appdata.xml.in:27
+#: data/com.github.tenderowl.frog.appdata.xml.in:36
+msgid "Updated UI"
+msgstr ""
 
-#: data/com.github.tenderowl.frog.gschema.xml:19
-msgid "Language to detect alongside with the active one."
-msgstr "第一言語とともに検出する言語です。"
+#: data/com.github.tenderowl.frog.appdata.xml.in:28
+msgid "Translated to a bunch of new languages"
+msgstr ""
 
-#: data/com.github.tenderowl.frog.gschema.xml:23
-msgid "Active language"
-msgstr "第一言語"
+#: data/com.github.tenderowl.frog.appdata.xml.in:37
+msgid "Drag-n-drop support. For images only"
+msgstr ""
 
-#: data/com.github.tenderowl.frog.gschema.xml:24
-msgid "Active language to extract the text."
-msgstr "文字を検出する言語です。"
+#: data/com.github.tenderowl.frog.appdata.xml.in:38
+msgid "Dark mode support"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:39
+msgid "Localized interface"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:45
+msgid ""
+"Frog now is available on the Flathub and use modern Portal implementation. "
+"We also updated the UI accordingly to the GNOME HIG and fixed some bugs "
+"we've found :)"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:51
+msgid ""
+"Now you're free to run Frog with `-e` option to extract text and instantly "
+"copy it to the clipboard."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:58
+msgid "English model included with Frog itself"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:59
+msgid "QR code detection. If one in the selected area - it will be decoded."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:60
+msgid "New command line shortcut to run with \"Extract to clipboard\" feature."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:61
+msgid "Granite.HyperTextView to support QR encoded links"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:67
+#, fuzzy
+#| msgid "{language} downloaded"
+msgid "Fix language packs download."
+msgstr "{language} をダウンロードしました"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:72
+msgid "Dark mode+"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:74
+msgid "Dark mode support."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:75
+msgid "Application will hide the main window for the cleaner shots. #11"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:81
+msgid ""
+"Quickly extract any text from anywhere you need it: webpages, videos, "
+"photos, etc."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:86
+msgid "Tender Owl"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.desktop.in:4
+msgid "Text extraction tool"
+msgstr "画面上の文字を検出"
+
+#: data/com.github.tenderowl.frog.desktop.in:5
+#, fuzzy
+#| msgid "Extract text from anywhere"
+msgid "Extract text from any image, video or web page"
+msgstr "画面上の文字やQRコードを検出します"
+
+#: data/com.github.tenderowl.frog.desktop.in:12
+#, fuzzy
+#| msgid "Text extraction tool"
+msgid "OCR;Text;Extraction;"
+msgstr "画面上の文字を検出"
+
+#: data/com.github.tenderowl.frog.desktop.in:16
+#, fuzzy
+#| msgid "Extract directly into the clipboard"
+msgid "Extract Text to the Clipboard"
+msgstr "検出した文字をそのままクリップボードにコピー"
 
 #: data/ui/language_dialog.ui:16
 msgid "Available Languages"
@@ -95,8 +187,7 @@ msgstr "検出する言語を選択"
 msgid "Take a Screenshot"
 msgstr "再度検出する"
 
-#: data/ui/window.ui:102
-#: data/ui/window.ui:218
+#: data/ui/window.ui:102 data/ui/window.ui:218
 msgid "Configure Languages"
 msgstr "言語なし"
 
@@ -616,6 +707,16 @@ msgstr ""
 msgid "Yoruba"
 msgstr ""
 
+#: frog/window.py:246
+msgid "Only images can be processed that way."
+msgstr ""
+
+#: frog/window.py:293
+#, fuzzy, python-brace-format
+#| msgid "{language} downloaded"
+msgid "{language} language downloaded."
+msgstr "{language} をダウンロードしました"
+
 #: frog/main.py:66 frog/main.py:86
 msgid "Extract directly into the clipboard"
 msgstr "検出した文字をそのままクリップボードにコピー"
@@ -628,24 +729,32 @@ msgstr ""
 msgid "Text extracted. You can paste it with Ctrl+V"
 msgstr ""
 
-#: frog/window.py:246
-msgid "Only images can be processed that way."
-msgstr ""
+#~ msgid "Window size in px"
+#~ msgstr "ウィンドウサイズ(px)"
 
-#: frog/window.py:293
-#, fuzzy, python-brace-format
-#| msgid "{language} downloaded"
-msgid "{language} language downloaded."
-msgstr "{language} をダウンロードしました"
+#~ msgid "Window size (width and height)."
+#~ msgstr "ウィンドウサイズ(横幅と高さ)"
+
+#~ msgid "Window position on screen in px"
+#~ msgstr "画面上のウィンドウの位置(px)"
+
+#~ msgid "Window position on screen."
+#~ msgstr "画面上のウィンドウの位置"
+
+#~ msgid "Extra language"
+#~ msgstr "第二言語"
+
+#~ msgid "Language to detect alongside with the active one."
+#~ msgstr "第一言語とともに検出する言語です。"
+
+#~ msgid "Active language"
+#~ msgstr "第一言語"
+
+#~ msgid "Active language to extract the text."
+#~ msgstr "文字を検出する言語です。"
 
 #~ msgid "button"
 #~ msgstr "ボタン"
-
-#~ msgid "Frog"
-#~ msgstr "Frog"
-
-#~ msgid "Text extraction tool"
-#~ msgstr "画面上の文字を検出"
 
 #~ msgid "Failed Attempt"
 #~ msgstr "失敗しました"
