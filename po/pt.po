@@ -177,8 +177,7 @@ msgstr "Selecione idioma para extrair"
 msgid "Take a Screenshot"
 msgstr "Tirar uma Captura de Tela"
 
-#: data/ui/window.ui:102
-#: data/ui/window.ui:218
+#: data/ui/window.ui:102 data/ui/window.ui:218
 msgid "Configure Languages"
 msgstr "Configurar idiomas"
 

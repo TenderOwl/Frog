@@ -1,7 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
-"POT-Creation-Date: 2022-06-15 00:54+0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-06 17:05+0200\n"
 "PO-Revision-Date: 2022-07-23 12:15+0000\n"
 "Last-Translator: Eric <alchemillatruth@purelymail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -18,6 +19,129 @@ msgstr ""
 "X-Poedit-SearchPath-1: data/com.github.tenderowl.frog.desktop.in\n"
 "X-Poedit-SearchPath-2: data/com.github.tenderowl.frog.appdata.xml.in\n"
 "X-Poedit-SearchPath-3: frog\n"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:6
+#: data/com.github.tenderowl.frog.desktop.in:3
+msgid "Frog"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:7
+#, fuzzy
+#| msgid "Extract text from anywhere"
+msgid "Extract text from anywhere, even QR code"
+msgstr "从任何地方提取文本"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:9
+msgid ""
+"Quickly extract text from any source such as images, websites, even video - "
+"everywhere you can grab an image shot. Even if it is encoded in a QR code!"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:25
+#: data/com.github.tenderowl.frog.appdata.xml.in:34
+#: data/com.github.tenderowl.frog.appdata.xml.in:56
+msgid "What's new:"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:27
+#: data/com.github.tenderowl.frog.appdata.xml.in:36
+msgid "Updated UI"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:28
+msgid "Translated to a bunch of new languages"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:37
+msgid "Drag-n-drop support. For images only"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:38
+msgid "Dark mode support"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:39
+msgid "Localized interface"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:45
+msgid ""
+"Frog now is available on the Flathub and use modern Portal implementation. "
+"We also updated the UI accordingly to the GNOME HIG and fixed some bugs "
+"we've found :)"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:51
+msgid ""
+"Now you're free to run Frog with `-e` option to extract text and instantly "
+"copy it to the clipboard."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:58
+msgid "English model included with Frog itself"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:59
+msgid "QR code detection. If one in the selected area - it will be decoded."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:60
+msgid "New command line shortcut to run with \"Extract to clipboard\" feature."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:61
+msgid "Granite.HyperTextView to support QR encoded links"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:67
+#, fuzzy
+#| msgid "{language} language downloaded."
+msgid "Fix language packs download."
+msgstr "{language} 语言已下载。"
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:72
+msgid "Dark mode+"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:74
+msgid "Dark mode support."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:75
+msgid "Application will hide the main window for the cleaner shots. #11"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:81
+msgid ""
+"Quickly extract any text from anywhere you need it: webpages, videos, "
+"photos, etc."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:86
+msgid "Tender Owl"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.desktop.in:4
+#, fuzzy
+#| msgid "Clear the extraction results"
+msgid "Text extraction tool"
+msgstr "清除提取结果"
+
+#: data/com.github.tenderowl.frog.desktop.in:5
+#, fuzzy
+#| msgid "Extract text from anywhere"
+msgid "Extract text from any image, video or web page"
+msgstr "从任何地方提取文本"
+
+#: data/com.github.tenderowl.frog.desktop.in:12
+msgid "OCR;Text;Extraction;"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.desktop.in:16
+#, fuzzy
+#| msgid "Extract directly into the clipboard"
+msgid "Extract Text to the Clipboard"
+msgstr "直接提取到剪贴板中"
 
 #: data/ui/language_dialog.ui:16
 msgid "Available Languages"
@@ -64,8 +188,7 @@ msgstr "选择要提取的语言"
 msgid "Take a Screenshot"
 msgstr "截屏"
 
-#: data/ui/window.ui:102
-#: data/ui/window.ui:218
+#: data/ui/window.ui:102 data/ui/window.ui:218
 msgid "Configure Languages"
 msgstr "配置语言(_C)"
 
@@ -589,6 +712,15 @@ msgstr "意第绪语"
 msgid "Yoruba"
 msgstr "约鲁巴语"
 
+#: frog/window.py:246
+msgid "Only images can be processed that way."
+msgstr "只有图像可以这样处理。"
+
+#: frog/window.py:293
+#, python-brace-format
+msgid "{language} language downloaded."
+msgstr "{language} 语言已下载。"
+
 #: frog/main.py:66 frog/main.py:86
 msgid "Extract directly into the clipboard"
 msgstr "直接提取到剪贴板中"
@@ -600,15 +732,6 @@ msgstr "没有找到文本。尝试抓取另一个区域。"
 #: frog/main.py:175
 msgid "Text extracted. You can paste it with Ctrl+V"
 msgstr "提取的文本。你可以用 Ctrl+V 粘贴它"
-
-#: frog/window.py:246
-msgid "Only images can be processed that way."
-msgstr "只有图像可以这样处理。"
-
-#: frog/window.py:293
-#, python-brace-format
-msgid "{language} language downloaded."
-msgstr "{language} 语言已下载。"
 
 #~ msgid "Configure"
 #~ msgstr "配置(_C)"

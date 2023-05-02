@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: 2022-06-06 17:05+0200\n"
 "PO-Revision-Date: 2022-09-23 21:23+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
-"Language-Team: Turkish <https://hosted.weblate.org/projects/frog/default/tr/>"
-"\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/frog/default/tr/"
+">\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -188,8 +188,7 @@ msgstr "Çıkarılacak dili seç"
 msgid "Take a Screenshot"
 msgstr "Ekran Görüntüsü Al"
 
-#: data/ui/window.ui:102
-#: data/ui/window.ui:218
+#: data/ui/window.ui:102 data/ui/window.ui:218
 msgid "Configure Languages"
 msgstr "Dilleri Yapılandır"
 

@@ -4,7 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Frog\n"
-"POT-Creation-Date: 2022-06-15 00:52+0300\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-06 17:05+0200\n"
 "PO-Revision-Date: 2022-06-15 00:52+0300\n"
 "Last-Translator: Andrey Maksimov <andrey@tenderowl.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/frog/"
@@ -19,36 +20,117 @@ msgstr ""
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: data/com.github.tenderowl.frog.gschema.xml:7
-msgid "Window size in px"
+#: data/com.github.tenderowl.frog.appdata.xml.in:6
+#: data/com.github.tenderowl.frog.desktop.in:3
+msgid "Frog"
 msgstr ""
 
-#: data/com.github.tenderowl.frog.gschema.xml:8
-msgid "Window size (width and height)."
+#: data/com.github.tenderowl.frog.appdata.xml.in:7
+msgid "Extract text from anywhere, even QR code"
 msgstr ""
 
-#: data/com.github.tenderowl.frog.gschema.xml:12
-msgid "Window position on screen in px"
+#: data/com.github.tenderowl.frog.appdata.xml.in:9
+msgid ""
+"Quickly extract text from any source such as images, websites, even video - "
+"everywhere you can grab an image shot. Even if it is encoded in a QR code!"
 msgstr ""
 
-#: data/com.github.tenderowl.frog.gschema.xml:13
-msgid "Window position on screen."
+#: data/com.github.tenderowl.frog.appdata.xml.in:25
+#: data/com.github.tenderowl.frog.appdata.xml.in:34
+#: data/com.github.tenderowl.frog.appdata.xml.in:56
+msgid "What's new:"
 msgstr ""
 
-#: data/com.github.tenderowl.frog.gschema.xml:18
-msgid "Extra language"
+#: data/com.github.tenderowl.frog.appdata.xml.in:27
+#: data/com.github.tenderowl.frog.appdata.xml.in:36
+msgid "Updated UI"
 msgstr ""
 
-#: data/com.github.tenderowl.frog.gschema.xml:19
-msgid "Language to detect alongside with the active one."
+#: data/com.github.tenderowl.frog.appdata.xml.in:28
+msgid "Translated to a bunch of new languages"
 msgstr ""
 
-#: data/com.github.tenderowl.frog.gschema.xml:23
-msgid "Active language"
+#: data/com.github.tenderowl.frog.appdata.xml.in:37
+msgid "Drag-n-drop support. For images only"
 msgstr ""
 
-#: data/com.github.tenderowl.frog.gschema.xml:24
-msgid "Active language to extract the text."
+#: data/com.github.tenderowl.frog.appdata.xml.in:38
+msgid "Dark mode support"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:39
+msgid "Localized interface"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:45
+msgid ""
+"Frog now is available on the Flathub and use modern Portal implementation. "
+"We also updated the UI accordingly to the GNOME HIG and fixed some bugs "
+"we've found :)"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:51
+msgid ""
+"Now you're free to run Frog with `-e` option to extract text and instantly "
+"copy it to the clipboard."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:58
+msgid "English model included with Frog itself"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:59
+msgid "QR code detection. If one in the selected area - it will be decoded."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:60
+msgid "New command line shortcut to run with \"Extract to clipboard\" feature."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:61
+msgid "Granite.HyperTextView to support QR encoded links"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:67
+msgid "Fix language packs download."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:72
+msgid "Dark mode+"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:74
+msgid "Dark mode support."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:75
+msgid "Application will hide the main window for the cleaner shots. #11"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:81
+msgid ""
+"Quickly extract any text from anywhere you need it: webpages, videos, "
+"photos, etc."
+msgstr ""
+
+#: data/com.github.tenderowl.frog.appdata.xml.in:86
+msgid "Tender Owl"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.desktop.in:4
+msgid "Text extraction tool"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.desktop.in:5
+msgid "Extract text from any image, video or web page"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.desktop.in:12
+msgid "OCR;Text;Extraction;"
+msgstr ""
+
+#: data/com.github.tenderowl.frog.desktop.in:16
+msgid "Extract Text to the Clipboard"
 msgstr ""
 
 #: data/ui/language_dialog.ui:16
@@ -96,8 +178,7 @@ msgstr ""
 msgid "Take a Screenshot"
 msgstr ""
 
-#: data/ui/window.ui:102
-#: data/ui/window.ui:218
+#: data/ui/window.ui:102 data/ui/window.ui:218
 msgid "Configure Languages"
 msgstr ""
 
@@ -617,6 +698,15 @@ msgstr ""
 msgid "Yoruba"
 msgstr ""
 
+#: frog/window.py:246
+msgid "Only images can be processed that way."
+msgstr ""
+
+#: frog/window.py:293
+#, python-brace-format
+msgid "{language} language downloaded."
+msgstr ""
+
 #: frog/main.py:66 frog/main.py:86
 msgid "Extract directly into the clipboard"
 msgstr ""
@@ -627,13 +717,4 @@ msgstr ""
 
 #: frog/main.py:175
 msgid "Text extracted. You can paste it with Ctrl+V"
-msgstr ""
-
-#: frog/window.py:246
-msgid "Only images can be processed that way."
-msgstr ""
-
-#: frog/window.py:293
-#, python-brace-format
-msgid "{language} language downloaded."
 msgstr ""
