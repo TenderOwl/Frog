@@ -5,10 +5,10 @@ msgstr ""
 "Project-Id-Version: frog 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-02 13:27+0300\n"
-"PO-Revision-Date: 2023-05-02 10:17+0000\n"
+"PO-Revision-Date: 2023-05-02 10:38+0000\n"
 "Last-Translator: Andrey M <meamka@ya.ru>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/frog/default/ru/"
-">\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/frog/default/ru/>"
+"\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,7 +45,7 @@ msgstr ""
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:28
 msgid "In this update, we've made a number of improvements to our app."
-msgstr ""
+msgstr "В этом обновлении мы внесли ряд улучшений в наше приложение."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:30
 msgid ""
@@ -55,7 +55,7 @@ msgstr ""
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:31
 msgid "Now you can easily find the language you want by searching."
-msgstr ""
+msgstr "Теперь вы можете легко найти нужный язык с помощью поиска."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:32
 msgid ""
@@ -66,6 +66,7 @@ msgstr ""
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:33
 msgid "The Frog can automatically follow links extracted from QR codes."
 msgstr ""
+"Frog может автоматически переходить по ссылкам, извлеченным из QR-кодов."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:34
 msgid ""
@@ -98,7 +99,7 @@ msgstr ""
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:53
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:62
 msgid "Translations updated."
-msgstr ""
+msgstr "Переводы обновлены."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:61
 msgid "When no text is found, Frog returns to the main window."
@@ -145,6 +146,7 @@ msgstr ""
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:102
 msgid "QR code detection. If one in the selected area - it will be decoded."
 msgstr ""
+"Обнаружение QR-кода. Если один в выбранной области - он будет декодирован."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:103
 msgid "New command line shortcut to run with \"Extract to clipboard\" feature."
@@ -694,31 +696,31 @@ msgstr "Текст извлечен. Вы можете вставить его �
 
 #: ../frog/preferences.py:113
 msgid "View all available languages"
-msgstr ""
+msgstr "Показать все языки"
 
 #: ../frog/window.py:201
 msgid "Text copied to clipboard"
-msgstr ""
+msgstr "Текст скопирован"
 
 #: ../frog/window.py:208
 msgid "QR-code URL opened"
-msgstr ""
+msgstr "URL из QR-код открыт"
 
 #: ../frog/window.py:211
 msgid "QR-code contains URL."
-msgstr ""
+msgstr "QR-код содержит URL."
 
 #: ../frog/window.py:212
 msgid "Open"
-msgstr ""
+msgstr "Открыть"
 
 #: ../frog/window.py:240
 msgid "Supported image files"
-msgstr ""
+msgstr "Поддерживаемые типы изображений"
 
 #: ../frog/window.py:246
 msgid "Open image to extract text"
-msgstr ""
+msgstr "Открыть изображение"
 
 #: ../frog/window.py:290
 msgid "Only images can be processed that way."
@@ -726,7 +728,7 @@ msgstr "Так можно обработать только изображени
 
 #: ../frog/window.py:328
 msgid "Text copied"
-msgstr ""
+msgstr "Текст скопирован"
 
 #: ../frog/window.py:342
 #, python-brace-format
