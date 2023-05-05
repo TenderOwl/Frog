@@ -1,14 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the frog package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# Fjuro <ifjuro@proton.me>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-02 13:27+0300\n"
-"PO-Revision-Date: 2023-04-12 11:50+0000\n"
+"PO-Revision-Date: 2023-05-05 05:52+0000\n"
 "Last-Translator: Fjuro <ifjuro@proton.me>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/frog/default/cs/>\n"
 "Language: cs\n"
@@ -16,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.17-dev\n"
+"X-Generator: Weblate 4.18-dev\n"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:6
 #: ../data/com.github.tenderowl.frog.desktop.in:3
@@ -25,7 +24,7 @@ msgstr "Frog"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:7
 msgid "Extract text from images"
-msgstr ""
+msgstr "Získávání textu z obrázků"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:9
 msgid ""
@@ -38,41 +37,45 @@ msgstr ""
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:28
 msgid "In this update, we've made a number of improvements to our app."
-msgstr ""
+msgstr "V této aktualizaci jsme v aplikaci provedli řadu vylepšení."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:30
 msgid ""
 "We have redesigned the settings dialog to make it more user-friendly and "
 "understandable."
 msgstr ""
+"Přepracovali jsme dialogové okno nastavení, aby bylo uživatelsky "
+"přívětivější a srozumitelnější."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:31
 msgid "Now you can easily find the language you want by searching."
-msgstr ""
+msgstr "Nyní můžete snadno najít požadovaný jazyk pomocí vyhledávání."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:32
 msgid ""
 "In addition, we have added the ability to select a second language for "
 "extracting text from images."
 msgstr ""
+"Kromě toho jsme přidali možnost výběru druhého jazyka pro extrakci textu z "
+"obrázků."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:33
 msgid "The Frog can automatically follow links extracted from QR codes."
-msgstr ""
+msgstr "Frog dokáže automaticky otevírat odkazy získané z kódů QR."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:34
 msgid ""
 "We also updated the localization and improved the overall performance of the "
 "app."
-msgstr ""
+msgstr "Také jsme aktualizovali lokalizaci a zlepšili celkový výkon aplikace."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:35
 msgid "Fixed some bugs and bugs."
-msgstr ""
+msgstr "Opraveno několik chyb."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:37
 msgid "We hope you enjoy our work!"
-msgstr ""
+msgstr "Doufáme, že se vám naše práce bude líbit!"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:42
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:51
@@ -85,17 +88,17 @@ msgstr "Co je nového:"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:44
 msgid "Open image button now available."
-msgstr ""
+msgstr "Tlačítko Otevřít obrázek je nyní k dispozici."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:45
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:53
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:62
 msgid "Translations updated."
-msgstr ""
+msgstr "Aktualizovány překlady."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:61
 msgid "When no text is found, Frog returns to the main window."
-msgstr ""
+msgstr "Pokud není nalezen žádný text, vrátí se Frog do hlavního okna."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:70
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:79
@@ -696,31 +699,31 @@ msgstr "Text extrahován. Můžete jej vložit pomocí Ctrl+V"
 
 #: ../frog/preferences.py:113
 msgid "View all available languages"
-msgstr ""
+msgstr "Zobrazit všechny dostupné jazyky"
 
 #: ../frog/window.py:201
 msgid "Text copied to clipboard"
-msgstr ""
+msgstr "Text zkopírován do schránky"
 
 #: ../frog/window.py:208
 msgid "QR-code URL opened"
-msgstr ""
+msgstr "Otevření adresy URL kódu QR"
 
 #: ../frog/window.py:211
 msgid "QR-code contains URL."
-msgstr ""
+msgstr "QR kód obsahuje adresu URL."
 
 #: ../frog/window.py:212
 msgid "Open"
-msgstr ""
+msgstr "Otevřít"
 
 #: ../frog/window.py:240
 msgid "Supported image files"
-msgstr ""
+msgstr "Podporované soubory obrázků"
 
 #: ../frog/window.py:246
 msgid "Open image to extract text"
-msgstr ""
+msgstr "Otevřít obrázek pro získání textu"
 
 #: ../frog/window.py:290
 msgid "Only images can be processed that way."
@@ -728,7 +731,7 @@ msgstr "Tímto způsobem lze zpracovávat pouze obrázky."
 
 #: ../frog/window.py:328
 msgid "Text copied"
-msgstr ""
+msgstr "Text zkopírován"
 
 #: ../frog/window.py:342
 #, python-brace-format

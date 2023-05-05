@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-02 13:27+0300\n"
-"PO-Revision-Date: 2023-05-02 12:44+0000\n"
+"PO-Revision-Date: 2023-05-05 05:52+0000\n"
 "Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/frog/default/nl/>\n"
 "Language: nl\n"
@@ -101,7 +101,7 @@ msgstr ""
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:70
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:79
 msgid "Updated UI"
-msgstr ""
+msgstr "Gebruikersinterface bijgewerkt"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:71
 msgid "Translated to a bunch of new languages"
@@ -149,9 +149,8 @@ msgid "Granite.HyperTextView to support QR encoded links"
 msgstr ""
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:110
-#, fuzzy
 msgid "Fix language packs download."
-msgstr "{language} gedownload"
+msgstr ""
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:115
 msgid "Dark mode+"
@@ -173,26 +172,23 @@ msgstr ""
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:129
 msgid "Tender Owl"
-msgstr ""
+msgstr "Tender Owl"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:4
-#, fuzzy
 msgid "Text extraction tool"
-msgstr "Extractieresultaten wissen"
+msgstr "Tekst­extractie­gereedschap"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:5
-#, fuzzy
 msgid "Extract text from any image, video or web page"
-msgstr "Extraheer tekst vanuit elke bron"
+msgstr "Extraheer tekst vanuit elke afbeelding, video of webpagina"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:12
 msgid "OCR;Text;Extraction;"
-msgstr ""
+msgstr "OCR;Text;Extraction;Tekst;Extractie;QR;"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:16
-#, fuzzy
 msgid "Extract Text to the Clipboard"
-msgstr "Direct naar het klembord extraheren"
+msgstr "Tekst naar het klembord extraheren"
 
 #: ../frog/language_manager.py:33
 msgid "Afrikaans"
@@ -692,31 +688,31 @@ msgstr "Tekst geëxtraheerd. U kunt het plakken met Ctrl+V."
 
 #: ../frog/preferences.py:113
 msgid "View all available languages"
-msgstr ""
+msgstr "Alle beschikbare talen tonen"
 
 #: ../frog/window.py:201
 msgid "Text copied to clipboard"
-msgstr ""
+msgstr "Tekst naar klembord gekopieerd"
 
 #: ../frog/window.py:208
 msgid "QR-code URL opened"
-msgstr ""
+msgstr "URL van QR-code geopend"
 
 #: ../frog/window.py:211
 msgid "QR-code contains URL."
-msgstr ""
+msgstr "QR-code bevat een URL"
 
 #: ../frog/window.py:212
 msgid "Open"
-msgstr ""
+msgstr "Openen"
 
 #: ../frog/window.py:240
 msgid "Supported image files"
-msgstr ""
+msgstr "Ondersteunde afbeeldings­formaten"
 
 #: ../frog/window.py:246
 msgid "Open image to extract text"
-msgstr ""
+msgstr "Afbeelding openen om tekst te extraheren"
 
 #: ../frog/window.py:290
 msgid "Only images can be processed that way."
@@ -724,7 +720,7 @@ msgstr "Alleen afbeeldingen kunnen op die manier verwerkt worden."
 
 #: ../frog/window.py:328
 msgid "Text copied"
-msgstr ""
+msgstr "Tekst gekopieerd"
 
 #: ../frog/window.py:342
 #, python-brace-format
