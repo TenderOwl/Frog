@@ -1,23 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the frog package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# Sabri Ünal <libreajans@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-02 13:27+0300\n"
-"PO-Revision-Date: 2022-09-23 21:23+0000\n"
+"PO-Revision-Date: 2023-05-14 20:50+0000\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
-"Language-Team: Turkish <https://hosted.weblate.org/projects/frog/default/tr/"
-">\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/frog/default/tr/>"
+"\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 4.18-dev\n"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:6
 #: ../data/com.github.tenderowl.frog.desktop.in:3
@@ -26,7 +25,7 @@ msgstr "Kurbağa"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:7
 msgid "Extract text from images"
-msgstr ""
+msgstr "Resimlerden metin çıkar"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:9
 msgid ""
@@ -39,41 +38,49 @@ msgstr ""
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:28
 msgid "In this update, we've made a number of improvements to our app."
-msgstr ""
+msgstr "Bu güncellemede, uygulamamızda bir dizi iyileştirme yaptık."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:30
 msgid ""
 "We have redesigned the settings dialog to make it more user-friendly and "
 "understandable."
 msgstr ""
+"Ayarlar iletişim kutusunu daha kullanıcı dostu ve anlaşılır hale getirmek "
+"için yeniden tasarladık."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:31
 msgid "Now you can easily find the language you want by searching."
-msgstr ""
+msgstr "Artık arama yaparak istediğiniz dili kolayca bulabilirsiniz."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:32
 msgid ""
 "In addition, we have added the ability to select a second language for "
 "extracting text from images."
 msgstr ""
+"Buna ek olarak, resimlerden metin çıkarmak için ikinci bir dil seçme "
+"özelliğini ekledik."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:33
 msgid "The Frog can automatically follow links extracted from QR codes."
 msgstr ""
+"Kurbağa, QR kodlarından çıkarılan bağlantıları otomatik olarak takip "
+"edebilir."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:34
 msgid ""
 "We also updated the localization and improved the overall performance of the "
 "app."
 msgstr ""
+"Ayrıca yerelleştirmeyi güncelledik ve uygulamanın genel performansını "
+"iyileştirdik."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:35
 msgid "Fixed some bugs and bugs."
-msgstr ""
+msgstr "Bazı hatalar ve aksaklıklar düzeltildi."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:37
 msgid "We hope you enjoy our work!"
-msgstr ""
+msgstr "Umarız çalışmalarımızı beğenirsiniz!"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:42
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:51
@@ -86,17 +93,17 @@ msgstr "Yenilikler:"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:44
 msgid "Open image button now available."
-msgstr ""
+msgstr "Görüntüyü aç düğmesi artık kullanılabilir."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:45
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:53
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:62
 msgid "Translations updated."
-msgstr ""
+msgstr "Çeviriler güncellendi."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:61
 msgid "When no text is found, Frog returns to the main window."
-msgstr ""
+msgstr "Metin bulunamadığında, Kurbağa ana pencereye geri döner."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:70
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:79
@@ -696,31 +703,31 @@ msgstr "Metin çıkarıldı. Ctrl+V ile yapıştırabilirsiniz"
 
 #: ../frog/preferences.py:113
 msgid "View all available languages"
-msgstr ""
+msgstr "Mevcut tüm dilleri görüntüle"
 
 #: ../frog/window.py:201
 msgid "Text copied to clipboard"
-msgstr ""
+msgstr "Metin panoya kopyalandı"
 
 #: ../frog/window.py:208
 msgid "QR-code URL opened"
-msgstr ""
+msgstr "QR kodu URL'si açıldı"
 
 #: ../frog/window.py:211
 msgid "QR-code contains URL."
-msgstr ""
+msgstr "QR kodu URL içerir."
 
 #: ../frog/window.py:212
 msgid "Open"
-msgstr ""
+msgstr "Aç"
 
 #: ../frog/window.py:240
 msgid "Supported image files"
-msgstr ""
+msgstr "Desteklenen resim dosyaları"
 
 #: ../frog/window.py:246
 msgid "Open image to extract text"
-msgstr ""
+msgstr "Metin çıkarmak için görüntüyü aç"
 
 #: ../frog/window.py:290
 msgid "Only images can be processed that way."
@@ -728,7 +735,7 @@ msgstr "Sadece görüntüler bu şekilde işlenebilir."
 
 #: ../frog/window.py:328
 msgid "Text copied"
-msgstr ""
+msgstr "Metin kopyalandı"
 
 #: ../frog/window.py:342
 #, python-brace-format
