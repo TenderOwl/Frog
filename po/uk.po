@@ -1,19 +1,20 @@
+# volkov <d2oo1dle2x@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-02 13:27+0300\n"
-"PO-Revision-Date: 2022-10-02 19:23+0000\n"
-"Last-Translator: Tymofii Lytvynenko <till.svit@gmail.com>\n"
+"PO-Revision-Date: 2023-05-18 18:52+0000\n"
+"Last-Translator: volkov <d2oo1dle2x@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/frog/default/"
 "uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.14.1\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.18-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: data/ui\n"
@@ -24,55 +25,62 @@ msgstr ""
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:6
 #: ../data/com.github.tenderowl.frog.desktop.in:3
 msgid "Frog"
-msgstr ""
+msgstr "Frog"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:7
 msgid "Extract text from images"
-msgstr ""
+msgstr "Отримати текст із зображень"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:9
 msgid ""
 "Quickly extract text from any source such as images, websites, even video - "
 "everywhere you can grab an image shot. Even if it is encoded in a QR code!"
 msgstr ""
+"Швидко дістати текст із будь-яких джерел, таких як: зображення, веб-сайти і "
+"навіть відео - із будь-якого джерела, яке ви можете сфотографувати. Навіть "
+"якщо воно зашифровано у QR код!"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:28
 msgid "In this update, we've made a number of improvements to our app."
-msgstr ""
+msgstr "У цьому оновлені, ми зробили багато покращень у додатку."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:30
 msgid ""
 "We have redesigned the settings dialog to make it more user-friendly and "
 "understandable."
 msgstr ""
+"Ви зробили редизайн вікна налаштувань, щоб зробити його більше зручним для "
+"користування."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:31
 msgid "Now you can easily find the language you want by searching."
-msgstr ""
+msgstr "Тепер ви можете знайти будь-яку мову через функцію пошуку."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:32
 msgid ""
 "In addition, we have added the ability to select a second language for "
 "extracting text from images."
 msgstr ""
+"Також ми додали можливість обрати додаткову мову для отримування тексту із "
+"зображення."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:33
 msgid "The Frog can automatically follow links extracted from QR codes."
-msgstr ""
+msgstr "Frog може автоматично відкривати посилання, отримані із QR кодів."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:34
 msgid ""
 "We also updated the localization and improved the overall performance of the "
 "app."
-msgstr ""
+msgstr "І ми ще оновили локалізацію і покращили продуктивність додатку."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:35
 msgid "Fixed some bugs and bugs."
-msgstr ""
+msgstr "Виправили деякі збої та вади."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:37
 msgid "We hope you enjoy our work!"
-msgstr ""
+msgstr "Сподіваємося, що вам сподобається пророблена нами робота!"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:42
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:51
@@ -81,42 +89,42 @@ msgstr ""
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:77
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:99
 msgid "What's new:"
-msgstr ""
+msgstr "Що нового:"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:44
 msgid "Open image button now available."
-msgstr ""
+msgstr "Тепер доступна кнопку \"Відкрити зображення\"."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:45
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:53
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:62
 msgid "Translations updated."
-msgstr ""
+msgstr "Оновлені переклади."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:61
 msgid "When no text is found, Frog returns to the main window."
-msgstr ""
+msgstr "Якщо текст не буде знайдено, Frog повернеться у головне вікно."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:70
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:79
 msgid "Updated UI"
-msgstr ""
+msgstr "Оновлено інтерфейс користувача"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:71
 msgid "Translated to a bunch of new languages"
-msgstr ""
+msgstr "Додано нових перекладів"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:80
 msgid "Drag-n-drop support. For images only"
-msgstr ""
+msgstr "Підтримка drag-n-drop для зображень"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:81
 msgid "Dark mode support"
-msgstr ""
+msgstr "Підтримка темного стиля"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:82
 msgid "Localized interface"
-msgstr ""
+msgstr "Локалізовано інтерфейс"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:88
 msgid ""
@@ -124,74 +132,80 @@ msgid ""
 "We also updated the UI accordingly to the GNOME HIG and fixed some bugs "
 "we've found :)"
 msgstr ""
+"Frog тепер доступний у Flathub і використовує сучасну імплементацію "
+"порталів. Також ми оновили інтерфейс користувача відповідно до GNOME HIG і "
+"виправили деякі вади, які ви знайшли :)"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:94
 msgid ""
 "Now you're free to run Frog with `-e` option to extract text and instantly "
 "copy it to the clipboard."
 msgstr ""
+"Тепер ви можете запустити Frog з параметром \"-e\",щоб автоматично отримати "
+"текст і скопіювати його у буфер обміну."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:101
 msgid "English model included with Frog itself"
-msgstr ""
+msgstr "Модель розпізнавання англійської мови постачається з Frog"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:102
 msgid "QR code detection. If one in the selected area - it will be decoded."
 msgstr ""
+"Виявлення QR кодів - якщо такий виявлено у обраній зоні - QR буде декодовано."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:103
 msgid "New command line shortcut to run with \"Extract to clipboard\" feature."
 msgstr ""
+"Новий ярлик для командної строки з функцією \"Отримати і скопіювати у буфер "
+"обміну\"."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:104
 msgid "Granite.HyperTextView to support QR encoded links"
-msgstr ""
+msgstr "Granite.HyperTextView для підтримки декодувавання QR посилань"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:110
-#, fuzzy
 msgid "Fix language packs download."
-msgstr "Мову \"{language}\" завантажено."
+msgstr "Виправлено завантаження мовних пакетів."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:115
 msgid "Dark mode+"
-msgstr ""
+msgstr "Темний стиль+"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:117
 msgid "Dark mode support."
-msgstr ""
+msgstr "Підтримка темного стиля."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:118
 msgid "Application will hide the main window for the cleaner shots. #11"
-msgstr ""
+msgstr "Програма сховає головне вікно для більш чистих скриншотів. #11"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:124
 msgid ""
 "Quickly extract any text from anywhere you need it: webpages, videos, "
 "photos, etc."
 msgstr ""
+"Швидко отримайте текст із будь-якого джерела: веб-сайтів, відео, фотографій, "
+"тощо."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:129
 msgid "Tender Owl"
-msgstr ""
+msgstr "Tender Owl"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:4
-#, fuzzy
 msgid "Text extraction tool"
-msgstr "Очищення результатів видобування"
+msgstr "Інструмент отримування тексту"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:5
-#, fuzzy
 msgid "Extract text from any image, video or web page"
-msgstr "Витягніть текст з будь-якого місця"
+msgstr "Отримайте текст з будь-якого зображення, відео чи веб-сторінки"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:12
 msgid "OCR;Text;Extraction;"
-msgstr ""
+msgstr "OCR;Text;Extraction;текст;отримування;"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:16
-#, fuzzy
 msgid "Extract Text to the Clipboard"
-msgstr "Витягнути в буфер обміну"
+msgstr "Отримати і скопіювати у буфер обміну"
 
 #: ../frog/language_manager.py:33
 msgid "Afrikaans"
@@ -555,7 +569,7 @@ msgstr "Румунська"
 
 #: ../frog/language_manager.py:123
 msgid "Russian"
-msgstr "російська"
+msgstr "Російська"
 
 #: ../frog/language_manager.py:124
 msgid "Sanskrit"
@@ -691,39 +705,39 @@ msgstr "Текст витягнуто. Вставити його можна сп
 
 #: ../frog/preferences.py:113
 msgid "View all available languages"
-msgstr ""
+msgstr "Переглянути усі доступні мови"
 
 #: ../frog/window.py:201
 msgid "Text copied to clipboard"
-msgstr ""
+msgstr "Текст скопійовано у буфер обміну"
 
 #: ../frog/window.py:208
 msgid "QR-code URL opened"
-msgstr ""
+msgstr "URL посилання із QR коду відкрито"
 
 #: ../frog/window.py:211
 msgid "QR-code contains URL."
-msgstr ""
+msgstr "QR код містить URL посилання."
 
 #: ../frog/window.py:212
 msgid "Open"
-msgstr ""
+msgstr "Відкрити"
 
 #: ../frog/window.py:240
 msgid "Supported image files"
-msgstr ""
+msgstr "Підтримувані файли зображень"
 
 #: ../frog/window.py:246
 msgid "Open image to extract text"
-msgstr ""
+msgstr "Відкрити зображення для отримування тексту"
 
 #: ../frog/window.py:290
 msgid "Only images can be processed that way."
-msgstr "Так можна обробляти лише зображення."
+msgstr "Таким чином можна обробити лише зображення."
 
 #: ../frog/window.py:328
 msgid "Text copied"
-msgstr ""
+msgstr "Текст скопійовано"
 
 #: ../frog/window.py:342
 #, python-brace-format
