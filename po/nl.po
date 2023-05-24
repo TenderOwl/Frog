@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-02 13:27+0300\n"
-"PO-Revision-Date: 2023-05-05 05:52+0000\n"
+"PO-Revision-Date: 2023-05-23 13:52+0000\n"
 "Last-Translator: Philip Goto <philip.goto@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/frog/default/nl/>\n"
 "Language: nl\n"
@@ -40,40 +40,47 @@ msgstr ""
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:28
 msgid "In this update, we've made a number of improvements to our app."
 msgstr ""
+"In deze update hebben we een aantal verbeteringen aangebracht in onze app."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:30
 msgid ""
 "We have redesigned the settings dialog to make it more user-friendly and "
 "understandable."
 msgstr ""
+"We hebben het instellingenvenster opnieuw ontworpen om het "
+"gebruiksvriendelijker en begrijpelijker te maken."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:31
 msgid "Now you can easily find the language you want by searching."
-msgstr ""
+msgstr "Nu kunt u gemakkelijk de gewenste taal vinden door te zoeken."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:32
 msgid ""
 "In addition, we have added the ability to select a second language for "
 "extracting text from images."
 msgstr ""
+"Bovendien hebben we de mogelijkheid toegevoegd om een tweede taal te "
+"selecteren voor het extraheren van tekst uit afbeeldingen."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:33
 msgid "The Frog can automatically follow links extracted from QR codes."
-msgstr ""
+msgstr "Frog kan automatisch links volgen die uit QR-codes zijn gehaald."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:34
 msgid ""
 "We also updated the localization and improved the overall performance of the "
 "app."
 msgstr ""
+"We hebben ook de lokalisatie bijgewerkt en de algemene prestaties van de app "
+"verbeterd."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:35
 msgid "Fixed some bugs and bugs."
-msgstr ""
+msgstr "Enkele bugs en foutjes verholpen."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:37
 msgid "We hope you enjoy our work!"
-msgstr ""
+msgstr "Wij wensen u veel plezier met ons werk!"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:42
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:51
@@ -86,17 +93,18 @@ msgstr "Wat is er nieuw:"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:44
 msgid "Open image button now available."
-msgstr ""
+msgstr "Knop ‘Afbeelding openen’ nu beschikbaar."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:45
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:53
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:62
 msgid "Translations updated."
-msgstr ""
+msgstr "Vertalingen bijgewerkt."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:61
 msgid "When no text is found, Frog returns to the main window."
 msgstr ""
+"Wanneer geen tekst wordt gevonden, keert Frog terug naar het hoofdvenster."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:70
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:79
@@ -105,19 +113,19 @@ msgstr "Gebruikersinterface bijgewerkt"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:71
 msgid "Translated to a bunch of new languages"
-msgstr ""
+msgstr "Vertaald naar een heleboel nieuwe talen"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:80
 msgid "Drag-n-drop support. For images only"
-msgstr ""
+msgstr "Ondersteuning voor slepen en neerzetten. Alleen voor afbeeldingen"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:81
 msgid "Dark mode support"
-msgstr ""
+msgstr "Ondersteuning voor donkere modus"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:82
 msgid "Localized interface"
-msgstr ""
+msgstr "Gelokaliseerde interface"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:88
 msgid ""
