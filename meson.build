@@ -13,13 +13,15 @@ website = 'https://tenderowl.com'
 
 
 i18n = import('i18n')
-python = import('python3')
+# see https://mesonbuild.com/Release-notes-for-0-48-0.html#python3-module-is-deprecated
+pymod = import('python')
+python = pymod.find_installation()
 gnome = import('gnome')
 prefix = get_option('prefix') # should be /usr
 bindir = get_option('bindir') # should be bin
 datadir = get_option('datadir') # should be /usr/share
 pkgdatadir = join_paths(prefix, datadir, meson.project_name())
-pythondir = join_paths(prefix, python.sysconfig_path('purelib'))
+pythondir = join_paths(prefix, python.get_path('purelib'))
 localedir = join_paths(prefix, get_option('localedir'))
 
 
