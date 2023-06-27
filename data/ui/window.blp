@@ -2,25 +2,37 @@ using Gtk 4.0;
 using Adw 1;
 
 template $FrogWindow : Adw.ApplicationWindow {
+
   Box {
     orientation: vertical;
 
-    HeaderBar {
+    Adw.HeaderBar {
       visible: true;
       tooltip-text: _("Extract text from anywhere");
-      title-widget: 
+
+      [title]
       Adw.WindowTitle {
         title: "Frog";
       }
 
-      ;
+      [start]
+      Button back_btn {
+        icon-name: "go-previous-symbolci";
+        tooltip-text: _("Back");
+        visible: bind-property ;
 
+        styles ["icon-button", "back"]
+      }
+
+      [start]
       MenuButton lang_combo {
         label: _("Language");
         tooltip-text: _("Select language to extract");
       }
 
+      [start]
       Spinner spinner {
+        spinning: false;
       }
 
       [end]
@@ -32,192 +44,180 @@ template $FrogWindow : Adw.ApplicationWindow {
 
     Adw.ToastOverlay toast_overlay {
       vexpand: true;
-      child: 
-      Box main_box {
-        hexpand: true;
-        vexpand: true;
-        orientation: vertical;
+      child: Adw.Leaflet main_leaflet {
 
-        Adw.ViewStack main_stack {
-          Adw.ViewStackPage {
-            name: "welcome";
-            title: "Welcome";
-            child: 
-            Adw.StatusPage welcome {
-              title: "Frog";
-              description: "Extract text from anywhere";
+            Adw.LeafletPage {
+              name: "welcome";
+              title: "Welcome";
+              child:
+              Adw.StatusPage welcome {
+                title: "Frog";
+                description: "Extract text from anywhere";
 
-              Adw.Clamp {
-                maximum-size: 240;
-                child: 
-                Box {
-                  orientation: vertical;
+                Adw.Clamp {
+                  maximum-size: 240;
+                  child:
+                  Box {
+                    orientation: vertical;
 
-                  Button {
-                    action-name: "app.get_screenshot";
-                    height-request: 40;
+                    Button {
+                      action-name: "app.get_screenshot";
+                      height-request: 40;
 
-                    styles [
-                      "pill",
-                    ]
-                    child: 
-                    Box {
-                      halign: center;
-                      spacing: 6;
+                      styles [
+                        "pill",
+                      ]
+                      child:
+                      Box {
+                        halign: center;
+                        spacing: 6;
 
-                      Image {
-                        icon-name: "camera-photo-symbolic";
+                        Image {
+                          icon-name: "camera-photo-symbolic";
+                        }
+
+                        Label {
+                          label: _("Take a Screenshot");
+                        }
                       }
 
-                      Label {
-                        label: _("Take a Screenshot");
-                      }
+                      ;
                     }
 
-                    ;
-                  }
+                    Button {
+                      action-name: "app.open_image";
+                      height-request: 40;
 
-                  Button {
-                    action-name: "app.open_image";
-                    height-request: 40;
+                      styles [
+                        "pill",
+                      ]
+                      child:
+                      Box {
+                        halign: center;
+                        spacing: 6;
 
-                    styles [
-                      "pill",
-                    ]
-                    child: 
-                    Box {
-                      halign: center;
-                      spacing: 6;
+                        Image {
+                          icon-name: "folder-open-symbolic";
+                        }
 
-                      Image {
-                        icon-name: "folder-open-symbolic";
+                        Label {
+                          label: _("Open Image");
+                        }
                       }
 
-                      Label {
-                        label: _("Open Image");
-                      }
+                      ;
                     }
-
-                    ;
                   }
+
+                  ;
                 }
-
-                ;
               }
+
+              ;
             }
 
-            ;
-          }
+            Adw.LeafletPage {
+              name: "extracted";
 
-          Adw.ViewStackPage {
-            name: "extracted";
-            title: "Extracted";
+              child: Box {
+                orientation: vertical;
+              
+                ScrolledWindow text_scrollview {
+                  focusable: true;
+                  hexpand: true;
+                  vexpand: true;
+                } 
+
+                Revealer toolbox {
+            transition-type: slide_up;
             child: 
-            ScrolledWindow text_scrollview {
-              focusable: true;
-              hexpand: true;
-              vexpand: true;
-            }
-
-            ;
-          }
-        }
-
-        Revealer toolbox {
-          transition-type: slide_up;
-          child: 
-          Box {
-            orientation: vertical;
-
-            Separator {
-            }
-
             Box {
-              margin-start: 8;
-              margin-end: 8;
-              margin-top: 8;
-              margin-bottom: 8;
-              spacing: 8;
+              orientation: vertical;
 
-              Button text_shot_btn {
-                action-name: "app.get_screenshot";
-                focusable: true;
-                receives-default: true;
-                tooltip-markup: _("Take a screenshot");
-
-                styles [
-                  "suggested-action",
-                ]
-                child: 
-                Adw.ButtonContent {
-                  label: "Take a Screenshot";
-                  icon-name: "camera-photo-symbolic";
-                }
-
-                ;
-              }
-
-              Button {
-                action-name: "app.open_image";
-                focusable: true;
-                receives-default: true;
-                tooltip-markup: _("Open Image to extract text");
-
-                styles [
-                  "flat",
-                ]
-                child: 
-                Adw.ButtonContent {
-                  icon-name: "folder-open-symbolic";
-                }
-
-                ;
+              Separator {
               }
 
               Box {
-                hexpand: true;
-              }
+                margin-start: 8;
+                margin-end: 8;
+                margin-top: 8;
+                margin-bottom: 8;
+                spacing: 8;
 
-              Button text_clear_btn {
-                focusable: true;
-                receives-default: true;
-                tooltip-text: _("Clear the extraction results");
+                Button text_shot_btn {
+                  action-name: "app.get_screenshot";
+                  focusable: true;
+                  receives-default: true;
+                  tooltip-markup: _("Take a screenshot");
 
-                styles [
-                  "flat",
-                ]
-                child: 
-                Adw.ButtonContent {
-                  icon-name: "edit-clear-symbolic";
+                  styles [
+                    "suggested-action",
+                  ]
+                  child:
+                  Adw.ButtonContent {
+                    label: "Take a Screenshot";
+                    icon-name: "camera-photo-symbolic";
+                  }
+
+                  ;
                 }
 
-                ;
-              }
+                Button {
+                  action-name: "app.open_image";
+                  focusable: true;
+                  receives-default: true;
+                  tooltip-markup: _("Open Image to extract text");
 
-              Button text_copy_btn {
-                focusable: true;
-                receives-default: true;
-                action-name: "app.copy_to_clipboard";
-                tooltip-text: _("Copy extracted text to clipboard");
-
-                styles [
-                  "flat",
-                ]
-                child: 
-                Adw.ButtonContent {
-                  icon-name: "edit-copy-symbolic";
+                  styles [
+                    "flat",
+                  ]
+                  child: Adw.ButtonContent {
+                    icon-name: "folder-open-symbolic";
+                  };
                 }
 
-                ;
+                Box {
+                  hexpand: true;
+                }
+
+                Button text_clear_btn {
+                  focusable: true;
+                  receives-default: true;
+                  tooltip-text: _("Clear the extraction results");
+
+                  styles ["flat", "icon-button"]
+                  child:
+                  Adw.ButtonContent {
+                    icon-name: "edit-clear-symbolic";
+                  };
+                }
+
+                Button text_copy_btn {
+                  focusable: true;
+                  receives-default: true;
+                  action-name: "app.copy_to_clipboard";
+                  tooltip-text: _("Copy extracted text to clipboard");
+
+                  styles [
+                    "flat",
+                  ]
+                  child:
+                  Adw.ButtonContent {
+                    icon-name: "edit-copy-symbolic";
+                  }
+
+                  ;
+                }
               }
             }
+
+            ;
           }
+              };
+            }
 
-          ;
-        }
-      }
-
-      ;
+          
+      };
     }
   }
 }

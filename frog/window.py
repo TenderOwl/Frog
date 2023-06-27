@@ -87,13 +87,15 @@ class FrogWindow(Adw.ApplicationWindow):
         self.text_scrollview.set_child(self.shot_text)
 
         # Init drag-n-drop controller
-        drop_target_main: Gtk.DropTarget = Gtk.DropTarget.new(type=Gdk.FileList, actions=Gdk.DragAction.COPY)
+        drop_target_main: Gtk.DropTarget = Gtk.DropTarget.new(
+            type=Gdk.FileList, actions=Gdk.DragAction.COPY)
         drop_target_main.connect('drop', self.on_dnd_drop)
         drop_target_main.connect('enter', self.on_dnd_enter)
         drop_target_main.connect('leave', self.on_dnd_leave)
         self.main_box.add_controller(drop_target_main)
 
-        drop_target_textview: Gtk.DropTarget = Gtk.DropTarget.new(type=Gdk.FileList, actions=Gdk.DragAction.COPY)
+        drop_target_textview: Gtk.DropTarget = Gtk.DropTarget.new(
+            type=Gdk.FileList, actions=Gdk.DragAction.COPY)
         drop_target_textview.connect('drop', self.on_dnd_drop)
         drop_target_textview.connect('enter', self.on_dnd_enter)
         drop_target_textview.connect('leave', self.on_dnd_leave)
@@ -246,7 +248,6 @@ class FrogWindow(Adw.ApplicationWindow):
         self.open_file_dlg.set_title(_('Open image to extract text'))
         self.open_file_dlg.set_filters(file_filters)
 
-
         self.open_file_dlg.open(self, None, self.on_open_image)
 
     def on_open_image(self, dialog: Gtk.FileDialog, result: Gio.AsyncResult) -> None:
@@ -256,7 +257,7 @@ class FrogWindow(Adw.ApplicationWindow):
             self.spinner.start()
             GObjectWorker.call(self.backend.decode_image, (lang, item.get_path()))
         except GLib.Error as e:
-            if not e.matches(Gio.io_error_quark(), Gio.IOErrorEnum.DISMISSED):
+            if not e.matches(Gio.io_error_quark(), Gio.IOErrorEnum.CANCELLED):
                 print(e)
 
     def display_error(self, sender, error) -> None:
@@ -349,8 +350,11 @@ class FrogWindow(Adw.ApplicationWindow):
         print('on_language_removed: ' + lang_code)
         self.fill_lang_combo()
 
-    def show_toast(self, title, timeout: int = 2, priority: Adw.ToastPriority = Adw.ToastPriority.NORMAL) -> None:
-        self.toast_overlay.add_toast(Adw.Toast(title=title, timeout=timeout, priority=priority))
+    def show_toast(self, title, timeout: int = 2,
+                   priority: Adw.ToastPriority = Adw.ToastPriority.NORMAL) -> None:
+        self.toast_overlay.add_toast(
+            Adw.Toast(title=title, timeout=timeout, priority=priority)
+        )
 
     def uri_validator(self, link) -> bool:
         try:

@@ -152,7 +152,8 @@ class LanguageManager(GObject.GObject):
         self._languages["yid"] = _("Yiddish")
         self._languages["yor"] = _("Yoruba")
 
-    def init_tessdata(self) -> None:
+    @staticmethod
+    def init_tessdata() -> None:
         if not os.path.exists(tessdata_dir):
             os.mkdir(tessdata_dir)
 
@@ -179,7 +180,8 @@ class LanguageManager(GObject.GObject):
 
     def get_downloaded_codes(self, force: bool = False) -> List[str]:
         if self._need_update_cache or force:
-            self._downloaded_codes = [os.path.splitext(lang_file)[0] for lang_file in os.listdir(tessdata_dir)]
+            self._downloaded_codes = [os.path.splitext(lang_file)[0]
+                                      for lang_file in os.listdir(tessdata_dir)]
             self._need_update_cache = False
             print(f"Cache downloaded codes: {self._downloaded_codes}")
         return sorted(self._downloaded_codes, key=lambda x: self.get_language(x))

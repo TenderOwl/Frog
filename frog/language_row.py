@@ -1,4 +1,4 @@
-from gi.repository import Gtk, Adw, GLib
+from gi.repository import Gtk, GLib
 
 from frog.config import RESOURCE_PREFIX
 from frog.language_manager import language_manager

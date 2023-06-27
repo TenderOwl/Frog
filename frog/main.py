@@ -30,13 +30,6 @@ import datetime
 import sys
 from gettext import gettext as _
 
-import gi
-
-gi.require_version('Gtk', '4.0')
-gi.require_version('Adw', '1')
-gi.require_version('Notify', '0.7')
-gi.require_version('Xdp', '1.0')
-
 from gi.repository import Gtk, Gio, GLib, Notify, Adw, GdkPixbuf, Gdk
 from .clipboard_service import clipboard_service
 from .config import RESOURCE_PREFIX
@@ -166,9 +159,11 @@ class Application(Adw.Application):
             developers=["Andrey Maksimov"],
             release_notes="""<p>In this update, we've made a number of improvements to our app.</p>
                 <ul>
-                    <li>We have redesigned the settings dialog to make it more user-friendly and understandable.</li>
+                    <li>We have redesigned the settings dialog to make it 
+                    more user-friendly and understandable.</li>
                     <li>Now you can easily find the language you want by searching.</li>
-                    <li>In addition, we have added the ability to select a second language for extracting text from images.</li>
+                    <li>In addition, we have added the ability to select a second 
+                    language for extracting text from images.</li>
                     <li>The Frog can automatically follow links extracted from QR codes.</li>
                     <li>We also updated the localization and improved the overall performance of the app.</li>
                     <li>Fixed some bugs and bugs.</li>

@@ -26,11 +26,8 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-import os
-from gettext import gettext as _
-from typing import Optional
 
-from gi.repository import GObject, Gio, Xdp, Gdk
+from gi.repository import GObject, Gio, Xdp
 
 from .config import tessdata_config
 
@@ -70,7 +67,8 @@ class ScreenshotBackend(GObject.GObject):
         Captures screenshot using gnome-screenshot, extract text from it and returns it.
 
         If image contains QR code, it will be decoded and returned.
-        Otherwise, it will be treated as image with text and processed by pytesseract and returned.
+        Otherwise, it will be treated as image with text and processed
+        by pytesseract and returned.
         
         If image is not recognized, returns None.
         """
@@ -108,13 +106,13 @@ class ScreenshotBackend(GObject.GObject):
 
         except Exception as e:
             print('ERROR: ', e)
-            self.emit('error', f'Failed to decode data.')
+            self.emit('error', 'Failed to decode data.')
 
         if extracted:
             self.emit('decoded', extracted, copy)
         
         else:
-            self.emit('error', f'No text found.')
+            self.emit('error', 'No text found.')
 
     def capture_cancelled(self, cancellable: Gio.Cancellable) -> None:
         self.emit('error', 'Cancelled')

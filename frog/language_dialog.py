@@ -59,7 +59,8 @@ class LanguagePacksDialog(Gtk.Window):
 
         self.store: Gio.ListStore = Gio.ListStore.new(LanguageItem)
         self.model: Gtk.SingleSelection = Gtk.SingleSelection.new(self.store)
-        self.language_listbox.bind_model(self.store, create_widget_func=LanguagePacksDialog.create_list_widget)
+        self.language_listbox.bind_model(self.store,
+                                         create_widget_func=LanguagePacksDialog.create_list_widget)
         self.language_listbox.set_selection_mode(Gtk.SelectionMode.SINGLE)
 
         self.reload_language_list()
@@ -78,14 +79,13 @@ class LanguagePacksDialog(Gtk.Window):
         row = LanguageRow(item.code, item.title)
         return row
 
-    def sort_rows(self, row1: Gtk.ListBoxRow, row2: Gtk.ListBoxRow) -> int:
+    @staticmethod
+    def sort_rows(row1: LanguageRow, row2: LanguageRow) -> int:
         """
         Used to sort languages list by its name not code.
 
         See https://lazka.github.io/pgi-docs/index.html#Gtk-3.0/callbacks.html#Gtk.ListBoxSortFunc for details.
         """
-        # lang_row1: LanguageRow = row1.get_child()
-        # lang_row2: LanguageRow = row2.get_child()
         lang1 = language_manager.get_language(row1.lang_code)
         lang2 = language_manager.get_language(row2.lang_code)
 

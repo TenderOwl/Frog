@@ -27,7 +27,7 @@
 # authorization.
 from gettext import gettext as _
 
-from gi.repository import Gtk, Adw, Gdk, Gio, GObject, GLib
+from gi.repository import Gtk, Adw, Gio, GObject
 
 from frog.config import RESOURCE_PREFIX
 from .language_dialog import LanguagePacksDialog
