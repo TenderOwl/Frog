@@ -30,20 +30,24 @@ import datetime
 import sys
 from gettext import gettext as _
 
-from gi.repository import Gtk, Gio, GLib, Notify, Adw, GdkPixbuf, Gdk
-from .clipboard_service import clipboard_service
-from .config import RESOURCE_PREFIX
-from .language_manager import language_manager
-from .screenshot_backend import ScreenshotBackend
-from .settings import Settings
-from .window import FrogWindow
+from gi.repository import Gtk, Gio, GLib, Notify, Adw, GdkPixbuf, Gdk, GObject
+
+from frog.config import RESOURCE_PREFIX, APP_ID
+from frog.language_manager import language_manager
+from frog.services.clipboard_service import clipboard_service
+from frog.services.screenshot_service import ScreenshotService
+from frog.settings import Settings
+from frog.window import FrogWindow
 
 
-class Application(Adw.Application):
+class FrogApplication(Adw.Application):
+    __gtype_name__ = 'FrogApplication'
     gtk_settings: Gtk.Settings
 
+    settings: Settings = GObject.Property(type=GObject.TYPE_PYOBJECT)
+
     def __init__(self, version=None):
-        super().__init__(application_id='com.github.tenderowl.frog',
+        super().__init__(application_id=APP_ID,
                          flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE)
         self.backend = None
         self.version = version
@@ -79,8 +83,8 @@ class Application(Adw.Application):
         shortcut_entry.description = _('Extract directly into the clipboard')
         shortcut_entry.arg_description = None
 
-        self.backend = ScreenshotBackend()
-        self.backend.connect('decoded', Application.on_decoded)
+        self.backend = ScreenshotService()
+        self.backend.connect('decoded', FrogApplication.on_decoded)
 
         shot_action: Gio.SimpleAction = Gio.SimpleAction.new(name="get_screenshot", parameter_type=None)
         shot_action.connect("activate", self.get_screenshot)
@@ -129,7 +133,7 @@ class Application(Adw.Application):
     def do_activate(self):
         win = self.props.active_window
         if not win:
-            win = FrogWindow(settings=self.settings, application=self)
+            win = FrogWindow(application=self)
         win.present()
 
     def do_command_line(self, command_line):
@@ -149,7 +153,7 @@ class Application(Adw.Application):
     def on_about(self, _action, _param):
         about_window = Adw.AboutWindow(
             application_name="Frog",
-            application_icon="com.github.tenderowl.frog",
+            application_icon=APP_ID,
             version=self.version,
             copyright=f'© {datetime.date.today().year} Tender Owl',
             website="https://getfrog.app",
@@ -228,5 +232,5 @@ class Application(Adw.Application):
 
 
 def main(version):
-    app = Application(version)
+    app = FrogApplication(version)
     return app.run(sys.argv)

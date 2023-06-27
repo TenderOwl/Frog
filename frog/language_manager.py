@@ -1,6 +1,33 @@
+# language_manager.py
+#
+# Copyright 2021-2023 Andrey Maksimov
+#
+# Permission is hereby granted, free of charge, to any person obtaining
+# a copy of this software and associated documentation files (the
+# "Software"), to deal in the Software without restriction, including
+# without limitation the rights to use, copy, modify, merge, publish,
+# distribute, sublicense, and/or sell copies of the Software, and to
+# permit persons to whom the Software is furnished to do so, subject to
+# the following conditions:
+#
+# The above copyright notice and this permission notice shall be
+# included in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR ANY
+# CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+# SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+#
+# Except as contained in this notice, the name(s) of the above copyright
+# holders shall not be used in advertising or otherwise to promote the sale,
+# use or other dealings in this Software without prior written
+# authorization.
+
 import os
 import pathlib
-from dataclasses import dataclass
 from gettext import gettext as _
 from shutil import copyfile
 from typing import List, Dict
@@ -10,9 +37,13 @@ from gi.repository import GObject
 
 from frog.config import tessdata_dir, tessdata_url, tessdata_best_url
 from frog.gobject_worker import GObjectWorker
+from frog.types.download_state import DownloadState
+from frog.types.language_item import LanguageItem
 
 
 class LanguageManager(GObject.GObject):
+    __gtype_name__ = 'LanguageManager'
+
     __gsignals__ = {
         'added': (GObject.SIGNAL_RUN_FIRST, None, (str,)),
         'downloading': (GObject.SIGNAL_RUN_FIRST, None, (str, int)),
@@ -20,8 +51,10 @@ class LanguageManager(GObject.GObject):
         'removed': (GObject.SIGNAL_RUN_FIRST, None, (str,)),
     }
 
+    _active_language: LanguageItem = LanguageItem(code='eng', title=_('English'))
+
     def __init__(self):
-        GObject.GObject.__init__(self)
+        super().__init__()
 
         self.loading_languages: Dict[str, DownloadState] = dict()
 
@@ -164,6 +197,16 @@ class LanguageManager(GObject.GObject):
 
         copyfile(source_path, dest_path)
 
+    @GObject.Property(type=GObject.TYPE_PYOBJECT)
+    def active_language(self) -> LanguageItem:
+        return self._active_language
+
+    @active_language.setter
+    def active_language(self, language: LanguageItem):
+        print('Active language set to %s', language)
+        self._active_language = language
+        self.notify('active_language')
+
     def get_available_codes(self):
         return [code for code in sorted(self._languages.keys(), key=lambda x: self.get_language(x))]
 
@@ -172,6 +215,9 @@ class LanguageManager(GObject.GObject):
 
     def get_language(self, code: str) -> str:
         return self._languages.get(code)
+
+    def get_language_item(self, code: str) -> LanguageItem:
+        return LanguageItem(code=code, title=self.get_language(code))
 
     def get_language_code(self, language: str) -> str:
         for code, lang in self._languages.items():
@@ -231,13 +277,6 @@ class LanguageManager(GObject.GObject):
         os.remove(os.path.join(tessdata_dir, f"{code}.traineddata"))
         self._need_update_cache = True
         self.emit('removed', code)
-
-
-@dataclass
-class DownloadState:
-    def __init__(self, total: int = 0, progress: int = 0):
-        self.total = total
-        self.progress = progress
 
 
 language_manager = LanguageManager()

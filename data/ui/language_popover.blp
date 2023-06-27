@@ -1,0 +1,53 @@
+using Gtk 4.0;
+using Adw 1;
+using Gio 2.0;
+
+template $LanguagePopover : Popover {
+
+  Box {
+    orientation: vertical;
+    spacing: 10;
+    margin-start: 2;
+    margin-end: 2;
+    margin-top: 2;
+    margin-bottom: 2;
+
+    SearchEntry entry {
+      placeholder-text: _("Search language");
+
+      EventControllerKey key_event {
+        propagation-phase: capture;
+        key-pressed => $_on_key_event_pressed();
+      }
+    }
+
+    ScrolledWindow {
+      min-content-height: 256;
+
+      ListView list_view {
+        single-click-activate: true;
+        show-separators: true;
+        enable-rubberband: false;
+
+        model: SingleSelection selection {
+          model: SortListModel sort_list {
+            model: FilterListModel filter_list {
+              model: Gio.ListStore list_store {
+                item-type: typeof<$LanguageItem>;
+              };
+              filter: StringFilter filter {};
+            };
+            sorter: CustomSorter sorter {};
+          };
+        };
+        factory: SignalListItemFactory factory {
+          bind => $_on_factory_bind();
+          setup => $_on_factory_setup();
+        };
+        activate => $_on_language_activate();
+
+        styles ["card"]
+      }
+    }
+  }
+}

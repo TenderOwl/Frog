@@ -25,144 +25,96 @@
 # holders shall not be used in advertising or otherwise to promote the sale,
 # use or other dealings in this Software without prior written
 # authorization.
+
 from gettext import gettext as _
 from mimetypes import guess_type
 from typing import List
 from urllib.parse import urlparse
 
-from gi.repository import Gtk, Adw, Gio, GLib, Gdk
+from gi.repository import Gtk, Adw, Gio, GLib, Gdk, GObject
 
-from .clipboard_service import clipboard_service
-from .config import RESOURCE_PREFIX, APP_ID
-from .gobject_worker import GObjectWorker
-from .language_dialog import LanguageItem
-from .language_manager import language_manager
-from .list_menu_row import ListMenuRow
-from .preferences import PreferencesDialog
-from .screenshot_backend import ScreenshotBackend
+from frog.gobject_worker import GObjectWorker
+from frog.language_manager import language_manager
+from frog.services.clipboard_service import clipboard_service
+from frog.services.screenshot_service import ScreenshotService
+from frog.widgets.extracted_page import ExtractedPage
+from frog.widgets.list_menu_row import ListMenuRow
+from frog.widgets.preferences_dialog import PreferencesDialog
+from frog.widgets.welcome_page import WelcomePage
 
 
-@Gtk.Template(resource_path='/com/github/tenderowl/frog/ui/window.ui')
+@Gtk.Template(resource_path="/com/github/tenderowl/frog/ui/window.ui")
 class FrogWindow(Adw.ApplicationWindow):
-    __gtype_name__ = 'FrogWindow'
+    __gtype_name__ = "FrogWindow"
 
     gtk_settings: Gtk.Settings = Gtk.Settings.get_default()
 
-    spinner: Gtk.Spinner = Gtk.Template.Child()
     toast_overlay: Adw.ToastOverlay = Gtk.Template.Child()
-    main_box: Gtk.Box = Gtk.Template.Child()
-    main_stack: Adw.ViewStack = Gtk.Template.Child()
-    welcome: Adw.StatusPage = Gtk.Template.Child()
-    text_scrollview: Gtk.ScrolledWindow = Gtk.Template.Child()
-    lang_combo: Gtk.MenuButton = Gtk.Template.Child()
-    toolbox: Gtk.Revealer = Gtk.Template.Child()
-    text_shot_btn: Gtk.Button = Gtk.Template.Child()
-    text_clear_btn: Gtk.Button = Gtk.Template.Child()
-    text_copy_btn: Gtk.Button = Gtk.Template.Child()
+
+    main_leaflet: Adw.Leaflet = Gtk.Template.Child()
+    welcome_page: WelcomePage = Gtk.Template.Child()
+    extracted_page: ExtractedPage = Gtk.Template.Child()
 
     # Helps to call save_window_state not more often than 500ms
     delayed_state: bool = False
 
-    def __init__(self, settings: Gio.Settings, **kwargs):
+    def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
+        self.current_size = None
         self.open_file_dlg = None
-        self.settings = settings
+        self.settings = Gtk.Application.get_default().props.settings
 
-        self.infobar = Gtk.InfoBar(visible=True, revealed=False)
-        self.infobar.set_show_close_button(True)
-        self.infobar.connect('response', self.on_infobar_response)
-
-        self.infobar_label = Gtk.Label()
-        self.infobar.add_child(self.infobar_label)
-
-        self.main_box.append(self.infobar)  # , False, True, 2)
-
-        self.shot_text = Gtk.TextView(editable=False)
-        self.shot_text.set_left_margin(8)
-        self.shot_text.set_right_margin(8)
-        self.shot_text.set_top_margin(8)
-        self.shot_text.set_bottom_margin(8)
-
-        self.text_scrollview.set_child(self.shot_text)
+        # self.infobar = Gtk.InfoBar(visible=True, revealed=False)
+        # self.infobar.set_show_close_button(True)
+        # self.infobar.connect('response', self.on_infobar_response)
+        #
+        # self.infobar_label = Gtk.Label()
+        # self.infobar.add_child(self.infobar_label)
+        #
+        # self.main_leaflet.append(self.infobar)  # , False, True, 2)
 
         # Init drag-n-drop controller
         drop_target_main: Gtk.DropTarget = Gtk.DropTarget.new(
-            type=Gdk.FileList, actions=Gdk.DragAction.COPY)
-        drop_target_main.connect('drop', self.on_dnd_drop)
-        drop_target_main.connect('enter', self.on_dnd_enter)
-        drop_target_main.connect('leave', self.on_dnd_leave)
-        self.main_box.add_controller(drop_target_main)
+            type=Gdk.FileList, actions=Gdk.DragAction.COPY
+        )
+        drop_target_main.connect("drop", self.on_dnd_drop)
+        drop_target_main.connect("enter", self.on_dnd_enter)
+        drop_target_main.connect("leave", self.on_dnd_leave)
+        self.main_leaflet.add_controller(drop_target_main)
 
-        drop_target_textview: Gtk.DropTarget = Gtk.DropTarget.new(
-            type=Gdk.FileList, actions=Gdk.DragAction.COPY)
-        drop_target_textview.connect('drop', self.on_dnd_drop)
-        drop_target_textview.connect('enter', self.on_dnd_enter)
-        drop_target_textview.connect('leave', self.on_dnd_leave)
-        self.shot_text.add_controller(drop_target_textview)
-
-        logo = Gdk.Texture.new_from_resource(f'{RESOURCE_PREFIX}/icons/{APP_ID}.svg')
-        self.welcome.set_paintable(logo)
-        self.main_stack.set_visible_child_name("welcome")
+        # drop_target_textview: Gtk.DropTarget = Gtk.DropTarget.new(
+        #     type=Gdk.FileList, actions=Gdk.DragAction.COPY
+        # )
+        # drop_target_textview.connect("drop", self.on_dnd_drop)
+        # drop_target_textview.connect("enter", self.on_dnd_enter)
+        # drop_target_textview.connect("leave", self.on_dnd_leave)
+        # self.shot_text.add_controller(drop_target_textview)
 
         # Setup application
-        self.current_size = (450, 400)
-        self.props.default_width = self.settings.get_int('window-width')
-        self.props.default_height = self.settings.get_int('window-height')
-
-        self.language_store: Gio.ListStore = Gio.ListStore.new(LanguageItem)
-        self.language_model: Gtk.SingleSelection = Gtk.SingleSelection.new(self.language_store)
-        self.languages_list = Gtk.ListBox(selection_mode=Gtk.SelectionMode.SINGLE)
-        self.languages_list.bind_model(self.language_model, create_widget_func=ListMenuRow)
-
-        # Set default language.
-        # language_manager.connect('downloading', self.on_language_downloading)
-        language_manager.connect('downloaded', self.on_language_downloaded)
-        language_manager.connect('removed', self.on_language_removed)
-        self.fill_lang_combo()
-        if not language_manager.get_downloaded_codes():
-            self.text_shot_btn.set_sensitive(False)
-
-        popover = Gtk.Popover()
-        popover.set_child(self.languages_list)
-        popover.add_css_class('menu')
-        self.lang_combo.set_popover(popover)
+        self.props.default_width = self.settings.get_int("window-width")
+        self.props.default_height = self.settings.get_int("window-height")
 
         # Initialize screenshot backend
-        self.backend = ScreenshotBackend()
-        self.backend.connect('decoded', self.on_shot_done)
-        self.backend.connect('error', self.on_shot_error)
+        self.backend = ScreenshotService()
+        self.backend.connect("decoded", self.on_shot_done)
+        self.backend.connect("error", self.on_shot_error)
 
-        # Connect signals
-        self.text_clear_btn.connect('clicked', self.text_clear_btn_clicked)
-        # self.text_copy_btn.connect('clicked', self.text_copy_btn_clicked)
-        self.languages_list.connect('row-activated', self.on_language_change)
-        self.connect('notify::default-width', self.on_configure_event)
-        self.connect('notify::default-height', self.on_configure_event)
-        self.connect('destroy', self.on_window_delete_event)
+        self.extracted_page.connect('go-back', self.show_welcome_page)
 
-    @property
+        # # self.text_copy_btn.connect('clicked', self.text_copy_btn_clicked)
+        # self.languages_list.connect("row-activated", self.on_language_change)
+        # self.connect("notify::default-width", self.on_configure_event)
+        # self.connect("notify::default-height", self.on_configure_event)
+        # self.connect("destroy", self.on_window_delete_event)
+
+    @GObject.Property(type=str)
     def active_lang(self):
         return self.settings.get_string("active-language")
 
     @active_lang.setter
     def active_lang(self, lang_code: str):
         self.settings.set_string("active-language", lang_code)
-
-    def fill_lang_combo(self):
-        self.language_store.remove_all()
-
-        downloaded_languages = language_manager.get_downloaded_languages(force=True)
-        for lang in downloaded_languages:
-            self.language_store.append(LanguageItem(code=language_manager.get_language_code(lang), title=lang))
-
-        self.lang_combo.set_label(_('English'))
-
-        if self.active_lang and self.active_lang in language_manager.get_downloaded_codes():
-            self.lang_combo.set_label(language_manager.get_language(self.active_lang))
-
-        else:
-            self.lang_combo.set_label(_('English'))
 
     def on_language_change(self, widget: Gtk.ListBox, row: Gtk.ListBoxRow) -> None:
         child: ListMenuRow = row.get_child()
@@ -178,58 +130,59 @@ class FrogWindow(Adw.ApplicationWindow):
 
     def get_screenshot(self, copy: bool = False) -> None:
         lang = self.get_language()
-        self.spinner.start()
+        # self.welcome_page.spinner.start()
         self.hide()
         self.backend.capture(lang, copy)
 
     def get_language(self) -> str:
-        self.active_lang = language_manager.get_language_code(self.lang_combo.get_label())
+        self.active_lang = language_manager.active_language.code
         # Just in case. Probably better add primary language in settings
         extra_lang = self.settings.get_string("extra-language")
         # if self.active_lang != extra_lang:
         #     self.active_lang = f'{self.active_lang}+{extra_lang}'
 
-        return f'{self.active_lang}+{extra_lang}'
+        return f"{self.active_lang}+{extra_lang}"
 
     def on_shot_done(self, sender, text: str, copy: bool) -> None:
         is_url = self.uri_validator(text)
         try:
-            # text = self.backend.capture(lang=self.active_lang)
-            buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
-            buffer.set_text(text)
+            self.extracted_page.extracted_text = text
 
-            if self.settings.get_boolean('autocopy') or copy:
+            if self.settings.get_boolean("autocopy") or copy:
                 clipboard_service.set(text)
-                self.show_toast(_('Text copied to clipboard'))
+                self.show_toast(_("Text copied to clipboard"))
 
             # If text is a URL we could show user Toast with suggestion to open it
             # Or automatically open it, if this setting is set.
             if is_url:
-                if self.settings.get_boolean('autolinks'):
+                if self.settings.get_boolean("autolinks"):
                     Gtk.show_uri(None, text, Gdk.CURRENT_TIME)
-                    self.show_toast(_('QR-code URL opened'), priority=Adw.ToastPriority.HIGH)
+                    self.show_toast(
+                        _("QR-code URL opened"),
+                        priority=Adw.ToastPriority.HIGH
+                    )
                 else:
                     toast = Adw.Toast(
-                        title=_('QR-code contains URL.'),
-                        button_label=_('Open'),
-                        priority=Adw.ToastPriority.HIGH)
+                        title=_("QR-code contains URL."),
+                        button_label=_("Open"),
+                        priority=Adw.ToastPriority.HIGH,
+                    )
                     toast.set_detailed_action_name(f'app.show_uri("{text}")')
                     self.toast_overlay.add_toast(toast)
 
-            self.main_stack.set_visible_child_name("extracted")
-            self.toolbox.set_reveal_child(True)
+            self.main_leaflet.set_visible_child_name("extracted")
 
         except Exception as e:
             print(f"ERROR: {e}")
 
         finally:
             self.present()
-            self.spinner.stop()
+            self.welcome_page.spinner.stop()
 
     def on_shot_error(self, sender, message: str) -> None:
         self.present()
-        self.spinner.stop()
-        print('on_shot_error?', message)
+        self.welcome_page.spinner.stop()
+        print("on_shot_error?", message)
         if message:
             self.show_toast(message)
             # self.display_error(self, message)
@@ -239,13 +192,13 @@ class FrogWindow(Adw.ApplicationWindow):
 
         file_filters: Gio.ListStore = Gio.ListStore.new(Gtk.FileFilter)
         file_filter = Gtk.FileFilter()
-        file_filter.set_name(_('Supported image files'))
-        file_filter.add_mime_type('image/png')
-        file_filter.add_mime_type('image/jpeg')
-        file_filter.add_mime_type('image/jpg')
+        file_filter.set_name(_("Supported image files"))
+        file_filter.add_mime_type("image/png")
+        file_filter.add_mime_type("image/jpeg")
+        file_filter.add_mime_type("image/jpg")
         file_filters.append(file_filter)
 
-        self.open_file_dlg.set_title(_('Open image to extract text'))
+        self.open_file_dlg.set_title(_("Open image to extract text"))
         self.open_file_dlg.set_filters(file_filters)
 
         self.open_file_dlg.open(self, None, self.on_open_image)
@@ -254,16 +207,16 @@ class FrogWindow(Adw.ApplicationWindow):
         try:
             item = dialog.open_finish(result)
             lang = self.get_language()
-            self.spinner.start()
+            self.welcome_page.spinner.start()
             GObjectWorker.call(self.backend.decode_image, (lang, item.get_path()))
         except GLib.Error as e:
             if not e.matches(Gio.io_error_quark(), Gio.IOErrorEnum.CANCELLED):
                 print(e)
 
     def display_error(self, sender, error) -> None:
-        print('on_screenshot_error?', error)
+        print("on_screenshot_error?", error)
         if not isinstance(error, str):
-            self.infobar_label.set_text(str(error).split(':')[-1])
+            self.infobar_label.set_text(str(error).split(":")[-1])
         else:
             self.infobar_label.set_text(error)
         self.infobar.set_revealed(True)
@@ -271,27 +224,30 @@ class FrogWindow(Adw.ApplicationWindow):
         self.infobar.set_message_type(Gtk.MessageType.ERROR)
 
     def on_dnd_enter(self, drop_target, x, y):
-        print('DND Enter', drop_target)
-        self.add_css_class('drop_hover')
+        print("DND Enter", drop_target)
+        self.add_css_class("drop_hover")
         return Gdk.DragAction.COPY
 
     def on_dnd_leave(self, user_data=None):
-        print('DND Leave')
-        self.remove_css_class('drop_hover')
+        print("DND Leave")
+        self.remove_css_class("drop_hover")
 
-    def on_dnd_drop(self, drop_target, value: Gdk.FileList, x, y, user_data=None) -> None:
+    def on_dnd_drop(self, drop_target,
+                    value: Gdk.FileList,
+                    x: int, y: int
+                    ) -> None:
         files: List[Gio.File] = value.get_files()
         if not files:
             return
 
         item = files[0]
         (mimetype, encoding) = guess_type(item.get_path())
-        print(f'Dropped item ({mimetype}): {item.get_path()}')
-        if not mimetype or not mimetype.startswith('image'):
-            return self.show_toast(_('Only images can be processed that way.'))
+        print(f"Dropped item ({mimetype}): {item.get_path()}")
+        if not mimetype or not mimetype.startswith("image"):
+            return self.show_toast(_("Only images can be processed that way."))
 
         lang = self.get_language()
-        self.spinner.start()
+        self.welcome_page.spinner.start()
         GObjectWorker.call(self.backend.decode_image, (lang, item.get_path()))
 
     def on_configure_event(self, window, event):
@@ -299,7 +255,9 @@ class FrogWindow(Adw.ApplicationWindow):
             GLib.timeout_add(500, self.save_window_state, window)
             self.delayed_state = True
 
-    def on_infobar_response(self, infobar: Gtk.InfoBar, response_type: Gtk.ResponseType):
+    def on_infobar_response(
+            self, infobar: Gtk.InfoBar, response_type: Gtk.ResponseType
+    ):
         if response_type == Gtk.ResponseType.CLOSE:
             self.infobar.set_revealed(False)
 
@@ -316,42 +274,21 @@ class FrogWindow(Adw.ApplicationWindow):
             self.settings.set_int("window-width", self.current_size[0])
             self.settings.set_int("window-height", self.current_size[1])
 
-    def text_clear_btn_clicked(self, button: Gtk.Button) -> None:
-        buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
-        buffer.set_text("")
-        self.toolbox.set_reveal_child(False)
-        self.main_stack.set_visible_child_name("welcome")
-
     def on_copy_to_clipboard(self, sender) -> None:
-        buffer: Gtk.TextBuffer = self.shot_text.get_buffer()
-        text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), False)
+        text = self.extracted_page.extracted_text
         clipboard_service.set(text)
-        self.show_toast(_('Text copied'))
+        self.show_toast(_("Text copied"))
 
-    def show_preferences(self) -> None:
+    def show_preferences(self):
         # dialog = LanguagePacksDialog(self)
         dialog = PreferencesDialog(settings=self.settings, parent=self)
         dialog.present()
 
-    def on_language_downloading(self, sender, lang_code: str):
-        print(f'on_language_downloading: {lang_code}')
-        self.spinner.start()
+    def show_welcome_page(self, *_):
+        self.main_leaflet.set_visible_child_name('welcome')
 
-    def on_language_downloaded(self, sender, lang_code: str):
-        language = language_manager.get_language(lang_code)
-        print('on_language_downloaded: ' + language)
-        self.show_toast(_(f'{language} language downloaded.'))
-        self.fill_lang_combo()
-
-        if not language_manager.loading_languages:
-            self.spinner.stop()
-
-    def on_language_removed(self, sender, lang_code: str):
-        print('on_language_removed: ' + lang_code)
-        self.fill_lang_combo()
-
-    def show_toast(self, title, timeout: int = 2,
-                   priority: Adw.ToastPriority = Adw.ToastPriority.NORMAL) -> None:
+    def show_toast(self, title: str, timeout: int = 2,
+                   priority: Adw.ToastPriority = Adw.ToastPriority.NORMAL):
         self.toast_overlay.add_toast(
             Adw.Toast(title=title, timeout=timeout, priority=priority)
         )

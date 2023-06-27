@@ -1,6 +1,6 @@
 # settings.py
 #
-# Copyright 2021 Andrey Maksimov
+# Copyright 2021-2023 Andrey Maksimov
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -26,7 +26,6 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-
 from gi.repository import Gio
 
 from frog.config import APP_ID
@@ -35,6 +34,7 @@ from frog.config import APP_ID
 class Settings(Gio.Settings):
     """Settings
     """
+    __gtype_name__ = 'Settings'
 
     def __init__(self):
         """Init Settings
@@ -42,7 +42,7 @@ class Settings(Gio.Settings):
         Gio.Settings.__init__(self)
 
     @classmethod
-    def new(cls):
+    def new(cls, **kwargs) -> 'Settings':
         """Return a new Settings object
         """
         settings = Gio.Settings.new(APP_ID)

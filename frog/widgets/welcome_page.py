@@ -1,4 +1,4 @@
-# config.py
+# welcome_page.py
 #
 # Copyright 2021-2023 Andrey Maksimov
 #
@@ -26,15 +26,38 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-import os
+from gi.repository import Adw
+from gi.repository import Gtk, Gdk
 
-APP_ID = "com.github.tenderowl.frog"
-RESOURCE_PREFIX = "/com/github/tenderowl/frog"
+from frog.config import RESOURCE_PREFIX, APP_ID
+from frog.language_manager import language_manager
+from frog.types.language_item import LanguageItem
+from frog.widgets.language_popover import LanguagePopover
 
-if not os.path.exists(os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata')):
-    os.mkdir(os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata'))
 
-tessdata_url = "https://github.com/tesseract-ocr/tessdata/raw/main/"
-tessdata_best_url = "https://github.com/tesseract-ocr/tessdata_best/raw/main/"
-tessdata_dir = os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata')
-tessdata_config = f'--tessdata-dir {tessdata_dir} –psm 6'
+@Gtk.Template(resource_path=f"{RESOURCE_PREFIX}/ui/welcome_page.ui")
+class WelcomePage(Gtk.Box):
+    __gtype_name__ = "WelcomePage"
+
+    spinner: Gtk.Spinner = Gtk.Template.Child()
+    lang_combo: Gtk.MenuButton = Gtk.Template.Child()
+    welcome: Adw.StatusPage = Gtk.Template.Child()
+    language_popover: LanguagePopover = Gtk.Template.Child()
+
+    def __init__(self):
+        super().__init__()
+
+        logo = Gdk.Texture.new_from_resource(f"{RESOURCE_PREFIX}/icons/{APP_ID}.svg")
+        self.welcome.set_paintable(logo)
+
+        self.language_popover.connect('language-changed', self._on_language_changed)
+
+        self.settings = Gtk.Application.get_default().props.settings
+
+        self.lang_combo.set_label(
+            language_manager.get_language(self.settings.get_string("active-language"))
+        )
+
+    def _on_language_changed(self, _: LanguagePopover, language: LanguageItem):
+        self.lang_combo.set_label(language.title)
+        self.settings.set_string("active-language", language.code)

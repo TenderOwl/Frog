@@ -1,4 +1,4 @@
-# config.py
+# download_state.py
 #
 # Copyright 2021-2023 Andrey Maksimov
 #
@@ -26,15 +26,11 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-import os
+from dataclasses import dataclass
 
-APP_ID = "com.github.tenderowl.frog"
-RESOURCE_PREFIX = "/com/github/tenderowl/frog"
 
-if not os.path.exists(os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata')):
-    os.mkdir(os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata'))
-
-tessdata_url = "https://github.com/tesseract-ocr/tessdata/raw/main/"
-tessdata_best_url = "https://github.com/tesseract-ocr/tessdata_best/raw/main/"
-tessdata_dir = os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata')
-tessdata_config = f'--tessdata-dir {tessdata_dir} –psm 6'
+@dataclass
+class DownloadState:
+    def __init__(self, total: int = 0, progress: int = 0):
+        self.total = total
+        self.progress = progress

@@ -1,4 +1,4 @@
-# config.py
+# clipboard_service.py
 #
 # Copyright 2021-2023 Andrey Maksimov
 #
@@ -26,15 +26,16 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-import os
+from gi.repository import Gdk
 
-APP_ID = "com.github.tenderowl.frog"
-RESOURCE_PREFIX = "/com/github/tenderowl/frog"
 
-if not os.path.exists(os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata')):
-    os.mkdir(os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata'))
+class ClipboardService:
+    __gtype_name__ = 'ClipboardService'
 
-tessdata_url = "https://github.com/tesseract-ocr/tessdata/raw/main/"
-tessdata_best_url = "https://github.com/tesseract-ocr/tessdata_best/raw/main/"
-tessdata_dir = os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata')
-tessdata_config = f'--tessdata-dir {tessdata_dir} –psm 6'
+    clipboard: Gdk.Clipboard = Gdk.Display.get_default().get_clipboard()
+
+    def set(self, value: str) -> None:
+        self.clipboard.set(value)
+
+
+clipboard_service = ClipboardService()

@@ -2,10 +2,13 @@
 <gresources>
     <gresource prefix="/com/github/tenderowl/frog">
         <file preprocess="xml-stripblanks">ui/window.ui</file>
+        <file preprocess="xml-stripblanks">ui/welcome_page.ui</file>
+        <file preprocess="xml-stripblanks">ui/extracted_page.ui</file>
+        <file preprocess="xml-stripblanks">ui/language_popover.ui</file>
         <file preprocess="xml-stripblanks">ui/language_dialog.ui</file>
         <file preprocess="xml-stripblanks">ui/language_row.ui</file>
         <file preprocess="xml-stripblanks">ui/shortcuts.ui</file>
-        <file preprocess="xml-stripblanks">ui/preferences.ui</file>
+        <file preprocess="xml-stripblanks">ui/preferences_dialog.ui</file>
         <file preprocess="xml-stripblanks">ui/preferences_general.ui</file>
         <file preprocess="xml-stripblanks">ui/preferences_languages.ui</file>
         <file preprocess="xml-stripblanks" alias="icons/com.github.tenderowl.frog.svg">icons/com.github.tenderowl.frog.svg</file>

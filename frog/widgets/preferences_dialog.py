@@ -1,4 +1,4 @@
-# preferences.py
+# preferences_dialog.py
 #
 # Copyright 2021-2023 Andrey Maksimov
 #
@@ -30,15 +30,14 @@ from gettext import gettext as _
 from gi.repository import Gtk, Adw, Gio, GObject
 
 from frog.config import RESOURCE_PREFIX
-from .language_dialog import LanguagePacksDialog
+from frog.language_manager import language_manager
+from frog.settings import Settings
+from frog.widgets.language_dialog import LanguagePacksDialog
 
-from .language_manager import language_manager
-from .settings import Settings
 
-
-@Gtk.Template(resource_path=f'{RESOURCE_PREFIX}/ui/preferences.ui')
+@Gtk.Template(resource_path=f'{RESOURCE_PREFIX}/ui/preferences_dialog.ui')
 class PreferencesDialog(Adw.PreferencesWindow):
-    __gtype_name__ = 'PreferencesWindow'
+    __gtype_name__ = 'PreferencesDialog'
 
     settings: Gio.Settings
     general_page: Adw.PreferencesPage

@@ -26,21 +26,12 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gtk, Gio, GObject
+from gi.repository import Gtk, Gio
 
-from .config import RESOURCE_PREFIX
-from .language_manager import language_manager
-from .language_row import LanguageRow
-
-
-class LanguageItem(GObject.GObject):
-    title: str
-    code: str
-
-    def __init__(self, code: str, title: str):
-        GObject.GObject.__init__(self)
-        self.title = title
-        self.code = code
+from frog.config import RESOURCE_PREFIX
+from frog.language_manager import language_manager
+from frog.types.language_item import LanguageItem
+from frog.widgets.language_row import LanguageRow
 
 
 @Gtk.Template(resource_path=f'{RESOURCE_PREFIX}/ui/language_dialog.ui')

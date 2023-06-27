@@ -1,0 +1,170 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $ExtractedPage : Box {
+  orientation: vertical;
+
+  Adw.HeaderBar headerbar {
+
+    [title]
+    Label {}
+
+    [start]
+    Button back_btn {
+      icon-name: "go-previous-symbolic";
+      tooltip-text: _("Back");
+      clicked => $_on_back_btn_clicked();
+
+      styles ["icon-button", "back"]
+    }
+
+    [start]
+    Button text_shot_btn {
+      action-name: "app.get_screenshot";
+      tooltip-markup: _("Take a screenshot");
+      icon-name: "camera-photo-symbolic";
+
+      styles ["suggested-action"]
+
+      // child: Adw.ButtonContent {
+      //   label: "Take a Screenshot";
+      //   icon-name: "camera-photo-symbolic";
+      // };
+    }
+
+    [start]
+    Button {
+      action-name: "app.open_image";
+      tooltip-markup: _("Open Image to extract text");
+
+      styles ["icon-button"]
+
+      child: Adw.ButtonContent {
+        icon-name: "folder-open-symbolic";
+      };
+    }
+
+    [end]
+    MenuButton {
+      icon-name: "open-menu-symbolic";
+      menu-model: primary_menu;
+    }
+
+    [end]
+    Button text_copy_btn {
+      action-name: "app.copy_to_clipboard";
+      tooltip-text: _("Copy extracted text to clipboard");
+
+      styles ["flat"]
+      child:
+      Adw.ButtonContent {
+        icon-name: "edit-copy-symbolic";
+      };
+    }
+  }
+
+  ScrolledWindow text_scrollview {
+    hexpand: true;
+    vexpand: true;
+
+    TextView text_view {
+      editable: false;
+      left-margin: 8;
+      right-margin: 8;
+      top-margin: 8;
+      bottom-margin: 8;
+      pixels-above-lines: 4;
+      pixels-below-lines: 4;
+      wrap-mode: word;
+
+      buffer: TextBuffer buffer {};
+
+    }
+  }
+
+  Revealer toolbox {
+    transition-type: slide_up;
+    child: Box {
+      orientation: vertical;
+
+      Separator {}
+
+      Box {
+        margin-start: 8;
+        margin-end: 8;
+        margin-top: 8;
+        margin-bottom: 8;
+        spacing: 8;
+
+        // Button text_shot_btn {
+        //   action-name: "app.get_screenshot";
+        //   tooltip-markup: _("Take a screenshot");
+
+        //   styles ["suggested-action"]
+
+        //   child: Adw.ButtonContent {
+        //     label: "Take a Screenshot";
+        //     icon-name: "camera-photo-symbolic";
+        //   };
+        // }
+
+        // Button {
+        //   action-name: "app.open_image";
+        //   tooltip-markup: _("Open Image to extract text");
+
+        //   styles ["icon-button", "flat"]
+
+        //   child: Adw.ButtonContent {
+        //     icon-name: "folder-open-symbolic";
+        //   };
+        // }
+
+        // Box {
+        //   hexpand: true;
+        // }
+
+        // Button text_clear_btn {
+        //   tooltip-text: _("Clear the extraction results");
+
+        //   styles ["flat", "icon-button"]
+        //   child:
+        //   Adw.ButtonContent {
+        //     icon-name: "edit-clear-symbolic";
+        //   };
+        // }
+
+        // Button text_copy_btn {
+        //   action-name: "app.copy_to_clipboard";
+        //   tooltip-text: _("Copy extracted text to clipboard");
+
+        //   styles ["flat"]
+        //   child:
+        //   Adw.ButtonContent {
+        //     icon-name: "edit-copy-symbolic";
+        //   };
+        // }
+      }
+    };
+  }
+}
+
+menu primary_menu {
+  section {
+    item {
+      label: _("Preferences");
+      action: "app.preferences";
+    }
+  }
+
+  section {
+    item {
+      label: _("Keyboard Shortcuts");
+      action: "app.shortcuts";
+    }
+
+    item {
+      label: _("About Frog");
+      action: "app.about";
+    }
+  }
+}

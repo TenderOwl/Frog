@@ -1,6 +1,6 @@
-# screenshot_backend.py
+# screenshot_service.py
 #
-# Copyright 2022 Andrey Maksimov
+# Copyright 2022-2023 Andrey Maksimov
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
@@ -29,7 +29,7 @@
 
 from gi.repository import GObject, Gio, Xdp
 
-from .config import tessdata_config
+from frog.config import tessdata_config
 
 try:
     from PIL import Image
@@ -39,17 +39,17 @@ import pytesseract
 from pyzbar.pyzbar import decode
 
 
-class ScreenshotBackend(GObject.GObject):
+class ScreenshotService(GObject.GObject):
     """
     ScreenshotBackend class
 
     This class is used to capture screenshots and recognize text from them.
     """
+    __gtype_name__ = 'ScreenshotService'
 
-    __gtype_name__ = 'ScreenshotBackend'
     __gsignals__ = {
-        'error': (GObject.SignalFlags.ACTION, None, (str,)),
-        'decoded': (GObject.SignalFlags.RUN_FIRST, None, (str, bool,))
+        'error': (GObject.SIGNAL_RUN_LAST, None, (str,)),
+        'decoded': (GObject.SIGNAL_RUN_FIRST, None, (str, bool,))
     }
 
     def __init__(self):
@@ -110,7 +110,7 @@ class ScreenshotBackend(GObject.GObject):
 
         if extracted:
             self.emit('decoded', extracted, copy)
-        
+
         else:
             self.emit('error', 'No text found.')
 
