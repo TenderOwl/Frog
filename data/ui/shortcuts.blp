@@ -1,0 +1,59 @@
+using Gtk 4.0;
+
+Window shortcuts {
+  modal: true;
+  title: C_("shortcut window", "Shortcuts");
+
+  ShortcutsSection {
+    section-name: "shortcuts";
+    max-height: 10;
+
+    ShortcutsGroup {
+      title: C_("shortcut window", "General");
+
+      ShortcutsShortcut {
+        accelerator: "<ctrl>o";
+        title: C_("shortcut window", "Open image");
+      }
+
+      ShortcutsShortcut {
+        accelerator: "<ctrl>G";
+        title: C_("shortcut window", "Take screenshot and extract text");
+      }
+
+      ShortcutsShortcut {
+        accelerator: "<ctrl><shift>G";
+        title: C_("shortcut window", "Extract text and copy it to clipboard");
+        subtitle: C_("shortcut window", "May not work properly on wayland");
+      }
+
+      ShortcutsShortcut {
+        accelerator: "<ctrl>C";
+        title: C_("shortcut window", "Copy extracted text to clipboard");
+      }
+    }
+
+    ShortcutsGroup {
+      title: C_("shortcut window", "Application");
+
+      ShortcutsShortcut {
+        accelerator: "<ctrl>comma";
+        title: C_("shortcut window", "Preferences");
+      }
+
+      ShortcutsShortcut {
+        accelerator: "<ctrl>q";
+        title: C_("shortcut window", "Quit");
+      }
+    }
+
+    ShortcutsGroup {
+      title: C_("shortcut window", "Help");
+
+      ShortcutsShortcut {
+        accelerator: "<ctrl>question";
+        title: C_("shortcut window", "Display Shortcuts");
+      }
+    }
+  }
+}

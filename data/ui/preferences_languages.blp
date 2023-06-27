@@ -1,0 +1,39 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.PreferencesPage languages_page {
+  title: _("Languages");
+  icon-name: "preferences-desktop-locale-symbolic";
+
+  Box {
+    orientation: vertical;
+
+    SearchBar search_revealer {
+      show-close-button: true;
+
+      SearchEntry language_search_entry {
+        margin-start: 4;
+        margin-end: 4;
+      }
+    }
+
+    ScrolledWindow {
+      vexpand: true;
+
+      Adw.PreferencesGroup languages_list_group {
+        margin-top: 12;
+        margin-start: 12;
+        margin-end: 12;
+        margin-bottom: 12;
+
+        ListBox installed_languages_list {
+          selection-mode: none;
+
+          styles [
+            "boxed-list",
+          ]
+        }
+      }
+    }
+  }
+}

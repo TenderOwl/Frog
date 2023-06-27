@@ -1,0 +1,41 @@
+using Gtk 4.0;
+
+template $LanguageRow : Overlay {
+  Box {
+    margin-bottom: 6;
+    margin-end: 8;
+    margin-start: 8;
+    margin-top: 6;
+
+    Label label {
+      hexpand: true;
+      halign: start;
+
+      styles [
+        "title",
+      ]
+    }
+
+    Button download_widget {
+      icon-name: "folder-download-symbolic";
+
+      styles [
+        "flat",
+      ]
+    }
+  }
+
+  [overlay]
+  Revealer revealer {
+    valign: end;
+
+    ProgressBar progress_bar {
+      valign: end;
+      fraction: 0.14;
+
+      styles [
+        "osd",
+      ]
+    }
+  }
+}

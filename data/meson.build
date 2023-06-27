@@ -4,6 +4,22 @@ app_id = '.'.join([
     meson.project_name()
 ])
 
+blueprints = custom_target('blueprints',
+  input: files(
+    'ui/language_dialog.blp',
+    'ui/preferences.blp',
+    'ui/preferences_general.blp',
+    'ui/preferences_languages.blp',
+    'ui/shortcuts.blp',
+    'ui/window.blp',
+    'ui/language_row.blp',
+  ),
+  output: '.',
+  command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
+)
+
+
+
 desktop_file = i18n.merge_file(
   input: 'com.github.tenderowl.frog.desktop.in',
   output: 'com.github.tenderowl.frog.desktop',
@@ -56,6 +72,7 @@ subdir('icons')
 app_resources = gnome.compile_resources(app_id,
     app_id + '.gresource.xml',
     gresource_bundle: true,
+    dependencies: blueprints,
     install: true,
     install_dir: pkgdatadir
 )

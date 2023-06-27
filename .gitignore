@@ -3,3 +3,5 @@
 .flatpak-builder
 builddir
 venv
+
+/subprojects/blueprint-compiler

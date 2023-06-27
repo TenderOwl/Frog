@@ -1,0 +1,53 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $LanguageDialog : Window {
+  default-width: 340;
+  default-height: 400;
+
+  [titlebar]
+  HeaderBar header_bar {
+    styles [
+      "flat",
+    ]
+    title-widget: 
+    Label {
+      label: _("Available Languages");
+      single-line-mode: true;
+      ellipsize: end;
+      width-chars: 5;
+
+      styles [
+        "title",
+      ]
+    }
+
+    ;
+  }
+
+  Box main_box {
+    margin-top: 8;
+    margin-bottom: 8;
+    margin-start: 8;
+    margin-end: 8;
+
+    Adw.Clamp {
+      maximum-size: 420;
+
+      ScrolledWindow {
+        hscrollbar-policy: never;
+        hexpand: true;
+        child: 
+        ListBox language_listbox {
+          show-separators: true;
+
+          styles [
+            "boxed-list",
+          ]
+        }
+
+        ;
+      }
+    }
+  }
+}
