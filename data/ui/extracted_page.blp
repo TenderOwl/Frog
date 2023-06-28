@@ -21,15 +21,15 @@ template $ExtractedPage : Box {
     [start]
     Button text_shot_btn {
       action-name: "app.get_screenshot";
-      tooltip-markup: _("Take a screenshot");
-      icon-name: "camera-photo-symbolic";
+      tooltip-text: _("Take a screenshot");
+      // icon-name: "camera-photo-symbolic";
 
       styles ["suggested-action"]
 
-      // child: Adw.ButtonContent {
-      //   label: "Take a Screenshot";
-      //   icon-name: "camera-photo-symbolic";
-      // };
+      child: Adw.ButtonContent {
+        label: "Grab";
+        icon-name: "camera-photo-symbolic";
+      };
     }
 
     [start]
@@ -47,6 +47,7 @@ template $ExtractedPage : Box {
     [end]
     MenuButton {
       icon-name: "open-menu-symbolic";
+      tooltip-text: _("Open menu");
       menu-model: primary_menu;
     }
 
@@ -69,13 +70,13 @@ template $ExtractedPage : Box {
 
     TextView text_view {
       editable: false;
-      left-margin: 8;
-      right-margin: 8;
-      top-margin: 8;
-      bottom-margin: 8;
+      left-margin: 12;
+      right-margin: 12;
+      top-margin: 12;
+      bottom-margin: 12;
       pixels-above-lines: 4;
       pixels-below-lines: 4;
-      wrap-mode: word;
+      wrap-mode: char;
 
       buffer: TextBuffer buffer {};
 

@@ -29,13 +29,13 @@ template $WelcomePage : Box {
     MenuButton {
       icon-name: "open-menu-symbolic";
       menu-model: primary_menu;
+      tooltip-text: _("Open menu");
     }
   }
 
   Adw.StatusPage welcome {
     title: "Frog";
-
-    description: "Extract text from anywhere";
+    description: _("Extract text from anywhere");
 
     Adw.Clamp {
       maximum-size: 240;
