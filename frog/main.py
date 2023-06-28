@@ -86,49 +86,19 @@ class FrogApplication(Adw.Application):
         self.backend = ScreenshotService()
         self.backend.connect('decoded', FrogApplication.on_decoded)
 
-        shot_action: Gio.SimpleAction = Gio.SimpleAction.new(name="get_screenshot", parameter_type=None)
-        shot_action.connect("activate", self.get_screenshot)
-        self.add_action(shot_action)
-        self.set_accels_for_action("app.get_screenshot", ("<Control>g",))
-
-        copy_action: Gio.SimpleAction = Gio.SimpleAction.new(name="copy_to_clipboard", parameter_type=None)
-        copy_action.connect("activate", self.on_copy_to_clipboard)
-        self.add_action(copy_action)
-        self.set_accels_for_action("app.copy_to_clipboard", ("<Control>c",))
-
-        shot_action_and_copy: Gio.SimpleAction = Gio.SimpleAction.new(name="get_screenshot_and_copy",
-                                                                      parameter_type=None)
-        shot_action_and_copy.connect("activate", self.get_screenshot_and_copy)
-        self.add_action(shot_action_and_copy)
-        self.set_accels_for_action("app.get_screenshot_and_copy", ("<Control><Shift>g",))
-
-        action = Gio.SimpleAction.new("preferences", None)
-        action.connect("activate", self.on_preferences)
-        self.add_action(action)
-        self.set_accels_for_action("app.preferences", ("<Control>comma",))
-
-        action = Gio.SimpleAction.new(name="open_image", parameter_type=None)
-        action.connect("activate", self.open_image)
-        self.add_action(action)
-        self.set_accels_for_action("app.open_image", ("<Control>o",))
-
         action = Gio.SimpleAction.new("show_uri", GLib.VariantType.new('s'))
         action.connect("activate", self.on_show_uri)
         self.add_action(action)
 
-        action = Gio.SimpleAction.new("shortcuts", None)
-        action.connect("activate", self.on_shortcuts)
-        self.add_action(action)
-        self.set_accels_for_action("app.shortcuts", ("<Control>question",))
+        self.create_action('get_screenshot', self.get_screenshot, ['<primary>g'])
+        self.create_action('get_screenshot_and_copy', self.get_screenshot_and_copy, ['<primary><shift>g'])
+        self.create_action('copy_to_clipboard', self.on_copy_to_clipboard, ['<primary>g'])
+        self.create_action('open_image', self.open_image, ['<primary>o'])
+        self.create_action('shortcuts', self.on_shortcuts, ['<primary>question'])
 
-        action = Gio.SimpleAction.new(name="about", parameter_type=None)
-        action.connect("activate", self.on_about)
-        self.add_action(action)
-
-        action = Gio.SimpleAction.new(name="quit", parameter_type=None)
-        action.connect("activate", self.on_quit)
-        self.add_action(action)
-        self.set_accels_for_action("app.quit", ("<Control>q",))
+        self.create_action('quit', lambda *_: self.quit(), ['<primary>q', '<primary>w'])
+        self.create_action('about', self.on_about)
+        self.create_action('preferences', self.on_preferences, ['<primary>comma'])
 
     def do_activate(self):
         win = self.props.active_window
@@ -178,9 +148,6 @@ class FrogApplication(Adw.Application):
         )
         about_window.present()
 
-    def on_quit(self, _action, _param):
-        self.quit()
-
     def on_shortcuts(self, _action, _param):
         builder = Gtk.Builder()
         builder.add_from_resource(f"{RESOURCE_PREFIX}/ui/shortcuts.ui")
@@ -229,6 +196,21 @@ class FrogApplication(Adw.Application):
 
         else:
             print(f'{text}\n')
+
+    def create_action(self, name, callback, shortcuts=None):
+        """Add an application action.
+
+        Args:
+            name: the name of the action
+            callback: the function to be called when the action is
+              activated
+            shortcuts: an optional list of accelerators
+        """
+        action = Gio.SimpleAction.new(name, None)
+        action.connect("activate", callback)
+        self.add_action(action)
+        if shortcuts:
+            self.set_accels_for_action(f"app.{name}", shortcuts)
 
 
 def main(version):
