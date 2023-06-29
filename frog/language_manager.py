@@ -110,7 +110,7 @@ class LanguageManager(GObject.GObject):
         self._languages["heb"] = _("Hebrew")
         self._languages["hin"] = _("Hindi")
         self._languages["hrv"] = _("Croatian")
-        self._languages["huselfn"] = _("Hungarian")
+        self._languages["hun"] = _("Hungarian")
         self._languages["hye"] = _("Armenian")
         self._languages["iku"] = _("Inuktitut")
         self._languages["ind"] = _("Indonesian")
