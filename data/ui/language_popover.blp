@@ -4,6 +4,8 @@ using Gio 2.0;
 
 template $LanguagePopover : Popover {
 
+  closed => $_on_popover_closed();
+
   Box {
     orientation: vertical;
     spacing: 10;
@@ -14,11 +16,9 @@ template $LanguagePopover : Popover {
 
     SearchEntry entry {
       placeholder-text: _("Search language");
-
-      EventControllerKey key_event {
-        propagation-phase: capture;
-        key-pressed => $_on_key_event_pressed();
-      }
+      activate => $_on_search_activate();
+      search-changed => $_on_search_changed();
+      stop-search => $_on_stop_search();
     }
 
     ScrolledWindow {
@@ -35,7 +35,8 @@ template $LanguagePopover : Popover {
               model: Gio.ListStore list_store {
                 item-type: typeof<$LanguageItem>;
               };
-              filter: StringFilter filter {};
+
+              filter: CustomFilter filter {};
             };
             sorter: CustomSorter sorter {};
           };

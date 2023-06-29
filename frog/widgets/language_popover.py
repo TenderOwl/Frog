@@ -46,6 +46,8 @@ class LanguagePopover(Gtk.Popover):
     entry: Gtk.SearchEntry = Gtk.Template.Child()
     list_view: Gtk.ListView = Gtk.Template.Child()
     list_store: Gio.ListStore = Gtk.Template.Child()
+    filter_list: Gtk.FilterListModel = Gtk.Template.Child()
+    filter: Gtk.CustomFilter = Gtk.Template.Child()
 
     _active_language: str | None = 'English'
 
@@ -69,6 +71,9 @@ class LanguagePopover(Gtk.Popover):
     def active_lang(self, lang_code: str):
         self._active_language = lang_code
 
+    def on_language_filter(self, proposal: LanguageItem, text: str) -> bool:
+        return text.lower() in proposal.title.lower()
+
     def _on_language_downloading(self, sender, lang_code: str):
         print(f"on_language_downloading: {lang_code}")
         self.spinner.start()
@@ -87,12 +92,8 @@ class LanguagePopover(Gtk.Popover):
         self.fill_lang_combo()
 
     @Gtk.Template.Callback()
-    def _on_key_event_pressed(self,
-                              controller: Gtk.EventController,
-                              keyval,
-                              keycode,
-                              state: Gdk.ModifierType, *_):
-        print("key pressed", keycode)
+    def _on_search_activate(self, entry: Gtk.SearchEntry):
+        self._on_language_activate(self.list_view, 0)
 
     @Gtk.Template.Callback()
     def _on_factory_setup(self, _: Gtk.ListItemFactory, list_item: Gtk.ListItem):
@@ -109,10 +110,24 @@ class LanguagePopover(Gtk.Popover):
 
     @Gtk.Template.Callback()
     def _on_language_activate(self, _: Gtk.ListView, position: int):
-        item = self.list_store.get_item(position)
+        item = self.filter_list.get_item(position)
         self.emit('language-changed', item)
         language_manager.active_language = item
         self.popdown()
+
+    @Gtk.Template.Callback()
+    def _on_search_changed(self, entry: Gtk.SearchEntry):
+        query = entry.get_text().strip()
+        _filter: Gtk.CustomFilter = Gtk.CustomFilter.new(self.on_language_filter, query)
+        self.filter_list.set_filter(_filter)
+
+    @Gtk.Template.Callback()
+    def _on_stop_search(self, entry: Gtk.SearchEntry):
+        self.popdown()
+
+    @Gtk.Template.Callback()
+    def _on_popover_closed(self, *_):
+        self.entry.set_text('')
 
     def fill_lang_combo(self):
         self.list_store.remove_all()
