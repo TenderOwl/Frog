@@ -7,22 +7,17 @@ template $LanguageDialog : Window {
 
   [titlebar]
   HeaderBar header_bar {
-    styles [
-      "flat",
-    ]
-    title-widget: 
+    styles ["flat"]
+
+    [title]
     Label {
       label: _("Available Languages");
       single-line-mode: true;
       ellipsize: end;
       width-chars: 5;
 
-      styles [
-        "title",
-      ]
+      styles ["title"]
     }
-
-    ;
   }
 
   Box main_box {
@@ -37,16 +32,11 @@ template $LanguageDialog : Window {
       ScrolledWindow {
         hscrollbar-policy: never;
         hexpand: true;
-        child: 
-        ListBox language_listbox {
+        child: ListBox language_listbox {
           show-separators: true;
 
-          styles [
-            "boxed-list",
-          ]
-        }
-
-        ;
+          styles ["boxed-list"]
+        };
       }
     }
   }
