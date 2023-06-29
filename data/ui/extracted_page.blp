@@ -19,10 +19,10 @@ template $ExtractedPage : Box {
     }
 
     [start]
-    Button text_shot_btn {
+    Adw.SplitButton grab_btn {
       action-name: "app.get_screenshot";
       tooltip-text: _("Take a screenshot");
-      // icon-name: "camera-photo-symbolic";
+      menu-model: grab_menu;
 
       styles ["suggested-action"]
 
@@ -32,16 +32,22 @@ template $ExtractedPage : Box {
       };
     }
 
+    // [start]
+    // Button {
+    //   action-name: "app.open_image";
+    //   tooltip-markup: _("Open Image to extract text");
+
+    //   styles ["icon-button"]
+
+    //   child: Adw.ButtonContent {
+    //     icon-name: "folder-open-symbolic";
+    //   };
+    // }
     [start]
-    Button {
-      action-name: "app.open_image";
-      tooltip-markup: _("Open Image to extract text");
-
-      styles ["icon-button"]
-
-      child: Adw.ButtonContent {
-        icon-name: "folder-open-symbolic";
-      };
+    Button text_copy_btn {
+      action-name: "app.copy_to_clipboard";
+      tooltip-text: _("Copy extracted text to clipboard");
+      icon-name: "edit-copy-symbolic";
     }
 
     [end]
@@ -52,15 +58,9 @@ template $ExtractedPage : Box {
     }
 
     [end]
-    Button text_copy_btn {
-      action-name: "app.copy_to_clipboard";
-      tooltip-text: _("Copy extracted text to clipboard");
-
-      styles ["flat"]
-      child:
-      Adw.ButtonContent {
-        icon-name: "edit-copy-symbolic";
-      };
+    MenuButton share_button {
+      icon-name: "emblem-shared-symbolic";
+      tooltip-text: _("Share To");
     }
   }
 
@@ -69,7 +69,6 @@ template $ExtractedPage : Box {
     vexpand: true;
 
     TextView text_view {
-      editable: false;
       left-margin: 12;
       right-margin: 12;
       top-margin: 12;
@@ -167,5 +166,12 @@ menu primary_menu {
       label: _("About Frog");
       action: "app.about";
     }
+  }
+}
+
+
+menu grab_menu {
+  section {
+    item (_("Open image"), "app.open_image", "folder-open-symbolic")
   }
 }

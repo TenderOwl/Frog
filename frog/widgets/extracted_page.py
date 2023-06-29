@@ -41,7 +41,7 @@ class ExtractedPage(Gtk.Box):
 
     back_btn: Gtk.Button = Gtk.Template.Child()
     toolbox: Gtk.Revealer = Gtk.Template.Child()
-    text_shot_btn: Gtk.Button = Gtk.Template.Child()
+    grab_btn: Gtk.Button = Gtk.Template.Child()
     text_copy_btn: Gtk.Button = Gtk.Template.Child()
     text_view: Gtk.TextView = Gtk.Template.Child()
     buffer: Gtk.TextBuffer = Gtk.Template.Child()
@@ -64,5 +64,4 @@ class ExtractedPage(Gtk.Box):
 
     @extracted_text.setter
     def extracted_text(self, text: str):
-        print("Extracted text: ", text)
         self.buffer.set_text(text)
