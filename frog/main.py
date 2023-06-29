@@ -93,6 +93,7 @@ class FrogApplication(Adw.Application):
         self.create_action('get_screenshot', self.get_screenshot, ['<primary>g'])
         self.create_action('get_screenshot_and_copy', self.get_screenshot_and_copy, ['<primary><shift>g'])
         self.create_action('copy_to_clipboard', self.on_copy_to_clipboard, ['<primary>g'])
+        self.create_action('paste_from_clipboard', self.on_paste_from_clipboard, ['<primary>v'])
         self.create_action('open_image', self.open_image, ['<primary>o'])
         self.create_action('shortcuts', self.on_shortcuts, ['<primary>question'])
 
@@ -156,6 +157,9 @@ class FrogApplication(Adw.Application):
 
     def on_copy_to_clipboard(self, _action, _param) -> None:
         self.get_active_window().on_copy_to_clipboard(self)
+
+    def on_paste_from_clipboard(self, _action, _param) -> None:
+        self.get_active_window().on_paste_from_clipboard(self)
 
     def on_show_uri(self, _action, param) -> None:
         Gtk.show_uri(None, param.get_string(), Gdk.CURRENT_TIME)

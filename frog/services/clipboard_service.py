@@ -26,7 +26,8 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gdk
+from gi.repository import Gdk, GLib
+from gettext import gettext as _
 
 
 class ClipboardService:
@@ -36,6 +37,17 @@ class ClipboardService:
 
     def set(self, value: str) -> None:
         self.clipboard.set(value)
+
+    def _on_read_texture(self, so, res, window) -> None:
+        try:
+            texture = self.clipboard.read_texture_finish(res)
+        except Exception as e:
+            window.show_toast(
+                _("No image in clipboard"))
+            return
+        window._paste_from_clipboard_finish(texture)
+    def get_async(self, window) -> Gdk.Texture:
+        self.clipboard.read_texture_async(cancellable=None, callback=self._on_read_texture, user_data=window)
 
 
 clipboard_service = ClipboardService()

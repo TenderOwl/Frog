@@ -30,6 +30,8 @@ from gettext import gettext as _
 from mimetypes import guess_type
 from typing import List
 from urllib.parse import urlparse
+from PIL import Image
+from io import BytesIO
 
 from gi.repository import Gtk, Adw, Gio, GLib, Gdk, GObject
 
@@ -278,6 +280,19 @@ class FrogWindow(Adw.ApplicationWindow):
         text = self.extracted_page.extracted_text
         clipboard_service.set(text)
         self.show_toast(_("Text copied"))
+
+    def _paste_from_clipboard_finish(self, texture: Gdk.Texture):
+        pngbytes = BytesIO(texture.save_to_png_bytes().get_data())
+        try:
+            lang = self.get_language()
+            self.welcome_page.spinner.start()
+            GObjectWorker.call(self.backend.decode_image, (lang, pngbytes))
+        except GLib.Error as e:
+            if not e.matches(Gio.io_error_quark(), Gio.IOErrorEnum.CANCELLED):
+                print(e)
+
+    def on_paste_from_clipboard(self, sender) -> None:
+        clipboard_service.get_async(self)
 
     def show_preferences(self):
         # dialog = LanguagePacksDialog(self)
