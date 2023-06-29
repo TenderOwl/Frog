@@ -21,7 +21,7 @@ prefix = get_option('prefix') # should be /usr
 bindir = get_option('bindir') # should be bin
 datadir = get_option('datadir') # should be /usr/share
 pkgdatadir = join_paths(prefix, datadir, meson.project_name())
-pythondir = join_paths(prefix, python.get_path('purelib'))
+pythondir = python.get_install_dir()
 localedir = join_paths(prefix, get_option('localedir'))
 
 
