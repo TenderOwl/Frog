@@ -27,6 +27,7 @@
 # authorization.
 
 from gettext import gettext as _
+from io import BytesIO
 from mimetypes import guess_type
 from typing import List
 from urllib.parse import urlparse
@@ -35,7 +36,7 @@ from gi.repository import Gtk, Adw, Gio, GLib, Gdk, GObject
 
 from frog.gobject_worker import GObjectWorker
 from frog.language_manager import language_manager
-from frog.services.clipboard_service import clipboard_service
+from frog.services.clipboard_service import clipboard_service, ClipboardService
 from frog.services.screenshot_service import ScreenshotService
 from frog.widgets.extracted_page import ExtractedPage
 from frog.widgets.list_menu_row import ListMenuRow
@@ -101,6 +102,9 @@ class FrogWindow(Adw.ApplicationWindow):
         self.backend.connect("error", self.on_shot_error)
 
         self.extracted_page.connect('go-back', self.show_welcome_page)
+
+        clipboard_service.connect('paste_from_clipboard', self._on_paste_from_clipboard)
+        clipboard_service.connect('error', self.display_error)
 
         # # self.text_copy_btn.connect('clicked', self.text_copy_btn_clicked)
         # self.languages_list.connect("row-activated", self.on_language_change)
@@ -213,15 +217,24 @@ class FrogWindow(Adw.ApplicationWindow):
             if not e.matches(Gio.io_error_quark(), Gio.IOErrorEnum.CANCELLED):
                 print(e)
 
+    def _on_paste_from_clipboard(self, _clipboard: ClipboardService,
+                                 texture: Gdk.Texture):
+        pngbytes = BytesIO(texture.save_to_png_bytes().get_data())
+        try:
+            lang = self.get_language()
+            self.welcome_page.spinner.start()
+            GObjectWorker.call(self.backend.decode_image, (lang, pngbytes))
+        except GLib.Error as e:
+            if not e.matches(Gio.io_error_quark(), Gio.IOErrorEnum.CANCELLED):
+                print(e)
+
+    def on_paste_from_clipboard(self, sender) -> None:
+        clipboard_service.read_texture()
+
     def display_error(self, sender, error) -> None:
-        print("on_screenshot_error?", error)
-        if not isinstance(error, str):
-            self.infobar_label.set_text(str(error).split(":")[-1])
-        else:
-            self.infobar_label.set_text(error)
-        self.infobar.set_revealed(True)
-        self.infobar.set_visible(True)
-        self.infobar.set_message_type(Gtk.MessageType.ERROR)
+        print(f"Error happened: {error}")
+        message = (str(error).split(":")[-1]) if not isinstance(error, str) else error
+        self.show_toast(message)
 
     def on_dnd_enter(self, drop_target, x, y):
         print("DND Enter", drop_target)

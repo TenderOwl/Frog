@@ -26,16 +26,37 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gdk
+from gi.repository import Gdk, GObject, Gio
+from gettext import gettext as _
 
 
-class ClipboardService:
+class ClipboardService(GObject.GObject):
     __gtype_name__ = 'ClipboardService'
+
+    __gsignals__ = {
+        'paste_from_clipboard': (GObject.SIGNAL_RUN_FIRST, None, (Gdk.Texture,)),
+        'error': (GObject.SIGNAL_RUN_FIRST, None, (str,))
+    }
 
     clipboard: Gdk.Clipboard = Gdk.Display.get_default().get_clipboard()
 
+    def __init__(self):
+        super().__init__()
+
     def set(self, value: str) -> None:
         self.clipboard.set(value)
+
+    def _on_read_texture(self, _sender: GObject.GObject, result: Gio.AsyncResult) -> None:
+        try:
+            texture = self.clipboard.read_texture_finish(result)
+        except Exception as e:
+            print(e)
+            return self.emit('error', _("No image in clipboard"))
+        self.emit('paste_from_clipboard', texture)
+
+    def read_texture(self) -> None:
+        self.clipboard.read_texture_async(cancellable=None,
+                                          callback=self._on_read_texture)
 
 
 clipboard_service = ClipboardService()

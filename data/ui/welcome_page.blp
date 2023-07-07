@@ -21,6 +21,14 @@ template $WelcomePage : Box {
     }
 
     [start]
+    Adw.SplitButton grab_btn {
+      action-name: "app.get_screenshot";
+      tooltip-text: _("Take a screenshot");
+      icon-name: "camera-photo-symbolic";
+      menu-model: grab_menu;
+    }
+
+    [start]
     Spinner spinner {
       spinning: false;
     }
@@ -103,4 +111,9 @@ menu primary_menu {
       action: "app.about";
     }
   }
+}
+
+menu grab_menu {
+    item (_("Open image"), "app.open_image", "folder-open-symbolic")
+    item (_("From clipboard"), "app.paste_from_clipboard", "folder-open-symbolic")
 }

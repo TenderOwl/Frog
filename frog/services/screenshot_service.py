@@ -88,18 +88,25 @@ class ScreenshotService(GObject.GObject):
         filename = filename[7:]
         self.decode_image(lang, filename, copy)
 
-    def decode_image(self, lang: str, filename: str, copy: bool = False) -> None:
+    def decode_image(self, lang: str, file: str | Image.Image, copy: bool = False) -> None:
         print(f'Decoding with {lang} language.')
         extracted = None
         try:
             # Try to find a QR code in the image
-            data = decode(Image.open(filename))
+            data = decode(Image.open(file))
             if len(data) > 0:
                 extracted = data[0].data.decode('utf-8')
 
             # If no QR code found, try to recognize text
             else:
-                text = pytesseract.image_to_string(filename,
+                # We cannot pass the same image object from above, since
+                # pyzbar.decode runs Image.load() internally, as does
+                # pytesseract.image_to_string(). However, a second load() will
+                # close the file leading to seek errors on NoneType:
+                # > If the file associated with the image was opened by Pillow,
+                # > then this method will close it.
+                # https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.load
+                text = pytesseract.image_to_string(Image.open(file),
                                                    lang=lang,
                                                    config=tessdata_config)
                 extracted = text.strip()
