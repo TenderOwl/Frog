@@ -8,7 +8,7 @@
 
 <div align="center">
 <figure>
-<img src="https://user-images.githubusercontent.com/519146/188137868-202d2b71-0e42-4614-8489-99ec09e032ea.png" alt="Frog window" />
+<img src="https://github.com/TenderOwl/Frog/assets/519146/e9199a65-bf72-4a96-a06f-0c456b406df7" alt="Frog window" />
 </figure>
 </div>
 
