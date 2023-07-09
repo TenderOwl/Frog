@@ -25,14 +25,15 @@
 # holders shall not be used in advertising or otherwise to promote the sale,
 # use or other dealings in this Software without prior written
 # authorization.
-
-from gi.repository import Adw
+from gettext import gettext as _
+from gi.repository import Adw, Gio
 from gi.repository import Gtk, Gdk
 
 from frog.config import RESOURCE_PREFIX, APP_ID
 from frog.language_manager import language_manager
 from frog.types.language_item import LanguageItem
 from frog.widgets.language_popover import LanguagePopover
+from frog.services.camera_service import camera_service
 
 
 @Gtk.Template(resource_path=f"{RESOURCE_PREFIX}/ui/welcome_page.ui")
@@ -41,6 +42,7 @@ class WelcomePage(Gtk.Box):
 
     spinner: Gtk.Spinner = Gtk.Template.Child()
     lang_combo: Gtk.MenuButton = Gtk.Template.Child()
+    grab_btn: Adw.SplitButton = Gtk.Template.Child()
     welcome: Adw.StatusPage = Gtk.Template.Child()
     language_popover: LanguagePopover = Gtk.Template.Child()
 
@@ -57,6 +59,11 @@ class WelcomePage(Gtk.Box):
         self.lang_combo.set_label(
             language_manager.get_language(self.settings.get_string("active-language"))
         )
+
+        if camera_service.is_camera_present():
+            menu: Gio.Menu = self.grab_btn.get_menu_model()
+            menu.append(label=_("Grab from Camera"),
+                        detailed_action="app.grab_camera")
 
     def _on_language_changed(self, _: LanguagePopover, language: LanguageItem):
         self.lang_combo.set_label(language.title)

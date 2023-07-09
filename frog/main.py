@@ -92,9 +92,10 @@ class FrogApplication(Adw.Application):
 
         self.create_action('get_screenshot', self.get_screenshot, ['<primary>g'])
         self.create_action('get_screenshot_and_copy', self.get_screenshot_and_copy, ['<primary><shift>g'])
-        self.create_action('copy_to_clipboard', self.on_copy_to_clipboard, ['<primary>g'])
+        self.create_action('grab_camera', self.grab_camera)
         self.create_action('open_image', self.open_image, ['<primary>o'])
         self.create_action('paste_from_clipboard', self.on_paste_from_clipboard, ['<primary>v'])
+        self.create_action('copy_to_clipboard', self.on_copy_to_clipboard, ['<primary>g'])
         self.create_action('shortcuts', self.on_shortcuts, ['<primary>question'])
 
         self.create_action('quit', lambda *_: self.quit(), ['<primary>q', '<primary>w'])
@@ -166,6 +167,9 @@ class FrogApplication(Adw.Application):
 
     def get_screenshot_and_copy(self, _action, _param) -> None:
         self.get_active_window().get_screenshot(copy=True)
+
+    def grab_camera(self, _action, _param) -> None:
+        self.get_active_window().grab_camera()
 
     def open_image(self, _action, _param) -> None:
         self.get_active_window().open_image()

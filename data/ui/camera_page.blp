@@ -1,0 +1,90 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $CameraPage : Box {
+  orientation: vertical;
+
+  Adw.HeaderBar {
+    visible: true;
+    tooltip-text: _("Extract text from anywhere");
+
+    [title]
+    Adw.WindowTitle {
+      title: "Frog";
+    }
+
+    [start]
+    Button back_btn {
+      icon-name: "go-previous-symbolic";
+      tooltip-text: _("Back");
+      clicked => $_on_back_btn_clicked();
+
+      styles ["icon-button", "back"]
+    }
+
+    // [start]
+    // Adw.SplitButton grab_btn {
+    //   action-name: "app.get_screenshot";
+    //   tooltip-text: _("Take a screenshot");
+    //   icon-name: "camera-photo-symbolic";
+    //   menu-model: grab_menu;
+    // }
+
+    [start]
+    Spinner spinner {
+      spinning: false;
+    }
+
+    [end]
+    MenuButton {
+      icon-name: "open-menu-symbolic";
+      menu-model: primary_menu;
+      tooltip-text: _("Open menu");
+    }
+  }
+
+  Overlay overlay {
+    vexpand: true;
+
+    [overlay]
+    Button shot_btn {
+      icon-name: "camera-photo-symbolic";
+      halign: center;
+      valign: end;
+      margin-bottom: 32;
+      margin-start: 32;
+      margin-end: 32;
+    }
+
+    Picture picture {
+      vexpand: true;
+    }
+  }
+}
+
+
+menu primary_menu {
+  section {
+    item {
+      label: _("Preferences");
+      action: "app.preferences";
+    }
+  }
+
+  section {
+    item {
+      label: _("Keyboard Shortcuts");
+      action: "app.shortcuts";
+    }
+
+    item {
+      label: _("About Frog");
+      action: "app.about";
+    }
+  }
+}
+
+menu grab_menu {
+    item (_("Open image"), "app.open_image", "folder-open-symbolic")
+    item (_("Paste from clipboard"), "app.paste_from_clipboard", "folder-open-symbolic")
+}

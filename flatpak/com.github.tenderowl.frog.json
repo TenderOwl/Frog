@@ -1,8 +1,12 @@
-{
+https://leto.lenta.com/{
     "app-id" : "com.github.tenderowl.frog",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "44",
     "sdk" : "org.gnome.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.rust-stable",
+        "org.freedesktop.Sdk.Extension.llvm16"
+    ],
     "command" : "frog",
     "finish-args" : [
         "--share=network",
@@ -11,7 +15,12 @@
         "--socket=wayland",
         "--device=dri",
         "--talk-name=org.freedesktop.Notifications",
-        "--filesystem=xdg-pictures"
+        "--talk-name=org.gtk.vfs.*",
+        "--filesystem=xdg-run/gvfs",
+        "--filesystem=xdg-run/gvfsd",
+        "--filesystem=xdg-pictures",
+        "--env=GST_DEBUG=4",
+        "--env=GST_PLUGIN_PATH=/app/lib/gstreamer-1.0"
     ],
     "cleanup" : [
         "/include",
@@ -31,6 +40,7 @@
         "zbar.json",
         "python3-pytesseract.json",
         "python3-pyzbar.json",
+        "gst-plugins-rs.json",
         {
             "name" : "frog",
             "builddir" : true,
@@ -43,7 +53,8 @@
             ]
         }
     ],
-    "build-options" : {
-        "env" : {        }
+    "build-options": {
+        "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm16/bin",
+        "prepend-ld-library-path": "/usr/lib/sdk/llvm16/lib"
     }
 }

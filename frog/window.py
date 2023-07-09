@@ -36,8 +36,10 @@ from gi.repository import Gtk, Adw, Gio, GLib, Gdk, GObject
 
 from frog.gobject_worker import GObjectWorker
 from frog.language_manager import language_manager
+from frog.services.camera_service import camera_service
 from frog.services.clipboard_service import clipboard_service, ClipboardService
 from frog.services.screenshot_service import ScreenshotService
+from frog.widgets.camera_page import CameraPage
 from frog.widgets.extracted_page import ExtractedPage
 from frog.widgets.list_menu_row import ListMenuRow
 from frog.widgets.preferences_dialog import PreferencesDialog
@@ -54,6 +56,7 @@ class FrogWindow(Adw.ApplicationWindow):
 
     main_leaflet: Adw.Leaflet = Gtk.Template.Child()
     welcome_page: WelcomePage = Gtk.Template.Child()
+    camera_page: CameraPage = Gtk.Template.Child()
     extracted_page: ExtractedPage = Gtk.Template.Child()
 
     # Helps to call save_window_state not more often than 500ms
@@ -101,10 +104,13 @@ class FrogWindow(Adw.ApplicationWindow):
         self.backend.connect("decoded", self.on_shot_done)
         self.backend.connect("error", self.on_shot_error)
 
+        self.camera_page.connect('go-back', self.show_welcome_page)
         self.extracted_page.connect('go-back', self.show_welcome_page)
 
         clipboard_service.connect('paste_from_clipboard', self._on_paste_from_clipboard)
         clipboard_service.connect('error', self.display_error)
+
+        camera_service.connect('camera_stream', self._on_camera_stream)
 
         # # self.text_copy_btn.connect('clicked', self.text_copy_btn_clicked)
         # self.languages_list.connect("row-activated", self.on_language_change)
@@ -190,6 +196,13 @@ class FrogWindow(Adw.ApplicationWindow):
         if message:
             self.show_toast(message)
             # self.display_error(self, message)
+
+    def grab_camera(self):
+        camera_service.grab_camera()
+
+    def _on_camera_stream(self, sender, stream: int):
+        self.main_leaflet.set_visible_child_name('camera')
+        self.camera_page.init_stream(stream)
 
     def open_image(self):
         self.open_file_dlg: Gtk.FileDialog = Gtk.FileDialog()

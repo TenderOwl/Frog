@@ -25,6 +25,12 @@ template $FrogWindow : Adw.ApplicationWindow {
         }
 
         Adw.LeafletPage {
+          name: "camera";
+
+          child: $CameraPage camera_page {};
+        }
+
+        Adw.LeafletPage {
           name: "extracted";
 
           child: $ExtractedPage extracted_page {};
