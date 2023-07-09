@@ -1,60 +1,56 @@
-https://leto.lenta.com/{
-    "app-id" : "com.github.tenderowl.frog",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "44",
-    "sdk" : "org.gnome.Sdk",
-    "sdk-extensions": [
-        "org.freedesktop.Sdk.Extension.rust-stable",
-        "org.freedesktop.Sdk.Extension.llvm16"
-    ],
-    "command" : "frog",
-    "finish-args" : [
-        "--share=network",
-        "--share=ipc",
-        "--socket=fallback-x11",
-        "--socket=wayland",
-        "--device=dri",
-        "--talk-name=org.freedesktop.Notifications",
-        "--talk-name=org.gtk.vfs.*",
-        "--filesystem=xdg-run/gvfs",
-        "--filesystem=xdg-run/gvfsd",
-        "--filesystem=xdg-pictures",
-        "--env=GST_DEBUG=4",
-        "--env=GST_PLUGIN_PATH=/app/lib/gstreamer-1.0"
-    ],
-    "cleanup" : [
-        "/include",
-        "/lib/pkgconfig",
-        "/man",
-        "/share/doc",
-        "/share/gtk-doc",
-        "/share/man",
-        "/share/pkgconfig",
-        "*.la",
-        "*.a"
-    ],
-    "modules" : [
-        "leptonica.json",
-        "tesseract.json",
-        "libportal.json",
-        "zbar.json",
-        "python3-pytesseract.json",
-        "python3-pyzbar.json",
-        "gst-plugins-rs.json",
+{
+  "app-id": "com.tenderowl.frog",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "44",
+  "sdk": "org.gnome.Sdk",
+  "sdk-extensions": [
+    "org.freedesktop.Sdk.Extension.rust-stable",
+    "org.freedesktop.Sdk.Extension.llvm16"
+  ],
+  "command": "frog",
+  "finish-args": [
+    "--share=network",
+    "--share=ipc",
+    "--socket=fallback-x11",
+    "--socket=wayland",
+    "--device=dri",
+    "--talk-name=org.freedesktop.Notifications",
+    "--filesystem=xdg-pictures",
+    "--env=GST_PLUGIN_PATH=/app/lib/gstreamer-1.0"
+  ],
+  "cleanup": [
+    "/include",
+    "/lib/pkgconfig",
+    "/man",
+    "/share/doc",
+    "/share/gtk-doc",
+    "/share/man",
+    "/share/pkgconfig",
+    "*.la",
+    "*.a"
+  ],
+  "modules": [
+    "leptonica.json",
+    "tesseract.json",
+    "libportal.json",
+    "zbar.json",
+    "python3-pytesseract.json",
+    "python3-pyzbar.json",
+    "gst-plugins-rs.json",
+    {
+      "name": "frog",
+      "builddir": true,
+      "buildsystem": "meson",
+      "sources": [
         {
-            "name" : "frog",
-            "builddir" : true,
-            "buildsystem" : "meson",
-            "sources" : [
-                {
-                    "type" : "dir",
-                    "path" : ".."
-                }
-            ]
+          "type": "dir",
+          "path": ".."
         }
-    ],
-    "build-options": {
-        "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm16/bin",
-        "prepend-ld-library-path": "/usr/lib/sdk/llvm16/lib"
+      ]
     }
+  ],
+  "build-options": {
+    "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm16/bin",
+    "prepend-ld-library-path": "/usr/lib/sdk/llvm16/lib"
+  }
 }
