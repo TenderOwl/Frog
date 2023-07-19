@@ -43,6 +43,11 @@ To build the frog application just open project folder in Builder and press "Exe
 
 If you want to provide localization for your language you may use [weblate project](https://hosted.weblate.org/projects/frog/default/) or [Poedit](https://poedit.net) to create translations. Source files listed in `po/POTFILES`.
 
+## Code of conduct
+
+Frog follows the GNOME project [Code of Conduct](https://gitlab.gnome.org/World/amberol/-/blob/main/code-of-conduct.md). All
+communications in project spaces are expected to follow it.
+
 # Contribution
 
 Any help is appreciated :)
