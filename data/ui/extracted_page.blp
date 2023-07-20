@@ -12,7 +12,7 @@ template $ExtractedPage : Box {
     [start]
     Button back_btn {
       icon-name: "go-previous-symbolic";
-      tooltip-text: _("Back");
+      tooltip-text: C_("Extracted screen", "Back");
       clicked => $_on_back_btn_clicked();
 
       styles ["icon-button", "back"]
@@ -21,7 +21,7 @@ template $ExtractedPage : Box {
     [start]
     Adw.SplitButton grab_btn {
       action-name: "app.get_screenshot";
-      tooltip-text: _("Take a screenshot");
+      tooltip-text: C_("Extracted screen", "Take a screenshot");
       menu-model: grab_menu;
 
       styles ["suggested-action"]
@@ -46,21 +46,21 @@ template $ExtractedPage : Box {
     [start]
     Button text_copy_btn {
       action-name: "app.copy_to_clipboard";
-      tooltip-text: _("Copy extracted text to clipboard");
+      tooltip-text: C_("Extracted screen", "Copy extracted text to clipboard");
       icon-name: "edit-copy-symbolic";
     }
 
     [end]
     MenuButton {
       icon-name: "open-menu-symbolic";
-      tooltip-text: _("Open menu");
+      tooltip-text: C_("Extracted screen", "Open menu");
       menu-model: primary_menu;
     }
 
     [end]
     MenuButton share_button {
       icon-name: "emblem-shared-symbolic";
-      tooltip-text: _("Share To");
+      tooltip-text: C_("Extracted screen", "Share To");
     }
   }
 
