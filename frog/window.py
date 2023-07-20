@@ -37,7 +37,7 @@ from gi.repository import Gtk, Adw, Gio, GLib, Gdk, GObject
 from frog.gobject_worker import GObjectWorker
 from frog.language_manager import language_manager
 from frog.services.camera_service import camera_service
-from frog.services.clipboard_service import clipboard_service, ClipboardService
+from frog.services.clipboard_service import clipboard_service
 from frog.services.screenshot_service import ScreenshotService
 from frog.widgets.camera_page import CameraPage
 from frog.widgets.extracted_page import ExtractedPage
@@ -105,6 +105,7 @@ class FrogWindow(Adw.ApplicationWindow):
         self.backend.connect("error", self.on_shot_error)
 
         self.camera_page.connect('go-back', self.show_welcome_page)
+        self.camera_page.connect('image-grabbed', self._on_cam_image_grabbed)
         self.extracted_page.connect('go-back', self.show_welcome_page)
 
         clipboard_service.connect('paste_from_clipboard', self._on_paste_from_clipboard)
@@ -189,20 +190,27 @@ class FrogWindow(Adw.ApplicationWindow):
             self.present()
             self.welcome_page.spinner.stop()
 
-    def on_shot_error(self, sender, message: str) -> None:
+    def on_shot_error(self, _sender, message: str) -> None:
         self.present()
         self.welcome_page.spinner.stop()
         print("on_shot_error?", message)
         if message:
             self.show_toast(message)
-            # self.display_error(self, message)
 
     def grab_camera(self):
         camera_service.grab_camera()
 
-    def _on_camera_stream(self, sender, stream: int):
+    def _on_camera_stream(self, _sender, stream: int):
         self.main_leaflet.set_visible_child_name('camera')
         self.camera_page.init_stream(stream)
+
+    def _on_cam_image_grabbed(self, _sender, image_path: str):
+        try:
+            self.welcome_page.spinner.start()
+            GObjectWorker.call(self.backend.decode_image, (self.get_language(), image_path))
+        except GLib.Error as e:
+            if not e.matches(Gio.io_error_quark(), Gio.IOErrorEnum.CANCELLED):
+                print(e)
 
     def open_image(self):
         self.open_file_dlg: Gtk.FileDialog = Gtk.FileDialog()
@@ -230,7 +238,7 @@ class FrogWindow(Adw.ApplicationWindow):
             if not e.matches(Gio.io_error_quark(), Gio.IOErrorEnum.CANCELLED):
                 print(e)
 
-    def _on_paste_from_clipboard(self, _clipboard: ClipboardService,
+    def _on_paste_from_clipboard(self, _sender: GObject,
                                  texture: Gdk.Texture):
         pngbytes = BytesIO(texture.save_to_png_bytes().get_data())
         try:

@@ -28,11 +28,11 @@
 
 from gettext import gettext as _
 
-from gi.repository import Gtk, Gdk, Gio, GObject, GLib
+from gi.repository import Gtk, Gio, GObject, GLib
 
 from frog.config import RESOURCE_PREFIX
-from frog.types.language_item import LanguageItem
 from frog.language_manager import language_manager
+from frog.types.language_item import LanguageItem
 
 
 @Gtk.Template(resource_path=f"{RESOURCE_PREFIX}/ui/language_popover.ui")

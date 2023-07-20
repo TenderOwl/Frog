@@ -25,11 +25,8 @@
 # holders shall not be used in advertising or otherwise to promote the sale,
 # use or other dealings in this Software without prior written
 # authorization.
-from time import sleep
-from typing import Any
-import gi
 
-gi.require_version('Gst', '1.0')
+import os.path
 
 from gi.repository import Gtk, GObject, Gst
 
@@ -43,20 +40,26 @@ class CameraPage(Gtk.Box):
 
     __gsignals__ = {
         'go-back': (GObject.SIGNAL_RUN_LAST, None, (int,)),
+        'image-grabbed': (GObject.SIGNAL_RUN_LAST, None, (str,)),
     }
 
     overlay: Gtk.Overlay = Gtk.Template.Child()
-    shot_btn: Gtk.Button = Gtk.Template.Child()
     picture: Gtk.Picture = Gtk.Template.Child()
+    grab_btn: Gtk.Button = Gtk.Template.Child()
 
     _stream: int
-    pipeline: Gst.Pipeline
+    pipeline: Gst.Pipeline = None
+    filesink: Gst.Element = None
+    _image_path: str = os.path.join(os.environ.get('XDG_DATA_HOME', '/tmp/'), "frog_grabbed.jpg")
 
     def __init__(self):
         super().__init__()
+        print('Grabbed image path: %s' % self._image_path)
 
         # initialize GStreamer
         Gst.init()
+
+        self.grab_btn.grab_focus()
 
     @GObject.Property(type=int)
     def stream(self) -> int:
@@ -69,6 +72,14 @@ class CameraPage(Gtk.Box):
     def init_stream(self, stream: int = None):
         print(f"stream: {camera_service.stream}")
 
+        # GST Pipeline
+        #
+        #                    queue -- videoconvert -- gtk4paintablesink
+        #                   /
+        # pipewiresrc -- tee
+        #                   \
+        #                    queue -- jpegenc -- filesink
+        #
         self.pipeline = Gst.Pipeline()
 
         source = Gst.ElementFactory.make('pipewiresrc')
@@ -83,6 +94,8 @@ class CameraPage(Gtk.Box):
         sink = Gst.ElementFactory.make("gtk4paintablesink", "sink")
         paintable = sink.get_property("paintable")
 
+        tee = Gst.ElementFactory.make('tee')
+
         # print("Creating", pipeline, pipewire_element, sink)
         #
         if not self.pipeline or not source or not sink:
@@ -90,17 +103,34 @@ class CameraPage(Gtk.Box):
             return
 
         self.pipeline.add(source)
+        self.pipeline.add(tee)
+        # Video to display
         self.pipeline.add(video_queue)
         self.pipeline.add(videoconvert)
         self.pipeline.add(sink)
-
-        source.link(video_queue)
+        source.link(tee)
+        tee.link(video_queue)
         video_queue.link(videoconvert)
         videoconvert.link(sink)
+        #
+
+        # Video to extract frames
+        frame_queue = Gst.ElementFactory.make('queue')
+        jpegenc = Gst.ElementFactory.make('jpegenc')
+        self.filesink = Gst.ElementFactory.make('filesink')
+        self.filesink.set_property("location", self._image_path)
+
+        self.pipeline.add(frame_queue)
+        self.pipeline.add(jpegenc)
+        self.pipeline.add(self.filesink)
+
+        tee.link(frame_queue)
+        frame_queue.link(jpegenc)
+        jpegenc.link(self.filesink)
 
         self.pipeline.set_state(Gst.State.PLAYING)
 
-        # Set the paintable on the picture
+        # Set the paintable on  the picture
         self.picture.set_paintable(paintable)
 
     @Gtk.Template.Callback()
@@ -108,3 +138,16 @@ class CameraPage(Gtk.Box):
         if self.pipeline and self.pipeline.current_state != Gst.State.NULL:
             self.pipeline.set_state(Gst.State.NULL)
         self.emit('go-back', -1)
+
+    @Gtk.Template.Callback()
+    def _on_grab_btn_clicked(self, _: Gtk.Button) -> None:
+        if not self.pipeline or self.pipeline.current_state != Gst.State.PLAYING:
+            return
+
+        if os.path.exists(self._image_path):
+            self.emit("image-grabbed", self._image_path)
+
+        else:
+            self.emit("go-back", -1)
+
+        self.pipeline.set_state(Gst.State.NULL)

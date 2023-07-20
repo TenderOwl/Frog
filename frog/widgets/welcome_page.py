@@ -26,14 +26,15 @@
 # use or other dealings in this Software without prior written
 # authorization.
 from gettext import gettext as _
+
 from gi.repository import Adw, Gio
 from gi.repository import Gtk, Gdk
 
 from frog.config import RESOURCE_PREFIX, APP_ID
 from frog.language_manager import language_manager
+from frog.services.camera_service import camera_service
 from frog.types.language_item import LanguageItem
 from frog.widgets.language_popover import LanguagePopover
-from frog.services.camera_service import camera_service
 
 
 @Gtk.Template(resource_path=f"{RESOURCE_PREFIX}/ui/welcome_page.ui")

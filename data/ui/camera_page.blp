@@ -47,13 +47,23 @@ template $CameraPage : Box {
     vexpand: true;
 
     [overlay]
-    Button shot_btn {
-      icon-name: "camera-photo-symbolic";
+    Box {
+      styles ["toolbar"]
       halign: center;
       valign: end;
-      margin-bottom: 32;
-      margin-start: 32;
-      margin-end: 32;
+
+      Button grab_btn {
+        icon-name: "camera-photo-symbolic";
+        halign: center;
+        valign: end;
+        margin-bottom: 32;
+        margin-start: 32;
+        margin-end: 32;
+
+        clicked => $_on_grab_btn_clicked();
+
+        styles ["opaque"]
+      }
     }
 
     Picture picture {
