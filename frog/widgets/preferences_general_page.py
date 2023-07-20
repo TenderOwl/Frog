@@ -46,8 +46,8 @@ class PreferencesGeneralPage(Adw.PreferencesPage):
 
         self.settings: Settings = Gtk.Application.get_default().props.settings
 
-        self.settings.bind('autocopy', self.autocopy_switch, 'state', Gio.SettingsBindFlags.DEFAULT)
-        self.settings.bind('autolinks', self.autolinks_switch, 'state', Gio.SettingsBindFlags.DEFAULT)
+        self.settings.bind('autocopy', self.autocopy_switch, 'active', Gio.SettingsBindFlags.DEFAULT)
+        self.settings.bind('autolinks', self.autolinks_switch, 'active', Gio.SettingsBindFlags.DEFAULT)
 
         downloaded_langs = language_manager.get_downloaded_languages()
         # Fill second language
