@@ -26,13 +26,12 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gettext import gettext as _
-
-from gi.repository import Gtk, Gdk, Gio, GObject, GLib
+from gi.repository import Gtk, Gio, GObject, GLib
 
 from frog.config import RESOURCE_PREFIX
-from frog.types.language_item import LanguageItem
 from frog.language_manager import language_manager
+from frog.types.language_item import LanguageItem
+from frog.settings import Settings
 
 
 @Gtk.Template(resource_path=f"{RESOURCE_PREFIX}/ui/language_popover.ui")
@@ -49,15 +48,20 @@ class LanguagePopover(Gtk.Popover):
     filter_list: Gtk.FilterListModel = Gtk.Template.Child()
     filter: Gtk.CustomFilter = Gtk.Template.Child()
 
-    _active_language: str | None = 'English'
+    settings: Settings
+    _active_language: str | None = None
 
     def __init__(self):
         super().__init__()
 
+        self.settings: Settings = Gtk.Application.get_default().props.settings
+
         # Set default language.
-        language_manager.connect('downloading', self._on_language_downloading)
         language_manager.connect("downloaded", self._on_language_downloaded)
         language_manager.connect("removed", self._on_language_removed)
+
+        self.active_language = self.settings.get_string('active-language')
+        print("active-language", self.settings.get_string('active-language'))
 
         self.fill_lang_combo()
         if not language_manager.get_downloaded_codes():
@@ -74,21 +78,10 @@ class LanguagePopover(Gtk.Popover):
     def on_language_filter(self, proposal: LanguageItem, text: str) -> bool:
         return text.lower() in proposal.title.lower()
 
-    def _on_language_downloading(self, sender, lang_code: str):
-        print(f"on_language_downloading: {lang_code}")
-        self.spinner.start()
-
-    def _on_language_downloaded(self, sender, lang_code: str):
-        language = language_manager.get_language(lang_code)
-        print("on_language_downloaded: " + language)
-        self.show_toast(_(f"{language} language downloaded."))
+    def _on_language_downloaded(self, _sender, _lang_code: str):
         self.fill_lang_combo()
 
-        if not language_manager.loading_languages:
-            self.spinner.stop()
-
-    def _on_language_removed(self, sender, lang_code: str):
-        print("on_language_removed: " + lang_code)
+    def _on_language_removed(self, _sender, _lang_code: str):
         self.fill_lang_combo()
 
     @Gtk.Template.Callback()
@@ -110,8 +103,9 @@ class LanguagePopover(Gtk.Popover):
 
     @Gtk.Template.Callback()
     def _on_language_activate(self, _: Gtk.ListView, position: int):
-        item = self.filter_list.get_item(position)
+        item: LanguageItem = self.filter_list.get_item(position)
         self.emit('language-changed', item)
+        self.active_language = item.code
         language_manager.active_language = item
         self.popdown()
 
@@ -122,7 +116,7 @@ class LanguagePopover(Gtk.Popover):
         self.filter_list.set_filter(_filter)
 
     @Gtk.Template.Callback()
-    def _on_stop_search(self, entry: Gtk.SearchEntry):
+    def _on_stop_search(self, _entry: Gtk.SearchEntry):
         self.popdown()
 
     @Gtk.Template.Callback()
@@ -140,13 +134,9 @@ class LanguagePopover(Gtk.Popover):
                 priority=GLib.PRIORITY_LOW
             )
 
-        # self.emit('language-changed', 'English')
-        # self.lang_combo.set_label(_("English"))
+        print(f'Fill combo with {self.active_language}')
 
-        if self._active_language in language_manager.get_downloaded_codes():
-            # self.lang_combo.set_label(language_manager.get_language(self.active_lang))
-
-            self.emit('language-changed', language_manager.get_language_item(self._active_language))
+        if self.active_language in language_manager.get_downloaded_codes():
+            self.emit('language-changed', language_manager.get_language_item(self.active_language))
         else:
             self.emit('language-changed', language_manager.get_language_item('eng'))
-            # self.lang_combo.set_label(_("English"))
