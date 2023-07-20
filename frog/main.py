@@ -134,14 +134,11 @@ class FrogApplication(Adw.Application):
             developers=["Andrey Maksimov"],
             release_notes="""<p>In this update, we've made a number of improvements to our app.</p>
                 <ul>
-                    <li>We have redesigned the settings dialog to make it 
-                    more user-friendly and understandable.</li>
-                    <li>Now you can easily find the language you want by searching.</li>
-                    <li>In addition, we have added the ability to select a second 
-                    language for extracting text from images.</li>
-                    <li>The Frog can automatically follow links extracted from QR codes.</li>
-                    <li>We also updated the localization and improved the overall performance of the app.</li>
-                    <li>Fixed some bugs and bugs.</li>
+                    <li>Add the ability to insert images from the clipboard 
+                    by using the <code>Ctrl+V</code> shortcut.</li>
+                    <li>In addition, we have upgraded the language selection dropdown
+                    to popover with a quick search of a language.</li>
+                    <li>Last but not least, Frog has become more accessibility-friendly.</li>
                 </ul>
                 <p>We hope you enjoy our work!</p>
             """,
