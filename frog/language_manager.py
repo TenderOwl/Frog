@@ -203,7 +203,7 @@ class LanguageManager(GObject.GObject):
 
     @active_language.setter
     def active_language(self, language: LanguageItem):
-        print('Active language set to %s', language)
+        print(f'Active language set to {language}')
         self._active_language = language
         self.notify('active_language')
 

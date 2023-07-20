@@ -40,7 +40,7 @@ from frog.services.clipboard_service import clipboard_service, ClipboardService
 from frog.services.screenshot_service import ScreenshotService
 from frog.widgets.extracted_page import ExtractedPage
 from frog.widgets.list_menu_row import ListMenuRow
-from frog.widgets.preferences_dialog import PreferencesDialog
+from frog.widgets.preferences_window import PreferencesWindow
 from frog.widgets.welcome_page import WelcomePage
 
 
@@ -294,7 +294,7 @@ class FrogWindow(Adw.ApplicationWindow):
 
     def show_preferences(self):
         # dialog = LanguagePacksDialog(self)
-        dialog = PreferencesDialog(settings=self.settings, parent=self)
+        dialog = PreferencesWindow(settings=self.settings, parent=self)
         dialog.present()
 
     def show_welcome_page(self, *_):

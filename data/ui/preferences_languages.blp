@@ -1,14 +1,14 @@
 using Gtk 4.0;
 using Adw 1;
 
-Adw.PreferencesPage languages_page {
+template $PreferencesLanguagesPage : Adw.PreferencesPage {
   title: _("Languages");
   icon-name: "preferences-desktop-locale-symbolic";
 
   Box {
     orientation: vertical;
 
-    SearchBar search_revealer {
+    SearchBar search_bar {
       show-close-button: true;
 
       SearchEntry language_search_entry {
@@ -26,10 +26,14 @@ Adw.PreferencesPage languages_page {
         margin-end: 12;
         margin-bottom: 12;
 
-        ListBox installed_languages_list {
-          selection-mode: none;
+        Adw.ClampScrollable {
+          maximum-size: 360;
 
-          styles ["boxed-list"]
+          ListBox installed_languages_list {
+            selection-mode: none;
+
+            styles ["boxed-list"]
+          }
         }
       }
     }

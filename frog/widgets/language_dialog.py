@@ -26,7 +26,7 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gtk, Gio
+from gi.repository import Gtk, Gio, Adw
 
 from frog.config import RESOURCE_PREFIX
 from frog.language_manager import language_manager
@@ -35,7 +35,7 @@ from frog.widgets.language_row import LanguageRow
 
 
 @Gtk.Template(resource_path=f'{RESOURCE_PREFIX}/ui/language_dialog.ui')
-class LanguagePacksDialog(Gtk.Window):
+class LanguagePacksDialog(Adw.Window):
     __gtype_name__ = 'LanguageDialog'
 
     downloaded_list = []

@@ -1,11 +1,15 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $PreferencesDialog : Adw.PreferencesWindow {
+template $PreferencesWindow : Adw.PreferencesWindow {
   default-height: 400;
   default-width: 400;
   width-request: 360;
   height-request: 300;
   modal: true;
   search-enabled: false;
+
+  $PreferencesGeneralPage general_page {}
+
+  $PreferencesLanguagesPage languages_page {}
 }

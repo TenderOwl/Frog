@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $LanguageDialog : Window {
+template $LanguageDialog : Adw.Window {
   default-width: 340;
   default-height: 400;
 
@@ -31,11 +31,13 @@ template $LanguageDialog : Window {
 
       ScrolledWindow {
         hscrollbar-policy: never;
-        hexpand: true;
-        child: ListBox language_listbox {
-          show-separators: true;
 
-          styles ["boxed-list"]
+        child: Adw.ClampScrollable {
+          maximum-size: 360;
+
+          child: ListView list_view {
+
+          };
         };
       }
     }
