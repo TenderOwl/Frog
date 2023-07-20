@@ -18,8 +18,8 @@
   "sources": [
     {
       "type": "archive",
-      "url": "https://linuxtv.org/downloads/zbar/zbar-0.23.tar.gz",
-      "sha256": "ac52763a7dd6ddc53ca6cd75ccee14f7abf6ae46ecb31137d025af123edd33bf"
+      "url": "https://linuxtv.org/downloads/zbar/zbar-0.23.90.tar.gz",
+      "sha256": "ff857dd7e3dbe043dac3765b5182c91dfd0477800713a75d15287d797cee60fa"
     },
     {
       "type": "script",
