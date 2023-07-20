@@ -158,21 +158,23 @@ class FrogWindow(Adw.ApplicationWindow):
 
             # If text is a URL we could show user Toast with suggestion to open it
             # Or automatically open it, if this setting is set.
-            if is_url:
-                if self.settings.get_boolean("autolinks"):
-                    Gtk.show_uri(None, text, Gdk.CURRENT_TIME)
-                    self.show_toast(
-                        _("QR-code URL opened"),
-                        priority=Adw.ToastPriority.HIGH
-                    )
-                else:
-                    toast = Adw.Toast(
-                        title=_("QR-code contains URL."),
-                        button_label=_("Open"),
-                        priority=Adw.ToastPriority.HIGH,
-                    )
-                    toast.set_detailed_action_name(f'app.show_uri("{text}")')
-                    self.toast_overlay.add_toast(toast)
+            if is_url and self.settings.get_boolean("autolinks"):
+                launcher = Gtk.UriLauncher.new(text)
+                print('Launcher initialized')
+                launcher.launch()
+                # Gtk.show_uri(None, text, Gdk.CURRENT_TIME)
+                self.show_toast(
+                    _("QR-code URL opened"),
+                    priority=Adw.ToastPriority.HIGH
+                )
+            else:
+                toast = Adw.Toast(
+                    title=_("QR-code contains URL."),
+                    button_label=_("Open"),
+                    priority=Adw.ToastPriority.HIGH,
+                )
+                toast.set_detailed_action_name(f'app.show_uri("{text}")')
+                self.toast_overlay.add_toast(toast)
 
             self.main_leaflet.set_visible_child_name("extracted")
 
@@ -237,12 +239,10 @@ class FrogWindow(Adw.ApplicationWindow):
         self.show_toast(message)
 
     def on_dnd_enter(self, drop_target, x, y):
-        print("DND Enter", drop_target)
         self.add_css_class("drop_hover")
         return Gdk.DragAction.COPY
 
     def on_dnd_leave(self, user_data=None):
-        print("DND Leave")
         self.remove_css_class("drop_hover")
 
     def on_dnd_drop(self, drop_target,
