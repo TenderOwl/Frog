@@ -1,23 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the frog package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# Jiri Grönroos <jiri.gronroos@iki.fi>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-05-02 13:27+0300\n"
-"PO-Revision-Date: 2023-03-20 15:11+0000\n"
+"PO-Revision-Date: 2023-07-26 15:08+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://hosted.weblate.org/projects/frog/default/fi/"
-">\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/frog/default/fi/>"
+"\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.2-dev\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:6
 #: ../data/com.github.tenderowl.frog.desktop.in:3
@@ -26,7 +25,7 @@ msgstr "Frog"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:7
 msgid "Extract text from images"
-msgstr ""
+msgstr "Pura tekstiä kuvista"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:9
 msgid ""
@@ -39,7 +38,7 @@ msgstr ""
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:28
 msgid "In this update, we've made a number of improvements to our app."
-msgstr ""
+msgstr "Tässä päivityksessä sovellukseen on tehty lukuisia parannuksia."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:30
 msgid ""
@@ -73,7 +72,7 @@ msgstr ""
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:37
 msgid "We hope you enjoy our work!"
-msgstr ""
+msgstr "Toivottavasti pidät työmme tuloksista!"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:42
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:51
@@ -689,31 +688,31 @@ msgstr "Teksti purettu. Voit liittää tekstin pikanäppäimellä Ctrl+V"
 
 #: ../frog/preferences.py:113
 msgid "View all available languages"
-msgstr ""
+msgstr "Näytä kaikki saatavilla olevat kielet"
 
 #: ../frog/window.py:201
 msgid "Text copied to clipboard"
-msgstr ""
+msgstr "Teksti kopioitu leikepöydälle"
 
 #: ../frog/window.py:208
 msgid "QR-code URL opened"
-msgstr ""
+msgstr "QR-koodin URL-osoite avattu"
 
 #: ../frog/window.py:211
 msgid "QR-code contains URL."
-msgstr ""
+msgstr "QR-koodi sisältää URL-osoitteen."
 
 #: ../frog/window.py:212
 msgid "Open"
-msgstr ""
+msgstr "Avaa"
 
 #: ../frog/window.py:240
 msgid "Supported image files"
-msgstr ""
+msgstr "Tuetut kuvatiedostot"
 
 #: ../frog/window.py:246
 msgid "Open image to extract text"
-msgstr ""
+msgstr "Avaa kuva purkaaksesi tekstiä"
 
 #: ../frog/window.py:290
 msgid "Only images can be processed that way."
@@ -721,7 +720,7 @@ msgstr "Vain kuvia voi käsitellä sillä tavalla."
 
 #: ../frog/window.py:328
 msgid "Text copied"
-msgstr ""
+msgstr "Teksti kopioitu"
 
 #: ../frog/window.py:342
 #, python-brace-format
