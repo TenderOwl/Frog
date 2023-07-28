@@ -42,6 +42,7 @@ from frog.widgets.extracted_page import ExtractedPage
 from frog.widgets.list_menu_row import ListMenuRow
 from frog.widgets.preferences_window import PreferencesWindow
 from frog.widgets.welcome_page import WelcomePage
+from frog.services.tts import ttsservice
 
 
 @Gtk.Template(resource_path="/com/github/tenderowl/frog/ui/window.ui")
@@ -176,6 +177,8 @@ class FrogWindow(Adw.ApplicationWindow):
                     )
                     toast.set_detailed_action_name(f'app.show_uri("{text}")')
                     self.toast_overlay.add_toast(toast)
+            else:
+                GObjectWorker.call(ttsservice.speak, (text, self.get_language()[:1]), )
 
             self.main_leaflet.set_visible_child_name("extracted")
 
