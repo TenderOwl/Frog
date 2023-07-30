@@ -64,7 +64,8 @@ template $WelcomePage : Box {
             }
 
             Label {
-              label: _("Take a Screenshot");
+              label: _("_Take a Screenshot");
+              use-underline: true;
             }
           };
         }
@@ -83,7 +84,8 @@ template $WelcomePage : Box {
             }
 
             Label {
-              label: _("Open Image");
+              label: _("_Open Image");
+              use-underline: true;
             }
           };
         }
@@ -114,6 +116,6 @@ menu primary_menu {
 }
 
 menu grab_menu {
-    item (_("Open image"), "app.open_image", "folder-open-symbolic")
-    item (_("Paste from clipboard"), "app.paste_from_clipboard", "folder-open-symbolic")
+    item (_("_Open image"), "app.open_image", "folder-open-symbolic")
+    item (_("_Paste from clipboard"), "app.paste_from_clipboard", "folder-open-symbolic")
 }

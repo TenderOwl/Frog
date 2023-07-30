@@ -2,14 +2,16 @@ using Gtk 4.0;
 using Adw 1;
 
 template $PreferencesGeneralPage : Adw.PreferencesPage {
-  title: _("General");
+  title: _("_General");
+  use-underline: true;
   icon-name: "emblem-system-symbolic";
 
   Adw.PreferencesGroup {
     title: _("Text Extracting");
 
     Adw.ComboRow extra_language_combo {
-      title: _("Second language");
+      title: _("_Second language");
+      use-underline: true;
       subtitle: _("Additional language used in text recognition");
     }
   }
@@ -18,7 +20,8 @@ template $PreferencesGeneralPage : Adw.PreferencesPage {
     title: _("Behavior");
 
     Adw.ActionRow {
-      title: _("Copy to clipboard");
+      title: _("_Copy to clipboard");
+      use-underline: true;
       subtitle: _("Automatically copy the extracted text to clipboard");
       activatable-widget: autocopy_switch;
 
@@ -28,7 +31,8 @@ template $PreferencesGeneralPage : Adw.PreferencesPage {
     }
 
     Adw.ActionRow {
-      title: _("Open QR-code links");
+      title: _("_Open QR-code links");
+      use-underline: true;
       subtitle: _("Automatically open links from QR-codes");
       activatable-widget: autolinks_switch;
 
