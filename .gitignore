@@ -5,3 +5,5 @@ builddir
 venv
 
 /subprojects/blueprint-compiler
+
+__pycache__
