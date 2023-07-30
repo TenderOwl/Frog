@@ -24,9 +24,13 @@ The Frog could help you to deal with QR codes helping you to get them decoded!
 <video controls src="https://user-images.githubusercontent.com/519146/226143395-74676db4-90ff-49b5-98af-35a284f327bb.webm" />
 </div>
 
-## Get it from Flathub
+## Get Frog
 
+### Flathub
 <a href='https://flathub.org/apps/details/com.github.tenderowl.frog'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
+
+### Snapcraft
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/frog)
 
 ## :tada: Support
 If you like Frog and you want to support its development, you can buy me a coffee:
