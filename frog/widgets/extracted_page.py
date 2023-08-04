@@ -29,6 +29,9 @@
 from gi.repository import Gtk, GObject
 
 from frog.config import RESOURCE_PREFIX
+from frog.gobject_worker import GObjectWorker
+from frog.services.tts import ttsservice
+from frog.settings import Settings
 
 
 @Gtk.Template(resource_path=f"{RESOURCE_PREFIX}/ui/extracted_page.ui")
@@ -37,6 +40,8 @@ class ExtractedPage(Gtk.Box):
 
     __gsignals__ = {
         'go-back': (GObject.SIGNAL_RUN_LAST, None, (int,)),
+        'on-listen-start': (GObject.SIGNAL_RUN_LAST, None, ()),
+        'on-listen-stop': (GObject.SIGNAL_RUN_LAST, None, ()),
     }
 
     back_btn: Gtk.Button = Gtk.Template.Child()
@@ -48,6 +53,8 @@ class ExtractedPage(Gtk.Box):
 
     def __init__(self):
         super().__init__()
+
+        self.settings: Settings = Gtk.Application.get_default().props.settings
 
     @Gtk.Template.Callback()
     def _on_back_btn_clicked(self, _: Gtk.Button) -> None:
@@ -65,3 +72,15 @@ class ExtractedPage(Gtk.Box):
     @extracted_text.setter
     def extracted_text(self, text: str):
         self.buffer.set_text(text)
+
+    def listen(self):
+        lang = self.settings.get_string('active-language')
+        self.emit('on-listen-start')
+        GObjectWorker.call(
+            ttsservice.speak,
+            (self.extracted_text, lang[:2]),
+            callback=self._on_listen_end
+        )
+
+    def _on_listen_end(self):
+        self.emit('on-listen-stop')

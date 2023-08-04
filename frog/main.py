@@ -95,6 +95,7 @@ class FrogApplication(Adw.Application):
         self.create_action('copy_to_clipboard', self.on_copy_to_clipboard, ['<primary>g'])
         self.create_action('open_image', self.open_image, ['<primary>o'])
         self.create_action('paste_from_clipboard', self.on_paste_from_clipboard, ['<primary>v'])
+        self.create_action('listen', self.on_listen, ['<primary>l'])
         self.create_action('shortcuts', self.on_shortcuts, ['<primary>question'])
 
         self.create_action('quit', lambda *_: self.quit(), ['<primary>q', '<primary>w'])
@@ -170,6 +171,9 @@ class FrogApplication(Adw.Application):
     def on_paste_from_clipboard(self, _action, _param) -> None:
         self.get_active_window().on_paste_from_clipboard(self)
 
+    def on_listen(self, _action, _param) -> None:
+        self.get_active_window().on_listen()
+
     @staticmethod
     def on_decoded(_sender, text: str, copy: bool) -> None:
         icon = GdkPixbuf.Pixbuf.new_from_resource_at_scale(
@@ -197,6 +201,9 @@ class FrogApplication(Adw.Application):
 
         else:
             print(f'{text}\n')
+
+    def on_listen(self, _sender, _event):
+        self.get_active_window().on_listen()
 
     def create_action(self, name, callback, shortcuts=None):
         """Add an application action.

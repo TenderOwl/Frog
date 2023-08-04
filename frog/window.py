@@ -177,8 +177,6 @@ class FrogWindow(Adw.ApplicationWindow):
                     )
                     toast.set_detailed_action_name(f'app.show_uri("{text}")')
                     self.toast_overlay.add_toast(toast)
-            else:
-                GObjectWorker.call(ttsservice.speak, (text, self.get_language()[:1]), )
 
             self.main_leaflet.set_visible_child_name("extracted")
 
@@ -236,6 +234,12 @@ class FrogWindow(Adw.ApplicationWindow):
 
     def on_paste_from_clipboard(self, sender) -> None:
         clipboard_service.read_texture()
+
+    def on_listen(self):
+        if self.main_leaflet.get_visible_child_name() != 'extracted':
+            return
+
+        self.extracted_page.listen()
 
     def display_error(self, sender, error) -> None:
         print(f"Error happened: {error}")
