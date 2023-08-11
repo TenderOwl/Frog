@@ -93,6 +93,10 @@ class ExtractedPage(Gtk.Box):
             callback=self._on_generated
         )
 
+    def listen_cancel(self):
+        ttsservice.stop_speaking()
+        self.swap_controls(False)
+
     def _on_generated(self, filepath):
         if not filepath:
             self.swap_controls(False)

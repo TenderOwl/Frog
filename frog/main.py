@@ -96,6 +96,7 @@ class FrogApplication(Adw.Application):
         self.create_action('open_image', self.open_image, ['<primary>o'])
         self.create_action('paste_from_clipboard', self.on_paste_from_clipboard, ['<primary>v'])
         self.create_action('listen', self.on_listen, ['<primary>l'])
+        self.create_action('listen_cancel', self.on_listen_cancel, ['<primary><ctrl>l'])
         self.create_action('shortcuts', self.on_shortcuts, ['<primary>question'])
 
         self.create_action('quit', lambda *_: self.quit(), ['<primary>q', '<primary>w'])
@@ -204,6 +205,9 @@ class FrogApplication(Adw.Application):
 
     def on_listen(self, _sender, _event):
         self.get_active_window().on_listen()
+
+    def on_listen_cancel(self, _sender, _event):
+        self.get_active_window().on_listen_cancel()
 
     def create_action(self, name, callback, shortcuts=None):
         """Add an application action.

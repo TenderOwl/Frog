@@ -231,6 +231,9 @@ class FrogWindow(Adw.ApplicationWindow):
 
         self.extracted_page.listen()
 
+    def on_listen_cancel(self):
+        self.extracted_page.listen_cancel()
+
     def display_error(self, sender, error) -> None:
         print(f"Error happened: {error}")
         message = (str(error).split(":")[-1]) if not isinstance(error, str) else error
@@ -297,6 +300,7 @@ class FrogWindow(Adw.ApplicationWindow):
 
     def show_welcome_page(self, *_):
         self.main_leaflet.set_visible_child_name('welcome')
+        self.extracted_page.listen_cancel()
 
     def show_toast(self, title: str, timeout: int = 2,
                    priority: Adw.ToastPriority = Adw.ToastPriority.NORMAL):

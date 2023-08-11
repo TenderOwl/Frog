@@ -62,7 +62,7 @@ class TTSService(GObject.GObject):
             self.emit('stop', False)
 
     def stop_speaking(self):
-        if self.player and self.player.get_state(1) == Gst.State.PLAYING:
+        if self.player:
             self.player.set_state(Gst.State.PAUSED)
 
 
