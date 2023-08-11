@@ -10,6 +10,7 @@ class TTSService(GObject.GObject):
 
     __gsignals__ = {
         'speak': (GObject.SIGNAL_RUN_LAST, None, (str,)),
+        'stop': (GObject.SIGNAL_RUN_LAST, None, (bool,)),
     }
 
     _tld: str = "com"
@@ -25,7 +26,7 @@ class TTSService(GObject.GObject):
     def get_languages():
         return gtts.lang.tts_langs()
 
-    def speak(self, text: str, lang: str = "eng"):
+    def generate(self, text: str, lang: str = "eng") -> str | None:
         try:
             tts = gtts.gTTS(text, lang=lang)
             print("Got speech")
@@ -33,16 +34,16 @@ class TTSService(GObject.GObject):
             print("Saved speech")
 
             self.emit('speak', self._speech_filepath)
-            self._play()
+            return self._speech_filepath
         except Exception as e:
             print(f"Speech error: {e}")
+            return None
 
-    def _play(self):
-        filepath = os.path.abspath(self._speech_filepath)
+    def play(self, speech_file: str):
+        filepath = os.path.abspath(speech_file)
 
         self.player = Gst.ElementFactory.make("playbin")
-        print('Playbin', self.player)
-        self.player.set_property("uri", f"file://{self._speech_filepath}")
+        self.player.set_property("uri", f"file://{filepath}")
         self.player.set_property("volume", 1.0)
 
         bus = self.player.get_bus()
@@ -54,12 +55,11 @@ class TTSService(GObject.GObject):
     def on_gst_message(self, _bus, message: Gst.Message):
         if message.type == Gst.MessageType.EOS:
             self.player.set_state(Gst.State.NULL)
-            # self.playerer_event.set()
-            print("End of Stream")
+            self.emit('stop', True)
         elif message.type == Gst.MessageType.ERROR:
             self.player.set_state(Gst.State.NULL)
-            # self.player_event.set()
             print('Some error occurred while trying to play.')
+            self.emit('stop', False)
 
     def stop_speaking(self):
         if self.player and self.player.get_state(1) == Gst.State.PLAYING:

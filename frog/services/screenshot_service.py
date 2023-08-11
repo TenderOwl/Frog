@@ -116,6 +116,7 @@ class ScreenshotService(GObject.GObject):
             self.emit('error', 'Failed to decode data.')
 
         if extracted:
+            print('Extracted successfully')
             self.emit('decoded', extracted, copy)
 
         else:
