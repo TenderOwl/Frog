@@ -136,6 +136,8 @@ class FrogApplication(Adw.Application):
             developers=["Andrey Maksimov"],
             release_notes="""<p>In this update, we've made a number of improvements to our app.</p>
                 <ul>
+                    <li>Add Text-to-speech to be able to listen to the extracted text
+                    without any additional apps (internet connection required).</li>
                     <li>Add the ability to insert images from the clipboard 
                     by using the <code>Ctrl+V</code> shortcut.</li>
                     <li>In addition, we have upgraded the language selection dropdown
