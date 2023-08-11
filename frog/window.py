@@ -66,6 +66,10 @@ class FrogWindow(Adw.ApplicationWindow):
         self.open_file_dlg = None
         self.settings = Gtk.Application.get_default().props.settings
 
+        language_manager.active_language = language_manager.get_language_item(
+            self.settings.get_string('active-language')
+        )
+
         # self.infobar = Gtk.InfoBar(visible=True, revealed=False)
         # self.infobar.set_show_close_button(True)
         # self.infobar.connect('response', self.on_infobar_response)
@@ -84,14 +88,6 @@ class FrogWindow(Adw.ApplicationWindow):
         drop_target_main.connect("leave", self.on_dnd_leave)
         self.main_leaflet.add_controller(drop_target_main)
 
-        # drop_target_textview: Gtk.DropTarget = Gtk.DropTarget.new(
-        #     type=Gdk.FileList, actions=Gdk.DragAction.COPY
-        # )
-        # drop_target_textview.connect("drop", self.on_dnd_drop)
-        # drop_target_textview.connect("enter", self.on_dnd_enter)
-        # drop_target_textview.connect("leave", self.on_dnd_leave)
-        # self.shot_text.add_controller(drop_target_textview)
-
         # Setup application
         self.props.default_width = self.settings.get_int("window-width")
         self.props.default_height = self.settings.get_int("window-height")
@@ -105,12 +101,6 @@ class FrogWindow(Adw.ApplicationWindow):
 
         clipboard_service.connect('paste_from_clipboard', self._on_paste_from_clipboard)
         clipboard_service.connect('error', self.display_error)
-
-        # # self.text_copy_btn.connect('clicked', self.text_copy_btn_clicked)
-        # self.languages_list.connect("row-activated", self.on_language_change)
-        # self.connect("notify::default-width", self.on_configure_event)
-        # self.connect("notify::default-height", self.on_configure_event)
-        # self.connect("destroy", self.on_window_delete_event)
 
     @GObject.Property(type=str)
     def active_lang(self):
@@ -234,6 +224,15 @@ class FrogWindow(Adw.ApplicationWindow):
     def on_paste_from_clipboard(self, sender) -> None:
         clipboard_service.read_texture()
 
+    def on_listen(self):
+        if self.main_leaflet.get_visible_child_name() != 'extracted':
+            return
+
+        self.extracted_page.listen()
+
+    def on_listen_cancel(self):
+        self.extracted_page.listen_cancel()
+
     def display_error(self, sender, error) -> None:
         print(f"Error happened: {error}")
         message = (str(error).split(":")[-1]) if not isinstance(error, str) else error
@@ -300,6 +299,7 @@ class FrogWindow(Adw.ApplicationWindow):
 
     def show_welcome_page(self, *_):
         self.main_leaflet.set_visible_child_name('welcome')
+        self.extracted_page.listen_cancel()
 
     def show_toast(self, title: str, timeout: int = 2,
                    priority: Adw.ToastPriority = Adw.ToastPriority.NORMAL):

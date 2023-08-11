@@ -95,6 +95,8 @@ class FrogApplication(Adw.Application):
         self.create_action('copy_to_clipboard', self.on_copy_to_clipboard, ['<primary>g'])
         self.create_action('open_image', self.open_image, ['<primary>o'])
         self.create_action('paste_from_clipboard', self.on_paste_from_clipboard, ['<primary>v'])
+        self.create_action('listen', self.on_listen, ['<primary>l'])
+        self.create_action('listen_cancel', self.on_listen_cancel, ['<primary><ctrl>l'])
         self.create_action('shortcuts', self.on_shortcuts, ['<primary>question'])
 
         self.create_action('quit', lambda *_: self.quit(), ['<primary>q', '<primary>w'])
@@ -134,6 +136,8 @@ class FrogApplication(Adw.Application):
             developers=["Andrey Maksimov"],
             release_notes="""<p>In this update, we've made a number of improvements to our app.</p>
                 <ul>
+                    <li>Add Text-to-speech to be able to listen to the extracted text
+                    without any additional apps (internet connection required).</li>
                     <li>Add the ability to insert images from the clipboard 
                     by using the <code>Ctrl+V</code> shortcut.</li>
                     <li>In addition, we have upgraded the language selection dropdown
@@ -197,6 +201,12 @@ class FrogApplication(Adw.Application):
 
         else:
             print(f'{text}\n')
+
+    def on_listen(self, _sender, _event):
+        self.get_active_window().on_listen()
+
+    def on_listen_cancel(self, _sender, _event):
+        self.get_active_window().on_listen_cancel()
 
     def create_action(self, name, callback, shortcuts=None):
         """Add an application action.

@@ -29,6 +29,9 @@
 from gi.repository import Gtk, GObject
 
 from frog.config import RESOURCE_PREFIX
+from frog.services.tts import ttsservice, TTSService
+from frog.settings import Settings
+from frog.gobject_worker import GObjectWorker
 
 
 @Gtk.Template(resource_path=f"{RESOURCE_PREFIX}/ui/extracted_page.ui")
@@ -37,9 +40,14 @@ class ExtractedPage(Gtk.Box):
 
     __gsignals__ = {
         'go-back': (GObject.SIGNAL_RUN_LAST, None, (int,)),
+        'on-listen-start': (GObject.SIGNAL_RUN_LAST, None, ()),
+        'on-listen-stop': (GObject.SIGNAL_RUN_LAST, None, ()),
     }
 
     back_btn: Gtk.Button = Gtk.Template.Child()
+    listen_btn: Gtk.Button = Gtk.Template.Child()
+    listen_cancel_btn: Gtk.Button = Gtk.Template.Child()
+    listen_spinner: Gtk.Spinner = Gtk.Template.Child()
     toolbox: Gtk.Revealer = Gtk.Template.Child()
     grab_btn: Gtk.Button = Gtk.Template.Child()
     text_copy_btn: Gtk.Button = Gtk.Template.Child()
@@ -48,6 +56,10 @@ class ExtractedPage(Gtk.Box):
 
     def __init__(self):
         super().__init__()
+
+        self.settings: Settings = Gtk.Application.get_default().props.settings
+
+        ttsservice.connect('stop', self._on_listen_end)
 
     @Gtk.Template.Callback()
     def _on_back_btn_clicked(self, _: Gtk.Button) -> None:
@@ -64,4 +76,45 @@ class ExtractedPage(Gtk.Box):
 
     @extracted_text.setter
     def extracted_text(self, text: str):
-        self.buffer.set_text(text)
+        try:
+            self.buffer.set_text(text)
+        except Exception as e:
+            print('Got Exception')
+            print(e)
+
+    def listen(self):
+        self.swap_controls(True)
+
+        lang = self.settings.get_string('active-language')
+
+        GObjectWorker.call(
+            ttsservice.generate,
+            (self.extracted_text, lang[:2]),
+            callback=self._on_generated
+        )
+
+    def listen_cancel(self):
+        ttsservice.stop_speaking()
+        self.swap_controls(False)
+
+    def _on_generated(self, filepath):
+        if not filepath:
+            self.swap_controls(False)
+            return
+
+        ttsservice.play(filepath)
+
+    def _on_listen_end(self, service: TTSService, success: bool):
+        self.emit('on-listen-stop')
+        self.swap_controls(False)
+
+    def swap_controls(self, state: bool = False):
+        # Stop spinner
+        if state:
+            self.listen_spinner.start()
+        else:
+            self.listen_spinner.stop()
+
+        # Swap buttons
+        self.listen_btn.set_visible(not state)
+        self.listen_cancel_btn.set_visible(state)
