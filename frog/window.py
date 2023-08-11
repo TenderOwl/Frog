@@ -42,7 +42,6 @@ from frog.widgets.extracted_page import ExtractedPage
 from frog.widgets.list_menu_row import ListMenuRow
 from frog.widgets.preferences_window import PreferencesWindow
 from frog.widgets.welcome_page import WelcomePage
-from frog.services.tts import ttsservice
 
 
 @Gtk.Template(resource_path="/com/github/tenderowl/frog/ui/window.ui")

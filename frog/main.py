@@ -172,9 +172,6 @@ class FrogApplication(Adw.Application):
     def on_paste_from_clipboard(self, _action, _param) -> None:
         self.get_active_window().on_paste_from_clipboard(self)
 
-    def on_listen(self, _action, _param) -> None:
-        self.get_active_window().on_listen()
-
     @staticmethod
     def on_decoded(_sender, text: str, copy: bool) -> None:
         icon = GdkPixbuf.Pixbuf.new_from_resource_at_scale(
