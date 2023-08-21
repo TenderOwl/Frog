@@ -136,6 +136,7 @@ class FrogApplication(Adw.Application):
             developers=["Andrey Maksimov"],
             release_notes="""<p>In this update, we've made a number of improvements to our app.</p>
                 <ul>
+                    <li>Share extracted text: This means you can now share your findings with the wider community.</li>
                     <li>Add Text-to-speech to be able to listen to the extracted text
                     without any additional apps (internet connection required).</li>
                     <li>Add the ability to insert images from the clipboard 
