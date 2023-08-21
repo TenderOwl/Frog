@@ -43,6 +43,7 @@ class PreferencesWindow(Adw.PreferencesWindow):
 
     def __init__(self, settings: Settings, parent: Adw.Window = None):
         super().__init__()
+        self.set_transient_for(parent)
 
 
 class LanguageItem(GObject.GObject):
