@@ -29,9 +29,11 @@
 from gi.repository import Gtk, GObject
 
 from frog.config import RESOURCE_PREFIX
+from frog.gobject_worker import GObjectWorker
 from frog.services.tts import ttsservice, TTSService
 from frog.settings import Settings
-from frog.gobject_worker import GObjectWorker
+from frog.widgets.share_row import ShareRow
+from frog.services.share_service import ShareService
 
 
 @Gtk.Template(resource_path=f"{RESOURCE_PREFIX}/ui/extracted_page.ui")
@@ -39,15 +41,16 @@ class ExtractedPage(Gtk.Box):
     __gtype_name__ = "ExtractedPage"
 
     __gsignals__ = {
-        'go-back': (GObject.SIGNAL_RUN_LAST, None, (int,)),
-        'on-listen-start': (GObject.SIGNAL_RUN_LAST, None, ()),
-        'on-listen-stop': (GObject.SIGNAL_RUN_LAST, None, ()),
+        "go-back": (GObject.SIGNAL_RUN_LAST, None, (int,)),
+        "on-listen-start": (GObject.SIGNAL_RUN_LAST, None, ()),
+        "on-listen-stop": (GObject.SIGNAL_RUN_LAST, None, ()),
     }
 
     back_btn: Gtk.Button = Gtk.Template.Child()
     listen_btn: Gtk.Button = Gtk.Template.Child()
     listen_cancel_btn: Gtk.Button = Gtk.Template.Child()
     listen_spinner: Gtk.Spinner = Gtk.Template.Child()
+    share_list_box: Gtk.ListBox = Gtk.Template.Child()
     toolbox: Gtk.Revealer = Gtk.Template.Child()
     grab_btn: Gtk.Button = Gtk.Template.Child()
     text_copy_btn: Gtk.Button = Gtk.Template.Child()
@@ -59,19 +62,22 @@ class ExtractedPage(Gtk.Box):
 
         self.settings: Settings = Gtk.Application.get_default().props.settings
 
-        ttsservice.connect('stop', self._on_listen_end)
+        for provider in ShareService.providers():
+            self.share_list_box.append(ShareRow(provider))
+
+        ttsservice.connect("stop", self._on_listen_end)
 
     @Gtk.Template.Callback()
     def _on_back_btn_clicked(self, _: Gtk.Button) -> None:
         self.buffer.set_text("")
-        self.emit('go-back', 1)
+        self.emit("go-back", 1)
 
     @GObject.Property(type=str)
     def extracted_text(self) -> str:
         return self.buffer.get_text(
             start=self.buffer.get_start_iter(),
             end=self.buffer.get_end_iter(),
-            include_hidden_chars=False
+            include_hidden_chars=False,
         )
 
     @extracted_text.setter
@@ -79,18 +85,18 @@ class ExtractedPage(Gtk.Box):
         try:
             self.buffer.set_text(text)
         except Exception as e:
-            print('Got Exception')
+            print("Got Exception")
             print(e)
 
     def listen(self):
         self.swap_controls(True)
 
-        lang = self.settings.get_string('active-language')
+        lang = self.settings.get_string("active-language")
 
         GObjectWorker.call(
             ttsservice.generate,
             (self.extracted_text, lang[:2]),
-            callback=self._on_generated
+            callback=self._on_generated,
         )
 
     def listen_cancel(self):
@@ -105,7 +111,7 @@ class ExtractedPage(Gtk.Box):
         ttsservice.play(filepath)
 
     def _on_listen_end(self, service: TTSService, success: bool):
-        self.emit('on-listen-stop')
+        self.emit("on-listen-stop")
         self.swap_controls(False)
 
     def swap_controls(self, state: bool = False):

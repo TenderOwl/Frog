@@ -38,6 +38,7 @@ from frog.gobject_worker import GObjectWorker
 from frog.language_manager import language_manager
 from frog.services.clipboard_service import clipboard_service, ClipboardService
 from frog.services.screenshot_service import ScreenshotService
+from frog.services.share_service import ShareService
 from frog.widgets.extracted_page import ExtractedPage
 from frog.widgets.list_menu_row import ListMenuRow
 from frog.widgets.preferences_window import PreferencesWindow
@@ -67,7 +68,7 @@ class FrogWindow(Adw.ApplicationWindow):
         self.settings = Gtk.Application.get_default().props.settings
 
         language_manager.active_language = language_manager.get_language_item(
-            self.settings.get_string('active-language')
+            self.settings.get_string("active-language")
         )
 
         # self.infobar = Gtk.InfoBar(visible=True, revealed=False)
@@ -78,6 +79,8 @@ class FrogWindow(Adw.ApplicationWindow):
         # self.infobar.add_child(self.infobar_label)
         #
         # self.main_leaflet.append(self.infobar)  # , False, True, 2)
+
+        self.install_action("window.share", "provider", self._on_share)
 
         # Init drag-n-drop controller
         drop_target_main: Gtk.DropTarget = Gtk.DropTarget.new(
@@ -97,10 +100,10 @@ class FrogWindow(Adw.ApplicationWindow):
         self.backend.connect("decoded", self.on_shot_done)
         self.backend.connect("error", self.on_shot_error)
 
-        self.extracted_page.connect('go-back', self.show_welcome_page)
+        self.extracted_page.connect("go-back", self.show_welcome_page)
 
-        clipboard_service.connect('paste_from_clipboard', self._on_paste_from_clipboard)
-        clipboard_service.connect('error', self.display_error)
+        clipboard_service.connect("paste_from_clipboard", self._on_paste_from_clipboard)
+        clipboard_service.connect("error", self.display_error)
 
     @GObject.Property(type=str)
     def active_lang(self):
@@ -152,12 +155,11 @@ class FrogWindow(Adw.ApplicationWindow):
             if is_url:
                 if self.settings.get_boolean("autolinks"):
                     launcher = Gtk.UriLauncher.new(text)
-                    print('Launcher initialized')
+                    print("Launcher initialized")
                     launcher.launch()
                     # Gtk.show_uri(None, text, Gdk.CURRENT_TIME)
                     self.show_toast(
-                        _("QR-code URL opened"),
-                        priority=Adw.ToastPriority.HIGH
+                        _("QR-code URL opened"), priority=Adw.ToastPriority.HIGH
                     )
                 else:
                     toast = Adw.Toast(
@@ -210,8 +212,9 @@ class FrogWindow(Adw.ApplicationWindow):
             if not e.matches(Gio.io_error_quark(), Gio.IOErrorEnum.CANCELLED):
                 print(e)
 
-    def _on_paste_from_clipboard(self, _clipboard: ClipboardService,
-                                 texture: Gdk.Texture):
+    def _on_paste_from_clipboard(
+        self, _clipboard: ClipboardService, texture: Gdk.Texture
+    ):
         pngbytes = BytesIO(texture.save_to_png_bytes().get_data())
         try:
             lang = self.get_language()
@@ -225,7 +228,7 @@ class FrogWindow(Adw.ApplicationWindow):
         clipboard_service.read_texture()
 
     def on_listen(self):
-        if self.main_leaflet.get_visible_child_name() != 'extracted':
+        if self.main_leaflet.get_visible_child_name() != "extracted":
             return
 
         self.extracted_page.listen()
@@ -245,10 +248,7 @@ class FrogWindow(Adw.ApplicationWindow):
     def on_dnd_leave(self, user_data=None):
         self.remove_css_class("drop_hover")
 
-    def on_dnd_drop(self, drop_target,
-                    value: Gdk.FileList,
-                    x: int, y: int
-                    ) -> None:
+    def on_dnd_drop(self, drop_target, value: Gdk.FileList, x: int, y: int) -> None:
         files: List[Gio.File] = value.get_files()
         if not files:
             return
@@ -269,7 +269,7 @@ class FrogWindow(Adw.ApplicationWindow):
             self.delayed_state = True
 
     def on_infobar_response(
-            self, infobar: Gtk.InfoBar, response_type: Gtk.ResponseType
+        self, infobar: Gtk.InfoBar, response_type: Gtk.ResponseType
     ):
         if response_type == Gtk.ResponseType.CLOSE:
             self.infobar.set_revealed(False)
@@ -298,11 +298,22 @@ class FrogWindow(Adw.ApplicationWindow):
         dialog.present()
 
     def show_welcome_page(self, *_):
-        self.main_leaflet.set_visible_child_name('welcome')
+        self.main_leaflet.set_visible_child_name("welcome")
         self.extracted_page.listen_cancel()
 
-    def show_toast(self, title: str, timeout: int = 2,
-                   priority: Adw.ToastPriority = Adw.ToastPriority.NORMAL):
+    def _on_share(self, _sender, _action_name: str, provider: GLib.Variant):
+        service = ShareService()
+        provider_name: str = provider.get_string().lower()
+        text = self.extracted_page.extracted_text
+        if provider_name in ShareService.providers() and text:
+            service.share(provider_name, text)
+
+    def show_toast(
+        self,
+        title: str,
+        timeout: int = 2,
+        priority: Adw.ToastPriority = Adw.ToastPriority.NORMAL,
+    ):
         self.toast_overlay.add_toast(
             Adw.Toast(title=title, timeout=timeout, priority=priority)
         )

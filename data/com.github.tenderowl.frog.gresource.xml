@@ -11,13 +11,15 @@
         <file preprocess="xml-stripblanks">ui/preferences_window.ui</file>
         <file preprocess="xml-stripblanks">ui/preferences_general.ui</file>
         <file preprocess="xml-stripblanks">ui/preferences_languages.ui</file>
-        <file preprocess="xml-stripblanks" alias="icons/com.github.tenderowl.frog.svg">icons/com.github.tenderowl.frog.svg</file>
-        <file preprocess="xml-stripblanks" alias="icons/language-symbolic.svg">icons/symbolic/language-symbolic.svg</file>
-        <file preprocess="xml-stripblanks" alias="icons/camera-focus-symbolic.svg">icons/symbolic/camera-focus-symbolic.svg</file>
-        <file preprocess="xml-stripblanks" alias="icons/copy-symbolic.svg">icons/symbolic/copy-symbolic.svg</file>
-        <file preprocess="xml-stripblanks" alias="icons/eraser-symbolic.svg">icons/symbolic/eraser-symbolic.svg</file>
+        <file preprocess="xml-stripblanks">ui/share_row.ui</file>
+        <file>icons/com.github.tenderowl.frog.svg</file>
         <file>style.css</file>
-        <file alias="icons/ocr.png">icons/48x48/ocr.png</file>
-        <file alias="icons/translation.png">icons/48x48/translation.png</file>
+        <file>icons/scalable/actions/share-pocket-symbolic.svg</file>
+        <file>icons/scalable/actions/share-mastodon-symbolic.svg</file>
+        <file>icons/scalable/actions/share-telegram-symbolic.svg</file>
+        <file>icons/scalable/actions/share-twitter-symbolic.svg</file>
+        <file>icons/scalable/actions/share-reddit-symbolic.svg</file>
+        <file>icons/scalable/actions/share-instapaper-symbolic.svg</file>
+        <file>icons/scalable/actions/share-email-symbolic.svg</file>
     </gresource>
 </gresources>

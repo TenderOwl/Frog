@@ -80,6 +80,17 @@ template $ExtractedPage : Box {
     MenuButton share_button {
       icon-name: "emblem-shared-symbolic";
       tooltip-text: C_("Extracted screen", "Share To");
+      popover: Popover {
+
+        styles ["menu"]
+
+        child: ListBox share_list_box {
+          margin-end: 4;
+          margin-top: 4;
+          margin-start: 4;
+          margin-bottom: 4;
+        };
+      };
     }
   }
 
@@ -114,54 +125,6 @@ template $ExtractedPage : Box {
         margin-top: 8;
         margin-bottom: 8;
         spacing: 8;
-
-        // Button text_shot_btn {
-        //   action-name: "app.get_screenshot";
-        //   tooltip-markup: _("Take a screenshot");
-
-        //   styles ["suggested-action"]
-
-        //   child: Adw.ButtonContent {
-        //     label: "Take a Screenshot";
-        //     icon-name: "camera-photo-symbolic";
-        //   };
-        // }
-
-        // Button {
-        //   action-name: "app.open_image";
-        //   tooltip-markup: _("Open Image to extract text");
-
-        //   styles ["icon-button", "flat"]
-
-        //   child: Adw.ButtonContent {
-        //     icon-name: "folder-open-symbolic";
-        //   };
-        // }
-
-        // Box {
-        //   hexpand: true;
-        // }
-
-        // Button text_clear_btn {
-        //   tooltip-text: _("Clear the extraction results");
-
-        //   styles ["flat", "icon-button"]
-        //   child:
-        //   Adw.ButtonContent {
-        //     icon-name: "edit-clear-symbolic";
-        //   };
-        // }
-
-        // Button text_copy_btn {
-        //   action-name: "app.copy_to_clipboard";
-        //   tooltip-text: _("Copy extracted text to clipboard");
-
-        //   styles ["flat"]
-        //   child:
-        //   Adw.ButtonContent {
-        //     icon-name: "edit-copy-symbolic";
-        //   };
-        // }
       }
     };
   }

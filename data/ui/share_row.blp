@@ -1,0 +1,23 @@
+using Gtk 4.0;
+
+template $ShareRow : ListBoxRow {
+  GestureClick row_click {
+    button: 1;
+    released => $_on_released();
+  }
+
+  Box box {
+    spacing: 6;
+    tooltip-text: _("Share via Pocket");
+
+    Image image {
+      icon-name: "share-pocket-symbolic";
+      icon-size: normal;
+    }
+
+    Label label {
+      label: _("Pocket");
+      halign: start;
+    }
+  }
+}
