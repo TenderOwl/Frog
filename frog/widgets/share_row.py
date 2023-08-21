@@ -50,7 +50,7 @@ class ShareRow(Gtk.ListBoxRow):
         self.image.set_from_icon_name(f"share-{self.provider_name.lower()}-symbolic")
 
     @Gtk.Template.Callback()
-    def _on_released(self, key, code, n, data):
+    def _on_released(self, *args):
         self.activate_action(
             "window.share", GLib.Variant.new_string(self.provider_name)
         )

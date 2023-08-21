@@ -26,6 +26,7 @@
 # use or other dealings in this Software without prior written
 # authorization.
 from typing import List
+from urllib.parse import quote
 
 from gi.repository import GObject, Gtk
 
@@ -53,10 +54,17 @@ class ShareService(GObject.GObject):
         ]
 
     def share(self, provider: str, text: str):
+        if not text:
+            return
+
+        text = text.strip()
         if handler := getattr(self, f"get_link_{provider}"):
-            share_link: str = handler(text)
-        self.launcher.set_uri(share_link)
-        self.launcher.launch(callback=self._on_share)
+            try:
+                share_link: str = handler(quote(text))
+                self.launcher.set_uri(share_link)
+                self.launcher.launch(callback=self._on_share)
+            except Exception as e:
+                print(f"ERROR: failed to share, error: {e}")
 
     def _on_share(self, _, result):
         self.emit("share", self.launcher.launch_finish(result))

@@ -1,10 +1,13 @@
 using Gtk 4.0;
+using Adw 1;
 
 template $ShareRow : ListBoxRow {
   GestureClick row_click {
     button: 1;
     released => $_on_released();
   }
+
+  activate => $_on_released();
 
   Box box {
     spacing: 6;
