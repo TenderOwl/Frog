@@ -16,9 +16,19 @@ template $LanguageRow : Overlay {
       ]
     }
 
-    Button download_widget {
+    Button install_btn {
       icon-name: "folder-download-symbolic";
       tooltip-text: C_("Preferences Language Row", "Install language");
+      clicked => $_on_download();
+
+      styles ["flat"]
+    }
+
+    Button remove_btn {
+      visible: bind install_btn.visible inverted bidirectional;
+      icon-name: "user-trash-symbolic";
+      tooltip-text: C_("Preferences Language Row", "Remove language");
+      clicked => $_on_remove();
 
       styles ["flat"]
     }

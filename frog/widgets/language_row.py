@@ -38,7 +38,8 @@ class LanguageRow(Gtk.Overlay):
     __gtype_name__ = "LanguageRow"
 
     label: Gtk.Label = Gtk.Template.Child()
-    download_widget: Gtk.Button = Gtk.Template.Child()
+    install_btn: Gtk.Button = Gtk.Template.Child()
+    remove_btn: Gtk.Button = Gtk.Template.Child()
     progress_bar: Gtk.ProgressBar = Gtk.Template.Child()
     revealer: Gtk.Revealer = Gtk.Template.Child()
 
@@ -47,7 +48,6 @@ class LanguageRow(Gtk.Overlay):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        self.download_widget.connect("clicked", self.download_clicked)
         language_manager.connect("downloading", self.update_progress)
         language_manager.connect("downloaded", self.on_downloaded)
 
@@ -67,21 +67,19 @@ class LanguageRow(Gtk.Overlay):
     def update_ui(self):
         # English is a default language, therefore, should be no way to remove it
         if self._item.code == "eng":
-            self.download_widget.set_icon_name("user-trash-symbolic")
-            self.download_widget.set_sensitive(False)
+            self.install_btn.set_visible(False)
+            self.remove_btn.set_sensitive(False)
             return
 
-        # Downloaded
+        # Installed
         if self._item.code in language_manager.get_downloaded_codes():
-            self.download_widget.set_icon_name("user-trash-symbolic")
-            self.download_widget.set_sensitive(True)
+            self.remove_btn.set_visible(True)
         # In progress
         elif self._item.code in language_manager.loading_languages:
-            self.download_widget.set_sensitive(False)
-        # Not yet
+            self.install_btn.set_sensitive(False)
+        # Not Installed
         else:
-            self.download_widget.set_icon_name("folder-download-symbolic")
-            self.download_widget.set_sensitive(True)
+            self.install_btn.set_visible(True)
             self.revealer.set_reveal_child(False)
 
     def update_progress(self, sender, code: str, progress: float) -> None:
@@ -100,17 +98,22 @@ class LanguageRow(Gtk.Overlay):
             if progress == 100:
                 self.revealer.set_reveal_child(False)
 
-    def download_clicked(self, widget: Gtk.Button) -> None:
+    @Gtk.Template.Callback()
+    def _on_download(self, _: Gtk.Button):
+        if self._item.code in language_manager.loading_languages:
+            return
+
+        language_manager.download(self._item.code)
+        self.update_ui()
+
+    @Gtk.Template.Callback()
+    def _on_remove(self, _: Gtk.Button):
         if self._item.code in language_manager.loading_languages:
             return
 
         if self._item.code in language_manager.get_downloaded_codes():
             language_manager.remove_language(self._item.code)
             self.update_ui()
-            return
-
-        language_manager.download(self._item.code)
-        self.update_ui()
 
     def on_downloaded(self, sender, code):
         if self._item.code == code:
