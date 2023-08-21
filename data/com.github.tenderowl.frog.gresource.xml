@@ -16,7 +16,7 @@
         <file preprocess="xml-stripblanks" alias="icons/camera-focus-symbolic.svg">icons/symbolic/camera-focus-symbolic.svg</file>
         <file preprocess="xml-stripblanks" alias="icons/copy-symbolic.svg">icons/symbolic/copy-symbolic.svg</file>
         <file preprocess="xml-stripblanks" alias="icons/eraser-symbolic.svg">icons/symbolic/eraser-symbolic.svg</file>
-        <file alias="frog.css">style.css</file>
+        <file>style.css</file>
         <file alias="icons/ocr.png">icons/48x48/ocr.png</file>
         <file alias="icons/translation.png">icons/48x48/translation.png</file>
     </gresource>

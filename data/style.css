@@ -3,3 +3,19 @@
     font-weight: bold;
     color: #3584e4;
 }
+
+#lang_list row {
+    padding: 0;
+}
+
+#lang_list row:first-child {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-top-width: 0;
+}
+
+#lang_list row:last-child {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-bottom-width: 0;
+}

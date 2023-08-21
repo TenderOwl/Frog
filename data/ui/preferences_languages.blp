@@ -60,11 +60,10 @@ template $PreferencesLanguagesPage : Adw.PreferencesPage {
 
           ListView list_view {
             name: "lang_list";
-            single-click-activate: true;
+
             show-separators: true;
             enable-rubberband: false;
-            model: SingleSelection selection {
-              autoselect: false;
+            model: NoSelection selection {
               model: FilterListModel model {
                 model: Gio.ListStore list_store {
                   item-type: typeof<$LanguageItem>;

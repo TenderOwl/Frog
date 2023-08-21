@@ -67,11 +67,6 @@ class PreferencesLanguagesPage(Adw.PreferencesPage):
         self.language_search_entry.connect('stop-search', self.on_language_search_stop)
         self.search_bar.connect('notify::search-mode-enabled', self.on_search_mode_enabled)
 
-        # self.list_view.bind_model(self.model, LanguagePacksDialog.create_list_widget)
-        self.list_view.connect('activate', self.langs_list_row_activated)
-
-        # Append "view more" button to the end of the language list
-        # self.add_view_more_langs()
         self.load_languages()
         self.activate_filter()
 
@@ -113,16 +108,6 @@ class PreferencesLanguagesPage(Adw.PreferencesPage):
     @property
     def is_search_mode(self):
         return self.search_bar.get_search_mode()
-
-    def langs_list_row_activated(self, _list_box: Gtk.ListBox, row: Gtk.ListBoxRow, _user_data: dict = None) -> None:
-        if row.get_index() == self.model.get_n_items():
-            if not self.is_search_mode:
-                self.deactivate_filter()
-                self.search_bar.set_search_mode(True)
-                self.language_search_entry.grab_focus()
-            else:
-                self.activate_filter()
-                self.search_bar.set_search_mode(False)
 
     def activate_filter(self, search_text: str = None) -> None:
         _filter: Gtk.CustomFilter = Gtk.CustomFilter.new(PreferencesLanguagesPage.filter_func, search_text)
