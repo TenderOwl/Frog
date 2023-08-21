@@ -274,8 +274,8 @@ class FrogWindow(Adw.ApplicationWindow):
         if response_type == Gtk.ResponseType.CLOSE:
             self.infobar.set_revealed(False)
 
-    def save_window_state(self, window: Gtk.Window) -> bool:
-        self.current_size = window.get_default_size()
+    def do_close_request(self) -> bool:
+        self.current_size = self.get_default_size()
         self.settings.set_int("window-width", self.current_size[0])
         self.settings.set_int("window-height", self.current_size[1])
         self.settings.sync()
