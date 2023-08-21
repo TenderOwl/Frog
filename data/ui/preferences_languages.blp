@@ -1,4 +1,5 @@
 using Gtk 4.0;
+using Gio 2.0;
 using Adw 1;
 
 template $PreferencesLanguagesPage : Adw.PreferencesPage {
@@ -18,6 +19,33 @@ template $PreferencesLanguagesPage : Adw.PreferencesPage {
       }
     }
 
+    Revealer revealer {
+      reveal-child: bind search_bar.search-mode-enabled bidirectional inverted;
+
+
+      Box {
+        margin-top: 12;
+        margin-start: 12;
+        margin-end: 12;
+
+        Label caption_label {
+          label: _("Installed languages");
+          hexpand: true;
+          halign: start;
+
+          styles ["heading", "h4"]
+        }
+
+        Button {
+          icon-name: "list-add-symbolic";
+          tooltip-text: "Add language";
+          clicked => $_on_add_language();
+
+          styles ["flat"]
+        }
+      }
+    }
+
     ScrolledWindow {
       vexpand: true;
 
@@ -30,10 +58,25 @@ template $PreferencesLanguagesPage : Adw.PreferencesPage {
         Adw.ClampScrollable {
           maximum-size: 600;
 
-          ListBox installed_languages_list {
-            selection-mode: none;
+          ListView list_view {
+            name: "lang_list";
+            single-click-activate: true;
+            show-separators: true;
+            enable-rubberband: false;
+            model: SingleSelection selection {
+              autoselect: false;
+              model: FilterListModel model {
+                model: Gio.ListStore list_store {
+                  item-type: typeof<$LanguageItem>;
+                };
+              };
+            };
+            factory: SignalListItemFactory factory {
+              setup => $_on_item_setup();
+              bind => $_on_item_bind();
+            };
 
-            styles ["boxed-list"]
+            styles ["boxed-list", "card"]
           }
         }
       }

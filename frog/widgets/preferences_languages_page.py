@@ -34,7 +34,7 @@ from frog.config import RESOURCE_PREFIX
 from frog.language_manager import language_manager
 from frog.settings import Settings
 from frog.types.language_item import LanguageItem
-from frog.widgets.language_dialog import LanguagePacksDialog
+from frog.widgets.language_row import LanguageRow
 
 
 @Gtk.Template(resource_path=f'{RESOURCE_PREFIX}/ui/preferences_languages.ui')
@@ -43,17 +43,20 @@ class PreferencesLanguagesPage(Adw.PreferencesPage):
 
     search_bar: Gtk.SearchBar = Gtk.Template.Child()
     language_search_entry: Gtk.SearchEntry = Gtk.Template.Child()
-    installed_languages_list: Gtk.ListBox = Gtk.Template.Child()
+    list_view: Gtk.ListView = Gtk.Template.Child()
+    model: Gtk.FilterListModel = Gtk.Template.Child()
+    list_store: Gio.ListStore = Gtk.Template.Child()
+    revealer: Gtk.Revealer = Gtk.Template.Child()
 
     def __init__(self):
         super().__init__()
 
         self.settings: Settings = Gtk.Application.get_default().props.settings
 
-        self.store: Gio.ListStore = Gio.ListStore.new(LanguageItem)
-        self.model: Gtk.FilterListModel = Gtk.FilterListModel.new(self.store, None)
+        # self.store: Gio.ListStore = Gio.ListStore.new(LanguageItem)
+        # self.model: Gtk.FilterListModel = Gtk.FilterListModel.new(self.store, None)
         for lang_code in language_manager.get_available_codes():
-            self.store.append(LanguageItem(lang_code, title=language_manager.get_language(lang_code)))
+            self.list_store.append(LanguageItem(lang_code, title=language_manager.get_language(lang_code)))
 
         language_manager.connect('added', self.on_language_added)
         language_manager.connect('downloaded', self.on_language_added)
@@ -64,12 +67,39 @@ class PreferencesLanguagesPage(Adw.PreferencesPage):
         self.language_search_entry.connect('stop-search', self.on_language_search_stop)
         self.search_bar.connect('notify::search-mode-enabled', self.on_search_mode_enabled)
 
-        self.installed_languages_list.bind_model(self.model, LanguagePacksDialog.create_list_widget)
-        self.installed_languages_list.connect('row-activated', self.langs_list_row_activated)
+        # self.list_view.bind_model(self.model, LanguagePacksDialog.create_list_widget)
+        self.list_view.connect('activate', self.langs_list_row_activated)
 
         # Append "view more" button to the end of the language list
-        self.add_view_more_langs()
+        # self.add_view_more_langs()
+        self.load_languages()
         self.activate_filter()
+
+    @Gtk.Template.Callback()
+    def _on_item_setup(self, factory: Gtk.SignalListItemFactory, item: Gtk.ListItem):
+        row: LanguageRow = LanguageRow()
+        item.set_child(row)
+
+    @Gtk.Template.Callback()
+    def _on_item_bind(self, factory: Gtk.SignalListItemFactory, list_item: Gtk.ListItem):
+        row: LanguageRow = list_item.get_child()
+        item: LanguageItem = list_item.get_item()
+        row.item = item
+
+    @Gtk.Template.Callback()
+    def _on_add_language(self, sender: Gtk.Widget):
+        if not self.is_search_mode:
+            self.deactivate_filter()
+            self.search_bar.set_search_mode(True)
+            self.language_search_entry.grab_focus()
+        else:
+            self.activate_filter()
+            self.search_bar.set_search_mode(False)
+
+    def load_languages(self):
+        self.list_store.remove_all()
+        for lang_code in language_manager.get_available_codes():
+            self.list_store.append(language_manager.get_language_item(lang_code))
 
     def add_view_more_langs(self) -> None:
         view_more_langs_row = Gtk.ListBoxRow(tooltip_text=_('View all available languages'))
@@ -78,7 +108,7 @@ class PreferencesLanguagesPage(Adw.PreferencesPage):
         view_more_image.set_margin_bottom(14)
         view_more_langs_row.set_child(view_more_image)
 
-        self.installed_languages_list.append(view_more_langs_row)
+        self.list_store.append(view_more_langs_row)
 
     @property
     def is_search_mode(self):
@@ -107,6 +137,7 @@ class PreferencesLanguagesPage(Adw.PreferencesPage):
     def on_language_search_stop(self, entry: Gtk.SearchEntry) -> None:
         entry.set_text('')
         self.search_bar.set_search_mode(False)
+        self.revealer.set_reveal_child(True)
         self.activate_filter()
 
     def on_search_mode_enabled(self, _searchbar, _enabled: bool) -> None:

@@ -26,84 +26,92 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gtk, GLib
+from gi.repository import Gtk, GLib, GObject
 
 from frog.config import RESOURCE_PREFIX
 from frog.language_manager import language_manager
+from frog.types.language_item import LanguageItem
 
 
-@Gtk.Template(resource_path=f'{RESOURCE_PREFIX}/ui/language_row.ui')
+@Gtk.Template(resource_path=f"{RESOURCE_PREFIX}/ui/language_row.ui")
 class LanguageRow(Gtk.Overlay):
-    __gtype_name__ = 'LanguageRow'
+    __gtype_name__ = "LanguageRow"
 
     label: Gtk.Label = Gtk.Template.Child()
     download_widget: Gtk.Button = Gtk.Template.Child()
     progress_bar: Gtk.ProgressBar = Gtk.Template.Child()
     revealer: Gtk.Revealer = Gtk.Template.Child()
 
-    def __init__(self, lang_code, lang_title, **kwargs):
+    _item: LanguageItem | None = None
+
+    def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        self.lang_code = lang_code
-        self.lang_title = lang_title
+        self.download_widget.connect("clicked", self.download_clicked)
+        language_manager.connect("downloading", self.update_progress)
+        language_manager.connect("downloaded", self.on_downloaded)
 
-        self.download_widget.connect('clicked', self.download_clicked)
-        language_manager.connect('downloading', self.update_progress)
-        language_manager.connect('downloaded', self.on_downloaded)
-
-        self.label.set_label(self.lang_title)
         self.progress_bar.set_fraction(0.14)
 
         GLib.idle_add(self.update_ui)
 
+    @GObject.Property(type=GObject.TYPE_PYOBJECT)
+    def item(self) -> LanguageItem | None:
+        return self._item
+
+    @item.setter
+    def item(self, item: LanguageItem):
+        self._item = item
+        self.label.set_label(self._item.title)
+
     def update_ui(self):
         # English is a default language, therefore, should be no way to remove it
-        if self.lang_code == "eng":
-            self.download_widget.set_icon_name('user-trash-symbolic')
+        if self._item.code == "eng":
+            self.download_widget.set_icon_name("user-trash-symbolic")
             self.download_widget.set_sensitive(False)
             return
 
         # Downloaded
-        if self.lang_code in language_manager.get_downloaded_codes():
-            self.download_widget.set_icon_name('user-trash-symbolic')
+        if self._item.code in language_manager.get_downloaded_codes():
+            self.download_widget.set_icon_name("user-trash-symbolic")
             self.download_widget.set_sensitive(True)
         # In progress
-        elif self.lang_code in language_manager.loading_languages:
+        elif self._item.code in language_manager.loading_languages:
             self.download_widget.set_sensitive(False)
         # Not yet
         else:
-            self.download_widget.set_icon_name('folder-download-symbolic')
+            self.download_widget.set_icon_name("folder-download-symbolic")
             self.download_widget.set_sensitive(True)
             self.revealer.set_reveal_child(False)
 
     def update_progress(self, sender, code: str, progress: float) -> None:
-        if code == self.lang_code:
+        if code == self._item.code:
             GLib.idle_add(self.late_update, code, progress)
 
     def late_update(self, code, progress):
-        if self.lang_code == code:
+        if self._item.code == code:
             if not self.revealer.get_reveal_child():
                 self.revealer.set_reveal_child(True)
 
             self.progress_bar.set_fraction(progress / 100)
             self.progress_bar.set_pulse_step(0.05)
-            print(f'Downloading {progress / 100}')
+            print(f"Downloading {progress / 100}")
 
             if progress == 100:
                 self.revealer.set_reveal_child(False)
 
     def download_clicked(self, widget: Gtk.Button) -> None:
-        if self.lang_code in language_manager.loading_languages:
+        if self._item.code in language_manager.loading_languages:
             return
 
-        if self.lang_code in language_manager.get_downloaded_codes():
-            language_manager.remove_language(self.lang_code)
+        if self._item.code in language_manager.get_downloaded_codes():
+            language_manager.remove_language(self._item.code)
             self.update_ui()
             return
 
-        language_manager.download(self.lang_code)
+        language_manager.download(self._item.code)
         self.update_ui()
 
     def on_downloaded(self, sender, code):
-        if self.lang_code == code:
+        if self._item.code == code:
             GLib.idle_add(self.update_ui)
