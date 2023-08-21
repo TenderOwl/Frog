@@ -123,6 +123,7 @@ class FrogWindow(Adw.ApplicationWindow):
             self.text_shot_btn.set_sensitive(False)
 
     def get_screenshot(self, copy: bool = False) -> None:
+        self.extracted_page.listen_cancel()
         lang = self.get_language()
         # self.welcome_page.spinner.start()
         self.hide()
@@ -179,7 +180,6 @@ class FrogWindow(Adw.ApplicationWindow):
     def on_shot_error(self, sender, message: str) -> None:
         self.present()
         self.welcome_page.spinner.stop()
-        print("on_shot_error?", message)
         if message:
             self.show_toast(message)
             # self.display_error(self, message)

@@ -16,6 +16,8 @@ class TTSService(GObject.GObject):
     _tld: str = "com"
     _speech_filepath: str = os.path.join(os.environ['XDG_DATA_HOME'], "speech.mp3")
 
+    player: Gst.Element | None = None
+
     def __init__(self):
         super().__init__()
         Gst.init()
