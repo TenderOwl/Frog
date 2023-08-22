@@ -119,6 +119,7 @@ class LanguageManager(GObject.GObject):
         self._languages["ita_old"] = _("Italian - Old")
         self._languages["jav"] = _("Javanese")
         self._languages["jpn"] = _("Japanese")
+        self._languages["jpn_vert"] = _("Japanese (vertical)")
         self._languages["kan"] = _("Kannada")
         self._languages["kat"] = _("Georgian")
         self._languages["kat_old"] = _("Georgian - Old")
