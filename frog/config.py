@@ -31,6 +31,10 @@ import os
 APP_ID = "com.github.tenderowl.frog"
 RESOURCE_PREFIX = "/com/github/tenderowl/frog"
 
+# This is based from the XDG Base Directory specification.
+if not os.getenv('XDG_DATA_HOME'):
+    os.environ['XDG_DATA_HOME'] = os.path.expanduser('~/.local/share')
+
 if not os.path.exists(os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata')):
     os.mkdir(os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata'))
 
