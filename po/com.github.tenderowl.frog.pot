@@ -1,0 +1,872 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the frog package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: frog 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-23 01:47+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../frog/services/clipboard_service.py:54
+msgid "No image in clipboard"
+msgstr ""
+
+#: ../frog/services/screenshot_service.py:93
+msgid "Can't take a screenshot."
+msgstr ""
+
+#: ../frog/widgets/preferences_languages_page.py:100
+msgid "View all available languages"
+msgstr ""
+
+#: ../frog/widgets/share_row.py:48
+msgid "Share via {provider_name.capitalize()}"
+msgstr ""
+
+#: ../frog/language_manager.py:54 ../frog/language_manager.py:90
+msgid "English"
+msgstr ""
+
+#: ../frog/language_manager.py:66
+msgid "Afrikaans"
+msgstr ""
+
+#: ../frog/language_manager.py:67
+msgid "Amharic"
+msgstr ""
+
+#: ../frog/language_manager.py:68
+msgid "Arabic"
+msgstr ""
+
+#: ../frog/language_manager.py:69
+msgid "Assamese"
+msgstr ""
+
+#: ../frog/language_manager.py:70
+msgid "Azerbaijani"
+msgstr ""
+
+#: ../frog/language_manager.py:71
+msgid "Azerbaijani - Cyrilic"
+msgstr ""
+
+#: ../frog/language_manager.py:72
+msgid "Belarusian"
+msgstr ""
+
+#: ../frog/language_manager.py:73
+msgid "Bengali"
+msgstr ""
+
+#: ../frog/language_manager.py:74
+msgid "Tibetan"
+msgstr ""
+
+#: ../frog/language_manager.py:75
+msgid "Bosnian"
+msgstr ""
+
+#: ../frog/language_manager.py:76
+msgid "Breton"
+msgstr ""
+
+#: ../frog/language_manager.py:77
+msgid "Bulgarian"
+msgstr ""
+
+#: ../frog/language_manager.py:78
+msgid "Catalan; Valencian"
+msgstr ""
+
+#: ../frog/language_manager.py:79
+msgid "Cebuano"
+msgstr ""
+
+#: ../frog/language_manager.py:80
+msgid "Czech"
+msgstr ""
+
+#: ../frog/language_manager.py:81
+msgid "Chinese - Simplified"
+msgstr ""
+
+#: ../frog/language_manager.py:82
+msgid "Chinese - Traditional"
+msgstr ""
+
+#: ../frog/language_manager.py:83
+msgid "Cherokee"
+msgstr ""
+
+#: ../frog/language_manager.py:84
+msgid "Corsican"
+msgstr ""
+
+#: ../frog/language_manager.py:85
+msgid "Welsh"
+msgstr ""
+
+#: ../frog/language_manager.py:86
+msgid "Danish"
+msgstr ""
+
+#: ../frog/language_manager.py:87
+msgid "German"
+msgstr ""
+
+#: ../frog/language_manager.py:88
+msgid "Dzongkha"
+msgstr ""
+
+#: ../frog/language_manager.py:89
+msgid "Greek, Modern (1453-)"
+msgstr ""
+
+#: ../frog/language_manager.py:91
+msgid "English, Middle (1100-1500)"
+msgstr ""
+
+#: ../frog/language_manager.py:92
+msgid "Esperanto"
+msgstr ""
+
+#: ../frog/language_manager.py:93
+msgid "Math / equation detection module"
+msgstr ""
+
+#: ../frog/language_manager.py:94
+msgid "Estonian"
+msgstr ""
+
+#: ../frog/language_manager.py:95
+msgid "Basque"
+msgstr ""
+
+#: ../frog/language_manager.py:96
+msgid "Faroese"
+msgstr ""
+
+#: ../frog/language_manager.py:97
+msgid "Persian"
+msgstr ""
+
+#: ../frog/language_manager.py:98
+msgid "Filipino (old - Tagalog)"
+msgstr ""
+
+#: ../frog/language_manager.py:99
+msgid "Finnish"
+msgstr ""
+
+#: ../frog/language_manager.py:100
+msgid "French"
+msgstr ""
+
+#: ../frog/language_manager.py:101
+msgid "German - Fraktur"
+msgstr ""
+
+#: ../frog/language_manager.py:102
+msgid "French, Middle (ca.1400-1600)"
+msgstr ""
+
+#: ../frog/language_manager.py:103
+msgid "Western Frisian"
+msgstr ""
+
+#: ../frog/language_manager.py:104
+msgid "Scottish Gaelic"
+msgstr ""
+
+#: ../frog/language_manager.py:105
+msgid "Irish"
+msgstr ""
+
+#: ../frog/language_manager.py:106
+msgid "Galician"
+msgstr ""
+
+#: ../frog/language_manager.py:107
+msgid "Greek, Ancient (to 1453) (contrib)"
+msgstr ""
+
+#: ../frog/language_manager.py:108
+msgid "Gujarati"
+msgstr ""
+
+#: ../frog/language_manager.py:109
+msgid "Haitian; Haitian Creole"
+msgstr ""
+
+#: ../frog/language_manager.py:110
+msgid "Hebrew"
+msgstr ""
+
+#: ../frog/language_manager.py:111
+msgid "Hindi"
+msgstr ""
+
+#: ../frog/language_manager.py:112
+msgid "Croatian"
+msgstr ""
+
+#: ../frog/language_manager.py:113
+msgid "Hungarian"
+msgstr ""
+
+#: ../frog/language_manager.py:114
+msgid "Armenian"
+msgstr ""
+
+#: ../frog/language_manager.py:115
+msgid "Inuktitut"
+msgstr ""
+
+#: ../frog/language_manager.py:116
+msgid "Indonesian"
+msgstr ""
+
+#: ../frog/language_manager.py:117
+msgid "Icelandic"
+msgstr ""
+
+#: ../frog/language_manager.py:118
+msgid "Italian"
+msgstr ""
+
+#: ../frog/language_manager.py:119
+msgid "Italian - Old"
+msgstr ""
+
+#: ../frog/language_manager.py:120
+msgid "Javanese"
+msgstr ""
+
+#: ../frog/language_manager.py:121
+msgid "Japanese"
+msgstr ""
+
+#: ../frog/language_manager.py:122
+msgid "Kannada"
+msgstr ""
+
+#: ../frog/language_manager.py:123
+msgid "Georgian"
+msgstr ""
+
+#: ../frog/language_manager.py:124
+msgid "Georgian - Old"
+msgstr ""
+
+#: ../frog/language_manager.py:125
+msgid "Kazakh"
+msgstr ""
+
+#: ../frog/language_manager.py:126
+msgid "Central Khmer"
+msgstr ""
+
+#: ../frog/language_manager.py:127
+msgid "Kirghiz; Kyrgyz"
+msgstr ""
+
+#: ../frog/language_manager.py:128
+msgid "Kurmanji (Kurdish - Latin Script)"
+msgstr ""
+
+#: ../frog/language_manager.py:129
+msgid "Korean"
+msgstr ""
+
+#: ../frog/language_manager.py:130
+msgid "Korean (vertical)"
+msgstr ""
+
+#: ../frog/language_manager.py:131
+msgid "Lao"
+msgstr ""
+
+#: ../frog/language_manager.py:132
+msgid "Latin"
+msgstr ""
+
+#: ../frog/language_manager.py:133
+msgid "Latvian"
+msgstr ""
+
+#: ../frog/language_manager.py:134
+msgid "Lithuanian"
+msgstr ""
+
+#: ../frog/language_manager.py:135
+msgid "Luxembourgish"
+msgstr ""
+
+#: ../frog/language_manager.py:136
+msgid "Malayalam"
+msgstr ""
+
+#: ../frog/language_manager.py:137
+msgid "Marathi"
+msgstr ""
+
+#: ../frog/language_manager.py:138
+msgid "Macedonian"
+msgstr ""
+
+#: ../frog/language_manager.py:139
+msgid "Maltese"
+msgstr ""
+
+#: ../frog/language_manager.py:140
+msgid "Mongolian"
+msgstr ""
+
+#: ../frog/language_manager.py:141
+msgid "Maori"
+msgstr ""
+
+#: ../frog/language_manager.py:142
+msgid "Malay"
+msgstr ""
+
+#: ../frog/language_manager.py:143
+msgid "Burmese"
+msgstr ""
+
+#: ../frog/language_manager.py:144
+msgid "Nepali"
+msgstr ""
+
+#: ../frog/language_manager.py:145
+msgid "Dutch; Flemish"
+msgstr ""
+
+#: ../frog/language_manager.py:146
+msgid "Norwegian"
+msgstr ""
+
+#: ../frog/language_manager.py:147
+msgid "Occitan (post 1500)"
+msgstr ""
+
+#: ../frog/language_manager.py:148
+msgid "Oriya"
+msgstr ""
+
+#: ../frog/language_manager.py:149
+msgid "Orientation and script detection module"
+msgstr ""
+
+#: ../frog/language_manager.py:150
+msgid "Panjabi; Punjabi"
+msgstr ""
+
+#: ../frog/language_manager.py:151
+msgid "Polish"
+msgstr ""
+
+#: ../frog/language_manager.py:152
+msgid "Portuguese"
+msgstr ""
+
+#: ../frog/language_manager.py:153
+msgid "Pushto; Pashto"
+msgstr ""
+
+#: ../frog/language_manager.py:154
+msgid "Quechua"
+msgstr ""
+
+#: ../frog/language_manager.py:155
+msgid "Romanian; Moldavian; Moldovan"
+msgstr ""
+
+#: ../frog/language_manager.py:156
+msgid "Russian"
+msgstr ""
+
+#: ../frog/language_manager.py:157
+msgid "Sanskrit"
+msgstr ""
+
+#: ../frog/language_manager.py:158
+msgid "Sinhala; Sinhalese"
+msgstr ""
+
+#: ../frog/language_manager.py:159
+msgid "Slovak"
+msgstr ""
+
+#: ../frog/language_manager.py:160
+msgid "Slovenian"
+msgstr ""
+
+#: ../frog/language_manager.py:161
+msgid "Sindhi"
+msgstr ""
+
+#: ../frog/language_manager.py:162
+msgid "Spanish; Castilian"
+msgstr ""
+
+#: ../frog/language_manager.py:163
+msgid "Spanish; Castilian - Old"
+msgstr ""
+
+#: ../frog/language_manager.py:164
+msgid "Albanian"
+msgstr ""
+
+#: ../frog/language_manager.py:165
+msgid "Serbian"
+msgstr ""
+
+#: ../frog/language_manager.py:166
+msgid "Serbian - Latin"
+msgstr ""
+
+#: ../frog/language_manager.py:167
+msgid "Sundanese"
+msgstr ""
+
+#: ../frog/language_manager.py:168
+msgid "Swahili"
+msgstr ""
+
+#: ../frog/language_manager.py:169
+msgid "Swedish"
+msgstr ""
+
+#: ../frog/language_manager.py:170
+msgid "Syriac"
+msgstr ""
+
+#: ../frog/language_manager.py:171
+msgid "Tamil"
+msgstr ""
+
+#: ../frog/language_manager.py:172
+msgid "Tatar"
+msgstr ""
+
+#: ../frog/language_manager.py:173
+msgid "Telugu"
+msgstr ""
+
+#: ../frog/language_manager.py:174
+msgid "Tajik"
+msgstr ""
+
+#: ../frog/language_manager.py:175
+msgid "Thai"
+msgstr ""
+
+#: ../frog/language_manager.py:176
+msgid "Tigrinya"
+msgstr ""
+
+#: ../frog/language_manager.py:177
+msgid "Tonga"
+msgstr ""
+
+#: ../frog/language_manager.py:178
+msgid "Turkish"
+msgstr ""
+
+#: ../frog/language_manager.py:179
+msgid "Uighur; Uyghur"
+msgstr ""
+
+#: ../frog/language_manager.py:180
+msgid "Ukrainian"
+msgstr ""
+
+#: ../frog/language_manager.py:181
+msgid "Urdu"
+msgstr ""
+
+#: ../frog/language_manager.py:182
+msgid "Uzbek"
+msgstr ""
+
+#: ../frog/language_manager.py:183
+msgid "Uzbek - Cyrilic"
+msgstr ""
+
+#: ../frog/language_manager.py:184
+msgid "Vietnamese"
+msgstr ""
+
+#: ../frog/language_manager.py:185
+msgid "Yiddish"
+msgstr ""
+
+#: ../frog/language_manager.py:186
+msgid "Yoruba"
+msgstr ""
+
+#: ../frog/main.py:63 ../frog/main.py:83
+msgid "Extract directly into the clipboard"
+msgstr ""
+
+#: ../frog/main.py:188
+msgid "No text found. Try to grab another region."
+msgstr ""
+
+#: ../frog/main.py:198
+msgid "Text extracted. You can paste it with Ctrl+V"
+msgstr ""
+
+#: ../frog/window.py:151
+msgid "Text copied to clipboard"
+msgstr ""
+
+#: ../frog/window.py:162
+msgid "QR-code URL opened"
+msgstr ""
+
+#: ../frog/window.py:166
+msgid "QR-code contains URL."
+msgstr ""
+
+#: ../frog/window.py:167
+msgid "Open"
+msgstr ""
+
+#: ../frog/window.py:194
+msgid "Supported image files"
+msgstr ""
+
+#: ../frog/window.py:200
+msgid "Open image to extract text"
+msgstr ""
+
+#: ../frog/window.py:260
+msgid "Only images can be processed that way."
+msgstr ""
+
+#: ../frog/window.py:293
+msgid "Text copied"
+msgstr ""
+
+#: ../data/ui/language_popover.blp:18
+msgid "Search language"
+msgstr ""
+
+#: ../data/ui/extracted_page.blp:37
+msgid "Open Image to extract text"
+msgstr ""
+
+#: ../data/ui/extracted_page.blp:136 ../data/ui/welcome_page.blp:100
+msgid "Preferences"
+msgstr ""
+
+#: ../data/ui/extracted_page.blp:143 ../data/ui/welcome_page.blp:107
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#: ../data/ui/extracted_page.blp:148 ../data/ui/welcome_page.blp:112
+msgid "About Frog"
+msgstr ""
+
+#: ../data/ui/extracted_page.blp:156 ../data/ui/welcome_page.blp:119
+msgid "Open image"
+msgstr ""
+
+#: ../data/ui/extracted_page.blp:157 ../data/ui/welcome_page.blp:120
+msgid "Paste from clipboard"
+msgstr ""
+
+#: ../data/ui/language_dialog.blp:14
+msgid "Available Languages"
+msgstr ""
+
+#: ../data/ui/preferences_general.blp:5
+msgid "_General"
+msgstr ""
+
+#: ../data/ui/preferences_general.blp:10
+msgid "Text Extracting"
+msgstr ""
+
+#: ../data/ui/preferences_general.blp:13
+msgid "_Second language"
+msgstr ""
+
+#: ../data/ui/preferences_general.blp:15
+msgid "Additional language used in text recognition"
+msgstr ""
+
+#: ../data/ui/preferences_general.blp:20
+msgid "Behavior"
+msgstr ""
+
+#: ../data/ui/preferences_general.blp:23
+msgid "_Copy to clipboard"
+msgstr ""
+
+#: ../data/ui/preferences_general.blp:25
+msgid "Automatically copy the extracted text to clipboard"
+msgstr ""
+
+#: ../data/ui/preferences_general.blp:34
+msgid "_Open QR-code links"
+msgstr ""
+
+#: ../data/ui/preferences_general.blp:36
+msgid "Automatically open links from QR-codes"
+msgstr ""
+
+#: ../data/ui/preferences_languages.blp:6
+msgid "_Languages"
+msgstr ""
+
+#: ../data/ui/preferences_languages.blp:32
+msgid "Installed languages"
+msgstr ""
+
+#: ../data/ui/share_row.blp:14
+msgid "Share via Pocket"
+msgstr ""
+
+#: ../data/ui/share_row.blp:22
+msgid "Pocket"
+msgstr ""
+
+#: ../data/ui/welcome_page.blp:9 ../data/ui/welcome_page.blp:46
+msgid "Extract text from anywhere"
+msgstr ""
+
+#: ../data/ui/welcome_page.blp:18
+msgid "Language"
+msgstr ""
+
+#: ../data/ui/welcome_page.blp:19
+msgid "Select language to extract"
+msgstr ""
+
+#: ../data/ui/welcome_page.blp:26
+msgid "Take a screenshot"
+msgstr ""
+
+#: ../data/ui/welcome_page.blp:40
+msgid "Open menu"
+msgstr ""
+
+#: ../data/ui/welcome_page.blp:67
+msgid "_Take a Screenshot"
+msgstr ""
+
+#: ../data/ui/welcome_page.blp:87
+msgid "_Open Image"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.desktop.in:3
+msgid "Frog"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.desktop.in:4
+msgid "Text extraction tool"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.desktop.in:5
+msgid "Extract text from any image, video or web page"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.desktop.in:12
+msgid "OCR;Text;Extraction;"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.desktop.in:18
+msgid "Extract Text to the Clipboard"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:7
+msgid "Extract text from images"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:9
+msgid ""
+"Extract text from images, websites, videos, and QR codes by taking a picture "
+"of the source."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:24
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:42
+msgid "In this update, we've made a number of improvements to our app."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:26
+msgid ""
+"Share extracted text: This means you can now share your findings with the "
+"wider community."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:27
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:29
+msgid ""
+"Add Text-to-speech to be able to listen to the extracted text without any "
+"additional apps (internet connection required)."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:31
+msgid ""
+"Add the ability to insert images from the clipboard by using the "
+"<code>Ctrl+V</code> shortcut."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:33
+msgid ""
+"In addition, we have upgraded the language selection dropdown to popover "
+"with a quick search of a language."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:35
+msgid "Last but not least, Frog has become more accessibility-friendly."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:37
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:51
+msgid "We hope you enjoy our work!"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:44
+msgid ""
+"We have redesigned the settings dialog to make it more user-friendly and "
+"understandable."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:45
+msgid "Now you can easily find the language you want by searching."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:46
+msgid ""
+"In addition, we have added the ability to select a second language for "
+"extracting text from images."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:47
+msgid "The Frog can automatically follow links extracted from QR codes."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:48
+msgid ""
+"We also updated the localization and improved the overall performance of the "
+"app."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:49
+msgid "Fixed some bugs and bugs."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:56
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:65
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:73
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:82
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:91
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:113
+msgid "What's new:"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:58
+msgid "Open image button now available."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:59
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:67
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:76
+msgid "Translations updated."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:75
+msgid "When no text is found, Frog returns to the main window."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:84
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:93
+msgid "Updated UI"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:85
+msgid "Translated to a bunch of new languages"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:94
+msgid "Drag-n-drop support. For images only"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:95
+msgid "Dark mode support"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:96
+msgid "Localized interface"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:102
+msgid ""
+"Frog now is available on the Flathub and use modern Portal implementation. "
+"We also updated the UI accordingly to the GNOME HIG and fixed some bugs "
+"we've found :)"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:108
+msgid ""
+"Now you're free to run Frog with `-e` option to extract text and instantly "
+"copy it to the clipboard."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:115
+msgid "English model included with Frog itself"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:116
+msgid "QR code detection. If one in the selected area - it will be decoded."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:117
+msgid "New command line shortcut to run with \"Extract to clipboard\" feature."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:118
+msgid "Granite.HyperTextView to support QR encoded links"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:124
+msgid "Fix language packs download."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:129
+msgid "Dark mode+"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:131
+msgid "Dark mode support."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:132
+msgid "Application will hide the main window for the cleaner shots. #11"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:138
+msgid ""
+"Quickly extract any text from anywhere you need it: webpages, videos, "
+"photos, etc."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:143
+msgid "Tender Owl"
+msgstr ""
