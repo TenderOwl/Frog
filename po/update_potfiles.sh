@@ -28,16 +28,16 @@ sed 's/#: //g;s/:[0-9]*//g;s/\.\.\///g' <(grep -F "#: " $APPID.pot) | sort | uni
 cat POTFILES.in | sort | uniq > POTFILES
 rm POTFILES.in
 
-if [ ! -z "${lang}" ]; then
-    [ -f "${lang}.po" ] && mv "${lang}.po" "${lang}.po.old"
-    msginit --locale=$lang --input $APPID.pot
-    if [ -f "${lang}.po.old" ]; then
-        mv "${lang}.po" "${lang}.po.new"
-        msgmerge -N "${lang}.po.old" "${lang}.po.new" > ${lang}.po
-        rm "${lang}.po.old" "${lang}.po.new"
-    fi
-    sed -i 's/ASCII/UTF-8/' "${lang}.po"
-fi
-mv $APPID.pot $APPID.pot.bak
+#if [ ! -z "${lang}" ]; then
+#    [ -f "${lang}.po" ] && mv "${lang}.po" "${lang}.po.old"
+#    msginit --locale=$lang --input $APPID.pot
+#    if [ -f "${lang}.po.old" ]; then
+#        mv "${lang}.po" "${lang}.po.new"
+#        msgmerge -N "${lang}.po.old" "${lang}.po.new" > ${lang}.po
+#        rm "${lang}.po.old" "${lang}.po.new"
+#    fi
+#    sed -i 's/ASCII/UTF-8/' "${lang}.po"
+#fi
+mv $APPID.pot $APPNAME.pot.bak
 rm *.pot
-mv $APPID.pot.bak $APPID.pot
+mv $APPNAME.pot.bak $APPNAME.pot
