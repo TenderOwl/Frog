@@ -4,16 +4,16 @@ msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-23 02:01+0300\n"
-"PO-Revision-Date: 2023-08-22 14:52+0000\n"
+"PO-Revision-Date: 2023-08-25 12:51+0000\n"
 "Last-Translator: rene-coty <irenee.thirion@e.email>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/frog/default/fr/"
-">\n"
+"Language-Team: French <https://hosted.weblate.org/projects/frog/default/fr/>"
+"\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: data/ui\n"
@@ -22,16 +22,12 @@ msgstr ""
 "X-Poedit-SearchPath-3: frog\n"
 
 #: ../frog/services/clipboard_service.py:54
-#, fuzzy
-#| msgid "Text copied to clipboard"
 msgid "No image in clipboard"
-msgstr "Texte copié vers le presse-papiers"
+msgstr "Aucune image dans le presse-papiers"
 
 #: ../frog/services/screenshot_service.py:93
-#, fuzzy
-#| msgid "Take a screenshot"
 msgid "Can't take a screenshot."
-msgstr "Prenez une capture"
+msgstr "Impossible de capturer l’écran."
 
 #: ../frog/widgets/preferences_languages_page.py:100
 msgid "View all available languages"
@@ -39,7 +35,7 @@ msgstr "Voir tous les langages disponibles"
 
 #: ../frog/widgets/share_row.py:48
 msgid "Share via {provider_name.capitalize()}"
-msgstr ""
+msgstr "Partager via {provider_name.capitalize()}"
 
 #: ../frog/main.py:63 ../frog/main.py:83
 msgid "Extract directly into the clipboard"
@@ -310,10 +306,8 @@ msgid "Japanese"
 msgstr "Japonais"
 
 #: ../frog/language_manager.py:122
-#, fuzzy
-#| msgid "Korean (vertical)"
 msgid "Japanese (vertical)"
-msgstr "Coréen (vertical)"
+msgstr "Japonais (vertical)"
 
 #: ../frog/language_manager.py:123
 msgid "Kannada"
@@ -576,23 +570,16 @@ msgid "Yoruba"
 msgstr "Yoruba"
 
 #: ../data/ui/language_popover.blp:18
-#, fuzzy
-#| msgid "Language"
 msgid "Search language"
-msgstr "Langue"
+msgstr "Rechercher une langue"
 
 #: ../data/ui/extracted_page.blp:37
-#, fuzzy
-#| msgid "Open image to extract text"
 msgid "Open Image to extract text"
 msgstr "Ouvrez une image pour en extraire du texte"
 
 #: ../data/ui/extracted_page.blp:136 ../data/ui/welcome_page.blp:100
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Display preferences"
 msgid "Preferences"
-msgstr "Préférences d'affichage"
+msgstr "Préférences"
 
 #: ../data/ui/extracted_page.blp:143 ../data/ui/welcome_page.blp:107
 msgid "Keyboard Shortcuts"
@@ -600,90 +587,71 @@ msgstr "Raccourcis claviers"
 
 #: ../data/ui/extracted_page.blp:148 ../data/ui/welcome_page.blp:112
 msgid "About Frog"
-msgstr "À propos de Frog"
+msgstr "À propos de Grenouille"
 
 #: ../data/ui/extracted_page.blp:156 ../data/ui/welcome_page.blp:119
 msgid "Open image"
-msgstr ""
+msgstr "Ouvrir une image"
 
 #: ../data/ui/extracted_page.blp:157 ../data/ui/welcome_page.blp:120
-#, fuzzy
-#| msgid "Text copied to clipboard"
 msgid "Paste from clipboard"
-msgstr "Texte copié vers le presse-papiers"
+msgstr "Coller depuis le presse-papiers"
 
 #: ../data/ui/language_dialog.blp:14
 msgid "Available Languages"
 msgstr "Langues disponibles"
 
 #: ../data/ui/preferences_general.blp:5
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "_General"
-msgstr "Général"
+msgstr "_Général"
 
 #: ../data/ui/preferences_general.blp:10
-#, fuzzy
-#| msgid "Text extraction tool"
 msgid "Text Extracting"
-msgstr "Outil d’extraction de texte"
+msgstr "Extraction du texte"
 
 #: ../data/ui/preferences_general.blp:13
 msgid "_Second language"
-msgstr ""
+msgstr "_Seconde langue"
 
 #: ../data/ui/preferences_general.blp:15
 msgid "Additional language used in text recognition"
-msgstr ""
+msgstr "Langue supplémentaire utilisée dans la reconnaissance de texte"
 
 #: ../data/ui/preferences_general.blp:20
 msgid "Behavior"
-msgstr ""
+msgstr "Comportement"
 
 #: ../data/ui/preferences_general.blp:23
-#, fuzzy
-#| msgid "Text copied to clipboard"
 msgid "_Copy to clipboard"
-msgstr "Texte copié vers le presse-papiers"
+msgstr "_Copier vers le presse-papiers"
 
 #: ../data/ui/preferences_general.blp:25
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Copy extracted text to clipboard"
 msgid "Automatically copy the extracted text to clipboard"
-msgstr "Copier le texte extrait dans le presse-papier"
+msgstr "Copier automatiquement le texte extrait vers le presse-papiers"
 
 #: ../data/ui/preferences_general.blp:34
 msgid "_Open QR-code links"
-msgstr ""
+msgstr "_Ouvrir les liens des QR codes"
 
 #: ../data/ui/preferences_general.blp:36
-#, fuzzy
-#| msgid "The Frog can automatically follow links extracted from QR codes."
 msgid "Automatically open links from QR-codes"
-msgstr ""
-"Grenouille peut suivre automatiquement les liens extraits des QR codes."
+msgstr "Ouvrir automatiquement les liens extraits des QR codes"
 
 #: ../data/ui/preferences_languages.blp:6
-#, fuzzy
-#| msgid "Language"
 msgid "_Languages"
-msgstr "Langue"
+msgstr "_Langues"
 
 #: ../data/ui/preferences_languages.blp:32
-#, fuzzy
-#| msgid "Available Languages"
 msgid "Installed languages"
-msgstr "Langues disponibles"
+msgstr "Langues installées"
 
 #: ../data/ui/share_row.blp:14
 msgid "Share via Pocket"
-msgstr ""
+msgstr "Partager via Pocket"
 
 #: ../data/ui/share_row.blp:22
 msgid "Pocket"
-msgstr ""
+msgstr "Pocket"
 
 #: ../data/ui/welcome_page.blp:9 ../data/ui/welcome_page.blp:46
 msgid "Extract text from anywhere"
@@ -702,20 +670,16 @@ msgid "Take a screenshot"
 msgstr "Prenez une capture"
 
 #: ../data/ui/welcome_page.blp:40
-#, fuzzy
-#| msgid "Open"
 msgid "Open menu"
-msgstr "Ouvrir"
+msgstr "Ouvrir le menu"
 
 #: ../data/ui/welcome_page.blp:67
-#, fuzzy
-#| msgid "Take a Screenshot"
 msgid "_Take a Screenshot"
-msgstr "Prenez une capture"
+msgstr "_Prendre une capture d’écran"
 
 #: ../data/ui/welcome_page.blp:87
 msgid "_Open Image"
-msgstr ""
+msgstr "_Ouvrir une image"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:3
 msgid "Frog"
@@ -746,6 +710,8 @@ msgid ""
 "Extract text from images, websites, videos, and QR codes by taking a picture "
 "of the source."
 msgstr ""
+"Extrayez du texte depuis des images, des sites web, des vidéos et des QR "
+"codes en prenant une photo de la source."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:24
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:42
@@ -759,6 +725,8 @@ msgid ""
 "Share extracted text: This means you can now share your findings with the "
 "wider community."
 msgstr ""
+"Partagez le texte extrait : cela signifie que vous pouvez désormais partager "
+"vos découvertes avec la communauté entière."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:27
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:29
@@ -766,22 +734,28 @@ msgid ""
 "Add Text-to-speech to be able to listen to the extracted text without any "
 "additional apps (internet connection required)."
 msgstr ""
+"Ajout d’une fonctionnalité Voix haute pour écouter le texte extrait dans la "
+"même application (une connexion internet sera cependant requise)."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:31
 msgid ""
 "Add the ability to insert images from the clipboard by using the <code>Ctrl"
 "+V</code> shortcut."
 msgstr ""
+"Ajout de la possibilité d’insérer des images depuis le presse-papiers en "
+"utilisant le raccourci <code>Ctrl+V</code>."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:33
 msgid ""
 "In addition, we have upgraded the language selection dropdown to popover "
 "with a quick search of a language."
 msgstr ""
+"De plus, nous avons changé le menu déroulant de sélection de la langue en "
+"une fenêtre pop-up pour une recherche plus rapide."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:35
 msgid "Last but not least, Frog has become more accessibility-friendly."
-msgstr ""
+msgstr "Et enfin, Grenouille a gagné en accessibilité."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:37
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:51

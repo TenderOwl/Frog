@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-08-23 02:01+0300\n"
-"PO-Revision-Date: 2023-05-05 05:52+0000\n"
+"PO-Revision-Date: 2023-08-25 12:51+0000\n"
 "Last-Translator: Fjuro <ifjuro@proton.me>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/frog/default/cs/>\n"
 "Language: cs\n"
@@ -15,19 +15,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 
 #: ../frog/services/clipboard_service.py:54
-#, fuzzy
-#| msgid "Text copied to clipboard"
 msgid "No image in clipboard"
-msgstr "Text zkopírován do schránky"
+msgstr "Žádný obrázek ve schránce"
 
 #: ../frog/services/screenshot_service.py:93
-#, fuzzy
-#| msgid "Take a screenshot"
 msgid "Can't take a screenshot."
-msgstr "Pořídit snímek obrazovky"
+msgstr "Nepodařilo se pořídit snímek obrazovky."
 
 #: ../frog/widgets/preferences_languages_page.py:100
 msgid "View all available languages"
@@ -35,7 +31,7 @@ msgstr "Zobrazit všechny dostupné jazyky"
 
 #: ../frog/widgets/share_row.py:48
 msgid "Share via {provider_name.capitalize()}"
-msgstr ""
+msgstr "Sdílet přes {provider_name.capitalize()}"
 
 #: ../frog/main.py:63 ../frog/main.py:83
 msgid "Extract directly into the clipboard"
@@ -306,10 +302,8 @@ msgid "Japanese"
 msgstr "japonština"
 
 #: ../frog/language_manager.py:122
-#, fuzzy
-#| msgid "Korean (vertical)"
 msgid "Japanese (vertical)"
-msgstr "korejština (vertikální)"
+msgstr "japonština (vertikální)"
 
 #: ../frog/language_manager.py:123
 msgid "Kannada"
@@ -572,23 +566,16 @@ msgid "Yoruba"
 msgstr "jorubština"
 
 #: ../data/ui/language_popover.blp:18
-#, fuzzy
-#| msgid "Language"
 msgid "Search language"
-msgstr "Jazyk"
+msgstr "Hledat jazyk"
 
 #: ../data/ui/extracted_page.blp:37
-#, fuzzy
-#| msgid "Open image to extract text"
 msgid "Open Image to extract text"
 msgstr "Otevřít obrázek pro získání textu"
 
 #: ../data/ui/extracted_page.blp:136 ../data/ui/welcome_page.blp:100
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Display preferences"
 msgid "Preferences"
-msgstr "Předvolby zobrazení"
+msgstr "Předvolby"
 
 #: ../data/ui/extracted_page.blp:143 ../data/ui/welcome_page.blp:107
 msgid "Keyboard Shortcuts"
@@ -600,85 +587,67 @@ msgstr "O Frogu"
 
 #: ../data/ui/extracted_page.blp:156 ../data/ui/welcome_page.blp:119
 msgid "Open image"
-msgstr ""
+msgstr "Otevřít obrázek"
 
 #: ../data/ui/extracted_page.blp:157 ../data/ui/welcome_page.blp:120
-#, fuzzy
-#| msgid "Text copied to clipboard"
 msgid "Paste from clipboard"
-msgstr "Text zkopírován do schránky"
+msgstr "Vložit ze schránky"
 
 #: ../data/ui/language_dialog.blp:14
 msgid "Available Languages"
 msgstr "Dostupné jazyky"
 
 #: ../data/ui/preferences_general.blp:5
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "_General"
-msgstr "Obecné"
+msgstr "_Obecné"
 
 #: ../data/ui/preferences_general.blp:10
-#, fuzzy
-#| msgid "Text extraction tool"
 msgid "Text Extracting"
-msgstr "Nástroj pro extrakci textu"
+msgstr "Extrakce textu"
 
 #: ../data/ui/preferences_general.blp:13
 msgid "_Second language"
-msgstr ""
+msgstr "_Druhý jazyk"
 
 #: ../data/ui/preferences_general.blp:15
 msgid "Additional language used in text recognition"
-msgstr ""
+msgstr "Dodatečný jazyk používaný v rozpoznávání textu"
 
 #: ../data/ui/preferences_general.blp:20
 msgid "Behavior"
-msgstr ""
+msgstr "Chování"
 
 #: ../data/ui/preferences_general.blp:23
-#, fuzzy
-#| msgid "Text copied to clipboard"
 msgid "_Copy to clipboard"
-msgstr "Text zkopírován do schránky"
+msgstr "_Zkopírovat do schránky"
 
 #: ../data/ui/preferences_general.blp:25
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Copy extracted text to clipboard"
 msgid "Automatically copy the extracted text to clipboard"
-msgstr "Kopírování extrahovaného textu do schránky"
+msgstr "Automaticky zkopírovat extrahovaný text do schránky"
 
 #: ../data/ui/preferences_general.blp:34
 msgid "_Open QR-code links"
-msgstr ""
+msgstr "_Otevřít odkazy z QR kódů"
 
 #: ../data/ui/preferences_general.blp:36
-#, fuzzy
-#| msgid "The Frog can automatically follow links extracted from QR codes."
 msgid "Automatically open links from QR-codes"
-msgstr "Frog dokáže automaticky otevírat odkazy získané z kódů QR."
+msgstr "Automaticky otevírat odkazy z QR kódů"
 
 #: ../data/ui/preferences_languages.blp:6
-#, fuzzy
-#| msgid "Language"
 msgid "_Languages"
-msgstr "Jazyk"
+msgstr "_Jazyky"
 
 #: ../data/ui/preferences_languages.blp:32
-#, fuzzy
-#| msgid "Available Languages"
 msgid "Installed languages"
-msgstr "Dostupné jazyky"
+msgstr "Nainstalované jazyky"
 
 #: ../data/ui/share_row.blp:14
 msgid "Share via Pocket"
-msgstr ""
+msgstr "Sdílet přes Pocket"
 
 #: ../data/ui/share_row.blp:22
 msgid "Pocket"
-msgstr ""
+msgstr "Pocket"
 
 #: ../data/ui/welcome_page.blp:9 ../data/ui/welcome_page.blp:46
 msgid "Extract text from anywhere"
@@ -697,20 +666,16 @@ msgid "Take a screenshot"
 msgstr "Pořídit snímek obrazovky"
 
 #: ../data/ui/welcome_page.blp:40
-#, fuzzy
-#| msgid "Open"
 msgid "Open menu"
-msgstr "Otevřít"
+msgstr "Otevřít nabídku"
 
 #: ../data/ui/welcome_page.blp:67
-#, fuzzy
-#| msgid "Take a Screenshot"
 msgid "_Take a Screenshot"
-msgstr "Pořídit snímek obrazovky"
+msgstr "_Pořídit snímek obrazovky"
 
 #: ../data/ui/welcome_page.blp:87
 msgid "_Open Image"
-msgstr ""
+msgstr "_Otevřít obrázek"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:3
 msgid "Frog"
@@ -741,6 +706,8 @@ msgid ""
 "Extract text from images, websites, videos, and QR codes by taking a picture "
 "of the source."
 msgstr ""
+"Extrahujte text z obrázků, webových stránek, videí a QR kódů pořízením "
+"obrázku zdroje."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:24
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:42
@@ -751,7 +718,7 @@ msgstr "V této aktualizaci jsme v aplikaci provedli řadu vylepšení."
 msgid ""
 "Share extracted text: This means you can now share your findings with the "
 "wider community."
-msgstr ""
+msgstr "Sdílení extrahovaného textu: rozšiřte své nálezy v širší komunitě."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:27
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:29
@@ -759,22 +726,28 @@ msgid ""
 "Add Text-to-speech to be able to listen to the extracted text without any "
 "additional apps (internet connection required)."
 msgstr ""
+"Přidán převod textu na řeč, abyste mohli poslouchat extrahovaný text bez "
+"jakýchkoli dodatečných aplikací (vyžadováno připojení k internetu)."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:31
 msgid ""
 "Add the ability to insert images from the clipboard by using the <code>Ctrl"
 "+V</code> shortcut."
 msgstr ""
+"Přidána možnost vložit obrázky ze schránky pomocí klávesové zkratky "
+"<code>Ctrl+V</code>."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:33
 msgid ""
 "In addition, we have upgraded the language selection dropdown to popover "
 "with a quick search of a language."
 msgstr ""
+"Dále jsme vylepšili rozbalovací nabídku s výběrem jazyků na překryvné okno s "
+"rychlým vyhledáním jazyka."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:35
 msgid "Last but not least, Frog has become more accessibility-friendly."
-msgstr ""
+msgstr "A v neposlední řadě se Frog stal přístupnějším."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:37
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:51
