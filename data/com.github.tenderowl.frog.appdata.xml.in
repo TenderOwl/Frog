@@ -19,6 +19,14 @@
     </screenshots>
 
     <releases>
+        <release version="1.4.1" type="stable" date="2023-08-31">
+            <description>
+                <p>What's new:</p>
+                <ul>
+                    <li>Translations updated.</li>
+                </ul>
+            </description>
+        </release>
         <release version="1.4.0" type="stable" date="2023-08-22">
             <description>
                 <p>In this update, we've made a number of improvements to our app.</p>
