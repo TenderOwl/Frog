@@ -14,14 +14,9 @@ template $ExtractedPage : Adw.NavigationPage {
       [start]
       Adw.SplitButton grab_btn {
         action-name: "app.get_screenshot";
-        tooltip-text: C_("Extracted screen", "Take a screenshot");
+        tooltip-text: _("Take a screenshot");
+        icon-name: "camera-photo-symbolic";
         menu-model: grab_menu;
-
-        child: Adw.ButtonContent {
-          label: "_Grab";
-          use-underline: true;
-          icon-name: "camera-photo-symbolic";
-        };
       }
 
       [start]
