@@ -7,28 +7,46 @@ template $FrogWindow : Adw.ApplicationWindow {
   width-request: 360;
   height-request: 360;
 
-  Box {
-    orientation: vertical;
 
-    Adw.ToastOverlay toast_overlay {
-      vexpand: true;
+  [content]
+  Adw.ToastOverlay toast_overlay {
 
-      child: Adw.Leaflet main_leaflet {
-        hexpand: true;
-        can-unfold: false;
+    Adw.NavigationSplitView split_view {
+      collapsed: true;
 
-        Adw.LeafletPage {
-          name: "welcome";
+      [sidebar]
+      $WelcomePage welcome_page {
+        name: "welcome";
+      }
 
-          child: $WelcomePage welcome_page {};
-        }
-
-        Adw.LeafletPage {
-          name: "extracted";
-
-          child: $ExtractedPage extracted_page {};
-        }
-      };
+      $ExtractedPage extracted_page {
+        name: "extracted";
+      }
     }
   }
+
+  // Box {
+  //   orientation: vertical;
+
+  //   Adw.ToastOverlay toast_overlay {
+  //     vexpand: true;
+
+  //     child: Adw.Leaflet main_leaflet {
+  //       hexpand: true;
+  //       can-unfold: false;
+
+  //       Adw.LeafletPage {
+  //         name: "welcome";
+
+  //         child: $WelcomePage welcome_page {};
+  //       }
+
+  //       Adw.LeafletPage {
+  //         name: "extracted";
+
+  //         child: $ExtractedPage extracted_page {};
+  //       }
+  //     };
+  //   }
+  // }
 }

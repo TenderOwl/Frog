@@ -36,7 +36,7 @@ from frog.widgets.language_popover import LanguagePopover
 
 
 @Gtk.Template(resource_path=f"{RESOURCE_PREFIX}/ui/welcome_page.ui")
-class WelcomePage(Gtk.Box):
+class WelcomePage(Adw.NavigationPage):
     __gtype_name__ = "WelcomePage"
 
     spinner: Gtk.Spinner = Gtk.Template.Child()

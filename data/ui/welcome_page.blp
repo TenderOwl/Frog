@@ -1,96 +1,99 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $WelcomePage : Box {
-  orientation: vertical;
+template $WelcomePage : Adw.NavigationPage {
 
-  Adw.HeaderBar {
-    visible: true;
-    tooltip-text: _("Extract text from anywhere");
+  Adw.ToolbarView {
 
-    [title]
-    Adw.WindowTitle {
-      title: "Frog";
-    }
+      [top]
+      Adw.HeaderBar {
+        visible: true;
+        tooltip-text: _("Extract text from anywhere");
 
-    [start]
-    MenuButton lang_combo {
-      label: _("Language");
-      tooltip-text: _("Select language to extract");
-      popover: $LanguagePopover language_popover {};
-    }
+        [title]
+        Adw.WindowTitle {
+          title: "Frog";
+        }
 
-    [start]
-    Adw.SplitButton grab_btn {
-      action-name: "app.get_screenshot";
-      tooltip-text: _("Take a screenshot");
-      icon-name: "camera-photo-symbolic";
-      menu-model: grab_menu;
-    }
+        [start]
+        MenuButton lang_combo {
+          label: _("Language");
+          tooltip-text: _("Select language to extract");
+          popover: $LanguagePopover language_popover {};
+        }
 
-    [start]
-    Spinner spinner {
-      spinning: false;
-    }
-
-    [end]
-    MenuButton {
-      icon-name: "open-menu-symbolic";
-      menu-model: primary_menu;
-      tooltip-text: _("Open menu");
-    }
-  }
-
-  Adw.StatusPage welcome {
-    title: "Frog";
-    description: _("Extract text from anywhere");
-
-    Adw.Clamp {
-      maximum-size: 240;
-      child: Box {
-        orientation: vertical;
-
-        Button {
+        [start]
+        Adw.SplitButton grab_btn {
           action-name: "app.get_screenshot";
-          tooltip-text: C_("Welcome screen", "Take a Screenshot");
+          tooltip-text: _("Take a screenshot");
+          icon-name: "camera-photo-symbolic";
+          menu-model: grab_menu;
+        }
 
-          styles ["pill"]
+        [start]
+        Spinner spinner {
+          spinning: false;
+        }
+
+        [end]
+        MenuButton {
+          icon-name: "open-menu-symbolic";
+          menu-model: primary_menu;
+          tooltip-text: _("Open menu");
+        }
+      }
+
+      Adw.StatusPage welcome {
+        title: "Frog";
+        description: _("Extract text from anywhere");
+
+        Adw.Clamp {
+          maximum-size: 240;
           child: Box {
-            halign: center;
-            spacing: 6;
+            orientation: vertical;
 
-            Image {
-              icon-name: "camera-photo-symbolic";
+            Button {
+              action-name: "app.get_screenshot";
+              tooltip-text: C_("Welcome screen", "Take a Screenshot");
+
+              styles ["pill"]
+              child: Box {
+                halign: center;
+                spacing: 6;
+
+                Image {
+                  icon-name: "camera-photo-symbolic";
+                }
+
+                Label {
+                  label: _("_Take a Screenshot");
+                  use-underline: true;
+                }
+              };
             }
 
-            Label {
-              label: _("_Take a Screenshot");
-              use-underline: true;
+            Button {
+              action-name: "app.open_image";
+              tooltip-text: C_("Welcome screen", "Open Image");
+              styles ["pill"]
+
+              child: Box {
+                halign: center;
+                spacing: 6;
+
+                Image {
+                  icon-name: "folder-open-symbolic";
+                }
+
+                Label {
+                  label: _("_Open Image");
+                  use-underline: true;
+                }
+              };
             }
           };
         }
-
-        Button {
-          action-name: "app.open_image";
-          tooltip-text: C_("Welcome screen", "Open Image");
-          styles ["pill"]
-
-          child: Box {
-            halign: center;
-            spacing: 6;
-
-            Image {
-              icon-name: "folder-open-symbolic";
-            }
-
-            Label {
-              label: _("_Open Image");
-              use-underline: true;
-            }
-          };
-        }
-      };
-    }
+      }
   }
 }
 
