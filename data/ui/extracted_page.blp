@@ -1,132 +1,93 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $ExtractedPage : Box {
-  orientation: vertical;
+template $ExtractedPage : Adw.NavigationPage {
+  title: "Extracted";
 
-  Adw.HeaderBar headerbar {
+  Adw.ToolbarView {
 
-    [title]
-    Label {}
+    [top]
+    Adw.HeaderBar headerbar {
 
-    [start]
-    Button back_btn {
-      icon-name: "go-previous-symbolic";
-      tooltip-text: C_("Extracted screen", "Back");
-      clicked => $_on_back_btn_clicked();
+      [title]
+      Label {}
 
-      styles ["icon-button", "back"]
-    }
-
-    [start]
-    Adw.SplitButton grab_btn {
-      action-name: "app.get_screenshot";
-      tooltip-text: C_("Extracted screen", "Take a screenshot");
-      menu-model: grab_menu;
-
-      child: Adw.ButtonContent {
-        label: "_Grab";
-        use-underline: true;
+      [start]
+      Adw.SplitButton grab_btn {
+        action-name: "app.get_screenshot";
+        tooltip-text: _("Take a screenshot");
         icon-name: "camera-photo-symbolic";
-      };
-    }
-
-    // [start]
-    // Button {
-    //   action-name: "app.open_image";
-    //   tooltip-markup: _("Open Image to extract text");
-
-    //   styles ["icon-button"]
-
-    //   child: Adw.ButtonContent {
-    //     icon-name: "folder-open-symbolic";
-    //   };
-    // }
-    [start]
-    Button text_copy_btn {
-      action-name: "app.copy_to_clipboard";
-      tooltip-text: C_("Extracted screen", "Copy extracted text to clipboard");
-      icon-name: "edit-copy-symbolic";
-    }
-
-    [start]
-    Button listen_btn {
-      action-name: "app.listen";
-      tooltip-text: C_("Extracted screen", "Listen to text");
-      icon-name: "audio-speakers-symbolic";
-    }
-
-    [start]
-    Button listen_cancel_btn {
-      action-name: "app.listen_cancel";
-      tooltip-text: C_("Extracted screen", "Cancel listening to text");
-      icon-name: "media-playback-stop-symbolic";
-      visible: false;
-    }
-
-    [start]
-    Spinner listen_spinner {
-      spinning: false;
-    }
-
-    [end]
-    MenuButton {
-      icon-name: "open-menu-symbolic";
-      tooltip-text: C_("Extracted screen", "Open menu");
-      menu-model: primary_menu;
-    }
-
-    [end]
-    MenuButton share_button {
-      icon-name: "emblem-shared-symbolic";
-      tooltip-text: C_("Extracted screen", "Share To");
-      popover: Popover {
-
-        styles ["menu"]
-
-        child: ListBox share_list_box {
-          margin-end: 4;
-          margin-top: 4;
-          margin-start: 4;
-          margin-bottom: 4;
-        };
-      };
-    }
-  }
-
-  ScrolledWindow text_scrollview {
-    hexpand: true;
-    vexpand: true;
-
-    TextView text_view {
-      left-margin: 12;
-      right-margin: 12;
-      top-margin: 12;
-      bottom-margin: 12;
-      pixels-above-lines: 4;
-      pixels-below-lines: 4;
-      wrap-mode: char;
-
-      buffer: TextBuffer buffer {};
-
-    }
-  }
-
-  Revealer toolbox {
-    transition-type: slide_up;
-    child: Box {
-      orientation: vertical;
-
-      Separator {}
-
-      Box {
-        margin-start: 8;
-        margin-end: 8;
-        margin-top: 8;
-        margin-bottom: 8;
-        spacing: 8;
+        menu-model: grab_menu;
       }
-    };
+
+      [start]
+      Button text_copy_btn {
+        action-name: "app.copy_to_clipboard";
+        tooltip-text: C_("Extracted screen", "Copy extracted text to clipboard");
+        icon-name: "edit-copy-symbolic";
+      }
+
+      [start]
+      Button listen_btn {
+        action-name: "app.listen";
+        tooltip-text: C_("Extracted screen", "Listen to text");
+        icon-name: "audio-speakers-symbolic";
+      }
+
+      [start]
+      Button listen_cancel_btn {
+        action-name: "app.listen_cancel";
+        tooltip-text: C_("Extracted screen", "Cancel listening to text");
+        icon-name: "media-playback-stop-symbolic";
+        visible: false;
+      }
+
+      [start]
+      Spinner listen_spinner {
+        spinning: false;
+      }
+
+      [end]
+      MenuButton {
+        icon-name: "open-menu-symbolic";
+        tooltip-text: C_("Extracted screen", "Open menu");
+        menu-model: primary_menu;
+      }
+
+      [end]
+      MenuButton share_button {
+        icon-name: "emblem-shared-symbolic";
+        tooltip-text: C_("Extracted screen", "Share To");
+        popover: Popover {
+
+          styles ["menu"]
+
+          child: ListBox share_list_box {
+            margin-end: 4;
+            margin-top: 4;
+            margin-start: 4;
+            margin-bottom: 4;
+          };
+        };
+      }
+    }
+
+    ScrolledWindow text_scrollview {
+      hexpand: true;
+      vexpand: true;
+
+      TextView text_view {
+        left-margin: 12;
+        right-margin: 12;
+        top-margin: 12;
+        bottom-margin: 12;
+        pixels-above-lines: 4;
+        pixels-below-lines: 4;
+        wrap-mode: char;
+
+        buffer: TextBuffer buffer {};
+      }
+    }
   }
 }
 

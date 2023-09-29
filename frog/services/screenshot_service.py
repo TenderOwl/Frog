@@ -25,7 +25,7 @@
 # holders shall not be used in advertising or otherwise to promote the sale,
 # use or other dealings in this Software without prior written
 # authorization.
-
+import os
 from gettext import gettext as _
 from gi.repository import GObject, Gio, Xdp
 
@@ -102,6 +102,11 @@ class ScreenshotService(GObject.GObject):
     def decode_image(
         self, lang: str, file: str | Image.Image, copy: bool = False
     ) -> None:
+        # Check if `file` is a filepath and mark it for deletion
+        need_remove = False
+        if isinstance(file, str) and os.path.exists(file):
+            need_remove = True
+
         print(f"Decoding with {lang} language.")
         extracted = None
         try:
@@ -128,12 +133,17 @@ class ScreenshotService(GObject.GObject):
             print("ERROR: ", e)
             self.emit("error", "Failed to decode data.")
 
+        finally:
+            if need_remove:
+                os.unlink(file)
+
         if extracted:
             print("Extracted successfully")
             self.emit("decoded", extracted, copy)
 
         else:
             self.emit("error", "No text found.")
+
 
     def capture_cancelled(self, cancellable: Gio.Cancellable) -> None:
         self.emit("error", "Cancelled")

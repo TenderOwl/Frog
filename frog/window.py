@@ -53,7 +53,7 @@ class FrogWindow(Adw.ApplicationWindow):
 
     toast_overlay: Adw.ToastOverlay = Gtk.Template.Child()
 
-    main_leaflet: Adw.Leaflet = Gtk.Template.Child()
+    split_view: Adw.NavigationSplitView = Gtk.Template.Child()
     welcome_page: WelcomePage = Gtk.Template.Child()
     extracted_page: ExtractedPage = Gtk.Template.Child()
 
@@ -89,7 +89,7 @@ class FrogWindow(Adw.ApplicationWindow):
         drop_target_main.connect("drop", self.on_dnd_drop)
         drop_target_main.connect("enter", self.on_dnd_enter)
         drop_target_main.connect("leave", self.on_dnd_leave)
-        self.main_leaflet.add_controller(drop_target_main)
+        self.split_view.add_controller(drop_target_main)
 
         # Setup application
         self.props.default_width = self.settings.get_int("window-width")
@@ -170,7 +170,7 @@ class FrogWindow(Adw.ApplicationWindow):
                     toast.set_detailed_action_name(f'app.show_uri("{text}")')
                     self.toast_overlay.add_toast(toast)
 
-            self.main_leaflet.set_visible_child_name("extracted")
+            self.split_view.set_show_content(True)
 
         except Exception as e:
             print(f"ERROR: {e}")
@@ -228,7 +228,7 @@ class FrogWindow(Adw.ApplicationWindow):
         clipboard_service.read_texture()
 
     def on_listen(self):
-        if self.main_leaflet.get_visible_child_name() != "extracted":
+        if self.split_view.get_show_content():
             return
 
         self.extracted_page.listen()
@@ -298,7 +298,7 @@ class FrogWindow(Adw.ApplicationWindow):
         dialog.present()
 
     def show_welcome_page(self, *_):
-        self.main_leaflet.set_visible_child_name("welcome")
+        self.split_view.set_show_content(False)
         self.extracted_page.listen_cancel()
 
     def _on_share(self, _sender, _action_name: str, provider: GLib.Variant):

@@ -26,7 +26,7 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gtk, GObject
+from gi.repository import Gtk, GObject, Adw
 
 from frog.config import RESOURCE_PREFIX
 from frog.gobject_worker import GObjectWorker
@@ -37,7 +37,7 @@ from frog.services.share_service import ShareService
 
 
 @Gtk.Template(resource_path=f"{RESOURCE_PREFIX}/ui/extracted_page.ui")
-class ExtractedPage(Gtk.Box):
+class ExtractedPage(Adw.NavigationPage):
     __gtype_name__ = "ExtractedPage"
 
     __gsignals__ = {
@@ -46,12 +46,10 @@ class ExtractedPage(Gtk.Box):
         "on-listen-stop": (GObject.SIGNAL_RUN_LAST, None, ()),
     }
 
-    back_btn: Gtk.Button = Gtk.Template.Child()
     listen_btn: Gtk.Button = Gtk.Template.Child()
     listen_cancel_btn: Gtk.Button = Gtk.Template.Child()
     listen_spinner: Gtk.Spinner = Gtk.Template.Child()
     share_list_box: Gtk.ListBox = Gtk.Template.Child()
-    toolbox: Gtk.Revealer = Gtk.Template.Child()
     grab_btn: Gtk.Button = Gtk.Template.Child()
     text_copy_btn: Gtk.Button = Gtk.Template.Child()
     text_view: Gtk.TextView = Gtk.Template.Child()
@@ -67,8 +65,7 @@ class ExtractedPage(Gtk.Box):
 
         ttsservice.connect("stop", self._on_listen_end)
 
-    @Gtk.Template.Callback()
-    def _on_back_btn_clicked(self, _: Gtk.Button) -> None:
+    def do_hiding(self) -> None:
         self.buffer.set_text("")
         self.emit("go-back", 1)
 
