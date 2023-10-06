@@ -33,7 +33,6 @@
         "python3-pytesseract.json",
         "python3-pyzbar.json",
         "python3-gTTS.json",
-        "python3-dateutil.json",
         {
             "name" : "frog",
             "builddir" : true,
@@ -45,8 +44,5 @@
                 }
             ]
         }
-    ],
-    "build-options" : {
-        "env" : {        }
-    }
+    ]
 }
