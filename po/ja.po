@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Frog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-23 02:01+0300\n"
+"POT-Creation-Date: 2023-10-03 19:37+0300\n"
 "PO-Revision-Date: 2022-06-15 00:52+0300\n"
 "Last-Translator: Andrey Maksimov <andrey@tenderowl.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/frog/default/ja/"
@@ -19,67 +19,209 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: ../frog/services/clipboard_service.py:54
-msgid "No image in clipboard"
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:6
+#: ../data/com.github.tenderowl.frog.desktop.in:3
+msgid "Frog"
+msgstr "Frog"
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:7
+msgid "Extract text from images"
 msgstr ""
 
-#: ../frog/services/screenshot_service.py:93
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:9
+msgid ""
+"Extract text from images, websites, videos, and QR codes by taking a picture "
+"of the source."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:151
+msgid "Tender Owl"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.desktop.in:4
+msgid "Text extraction tool"
+msgstr "画面上の文字を検出"
+
+#: ../data/com.github.tenderowl.frog.desktop.in:5
 #, fuzzy
-#| msgid "Take a screenshot"
-msgid "Can't take a screenshot."
-msgstr "再度検出する"
+msgid "Extract text from any image, video or web page"
+msgstr "画面上の文字やQRコードを検出します"
 
-#: ../frog/widgets/preferences_languages_page.py:100
-msgid "View all available languages"
-msgstr ""
+#: ../data/com.github.tenderowl.frog.desktop.in:12
+#, fuzzy
+msgid "OCR;Text;Extraction;"
+msgstr "画面上の文字を検出"
 
-#: ../frog/widgets/share_row.py:48
-msgid "Share via {provider_name.capitalize()}"
-msgstr ""
-
-#: ../frog/main.py:63 ../frog/main.py:83
-msgid "Extract directly into the clipboard"
+#: ../data/com.github.tenderowl.frog.desktop.in:18
+#, fuzzy
+msgid "Extract Text to the Clipboard"
 msgstr "検出した文字をそのままクリップボードにコピー"
 
-#: ../frog/main.py:188
-msgid "No text found. Try to grab another region."
+#: ../data/ui/extracted_page.blp:18 ../data/ui/welcome_page.blp:29
+msgid "Take a screenshot"
+msgstr "再度検出する"
+
+#: ../data/ui/extracted_page.blp:26
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Copy extracted text to clipboard"
+msgctxt "Extracted screen"
+msgid "Copy extracted text to clipboard"
+msgstr "クリップボードに検出結果をコピー"
+
+#: ../data/ui/extracted_page.blp:33
+msgctxt "Extracted screen"
+msgid "Listen to text"
 msgstr ""
 
-#: ../frog/main.py:198
-msgid "Text extracted. You can paste it with Ctrl+V"
+#: ../data/ui/extracted_page.blp:40
+msgctxt "Extracted screen"
+msgid "Cancel listening to text"
 msgstr ""
 
-#: ../frog/window.py:151
-msgid "Text copied to clipboard"
+#: ../data/ui/extracted_page.blp:53
+msgctxt "Extracted screen"
+msgid "Open menu"
 msgstr ""
 
-#: ../frog/window.py:162
-msgid "QR-code URL opened"
+#: ../data/ui/extracted_page.blp:60
+msgctxt "Extracted screen"
+msgid "Share To"
 msgstr ""
 
-#: ../frog/window.py:166
-msgid "QR-code contains URL."
+#: ../data/ui/extracted_page.blp:97 ../data/ui/welcome_page.blp:104
+msgid "Preferences"
 msgstr ""
 
-#: ../frog/window.py:167
-msgid "Open"
+#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:111
+msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: ../frog/window.py:194
-msgid "Supported image files"
+#: ../data/ui/extracted_page.blp:109 ../data/ui/welcome_page.blp:116
+msgid "About Frog"
+msgstr "Frogについて"
+
+#: ../data/ui/extracted_page.blp:117 ../data/ui/welcome_page.blp:123
+msgid "Open image"
 msgstr ""
 
-#: ../frog/window.py:200
-msgid "Open image to extract text"
+#: ../data/ui/extracted_page.blp:118 ../data/ui/welcome_page.blp:124
+msgid "Paste from clipboard"
 msgstr ""
 
-#: ../frog/window.py:260
-msgid "Only images can be processed that way."
+#: ../data/ui/language_dialog.blp:14
+msgid "Available Languages"
+msgstr "言語"
+
+#: ../data/ui/language_popover.blp:18
+#, fuzzy
+#| msgid "Extra language"
+msgid "Search language"
+msgstr "第二言語"
+
+#: ../data/ui/preferences_general.blp:5
+msgid "_General"
 msgstr ""
 
-#: ../frog/window.py:293
-msgid "Text copied"
-msgstr "コピーしました"
+#: ../data/ui/preferences_general.blp:10
+#, fuzzy
+#| msgid "Text extraction tool"
+msgid "Text Extracting"
+msgstr "画面上の文字を検出"
+
+#: ../data/ui/preferences_general.blp:13
+#, fuzzy
+#| msgid "Active language"
+msgid "_Second language"
+msgstr "第一言語"
+
+#: ../data/ui/preferences_general.blp:15
+msgid "Additional language used in text recognition"
+msgstr ""
+
+#: ../data/ui/preferences_general.blp:20
+msgid "Behavior"
+msgstr ""
+
+#: ../data/ui/preferences_general.blp:23
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Copy extracted text to clipboard"
+msgid "_Copy to clipboard"
+msgstr "クリップボードに検出結果をコピー"
+
+#: ../data/ui/preferences_general.blp:25
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Copy extracted text to clipboard"
+msgid "Automatically copy the extracted text to clipboard"
+msgstr "クリップボードに検出結果をコピー"
+
+#: ../data/ui/preferences_general.blp:34
+msgid "_Open QR-code links"
+msgstr ""
+
+#: ../data/ui/preferences_general.blp:36
+msgid "Automatically open links from QR-codes"
+msgstr ""
+
+#: ../data/ui/preferences_languages.blp:6
+#, fuzzy
+#| msgid "Language"
+msgid "_Languages"
+msgstr "言語"
+
+#: ../data/ui/preferences_languages.blp:32
+#, fuzzy
+#| msgid "Available Languages"
+msgid "Installed languages"
+msgstr "言語"
+
+#: ../data/ui/share_row.blp:14
+msgid "Share via Pocket"
+msgstr ""
+
+#: ../data/ui/share_row.blp:22
+msgid "Pocket"
+msgstr ""
+
+#: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
+msgid "Extract text from anywhere"
+msgstr "画面上の文字やQRコードを検出します"
+
+#: ../data/ui/welcome_page.blp:21
+msgid "Language"
+msgstr "言語"
+
+#: ../data/ui/welcome_page.blp:22
+msgid "Select language to extract"
+msgstr "検出する言語を選択"
+
+#: ../data/ui/welcome_page.blp:43
+msgid "Open menu"
+msgstr ""
+
+#: ../data/ui/welcome_page.blp:58
+#, fuzzy
+#| msgid "Take a Screenshot"
+msgctxt "Welcome screen"
+msgid "Take a Screenshot"
+msgstr "再度検出する"
+
+#: ../data/ui/welcome_page.blp:70
+#, fuzzy
+#| msgid "Take a Screenshot"
+msgid "_Take a Screenshot"
+msgstr "再度検出する"
+
+#: ../data/ui/welcome_page.blp:78
+msgctxt "Welcome screen"
+msgid "Open Image"
+msgstr ""
+
+#: ../data/ui/welcome_page.blp:90
+msgid "_Open Image"
+msgstr ""
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -569,339 +711,76 @@ msgstr ""
 msgid "Yoruba"
 msgstr ""
 
-#: ../data/ui/language_popover.blp:18
-#, fuzzy
-#| msgid "Extra language"
-msgid "Search language"
-msgstr "第二言語"
-
-#: ../data/ui/extracted_page.blp:37
-#, fuzzy
-#| msgid "Active language to extract the text."
-msgid "Open Image to extract text"
-msgstr "文字を検出する言語です。"
-
-#: ../data/ui/extracted_page.blp:136 ../data/ui/welcome_page.blp:100
-msgid "Preferences"
-msgstr ""
-
-#: ../data/ui/extracted_page.blp:143 ../data/ui/welcome_page.blp:107
-msgid "Keyboard Shortcuts"
-msgstr ""
-
-#: ../data/ui/extracted_page.blp:148 ../data/ui/welcome_page.blp:112
-msgid "About Frog"
-msgstr "Frogについて"
-
-#: ../data/ui/extracted_page.blp:156 ../data/ui/welcome_page.blp:119
-msgid "Open image"
-msgstr ""
-
-#: ../data/ui/extracted_page.blp:157 ../data/ui/welcome_page.blp:120
-msgid "Paste from clipboard"
-msgstr ""
-
-#: ../data/ui/language_dialog.blp:14
-msgid "Available Languages"
-msgstr "言語"
-
-#: ../data/ui/preferences_general.blp:5
-msgid "_General"
-msgstr ""
-
-#: ../data/ui/preferences_general.blp:10
-#, fuzzy
-#| msgid "Text extraction tool"
-msgid "Text Extracting"
-msgstr "画面上の文字を検出"
-
-#: ../data/ui/preferences_general.blp:13
-#, fuzzy
-#| msgid "Active language"
-msgid "_Second language"
-msgstr "第一言語"
-
-#: ../data/ui/preferences_general.blp:15
-msgid "Additional language used in text recognition"
-msgstr ""
-
-#: ../data/ui/preferences_general.blp:20
-msgid "Behavior"
-msgstr ""
-
-#: ../data/ui/preferences_general.blp:23
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Copy extracted text to clipboard"
-msgid "_Copy to clipboard"
-msgstr "クリップボードに検出結果をコピー"
-
-#: ../data/ui/preferences_general.blp:25
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Copy extracted text to clipboard"
-msgid "Automatically copy the extracted text to clipboard"
-msgstr "クリップボードに検出結果をコピー"
-
-#: ../data/ui/preferences_general.blp:34
-msgid "_Open QR-code links"
-msgstr ""
-
-#: ../data/ui/preferences_general.blp:36
-msgid "Automatically open links from QR-codes"
-msgstr ""
-
-#: ../data/ui/preferences_languages.blp:6
-#, fuzzy
-#| msgid "Language"
-msgid "_Languages"
-msgstr "言語"
-
-#: ../data/ui/preferences_languages.blp:32
-#, fuzzy
-#| msgid "Available Languages"
-msgid "Installed languages"
-msgstr "言語"
-
-#: ../data/ui/share_row.blp:14
-msgid "Share via Pocket"
-msgstr ""
-
-#: ../data/ui/share_row.blp:22
-msgid "Pocket"
-msgstr ""
-
-#: ../data/ui/welcome_page.blp:9 ../data/ui/welcome_page.blp:46
-msgid "Extract text from anywhere"
-msgstr "画面上の文字やQRコードを検出します"
-
-#: ../data/ui/welcome_page.blp:18
-msgid "Language"
-msgstr "言語"
-
-#: ../data/ui/welcome_page.blp:19
-msgid "Select language to extract"
-msgstr "検出する言語を選択"
-
-#: ../data/ui/welcome_page.blp:26
-msgid "Take a screenshot"
-msgstr "再度検出する"
-
-#: ../data/ui/welcome_page.blp:40
-msgid "Open menu"
-msgstr ""
-
-#: ../data/ui/welcome_page.blp:67
-#, fuzzy
-#| msgid "Take a Screenshot"
-msgid "_Take a Screenshot"
-msgstr "再度検出する"
-
-#: ../data/ui/welcome_page.blp:87
-msgid "_Open Image"
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.desktop.in:3
-msgid "Frog"
-msgstr "Frog"
-
-#: ../data/com.github.tenderowl.frog.desktop.in:4
-msgid "Text extraction tool"
-msgstr "画面上の文字を検出"
-
-#: ../data/com.github.tenderowl.frog.desktop.in:5
-#, fuzzy
-msgid "Extract text from any image, video or web page"
-msgstr "画面上の文字やQRコードを検出します"
-
-#: ../data/com.github.tenderowl.frog.desktop.in:12
-#, fuzzy
-msgid "OCR;Text;Extraction;"
-msgstr "画面上の文字を検出"
-
-#: ../data/com.github.tenderowl.frog.desktop.in:18
-#, fuzzy
-msgid "Extract Text to the Clipboard"
+#: ../frog/main.py:63 ../frog/main.py:83
+msgid "Extract directly into the clipboard"
 msgstr "検出した文字をそのままクリップボードにコピー"
 
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:7
-msgid "Extract text from images"
+#: ../frog/main.py:188
+msgid "No text found. Try to grab another region."
 msgstr ""
 
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:9
-msgid ""
-"Extract text from images, websites, videos, and QR codes by taking a picture "
-"of the source."
+#: ../frog/main.py:198
+msgid "Text extracted. You can paste it with Ctrl+V"
 msgstr ""
 
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:24
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:42
-msgid "In this update, we've made a number of improvements to our app."
+#: ../frog/services/clipboard_service.py:54
+msgid "No image in clipboard"
 msgstr ""
 
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:26
-msgid ""
-"Share extracted text: This means you can now share your findings with the "
-"wider community."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:27
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:29
-msgid ""
-"Add Text-to-speech to be able to listen to the extracted text without any "
-"additional apps (internet connection required)."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:31
-msgid ""
-"Add the ability to insert images from the clipboard by using the <code>Ctrl"
-"+V</code> shortcut."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:33
-msgid ""
-"In addition, we have upgraded the language selection dropdown to popover "
-"with a quick search of a language."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:35
-msgid "Last but not least, Frog has become more accessibility-friendly."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:37
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:51
-msgid "We hope you enjoy our work!"
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:44
-msgid ""
-"We have redesigned the settings dialog to make it more user-friendly and "
-"understandable."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:45
-msgid "Now you can easily find the language you want by searching."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:46
-msgid ""
-"In addition, we have added the ability to select a second language for "
-"extracting text from images."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:47
-msgid "The Frog can automatically follow links extracted from QR codes."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:48
-msgid ""
-"We also updated the localization and improved the overall performance of the "
-"app."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:49
-msgid "Fixed some bugs and bugs."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:56
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:65
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:73
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:82
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:91
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:113
-msgid "What's new:"
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:58
-msgid "Open image button now available."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:59
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:67
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:76
-msgid "Translations updated."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:75
-msgid "When no text is found, Frog returns to the main window."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:84
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:93
-msgid "Updated UI"
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:85
-msgid "Translated to a bunch of new languages"
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:94
-msgid "Drag-n-drop support. For images only"
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:95
-msgid "Dark mode support"
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:96
-msgid "Localized interface"
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:102
-msgid ""
-"Frog now is available on the Flathub and use modern Portal implementation. "
-"We also updated the UI accordingly to the GNOME HIG and fixed some bugs "
-"we've found :)"
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:108
-msgid ""
-"Now you're free to run Frog with `-e` option to extract text and instantly "
-"copy it to the clipboard."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:115
-msgid "English model included with Frog itself"
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:116
-msgid "QR code detection. If one in the selected area - it will be decoded."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:117
-msgid "New command line shortcut to run with \"Extract to clipboard\" feature."
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:118
-msgid "Granite.HyperTextView to support QR encoded links"
-msgstr ""
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:124
+#: ../frog/services/screenshot_service.py:93
 #, fuzzy
-msgid "Fix language packs download."
-msgstr "{language} をダウンロードしました"
+#| msgid "Take a screenshot"
+msgid "Can't take a screenshot."
+msgstr "再度検出する"
 
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:129
-msgid "Dark mode+"
+#: ../frog/widgets/preferences_languages_page.py:100
+msgid "View all available languages"
 msgstr ""
 
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:131
-msgid "Dark mode support."
+#: ../frog/widgets/share_row.py:48
+msgid "Share via {provider_name.capitalize()}"
 msgstr ""
 
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:132
-msgid "Application will hide the main window for the cleaner shots. #11"
+#: ../frog/window.py:151
+msgid "Text copied to clipboard"
 msgstr ""
 
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:138
-msgid ""
-"Quickly extract any text from anywhere you need it: webpages, videos, "
-"photos, etc."
+#: ../frog/window.py:162
+msgid "QR-code URL opened"
 msgstr ""
 
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:143
-msgid "Tender Owl"
+#: ../frog/window.py:166
+msgid "QR-code contains URL."
 msgstr ""
+
+#: ../frog/window.py:167
+msgid "Open"
+msgstr ""
+
+#: ../frog/window.py:194
+msgid "Supported image files"
+msgstr ""
+
+#: ../frog/window.py:200
+msgid "Open image to extract text"
+msgstr ""
+
+#: ../frog/window.py:260
+msgid "Only images can be processed that way."
+msgstr ""
+
+#: ../frog/window.py:293
+msgid "Text copied"
+msgstr "コピーしました"
+
+#, fuzzy
+#~| msgid "Active language to extract the text."
+#~ msgid "Open Image to extract text"
+#~ msgstr "文字を検出する言語です。"
+
+#, fuzzy
+#~ msgid "Fix language packs download."
+#~ msgstr "{language} をダウンロードしました"
 
 #, fuzzy, python-brace-format
 #~ msgid "{language} language downloaded."

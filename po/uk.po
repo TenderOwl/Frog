@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-23 02:01+0300\n"
+"POT-Creation-Date: 2023-10-03 19:37+0300\n"
 "PO-Revision-Date: 2023-09-23 13:00+0000\n"
 "Last-Translator: volkov <d2oo1dle2x@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/frog/default/"
@@ -22,65 +22,193 @@ msgstr ""
 "X-Poedit-SearchPath-2: data/com.github.tenderowl.frog.appdata.xml.in\n"
 "X-Poedit-SearchPath-3: frog\n"
 
-#: ../frog/services/clipboard_service.py:54
-msgid "No image in clipboard"
-msgstr "Не знайдено зображення у буфері обміну"
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:6
+#: ../data/com.github.tenderowl.frog.desktop.in:3
+msgid "Frog"
+msgstr "Frog"
 
-#: ../frog/services/screenshot_service.py:93
-msgid "Can't take a screenshot."
-msgstr "Не вдалося зробити скриншот."
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:7
+msgid "Extract text from images"
+msgstr "Отримати текст із зображень"
 
-#: ../frog/widgets/preferences_languages_page.py:100
-msgid "View all available languages"
-msgstr "Переглянути усі доступні мови"
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:9
+msgid ""
+"Extract text from images, websites, videos, and QR codes by taking a picture "
+"of the source."
+msgstr ""
+"Отримуйте текст із зображень, веб-сайтів, відео і QR кодів, отримавши "
+"зображення джерела."
 
-#: ../frog/widgets/share_row.py:48
-msgid "Share via {provider_name.capitalize()}"
-msgstr "Поділитися через {provider_name.capitalize()}"
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:151
+msgid "Tender Owl"
+msgstr "Tender Owl"
 
-#: ../frog/main.py:63 ../frog/main.py:83
-msgid "Extract directly into the clipboard"
-msgstr "Витягнути в буфер обміну"
+#: ../data/com.github.tenderowl.frog.desktop.in:4
+msgid "Text extraction tool"
+msgstr "Інструмент отримування тексту"
 
-#: ../frog/main.py:188
-msgid "No text found. Try to grab another region."
-msgstr "Не знайдено текст. Спробуйте захопити іншу ділянку."
+#: ../data/com.github.tenderowl.frog.desktop.in:5
+msgid "Extract text from any image, video or web page"
+msgstr "Отримайте текст з будь-якого зображення, відео чи веб-сторінки"
 
-#: ../frog/main.py:198
-msgid "Text extracted. You can paste it with Ctrl+V"
-msgstr "Текст отримано. Вставити його можна сполученням клавіш Ctrl+V"
+#: ../data/com.github.tenderowl.frog.desktop.in:12
+msgid "OCR;Text;Extraction;"
+msgstr "OCR;Text;Extraction;текст;отримування;"
 
-#: ../frog/window.py:151
-msgid "Text copied to clipboard"
-msgstr "Текст скопійовано у буфер обміну"
+#: ../data/com.github.tenderowl.frog.desktop.in:18
+msgid "Extract Text to the Clipboard"
+msgstr "Отримати і скопіювати у буфер обміну"
 
-#: ../frog/window.py:162
-msgid "QR-code URL opened"
-msgstr "URL посилання із QR коду відкрито"
+#: ../data/ui/extracted_page.blp:18 ../data/ui/welcome_page.blp:29
+msgid "Take a screenshot"
+msgstr "Зробити скриншот"
 
-#: ../frog/window.py:166
-msgid "QR-code contains URL."
-msgstr "QR код містить URL посилання."
+#: ../data/ui/extracted_page.blp:26
+#, fuzzy
+#| msgid "Automatically copy the extracted text to clipboard"
+msgctxt "Extracted screen"
+msgid "Copy extracted text to clipboard"
+msgstr "Автоматично копіювати отриманий текст у буфер обміну"
 
-#: ../frog/window.py:167
-msgid "Open"
-msgstr "Відкрити"
+#: ../data/ui/extracted_page.blp:33
+msgctxt "Extracted screen"
+msgid "Listen to text"
+msgstr ""
 
-#: ../frog/window.py:194
-msgid "Supported image files"
-msgstr "Підтримувані файли зображень"
+#: ../data/ui/extracted_page.blp:40
+msgctxt "Extracted screen"
+msgid "Cancel listening to text"
+msgstr ""
 
-#: ../frog/window.py:200
-msgid "Open image to extract text"
-msgstr "Відкрити зображення для отримування тексту"
+#: ../data/ui/extracted_page.blp:53
+#, fuzzy
+#| msgid "Open menu"
+msgctxt "Extracted screen"
+msgid "Open menu"
+msgstr "Відкрити меню"
 
-#: ../frog/window.py:260
-msgid "Only images can be processed that way."
-msgstr "Таким чином можна обробити лише зображення."
+#: ../data/ui/extracted_page.blp:60
+msgctxt "Extracted screen"
+msgid "Share To"
+msgstr ""
 
-#: ../frog/window.py:293
-msgid "Text copied"
-msgstr "Текст скопійовано"
+#: ../data/ui/extracted_page.blp:97 ../data/ui/welcome_page.blp:104
+msgid "Preferences"
+msgstr "Налаштування"
+
+#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:111
+msgid "Keyboard Shortcuts"
+msgstr "Клавіатурні скорочення"
+
+#: ../data/ui/extracted_page.blp:109 ../data/ui/welcome_page.blp:116
+msgid "About Frog"
+msgstr "Про Frog"
+
+#: ../data/ui/extracted_page.blp:117 ../data/ui/welcome_page.blp:123
+msgid "Open image"
+msgstr "Відкрити зображення"
+
+#: ../data/ui/extracted_page.blp:118 ../data/ui/welcome_page.blp:124
+msgid "Paste from clipboard"
+msgstr "Вставити із буферу обміну"
+
+#: ../data/ui/language_dialog.blp:14
+msgid "Available Languages"
+msgstr "Доступні мови"
+
+#: ../data/ui/language_popover.blp:18
+msgid "Search language"
+msgstr "Шукати мову"
+
+#: ../data/ui/preferences_general.blp:5
+msgid "_General"
+msgstr "_Загальні"
+
+#: ../data/ui/preferences_general.blp:10
+msgid "Text Extracting"
+msgstr "Отримування тексту"
+
+#: ../data/ui/preferences_general.blp:13
+msgid "_Second language"
+msgstr "_Додаткова мова"
+
+#: ../data/ui/preferences_general.blp:15
+msgid "Additional language used in text recognition"
+msgstr "Додаткова мова використовується для розпізнавання тексту"
+
+#: ../data/ui/preferences_general.blp:20
+msgid "Behavior"
+msgstr "Поведінка"
+
+#: ../data/ui/preferences_general.blp:23
+msgid "_Copy to clipboard"
+msgstr "_Скопіювати у буфер обміну"
+
+#: ../data/ui/preferences_general.blp:25
+msgid "Automatically copy the extracted text to clipboard"
+msgstr "Автоматично копіювати отриманий текст у буфер обміну"
+
+#: ../data/ui/preferences_general.blp:34
+msgid "_Open QR-code links"
+msgstr "_Відчиняти посилання у QR кодах"
+
+#: ../data/ui/preferences_general.blp:36
+msgid "Automatically open links from QR-codes"
+msgstr "Автоматично відчиняти посилання у QR кодах"
+
+#: ../data/ui/preferences_languages.blp:6
+msgid "_Languages"
+msgstr "_Мови"
+
+#: ../data/ui/preferences_languages.blp:32
+msgid "Installed languages"
+msgstr "Встановлені мови"
+
+#: ../data/ui/share_row.blp:14
+msgid "Share via Pocket"
+msgstr "Поділитися через Pocket"
+
+#: ../data/ui/share_row.blp:22
+msgid "Pocket"
+msgstr "Pocket"
+
+#: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
+msgid "Extract text from anywhere"
+msgstr "Отримати текст із будь-чого"
+
+#: ../data/ui/welcome_page.blp:21
+msgid "Language"
+msgstr "Мова"
+
+#: ../data/ui/welcome_page.blp:22
+msgid "Select language to extract"
+msgstr "Виберіть мову для видобування"
+
+#: ../data/ui/welcome_page.blp:43
+msgid "Open menu"
+msgstr "Відкрити меню"
+
+#: ../data/ui/welcome_page.blp:58
+#, fuzzy
+#| msgid "_Take a Screenshot"
+msgctxt "Welcome screen"
+msgid "Take a Screenshot"
+msgstr "_Зробити скриншот"
+
+#: ../data/ui/welcome_page.blp:70
+msgid "_Take a Screenshot"
+msgstr "_Зробити скриншот"
+
+#: ../data/ui/welcome_page.blp:78
+#, fuzzy
+#| msgid "_Open Image"
+msgctxt "Welcome screen"
+msgid "Open Image"
+msgstr "_Відкрити зображення"
+
+#: ../data/ui/welcome_page.blp:90
+msgid "_Open Image"
+msgstr "_Відкрити зображення"
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -570,337 +698,210 @@ msgstr "Їдиш"
 msgid "Yoruba"
 msgstr "Йоруба"
 
-#: ../data/ui/language_popover.blp:18
-msgid "Search language"
-msgstr "Шукати мову"
+#: ../frog/main.py:63 ../frog/main.py:83
+msgid "Extract directly into the clipboard"
+msgstr "Витягнути в буфер обміну"
 
-#: ../data/ui/extracted_page.blp:37
-msgid "Open Image to extract text"
+#: ../frog/main.py:188
+msgid "No text found. Try to grab another region."
+msgstr "Не знайдено текст. Спробуйте захопити іншу ділянку."
+
+#: ../frog/main.py:198
+msgid "Text extracted. You can paste it with Ctrl+V"
+msgstr "Текст отримано. Вставити його можна сполученням клавіш Ctrl+V"
+
+#: ../frog/services/clipboard_service.py:54
+msgid "No image in clipboard"
+msgstr "Не знайдено зображення у буфері обміну"
+
+#: ../frog/services/screenshot_service.py:93
+msgid "Can't take a screenshot."
+msgstr "Не вдалося зробити скриншот."
+
+#: ../frog/widgets/preferences_languages_page.py:100
+msgid "View all available languages"
+msgstr "Переглянути усі доступні мови"
+
+#: ../frog/widgets/share_row.py:48
+msgid "Share via {provider_name.capitalize()}"
+msgstr "Поділитися через {provider_name.capitalize()}"
+
+#: ../frog/window.py:151
+msgid "Text copied to clipboard"
+msgstr "Текст скопійовано у буфер обміну"
+
+#: ../frog/window.py:162
+msgid "QR-code URL opened"
+msgstr "URL посилання із QR коду відкрито"
+
+#: ../frog/window.py:166
+msgid "QR-code contains URL."
+msgstr "QR код містить URL посилання."
+
+#: ../frog/window.py:167
+msgid "Open"
+msgstr "Відкрити"
+
+#: ../frog/window.py:194
+msgid "Supported image files"
+msgstr "Підтримувані файли зображень"
+
+#: ../frog/window.py:200
+msgid "Open image to extract text"
 msgstr "Відкрити зображення для отримування тексту"
 
-#: ../data/ui/extracted_page.blp:136 ../data/ui/welcome_page.blp:100
-msgid "Preferences"
-msgstr "Налаштування"
-
-#: ../data/ui/extracted_page.blp:143 ../data/ui/welcome_page.blp:107
-msgid "Keyboard Shortcuts"
-msgstr "Клавіатурні скорочення"
-
-#: ../data/ui/extracted_page.blp:148 ../data/ui/welcome_page.blp:112
-msgid "About Frog"
-msgstr "Про Frog"
-
-#: ../data/ui/extracted_page.blp:156 ../data/ui/welcome_page.blp:119
-msgid "Open image"
-msgstr "Відкрити зображення"
-
-#: ../data/ui/extracted_page.blp:157 ../data/ui/welcome_page.blp:120
-msgid "Paste from clipboard"
-msgstr "Вставити із буферу обміну"
-
-#: ../data/ui/language_dialog.blp:14
-msgid "Available Languages"
-msgstr "Доступні мови"
-
-#: ../data/ui/preferences_general.blp:5
-msgid "_General"
-msgstr "_Загальні"
-
-#: ../data/ui/preferences_general.blp:10
-msgid "Text Extracting"
-msgstr "Отримування тексту"
-
-#: ../data/ui/preferences_general.blp:13
-msgid "_Second language"
-msgstr "_Додаткова мова"
-
-#: ../data/ui/preferences_general.blp:15
-msgid "Additional language used in text recognition"
-msgstr "Додаткова мова використовується для розпізнавання тексту"
-
-#: ../data/ui/preferences_general.blp:20
-msgid "Behavior"
-msgstr "Поведінка"
-
-#: ../data/ui/preferences_general.blp:23
-msgid "_Copy to clipboard"
-msgstr "_Скопіювати у буфер обміну"
-
-#: ../data/ui/preferences_general.blp:25
-msgid "Automatically copy the extracted text to clipboard"
-msgstr "Автоматично копіювати отриманий текст у буфер обміну"
-
-#: ../data/ui/preferences_general.blp:34
-msgid "_Open QR-code links"
-msgstr "_Відчиняти посилання у QR кодах"
-
-#: ../data/ui/preferences_general.blp:36
-msgid "Automatically open links from QR-codes"
-msgstr "Автоматично відчиняти посилання у QR кодах"
-
-#: ../data/ui/preferences_languages.blp:6
-msgid "_Languages"
-msgstr "_Мови"
-
-#: ../data/ui/preferences_languages.blp:32
-msgid "Installed languages"
-msgstr "Встановлені мови"
-
-#: ../data/ui/share_row.blp:14
-msgid "Share via Pocket"
-msgstr "Поділитися через Pocket"
-
-#: ../data/ui/share_row.blp:22
-msgid "Pocket"
-msgstr "Pocket"
-
-#: ../data/ui/welcome_page.blp:9 ../data/ui/welcome_page.blp:46
-msgid "Extract text from anywhere"
-msgstr "Отримати текст із будь-чого"
-
-#: ../data/ui/welcome_page.blp:18
-msgid "Language"
-msgstr "Мова"
-
-#: ../data/ui/welcome_page.blp:19
-msgid "Select language to extract"
-msgstr "Виберіть мову для видобування"
-
-#: ../data/ui/welcome_page.blp:26
-msgid "Take a screenshot"
-msgstr "Зробити скриншот"
-
-#: ../data/ui/welcome_page.blp:40
-msgid "Open menu"
-msgstr "Відкрити меню"
-
-#: ../data/ui/welcome_page.blp:67
-msgid "_Take a Screenshot"
-msgstr "_Зробити скриншот"
-
-#: ../data/ui/welcome_page.blp:87
-msgid "_Open Image"
-msgstr "_Відкрити зображення"
-
-#: ../data/com.github.tenderowl.frog.desktop.in:3
-msgid "Frog"
-msgstr "Frog"
-
-#: ../data/com.github.tenderowl.frog.desktop.in:4
-msgid "Text extraction tool"
-msgstr "Інструмент отримування тексту"
-
-#: ../data/com.github.tenderowl.frog.desktop.in:5
-msgid "Extract text from any image, video or web page"
-msgstr "Отримайте текст з будь-якого зображення, відео чи веб-сторінки"
-
-#: ../data/com.github.tenderowl.frog.desktop.in:12
-msgid "OCR;Text;Extraction;"
-msgstr "OCR;Text;Extraction;текст;отримування;"
-
-#: ../data/com.github.tenderowl.frog.desktop.in:18
-msgid "Extract Text to the Clipboard"
-msgstr "Отримати і скопіювати у буфер обміну"
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:7
-msgid "Extract text from images"
-msgstr "Отримати текст із зображень"
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:9
-msgid ""
-"Extract text from images, websites, videos, and QR codes by taking a picture "
-"of the source."
-msgstr ""
-"Отримуйте текст із зображень, веб-сайтів, відео і QR кодів, отримавши "
-"зображення джерела."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:24
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:42
-msgid "In this update, we've made a number of improvements to our app."
-msgstr "У цьому оновлені, ми зробили багато покращень у додатку."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:26
-msgid ""
-"Share extracted text: This means you can now share your findings with the "
-"wider community."
-msgstr ""
-"Поділитися отриманим текстом: означає, що тепер ви можете ділитися вашими "
-"знахідками з більш ширшою спільнотою."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:27
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:29
-msgid ""
-"Add Text-to-speech to be able to listen to the extracted text without any "
-"additional apps (internet connection required)."
-msgstr ""
-"Додано синтез мовлення, який може прослухати отриманий текст без "
-"використання сторонніх додатків (потребується доступ до інтернету)."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:31
-msgid ""
-"Add the ability to insert images from the clipboard by using the <code>Ctrl"
-"+V</code> shortcut."
-msgstr ""
-"Додано можливість вставки зображень через буфер обміну, використовуючи "
-"клавіатурне скорочення <code>Ctrl+V</code>."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:33
-msgid ""
-"In addition, we have upgraded the language selection dropdown to popover "
-"with a quick search of a language."
-msgstr "Також, ми покращили меню обирання мови з швидким пошуком мови."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:35
-msgid "Last but not least, Frog has become more accessibility-friendly."
-msgstr "І останнє, але не менш важливе, Frog став більш доступнішим."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:37
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:51
-msgid "We hope you enjoy our work!"
-msgstr "Сподіваємося, що вам сподобається пророблена нами робота!"
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:44
-msgid ""
-"We have redesigned the settings dialog to make it more user-friendly and "
-"understandable."
-msgstr ""
-"Ви зробили редизайн вікна налаштувань, щоб зробити його більше зручним для "
-"користування."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:45
-msgid "Now you can easily find the language you want by searching."
-msgstr "Тепер ви можете знайти будь-яку мову через функцію пошуку."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:46
-msgid ""
-"In addition, we have added the ability to select a second language for "
-"extracting text from images."
-msgstr ""
-"Також ми додали можливість обрати додаткову мову для отримування тексту із "
-"зображення."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:47
-msgid "The Frog can automatically follow links extracted from QR codes."
-msgstr "Frog може автоматично відкривати посилання, отримані із QR кодів."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:48
-msgid ""
-"We also updated the localization and improved the overall performance of the "
-"app."
-msgstr "І ми ще оновили локалізацію і покращили продуктивність додатку."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:49
-msgid "Fixed some bugs and bugs."
-msgstr "Виправили деякі збої та вади."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:56
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:65
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:73
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:82
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:91
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:113
-msgid "What's new:"
-msgstr "Що нового:"
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:58
-msgid "Open image button now available."
-msgstr "Тепер доступна кнопку \"Відкрити зображення\"."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:59
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:67
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:76
-msgid "Translations updated."
-msgstr "Оновлені переклади."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:75
-msgid "When no text is found, Frog returns to the main window."
-msgstr "Якщо текст не буде знайдено, Frog повернеться у головне вікно."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:84
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:93
-msgid "Updated UI"
-msgstr "Оновлено інтерфейс користувача"
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:85
-msgid "Translated to a bunch of new languages"
-msgstr "Додано нових перекладів"
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:94
-msgid "Drag-n-drop support. For images only"
-msgstr "Підтримка drag-n-drop для зображень"
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:95
-msgid "Dark mode support"
-msgstr "Підтримка темного стиля"
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:96
-msgid "Localized interface"
-msgstr "Локалізовано інтерфейс"
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:102
-msgid ""
-"Frog now is available on the Flathub and use modern Portal implementation. "
-"We also updated the UI accordingly to the GNOME HIG and fixed some bugs "
-"we've found :)"
-msgstr ""
-"Frog тепер доступний у Flathub і використовує сучасну імплементацію "
-"порталів. Також ми оновили інтерфейс користувача відповідно до GNOME HIG і "
-"виправили деякі вади, які ви знайшли :)"
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:108
-msgid ""
-"Now you're free to run Frog with `-e` option to extract text and instantly "
-"copy it to the clipboard."
-msgstr ""
-"Тепер ви можете запустити Frog з параметром \"-e\",щоб автоматично отримати "
-"текст і скопіювати його у буфер обміну."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:115
-msgid "English model included with Frog itself"
-msgstr "Модель розпізнавання англійської мови постачається з Frog"
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:116
-msgid "QR code detection. If one in the selected area - it will be decoded."
-msgstr ""
-"Виявлення QR кодів - якщо такий виявлено у обраній зоні - QR буде декодовано."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:117
-msgid "New command line shortcut to run with \"Extract to clipboard\" feature."
-msgstr ""
-"Новий ярлик для командної строки з функцією \"Отримати і скопіювати у буфер "
-"обміну\"."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:118
-msgid "Granite.HyperTextView to support QR encoded links"
-msgstr "Granite.HyperTextView для підтримки декодувавання QR посилань"
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:124
-msgid "Fix language packs download."
-msgstr "Виправлено завантаження мовних пакетів."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:129
-msgid "Dark mode+"
-msgstr "Темний стиль+"
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:131
-msgid "Dark mode support."
-msgstr "Підтримка темного стиля."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:132
-msgid "Application will hide the main window for the cleaner shots. #11"
-msgstr "Програма сховає головне вікно для більш чистих скриншотів. #11"
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:138
-msgid ""
-"Quickly extract any text from anywhere you need it: webpages, videos, "
-"photos, etc."
-msgstr ""
-"Швидко отримайте текст із будь-якого джерела: веб-сайтів, відео, фотографій, "
-"тощо."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:143
-msgid "Tender Owl"
-msgstr "Tender Owl"
+#: ../frog/window.py:260
+msgid "Only images can be processed that way."
+msgstr "Таким чином можна обробити лише зображення."
+
+#: ../frog/window.py:293
+msgid "Text copied"
+msgstr "Текст скопійовано"
+
+#~ msgid "Open Image to extract text"
+#~ msgstr "Відкрити зображення для отримування тексту"
+
+#~ msgid "In this update, we've made a number of improvements to our app."
+#~ msgstr "У цьому оновлені, ми зробили багато покращень у додатку."
+
+#~ msgid ""
+#~ "Share extracted text: This means you can now share your findings with the "
+#~ "wider community."
+#~ msgstr ""
+#~ "Поділитися отриманим текстом: означає, що тепер ви можете ділитися вашими "
+#~ "знахідками з більш ширшою спільнотою."
+
+#~ msgid ""
+#~ "Add Text-to-speech to be able to listen to the extracted text without any "
+#~ "additional apps (internet connection required)."
+#~ msgstr ""
+#~ "Додано синтез мовлення, який може прослухати отриманий текст без "
+#~ "використання сторонніх додатків (потребується доступ до інтернету)."
+
+#~ msgid ""
+#~ "Add the ability to insert images from the clipboard by using the "
+#~ "<code>Ctrl+V</code> shortcut."
+#~ msgstr ""
+#~ "Додано можливість вставки зображень через буфер обміну, використовуючи "
+#~ "клавіатурне скорочення <code>Ctrl+V</code>."
+
+#~ msgid ""
+#~ "In addition, we have upgraded the language selection dropdown to popover "
+#~ "with a quick search of a language."
+#~ msgstr "Також, ми покращили меню обирання мови з швидким пошуком мови."
+
+#~ msgid "Last but not least, Frog has become more accessibility-friendly."
+#~ msgstr "І останнє, але не менш важливе, Frog став більш доступнішим."
+
+#~ msgid "We hope you enjoy our work!"
+#~ msgstr "Сподіваємося, що вам сподобається пророблена нами робота!"
+
+#~ msgid ""
+#~ "We have redesigned the settings dialog to make it more user-friendly and "
+#~ "understandable."
+#~ msgstr ""
+#~ "Ви зробили редизайн вікна налаштувань, щоб зробити його більше зручним "
+#~ "для користування."
+
+#~ msgid "Now you can easily find the language you want by searching."
+#~ msgstr "Тепер ви можете знайти будь-яку мову через функцію пошуку."
+
+#~ msgid ""
+#~ "In addition, we have added the ability to select a second language for "
+#~ "extracting text from images."
+#~ msgstr ""
+#~ "Також ми додали можливість обрати додаткову мову для отримування тексту "
+#~ "із зображення."
+
+#~ msgid "The Frog can automatically follow links extracted from QR codes."
+#~ msgstr "Frog може автоматично відкривати посилання, отримані із QR кодів."
+
+#~ msgid ""
+#~ "We also updated the localization and improved the overall performance of "
+#~ "the app."
+#~ msgstr "І ми ще оновили локалізацію і покращили продуктивність додатку."
+
+#~ msgid "Fixed some bugs and bugs."
+#~ msgstr "Виправили деякі збої та вади."
+
+#~ msgid "What's new:"
+#~ msgstr "Що нового:"
+
+#~ msgid "Open image button now available."
+#~ msgstr "Тепер доступна кнопку \"Відкрити зображення\"."
+
+#~ msgid "Translations updated."
+#~ msgstr "Оновлені переклади."
+
+#~ msgid "When no text is found, Frog returns to the main window."
+#~ msgstr "Якщо текст не буде знайдено, Frog повернеться у головне вікно."
+
+#~ msgid "Updated UI"
+#~ msgstr "Оновлено інтерфейс користувача"
+
+#~ msgid "Translated to a bunch of new languages"
+#~ msgstr "Додано нових перекладів"
+
+#~ msgid "Drag-n-drop support. For images only"
+#~ msgstr "Підтримка drag-n-drop для зображень"
+
+#~ msgid "Dark mode support"
+#~ msgstr "Підтримка темного стиля"
+
+#~ msgid "Localized interface"
+#~ msgstr "Локалізовано інтерфейс"
+
+#~ msgid ""
+#~ "Frog now is available on the Flathub and use modern Portal "
+#~ "implementation. We also updated the UI accordingly to the GNOME HIG and "
+#~ "fixed some bugs we've found :)"
+#~ msgstr ""
+#~ "Frog тепер доступний у Flathub і використовує сучасну імплементацію "
+#~ "порталів. Також ми оновили інтерфейс користувача відповідно до GNOME HIG "
+#~ "і виправили деякі вади, які ви знайшли :)"
+
+#~ msgid ""
+#~ "Now you're free to run Frog with `-e` option to extract text and "
+#~ "instantly copy it to the clipboard."
+#~ msgstr ""
+#~ "Тепер ви можете запустити Frog з параметром \"-e\",щоб автоматично "
+#~ "отримати текст і скопіювати його у буфер обміну."
+
+#~ msgid "English model included with Frog itself"
+#~ msgstr "Модель розпізнавання англійської мови постачається з Frog"
+
+#~ msgid "QR code detection. If one in the selected area - it will be decoded."
+#~ msgstr ""
+#~ "Виявлення QR кодів - якщо такий виявлено у обраній зоні - QR буде "
+#~ "декодовано."
+
+#~ msgid ""
+#~ "New command line shortcut to run with \"Extract to clipboard\" feature."
+#~ msgstr ""
+#~ "Новий ярлик для командної строки з функцією \"Отримати і скопіювати у "
+#~ "буфер обміну\"."
+
+#~ msgid "Granite.HyperTextView to support QR encoded links"
+#~ msgstr "Granite.HyperTextView для підтримки декодувавання QR посилань"
+
+#~ msgid "Fix language packs download."
+#~ msgstr "Виправлено завантаження мовних пакетів."
+
+#~ msgid "Dark mode+"
+#~ msgstr "Темний стиль+"
+
+#~ msgid "Dark mode support."
+#~ msgstr "Підтримка темного стиля."
+
+#~ msgid "Application will hide the main window for the cleaner shots. #11"
+#~ msgstr "Програма сховає головне вікно для більш чистих скриншотів. #11"
+
+#~ msgid ""
+#~ "Quickly extract any text from anywhere you need it: webpages, videos, "
+#~ "photos, etc."
+#~ msgstr ""
+#~ "Швидко отримайте текст із будь-якого джерела: веб-сайтів, відео, "
+#~ "фотографій, тощо."
 
 #~ msgid ""
 #~ "Quickly extract text from any source such as images, websites, even video "
