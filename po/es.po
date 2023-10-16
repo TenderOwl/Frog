@@ -64,33 +64,29 @@ msgid "Take a screenshot"
 msgstr "Tomar una foto"
 
 #: ../data/ui/extracted_page.blp:26
-#, fuzzy
-#| msgid "Automatically copy the extracted text to clipboard"
 msgctxt "Extracted screen"
 msgid "Copy extracted text to clipboard"
-msgstr "Copia automáticamente el texto extraído en el portapapeles"
+msgstr "Copiar el texto extraído en el portapapeles"
 
 #: ../data/ui/extracted_page.blp:33
 msgctxt "Extracted screen"
 msgid "Listen to text"
-msgstr ""
+msgstr "Escuchar el texto"
 
 #: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
 msgid "Cancel listening to text"
-msgstr ""
+msgstr "Cancelar la escucha del texto"
 
 #: ../data/ui/extracted_page.blp:53
-#, fuzzy
-#| msgid "Open menu"
 msgctxt "Extracted screen"
 msgid "Open menu"
-msgstr "Abrir el menú"
+msgstr "Menú abierto"
 
 #: ../data/ui/extracted_page.blp:60
 msgctxt "Extracted screen"
 msgid "Share To"
-msgstr ""
+msgstr "Compartir con"
 
 #: ../data/ui/extracted_page.blp:97 ../data/ui/welcome_page.blp:104
 msgid "Preferences"
@@ -189,22 +185,18 @@ msgid "Open menu"
 msgstr "Abrir el menú"
 
 #: ../data/ui/welcome_page.blp:58
-#, fuzzy
-#| msgid "_Take a Screenshot"
 msgctxt "Welcome screen"
 msgid "Take a Screenshot"
-msgstr "_Hacer una captura de pantalla"
+msgstr "Hacer una captura de pantalla"
 
 #: ../data/ui/welcome_page.blp:70
 msgid "_Take a Screenshot"
 msgstr "_Hacer una captura de pantalla"
 
 #: ../data/ui/welcome_page.blp:78
-#, fuzzy
-#| msgid "_Open Image"
 msgctxt "Welcome screen"
 msgid "Open Image"
-msgstr "_Abrir una imagen"
+msgstr "Abrir una imagen"
 
 #: ../data/ui/welcome_page.blp:90
 msgid "_Open Image"
@@ -930,7 +922,6 @@ msgstr "Texto copiado"
 #~ msgstr "{language} descargado."
 
 #, fuzzy
-#~| msgid "Extract text from anywhere"
 #~ msgid "Extract text from anywhere, even QR code"
 #~ msgstr "Extraer texto de cualquier lugar"
 
