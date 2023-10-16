@@ -59,25 +59,21 @@ msgid "Take a screenshot"
 msgstr "Pořídit snímek obrazovky"
 
 #: ../data/ui/extracted_page.blp:26
-#, fuzzy
-#| msgid "Automatically copy the extracted text to clipboard"
 msgctxt "Extracted screen"
 msgid "Copy extracted text to clipboard"
-msgstr "Automaticky zkopírovat extrahovaný text do schránky"
+msgstr "Kopírovat extrahovaný text do schránky"
 
 #: ../data/ui/extracted_page.blp:33
 msgctxt "Extracted screen"
 msgid "Listen to text"
-msgstr ""
+msgstr "Poslouchat text"
 
 #: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
 msgid "Cancel listening to text"
-msgstr ""
+msgstr "Zrušit poslech textu"
 
 #: ../data/ui/extracted_page.blp:53
-#, fuzzy
-#| msgid "Open menu"
 msgctxt "Extracted screen"
 msgid "Open menu"
 msgstr "Otevřít nabídku"
@@ -85,7 +81,7 @@ msgstr "Otevřít nabídku"
 #: ../data/ui/extracted_page.blp:60
 msgctxt "Extracted screen"
 msgid "Share To"
-msgstr ""
+msgstr "Sdílet do"
 
 #: ../data/ui/extracted_page.blp:97 ../data/ui/welcome_page.blp:104
 msgid "Preferences"
@@ -184,22 +180,18 @@ msgid "Open menu"
 msgstr "Otevřít nabídku"
 
 #: ../data/ui/welcome_page.blp:58
-#, fuzzy
-#| msgid "_Take a Screenshot"
 msgctxt "Welcome screen"
 msgid "Take a Screenshot"
-msgstr "_Pořídit snímek obrazovky"
+msgstr "Pořídit snímek obrazovky"
 
 #: ../data/ui/welcome_page.blp:70
 msgid "_Take a Screenshot"
 msgstr "_Pořídit snímek obrazovky"
 
 #: ../data/ui/welcome_page.blp:78
-#, fuzzy
-#| msgid "_Open Image"
 msgctxt "Welcome screen"
 msgid "Open Image"
-msgstr "_Otevřít obrázek"
+msgstr "Otevřít obrázek"
 
 #: ../data/ui/welcome_page.blp:90
 msgid "_Open Image"

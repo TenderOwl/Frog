@@ -35,19 +35,20 @@ msgid ""
 "Extract text from images, websites, videos, and QR codes by taking a picture "
 "of the source."
 msgstr ""
+"Extraire lo tèxte dels imatges, paginas web, vidèos o còdi QR en prenent un "
+"imatge de la font."
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:151
 msgid "Tender Owl"
-msgstr ""
+msgstr "Tender Owl"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:4
 msgid "Text extraction tool"
 msgstr "Aisina d’extraccion de tèxte"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:5
-#, fuzzy
 msgid "Extract text from any image, video or web page"
-msgstr "Traire lo tèxt d’ont que venga"
+msgstr "Traire lo tèxt de quin imatge, vidèo o pagina web que siá"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:12
 msgid "OCR;Text;Extraction;"
@@ -62,9 +63,6 @@ msgid "Take a screenshot"
 msgstr "Prendre una captura"
 
 #: ../data/ui/extracted_page.blp:26
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Copy extracted text to clipboard"
 msgctxt "Extracted screen"
 msgid "Copy extracted text to clipboard"
 msgstr "Copiar lo tèxt trach al quichapapièrs"
@@ -72,16 +70,14 @@ msgstr "Copiar lo tèxt trach al quichapapièrs"
 #: ../data/ui/extracted_page.blp:33
 msgctxt "Extracted screen"
 msgid "Listen to text"
-msgstr ""
+msgstr "Escotar lo tèxte"
 
 #: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
 msgid "Cancel listening to text"
-msgstr ""
+msgstr "Anullar l’escota del tèxte"
 
 #: ../data/ui/extracted_page.blp:53
-#, fuzzy
-#| msgid "Open menu"
 msgctxt "Extracted screen"
 msgid "Open menu"
 msgstr "Dobrir lo menú"
@@ -89,7 +85,7 @@ msgstr "Dobrir lo menú"
 #: ../data/ui/extracted_page.blp:60
 msgctxt "Extracted screen"
 msgid "Share To"
-msgstr ""
+msgstr "Partejar amb"
 
 #: ../data/ui/extracted_page.blp:97 ../data/ui/welcome_page.blp:104
 msgid "Preferences"
@@ -144,11 +140,8 @@ msgid "_Copy to clipboard"
 msgstr "_Copiar lo tèxt trach al quichapapièrs"
 
 #: ../data/ui/preferences_general.blp:25
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Copy extracted text to clipboard"
 msgid "Automatically copy the extracted text to clipboard"
-msgstr "Copiar lo tèxt trach al quichapapièrs"
+msgstr "Copiar automaticament lo tèxt trach al quichapapièrs"
 
 #: ../data/ui/preferences_general.blp:34
 msgid "_Open QR-code links"
@@ -156,7 +149,7 @@ msgstr "_Dobrir los ligams de QR còdi"
 
 #: ../data/ui/preferences_general.blp:36
 msgid "Automatically open links from QR-codes"
-msgstr ""
+msgstr "Dobrir automaticament los ligams traches dels còdis QR"
 
 #: ../data/ui/preferences_languages.blp:6
 msgid "_Languages"
@@ -168,11 +161,11 @@ msgstr "Lengas installadas"
 
 #: ../data/ui/share_row.blp:14
 msgid "Share via Pocket"
-msgstr ""
+msgstr "Partejar via Pocket"
 
 #: ../data/ui/share_row.blp:22
 msgid "Pocket"
-msgstr ""
+msgstr "Pocket"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
@@ -191,22 +184,18 @@ msgid "Open menu"
 msgstr "Dobrir lo menú"
 
 #: ../data/ui/welcome_page.blp:58
-#, fuzzy
-#| msgid "_Take a Screenshot"
 msgctxt "Welcome screen"
 msgid "Take a Screenshot"
-msgstr "_Prendre una captura"
+msgstr "Prendre una captura"
 
 #: ../data/ui/welcome_page.blp:70
 msgid "_Take a Screenshot"
 msgstr "_Prendre una captura"
 
 #: ../data/ui/welcome_page.blp:78
-#, fuzzy
-#| msgid "_Open Image"
 msgctxt "Welcome screen"
 msgid "Open Image"
-msgstr "_Dobrir un imatge"
+msgstr "Dobrir un imatge"
 
 #: ../data/ui/welcome_page.blp:90
 msgid "_Open Image"
@@ -718,7 +707,6 @@ msgstr "Cap d’imatge al quichapapièrs"
 
 #: ../frog/services/screenshot_service.py:93
 #, fuzzy
-#| msgid "Take a screenshot"
 msgid "Can't take a screenshot."
 msgstr "Prendre una captura"
 
@@ -763,7 +751,6 @@ msgid "Text copied"
 msgstr "Tèxte copiat"
 
 #, fuzzy
-#~| msgid "Select language to extract"
 #~ msgid "Open Image to extract text"
 #~ msgstr "Seleccionatz la lenga de traire"
 
@@ -774,7 +761,6 @@ msgstr "Tèxte copiat"
 #~ msgstr "Traduccions mesas a jorn."
 
 #, fuzzy
-#~| msgid "Extract text from anywhere"
 #~ msgid "Extract text from anywhere, even QR code"
 #~ msgstr "Traire lo tèxt d’ont que venga"
 
