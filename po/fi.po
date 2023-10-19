@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-03 19:37+0300\n"
-"PO-Revision-Date: 2023-09-02 04:56+0000\n"
+"PO-Revision-Date: 2023-10-19 04:01+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
-"Language-Team: Finnish <https://hosted.weblate.org/projects/frog/default/fi/"
-">\n"
+"Language-Team: Finnish <https://hosted.weblate.org/projects/frog/default/fi/>"
+"\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.1-dev\n"
+"X-Generator: Weblate 5.1\n"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:6
 #: ../data/com.github.tenderowl.frog.desktop.in:3
@@ -60,25 +60,21 @@ msgid "Take a screenshot"
 msgstr "Ota kuvakaappaus"
 
 #: ../data/ui/extracted_page.blp:26
-#, fuzzy
-#| msgid "Automatically copy the extracted text to clipboard"
 msgctxt "Extracted screen"
 msgid "Copy extracted text to clipboard"
-msgstr "Kopioi purettu teksti automaattisesti leikepöydälle"
+msgstr "Kopioi purettu teksti leikepöydälle"
 
 #: ../data/ui/extracted_page.blp:33
 msgctxt "Extracted screen"
 msgid "Listen to text"
-msgstr ""
+msgstr "Kuuntele teksti"
 
 #: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
 msgid "Cancel listening to text"
-msgstr ""
+msgstr "Peru tekstin kuuntelu"
 
 #: ../data/ui/extracted_page.blp:53
-#, fuzzy
-#| msgid "Open menu"
 msgctxt "Extracted screen"
 msgid "Open menu"
 msgstr "Avaa valikko"
@@ -86,7 +82,7 @@ msgstr "Avaa valikko"
 #: ../data/ui/extracted_page.blp:60
 msgctxt "Extracted screen"
 msgid "Share To"
-msgstr ""
+msgstr "Jaa"
 
 #: ../data/ui/extracted_page.blp:97 ../data/ui/welcome_page.blp:104
 msgid "Preferences"
@@ -185,22 +181,18 @@ msgid "Open menu"
 msgstr "Avaa valikko"
 
 #: ../data/ui/welcome_page.blp:58
-#, fuzzy
-#| msgid "_Take a Screenshot"
 msgctxt "Welcome screen"
 msgid "Take a Screenshot"
-msgstr "_Ota kuvakaappaus"
+msgstr "Ota kuvakaappaus"
 
 #: ../data/ui/welcome_page.blp:70
 msgid "_Take a Screenshot"
 msgstr "_Ota kuvakaappaus"
 
 #: ../data/ui/welcome_page.blp:78
-#, fuzzy
-#| msgid "_Open Image"
 msgctxt "Welcome screen"
 msgid "Open Image"
-msgstr "_Avaa kuva"
+msgstr "Avaa kuva"
 
 #: ../data/ui/welcome_page.blp:90
 msgid "_Open Image"
@@ -431,10 +423,8 @@ msgid "Japanese"
 msgstr "Japani"
 
 #: ../frog/language_manager.py:122
-#, fuzzy
-#| msgid "Korean (vertical)"
 msgid "Japanese (vertical)"
-msgstr "Korea, pystysuora"
+msgstr "Japani, pystysuora"
 
 #: ../frog/language_manager.py:123
 msgid "Kannada"
