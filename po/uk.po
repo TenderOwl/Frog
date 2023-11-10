@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-03 19:37+0300\n"
-"PO-Revision-Date: 2023-09-23 13:00+0000\n"
+"PO-Revision-Date: 2023-10-26 15:02+0000\n"
 "Last-Translator: volkov <d2oo1dle2x@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/frog/default/"
 "uk/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.1-dev\n"
+"X-Generator: Weblate 5.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: data/ui\n"
@@ -64,25 +64,21 @@ msgid "Take a screenshot"
 msgstr "Зробити скриншот"
 
 #: ../data/ui/extracted_page.blp:26
-#, fuzzy
-#| msgid "Automatically copy the extracted text to clipboard"
 msgctxt "Extracted screen"
 msgid "Copy extracted text to clipboard"
-msgstr "Автоматично копіювати отриманий текст у буфер обміну"
+msgstr "Скопіювати отриманий текст у буфер обміну"
 
 #: ../data/ui/extracted_page.blp:33
 msgctxt "Extracted screen"
 msgid "Listen to text"
-msgstr ""
+msgstr "Прослухати текст"
 
 #: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
 msgid "Cancel listening to text"
-msgstr ""
+msgstr "Скасувати прослуховування тексту"
 
 #: ../data/ui/extracted_page.blp:53
-#, fuzzy
-#| msgid "Open menu"
 msgctxt "Extracted screen"
 msgid "Open menu"
 msgstr "Відкрити меню"
@@ -90,7 +86,7 @@ msgstr "Відкрити меню"
 #: ../data/ui/extracted_page.blp:60
 msgctxt "Extracted screen"
 msgid "Share To"
-msgstr ""
+msgstr "Поділитися з"
 
 #: ../data/ui/extracted_page.blp:97 ../data/ui/welcome_page.blp:104
 msgid "Preferences"
@@ -189,22 +185,18 @@ msgid "Open menu"
 msgstr "Відкрити меню"
 
 #: ../data/ui/welcome_page.blp:58
-#, fuzzy
-#| msgid "_Take a Screenshot"
 msgctxt "Welcome screen"
 msgid "Take a Screenshot"
-msgstr "_Зробити скриншот"
+msgstr "Зробити скриншот"
 
 #: ../data/ui/welcome_page.blp:70
 msgid "_Take a Screenshot"
 msgstr "_Зробити скриншот"
 
 #: ../data/ui/welcome_page.blp:78
-#, fuzzy
-#| msgid "_Open Image"
 msgctxt "Welcome screen"
 msgid "Open Image"
-msgstr "_Відкрити зображення"
+msgstr "Відкрити зображення"
 
 #: ../data/ui/welcome_page.blp:90
 msgid "_Open Image"
