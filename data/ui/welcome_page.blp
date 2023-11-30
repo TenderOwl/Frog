@@ -61,6 +61,7 @@ template $WelcomePage : Adw.NavigationPage {
               child: Box {
                 halign: center;
                 spacing: 6;
+                // orientation: vertical;
 
                 Image {
                   icon-name: "camera-photo-symbolic";
@@ -81,6 +82,7 @@ template $WelcomePage : Adw.NavigationPage {
               child: Box {
                 halign: center;
                 spacing: 6;
+                // orientation: vertical;
 
                 Image {
                   icon-name: "folder-open-symbolic";
@@ -88,6 +90,27 @@ template $WelcomePage : Adw.NavigationPage {
 
                 Label {
                   label: _("_Open Image");
+                  use-underline: true;
+                }
+              };
+            }
+
+             Button {
+              action-name: "app.paste_from_clipboard";
+              tooltip-text: C_("Welcome screen", "Paste image from clipboard");
+              styles ["pill"]
+
+              child: Box {
+                halign: center;
+                spacing: 6;
+                // orientation: vertical;
+
+                Image {
+                  icon-name: "edit-paste-symbolic";
+                }
+
+                Label {
+                  label: _("Paste image");
                   use-underline: true;
                 }
               };
