@@ -20,7 +20,7 @@ class TTSService(GObject.GObject):
 
     def __init__(self):
         super().__init__()
-        Gst.init()
+        Gst.init(None)
 
         self._tld = "com"
 
