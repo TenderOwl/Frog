@@ -1,12 +1,13 @@
 # 吧拉拉 <1530207757@qq.com>, 2023.
 # 刘韬 <lyuutau@outlook.com>, 2023.
+# 复予 <1530207757@qq.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-03 19:37+0300\n"
-"PO-Revision-Date: 2023-05-08 04:48+0000\n"
-"Last-Translator: 刘韬 <lyuutau@outlook.com>\n"
+"PO-Revision-Date: 2023-12-09 07:05+0000\n"
+"Last-Translator: 复予 <1530207757@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "frog/default/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -14,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 5.3-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: data/ui\n"
@@ -35,7 +36,7 @@ msgstr "从图像中提取文本"
 msgid ""
 "Extract text from images, websites, videos, and QR codes by taking a picture "
 "of the source."
-msgstr ""
+msgstr "为图像、网页、视频和二维码拍照，以从中提取文本。"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:151
 msgid "Tender Owl"
@@ -62,41 +63,33 @@ msgid "Take a screenshot"
 msgstr "截屏"
 
 #: ../data/ui/extracted_page.blp:26
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Copy extracted text to clipboard"
 msgctxt "Extracted screen"
 msgid "Copy extracted text to clipboard"
-msgstr "将提取的文本复制到剪贴板上"
+msgstr "将提取的文本复制到剪贴板"
 
 #: ../data/ui/extracted_page.blp:33
 msgctxt "Extracted screen"
 msgid "Listen to text"
-msgstr ""
+msgstr "听写文本"
 
 #: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
 msgid "Cancel listening to text"
-msgstr ""
+msgstr "取消文本听写"
 
 #: ../data/ui/extracted_page.blp:53
-#, fuzzy
-#| msgid "Open"
 msgctxt "Extracted screen"
 msgid "Open menu"
-msgstr "打开"
+msgstr "打开菜单"
 
 #: ../data/ui/extracted_page.blp:60
 msgctxt "Extracted screen"
 msgid "Share To"
-msgstr ""
+msgstr "分享"
 
 #: ../data/ui/extracted_page.blp:97 ../data/ui/welcome_page.blp:104
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Display preferences"
 msgid "Preferences"
-msgstr "显示首选项"
+msgstr "首选项"
 
 #: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:111
 msgid "Keyboard Shortcuts"
@@ -108,91 +101,71 @@ msgstr "关于 Frog(_A)"
 
 #: ../data/ui/extracted_page.blp:117 ../data/ui/welcome_page.blp:123
 msgid "Open image"
-msgstr ""
+msgstr "打开图像"
 
 #: ../data/ui/extracted_page.blp:118 ../data/ui/welcome_page.blp:124
-#, fuzzy
-#| msgid "Text copied to clipboard"
 msgid "Paste from clipboard"
-msgstr "文本已复制到剪贴板"
+msgstr "从剪贴板粘贴"
 
 #: ../data/ui/language_dialog.blp:14
 msgid "Available Languages"
 msgstr "可用的语言"
 
 #: ../data/ui/language_popover.blp:18
-#, fuzzy
-#| msgid "Language"
 msgid "Search language"
-msgstr "语言"
+msgstr "搜索语言"
 
 #: ../data/ui/preferences_general.blp:5
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "_General"
-msgstr "常规"
+msgstr "常规(_G)"
 
 #: ../data/ui/preferences_general.blp:10
-#, fuzzy
-#| msgid "Text extraction tool"
 msgid "Text Extracting"
-msgstr "文本提取工具"
+msgstr "文本提取"
 
 #: ../data/ui/preferences_general.blp:13
 msgid "_Second language"
-msgstr ""
+msgstr "第二语言(_S)"
 
 #: ../data/ui/preferences_general.blp:15
 msgid "Additional language used in text recognition"
-msgstr ""
+msgstr "文本识别中使用的附加语言"
 
 #: ../data/ui/preferences_general.blp:20
 msgid "Behavior"
-msgstr ""
+msgstr "行为"
 
 #: ../data/ui/preferences_general.blp:23
-#, fuzzy
-#| msgid "Text copied to clipboard"
 msgid "_Copy to clipboard"
-msgstr "文本已复制到剪贴板"
+msgstr "复制到剪贴板(_C)"
 
 #: ../data/ui/preferences_general.blp:25
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Copy extracted text to clipboard"
 msgid "Automatically copy the extracted text to clipboard"
-msgstr "将提取的文本复制到剪贴板上"
+msgstr "自动将提取的文本复制到剪贴板"
 
 #: ../data/ui/preferences_general.blp:34
 msgid "_Open QR-code links"
-msgstr ""
+msgstr "打开二维码链接(_O)"
 
 #: ../data/ui/preferences_general.blp:36
-#, fuzzy
-#| msgid "The Frog can automatically follow links extracted from QR codes."
 msgid "Automatically open links from QR-codes"
-msgstr "Frog 可以自动跟踪从二维码中提取的链接。"
+msgstr "自动打开二维码中的链接"
 
 #: ../data/ui/preferences_languages.blp:6
-#, fuzzy
-#| msgid "Language"
 msgid "_Languages"
-msgstr "语言"
+msgstr "语言(_L)"
 
 #: ../data/ui/preferences_languages.blp:32
-#, fuzzy
-#| msgid "Available Languages"
 msgid "Installed languages"
-msgstr "可用的语言"
+msgstr "已安装语言"
 
 #: ../data/ui/share_row.blp:14
 msgid "Share via Pocket"
-msgstr ""
+msgstr "用 Pocket 分享"
 
 #: ../data/ui/share_row.blp:22
 msgid "Pocket"
-msgstr ""
+msgstr "Pocket"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
@@ -207,34 +180,26 @@ msgid "Select language to extract"
 msgstr "选择要提取的语言"
 
 #: ../data/ui/welcome_page.blp:43
-#, fuzzy
-#| msgid "Open"
 msgid "Open menu"
-msgstr "打开"
+msgstr "打开菜单"
 
 #: ../data/ui/welcome_page.blp:58
-#, fuzzy
-#| msgid "Take a Screenshot"
 msgctxt "Welcome screen"
 msgid "Take a Screenshot"
 msgstr "截屏"
 
 #: ../data/ui/welcome_page.blp:70
-#, fuzzy
-#| msgid "Take a Screenshot"
 msgid "_Take a Screenshot"
-msgstr "截屏"
+msgstr "截屏(_T)"
 
 #: ../data/ui/welcome_page.blp:78
-#, fuzzy
-#| msgid "Open"
 msgctxt "Welcome screen"
 msgid "Open Image"
-msgstr "打开"
+msgstr "打开图像"
 
 #: ../data/ui/welcome_page.blp:90
 msgid "_Open Image"
-msgstr ""
+msgstr "打开图像(_O)"
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -461,10 +426,8 @@ msgid "Japanese"
 msgstr "日语"
 
 #: ../frog/language_manager.py:122
-#, fuzzy
-#| msgid "Korean (vertical)"
 msgid "Japanese (vertical)"
-msgstr "朝鲜文 (竖体)"
+msgstr "日语(竖体)"
 
 #: ../frog/language_manager.py:123
 msgid "Kannada"
@@ -739,16 +702,12 @@ msgid "Text extracted. You can paste it with Ctrl+V"
 msgstr "提取的文本。你可以用 Ctrl+V 粘贴它"
 
 #: ../frog/services/clipboard_service.py:54
-#, fuzzy
-#| msgid "Text copied to clipboard"
 msgid "No image in clipboard"
-msgstr "文本已复制到剪贴板"
+msgstr "剪贴板中没有图像"
 
 #: ../frog/services/screenshot_service.py:93
-#, fuzzy
-#| msgid "Take a screenshot"
 msgid "Can't take a screenshot."
-msgstr "截屏"
+msgstr "无法截屏。"
 
 #: ../frog/widgets/preferences_languages_page.py:100
 msgid "View all available languages"
@@ -756,7 +715,7 @@ msgstr "查看所有可用语言"
 
 #: ../frog/widgets/share_row.py:48
 msgid "Share via {provider_name.capitalize()}"
-msgstr ""
+msgstr "用 {provider_name.capitalize()} 分享"
 
 #: ../frog/window.py:151
 msgid "Text copied to clipboard"
