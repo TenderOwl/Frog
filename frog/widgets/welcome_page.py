@@ -40,8 +40,8 @@ class WelcomePage(Adw.NavigationPage):
     __gtype_name__ = "WelcomePage"
 
     spinner: Gtk.Spinner = Gtk.Template.Child()
-    lang_combo: Gtk.MenuButton = Gtk.Template.Child()
     welcome: Adw.StatusPage = Gtk.Template.Child()
+    lang_combo: Gtk.MenuButton = Gtk.Template.Child()
     language_popover: LanguagePopover = Gtk.Template.Child()
 
     def __init__(self):
