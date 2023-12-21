@@ -27,6 +27,7 @@
 # authorization.
 import os
 from gettext import gettext as _
+
 from gi.repository import GObject, Gio, Xdp
 
 from frog.config import tessdata_config
@@ -97,15 +98,18 @@ class ScreenshotService(GObject.GObject):
         filename = self.portal.take_screenshot_finish(res)
         # Remove file:// from the path
         filename = filename[7:]
-        self.decode_image(lang, filename, copy)
+        self.decode_image(lang, filename, copy, True)
 
-    def decode_image(
-        self, lang: str, file: str | Image.Image, copy: bool = False
-    ) -> None:
+    def decode_image(self,
+                     lang: str,
+                     file: str | Image.Image,
+                     copy: bool = False,
+                     remove_source: bool = False,
+                     ) -> None:
         # Check if `file` is a filepath and mark it for deletion
-        need_remove = False
-        if isinstance(file, str) and os.path.exists(file):
-            need_remove = True
+        if not isinstance(file, str) or not os.path.exists(file):
+            remove_source = False
+            print('Remove source set to False')
 
         print(f"Decoding with {lang} language.")
         extracted = None
@@ -134,7 +138,8 @@ class ScreenshotService(GObject.GObject):
             self.emit("error", "Failed to decode data.")
 
         finally:
-            if need_remove:
+            if remove_source:
+                print(f"Removing {file}")
                 os.unlink(file)
 
         if extracted:
@@ -143,7 +148,6 @@ class ScreenshotService(GObject.GObject):
 
         else:
             self.emit("error", "No text found.")
-
 
     def capture_cancelled(self, cancellable: Gio.Cancellable) -> None:
         self.emit("error", "Cancelled")
