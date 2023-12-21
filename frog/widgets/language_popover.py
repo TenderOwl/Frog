@@ -26,12 +26,13 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gtk, Gio, GObject, GLib
+from gi.repository import Gtk, Gio, GObject
 
 from frog.config import RESOURCE_PREFIX
 from frog.language_manager import language_manager
-from frog.types.language_item import LanguageItem
 from frog.settings import Settings
+from frog.types.language_item import LanguageItem
+from frog.widgets.language_popover_row import LanguagePopoverRow
 
 
 @Gtk.Template(resource_path=f"{RESOURCE_PREFIX}/ui/language_popover.ui")
@@ -43,10 +44,10 @@ class LanguagePopover(Gtk.Popover):
     }
 
     entry: Gtk.SearchEntry = Gtk.Template.Child()
-    list_view: Gtk.ListView = Gtk.Template.Child()
-    list_store: Gio.ListStore = Gtk.Template.Child()
-    filter_list: Gtk.FilterListModel = Gtk.Template.Child()
-    filter: Gtk.CustomFilter = Gtk.Template.Child()
+    list_view: Gtk.ListBox = Gtk.Template.Child()
+    lang_list: Gio.ListStore = Gio.ListStore(item_type=LanguageItem)
+    filter_list: Gtk.FilterListModel  # = Gtk.Template.Child()
+    filter: Gtk.CustomFilter  # = Gtk.Template.Child()
 
     settings: Settings
     _active_language: str | None = None
@@ -63,9 +64,14 @@ class LanguagePopover(Gtk.Popover):
         self.active_language = self.settings.get_string('active-language')
         print("active-language", self.settings.get_string('active-language'))
 
-        self.fill_lang_combo()
-        if not language_manager.get_downloaded_codes():
-            self.text_shot_btn.set_sensitive(False)
+        # self.populate_model()
+        self.bind_model()
+
+    def bind_model(self):
+        self.filter = Gtk.CustomFilter()
+        self.filter.set_filter_func(self.on_language_filter)
+        self.filter_list = Gtk.FilterListModel.new(self.lang_list, self.filter)
+        self.list_view.bind_model(self.filter_list, LanguagePopoverRow)
 
     @GObject.Property(type=str)
     def active_lang(self):
@@ -75,35 +81,22 @@ class LanguagePopover(Gtk.Popover):
     def active_lang(self, lang_code: str):
         self._active_language = lang_code
 
-    def on_language_filter(self, proposal: LanguageItem, text: str) -> bool:
-        return text.lower() in proposal.title.lower()
+    def on_language_filter(self, proposal: LanguageItem, text: str = None) -> bool:
+        return not text or text.lower() in proposal.title.lower()
 
     def _on_language_downloaded(self, _sender, _lang_code: str):
-        self.fill_lang_combo()
+        self.populate_model()
 
     def _on_language_removed(self, _sender, _lang_code: str):
-        self.fill_lang_combo()
+        self.populate_model()
 
     @Gtk.Template.Callback()
     def _on_search_activate(self, entry: Gtk.SearchEntry):
         self._on_language_activate(self.list_view, 0)
 
     @Gtk.Template.Callback()
-    def _on_factory_setup(self, _: Gtk.ListItemFactory, list_item: Gtk.ListItem):
-        label = Gtk.Label(margin_top=8, margin_end=8,
-                          margin_start=8, margin_bottom=8,
-                          xalign=0)
-        list_item.set_child(label)
-
-    @Gtk.Template.Callback()
-    def _on_factory_bind(self, _: Gtk.ListItemFactory, list_item: Gtk.ListItem):
-        row: Gtk.Label = list_item.get_child()  # type: ignore
-        item: LanguageItem = list_item.get_item()  # type: ignore
-        row.set_label(item.title)
-
-    @Gtk.Template.Callback()
-    def _on_language_activate(self, _: Gtk.ListView, position: int):
-        item: LanguageItem = self.filter_list.get_item(position)
+    def _on_language_activate(self, _: Gtk.ListBox, row: LanguagePopoverRow):
+        item: LanguageItem = row.lang
         self.emit('language-changed', item)
         self.active_language = item.code
         language_manager.active_language = item
@@ -120,21 +113,20 @@ class LanguagePopover(Gtk.Popover):
         self.popdown()
 
     @Gtk.Template.Callback()
+    def _on_popover_show(self, _):
+        self.populate_model()
+
+    @Gtk.Template.Callback()
     def _on_popover_closed(self, *_):
         self.entry.set_text('')
 
-    def fill_lang_combo(self):
-        self.list_store.remove_all()
+    def populate_model(self):
+        self.lang_list.remove_all()
 
         downloaded_languages = language_manager.get_downloaded_languages(force=True)
         for lang in downloaded_languages:
-            GLib.idle_add(
-                self.list_store.append,
-                LanguageItem(code=language_manager.get_language_code(lang), title=lang),
-                priority=GLib.PRIORITY_LOW
-            )
-
-        print(f'Fill combo with {self.active_language}')
+            code = language_manager.get_language_code(lang)
+            self.lang_list.append(LanguageItem(code=code, title=lang, selected=self.active_language == code))
 
         if self.active_language in language_manager.get_downloaded_codes():
             self.emit('language-changed', language_manager.get_language_item(self.active_language))

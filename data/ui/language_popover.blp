@@ -4,50 +4,33 @@ using Gio 2.0;
 
 template $LanguagePopover : Popover {
 
+  show => $_on_popover_show();
   closed => $_on_popover_closed();
+  styles ["lang-selector","menu"]
 
   Box {
     orientation: vertical;
-    spacing: 10;
-    margin-start: 2;
-    margin-end: 2;
-    margin-top: 2;
-    margin-bottom: 2;
+    height-request: 256;
 
-    SearchEntry entry {
-      placeholder-text: _("Search language");
-      activate => $_on_search_activate();
-      search-changed => $_on_search_changed();
-      stop-search => $_on_stop_search();
+
+    Box search_box {
+      orientation: vertical;
+      styles ["search_box"]
+
+      SearchEntry entry {
+        placeholder-text: _("Search Languages…");
+        activate => $_on_search_activate();
+        search-changed => $_on_search_changed();
+        stop-search => $_on_stop_search();
+      }
     }
 
     ScrolledWindow {
-      min-content-height: 256;
+      vexpand: true;
 
-      ListView list_view {
-        single-click-activate: true;
-        show-separators: true;
-        enable-rubberband: false;
-
-        model: SingleSelection selection {
-          model: SortListModel sort_list {
-            model: FilterListModel filter_list {
-              model: Gio.ListStore list_store {
-                item-type: typeof<$LanguageItem>;
-              };
-
-              filter: CustomFilter filter {};
-            };
-            sorter: CustomSorter sorter {};
-          };
-        };
-        factory: SignalListItemFactory factory {
-          bind => $_on_factory_bind();
-          setup => $_on_factory_setup();
-        };
-        activate => $_on_language_activate();
-
-        styles ["card"]
+      ListBox list_view {
+        selection-mode: single;
+        row-activated => $_on_language_activate();
       }
     }
   }

@@ -34,11 +34,13 @@ class LanguageItem(GObject.GObject):
 
     title: str = GObject.Property(type=str)
     code: str = GObject.Property(type=str)
+    selected: bool = GObject.Property(type=bool, default=False)
 
-    def __init__(self, code: str, title: str):
+    def __init__(self, code: str, title: str, selected: bool = False):
         super().__init__()
         self.title = title
         self.code = code
+        self.selected = selected
 
     def __repr__(self):
         return f'<LanguageItem: {self.title}, {self.code}>'

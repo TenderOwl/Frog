@@ -1,4 +1,4 @@
-# welcome_page.py
+# language_popover_row.py
 #
 # Copyright 2021-2023 Andrey Maksimov
 #
@@ -26,39 +26,30 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Adw
-from gi.repository import Gtk, Gdk
+from gi.repository import Gtk, GObject
 
-from frog.config import RESOURCE_PREFIX, APP_ID
-from frog.language_manager import language_manager
+from frog.config import RESOURCE_PREFIX
 from frog.types.language_item import LanguageItem
-from frog.widgets.language_popover import LanguagePopover
 
 
-@Gtk.Template(resource_path=f"{RESOURCE_PREFIX}/ui/welcome_page.ui")
-class WelcomePage(Adw.NavigationPage):
-    __gtype_name__ = "WelcomePage"
+@Gtk.Template(resource_path=f"{RESOURCE_PREFIX}/ui/language_popover_row.ui")
+class LanguagePopoverRow(Gtk.ListBoxRow):
+    __gtype_name__ = 'LanguagePopoverRow'
 
-    spinner: Gtk.Spinner = Gtk.Template.Child()
-    welcome: Adw.StatusPage = Gtk.Template.Child()
-    lang_combo: Gtk.MenuButton = Gtk.Template.Child()
-    language_popover: LanguagePopover = Gtk.Template.Child()
+    lang: LanguageItem
 
-    def __init__(self):
+    # Widgets
+    title: Gtk.Label = Gtk.Template.Child()
+    selection: Gtk.Image = Gtk.Template.Child()
+
+    def __init__(self, lang: LanguageItem):
         super().__init__()
+        self.lang = lang
+        self.title.set_label(self.lang.title)
 
-        logo = Gdk.Texture.new_from_resource(f"{RESOURCE_PREFIX}/icons/{APP_ID}.svg")
-        self.welcome.set_paintable(logo)
-
-        self.language_popover.connect('language-changed', self._on_language_changed)
-
-        self.settings = Gtk.Application.get_default().props.settings
-
-        self.lang_combo.set_label(
-            language_manager.get_language(self.settings.get_string("active-language"))
+        self.lang.bind_property(
+            'selected',
+            self.selection,
+            'visible',
+            GObject.BindingFlags.SYNC_CREATE
         )
-
-    def _on_language_changed(self, _: LanguagePopover, language: LanguageItem):
-        self.lang_combo.set_label(language.title)
-        self.settings.set_string("active-language", language.code)
-        self.settings.sync()

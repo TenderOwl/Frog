@@ -30,12 +30,12 @@ from gi.repository import Gtk, GObject, Adw
 
 from frog.config import RESOURCE_PREFIX
 from frog.gobject_worker import GObjectWorker
-from frog.language_manager import language_manager
+# from frog.language_manager import language_manager
 from frog.services.share_service import ShareService
 from frog.services.tts import ttsservice, TTSService
 from frog.settings import Settings
-from frog.types.language_item import LanguageItem
-from frog.widgets.language_popover import LanguagePopover
+# from frog.types.language_item import LanguageItem
+# from frog.widgets.language_popover import LanguagePopover
 from frog.widgets.share_row import ShareRow
 
 
@@ -49,8 +49,8 @@ class ExtractedPage(Adw.NavigationPage):
         "on-listen-stop": (GObject.SIGNAL_RUN_LAST, None, ()),
     }
 
-    lang_combo: Gtk.MenuButton = Gtk.Template.Child()
-    language_popover: LanguagePopover = Gtk.Template.Child()
+    # lang_combo: Gtk.MenuButton = Gtk.Template.Child()
+    # language_popover: LanguagePopover = Gtk.Template.Child()
     listen_btn: Gtk.Button = Gtk.Template.Child()
     listen_cancel_btn: Gtk.Button = Gtk.Template.Child()
     listen_spinner: Gtk.Spinner = Gtk.Template.Child()
@@ -70,21 +70,26 @@ class ExtractedPage(Adw.NavigationPage):
 
         ttsservice.connect("stop", self._on_listen_end)
 
-        self.language_popover.connect('language-changed', self._on_language_changed)
+        # self.language_popover.connect('language-changed', self._on_language_changed)
 
         self.settings = Gtk.Application.get_default().props.settings
 
-        self.lang_combo.set_label(
-            language_manager.get_language(self.settings.get_string("active-language"))
-        )
+        # self.lang_combo.set_label(
+        #     language_manager.get_language(self.settings.get_string("active-language"))
+        # )
 
-    def _on_language_changed(self, _: LanguagePopover, language: LanguageItem):
-        self.lang_combo.set_label(language.title)
-        self.settings.set_string("active-language", language.code)
+    # def _on_language_changed(self, _: LanguagePopover, language: LanguageItem):
+    #     self.lang_combo.set_label(language.title)
+    #     self.settings.set_string("active-language", language.code)
 
     def do_hiding(self) -> None:
         self.buffer.set_text("")
         self.emit("go-back", 1)
+
+    # def do_showing(self) -> None:
+    #     self.lang_combo.set_label(
+    #         language_manager.get_language(self.settings.get_string("active-language"))
+    #     )
 
     @GObject.Property(type=str)
     def extracted_text(self) -> str:
