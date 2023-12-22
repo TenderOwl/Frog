@@ -41,6 +41,7 @@ from frog.widgets.language_row import LanguageRow
 class PreferencesLanguagesPage(Adw.PreferencesPage):
     __gtype_name__ = 'PreferencesLanguagesPage'
 
+    views: Gtk.Stack = Gtk.Template.Child()
     search_bar: Gtk.SearchBar = Gtk.Template.Child()
     language_search_entry: Gtk.SearchEntry = Gtk.Template.Child()
     list_view: Gtk.ListView = Gtk.Template.Child()
@@ -112,6 +113,7 @@ class PreferencesLanguagesPage(Adw.PreferencesPage):
     def activate_filter(self, search_text: str = None) -> None:
         _filter: Gtk.CustomFilter = Gtk.CustomFilter.new(PreferencesLanguagesPage.filter_func, search_text)
         self.model.set_filter(_filter)
+        self.toggle_empty_state(not self.model.get_n_items())
 
     def deactivate_filter(self):
         self.model.set_filter(None)
@@ -143,3 +145,9 @@ class PreferencesLanguagesPage(Adw.PreferencesPage):
     def on_language_removed(self, _sender, _code) -> None:
         if not self.search_bar.get_search_mode():
             self.activate_filter()
+
+    def toggle_empty_state(self, is_empty: bool = False) -> None:
+        if is_empty:
+            self.views.set_visible_child_name('empty_page')
+        else:
+            self.views.set_visible_child_name('languages_page')

@@ -243,8 +243,8 @@ class LanguageManager(GObject.GObject):
     def download(self, code):
         self.emit('added', code)
         self.loading_languages[code] = DownloadState()
+        self.emit('downloading', code, 0.1)
         GObjectWorker.call(self.download_begin, (code,), self.download_done)
-        self.emit('downloading', code, 0)
 
     def download_begin(self, code):
 
