@@ -4,16 +4,16 @@ msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-03 19:37+0300\n"
-"PO-Revision-Date: 2023-08-25 12:51+0000\n"
+"PO-Revision-Date: 2023-12-22 12:08+0000\n"
 "Last-Translator: rene-coty <irenee.thirion@e.email>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/frog/default/fr/"
-">\n"
+"Language-Team: French <https://hosted.weblate.org/projects/frog/default/fr/>"
+"\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.0.1-dev\n"
+"X-Generator: Weblate 5.4-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: data/ui\n"
@@ -63,25 +63,21 @@ msgid "Take a screenshot"
 msgstr "Prenez une capture"
 
 #: ../data/ui/extracted_page.blp:26
-#, fuzzy
-#| msgid "Automatically copy the extracted text to clipboard"
 msgctxt "Extracted screen"
 msgid "Copy extracted text to clipboard"
-msgstr "Copier automatiquement le texte extrait vers le presse-papiers"
+msgstr "Copier le texte extrait vers le presse-papiers"
 
 #: ../data/ui/extracted_page.blp:33
 msgctxt "Extracted screen"
 msgid "Listen to text"
-msgstr ""
+msgstr "Lire le texte"
 
 #: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
 msgid "Cancel listening to text"
-msgstr ""
+msgstr "Annuler la lecture du texte"
 
 #: ../data/ui/extracted_page.blp:53
-#, fuzzy
-#| msgid "Open menu"
 msgctxt "Extracted screen"
 msgid "Open menu"
 msgstr "Ouvrir le menu"
@@ -89,7 +85,7 @@ msgstr "Ouvrir le menu"
 #: ../data/ui/extracted_page.blp:60
 msgctxt "Extracted screen"
 msgid "Share To"
-msgstr ""
+msgstr "Partager vers"
 
 #: ../data/ui/extracted_page.blp:97 ../data/ui/welcome_page.blp:104
 msgid "Preferences"
@@ -188,22 +184,18 @@ msgid "Open menu"
 msgstr "Ouvrir le menu"
 
 #: ../data/ui/welcome_page.blp:58
-#, fuzzy
-#| msgid "_Take a Screenshot"
 msgctxt "Welcome screen"
 msgid "Take a Screenshot"
-msgstr "_Prendre une capture d’écran"
+msgstr "Prendre une capture d’écran"
 
 #: ../data/ui/welcome_page.blp:70
 msgid "_Take a Screenshot"
 msgstr "_Prendre une capture d’écran"
 
 #: ../data/ui/welcome_page.blp:78
-#, fuzzy
-#| msgid "_Open Image"
 msgctxt "Welcome screen"
 msgid "Open Image"
-msgstr "_Ouvrir une image"
+msgstr "Ouvrir une image"
 
 #: ../data/ui/welcome_page.blp:90
 msgid "_Open Image"
