@@ -20,10 +20,14 @@
 /*     border-bottom-width: 0; */
 /* } */
 
+.language_popover_row {
+ margin-left: 0;
+ margin-right: 0;
+}
 /* Lang Selector */
 .search_box {
   background: @popover_bg_color;
-  border-bottom: 1px solid @borders;
+  /* border-bottom: 1px solid @borders; */
   padding: 6px;
 }
 

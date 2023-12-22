@@ -1,16 +1,19 @@
 using Gtk 4.0;
 
 template $LanguagePopoverRow : Gtk.ListBoxRow {
-    child: Box {
-    spacing: 6;
+    styles ["language_popover_row"]
 
-    Label title {
-      xalign: 0;
-    }
+    Box {
+      spacing: 6;
 
-    Image selection {
-      icon-name: "object-select-symbolic";
-      visible: false;
-    }
-  };
+      Label title {
+        xalign: 0;
+        hexpand: true;
+      }
+
+      Image selection {
+        icon-name: "object-select-symbolic";
+        visible: false;
+      }
+  }
 }

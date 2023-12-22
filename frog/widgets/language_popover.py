@@ -43,6 +43,8 @@ class LanguagePopover(Gtk.Popover):
         'language-changed': (GObject.SIGNAL_RUN_LAST, None, (LanguageItem,)),
     }
 
+    views: Gtk.Stack = Gtk.Template.Child()
+    search_box: Gtk.Box = Gtk.Template.Child()
     entry: Gtk.SearchEntry = Gtk.Template.Child()
     list_view: Gtk.ListBox = Gtk.Template.Child()
     lang_list: Gio.ListStore = Gio.ListStore(item_type=LanguageItem)
@@ -69,7 +71,7 @@ class LanguagePopover(Gtk.Popover):
 
     def bind_model(self):
         self.filter = Gtk.CustomFilter()
-        self.filter.set_filter_func(self.on_language_filter)
+        self.filter.set_filter_func(self._on_language_filter)
         self.filter_list = Gtk.FilterListModel.new(self.lang_list, self.filter)
         self.list_view.bind_model(self.filter_list, LanguagePopoverRow)
 
@@ -81,7 +83,7 @@ class LanguagePopover(Gtk.Popover):
     def active_lang(self, lang_code: str):
         self._active_language = lang_code
 
-    def on_language_filter(self, proposal: LanguageItem, text: str = None) -> bool:
+    def _on_language_filter(self, proposal: LanguageItem, text: str = None) -> bool:
         return not text or text.lower() in proposal.title.lower()
 
     def _on_language_downloaded(self, _sender, _lang_code: str):
@@ -105,8 +107,9 @@ class LanguagePopover(Gtk.Popover):
     @Gtk.Template.Callback()
     def _on_search_changed(self, entry: Gtk.SearchEntry):
         query = entry.get_text().strip()
-        _filter: Gtk.CustomFilter = Gtk.CustomFilter.new(self.on_language_filter, query)
+        _filter: Gtk.CustomFilter = Gtk.CustomFilter.new(self._on_language_filter, query)
         self.filter_list.set_filter(_filter)
+        self.toggle_empty_state(not self.filter_list.get_n_items())
 
     @Gtk.Template.Callback()
     def _on_stop_search(self, _entry: Gtk.SearchEntry):
@@ -120,6 +123,11 @@ class LanguagePopover(Gtk.Popover):
     def _on_popover_closed(self, *_):
         self.entry.set_text('')
 
+    @Gtk.Template.Callback()
+    def _on_add_clicked(self, _: Gtk.Widget):
+        self.activate_action('app.preferences')
+        self.popdown()
+
     def populate_model(self):
         self.lang_list.remove_all()
 
@@ -132,3 +140,9 @@ class LanguagePopover(Gtk.Popover):
             self.emit('language-changed', language_manager.get_language_item(self.active_language))
         else:
             self.emit('language-changed', language_manager.get_language_item('eng'))
+
+    def toggle_empty_state(self, is_empty: bool = False) -> None:
+        if is_empty:
+            self.views.set_visible_child_name('empty_page')
+        else:
+            self.views.set_visible_child_name('languages_page')
