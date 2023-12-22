@@ -102,6 +102,7 @@ class FrogApplication(Adw.Application):
         self.create_action('quit', lambda *_: self.quit(), ['<primary>q', '<primary>w'])
         self.create_action('about', self.on_about)
         self.create_action('preferences', self.on_preferences, ['<primary>comma'])
+        self.create_action('github_star', self.on_github_star)
 
     def do_activate(self):
         win = self.props.active_window
@@ -122,6 +123,11 @@ class FrogApplication(Adw.Application):
 
     def on_preferences(self, _action, _param) -> None:
         self.get_active_window().show_preferences()
+
+    def on_github_star(self, _action, _param) -> None:
+        launcher: Gtk.UriLauncher = Gtk.UriLauncher()
+        launcher.set_uri('https://github.com/TenderOwl/Frog')
+        launcher.launch(callback=self._on_github_star)
 
     def on_about(self, _action, _param):
         about_window = Adw.AboutWindow(
@@ -223,6 +229,9 @@ class FrogApplication(Adw.Application):
         self.add_action(action)
         if shortcuts:
             self.set_accels_for_action(f"app.{name}", shortcuts)
+
+    def _on_github_star(self, _, result):
+        pass
 
 
 def main(version):
