@@ -77,13 +77,13 @@ class PreferencesLanguagesPage(Adw.PreferencesPage):
     def check_connection(self):
         # Check for access to GitHub
         if not Gio.NetworkMonitor.get_default().can_reach(Gio.NetworkAddress.new('raw.githubusercontent.com', 443)):
-            self.banner.set_title(_('Models location unreachable. Check your internet connection.'))
+            self.banner.set_title(_("Models location unreachable. Check your internet connection."))
             self.banner.set_revealed(True)
             return
 
         # Check for metered connection
         if Gio.NetworkMonitor.get_default().get_network_metered():
-            self.banner.set_title(_('You are on a metered connection. Be careful to download languages.'))
+            self.banner.set_title(_("You are on a metered connection. Be careful to download languages."))
             self.banner.set_revealed(True)
             return
 
@@ -120,7 +120,7 @@ class PreferencesLanguagesPage(Adw.PreferencesPage):
             self.list_store.append(language_manager.get_language_item(lang_code))
 
     def add_view_more_langs(self) -> None:
-        view_more_langs_row = Gtk.ListBoxRow(tooltip_text=_('View all available languages'))
+        view_more_langs_row = Gtk.ListBoxRow(tooltip_text=_("View all available languages"))
         view_more_image: Gtk.Image = Gtk.Image.new_from_icon_name('view-more-symbolic')
         view_more_image.set_margin_top(14)
         view_more_image.set_margin_bottom(14)
