@@ -41,6 +41,7 @@ from frog.widgets.language_row import LanguageRow
 class PreferencesLanguagesPage(Adw.PreferencesPage):
     __gtype_name__ = 'PreferencesLanguagesPage'
 
+    banner: Adw.Banner = Gtk.Template.Child()
     views: Gtk.Stack = Gtk.Template.Child()
     search_bar: Gtk.SearchBar = Gtk.Template.Child()
     language_search_entry: Gtk.SearchEntry = Gtk.Template.Child()
@@ -70,6 +71,27 @@ class PreferencesLanguagesPage(Adw.PreferencesPage):
 
         self.load_languages()
         self.activate_filter()
+
+        self.check_connection()
+
+    def check_connection(self):
+        # Check for access to GitHub
+        if not Gio.NetworkMonitor.get_default().can_reach(Gio.NetworkAddress.new('raw.githubusercontent.com', 443)):
+            self.banner.set_title(_('Models location unreachable. Check your internet connection.'))
+            self.banner.set_revealed(True)
+            return
+
+        # Check for metered connection
+        if Gio.NetworkMonitor.get_default().get_network_metered():
+            self.banner.set_title(_('You are on a metered connection. Be careful to download languages.'))
+            self.banner.set_revealed(True)
+            return
+
+        self.banner.set_revealed(False)
+
+    @Gtk.Template.Callback()
+    def _on_banner_clicked(self, _):
+        self.check_connection()
 
     @Gtk.Template.Callback()
     def _on_item_setup(self, factory: Gtk.SignalListItemFactory, item: Gtk.ListItem):
@@ -148,6 +170,6 @@ class PreferencesLanguagesPage(Adw.PreferencesPage):
 
     def toggle_empty_state(self, is_empty: bool = False) -> None:
         if is_empty:
-            self.views.set_visible_child_name('empty_page')
+            self.views.set_visible_child_name('empty_state')
         else:
-            self.views.set_visible_child_name('languages_page')
+            self.views.set_visible_child_name('languages_state')

@@ -20,6 +20,13 @@ template $PreferencesLanguagesPage : Adw.PreferencesPage {
       }
     }
 
+    Adw.Banner banner {
+      title: _('Models location unreachable. Check your internet connection');
+      button-clicked => $_on_banner_clicked();
+      button-label: _("Retry");
+      revealed: false;
+    }
+
     Revealer revealer {
       reveal-child: bind search_bar.search-mode-enabled bidirectional inverted;
 
@@ -63,9 +70,10 @@ template $PreferencesLanguagesPage : Adw.PreferencesPage {
           maximum-size: 600;
 
           Stack views {
+            vexpand: true;
 
             StackPage {
-              name: 'languages_page';
+              name: 'languages_state';
               child: ListView list_view {
                 name: "lang_list";
                 enable-rubberband: false;
@@ -87,7 +95,7 @@ template $PreferencesLanguagesPage : Adw.PreferencesPage {
             }
 
             StackPage {
-              name: 'empty_page';
+              name: 'empty_state';
               child: Adw.StatusPage {
                 icon-name: "system-search-symbolic";
                 title: _('No Results Found');
