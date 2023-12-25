@@ -148,10 +148,13 @@
         </release>
     </releases>
 
-    <developer_name>Tender Owl</developer_name>
+    <developer_name translatable="no">Tender Owl</developer_name>
     <launchable type="desktop-id">com.github.tenderowl.frog.desktop</launchable>
+    <translation type="gettext">frog</translation>
     <url type="homepage">https://getfrog.app</url>
     <url type="bugtracker">https://github.com/tenderowl/frog/issues</url>
+    <url type="vcs-browser">https://github.com/tenderowl/frog/</url>
+    <url type="translate">https://hosted.weblate.org/projects/frog/default/</url>
     <url type="help">https://github.com/tenderowl/frog/issues</url>
     <url type="donation">https://www.buymeacoffee.com/tenderowl/</url>
     <update_contact>andrey@tenderowl.com</update_contact>
