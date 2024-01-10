@@ -33,6 +33,7 @@
         "python3-pytesseract.json",
         "python3-pyzbar.json",
         "python3-gTTS.json",
+        "python3-posthog.json",
         {
             "name" : "frog",
             "builddir" : true,

@@ -35,6 +35,7 @@ from gi.repository import Gtk, Gio, GLib, Notify, Adw, GdkPixbuf, Gdk, GObject
 from frog.config import RESOURCE_PREFIX, APP_ID
 from frog.language_manager import language_manager
 from frog.services.clipboard_service import clipboard_service
+from frog.services.posthog import posthog
 from frog.services.screenshot_service import ScreenshotService
 from frog.settings import Settings
 from frog.window import FrogWindow
@@ -125,6 +126,7 @@ class FrogApplication(Adw.Application):
         self.get_active_window().show_preferences()
 
     def on_github_star(self, _action, _param) -> None:
+        posthog.capture('github_star', 'github_star_activated')
         launcher: Gtk.UriLauncher = Gtk.UriLauncher()
         launcher.set_uri('https://github.com/TenderOwl/Frog')
         launcher.launch(callback=self._on_github_star)

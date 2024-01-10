@@ -30,6 +30,7 @@ from gi.repository import Gtk, Gio, GObject
 
 from frog.config import RESOURCE_PREFIX
 from frog.language_manager import language_manager
+from frog.services.posthog import posthog
 from frog.settings import Settings
 from frog.types.language_item import LanguageItem
 from frog.widgets.language_popover_row import LanguagePopoverRow
@@ -102,6 +103,7 @@ class LanguagePopover(Gtk.Popover):
         self.emit('language-changed', item)
         self.active_language = item.code
         language_manager.active_language = item
+        posthog.capture(item.code, 'language-activated')
         self.popdown()
 
     @Gtk.Template.Callback()
