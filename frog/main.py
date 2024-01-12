@@ -61,7 +61,7 @@ class FrogApplication(Adw.Application):
             ord('e'),
             GLib.OptionFlags.NONE,
             GLib.OptionArg.NONE,
-            _('Extract directly into the clipboard'),
+            _("Extract directly into the clipboard"),
             None
         )
 
@@ -81,7 +81,7 @@ class FrogApplication(Adw.Application):
         shortcut_entry.flags = 0
         shortcut_entry.arg = GLib.OptionArg.NONE
         shortcut_entry.arg_date = None
-        shortcut_entry.description = _('Extract directly into the clipboard')
+        shortcut_entry.description = _("Extract directly into the clipboard")
         shortcut_entry.arg_description = None
 
         self.backend = ScreenshotService()
@@ -147,7 +147,7 @@ class FrogApplication(Adw.Application):
                     <li>Share extracted text: This means you can now share your findings with the wider community.</li>
                     <li>Add Text-to-speech to be able to listen to the extracted text
                     without any additional apps (internet connection required).</li>
-                    <li>Add the ability to insert images from the clipboard 
+                    <li>Add the ability to insert images from the clipboard
                     by using the <code>Ctrl+V</code> shortcut.</li>
                     <li>In addition, we have upgraded the language selection dropdown
                     to popover with a quick search of a language.</li>
@@ -193,7 +193,7 @@ class FrogApplication(Adw.Application):
         if not text:
             notification: Notify.Notification = Notify.Notification.new(
                 summary='Frog',
-                body=_('No text found. Try to grab another region.')
+                body=_("No text found. Try to grab another region.")
             )
             notification.set_icon_from_pixbuf(icon)
             notification.show()
@@ -203,7 +203,7 @@ class FrogApplication(Adw.Application):
 
             notification: Notify.Notification = Notify.Notification.new(
                 summary='Frog',
-                body=_('Text extracted. You can paste it with Ctrl+V')
+                body=_("Text extracted. You can paste it with Ctrl+V")
             )
             notification.set_icon_from_pixbuf(icon)
             notification.show()

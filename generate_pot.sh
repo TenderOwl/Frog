@@ -3,9 +3,9 @@ function generate_po()
     cd po
     git pull https://hosted.weblate.org/git/frog/frog/default
     >frog.pot
-    for file in ../data/org.github.tenderowl.frog.gschema.xml ../data/*.in ../data/*.ui ../frog/*.py
+    for file in ../data/org.github.tenderowl.frog.gschema.xml ../data/*.in ../data/ui/*.blp ../frog/*.py ../frog/services/*.py ../frog/types/*.py ../frog/widgets/*.py
     do
-        xgettext --from-code=UTF-8 -j $file -o frog.pot
+        xgettext --add-comments --keyword=_ --keyword=C_:1c,2 --from-code=UTF-8 -j $file -o frog.pot
     done
     >LINGUAS
     for po in *.po
