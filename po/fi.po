@@ -105,34 +105,26 @@ msgid "Available Languages"
 msgstr "Saatavilla olevat kielet"
 
 #: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
-#, fuzzy
-#| msgid "Search language"
 msgid "Search Languages…"
-msgstr "Etsi kieltä"
+msgstr "Etsi kieltä…"
 
 #: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
 msgid "No Results Found"
-msgstr ""
+msgstr "Tuloksia ei löytynyt"
 
 #: ../data/ui/language_popover.blp:77
-#, fuzzy
-#| msgid "Language"
 msgid "Add Language"
-msgstr "Kieli"
+msgstr "Lisää kieli"
 
 #: ../data/ui/language_row.blp:21
-#, fuzzy
-#| msgid "Installed languages"
 msgctxt "Preferences Language Row"
 msgid "Install language"
-msgstr "Asennetut kielet"
+msgstr "Asenna kieli"
 
 #: ../data/ui/language_row.blp:30
-#, fuzzy
-#| msgid "_Second language"
 msgctxt "Preferences Language Row"
 msgid "Remove language"
-msgstr "_Toissijainen kieli"
+msgstr "Poista kieli"
 
 #: ../data/ui/preferences_general.blp:5
 msgid "_General"
@@ -176,11 +168,11 @@ msgstr "_Kielet"
 
 #: ../data/ui/preferences_languages.blp:24
 msgid "Models location unreachable. Check your internet connection"
-msgstr ""
+msgstr "Mallien sijainti ei ole tavoitettavissa. Tarkista internetyhteys"
 
 #: ../data/ui/preferences_languages.blp:26
 msgid "Retry"
-msgstr ""
+msgstr "Yritä uudelleen"
 
 #: ../data/ui/preferences_languages.blp:42
 msgid "Installed languages"
@@ -200,43 +192,31 @@ msgid "Shortcuts"
 msgstr "Pikanäppäimet"
 
 #: ../data/ui/shortcuts.blp:12
-#, fuzzy
-#| msgid "_General"
 msgctxt "shortcut window"
 msgid "General"
-msgstr "_Yleiset"
+msgstr "Yleiset"
 
 #: ../data/ui/shortcuts.blp:16
-#, fuzzy
-#| msgid "Open image"
 msgctxt "shortcut window"
 msgid "Open image"
 msgstr "Avaa kuva"
 
 #: ../data/ui/shortcuts.blp:21
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Get screenshot and extract text"
 msgctxt "shortcut window"
 msgid "Take screenshot and extract text"
 msgstr "Ota kuvakaappaus ja pura teksti"
 
 #: ../data/ui/shortcuts.blp:26
-#, fuzzy
-#| msgid "Extract Text to the Clipboard"
 msgctxt "shortcut window"
 msgid "Extract text and copy it to clipboard"
-msgstr "Pura teksti leikepöydälle"
+msgstr "Pura teksti ja kopioi se leikepöydälle"
 
 #: ../data/ui/shortcuts.blp:27
 msgctxt "shortcut window"
 msgid "May not work properly on wayland"
-msgstr ""
+msgstr "Ei välttämättä toimi kunnolla Waylandilla"
 
 #: ../data/ui/shortcuts.blp:32
-#, fuzzy
-#| msgctxt "Extracted screen"
-#| msgid "Copy extracted text to clipboard"
 msgctxt "shortcut window"
 msgid "Copy extracted text to clipboard"
 msgstr "Kopioi purettu teksti leikepöydälle"
@@ -244,11 +224,9 @@ msgstr "Kopioi purettu teksti leikepöydälle"
 #: ../data/ui/shortcuts.blp:37
 msgctxt "shortcut window"
 msgid "Application"
-msgstr ""
+msgstr "Sovellus"
 
 #: ../data/ui/shortcuts.blp:41
-#, fuzzy
-#| msgid "Preferences"
 msgctxt "shortcut window"
 msgid "Preferences"
 msgstr "Asetukset"
@@ -256,20 +234,17 @@ msgstr "Asetukset"
 #: ../data/ui/shortcuts.blp:46
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Lopeta"
 
 #: ../data/ui/shortcuts.blp:51
 msgctxt "shortcut window"
 msgid "Help"
-msgstr ""
+msgstr "Ohje"
 
 #: ../data/ui/shortcuts.blp:55
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Shortcuts"
 msgctxt "shortcut window"
 msgid "Display Shortcuts"
-msgstr "Pikanäppäimet"
+msgstr "Näytä pikanäppäimet"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
@@ -306,22 +281,17 @@ msgid "_Open Image"
 msgstr "_Avaa kuva"
 
 #: ../data/ui/welcome_page.blp:100
-#, fuzzy
-#| msgid "Paste from clipboard"
 msgctxt "Welcome screen"
 msgid "Paste image from clipboard"
-msgstr "Liitä leikepöydältä"
+msgstr "Liitä kuva leikepöydältä"
 
 #: ../data/ui/welcome_page.blp:113
-#, fuzzy
-#| msgctxt "Welcome screen"
-#| msgid "Open Image"
 msgid "Paste Image"
-msgstr "Avaa kuva"
+msgstr "Liitä kuva"
 
 #: ../data/ui/welcome_page.blp:146
 msgid "⭐ Star on GitHub"
-msgstr ""
+msgstr "⭐ Lisää tähti GitHubissa"
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -865,21 +835,22 @@ msgstr "Kuvakaappausta ei voi ottaa."
 
 #: ../frog/widgets/preferences_languages_page.py:80
 msgid "Models location unreachable. Check your internet connection."
-msgstr ""
+msgstr "Mallien sijainti ei ole tavoitettavissa. Tarkista internetyhteys."
 
 #: ../frog/widgets/preferences_languages_page.py:86
 msgid "You are on a metered connection. Be careful to download languages."
 msgstr ""
+"Käytössäsi on käytön mukaan laskutettava yhteys. Huomioi tämä, jos lataat "
+"kieliä."
 
 #: ../frog/widgets/preferences_languages_page.py:123
 msgid "View all available languages"
 msgstr "Näytä kaikki saatavilla olevat kielet"
 
 #: ../frog/widgets/share_row.py:48
-#, fuzzy, python-brace-format
-#| msgid "Share via Pocket"
+#, python-brace-format
 msgid "Share via {0}"
-msgstr "Jaa Pocketin kautta"
+msgstr "Jaa käyttäen {0}"
 
 #~ msgid "Tender Owl"
 #~ msgstr "Tender Owl"
@@ -987,3 +958,10 @@ msgstr "Jaa Pocketin kautta"
 
 #~ msgid "Learn more about Frog"
 #~ msgstr "Lisätietoja Frogista"
+
+#~ msgid "Search language"
+#~ msgstr "Etsi kieltä"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Get screenshot and extract text"
+#~ msgstr "Ota kuvakaappaus ja pura teksti"

@@ -104,34 +104,26 @@ msgid "Available Languages"
 msgstr "Dostupné jazyky"
 
 #: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
-#, fuzzy
-#| msgid "Search language"
 msgid "Search Languages…"
-msgstr "Hledat jazyk"
+msgstr "Hledat jazyky…"
 
 #: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
 msgid "No Results Found"
-msgstr ""
+msgstr "Nenalezeny žádné výsledky"
 
 #: ../data/ui/language_popover.blp:77
-#, fuzzy
-#| msgid "Language"
 msgid "Add Language"
-msgstr "Jazyk"
+msgstr "Přidat jazyk"
 
 #: ../data/ui/language_row.blp:21
-#, fuzzy
-#| msgid "Installed languages"
 msgctxt "Preferences Language Row"
 msgid "Install language"
-msgstr "Nainstalované jazyky"
+msgstr "Nainstalovat jazyk"
 
 #: ../data/ui/language_row.blp:30
-#, fuzzy
-#| msgid "_Second language"
 msgctxt "Preferences Language Row"
 msgid "Remove language"
-msgstr "_Druhý jazyk"
+msgstr "Odebrat jazyk"
 
 #: ../data/ui/preferences_general.blp:5
 msgid "_General"
@@ -175,11 +167,11 @@ msgstr "_Jazyky"
 
 #: ../data/ui/preferences_languages.blp:24
 msgid "Models location unreachable. Check your internet connection"
-msgstr ""
+msgstr "Umístění modelů není dostupné. Zkontrolujte své připojení k internetu"
 
 #: ../data/ui/preferences_languages.blp:26
 msgid "Retry"
-msgstr ""
+msgstr "Zkusit znovu"
 
 #: ../data/ui/preferences_languages.blp:42
 msgid "Installed languages"
@@ -199,43 +191,31 @@ msgid "Shortcuts"
 msgstr "Zkratky"
 
 #: ../data/ui/shortcuts.blp:12
-#, fuzzy
-#| msgid "_General"
 msgctxt "shortcut window"
 msgid "General"
-msgstr "_Obecné"
+msgstr "Obecné"
 
 #: ../data/ui/shortcuts.blp:16
-#, fuzzy
-#| msgid "Open image"
 msgctxt "shortcut window"
 msgid "Open image"
 msgstr "Otevřít obrázek"
 
 #: ../data/ui/shortcuts.blp:21
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Get screenshot and extract text"
 msgctxt "shortcut window"
 msgid "Take screenshot and extract text"
-msgstr "Získání snímku obrazovky a extrakce textu"
+msgstr "Pořiďte snímek obrazovky a extrahujte text"
 
 #: ../data/ui/shortcuts.blp:26
-#, fuzzy
-#| msgid "Extract Text to the Clipboard"
 msgctxt "shortcut window"
 msgid "Extract text and copy it to clipboard"
-msgstr "Extrahování textu do schránky"
+msgstr "Extrahovat text a zkopírovat jej do schránky"
 
 #: ../data/ui/shortcuts.blp:27
 msgctxt "shortcut window"
 msgid "May not work properly on wayland"
-msgstr ""
+msgstr "Nemusí správně fungovat na Waylandu"
 
 #: ../data/ui/shortcuts.blp:32
-#, fuzzy
-#| msgctxt "Extracted screen"
-#| msgid "Copy extracted text to clipboard"
 msgctxt "shortcut window"
 msgid "Copy extracted text to clipboard"
 msgstr "Kopírovat extrahovaný text do schránky"
@@ -243,11 +223,9 @@ msgstr "Kopírovat extrahovaný text do schránky"
 #: ../data/ui/shortcuts.blp:37
 msgctxt "shortcut window"
 msgid "Application"
-msgstr ""
+msgstr "Aplikace"
 
 #: ../data/ui/shortcuts.blp:41
-#, fuzzy
-#| msgid "Preferences"
 msgctxt "shortcut window"
 msgid "Preferences"
 msgstr "Předvolby"
@@ -255,20 +233,17 @@ msgstr "Předvolby"
 #: ../data/ui/shortcuts.blp:46
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Ukončit"
 
 #: ../data/ui/shortcuts.blp:51
 msgctxt "shortcut window"
 msgid "Help"
-msgstr ""
+msgstr "Nápověda"
 
 #: ../data/ui/shortcuts.blp:55
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Shortcuts"
 msgctxt "shortcut window"
 msgid "Display Shortcuts"
-msgstr "Zkratky"
+msgstr "Zobrazit zkratky"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
@@ -305,22 +280,17 @@ msgid "_Open Image"
 msgstr "_Otevřít obrázek"
 
 #: ../data/ui/welcome_page.blp:100
-#, fuzzy
-#| msgid "Paste from clipboard"
 msgctxt "Welcome screen"
 msgid "Paste image from clipboard"
-msgstr "Vložit ze schránky"
+msgstr "Vložit obrázek ze schránky"
 
 #: ../data/ui/welcome_page.blp:113
-#, fuzzy
-#| msgctxt "Welcome screen"
-#| msgid "Open Image"
 msgid "Paste Image"
-msgstr "Otevřít obrázek"
+msgstr "Vložit obrázek"
 
 #: ../data/ui/welcome_page.blp:146
 msgid "⭐ Star on GitHub"
-msgstr ""
+msgstr "⭐ Udělte hvězdičku na GitHubu"
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -864,21 +834,20 @@ msgstr "Nepodařilo se pořídit snímek obrazovky."
 
 #: ../frog/widgets/preferences_languages_page.py:80
 msgid "Models location unreachable. Check your internet connection."
-msgstr ""
+msgstr "Umístění modelů není dostupné. Zkontrolujte své připojení k internetu."
 
 #: ../frog/widgets/preferences_languages_page.py:86
 msgid "You are on a metered connection. Be careful to download languages."
-msgstr ""
+msgstr "Nacházíte se na měřené síti. Buďte opatrní při stahování jazyků."
 
 #: ../frog/widgets/preferences_languages_page.py:123
 msgid "View all available languages"
 msgstr "Zobrazit všechny dostupné jazyky"
 
 #: ../frog/widgets/share_row.py:48
-#, fuzzy, python-brace-format
-#| msgid "Share via Pocket"
+#, python-brace-format
 msgid "Share via {0}"
-msgstr "Sdílet přes Pocket"
+msgstr "Sdílet přes {0}"
 
 #~ msgid "Tender Owl"
 #~ msgstr "Tender Owl"
@@ -1070,3 +1039,10 @@ msgstr "Sdílet přes Pocket"
 
 #~ msgid "Learn more about Frog"
 #~ msgstr "Další informace o Frogu"
+
+#~ msgid "Search language"
+#~ msgstr "Hledat jazyk"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Get screenshot and extract text"
+#~ msgstr "Získání snímku obrazovky a extrakce textu"

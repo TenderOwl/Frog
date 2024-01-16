@@ -109,34 +109,26 @@ msgid "Available Languages"
 msgstr "Idiomas disponibles"
 
 #: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
-#, fuzzy
-#| msgid "Search language"
 msgid "Search Languages…"
-msgstr "Idioma de la búsqueda"
+msgstr "Buscar idiomas…"
 
 #: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
 msgid "No Results Found"
-msgstr ""
+msgstr "No hay resultados"
 
 #: ../data/ui/language_popover.blp:77
-#, fuzzy
-#| msgid "Language"
 msgid "Add Language"
-msgstr "Idioma"
+msgstr "Añadir un idioma"
 
 #: ../data/ui/language_row.blp:21
-#, fuzzy
-#| msgid "Installed languages"
 msgctxt "Preferences Language Row"
 msgid "Install language"
-msgstr "Idiomas instalados"
+msgstr "Instalar el idioma"
 
 #: ../data/ui/language_row.blp:30
-#, fuzzy
-#| msgid "_Second language"
 msgctxt "Preferences Language Row"
 msgid "Remove language"
-msgstr "_Idioma secundario"
+msgstr "Eliminar el idioma"
 
 #: ../data/ui/preferences_general.blp:5
 msgid "_General"
@@ -180,11 +172,11 @@ msgstr "_Idiomas"
 
 #: ../data/ui/preferences_languages.blp:24
 msgid "Models location unreachable. Check your internet connection"
-msgstr ""
+msgstr "Localización de modelos inaccesible. Compruebe su conexión a Internet"
 
 #: ../data/ui/preferences_languages.blp:26
 msgid "Retry"
-msgstr ""
+msgstr "Reintentar"
 
 #: ../data/ui/preferences_languages.blp:42
 msgid "Installed languages"
@@ -204,43 +196,31 @@ msgid "Shortcuts"
 msgstr "Atajos"
 
 #: ../data/ui/shortcuts.blp:12
-#, fuzzy
-#| msgid "_General"
 msgctxt "shortcut window"
 msgid "General"
-msgstr "_General"
+msgstr "General"
 
 #: ../data/ui/shortcuts.blp:16
-#, fuzzy
-#| msgid "Open image"
 msgctxt "shortcut window"
 msgid "Open image"
-msgstr "Abrir una imagen"
+msgstr "Abrir la imagen"
 
 #: ../data/ui/shortcuts.blp:21
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Get screenshot and extract text"
 msgctxt "shortcut window"
 msgid "Take screenshot and extract text"
-msgstr "Obtener una captura de pantalla y extraer el texto"
+msgstr "Hacer una captura de pantalla y extraer el texto"
 
 #: ../data/ui/shortcuts.blp:26
-#, fuzzy
-#| msgid "Extract Text to the Clipboard"
 msgctxt "shortcut window"
 msgid "Extract text and copy it to clipboard"
-msgstr "Extraer texto al portapapeles"
+msgstr "Extraer texto y copiarlo en el portapapeles"
 
 #: ../data/ui/shortcuts.blp:27
 msgctxt "shortcut window"
 msgid "May not work properly on wayland"
-msgstr ""
+msgstr "Puede que no funcione correctamente en wayland"
 
 #: ../data/ui/shortcuts.blp:32
-#, fuzzy
-#| msgctxt "Extracted screen"
-#| msgid "Copy extracted text to clipboard"
 msgctxt "shortcut window"
 msgid "Copy extracted text to clipboard"
 msgstr "Copiar el texto extraído en el portapapeles"
@@ -248,32 +228,27 @@ msgstr "Copiar el texto extraído en el portapapeles"
 #: ../data/ui/shortcuts.blp:37
 msgctxt "shortcut window"
 msgid "Application"
-msgstr ""
+msgstr "Aplicación"
 
 #: ../data/ui/shortcuts.blp:41
-#, fuzzy
-#| msgid "Preferences"
 msgctxt "shortcut window"
 msgid "Preferences"
-msgstr "Preferencias"
+msgstr "Ajustes"
 
 #: ../data/ui/shortcuts.blp:46
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Abandonar"
 
 #: ../data/ui/shortcuts.blp:51
 msgctxt "shortcut window"
 msgid "Help"
-msgstr ""
+msgstr "Ayuda"
 
 #: ../data/ui/shortcuts.blp:55
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Shortcuts"
 msgctxt "shortcut window"
 msgid "Display Shortcuts"
-msgstr "Atajos"
+msgstr "Mostrar accesos directos"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
@@ -310,22 +285,17 @@ msgid "_Open Image"
 msgstr "_Abrir una imagen"
 
 #: ../data/ui/welcome_page.blp:100
-#, fuzzy
-#| msgid "Paste from clipboard"
 msgctxt "Welcome screen"
 msgid "Paste image from clipboard"
-msgstr "Pegar desde el portapapeles"
+msgstr "Pegar imagen del portapapeles"
 
 #: ../data/ui/welcome_page.blp:113
-#, fuzzy
-#| msgctxt "Welcome screen"
-#| msgid "Open Image"
 msgid "Paste Image"
-msgstr "Abrir una imagen"
+msgstr "Pegar imagen"
 
 #: ../data/ui/welcome_page.blp:146
 msgid "⭐ Star on GitHub"
-msgstr ""
+msgstr "⭐ Estrella en GitHub"
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -869,21 +839,20 @@ msgstr "No puedo hacer una captura de pantalla."
 
 #: ../frog/widgets/preferences_languages_page.py:80
 msgid "Models location unreachable. Check your internet connection."
-msgstr ""
+msgstr "Localización de modelos inaccesible. Compruebe su conexión a Internet."
 
 #: ../frog/widgets/preferences_languages_page.py:86
 msgid "You are on a metered connection. Be careful to download languages."
-msgstr ""
+msgstr "Tiene una conexión con contador. Tenga cuidado al descargar idiomas."
 
 #: ../frog/widgets/preferences_languages_page.py:123
 msgid "View all available languages"
 msgstr "Ver todos los idiomas disponibles"
 
 #: ../frog/widgets/share_row.py:48
-#, fuzzy, python-brace-format
-#| msgid "Share via Pocket"
+#, python-brace-format
 msgid "Share via {0}"
-msgstr "Compartir a través de Pocket"
+msgstr "Compartir a través de {0}"
 
 #~ msgid "Tender Owl"
 #~ msgstr "Tender Owl"
@@ -1091,3 +1060,10 @@ msgstr "Compartir a través de Pocket"
 
 #~ msgid "Configure"
 #~ msgstr "Configurar"
+
+#~ msgid "Search language"
+#~ msgstr "Idioma de la búsqueda"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Get screenshot and extract text"
+#~ msgstr "Obtener una captura de pantalla y extraer el texto"

@@ -18,17 +18,19 @@ msgstr ""
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:6
 #: ../data/com.github.tenderowl.frog.desktop.in:3
 msgid "Frog"
-msgstr ""
+msgstr "Frog"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:7
 msgid "Extract text from images"
-msgstr ""
+msgstr "Extrahera text från bilder"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:9
 msgid ""
 "Extract text from images, websites, videos, and QR codes by taking a picture "
 "of the source."
 msgstr ""
+"Extrahera text från bilder, hemsidor, videor och QR-koder genom att ta en "
+"bild på källan."
 
 #: ../data/com.github.tenderowl.frog.desktop.in:4
 msgid "Text extraction tool"
