@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frog 1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-03 19:37+0300\n"
+"POT-Creation-Date: 2023-12-25 11:43+0300\n"
 "PO-Revision-Date: 2023-10-29 23:00+0900\n"
 "Last-Translator: Seong Jin Kim <mirusu400@naver.com>\n"
 "Language-Team: \n"
@@ -33,10 +33,6 @@ msgid ""
 "of the source."
 msgstr "사진을 찍어 이미지, 웹사이트, 동영상, QR 코드에서 텍스트 추출하세요."
 
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:151
-msgid "Tender Owl"
-msgstr ""
-
 #: ../data/com.github.tenderowl.frog.desktop.in:4
 msgid "Text extraction tool"
 msgstr "텍스트 추출 도구"
@@ -53,52 +49,52 @@ msgstr "OCR;텍스트;추출;"
 msgid "Extract Text to the Clipboard"
 msgstr "텍스트를 클립보드로 추출"
 
-#: ../data/ui/extracted_page.blp:18 ../data/ui/welcome_page.blp:29
+#: ../data/ui/extracted_page.blp:25
 msgid "Take a screenshot"
 msgstr "스크린샷 촬영"
 
-#: ../data/ui/extracted_page.blp:26
+#: ../data/ui/extracted_page.blp:33
 msgctxt "Extracted screen"
 msgid "Copy extracted text to clipboard"
 msgstr "추출된 텍스트를 클립보드에 복사"
 
-#: ../data/ui/extracted_page.blp:33
+#: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
 msgid "Listen to text"
 msgstr "텍스트 듣기"
 
-#: ../data/ui/extracted_page.blp:40
+#: ../data/ui/extracted_page.blp:47
 msgctxt "Extracted screen"
 msgid "Cancel listening to text"
 msgstr "텍스트 듣기 취소"
 
-#: ../data/ui/extracted_page.blp:53
+#: ../data/ui/extracted_page.blp:60
 msgctxt "Extracted screen"
 msgid "Open menu"
 msgstr "메뉴 열기"
 
-#: ../data/ui/extracted_page.blp:60
+#: ../data/ui/extracted_page.blp:67
 msgctxt "Extracted screen"
 msgid "Share To"
 msgstr "공유하기"
 
-#: ../data/ui/extracted_page.blp:97 ../data/ui/welcome_page.blp:104
+#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:127
 msgid "Preferences"
 msgstr "환경설정"
 
-#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:111
+#: ../data/ui/extracted_page.blp:111 ../data/ui/welcome_page.blp:134
 msgid "Keyboard Shortcuts"
 msgstr "키보드 단축키"
 
-#: ../data/ui/extracted_page.blp:109 ../data/ui/welcome_page.blp:116
+#: ../data/ui/extracted_page.blp:116 ../data/ui/welcome_page.blp:139
 msgid "About Frog"
 msgstr "Frog에 관하여"
 
-#: ../data/ui/extracted_page.blp:117 ../data/ui/welcome_page.blp:123
+#: ../data/ui/extracted_page.blp:124 ../data/ui/welcome_page.blp:154
 msgid "Open image"
 msgstr "이미지 열기"
 
-#: ../data/ui/extracted_page.blp:118 ../data/ui/welcome_page.blp:124
+#: ../data/ui/extracted_page.blp:125 ../data/ui/welcome_page.blp:155
 msgid "Paste from clipboard"
 msgstr "클립보드에서 붙여넣기"
 
@@ -106,9 +102,35 @@ msgstr "클립보드에서 붙여넣기"
 msgid "Available Languages"
 msgstr "가능한 언어"
 
-#: ../data/ui/language_popover.blp:18
-msgid "Search language"
+#: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
+#, fuzzy
+#| msgid "Search language"
+msgid "Search Languages…"
 msgstr "언어 검색"
+
+#: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
+msgid "No Results Found"
+msgstr ""
+
+#: ../data/ui/language_popover.blp:77
+#, fuzzy
+#| msgid "Language"
+msgid "Add Language"
+msgstr "언어"
+
+#: ../data/ui/language_row.blp:21
+#, fuzzy
+#| msgid "Installed languages"
+msgctxt "Preferences Language Row"
+msgid "Install language"
+msgstr "설치된 언어들"
+
+#: ../data/ui/language_row.blp:30
+#, fuzzy
+#| msgid "_Second language"
+msgctxt "Preferences Language Row"
+msgid "Remove language"
+msgstr "_두번째 언어"
 
 #: ../data/ui/preferences_general.blp:5
 msgid "_General"
@@ -150,7 +172,15 @@ msgstr "자동으로 QR코드에서 링크를 엽니다"
 msgid "_Languages"
 msgstr "_언어"
 
-#: ../data/ui/preferences_languages.blp:32
+#: ../data/ui/preferences_languages.blp:24
+msgid "Models location unreachable. Check your internet connection"
+msgstr ""
+
+#: ../data/ui/preferences_languages.blp:26
+msgid "Retry"
+msgstr ""
+
+#: ../data/ui/preferences_languages.blp:42
 msgid "Installed languages"
 msgstr "설치된 언어들"
 
@@ -161,6 +191,83 @@ msgstr "포켓을 통해 공유"
 #: ../data/ui/share_row.blp:22
 msgid "Pocket"
 msgstr "포켓"
+
+#: ../data/ui/shortcuts.blp:5
+#, fuzzy
+#| msgid "Keyboard Shortcuts"
+msgctxt "shortcut window"
+msgid "Shortcuts"
+msgstr "키보드 단축키"
+
+#: ../data/ui/shortcuts.blp:12
+#, fuzzy
+#| msgid "_General"
+msgctxt "shortcut window"
+msgid "General"
+msgstr "_일반"
+
+#: ../data/ui/shortcuts.blp:16
+#, fuzzy
+#| msgid "Open image"
+msgctxt "shortcut window"
+msgid "Open image"
+msgstr "이미지 열기"
+
+#: ../data/ui/shortcuts.blp:21
+#, fuzzy
+#| msgid "Take a screenshot"
+msgctxt "shortcut window"
+msgid "Take screenshot and extract text"
+msgstr "스크린샷 촬영"
+
+#: ../data/ui/shortcuts.blp:26
+#, fuzzy
+#| msgid "Extract Text to the Clipboard"
+msgctxt "shortcut window"
+msgid "Extract text and copy it to clipboard"
+msgstr "텍스트를 클립보드로 추출"
+
+#: ../data/ui/shortcuts.blp:27
+msgctxt "shortcut window"
+msgid "May not work properly on wayland"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:32
+#, fuzzy
+#| msgctxt "Extracted screen"
+#| msgid "Copy extracted text to clipboard"
+msgctxt "shortcut window"
+msgid "Copy extracted text to clipboard"
+msgstr "추출된 텍스트를 클립보드에 복사"
+
+#: ../data/ui/shortcuts.blp:37
+msgctxt "shortcut window"
+msgid "Application"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:41
+#, fuzzy
+#| msgid "Preferences"
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "환경설정"
+
+#: ../data/ui/shortcuts.blp:46
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:51
+msgctxt "shortcut window"
+msgid "Help"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:55
+#, fuzzy
+#| msgid "Keyboard Shortcuts"
+msgctxt "shortcut window"
+msgid "Display Shortcuts"
+msgstr "키보드 단축키"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
@@ -183,18 +290,36 @@ msgctxt "Welcome screen"
 msgid "Take a Screenshot"
 msgstr "스크린샷 촬영"
 
-#: ../data/ui/welcome_page.blp:70
+#: ../data/ui/welcome_page.blp:71
 msgid "_Take a Screenshot"
 msgstr "_스크린샷 촬영"
 
-#: ../data/ui/welcome_page.blp:78
+#: ../data/ui/welcome_page.blp:79
 msgctxt "Welcome screen"
 msgid "Open Image"
 msgstr "이미지 열기"
 
-#: ../data/ui/welcome_page.blp:90
+#: ../data/ui/welcome_page.blp:92
 msgid "_Open Image"
 msgstr "_이미지 열기"
+
+#: ../data/ui/welcome_page.blp:100
+#, fuzzy
+#| msgid "Paste from clipboard"
+msgctxt "Welcome screen"
+msgid "Paste image from clipboard"
+msgstr "클립보드에서 붙여넣기"
+
+#: ../data/ui/welcome_page.blp:113
+#, fuzzy
+#| msgctxt "Welcome screen"
+#| msgid "Open Image"
+msgid "Paste Image"
+msgstr "이미지 열기"
+
+#: ../data/ui/welcome_page.blp:146
+msgid "⭐ Star on GitHub"
+msgstr ""
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -688,29 +813,13 @@ msgstr "요루바어"
 msgid "Extract directly into the clipboard"
 msgstr "클립보드로 바로 추출"
 
-#: ../frog/main.py:188
+#: ../frog/main.py:194
 msgid "No text found. Try to grab another region."
 msgstr "텍스트를 발견하지 못했습니다. 다른 영역을 선택해보세요."
 
-#: ../frog/main.py:198
+#: ../frog/main.py:204
 msgid "Text extracted. You can paste it with Ctrl+V"
 msgstr "텍스트가 추출되었습니다. Ctrl+V로 붙여넣기 할 수 있습니다."
-
-#: ../frog/services/clipboard_service.py:54
-msgid "No image in clipboard"
-msgstr "클립보드에 이미지가 없습니다"
-
-#: ../frog/services/screenshot_service.py:93
-msgid "Can't take a screenshot."
-msgstr "스크린샷을 촬영할 수 없습니다."
-
-#: ../frog/widgets/preferences_languages_page.py:100
-msgid "View all available languages"
-msgstr "모든 가능한 언어 보기"
-
-#: ../frog/widgets/share_row.py:48
-msgid "Share via {provider_name.capitalize()}"
-msgstr "{provider_name.capitalize()}에 공유"
 
 #: ../frog/window.py:151
 msgid "Text copied to clipboard"
@@ -743,3 +852,32 @@ msgstr "이미지만 해당 방법으로 사용 가능합니다."
 #: ../frog/window.py:293
 msgid "Text copied"
 msgstr "텍스트 복사됨"
+
+#: ../frog/services/clipboard_service.py:54
+msgid "No image in clipboard"
+msgstr "클립보드에 이미지가 없습니다"
+
+#: ../frog/services/screenshot_service.py:94
+msgid "Can't take a screenshot."
+msgstr "스크린샷을 촬영할 수 없습니다."
+
+#: ../frog/widgets/preferences_languages_page.py:80
+msgid "Models location unreachable. Check your internet connection."
+msgstr ""
+
+#: ../frog/widgets/preferences_languages_page.py:86
+msgid "You are on a metered connection. Be careful to download languages."
+msgstr ""
+
+#: ../frog/widgets/preferences_languages_page.py:123
+msgid "View all available languages"
+msgstr "모든 가능한 언어 보기"
+
+#: ../frog/widgets/share_row.py:48
+#, fuzzy, python-brace-format
+#| msgid "Share via Pocket"
+msgid "Share via {0}"
+msgstr "포켓을 통해 공유"
+
+#~ msgid "Share via {provider_name.capitalize()}"
+#~ msgstr "{provider_name.capitalize()}에 공유"

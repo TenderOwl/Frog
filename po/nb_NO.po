@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Frog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-03 19:37+0300\n"
+"POT-Creation-Date: 2023-12-25 11:43+0300\n"
 "PO-Revision-Date: 2022-06-15 00:52+0300\n"
 "Last-Translator: Andrey Maksimov <andrey@tenderowl.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/frog/"
@@ -35,10 +35,6 @@ msgid ""
 "of the source."
 msgstr ""
 
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:151
-msgid "Tender Owl"
-msgstr ""
-
 #: ../data/com.github.tenderowl.frog.desktop.in:4
 msgid "Text extraction tool"
 msgstr ""
@@ -55,52 +51,52 @@ msgstr ""
 msgid "Extract Text to the Clipboard"
 msgstr ""
 
-#: ../data/ui/extracted_page.blp:18 ../data/ui/welcome_page.blp:29
+#: ../data/ui/extracted_page.blp:25
 msgid "Take a screenshot"
-msgstr ""
-
-#: ../data/ui/extracted_page.blp:26
-msgctxt "Extracted screen"
-msgid "Copy extracted text to clipboard"
 msgstr ""
 
 #: ../data/ui/extracted_page.blp:33
 msgctxt "Extracted screen"
-msgid "Listen to text"
+msgid "Copy extracted text to clipboard"
 msgstr ""
 
 #: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
-msgid "Cancel listening to text"
+msgid "Listen to text"
 msgstr ""
 
-#: ../data/ui/extracted_page.blp:53
+#: ../data/ui/extracted_page.blp:47
 msgctxt "Extracted screen"
-msgid "Open menu"
+msgid "Cancel listening to text"
 msgstr ""
 
 #: ../data/ui/extracted_page.blp:60
 msgctxt "Extracted screen"
+msgid "Open menu"
+msgstr ""
+
+#: ../data/ui/extracted_page.blp:67
+msgctxt "Extracted screen"
 msgid "Share To"
 msgstr ""
 
-#: ../data/ui/extracted_page.blp:97 ../data/ui/welcome_page.blp:104
+#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:127
 msgid "Preferences"
 msgstr ""
 
-#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:111
+#: ../data/ui/extracted_page.blp:111 ../data/ui/welcome_page.blp:134
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: ../data/ui/extracted_page.blp:109 ../data/ui/welcome_page.blp:116
+#: ../data/ui/extracted_page.blp:116 ../data/ui/welcome_page.blp:139
 msgid "About Frog"
 msgstr ""
 
-#: ../data/ui/extracted_page.blp:117 ../data/ui/welcome_page.blp:123
+#: ../data/ui/extracted_page.blp:124 ../data/ui/welcome_page.blp:154
 msgid "Open image"
 msgstr ""
 
-#: ../data/ui/extracted_page.blp:118 ../data/ui/welcome_page.blp:124
+#: ../data/ui/extracted_page.blp:125 ../data/ui/welcome_page.blp:155
 msgid "Paste from clipboard"
 msgstr ""
 
@@ -108,8 +104,26 @@ msgstr ""
 msgid "Available Languages"
 msgstr ""
 
-#: ../data/ui/language_popover.blp:18
-msgid "Search language"
+#: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
+msgid "Search Languages…"
+msgstr ""
+
+#: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
+msgid "No Results Found"
+msgstr ""
+
+#: ../data/ui/language_popover.blp:77
+msgid "Add Language"
+msgstr ""
+
+#: ../data/ui/language_row.blp:21
+msgctxt "Preferences Language Row"
+msgid "Install language"
+msgstr ""
+
+#: ../data/ui/language_row.blp:30
+msgctxt "Preferences Language Row"
+msgid "Remove language"
 msgstr ""
 
 #: ../data/ui/preferences_general.blp:5
@@ -152,7 +166,15 @@ msgstr ""
 msgid "_Languages"
 msgstr ""
 
-#: ../data/ui/preferences_languages.blp:32
+#: ../data/ui/preferences_languages.blp:24
+msgid "Models location unreachable. Check your internet connection"
+msgstr ""
+
+#: ../data/ui/preferences_languages.blp:26
+msgid "Retry"
+msgstr ""
+
+#: ../data/ui/preferences_languages.blp:42
 msgid "Installed languages"
 msgstr ""
 
@@ -162,6 +184,66 @@ msgstr ""
 
 #: ../data/ui/share_row.blp:22
 msgid "Pocket"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:5
+msgctxt "shortcut window"
+msgid "Shortcuts"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:12
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:16
+msgctxt "shortcut window"
+msgid "Open image"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:21
+msgctxt "shortcut window"
+msgid "Take screenshot and extract text"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:26
+msgctxt "shortcut window"
+msgid "Extract text and copy it to clipboard"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:27
+msgctxt "shortcut window"
+msgid "May not work properly on wayland"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:32
+msgctxt "shortcut window"
+msgid "Copy extracted text to clipboard"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:37
+msgctxt "shortcut window"
+msgid "Application"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:41
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:46
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:51
+msgctxt "shortcut window"
+msgid "Help"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:55
+msgctxt "shortcut window"
+msgid "Display Shortcuts"
 msgstr ""
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
@@ -185,17 +267,30 @@ msgctxt "Welcome screen"
 msgid "Take a Screenshot"
 msgstr ""
 
-#: ../data/ui/welcome_page.blp:70
+#: ../data/ui/welcome_page.blp:71
 msgid "_Take a Screenshot"
 msgstr ""
 
-#: ../data/ui/welcome_page.blp:78
+#: ../data/ui/welcome_page.blp:79
 msgctxt "Welcome screen"
 msgid "Open Image"
 msgstr ""
 
-#: ../data/ui/welcome_page.blp:90
+#: ../data/ui/welcome_page.blp:92
 msgid "_Open Image"
+msgstr ""
+
+#: ../data/ui/welcome_page.blp:100
+msgctxt "Welcome screen"
+msgid "Paste image from clipboard"
+msgstr ""
+
+#: ../data/ui/welcome_page.blp:113
+msgid "Paste Image"
+msgstr ""
+
+#: ../data/ui/welcome_page.blp:146
+msgid "⭐ Star on GitHub"
 msgstr ""
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
@@ -690,28 +785,12 @@ msgstr ""
 msgid "Extract directly into the clipboard"
 msgstr ""
 
-#: ../frog/main.py:188
+#: ../frog/main.py:194
 msgid "No text found. Try to grab another region."
 msgstr ""
 
-#: ../frog/main.py:198
+#: ../frog/main.py:204
 msgid "Text extracted. You can paste it with Ctrl+V"
-msgstr ""
-
-#: ../frog/services/clipboard_service.py:54
-msgid "No image in clipboard"
-msgstr ""
-
-#: ../frog/services/screenshot_service.py:93
-msgid "Can't take a screenshot."
-msgstr ""
-
-#: ../frog/widgets/preferences_languages_page.py:100
-msgid "View all available languages"
-msgstr ""
-
-#: ../frog/widgets/share_row.py:48
-msgid "Share via {provider_name.capitalize()}"
 msgstr ""
 
 #: ../frog/window.py:151
@@ -744,4 +823,29 @@ msgstr ""
 
 #: ../frog/window.py:293
 msgid "Text copied"
+msgstr ""
+
+#: ../frog/services/clipboard_service.py:54
+msgid "No image in clipboard"
+msgstr ""
+
+#: ../frog/services/screenshot_service.py:94
+msgid "Can't take a screenshot."
+msgstr ""
+
+#: ../frog/widgets/preferences_languages_page.py:80
+msgid "Models location unreachable. Check your internet connection."
+msgstr ""
+
+#: ../frog/widgets/preferences_languages_page.py:86
+msgid "You are on a metered connection. Be careful to download languages."
+msgstr ""
+
+#: ../frog/widgets/preferences_languages_page.py:123
+msgid "View all available languages"
+msgstr ""
+
+#: ../frog/widgets/share_row.py:48
+#, python-brace-format
+msgid "Share via {0}"
 msgstr ""
