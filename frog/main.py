@@ -145,15 +145,12 @@ class FrogApplication(Adw.Application):
             developers=["Andrey Maksimov"],
             release_notes="""<p>In this update, we've made a number of improvements to our app.</p>
                 <ul>
-                    <li>Share extracted text: This means you can now share your findings with the wider community.</li>
-                    <li>Add Text-to-speech to be able to listen to the extracted text
-                    without any additional apps (internet connection required).</li>
-                    <li>Add the ability to insert images from the clipboard
-                    by using the <code>Ctrl+V</code> shortcut.</li>
-                    <li>In addition, we have upgraded the language selection dropdown
-                    to popover with a quick search of a language.</li>
-                    <li>Last but not least, Frog has become more accessibility-friendly.</li>
+                    <li>New look and feel for language selection popover.</li>
+                    <li>Now Frog deletes only its temporary files.</li>
+                    <li>Temporarily disabled Text-to-Speech until we find a better "offline" solution.</li>
+                    <li>Updated translations.</li>
                 </ul>
+                <p>Full list of changes you may find in the repository.</p>
                 <p>We hope you enjoy our work!</p>
             """,
             transient_for=self.props.active_window

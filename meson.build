@@ -1,5 +1,5 @@
 project('frog',
-          version: '1.4.2',
+          version: '1.5.0',
     meson_version: '>= 0.50.0',
   default_options: [ 'warning_level=2',
                    ],
@@ -9,7 +9,7 @@ author = 'tenderowl'
 domain = 'com.github'
 # app_id built as: domain.author.project_name
 gitrepo = 'https://github.com/'+author+'/'+meson.project_name()
-website = 'https://tenderowl.com'
+website = 'https://getfrog.app'
 
 
 i18n = import('i18n')
