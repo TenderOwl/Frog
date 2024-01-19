@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-03 19:37+0300\n"
+"POT-Creation-Date: 2023-12-25 11:43+0300\n"
 "PO-Revision-Date: 2023-12-09 07:05+0000\n"
 "Last-Translator: 复予 <1530207757@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -38,17 +38,13 @@ msgid ""
 "of the source."
 msgstr "为图像、网页、视频和二维码拍照，以从中提取文本。"
 
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:151
-msgid "Tender Owl"
-msgstr "Tender Owl"
-
 #: ../data/com.github.tenderowl.frog.desktop.in:4
 msgid "Text extraction tool"
 msgstr "文本提取工具"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:5
 msgid "Extract text from any image, video or web page"
-msgstr "从任何地方提取文本"
+msgstr "从任何图像、视频、网页中提取文本"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:12
 msgid "OCR;Text;Extraction;"
@@ -58,52 +54,52 @@ msgstr "OCR;文本;提取;"
 msgid "Extract Text to the Clipboard"
 msgstr "将文本提取至剪贴板"
 
-#: ../data/ui/extracted_page.blp:18 ../data/ui/welcome_page.blp:29
+#: ../data/ui/extracted_page.blp:25
 msgid "Take a screenshot"
 msgstr "截屏"
 
-#: ../data/ui/extracted_page.blp:26
+#: ../data/ui/extracted_page.blp:33
 msgctxt "Extracted screen"
 msgid "Copy extracted text to clipboard"
 msgstr "将提取的文本复制到剪贴板"
 
-#: ../data/ui/extracted_page.blp:33
+#: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
 msgid "Listen to text"
 msgstr "听写文本"
 
-#: ../data/ui/extracted_page.blp:40
+#: ../data/ui/extracted_page.blp:47
 msgctxt "Extracted screen"
 msgid "Cancel listening to text"
 msgstr "取消文本听写"
 
-#: ../data/ui/extracted_page.blp:53
+#: ../data/ui/extracted_page.blp:60
 msgctxt "Extracted screen"
 msgid "Open menu"
 msgstr "打开菜单"
 
-#: ../data/ui/extracted_page.blp:60
+#: ../data/ui/extracted_page.blp:67
 msgctxt "Extracted screen"
 msgid "Share To"
 msgstr "分享"
 
-#: ../data/ui/extracted_page.blp:97 ../data/ui/welcome_page.blp:104
+#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:127
 msgid "Preferences"
 msgstr "首选项"
 
-#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:111
+#: ../data/ui/extracted_page.blp:111 ../data/ui/welcome_page.blp:134
 msgid "Keyboard Shortcuts"
 msgstr "键盘快捷键(_K)"
 
-#: ../data/ui/extracted_page.blp:109 ../data/ui/welcome_page.blp:116
+#: ../data/ui/extracted_page.blp:116 ../data/ui/welcome_page.blp:139
 msgid "About Frog"
 msgstr "关于 Frog(_A)"
 
-#: ../data/ui/extracted_page.blp:117 ../data/ui/welcome_page.blp:123
+#: ../data/ui/extracted_page.blp:124 ../data/ui/welcome_page.blp:154
 msgid "Open image"
 msgstr "打开图像"
 
-#: ../data/ui/extracted_page.blp:118 ../data/ui/welcome_page.blp:124
+#: ../data/ui/extracted_page.blp:125 ../data/ui/welcome_page.blp:155
 msgid "Paste from clipboard"
 msgstr "从剪贴板粘贴"
 
@@ -111,9 +107,27 @@ msgstr "从剪贴板粘贴"
 msgid "Available Languages"
 msgstr "可用的语言"
 
-#: ../data/ui/language_popover.blp:18
-msgid "Search language"
-msgstr "搜索语言"
+#: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
+msgid "Search Languages…"
+msgstr "搜索语言…"
+
+#: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
+msgid "No Results Found"
+msgstr "未找到结果"
+
+#: ../data/ui/language_popover.blp:77
+msgid "Add Language"
+msgstr "添加语言"
+
+#: ../data/ui/language_row.blp:21
+msgctxt "Preferences Language Row"
+msgid "Install language"
+msgstr "安装语言"
+
+#: ../data/ui/language_row.blp:30
+msgctxt "Preferences Language Row"
+msgid "Remove language"
+msgstr "删除语言"
 
 #: ../data/ui/preferences_general.blp:5
 msgid "_General"
@@ -155,7 +169,15 @@ msgstr "自动打开二维码中的链接"
 msgid "_Languages"
 msgstr "语言(_L)"
 
-#: ../data/ui/preferences_languages.blp:32
+#: ../data/ui/preferences_languages.blp:24
+msgid "Models location unreachable. Check your internet connection"
+msgstr "无法访问模型位置。请检查网络连接"
+
+#: ../data/ui/preferences_languages.blp:26
+msgid "Retry"
+msgstr "重试"
+
+#: ../data/ui/preferences_languages.blp:42
 msgid "Installed languages"
 msgstr "已安装语言"
 
@@ -166,6 +188,66 @@ msgstr "用 Pocket 分享"
 #: ../data/ui/share_row.blp:22
 msgid "Pocket"
 msgstr "Pocket"
+
+#: ../data/ui/shortcuts.blp:5
+msgctxt "shortcut window"
+msgid "Shortcuts"
+msgstr "快捷方式"
+
+#: ../data/ui/shortcuts.blp:12
+msgctxt "shortcut window"
+msgid "General"
+msgstr "常规"
+
+#: ../data/ui/shortcuts.blp:16
+msgctxt "shortcut window"
+msgid "Open image"
+msgstr "打开图像"
+
+#: ../data/ui/shortcuts.blp:21
+msgctxt "shortcut window"
+msgid "Take screenshot and extract text"
+msgstr "截图并提取文本"
+
+#: ../data/ui/shortcuts.blp:26
+msgctxt "shortcut window"
+msgid "Extract text and copy it to clipboard"
+msgstr "提取文本并将其复制到剪贴板"
+
+#: ../data/ui/shortcuts.blp:27
+msgctxt "shortcut window"
+msgid "May not work properly on wayland"
+msgstr "可能无法在 wayland 上正常工作"
+
+#: ../data/ui/shortcuts.blp:32
+msgctxt "shortcut window"
+msgid "Copy extracted text to clipboard"
+msgstr "将提取的文本复制到剪贴板"
+
+#: ../data/ui/shortcuts.blp:37
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "应用程序"
+
+#: ../data/ui/shortcuts.blp:41
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "首选项"
+
+#: ../data/ui/shortcuts.blp:46
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "退出"
+
+#: ../data/ui/shortcuts.blp:51
+msgctxt "shortcut window"
+msgid "Help"
+msgstr "帮助"
+
+#: ../data/ui/shortcuts.blp:55
+msgctxt "shortcut window"
+msgid "Display Shortcuts"
+msgstr "显示快捷方式"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
@@ -188,18 +270,31 @@ msgctxt "Welcome screen"
 msgid "Take a Screenshot"
 msgstr "截屏"
 
-#: ../data/ui/welcome_page.blp:70
+#: ../data/ui/welcome_page.blp:71
 msgid "_Take a Screenshot"
 msgstr "截屏(_T)"
 
-#: ../data/ui/welcome_page.blp:78
+#: ../data/ui/welcome_page.blp:79
 msgctxt "Welcome screen"
 msgid "Open Image"
 msgstr "打开图像"
 
-#: ../data/ui/welcome_page.blp:90
+#: ../data/ui/welcome_page.blp:92
 msgid "_Open Image"
 msgstr "打开图像(_O)"
+
+#: ../data/ui/welcome_page.blp:100
+msgctxt "Welcome screen"
+msgid "Paste image from clipboard"
+msgstr "从剪贴板粘贴图像"
+
+#: ../data/ui/welcome_page.blp:113
+msgid "Paste Image"
+msgstr "粘贴图像"
+
+#: ../data/ui/welcome_page.blp:146
+msgid "⭐ Star on GitHub"
+msgstr "⭐ 在 GitHub 上点星"
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -693,29 +788,13 @@ msgstr "约鲁巴语"
 msgid "Extract directly into the clipboard"
 msgstr "直接提取到剪贴板中"
 
-#: ../frog/main.py:188
+#: ../frog/main.py:194
 msgid "No text found. Try to grab another region."
 msgstr "没有找到文本。尝试抓取另一个区域。"
 
-#: ../frog/main.py:198
+#: ../frog/main.py:204
 msgid "Text extracted. You can paste it with Ctrl+V"
 msgstr "提取的文本。你可以用 Ctrl+V 粘贴它"
-
-#: ../frog/services/clipboard_service.py:54
-msgid "No image in clipboard"
-msgstr "剪贴板中没有图像"
-
-#: ../frog/services/screenshot_service.py:93
-msgid "Can't take a screenshot."
-msgstr "无法截屏。"
-
-#: ../frog/widgets/preferences_languages_page.py:100
-msgid "View all available languages"
-msgstr "查看所有可用语言"
-
-#: ../frog/widgets/share_row.py:48
-msgid "Share via {provider_name.capitalize()}"
-msgstr "用 {provider_name.capitalize()} 分享"
 
 #: ../frog/window.py:151
 msgid "Text copied to clipboard"
@@ -749,8 +828,38 @@ msgstr "只有图像可以这样处理。"
 msgid "Text copied"
 msgstr "文本已复制"
 
+#: ../frog/services/clipboard_service.py:54
+msgid "No image in clipboard"
+msgstr "剪贴板中没有图像"
+
+#: ../frog/services/screenshot_service.py:94
+msgid "Can't take a screenshot."
+msgstr "无法截屏。"
+
+#: ../frog/widgets/preferences_languages_page.py:80
+msgid "Models location unreachable. Check your internet connection."
+msgstr "无法访问模型位置。请检查网络连接。"
+
+#: ../frog/widgets/preferences_languages_page.py:86
+msgid "You are on a metered connection. Be careful to download languages."
+msgstr "您已连接计费网络。请谨慎下载语言。"
+
+#: ../frog/widgets/preferences_languages_page.py:123
+msgid "View all available languages"
+msgstr "查看所有可用语言"
+
+#: ../frog/widgets/share_row.py:48
+#, python-brace-format
+msgid "Share via {0}"
+msgstr "用 {0} 分享"
+
+#~ msgid "Tender Owl"
+#~ msgstr "Tender Owl"
+
+#~ msgid "Share via {provider_name.capitalize()}"
+#~ msgstr "用 {provider_name.capitalize()} 分享"
+
 #, fuzzy
-#~| msgid "Open image to extract text"
 #~ msgid "Open Image to extract text"
 #~ msgstr "打开图像以提取文本"
 
@@ -868,17 +977,8 @@ msgstr "文本已复制"
 #~ msgstr "{language} 语言已下载。"
 
 #, fuzzy
-#~| msgid "Extract text from anywhere"
 #~ msgid "Extract text from anywhere, even QR code"
 #~ msgstr "从任何地方提取文本"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Shortcuts"
-#~ msgstr "快捷方式"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Get screenshot and extract text"
-#~ msgstr "获取屏幕截图并提取文本"
 
 #~ msgid "Configure Languages"
 #~ msgstr "配置语言(_C)"
@@ -905,3 +1005,10 @@ msgstr "文本已复制"
 
 #~ msgid "Configure"
 #~ msgstr "配置(_C)"
+
+#~ msgid "Search language"
+#~ msgstr "搜索语言"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Get screenshot and extract text"
+#~ msgstr "获取屏幕截图并提取文本"

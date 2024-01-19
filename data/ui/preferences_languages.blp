@@ -16,12 +16,12 @@ template $PreferencesLanguagesPage : Adw.PreferencesPage {
       SearchEntry language_search_entry {
         margin-start: 4;
         margin-end: 4;
-        placeholder-text: _('Search Languages…');
+        placeholder-text: _("Search Languages…");
       }
     }
 
     Adw.Banner banner {
-      title: _('Models location unreachable. Check your internet connection');
+      title: _("Models location unreachable. Check your internet connection");
       button-clicked => $_on_banner_clicked();
       button-label: _("Retry");
       revealed: false;
@@ -98,7 +98,7 @@ template $PreferencesLanguagesPage : Adw.PreferencesPage {
               name: 'empty_state';
               child: Adw.StatusPage {
                 icon-name: "system-search-symbolic";
-                title: _('No Results Found');
+                title: _("No Results Found");
                 styles ["compact"]
               };
             }

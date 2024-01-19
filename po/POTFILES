@@ -3,9 +3,11 @@ data/com.github.tenderowl.frog.desktop.in
 data/ui/extracted_page.blp
 data/ui/language_dialog.blp
 data/ui/language_popover.blp
+data/ui/language_row.blp
 data/ui/preferences_general.blp
 data/ui/preferences_languages.blp
 data/ui/share_row.blp
+data/ui/shortcuts.blp
 data/ui/welcome_page.blp
 frog/language_manager.py
 frog/main.py

@@ -1,13 +1,15 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Turkish translation of frog
+# Copyright (C) 2023 frog's COPYRIGHT HOLDER
 # This file is distributed under the same license as the frog package.
+#
 # Sabri Ünal <libreajans@gmail.com>, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-03 19:37+0300\n"
-"PO-Revision-Date: 2023-08-23 22:06+0000\n"
+"POT-Creation-Date: 2023-12-25 11:43+0300\n"
+"PO-Revision-Date: 2023-12-25 11:51+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/frog/default/tr/"
 ">\n"
@@ -16,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:6
 #: ../data/com.github.tenderowl.frog.desktop.in:3
@@ -25,7 +27,7 @@ msgstr "Kurbağa"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:7
 msgid "Extract text from images"
-msgstr "Resimlerden metin çıkar"
+msgstr "Görüntülerden metin ayıkla"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:9
 msgid ""
@@ -33,15 +35,11 @@ msgid ""
 "of the source."
 msgstr ""
 "Kaynağın fotoğrafını çekerek görüntülerden, web sitelerinden, videolardan ve "
-"QR kodlarından metin çıkar."
-
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:151
-msgid "Tender Owl"
-msgstr "Tender Owl"
+"QR kodlarından metin ayıkla."
 
 #: ../data/com.github.tenderowl.frog.desktop.in:4
 msgid "Text extraction tool"
-msgstr "Metin çıkarma aracı"
+msgstr "Metin ayıklama aracı"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:5
 msgid "Extract text from any image, video or web page"
@@ -55,52 +53,52 @@ msgstr "OCR;Metin;Ayıkla;"
 msgid "Extract Text to the Clipboard"
 msgstr "Metni Panoya Çıkar"
 
-#: ../data/ui/extracted_page.blp:18 ../data/ui/welcome_page.blp:29
+#: ../data/ui/extracted_page.blp:25
 msgid "Take a screenshot"
 msgstr "Ekran görüntüsü al"
 
-#: ../data/ui/extracted_page.blp:26
+#: ../data/ui/extracted_page.blp:33
 msgctxt "Extracted screen"
 msgid "Copy extracted text to clipboard"
 msgstr "Çıkarılan metni panoya kopyala"
 
-#: ../data/ui/extracted_page.blp:33
+#: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
 msgid "Listen to text"
 msgstr "Metin dinle"
 
-#: ../data/ui/extracted_page.blp:40
+#: ../data/ui/extracted_page.blp:47
 msgctxt "Extracted screen"
 msgid "Cancel listening to text"
 msgstr "Metin dinlemeyi iptal et"
 
-#: ../data/ui/extracted_page.blp:53
+#: ../data/ui/extracted_page.blp:60
 msgctxt "Extracted screen"
 msgid "Open menu"
 msgstr "Menüyü aç"
 
-#: ../data/ui/extracted_page.blp:60
+#: ../data/ui/extracted_page.blp:67
 msgctxt "Extracted screen"
 msgid "Share To"
 msgstr "Paylaş"
 
-#: ../data/ui/extracted_page.blp:97 ../data/ui/welcome_page.blp:104
+#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:127
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:111
+#: ../data/ui/extracted_page.blp:111 ../data/ui/welcome_page.blp:134
 msgid "Keyboard Shortcuts"
 msgstr "Klavye Kısayolları"
 
-#: ../data/ui/extracted_page.blp:109 ../data/ui/welcome_page.blp:116
+#: ../data/ui/extracted_page.blp:116 ../data/ui/welcome_page.blp:139
 msgid "About Frog"
 msgstr "Kurbağa Hakkında"
 
-#: ../data/ui/extracted_page.blp:117 ../data/ui/welcome_page.blp:123
+#: ../data/ui/extracted_page.blp:124 ../data/ui/welcome_page.blp:154
 msgid "Open image"
 msgstr "Görüntü aç"
 
-#: ../data/ui/extracted_page.blp:118 ../data/ui/welcome_page.blp:124
+#: ../data/ui/extracted_page.blp:125 ../data/ui/welcome_page.blp:155
 msgid "Paste from clipboard"
 msgstr "Panodan yapıştır"
 
@@ -108,9 +106,27 @@ msgstr "Panodan yapıştır"
 msgid "Available Languages"
 msgstr "Kullanılabilir Diller"
 
-#: ../data/ui/language_popover.blp:18
-msgid "Search language"
-msgstr "Dil ara"
+#: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
+msgid "Search Languages…"
+msgstr "Dil Ara…"
+
+#: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
+msgid "No Results Found"
+msgstr "Sonuç Bulunamadı"
+
+#: ../data/ui/language_popover.blp:77
+msgid "Add Language"
+msgstr "Dil Ekle"
+
+#: ../data/ui/language_row.blp:21
+msgctxt "Preferences Language Row"
+msgid "Install language"
+msgstr "Dili Kur"
+
+#: ../data/ui/language_row.blp:30
+msgctxt "Preferences Language Row"
+msgid "Remove language"
+msgstr "Dili Kaldır"
 
 #: ../data/ui/preferences_general.blp:5
 msgid "_General"
@@ -152,7 +168,15 @@ msgstr "QR kodlarından bağlantıları kendiliğinden aç"
 msgid "_Languages"
 msgstr "_Dil"
 
-#: ../data/ui/preferences_languages.blp:32
+#: ../data/ui/preferences_languages.blp:24
+msgid "Models location unreachable. Check your internet connection"
+msgstr "Modellerin konumuna ulaşılamıyor. İnternet bağlantınızı denetleyin"
+
+#: ../data/ui/preferences_languages.blp:26
+msgid "Retry"
+msgstr "Yeniden Dene"
+
+#: ../data/ui/preferences_languages.blp:42
 msgid "Installed languages"
 msgstr "Kurulu diller"
 
@@ -163,6 +187,66 @@ msgstr "Pocket ile Paylaş"
 #: ../data/ui/share_row.blp:22
 msgid "Pocket"
 msgstr "Pocket"
+
+#: ../data/ui/shortcuts.blp:5
+msgctxt "shortcut window"
+msgid "Shortcuts"
+msgstr "Kısayollar"
+
+#: ../data/ui/shortcuts.blp:12
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Genel"
+
+#: ../data/ui/shortcuts.blp:16
+msgctxt "shortcut window"
+msgid "Open image"
+msgstr "Görüntü aç"
+
+#: ../data/ui/shortcuts.blp:21
+msgctxt "shortcut window"
+msgid "Take screenshot and extract text"
+msgstr "Ekran görüntüsü al ve metin ayıkla"
+
+#: ../data/ui/shortcuts.blp:26
+msgctxt "shortcut window"
+msgid "Extract text and copy it to clipboard"
+msgstr "Metin ayıkla ve panoya kopyala"
+
+#: ../data/ui/shortcuts.blp:27
+msgctxt "shortcut window"
+msgid "May not work properly on wayland"
+msgstr "Wayland üzerinde düzgün çalışmayabilir"
+
+#: ../data/ui/shortcuts.blp:32
+msgctxt "shortcut window"
+msgid "Copy extracted text to clipboard"
+msgstr "Çıkarılan metni panoya kopyala"
+
+#: ../data/ui/shortcuts.blp:37
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Uygulama"
+
+#: ../data/ui/shortcuts.blp:41
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "Tercihler"
+
+#: ../data/ui/shortcuts.blp:46
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Çık"
+
+#: ../data/ui/shortcuts.blp:51
+msgctxt "shortcut window"
+msgid "Help"
+msgstr "Yardım"
+
+#: ../data/ui/shortcuts.blp:55
+msgctxt "shortcut window"
+msgid "Display Shortcuts"
+msgstr "Kısayolları Göster"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
@@ -185,18 +269,31 @@ msgctxt "Welcome screen"
 msgid "Take a Screenshot"
 msgstr "Ekran Görüntüsü Al"
 
-#: ../data/ui/welcome_page.blp:70
+#: ../data/ui/welcome_page.blp:71
 msgid "_Take a Screenshot"
 msgstr "_Ekran Görüntüsü Al"
 
-#: ../data/ui/welcome_page.blp:78
+#: ../data/ui/welcome_page.blp:79
 msgctxt "Welcome screen"
 msgid "Open Image"
 msgstr "Görüntü Aç"
 
-#: ../data/ui/welcome_page.blp:90
+#: ../data/ui/welcome_page.blp:92
 msgid "_Open Image"
 msgstr "Görüntü _Aç"
+
+#: ../data/ui/welcome_page.blp:100
+msgctxt "Welcome screen"
+msgid "Paste image from clipboard"
+msgstr "Görüntüyü Panodan Yapıştır"
+
+#: ../data/ui/welcome_page.blp:113
+msgid "Paste Image"
+msgstr "Görüntü Yapıştır"
+
+#: ../data/ui/welcome_page.blp:146
+msgid "⭐ Star on GitHub"
+msgstr "⭐ GitHub'da Yıldız"
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -688,31 +785,15 @@ msgstr "Arjantin"
 
 #: ../frog/main.py:63 ../frog/main.py:83
 msgid "Extract directly into the clipboard"
-msgstr "Doğrudan panoya çıkar"
+msgstr "Doğrudan panoya ayıkla"
 
-#: ../frog/main.py:188
+#: ../frog/main.py:194
 msgid "No text found. Try to grab another region."
 msgstr "Metin bulunamadı. Başka bir bölge yakalamayı deneyin."
 
-#: ../frog/main.py:198
+#: ../frog/main.py:204
 msgid "Text extracted. You can paste it with Ctrl+V"
-msgstr "Metin çıkarıldı. Ctrl+V ile yapıştırabilirsiniz"
-
-#: ../frog/services/clipboard_service.py:54
-msgid "No image in clipboard"
-msgstr "Panoda resim yok"
-
-#: ../frog/services/screenshot_service.py:93
-msgid "Can't take a screenshot."
-msgstr "Ekran görüntüsü alınamadı."
-
-#: ../frog/widgets/preferences_languages_page.py:100
-msgid "View all available languages"
-msgstr "Mevcut tüm dilleri görüntüle"
-
-#: ../frog/widgets/share_row.py:48
-msgid "Share via {provider_name.capitalize()}"
-msgstr "{provider_name.capitalize()} ile paylaş"
+msgstr "Metin ayıklandı. Ctrl+V ile yapıştırabilirsiniz"
 
 #: ../frog/window.py:151
 msgid "Text copied to clipboard"
@@ -732,11 +813,11 @@ msgstr "Aç"
 
 #: ../frog/window.py:194
 msgid "Supported image files"
-msgstr "Desteklenen resim dosyaları"
+msgstr "Desteklenen görüntü dosyaları"
 
 #: ../frog/window.py:200
 msgid "Open image to extract text"
-msgstr "Metin çıkarmak için görüntüyü aç"
+msgstr "Metin ayıklamak için görüntüyü aç"
 
 #: ../frog/window.py:260
 msgid "Only images can be processed that way."
@@ -746,197 +827,27 @@ msgstr "Sadece görüntüler bu şekilde işlenebilir."
 msgid "Text copied"
 msgstr "Metin kopyalandı"
 
-#~ msgid "Open Image to extract text"
-#~ msgstr "Metin çıkarmak için görüntüyü aç"
+#: ../frog/services/clipboard_service.py:54
+msgid "No image in clipboard"
+msgstr "Panoda görüntü yok"
 
-#~ msgid "In this update, we've made a number of improvements to our app."
-#~ msgstr "Bu güncellemede, uygulamamızda bir dizi iyileştirme yaptık."
+#: ../frog/services/screenshot_service.py:94
+msgid "Can't take a screenshot."
+msgstr "Ekran görüntüsü alınamadı."
 
-#~ msgid ""
-#~ "Share extracted text: This means you can now share your findings with the "
-#~ "wider community."
-#~ msgstr ""
-#~ "Çıkarılan metni paylaş: Bu, artık bulgularınızı daha geniş topluluklarla "
-#~ "paylaşabileceğiniz anlamına gelir."
+#: ../frog/widgets/preferences_languages_page.py:80
+msgid "Models location unreachable. Check your internet connection."
+msgstr "Modellerin konumuna ulaşılamıyor. İnternet bağlantınızı denetleyin."
 
-#~ msgid ""
-#~ "Add Text-to-speech to be able to listen to the extracted text without any "
-#~ "additional apps (internet connection required)."
-#~ msgstr ""
-#~ "Çıkarılan metni herhangi bir ek uygulama olmadan dinleyebilmek için "
-#~ "Metinden-konuşmaya eklendi (internet bağlantısı gerekir)."
+#: ../frog/widgets/preferences_languages_page.py:86
+msgid "You are on a metered connection. Be careful to download languages."
+msgstr "Ölçülü bağlantı kullanıyorsunuz. Dilleri indirirken dikkatli olun."
 
-#~ msgid ""
-#~ "Add the ability to insert images from the clipboard by using the "
-#~ "<code>Ctrl+V</code> shortcut."
-#~ msgstr ""
-#~ "<code>Ctrl+V</code> kısayolunu kullanarak panodan görüntü ekleme özelliği "
-#~ "eklendi."
+#: ../frog/widgets/preferences_languages_page.py:123
+msgid "View all available languages"
+msgstr "Mevcut tüm dilleri görüntüle"
 
-#~ msgid ""
-#~ "In addition, we have upgraded the language selection dropdown to popover "
-#~ "with a quick search of a language."
-#~ msgstr ""
-#~ "Buna ek olarak, dil seçimi açılır seçim alanını hızlı bir dil aramasıyla "
-#~ "açılır pencereye yükselttik."
-
-#~ msgid "Last but not least, Frog has become more accessibility-friendly."
-#~ msgstr "Son olarak Frog daha erişilebilir hale geldi."
-
-#~ msgid "We hope you enjoy our work!"
-#~ msgstr "Umarız çalışmalarımızı beğenirsiniz!"
-
-#~ msgid ""
-#~ "We have redesigned the settings dialog to make it more user-friendly and "
-#~ "understandable."
-#~ msgstr ""
-#~ "Ayarlar iletişim kutusunu daha kullanıcı dostu ve anlaşılır hale getirmek "
-#~ "için yeniden tasarladık."
-
-#~ msgid "Now you can easily find the language you want by searching."
-#~ msgstr "Artık arama yaparak istediğiniz dili kolayca bulabilirsiniz."
-
-#~ msgid ""
-#~ "In addition, we have added the ability to select a second language for "
-#~ "extracting text from images."
-#~ msgstr ""
-#~ "Buna ek olarak, resimlerden metin çıkarmak için ikinci bir dil seçme "
-#~ "özelliğini ekledik."
-
-#~ msgid "The Frog can automatically follow links extracted from QR codes."
-#~ msgstr ""
-#~ "Kurbağa, QR kodlarından çıkarılan bağlantıları otomatik olarak takip "
-#~ "edebilir."
-
-#~ msgid ""
-#~ "We also updated the localization and improved the overall performance of "
-#~ "the app."
-#~ msgstr ""
-#~ "Ayrıca yerelleştirmeyi güncelledik ve uygulamanın genel performansını "
-#~ "iyileştirdik."
-
-#~ msgid "Fixed some bugs and bugs."
-#~ msgstr "Bazı hatalar ve aksaklıklar düzeltildi."
-
-#~ msgid "What's new:"
-#~ msgstr "Yenilikler:"
-
-#~ msgid "Open image button now available."
-#~ msgstr "Görüntüyü aç düğmesi artık kullanılabilir."
-
-#~ msgid "Translations updated."
-#~ msgstr "Çeviriler güncellendi."
-
-#~ msgid "When no text is found, Frog returns to the main window."
-#~ msgstr "Metin bulunamadığında, Kurbağa ana pencereye geri döner."
-
-#~ msgid "Updated UI"
-#~ msgstr "Güncellenmiş Kullanıcı Arayüzü"
-
-#~ msgid "Translated to a bunch of new languages"
-#~ msgstr "Yeni dillerin bir demetine çevrildi"
-
-#~ msgid "Drag-n-drop support. For images only"
-#~ msgstr "Sürükle-bırak desteği. Yalnızca görüntüler için"
-
-#~ msgid "Dark mode support"
-#~ msgstr "Karanlık mod desteği"
-
-#~ msgid "Localized interface"
-#~ msgstr "Yerelleştirilmiş arayüz"
-
-#~ msgid ""
-#~ "Frog now is available on the Flathub and use modern Portal "
-#~ "implementation. We also updated the UI accordingly to the GNOME HIG and "
-#~ "fixed some bugs we've found :)"
-#~ msgstr ""
-#~ "Kurbağa artık Flathub'da mevcut ve modern Portal uygulamasını kullanıyor. "
-#~ "Ayrıca kullanıcı arayüzünü GNOME Kullanıcı Arayüzü Klavuzuna göre "
-#~ "güncelledik ve bulduğumuz bazı hataları düzelttik :)"
-
-#~ msgid ""
-#~ "Now you're free to run Frog with `-e` option to extract text and "
-#~ "instantly copy it to the clipboard."
-#~ msgstr ""
-#~ "Artık metni ayıklamak ve anında panoya kopyalamak için Kurbağa'yı `-e` "
-#~ "seçeneğiyle çalıştırabilirsiniz."
-
-#~ msgid "English model included with Frog itself"
-#~ msgstr "İngilizce modeli Kurbağanın kendisine dahil edildi"
-
-#~ msgid "QR code detection. If one in the selected area - it will be decoded."
-#~ msgstr "QR kodu algılama. Seçilen alanda bir tane varsa - kodu çözülür."
-
-#~ msgid ""
-#~ "New command line shortcut to run with \"Extract to clipboard\" feature."
-#~ msgstr ""
-#~ "\"Panoya çıkar\" özelliği ile çalıştırmak için yeni komut satırı kısayolu."
-
-#~ msgid "Granite.HyperTextView to support QR encoded links"
-#~ msgstr "Granit.HyperTextView QR kodlu bağlantıları desteklemek için"
-
-#~ msgid "Fix language packs download."
-#~ msgstr "Dil paketlerinin indirilmesi düzeltildi."
-
-#~ msgid "Dark mode+"
-#~ msgstr "Karanlık kip+"
-
-#~ msgid "Dark mode support."
-#~ msgstr "Karanlık mod desteği."
-
-#~ msgid "Application will hide the main window for the cleaner shots. #11"
-#~ msgstr "Uygulama, temiz çekimler için ana pencereyi gizleyecektir. #11"
-
-#~ msgid ""
-#~ "Quickly extract any text from anywhere you need it: webpages, videos, "
-#~ "photos, etc."
-#~ msgstr ""
-#~ "İhtiyaç duyduğunuz her yerden herhangi bir metni hızlıca ayıklayın: web "
-#~ "sayfaları, videolar, fotoğraflar vb."
-
-#~ msgid ""
-#~ "Quickly extract text from any source such as images, websites, even video "
-#~ "- everywhere you can grab an image shot. Even if it is encoded in a QR "
-#~ "code!"
-#~ msgstr ""
-#~ "Görüntüler, web siteleri, hatta video gibi herhangi bir kaynaktan - "
-#~ "görüntü alabileceğiniz her yerden - hızlıca metin ayıkla. Hatta QR "
-#~ "koduyla kodlanmış olsa bile!"
-
+#: ../frog/widgets/share_row.py:48
 #, python-brace-format
-#~ msgid "{language} language downloaded."
-#~ msgstr "{language} dili indirildi."
-
-#~ msgid "Extract text from anywhere, even QR code"
-#~ msgstr "QR kodu da dahil her yerden metin ayıkla"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Shortcuts"
-#~ msgstr "Kısayollar"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Get screenshot and extract text"
-#~ msgstr "Ekran görüntüsü al ve metin çıkar"
-
-#~ msgid "Configure Languages"
-#~ msgstr "Dilleri Yapılandır"
-
-#~ msgid "Clear the extraction results"
-#~ msgstr "Çıkarma sonuçlarını temizleme"
-
-#~ msgid ""
-#~ "Copy extracted text to clipboard\n"
-#~ "                                "
-#~ msgstr ""
-#~ "Çıkarılan metni panoya kopyala\n"
-#~ "                                "
-
-#~ msgid ""
-#~ "Frog can help you to instantly extract text\n"
-#~ "from any QR code, image, video, PDF, etc."
-#~ msgstr ""
-#~ "Kurbağa herhangi bir QR kodundan, görüntüden, videodan, PDF'den vb. \n"
-#~ "anında metin çıkarmanıza yardımcı olur."
-
-#~ msgid "Learn more about Frog"
-#~ msgstr "Kurbağa hakkında daha fazlasını öğren"
+msgid "Share via {0}"
+msgstr "{0} ile paylaş"

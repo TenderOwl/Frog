@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-03 19:37+0300\n"
+"POT-Creation-Date: 2023-12-25 11:43+0300\n"
 "PO-Revision-Date: 2023-08-25 12:51+0000\n"
 "Last-Translator: Fjuro <ifjuro@proton.me>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/frog/default/cs/>\n"
@@ -34,10 +34,6 @@ msgstr ""
 "Extrahujte text z obrázků, webových stránek, videí a QR kódů pořízením "
 "obrázku zdroje."
 
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:151
-msgid "Tender Owl"
-msgstr "Tender Owl"
-
 #: ../data/com.github.tenderowl.frog.desktop.in:4
 msgid "Text extraction tool"
 msgstr "Nástroj pro extrakci textu"
@@ -54,52 +50,52 @@ msgstr "OCR;Text;Extrakce;"
 msgid "Extract Text to the Clipboard"
 msgstr "Extrahování textu do schránky"
 
-#: ../data/ui/extracted_page.blp:18 ../data/ui/welcome_page.blp:29
+#: ../data/ui/extracted_page.blp:25
 msgid "Take a screenshot"
 msgstr "Pořídit snímek obrazovky"
 
-#: ../data/ui/extracted_page.blp:26
+#: ../data/ui/extracted_page.blp:33
 msgctxt "Extracted screen"
 msgid "Copy extracted text to clipboard"
 msgstr "Kopírovat extrahovaný text do schránky"
 
-#: ../data/ui/extracted_page.blp:33
+#: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
 msgid "Listen to text"
 msgstr "Poslouchat text"
 
-#: ../data/ui/extracted_page.blp:40
+#: ../data/ui/extracted_page.blp:47
 msgctxt "Extracted screen"
 msgid "Cancel listening to text"
 msgstr "Zrušit poslech textu"
 
-#: ../data/ui/extracted_page.blp:53
+#: ../data/ui/extracted_page.blp:60
 msgctxt "Extracted screen"
 msgid "Open menu"
 msgstr "Otevřít nabídku"
 
-#: ../data/ui/extracted_page.blp:60
+#: ../data/ui/extracted_page.blp:67
 msgctxt "Extracted screen"
 msgid "Share To"
 msgstr "Sdílet do"
 
-#: ../data/ui/extracted_page.blp:97 ../data/ui/welcome_page.blp:104
+#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:127
 msgid "Preferences"
 msgstr "Předvolby"
 
-#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:111
+#: ../data/ui/extracted_page.blp:111 ../data/ui/welcome_page.blp:134
 msgid "Keyboard Shortcuts"
 msgstr "Klávesové zkratky"
 
-#: ../data/ui/extracted_page.blp:109 ../data/ui/welcome_page.blp:116
+#: ../data/ui/extracted_page.blp:116 ../data/ui/welcome_page.blp:139
 msgid "About Frog"
 msgstr "O Frogu"
 
-#: ../data/ui/extracted_page.blp:117 ../data/ui/welcome_page.blp:123
+#: ../data/ui/extracted_page.blp:124 ../data/ui/welcome_page.blp:154
 msgid "Open image"
 msgstr "Otevřít obrázek"
 
-#: ../data/ui/extracted_page.blp:118 ../data/ui/welcome_page.blp:124
+#: ../data/ui/extracted_page.blp:125 ../data/ui/welcome_page.blp:155
 msgid "Paste from clipboard"
 msgstr "Vložit ze schránky"
 
@@ -107,9 +103,27 @@ msgstr "Vložit ze schránky"
 msgid "Available Languages"
 msgstr "Dostupné jazyky"
 
-#: ../data/ui/language_popover.blp:18
-msgid "Search language"
-msgstr "Hledat jazyk"
+#: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
+msgid "Search Languages…"
+msgstr "Hledat jazyky…"
+
+#: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
+msgid "No Results Found"
+msgstr "Nenalezeny žádné výsledky"
+
+#: ../data/ui/language_popover.blp:77
+msgid "Add Language"
+msgstr "Přidat jazyk"
+
+#: ../data/ui/language_row.blp:21
+msgctxt "Preferences Language Row"
+msgid "Install language"
+msgstr "Nainstalovat jazyk"
+
+#: ../data/ui/language_row.blp:30
+msgctxt "Preferences Language Row"
+msgid "Remove language"
+msgstr "Odebrat jazyk"
 
 #: ../data/ui/preferences_general.blp:5
 msgid "_General"
@@ -151,7 +165,15 @@ msgstr "Automaticky otevírat odkazy z QR kódů"
 msgid "_Languages"
 msgstr "_Jazyky"
 
-#: ../data/ui/preferences_languages.blp:32
+#: ../data/ui/preferences_languages.blp:24
+msgid "Models location unreachable. Check your internet connection"
+msgstr "Umístění modelů není dostupné. Zkontrolujte své připojení k internetu"
+
+#: ../data/ui/preferences_languages.blp:26
+msgid "Retry"
+msgstr "Zkusit znovu"
+
+#: ../data/ui/preferences_languages.blp:42
 msgid "Installed languages"
 msgstr "Nainstalované jazyky"
 
@@ -162,6 +184,66 @@ msgstr "Sdílet přes Pocket"
 #: ../data/ui/share_row.blp:22
 msgid "Pocket"
 msgstr "Pocket"
+
+#: ../data/ui/shortcuts.blp:5
+msgctxt "shortcut window"
+msgid "Shortcuts"
+msgstr "Zkratky"
+
+#: ../data/ui/shortcuts.blp:12
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Obecné"
+
+#: ../data/ui/shortcuts.blp:16
+msgctxt "shortcut window"
+msgid "Open image"
+msgstr "Otevřít obrázek"
+
+#: ../data/ui/shortcuts.blp:21
+msgctxt "shortcut window"
+msgid "Take screenshot and extract text"
+msgstr "Pořiďte snímek obrazovky a extrahujte text"
+
+#: ../data/ui/shortcuts.blp:26
+msgctxt "shortcut window"
+msgid "Extract text and copy it to clipboard"
+msgstr "Extrahovat text a zkopírovat jej do schránky"
+
+#: ../data/ui/shortcuts.blp:27
+msgctxt "shortcut window"
+msgid "May not work properly on wayland"
+msgstr "Nemusí správně fungovat na Waylandu"
+
+#: ../data/ui/shortcuts.blp:32
+msgctxt "shortcut window"
+msgid "Copy extracted text to clipboard"
+msgstr "Kopírovat extrahovaný text do schránky"
+
+#: ../data/ui/shortcuts.blp:37
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Aplikace"
+
+#: ../data/ui/shortcuts.blp:41
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "Předvolby"
+
+#: ../data/ui/shortcuts.blp:46
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Ukončit"
+
+#: ../data/ui/shortcuts.blp:51
+msgctxt "shortcut window"
+msgid "Help"
+msgstr "Nápověda"
+
+#: ../data/ui/shortcuts.blp:55
+msgctxt "shortcut window"
+msgid "Display Shortcuts"
+msgstr "Zobrazit zkratky"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
@@ -184,18 +266,31 @@ msgctxt "Welcome screen"
 msgid "Take a Screenshot"
 msgstr "Pořídit snímek obrazovky"
 
-#: ../data/ui/welcome_page.blp:70
+#: ../data/ui/welcome_page.blp:71
 msgid "_Take a Screenshot"
 msgstr "_Pořídit snímek obrazovky"
 
-#: ../data/ui/welcome_page.blp:78
+#: ../data/ui/welcome_page.blp:79
 msgctxt "Welcome screen"
 msgid "Open Image"
 msgstr "Otevřít obrázek"
 
-#: ../data/ui/welcome_page.blp:90
+#: ../data/ui/welcome_page.blp:92
 msgid "_Open Image"
 msgstr "_Otevřít obrázek"
+
+#: ../data/ui/welcome_page.blp:100
+msgctxt "Welcome screen"
+msgid "Paste image from clipboard"
+msgstr "Vložit obrázek ze schránky"
+
+#: ../data/ui/welcome_page.blp:113
+msgid "Paste Image"
+msgstr "Vložit obrázek"
+
+#: ../data/ui/welcome_page.blp:146
+msgid "⭐ Star on GitHub"
+msgstr "⭐ Udělte hvězdičku na GitHubu"
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -689,29 +784,13 @@ msgstr "jorubština"
 msgid "Extract directly into the clipboard"
 msgstr "Extrahovat přímo do schránky"
 
-#: ../frog/main.py:188
+#: ../frog/main.py:194
 msgid "No text found. Try to grab another region."
 msgstr "Nebyl nalezen žádný text. Zkuste zachytit jinou oblast."
 
-#: ../frog/main.py:198
+#: ../frog/main.py:204
 msgid "Text extracted. You can paste it with Ctrl+V"
 msgstr "Text extrahován. Můžete jej vložit pomocí Ctrl+V"
-
-#: ../frog/services/clipboard_service.py:54
-msgid "No image in clipboard"
-msgstr "Žádný obrázek ve schránce"
-
-#: ../frog/services/screenshot_service.py:93
-msgid "Can't take a screenshot."
-msgstr "Nepodařilo se pořídit snímek obrazovky."
-
-#: ../frog/widgets/preferences_languages_page.py:100
-msgid "View all available languages"
-msgstr "Zobrazit všechny dostupné jazyky"
-
-#: ../frog/widgets/share_row.py:48
-msgid "Share via {provider_name.capitalize()}"
-msgstr "Sdílet přes {provider_name.capitalize()}"
 
 #: ../frog/window.py:151
 msgid "Text copied to clipboard"
@@ -744,6 +823,37 @@ msgstr "Tímto způsobem lze zpracovávat pouze obrázky."
 #: ../frog/window.py:293
 msgid "Text copied"
 msgstr "Text zkopírován"
+
+#: ../frog/services/clipboard_service.py:54
+msgid "No image in clipboard"
+msgstr "Žádný obrázek ve schránce"
+
+#: ../frog/services/screenshot_service.py:94
+msgid "Can't take a screenshot."
+msgstr "Nepodařilo se pořídit snímek obrazovky."
+
+#: ../frog/widgets/preferences_languages_page.py:80
+msgid "Models location unreachable. Check your internet connection."
+msgstr "Umístění modelů není dostupné. Zkontrolujte své připojení k internetu."
+
+#: ../frog/widgets/preferences_languages_page.py:86
+msgid "You are on a metered connection. Be careful to download languages."
+msgstr "Nacházíte se na měřené síti. Buďte opatrní při stahování jazyků."
+
+#: ../frog/widgets/preferences_languages_page.py:123
+msgid "View all available languages"
+msgstr "Zobrazit všechny dostupné jazyky"
+
+#: ../frog/widgets/share_row.py:48
+#, python-brace-format
+msgid "Share via {0}"
+msgstr "Sdílet přes {0}"
+
+#~ msgid "Tender Owl"
+#~ msgstr "Tender Owl"
+
+#~ msgid "Share via {provider_name.capitalize()}"
+#~ msgstr "Sdílet přes {provider_name.capitalize()}"
 
 #~ msgid "Open Image to extract text"
 #~ msgstr "Otevřít obrázek pro získání textu"
@@ -907,14 +1017,6 @@ msgstr "Text zkopírován"
 #~ msgid "Extract text from anywhere, even QR code"
 #~ msgstr "Extrahujte text odkudkoli, dokonce i z QR kódu"
 
-#~ msgctxt "shortcut window"
-#~ msgid "Shortcuts"
-#~ msgstr "Zkratky"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Get screenshot and extract text"
-#~ msgstr "Získání snímku obrazovky a extrakce textu"
-
 #~ msgid "Configure Languages"
 #~ msgstr "Konfigurace jazyků"
 
@@ -937,3 +1039,10 @@ msgstr "Text zkopírován"
 
 #~ msgid "Learn more about Frog"
 #~ msgstr "Další informace o Frogu"
+
+#~ msgid "Search language"
+#~ msgstr "Hledat jazyk"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Get screenshot and extract text"
+#~ msgstr "Získání snímku obrazovky a extrakce textu"

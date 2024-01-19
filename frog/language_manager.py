@@ -52,7 +52,7 @@ class LanguageManager(GObject.GObject):
         'removed': (GObject.SIGNAL_RUN_FIRST, None, (str,)),
     }
 
-    _active_language: LanguageItem = LanguageItem(code='eng', title=_('English'))
+    _active_language: LanguageItem = LanguageItem(code='eng', title=_("English"))
 
     def __init__(self):
         super().__init__()

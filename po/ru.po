@@ -1,21 +1,21 @@
 # This is a Translation File of Frog.
-# Andrey M <meamka@ya.ru>, 2023.
+# Andrey M <meamka@ya.ru>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-03 19:37+0300\n"
-"PO-Revision-Date: 2023-05-02 10:38+0000\n"
+"POT-Creation-Date: 2023-12-25 11:43+0300\n"
+"PO-Revision-Date: 2024-01-19 13:08+0000\n"
 "Last-Translator: Andrey M <meamka@ya.ru>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/frog/default/ru/"
-">\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/frog/default/ru/>"
+"\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.4-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -42,10 +42,6 @@ msgstr ""
 "Извлекайте текст из изображений, веб-сайтов, видео и QR-кодов, "
 "сфотографировав источник."
 
-#: ../data/com.github.tenderowl.frog.appdata.xml.in:151
-msgid "Tender Owl"
-msgstr "Tender Owl"
-
 #: ../data/com.github.tenderowl.frog.desktop.in:4
 msgid "Text extraction tool"
 msgstr "Инструмент для извлечения текста"
@@ -62,56 +58,56 @@ msgstr "OCR;Текст;Извлечение;"
 msgid "Extract Text to the Clipboard"
 msgstr "Извлечь и скопировать в буфер обмена"
 
-#: ../data/ui/extracted_page.blp:18 ../data/ui/welcome_page.blp:29
+#: ../data/ui/extracted_page.blp:25
 msgid "Take a screenshot"
 msgstr "Сделать снимок"
 
-#: ../data/ui/extracted_page.blp:26
+#: ../data/ui/extracted_page.blp:33
 #, fuzzy
 #| msgid "Copy extracted text to clipboard"
 msgctxt "Extracted screen"
 msgid "Copy extracted text to clipboard"
 msgstr "Скопировать в буфер обмена"
 
-#: ../data/ui/extracted_page.blp:33
+#: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
 msgid "Listen to text"
 msgstr ""
 
-#: ../data/ui/extracted_page.blp:40
+#: ../data/ui/extracted_page.blp:47
 msgctxt "Extracted screen"
 msgid "Cancel listening to text"
 msgstr ""
 
-#: ../data/ui/extracted_page.blp:53
+#: ../data/ui/extracted_page.blp:60
 #, fuzzy
 #| msgid "Open menu"
 msgctxt "Extracted screen"
 msgid "Open menu"
 msgstr "Открыть меню"
 
-#: ../data/ui/extracted_page.blp:60
+#: ../data/ui/extracted_page.blp:67
 msgctxt "Extracted screen"
 msgid "Share To"
-msgstr ""
+msgstr "Поделиться"
 
-#: ../data/ui/extracted_page.blp:97 ../data/ui/welcome_page.blp:104
+#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:127
 msgid "Preferences"
 msgstr "Параметры"
 
-#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:111
+#: ../data/ui/extracted_page.blp:111 ../data/ui/welcome_page.blp:134
 msgid "Keyboard Shortcuts"
 msgstr "Клавиатурные сочетания"
 
-#: ../data/ui/extracted_page.blp:109 ../data/ui/welcome_page.blp:116
+#: ../data/ui/extracted_page.blp:116 ../data/ui/welcome_page.blp:139
 msgid "About Frog"
 msgstr "О Frog"
 
-#: ../data/ui/extracted_page.blp:117 ../data/ui/welcome_page.blp:123
+#: ../data/ui/extracted_page.blp:124 ../data/ui/welcome_page.blp:154
 msgid "Open image"
 msgstr "Открыть изображение"
 
-#: ../data/ui/extracted_page.blp:118 ../data/ui/welcome_page.blp:124
+#: ../data/ui/extracted_page.blp:125 ../data/ui/welcome_page.blp:155
 msgid "Paste from clipboard"
 msgstr "Вставить из буфера"
 
@@ -119,9 +115,35 @@ msgstr "Вставить из буфера"
 msgid "Available Languages"
 msgstr "Доступные языки"
 
-#: ../data/ui/language_popover.blp:18
-msgid "Search language"
+#: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
+#, fuzzy
+#| msgid "Search language"
+msgid "Search Languages…"
 msgstr "Найти язык"
+
+#: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
+msgid "No Results Found"
+msgstr "Ничего не найдено"
+
+#: ../data/ui/language_popover.blp:77
+#, fuzzy
+#| msgid "Language"
+msgid "Add Language"
+msgstr "Язык"
+
+#: ../data/ui/language_row.blp:21
+#, fuzzy
+#| msgid "Installed languages"
+msgctxt "Preferences Language Row"
+msgid "Install language"
+msgstr "Установленные языки"
+
+#: ../data/ui/language_row.blp:30
+#, fuzzy
+#| msgid "_Second language"
+msgctxt "Preferences Language Row"
+msgid "Remove language"
+msgstr "_Дополнительный язык"
 
 #: ../data/ui/preferences_general.blp:5
 msgid "_General"
@@ -163,7 +185,15 @@ msgstr "Автоматически открывать ссылки из QR-ко�
 msgid "_Languages"
 msgstr "_Языки"
 
-#: ../data/ui/preferences_languages.blp:32
+#: ../data/ui/preferences_languages.blp:24
+msgid "Models location unreachable. Check your internet connection"
+msgstr "Местоположение моделей недоступно. Проверьте подключение к Интернету"
+
+#: ../data/ui/preferences_languages.blp:26
+msgid "Retry"
+msgstr "Повторить"
+
+#: ../data/ui/preferences_languages.blp:42
 msgid "Installed languages"
 msgstr "Установленные языки"
 
@@ -174,6 +204,78 @@ msgstr "Сохранить в Pocket"
 #: ../data/ui/share_row.blp:22
 msgid "Pocket"
 msgstr "Pocket"
+
+#: ../data/ui/shortcuts.blp:5
+msgctxt "shortcut window"
+msgid "Shortcuts"
+msgstr "Клавиатурные сочетания"
+
+#: ../data/ui/shortcuts.blp:12
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Общее"
+
+#: ../data/ui/shortcuts.blp:16
+#, fuzzy
+#| msgid "Open image"
+msgctxt "shortcut window"
+msgid "Open image"
+msgstr "Открыть изображение"
+
+#: ../data/ui/shortcuts.blp:21
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Get screenshot and extract text"
+msgctxt "shortcut window"
+msgid "Take screenshot and extract text"
+msgstr "Извлечь текст"
+
+#: ../data/ui/shortcuts.blp:26
+#, fuzzy
+#| msgid "Extract Text to the Clipboard"
+msgctxt "shortcut window"
+msgid "Extract text and copy it to clipboard"
+msgstr "Извлечь и скопировать в буфер обмена"
+
+#: ../data/ui/shortcuts.blp:27
+msgctxt "shortcut window"
+msgid "May not work properly on wayland"
+msgstr "Может не работать корректно на Wayland"
+
+#: ../data/ui/shortcuts.blp:32
+msgctxt "shortcut window"
+msgid "Copy extracted text to clipboard"
+msgstr "Извлечь текст в буфер обмена"
+
+#: ../data/ui/shortcuts.blp:37
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Приложение"
+
+#: ../data/ui/shortcuts.blp:41
+#, fuzzy
+#| msgid "Preferences"
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "Параметры"
+
+#: ../data/ui/shortcuts.blp:46
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Выйти"
+
+#: ../data/ui/shortcuts.blp:51
+msgctxt "shortcut window"
+msgid "Help"
+msgstr "Помощь"
+
+#: ../data/ui/shortcuts.blp:55
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Shortcuts"
+msgctxt "shortcut window"
+msgid "Display Shortcuts"
+msgstr "Клавиатурные сочетания"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
@@ -198,20 +300,37 @@ msgctxt "Welcome screen"
 msgid "Take a Screenshot"
 msgstr "Сделать снимок"
 
-#: ../data/ui/welcome_page.blp:70
+#: ../data/ui/welcome_page.blp:71
 msgid "_Take a Screenshot"
 msgstr "_Сделать снимок"
 
-#: ../data/ui/welcome_page.blp:78
+#: ../data/ui/welcome_page.blp:79
 #, fuzzy
 #| msgid "_Open Image"
 msgctxt "Welcome screen"
 msgid "Open Image"
 msgstr "_Открыть Изображение"
 
-#: ../data/ui/welcome_page.blp:90
+#: ../data/ui/welcome_page.blp:92
 msgid "_Open Image"
 msgstr "_Открыть Изображение"
+
+#: ../data/ui/welcome_page.blp:100
+#, fuzzy
+#| msgid "Paste from clipboard"
+msgctxt "Welcome screen"
+msgid "Paste image from clipboard"
+msgstr "Вставить из буфера"
+
+#: ../data/ui/welcome_page.blp:113
+#, fuzzy
+#| msgid "_Open Image"
+msgid "Paste Image"
+msgstr "_Открыть Изображение"
+
+#: ../data/ui/welcome_page.blp:146
+msgid "⭐ Star on GitHub"
+msgstr "⭐ Отметить на GitHub"
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -705,29 +824,13 @@ msgstr "Йоруба"
 msgid "Extract directly into the clipboard"
 msgstr "Извлечь в буфер обмена"
 
-#: ../frog/main.py:188
+#: ../frog/main.py:194
 msgid "No text found. Try to grab another region."
 msgstr "Текст не найден. Попробуйте выбрать другую область."
 
-#: ../frog/main.py:198
+#: ../frog/main.py:204
 msgid "Text extracted. You can paste it with Ctrl+V"
 msgstr "Текст извлечен. Вы можете вставить его с помощью Ctrl+V"
-
-#: ../frog/services/clipboard_service.py:54
-msgid "No image in clipboard"
-msgstr "В буфере нет изображения"
-
-#: ../frog/services/screenshot_service.py:93
-msgid "Can't take a screenshot."
-msgstr "Не могу сделать скриншот."
-
-#: ../frog/widgets/preferences_languages_page.py:100
-msgid "View all available languages"
-msgstr "Показать все доступные языки"
-
-#: ../frog/widgets/share_row.py:48
-msgid "Share via {provider_name.capitalize()}"
-msgstr "Поделиться через {provider_name.capitalize()}"
 
 #: ../frog/window.py:151
 msgid "Text copied to clipboard"
@@ -760,6 +863,38 @@ msgstr "Так можно обработать только изображени
 #: ../frog/window.py:293
 msgid "Text copied"
 msgstr "Текст скопирован"
+
+#: ../frog/services/clipboard_service.py:54
+msgid "No image in clipboard"
+msgstr "В буфере нет изображения"
+
+#: ../frog/services/screenshot_service.py:94
+msgid "Can't take a screenshot."
+msgstr "Не могу сделать скриншот."
+
+#: ../frog/widgets/preferences_languages_page.py:80
+msgid "Models location unreachable. Check your internet connection."
+msgstr "Местоположение моделей недоступно. Проверьте подключение к Интернету."
+
+#: ../frog/widgets/preferences_languages_page.py:86
+msgid "You are on a metered connection. Be careful to download languages."
+msgstr "У вас лимитное соединение. Будьте осторожны при загрузке языков."
+
+#: ../frog/widgets/preferences_languages_page.py:123
+msgid "View all available languages"
+msgstr "Показать все доступные языки"
+
+#: ../frog/widgets/share_row.py:48
+#, fuzzy, python-brace-format
+#| msgid "Share via Pocket"
+msgid "Share via {0}"
+msgstr "Сохранить в Pocket"
+
+#~ msgid "Tender Owl"
+#~ msgstr "Tender Owl"
+
+#~ msgid "Share via {provider_name.capitalize()}"
+#~ msgstr "Поделиться через {provider_name.capitalize()}"
 
 #~ msgid "Open Image to extract text"
 #~ msgstr "Открыть изображение"
@@ -926,18 +1061,6 @@ msgstr "Текст скопирован"
 #~ msgid "Extract text from anywhere, even QR code"
 #~ msgstr "Извлекайте текст отовсюду, даже из QR-кода"
 
-#~ msgctxt "shortcut window"
-#~ msgid "Shortcuts"
-#~ msgstr "Клавиатурные сочетания"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Get screenshot and extract text"
-#~ msgstr "Извлечь текст"
-
-#~ msgctxt "shortcut window"
-#~ msgid "Copy extracted text to clipboard"
-#~ msgstr "Извлечь текст в буфер обмена"
-
 #~ msgid "Configure Languages"
 #~ msgstr "Параметры"
 
@@ -975,10 +1098,6 @@ msgstr "Текст скопирован"
 
 #~ msgid "Configure"
 #~ msgstr "Параметры"
-
-#~ msgctxt "shortcut window"
-#~ msgid "General"
-#~ msgstr "Общее"
 
 #~ msgctxt "shortcut window"
 #~ msgid "Display preferences"
