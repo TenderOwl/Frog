@@ -30,6 +30,7 @@
         "tesseract.json",
         "libportal.json",
         "zbar.json",
+        "python3-loguru.json",
         "python3-pytesseract.json",
         "python3-pyzbar.json",
         "python3-gTTS.json",

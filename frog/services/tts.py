@@ -3,6 +3,7 @@ import os
 import gtts
 from gi.repository import GObject
 from gi.repository import Gst
+from loguru import logger
 
 
 class TTSService(GObject.GObject):
@@ -31,14 +32,14 @@ class TTSService(GObject.GObject):
     def generate(self, text: str, lang: str = "eng") -> str | None:
         try:
             tts = gtts.gTTS(text, lang=lang)
-            print("Got speech")
+            logger.debug("Got speech")
             tts.save(self._speech_filepath)
-            print("Saved speech")
+            logger.debug("Saved speech")
 
             self.emit('speak', self._speech_filepath)
             return self._speech_filepath
         except Exception as e:
-            print(f"Speech error: {e}")
+            logger.debug(f"Speech error: {e}")
             return None
 
     def play(self, speech_file: str):
@@ -60,7 +61,7 @@ class TTSService(GObject.GObject):
             self.emit('stop', True)
         elif message.type == Gst.MessageType.ERROR:
             self.player.set_state(Gst.State.NULL)
-            print('Some error occurred while trying to play.')
+            logger.debug('Some error occurred while trying to play.')
             self.emit('stop', False)
 
     def stop_speaking(self):

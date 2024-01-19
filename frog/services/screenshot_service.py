@@ -29,6 +29,7 @@ import os
 from gettext import gettext as _
 
 from gi.repository import GObject, Gio, Xdp
+from loguru import logger
 
 from frog.config import tessdata_config
 
@@ -109,9 +110,9 @@ class ScreenshotService(GObject.GObject):
         # Check if `file` is a filepath and mark it for deletion
         if not isinstance(file, str) or not os.path.exists(file):
             remove_source = False
-            print('Remove source set to False')
+            logger.debug('Remove source set to False')
 
-        print(f"Decoding with {lang} language.")
+        logger.debug(f"Decoding with {lang} language.")
         extracted = None
         try:
             # Try to find a QR code in the image
@@ -134,16 +135,16 @@ class ScreenshotService(GObject.GObject):
                 extracted = text.strip()
 
         except Exception as e:
-            print("ERROR: ", e)
+            logger.debug("ERROR: ", e)
             self.emit("error", "Failed to decode data.")
 
         finally:
             if remove_source:
-                print(f"Removing {file}")
+                logger.debug(f"Removing {file}")
                 os.unlink(file)
 
         if extracted:
-            print("Extracted successfully")
+            logger.debug("Extracted successfully")
             self.emit("decoded", extracted, copy)
 
         else:

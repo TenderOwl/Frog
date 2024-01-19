@@ -31,6 +31,7 @@ import sys
 from gettext import gettext as _
 
 from gi.repository import Gtk, Gio, GLib, Notify, Adw, GdkPixbuf, Gdk, GObject
+from loguru import logger
 
 from frog.config import RESOURCE_PREFIX, APP_ID
 from frog.language_manager import language_manager
@@ -209,7 +210,7 @@ class FrogApplication(Adw.Application):
             notification.show()
 
         else:
-            print(f'{text}\n')
+            logger.debug(f'{text}\n')
 
     def on_listen(self, _sender, _event):
         self.get_active_window().on_listen()

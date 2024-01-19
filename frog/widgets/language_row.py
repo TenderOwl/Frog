@@ -27,6 +27,7 @@
 # authorization.
 
 from gi.repository import Gtk, GLib, GObject
+from loguru import logger
 
 from frog.config import RESOURCE_PREFIX
 from frog.language_manager import language_manager
@@ -93,7 +94,7 @@ class LanguageRow(Gtk.Overlay):
 
             self.progress_bar.set_fraction(progress / 100)
             self.progress_bar.set_pulse_step(0.05)
-            print(f"Downloading {progress / 100}")
+            logger.debug(f"Downloading {progress / 100}")
 
             if progress == 100:
                 self.revealer.set_reveal_child(False)

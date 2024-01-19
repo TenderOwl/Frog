@@ -34,6 +34,7 @@ from typing import List, Dict
 from urllib import request
 
 from gi.repository import GObject
+from loguru import logger
 
 from frog.config import tessdata_dir, tessdata_url, tessdata_best_url
 from frog.gobject_worker import GObjectWorker
@@ -204,7 +205,7 @@ class LanguageManager(GObject.GObject):
 
     @active_language.setter
     def active_language(self, language: LanguageItem):
-        print(f'Active language set to {language}')
+        logger.debug(f'Active language set to {language}')
         self._active_language = language
         self.notify('active_language')
 
@@ -230,7 +231,7 @@ class LanguageManager(GObject.GObject):
             self._downloaded_codes = [os.path.splitext(lang_file)[0]
                                       for lang_file in os.listdir(tessdata_dir)]
             self._need_update_cache = False
-            print(f"Cache downloaded codes: {self._downloaded_codes}")
+            logger.debug(f"Cache downloaded codes: {self._downloaded_codes}")
         return sorted(self._downloaded_codes, key=lambda x: self.get_language(x))
 
     def get_downloaded_languages(self, force: bool = False) -> List[str]:
@@ -254,19 +255,19 @@ class LanguageManager(GObject.GObject):
 
         tessfile = f'{code}.traineddata'
         tessfile_path = os.path.join(tessdata_dir, tessfile)
-        print(f'Data will be extracted to: {tessfile_path}')
+        logger.debug(f'Data will be extracted to: {tessfile_path}')
         try:
             request.urlretrieve(tessdata_best_url + tessfile, tessfile_path, update_progress)
             return code
         except Exception as e:
-            print(e)
+            logger.debug(e)
             try:
-                print(f"{code} not found in tessdata_best, checking tessdata")
+                logger.debug(f"{code} not found in tessdata_best, checking tessdata")
                 request.urlretrieve(tessdata_url + tessfile, tessfile_path)
                 return code
             except Exception as e2:
-                print(e2)
-                print(f"{code} was not found at tessdata")
+                logger.debug(e2)
+                logger.debug(f"{code} was not found at tessdata")
 
     def download_done(self, code):
         self._need_update_cache = True

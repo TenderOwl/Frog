@@ -27,6 +27,7 @@
 # authorization.
 
 from gi.repository import Gtk, GObject, Adw
+from loguru import logger
 
 from frog.config import RESOURCE_PREFIX
 from frog.gobject_worker import GObjectWorker
@@ -51,9 +52,9 @@ class ExtractedPage(Adw.NavigationPage):
 
     # lang_combo: Gtk.MenuButton = Gtk.Template.Child()
     # language_popover: LanguagePopover = Gtk.Template.Child()
-    listen_btn: Gtk.Button = Gtk.Template.Child()
-    listen_cancel_btn: Gtk.Button = Gtk.Template.Child()
-    listen_spinner: Gtk.Spinner = Gtk.Template.Child()
+    # listen_btn: Gtk.Button = Gtk.Template.Child()
+    # listen_cancel_btn: Gtk.Button = Gtk.Template.Child()
+    # listen_spinner: Gtk.Spinner = Gtk.Template.Child()
     share_list_box: Gtk.ListBox = Gtk.Template.Child()
     grab_btn: Gtk.Button = Gtk.Template.Child()
     text_copy_btn: Gtk.Button = Gtk.Template.Child()
@@ -104,8 +105,8 @@ class ExtractedPage(Adw.NavigationPage):
         try:
             self.buffer.set_text(text)
         except Exception as e:
-            print("Got Exception")
-            print(e)
+            logger.debug("Got Exception")
+            logger.debug(e)
 
     def listen(self):
         self.swap_controls(True)
@@ -134,12 +135,13 @@ class ExtractedPage(Adw.NavigationPage):
         self.swap_controls(False)
 
     def swap_controls(self, state: bool = False):
+        pass
         # Stop spinner
-        if state:
-            self.listen_spinner.start()
-        else:
-            self.listen_spinner.stop()
-
-        # Swap buttons
-        self.listen_btn.set_visible(not state)
-        self.listen_cancel_btn.set_visible(state)
+        # if state:
+        #     self.listen_spinner.start()
+        # else:
+        #     self.listen_spinner.stop()
+        #
+        # # Swap buttons
+        # self.listen_btn.set_visible(not state)
+        # self.listen_cancel_btn.set_visible(state)

@@ -26,8 +26,10 @@
 # use or other dealings in this Software without prior written
 # authorization.
 
-from gi.repository import Gdk, GObject, Gio
 from gettext import gettext as _
+
+from gi.repository import Gdk, GObject, Gio
+from loguru import logger
 
 
 class ClipboardService(GObject.GObject):
@@ -50,7 +52,7 @@ class ClipboardService(GObject.GObject):
         try:
             texture = self.clipboard.read_texture_finish(result)
         except Exception as e:
-            print(e)
+            logger.debug(e)
             return self.emit('error', _("No image in clipboard"))
         self.emit('paste_from_clipboard', texture)
 

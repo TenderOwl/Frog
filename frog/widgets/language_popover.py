@@ -27,6 +27,7 @@
 # authorization.
 
 from gi.repository import Gtk, Gio, GObject
+from loguru import logger
 
 from frog.config import RESOURCE_PREFIX
 from frog.language_manager import language_manager
@@ -65,7 +66,7 @@ class LanguagePopover(Gtk.Popover):
         language_manager.connect("removed", self._on_language_removed)
 
         self.active_language = self.settings.get_string('active-language')
-        print("active-language", self.settings.get_string('active-language'))
+        logger.debug("active-language", self.settings.get_string('active-language'))
 
         # self.populate_model()
         self.bind_model()

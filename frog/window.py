@@ -33,6 +33,7 @@ from typing import List
 from urllib.parse import urlparse
 
 from gi.repository import Gtk, Adw, Gio, GLib, Gdk, GObject
+from loguru import logger
 
 from frog.gobject_worker import GObjectWorker
 from frog.language_manager import language_manager
@@ -155,7 +156,7 @@ class FrogWindow(Adw.ApplicationWindow):
             if is_url:
                 if self.settings.get_boolean("autolinks"):
                     launcher = Gtk.UriLauncher.new(text)
-                    print("Launcher initialized")
+                    logger.debug("Launcher initialized")
                     launcher.launch()
                     # Gtk.show_uri(None, text, Gdk.CURRENT_TIME)
                     self.show_toast(
@@ -173,7 +174,7 @@ class FrogWindow(Adw.ApplicationWindow):
             self.split_view.set_show_content(True)
 
         except Exception as e:
-            print(f"ERROR: {e}")
+            logger.debug(f"ERROR: {e}")
 
         finally:
             self.present()
@@ -210,10 +211,10 @@ class FrogWindow(Adw.ApplicationWindow):
             GObjectWorker.call(self.backend.decode_image, (lang, item.get_path()))
         except GLib.Error as e:
             if not e.matches(Gio.io_error_quark(), Gio.IOErrorEnum.CANCELLED):
-                print(e)
+                logger.debug(e)
 
     def _on_paste_from_clipboard(
-        self, _clipboard: ClipboardService, texture: Gdk.Texture
+            self, _clipboard: ClipboardService, texture: Gdk.Texture
     ):
         pngbytes = BytesIO(texture.save_to_png_bytes().get_data())
         try:
@@ -222,7 +223,7 @@ class FrogWindow(Adw.ApplicationWindow):
             GObjectWorker.call(self.backend.decode_image, (lang, pngbytes))
         except GLib.Error as e:
             if not e.matches(Gio.io_error_quark(), Gio.IOErrorEnum.CANCELLED):
-                print(e)
+                logger.debug(e)
 
     def on_paste_from_clipboard(self, sender) -> None:
         clipboard_service.read_texture()
@@ -237,7 +238,7 @@ class FrogWindow(Adw.ApplicationWindow):
         self.extracted_page.listen_cancel()
 
     def display_error(self, sender, error) -> None:
-        print(f"Error happened: {error}")
+        logger.debug(f"Error happened: {error}")
         message = (str(error).split(":")[-1]) if not isinstance(error, str) else error
         self.show_toast(message)
 
@@ -255,7 +256,7 @@ class FrogWindow(Adw.ApplicationWindow):
 
         item = files[0]
         (mimetype, encoding) = guess_type(item.get_path())
-        print(f"Dropped item ({mimetype}): {item.get_path()}")
+        logger.debug(f"Dropped item ({mimetype}): {item.get_path()}")
         if not mimetype or not mimetype.startswith("image"):
             return self.show_toast(_("Only images can be processed that way."))
 
@@ -269,7 +270,7 @@ class FrogWindow(Adw.ApplicationWindow):
             self.delayed_state = True
 
     def on_infobar_response(
-        self, infobar: Gtk.InfoBar, response_type: Gtk.ResponseType
+            self, infobar: Gtk.InfoBar, response_type: Gtk.ResponseType
     ):
         if response_type == Gtk.ResponseType.CLOSE:
             self.infobar.set_revealed(False)
@@ -309,10 +310,10 @@ class FrogWindow(Adw.ApplicationWindow):
             service.share(provider_name, text)
 
     def show_toast(
-        self,
-        title: str,
-        timeout: int = 2,
-        priority: Adw.ToastPriority = Adw.ToastPriority.NORMAL,
+            self,
+            title: str,
+            timeout: int = 2,
+            priority: Adw.ToastPriority = Adw.ToastPriority.NORMAL,
     ):
         self.toast_overlay.add_toast(
             Adw.Toast(title=title, timeout=timeout, priority=priority)
@@ -323,5 +324,5 @@ class FrogWindow(Adw.ApplicationWindow):
             result = urlparse(link)
             return all([result.scheme, result.netloc])
         except Exception as e:
-            print(e)
+            logger.debug(e)
             return False

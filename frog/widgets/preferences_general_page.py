@@ -27,6 +27,7 @@
 # authorization.
 
 from gi.repository import Gtk, Adw, Gio
+from loguru import logger
 
 from frog.config import RESOURCE_PREFIX
 from frog.language_manager import language_manager
@@ -60,5 +61,5 @@ class PreferencesGeneralPage(Adw.PreferencesPage):
     def _on_extra_language_changed(self, combo_row: Adw.ComboRow, _param):
         lang_name = combo_row.get_selected_item().get_string()
         lang_code = language_manager.get_language_code(lang_name)
-        print(f'Extra language: {lang_name}:{lang_code}')
+        logger.debug(f'Extra language: {lang_name}:{lang_code}')
         self.settings.set_string('extra-language', lang_code)

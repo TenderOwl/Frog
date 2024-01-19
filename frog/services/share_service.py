@@ -29,6 +29,7 @@ from typing import List
 from urllib.parse import quote
 
 from gi.repository import GObject, Gtk
+from loguru import logger
 
 
 class ShareService(GObject.GObject):
@@ -64,7 +65,7 @@ class ShareService(GObject.GObject):
                 self.launcher.set_uri(share_link)
                 self.launcher.launch(callback=self._on_share)
             except Exception as e:
-                print(f"ERROR: failed to share, error: {e}")
+                logger.debug(f"ERROR: failed to share, error: {e}")
 
     def _on_share(self, _, result):
         self.emit("share", self.launcher.launch_finish(result))
