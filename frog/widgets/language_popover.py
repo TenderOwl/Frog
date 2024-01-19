@@ -31,7 +31,7 @@ from loguru import logger
 
 from frog.config import RESOURCE_PREFIX
 from frog.language_manager import language_manager
-from frog.services.posthog import posthog
+from frog.services.telemetry import telemetry
 from frog.settings import Settings
 from frog.types.language_item import LanguageItem
 from frog.widgets.language_popover_row import LanguagePopoverRow
@@ -96,6 +96,7 @@ class LanguagePopover(Gtk.Popover):
 
     @Gtk.Template.Callback()
     def _on_search_activate(self, entry: Gtk.SearchEntry):
+        telemetry.capture('language_search activated')
         self._on_language_activate(self.list_view, 0)
 
     @Gtk.Template.Callback()
@@ -104,7 +105,7 @@ class LanguagePopover(Gtk.Popover):
         self.emit('language-changed', item)
         self.active_language = item.code
         language_manager.active_language = item
-        posthog.capture(item.code, 'language-activated')
+        telemetry.capture('language-activated', {'language': self.active_language})
         self.popdown()
 
     @Gtk.Template.Callback()

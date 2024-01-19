@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="frog">
   <schema id="com.github.tenderowl.frog" path="/com/github/tenderowl/frog/">
+    <key name="installation-id" type="s">
+      <default>""</default>
+      <summary>App Installation ID</summary>
+      <description>Unique installation identifier.</description>
+    </key>
+    <key name="telemetry" type="b">
+      <default>true</default>
+      <summary>Telemetry activation</summary>
+      <description>Telemetry activate status.</description>
+    </key>
     <!-- Window params -->
     <key name="window-width" type="i">
       <default>-1</default>

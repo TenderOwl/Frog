@@ -30,14 +30,15 @@ import datetime
 import sys
 from gettext import gettext as _
 
+import nanoid
 from gi.repository import Gtk, Gio, GLib, Notify, Adw, GdkPixbuf, Gdk, GObject
 from loguru import logger
 
 from frog.config import RESOURCE_PREFIX, APP_ID
 from frog.language_manager import language_manager
 from frog.services.clipboard_service import clipboard_service
-from frog.services.posthog import posthog
 from frog.services.screenshot_service import ScreenshotService
+from frog.services.telemetry import telemetry
 from frog.settings import Settings
 from frog.window import FrogWindow
 
@@ -47,6 +48,7 @@ class FrogApplication(Adw.Application):
     gtk_settings: Gtk.Settings
 
     settings: Settings = GObject.Property(type=GObject.TYPE_PYOBJECT)
+    installation_id: str = GObject.Property(type=str)
 
     def __init__(self, version=None):
         super().__init__(application_id=APP_ID,
@@ -56,6 +58,9 @@ class FrogApplication(Adw.Application):
 
         # Init GSettings
         self.settings = Settings.new()
+
+        telemetry.set_is_active(self.settings.get_boolean('telemetry'))
+        self.ensure_installation_id()
 
         self.add_main_option(
             'extract_to_clipboard',
@@ -123,16 +128,29 @@ class FrogApplication(Adw.Application):
         self.activate()
         return 0
 
+    def ensure_installation_id(self):
+        self.installation_id = self.settings.get_string("installation-id")
+        if not self.installation_id:
+            logger.info("No installation id was found. Generating a new one.")
+            self.installation_id = nanoid.generate()
+            self.settings.set_string("installation-id", self.installation_id)
+            telemetry.set_installation_id(self.installation_id)
+            telemetry.capture('new Installation ID generated')
+
+        telemetry.set_installation_id(self.installation_id)
+
     def on_preferences(self, _action, _param) -> None:
+        telemetry.capture('preferences activated')
         self.get_active_window().show_preferences()
 
     def on_github_star(self, _action, _param) -> None:
-        posthog.capture('github_star', 'github_star_activated')
+        telemetry.capture('star github activated')
         launcher: Gtk.UriLauncher = Gtk.UriLauncher()
         launcher.set_uri('https://github.com/TenderOwl/Frog')
         launcher.launch(callback=self._on_github_star)
 
     def on_about(self, _action, _param):
+        telemetry.capture('about activated')
         about_window = Adw.AboutWindow(
             application_name="Frog",
             application_icon=APP_ID,
@@ -158,27 +176,34 @@ class FrogApplication(Adw.Application):
         about_window.present()
 
     def on_shortcuts(self, _action, _param):
+        telemetry.capture('shortcuts activated')
         builder = Gtk.Builder()
         builder.add_from_resource(f"{RESOURCE_PREFIX}/ui/shortcuts.ui")
         builder.get_object("shortcuts").set_transient_for(self.get_active_window())
         builder.get_object("shortcuts").present()
 
     def on_copy_to_clipboard(self, _action, _param) -> None:
+        telemetry.capture('copy_to_clipboard activated')
         self.get_active_window().on_copy_to_clipboard(self)
 
     def on_show_uri(self, _action, param) -> None:
+        telemetry.capture('show_uri activated')
         Gtk.show_uri(None, param.get_string(), Gdk.CURRENT_TIME)
 
     def get_screenshot(self, _action, _param) -> None:
+        telemetry.capture('screenshot activated')
         self.get_active_window().get_screenshot()
 
     def get_screenshot_and_copy(self, _action, _param) -> None:
+        telemetry.capture('screenshot_and_copy activated')
         self.get_active_window().get_screenshot(copy=True)
 
     def open_image(self, _action, _param) -> None:
+        telemetry.capture('open_image activated')
         self.get_active_window().open_image()
 
     def on_paste_from_clipboard(self, _action, _param) -> None:
+        telemetry.capture('paste_from_clipboard activated')
         self.get_active_window().on_paste_from_clipboard(self)
 
     @staticmethod

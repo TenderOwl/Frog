@@ -31,6 +31,8 @@ from gettext import gettext as _
 from gi.repository import Gdk, GObject, Gio
 from loguru import logger
 
+from frog.services.telemetry import telemetry
+
 
 class ClipboardService(GObject.GObject):
     __gtype_name__ = 'ClipboardService'
@@ -47,6 +49,7 @@ class ClipboardService(GObject.GObject):
 
     def set(self, value: str) -> None:
         self.clipboard.set(value)
+        telemetry.capture('clipboard set')
 
     def _on_read_texture(self, _sender: GObject.GObject, result: Gio.AsyncResult) -> None:
         try:
@@ -57,6 +60,7 @@ class ClipboardService(GObject.GObject):
         self.emit('paste_from_clipboard', texture)
 
     def read_texture(self) -> None:
+        telemetry.capture('clipboard read texture')
         self.clipboard.read_texture_async(cancellable=None,
                                           callback=self._on_read_texture)
 
