@@ -1,21 +1,21 @@
 # This is a Translation File of Frog.
-# Andrey M <meamka@ya.ru>, 2023.
+# Andrey M <meamka@ya.ru>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-25 11:43+0300\n"
-"PO-Revision-Date: 2023-05-02 10:38+0000\n"
+"PO-Revision-Date: 2024-01-19 13:08+0000\n"
 "Last-Translator: Andrey M <meamka@ya.ru>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/frog/default/ru/"
-">\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/frog/default/ru/>"
+"\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.4-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -89,7 +89,7 @@ msgstr "Открыть меню"
 #: ../data/ui/extracted_page.blp:67
 msgctxt "Extracted screen"
 msgid "Share To"
-msgstr ""
+msgstr "Поделиться"
 
 #: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:127
 msgid "Preferences"
@@ -123,7 +123,7 @@ msgstr "Найти язык"
 
 #: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
 msgid "No Results Found"
-msgstr ""
+msgstr "Ничего не найдено"
 
 #: ../data/ui/language_popover.blp:77
 #, fuzzy
@@ -187,11 +187,11 @@ msgstr "_Языки"
 
 #: ../data/ui/preferences_languages.blp:24
 msgid "Models location unreachable. Check your internet connection"
-msgstr ""
+msgstr "Местоположение моделей недоступно. Проверьте подключение к Интернету"
 
 #: ../data/ui/preferences_languages.blp:26
 msgid "Retry"
-msgstr ""
+msgstr "Повторить"
 
 #: ../data/ui/preferences_languages.blp:42
 msgid "Installed languages"
@@ -240,7 +240,7 @@ msgstr "Извлечь и скопировать в буфер обмена"
 #: ../data/ui/shortcuts.blp:27
 msgctxt "shortcut window"
 msgid "May not work properly on wayland"
-msgstr ""
+msgstr "Может не работать корректно на Wayland"
 
 #: ../data/ui/shortcuts.blp:32
 msgctxt "shortcut window"
@@ -250,7 +250,7 @@ msgstr "Извлечь текст в буфер обмена"
 #: ../data/ui/shortcuts.blp:37
 msgctxt "shortcut window"
 msgid "Application"
-msgstr ""
+msgstr "Приложение"
 
 #: ../data/ui/shortcuts.blp:41
 #, fuzzy
@@ -262,12 +262,12 @@ msgstr "Параметры"
 #: ../data/ui/shortcuts.blp:46
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Выйти"
 
 #: ../data/ui/shortcuts.blp:51
 msgctxt "shortcut window"
 msgid "Help"
-msgstr ""
+msgstr "Помощь"
 
 #: ../data/ui/shortcuts.blp:55
 #, fuzzy
@@ -330,7 +330,7 @@ msgstr "_Открыть Изображение"
 
 #: ../data/ui/welcome_page.blp:146
 msgid "⭐ Star on GitHub"
-msgstr ""
+msgstr "⭐ Отметить на GitHub"
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -874,11 +874,11 @@ msgstr "Не могу сделать скриншот."
 
 #: ../frog/widgets/preferences_languages_page.py:80
 msgid "Models location unreachable. Check your internet connection."
-msgstr ""
+msgstr "Местоположение моделей недоступно. Проверьте подключение к Интернету."
 
 #: ../frog/widgets/preferences_languages_page.py:86
 msgid "You are on a metered connection. Be careful to download languages."
-msgstr ""
+msgstr "У вас лимитное соединение. Будьте осторожны при загрузке языков."
 
 #: ../frog/widgets/preferences_languages_page.py:123
 msgid "View all available languages"
