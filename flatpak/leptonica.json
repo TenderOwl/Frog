@@ -1,6 +1,5 @@
 {
   "name": "leptonica",
-  "rm-configure": true,
   "config-opts": [
     "--disable-static"
   ],
