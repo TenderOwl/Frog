@@ -32,8 +32,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/3b/82/441cb77a43499661228048dcd0d21e0ae3235b442d0f1b9b606e29c2a5ed/posthog-3.1.0-py2.py3-none-any.whl",
-            "sha256": "acd033530bdfc275dce5587f205f62378991ecb9b7cd5479e79c7f4ac575d319"
+            "url": "https://files.pythonhosted.org/packages/e3/7a/5fd882a002c0b178d9007a79cf65cd939963567dc084877de4bd2794d766/posthog-3.3.2-py2.py3-none-any.whl",
+            "sha256": "14fb43ea95c40b353db59c49af2c09ff15188aa2963f48091fc7912fa9375263"
         },
         {
             "type": "file",
