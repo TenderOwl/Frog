@@ -25,12 +25,12 @@
 # holders shall not be used in advertising or otherwise to promote the sale,
 # use or other dealings in this Software without prior written
 # authorization.
-import posthog
 from gi.repository import Gtk, Adw, Gio
 from loguru import logger
 
 from frog.config import RESOURCE_PREFIX
 from frog.language_manager import language_manager
+from frog.services.telemetry import telemetry
 from frog.settings import Settings
 
 
@@ -61,7 +61,7 @@ class PreferencesGeneralPage(Adw.PreferencesPage):
         self.extra_language_combo.connect('notify::selected-item', self._on_extra_language_changed)
 
     def do_show(self, *args, **kwargs):
-        posthog.capture('', 'preferences general page opened')
+        telemetry.capture_page_view('preferences_general')
 
     def _on_extra_language_changed(self, combo_row: Adw.ComboRow, _param):
         lang_name = combo_row.get_selected_item().get_string()

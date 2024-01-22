@@ -71,6 +71,8 @@ class LanguagePopover(Gtk.Popover):
         # self.populate_model()
         self.bind_model()
 
+        self.connect('show', lambda x: telemetry.capture_page_view('language_popover'))
+
     def bind_model(self):
         self.filter = Gtk.CustomFilter()
         self.filter.set_filter_func(self._on_language_filter)

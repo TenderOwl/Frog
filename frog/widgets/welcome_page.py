@@ -31,6 +31,7 @@ from gi.repository import Gtk, Gdk
 
 from frog.config import RESOURCE_PREFIX, APP_ID
 from frog.language_manager import language_manager
+from frog.services.telemetry import telemetry
 from frog.types.language_item import LanguageItem
 from frog.widgets.language_popover import LanguagePopover
 
@@ -57,6 +58,9 @@ class WelcomePage(Adw.NavigationPage):
         self.lang_combo.set_label(
             language_manager.get_language(self.settings.get_string("active-language"))
         )
+
+    def do_showing(self):
+        telemetry.capture_page_view('welcome')
 
     def _on_language_changed(self, _: LanguagePopover, language: LanguageItem):
         self.lang_combo.set_label(language.title)

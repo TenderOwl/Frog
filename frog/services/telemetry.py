@@ -26,5 +26,8 @@ class TelemetryService(GObject.GObject):
         if self.posthog and self.is_active:
             self.posthog.capture(self.installation_id, event, props)
 
+    def capture_page_view(self, page_name: str):
+        self.posthog.capture(self.installation_id, '$pageview', {'$current_url': page_name})
+
 
 telemetry = TelemetryService()

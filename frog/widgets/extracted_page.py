@@ -31,12 +31,10 @@ from loguru import logger
 
 from frog.config import RESOURCE_PREFIX
 from frog.gobject_worker import GObjectWorker
-# from frog.language_manager import language_manager
 from frog.services.share_service import ShareService
+from frog.services.telemetry import telemetry
 from frog.services.tts import ttsservice, TTSService
 from frog.settings import Settings
-# from frog.types.language_item import LanguageItem
-# from frog.widgets.language_popover import LanguagePopover
 from frog.widgets.share_row import ShareRow
 
 
@@ -87,10 +85,8 @@ class ExtractedPage(Adw.NavigationPage):
         self.buffer.set_text("")
         self.emit("go-back", 1)
 
-    # def do_showing(self) -> None:
-    #     self.lang_combo.set_label(
-    #         language_manager.get_language(self.settings.get_string("active-language"))
-    #     )
+    def do_showing(self) -> None:
+        telemetry.capture_page_view('extracted')
 
     @GObject.Property(type=str)
     def extracted_text(self) -> str:

@@ -29,6 +29,7 @@
 from gi.repository import Gtk, Adw, GObject
 
 from frog.config import RESOURCE_PREFIX
+from frog.services.telemetry import telemetry
 from frog.settings import Settings
 from frog.widgets.preferences_general_page import PreferencesGeneralPage
 from frog.widgets.preferences_languages_page import PreferencesLanguagesPage
@@ -44,6 +45,8 @@ class PreferencesWindow(Adw.PreferencesWindow):
     def __init__(self, settings: Settings, parent: Adw.Window = None):
         super().__init__()
         self.set_transient_for(parent)
+
+        self.connect('show', lambda x: telemetry.capture_page_view('preferences'))
 
 
 class LanguageItem(GObject.GObject):

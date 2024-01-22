@@ -32,6 +32,7 @@ from gi.repository import Gtk, Adw, Gio
 
 from frog.config import RESOURCE_PREFIX
 from frog.language_manager import language_manager
+from frog.services.telemetry import telemetry
 from frog.settings import Settings
 from frog.types.language_item import LanguageItem
 from frog.widgets.language_row import LanguageRow
@@ -73,6 +74,9 @@ class PreferencesLanguagesPage(Adw.PreferencesPage):
         self.activate_filter()
 
         self.check_connection()
+
+    def do_show(self):
+        telemetry.capture_page_view('preferences_languages')
 
     def check_connection(self):
         # Check for access to GitHub
