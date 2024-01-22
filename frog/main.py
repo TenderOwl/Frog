@@ -111,6 +111,8 @@ class FrogApplication(Adw.Application):
         self.create_action('preferences', self.on_preferences, ['<primary>comma'])
         self.create_action('github_star', self.on_github_star)
 
+        self.settings.connect("changed", self.on_settings_changed)
+
     def do_activate(self):
         win = self.props.active_window
         if not win:
@@ -138,6 +140,16 @@ class FrogApplication(Adw.Application):
             telemetry.capture('new Installation ID generated')
 
         telemetry.set_installation_id(self.installation_id)
+
+    def on_settings_changed(self, settings, key):
+        logger.debug('SETTINGS: %s changed', key)
+        if key == "telemetry":
+            value = settings.get_boolean(key)
+            if value:
+                telemetry.capture('telemetry activated')
+            else:
+                telemetry.capture('telemetry deactivated')
+            telemetry.set_is_active(value)
 
     def on_preferences(self, _action, _param) -> None:
         telemetry.capture('preferences activated')

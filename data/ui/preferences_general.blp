@@ -41,4 +41,19 @@ template $PreferencesGeneralPage : Adw.PreferencesPage {
       }
     }
   }
+
+  Adw.PreferencesGroup {
+    title: _("Telemetry");
+
+    Adw.ActionRow {
+      title: _("Collect analytics");
+      use-underline: true;
+      subtitle: _("Allow anonymous analytics.");
+      activatable-widget: telemetry_switch;
+
+      Switch telemetry_switch {
+        valign: center;
+      }
+    }
+  }
 }
