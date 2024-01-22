@@ -178,6 +178,7 @@ class FrogApplication(Adw.Application):
                     <li>New look and feel for language selection popover.</li>
                     <li>Now Frog deletes only its temporary files.</li>
                     <li>Temporarily disabled Text-to-Speech until we find a better "offline" solution.</li>
+                    <li>We decided to collect anonymous usage data. You can disable it in the preferences.</li>
                     <li>Updated translations.</li>
                 </ul>
                 <p>Full list of changes you may find in the repository.</p>
