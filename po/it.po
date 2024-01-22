@@ -1,19 +1,19 @@
-# albanobattistella <albano_battistella@hotmail.com>, 2023.
+# albanobattistella <albano_battistella@hotmail.com>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-25 11:43+0300\n"
-"PO-Revision-Date: 2023-09-02 04:56+0000\n"
+"PO-Revision-Date: 2024-01-22 13:01+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/frog/default/it/"
-">\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/frog/default/it/>"
+"\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0.1-dev\n"
+"X-Generator: Weblate 5.4-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: data/ui\n"
@@ -108,34 +108,26 @@ msgid "Available Languages"
 msgstr "Lingue disponibili"
 
 #: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
-#, fuzzy
-#| msgid "Search language"
 msgid "Search Languages…"
-msgstr "Cerca lingua"
+msgstr "Cerca lingue…"
 
 #: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
 msgid "No Results Found"
-msgstr ""
+msgstr "Nessun risultato trovato"
 
 #: ../data/ui/language_popover.blp:77
-#, fuzzy
-#| msgid "Language"
 msgid "Add Language"
-msgstr "Lingua"
+msgstr "Aggiungi lingua"
 
 #: ../data/ui/language_row.blp:21
-#, fuzzy
-#| msgid "Installed languages"
 msgctxt "Preferences Language Row"
 msgid "Install language"
-msgstr "Lingue installate"
+msgstr "Installa lingua"
 
 #: ../data/ui/language_row.blp:30
-#, fuzzy
-#| msgid "_Second language"
 msgctxt "Preferences Language Row"
 msgid "Remove language"
-msgstr "_Seconda lingua"
+msgstr "Rimuovi lingua"
 
 #: ../data/ui/preferences_general.blp:5
 msgid "_General"
@@ -180,10 +172,11 @@ msgstr "_Lingue"
 #: ../data/ui/preferences_languages.blp:24
 msgid "Models location unreachable. Check your internet connection"
 msgstr ""
+"Posizione dei modelli irraggiungibile. Controlla la tua connessione Internet"
 
 #: ../data/ui/preferences_languages.blp:26
 msgid "Retry"
-msgstr ""
+msgstr "Riprova"
 
 #: ../data/ui/preferences_languages.blp:42
 msgid "Installed languages"
@@ -203,43 +196,31 @@ msgid "Shortcuts"
 msgstr "Scorciatoie da tastiera"
 
 #: ../data/ui/shortcuts.blp:12
-#, fuzzy
-#| msgid "_General"
 msgctxt "shortcut window"
 msgid "General"
-msgstr "_Generale"
+msgstr "Generale"
 
 #: ../data/ui/shortcuts.blp:16
-#, fuzzy
-#| msgid "Open image"
 msgctxt "shortcut window"
 msgid "Open image"
 msgstr "Apri immagine"
 
 #: ../data/ui/shortcuts.blp:21
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Get screenshot and extract text"
 msgctxt "shortcut window"
 msgid "Take screenshot and extract text"
 msgstr "Fai uno screenshot ed estrai il testo"
 
 #: ../data/ui/shortcuts.blp:26
-#, fuzzy
-#| msgid "Extract Text to the Clipboard"
 msgctxt "shortcut window"
 msgid "Extract text and copy it to clipboard"
-msgstr "Estrai il testo negli Appunti"
+msgstr "Estrai il testo negli appunti"
 
 #: ../data/ui/shortcuts.blp:27
 msgctxt "shortcut window"
 msgid "May not work properly on wayland"
-msgstr ""
+msgstr "Potrebbe non funzionare correttamente su Wayland"
 
 #: ../data/ui/shortcuts.blp:32
-#, fuzzy
-#| msgctxt "Extracted screen"
-#| msgid "Copy extracted text to clipboard"
 msgctxt "shortcut window"
 msgid "Copy extracted text to clipboard"
 msgstr "Copia il testo estratto negli appunti"
@@ -247,11 +228,9 @@ msgstr "Copia il testo estratto negli appunti"
 #: ../data/ui/shortcuts.blp:37
 msgctxt "shortcut window"
 msgid "Application"
-msgstr ""
+msgstr "Applicazione"
 
 #: ../data/ui/shortcuts.blp:41
-#, fuzzy
-#| msgid "Preferences"
 msgctxt "shortcut window"
 msgid "Preferences"
 msgstr "Preferenze"
@@ -259,20 +238,17 @@ msgstr "Preferenze"
 #: ../data/ui/shortcuts.blp:46
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Esci"
 
 #: ../data/ui/shortcuts.blp:51
 msgctxt "shortcut window"
 msgid "Help"
-msgstr ""
+msgstr "Aiuto"
 
 #: ../data/ui/shortcuts.blp:55
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Shortcuts"
 msgctxt "shortcut window"
 msgid "Display Shortcuts"
-msgstr "Scorciatoie da tastiera"
+msgstr "Visualizza scorciatoie"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
@@ -309,22 +285,17 @@ msgid "_Open Image"
 msgstr "_Apri immagine"
 
 #: ../data/ui/welcome_page.blp:100
-#, fuzzy
-#| msgid "Paste from clipboard"
 msgctxt "Welcome screen"
 msgid "Paste image from clipboard"
-msgstr "Incolla dagli appunti"
+msgstr "Incolla l'immagine dagli appunti"
 
 #: ../data/ui/welcome_page.blp:113
-#, fuzzy
-#| msgctxt "Welcome screen"
-#| msgid "Open Image"
 msgid "Paste Image"
-msgstr "Apri immagine"
+msgstr "Incolla immagine"
 
 #: ../data/ui/welcome_page.blp:146
 msgid "⭐ Star on GitHub"
-msgstr ""
+msgstr "⭐ Metti una stella su GitHub"
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -869,20 +840,22 @@ msgstr "Impossibile acquisire uno screenshot."
 #: ../frog/widgets/preferences_languages_page.py:80
 msgid "Models location unreachable. Check your internet connection."
 msgstr ""
+"Posizione dei modelli irraggiungibile. Controlla la tua connessione Internet."
 
 #: ../frog/widgets/preferences_languages_page.py:86
 msgid "You are on a metered connection. Be careful to download languages."
 msgstr ""
+"Stai utilizzando una connessione a consumo. Fare attenzione quando si "
+"scaricano le lingue."
 
 #: ../frog/widgets/preferences_languages_page.py:123
 msgid "View all available languages"
 msgstr "Visualizza tutte le lingue disponibili"
 
 #: ../frog/widgets/share_row.py:48
-#, fuzzy, python-brace-format
-#| msgid "Share via Pocket"
+#, python-brace-format
 msgid "Share via {0}"
-msgstr "Condividi tramite Pocket"
+msgstr "Condividi tramite {0}"
 
 #~ msgid "Tender Owl"
 #~ msgstr "Tender Owl"

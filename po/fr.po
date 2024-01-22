@@ -1,13 +1,13 @@
-# rene-coty <irenee.thirion@e.email>, 2023.
+# rene-coty <irenee.thirion@e.email>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-25 11:43+0300\n"
-"PO-Revision-Date: 2023-12-22 12:08+0000\n"
+"PO-Revision-Date: 2024-01-22 13:01+0000\n"
 "Last-Translator: rene-coty <irenee.thirion@e.email>\n"
-"Language-Team: French <https://hosted.weblate.org/projects/frog/default/fr/"
-">\n"
+"Language-Team: French <https://hosted.weblate.org/projects/frog/default/fr/>"
+"\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:6
 #: ../data/com.github.tenderowl.frog.desktop.in:3
 msgid "Frog"
-msgstr "Grenouille"
+msgstr "Frog"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:7
 msgid "Extract text from images"
@@ -93,7 +93,7 @@ msgstr "Raccourcis claviers"
 
 #: ../data/ui/extracted_page.blp:116 ../data/ui/welcome_page.blp:139
 msgid "About Frog"
-msgstr "À propos de Grenouille"
+msgstr "À propos de Frog"
 
 #: ../data/ui/extracted_page.blp:124 ../data/ui/welcome_page.blp:154
 msgid "Open image"
@@ -108,34 +108,26 @@ msgid "Available Languages"
 msgstr "Langues disponibles"
 
 #: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
-#, fuzzy
-#| msgid "Search language"
 msgid "Search Languages…"
-msgstr "Rechercher une langue"
+msgstr "Rechercher des langues…"
 
 #: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
 msgid "No Results Found"
-msgstr ""
+msgstr "Aucun résultat"
 
 #: ../data/ui/language_popover.blp:77
-#, fuzzy
-#| msgid "Language"
 msgid "Add Language"
-msgstr "Langue"
+msgstr "Ajouter une langue"
 
 #: ../data/ui/language_row.blp:21
-#, fuzzy
-#| msgid "Installed languages"
 msgctxt "Preferences Language Row"
 msgid "Install language"
-msgstr "Langues installées"
+msgstr "Installer la langue"
 
 #: ../data/ui/language_row.blp:30
-#, fuzzy
-#| msgid "_Second language"
 msgctxt "Preferences Language Row"
 msgid "Remove language"
-msgstr "_Seconde langue"
+msgstr "_Supprimer la langue"
 
 #: ../data/ui/preferences_general.blp:5
 msgid "_General"
@@ -179,11 +171,11 @@ msgstr "_Langues"
 
 #: ../data/ui/preferences_languages.blp:24
 msgid "Models location unreachable. Check your internet connection"
-msgstr ""
+msgstr "Emplacement des modèles inaccessible. Vérifiez votre connexion internet"
 
 #: ../data/ui/preferences_languages.blp:26
 msgid "Retry"
-msgstr ""
+msgstr "Réessayer"
 
 #: ../data/ui/preferences_languages.blp:42
 msgid "Installed languages"
@@ -203,43 +195,31 @@ msgid "Shortcuts"
 msgstr "Raccourcis"
 
 #: ../data/ui/shortcuts.blp:12
-#, fuzzy
-#| msgid "_General"
 msgctxt "shortcut window"
 msgid "General"
-msgstr "_Général"
+msgstr "Général"
 
 #: ../data/ui/shortcuts.blp:16
-#, fuzzy
-#| msgid "Open image"
 msgctxt "shortcut window"
 msgid "Open image"
 msgstr "Ouvrir une image"
 
 #: ../data/ui/shortcuts.blp:21
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Get screenshot and extract text"
 msgctxt "shortcut window"
 msgid "Take screenshot and extract text"
 msgstr "Prendre une capture d’écran et extraire le texte"
 
 #: ../data/ui/shortcuts.blp:26
-#, fuzzy
-#| msgid "Extract Text to the Clipboard"
 msgctxt "shortcut window"
 msgid "Extract text and copy it to clipboard"
-msgstr "Extraire directement vers le presse-papiers"
+msgstr "Extraire le texte et le copier vers le presse-papiers"
 
 #: ../data/ui/shortcuts.blp:27
 msgctxt "shortcut window"
 msgid "May not work properly on wayland"
-msgstr ""
+msgstr "Peut ne pas fonctionner sous Wayland"
 
 #: ../data/ui/shortcuts.blp:32
-#, fuzzy
-#| msgctxt "Extracted screen"
-#| msgid "Copy extracted text to clipboard"
 msgctxt "shortcut window"
 msgid "Copy extracted text to clipboard"
 msgstr "Copier le texte extrait vers le presse-papiers"
@@ -247,11 +227,9 @@ msgstr "Copier le texte extrait vers le presse-papiers"
 #: ../data/ui/shortcuts.blp:37
 msgctxt "shortcut window"
 msgid "Application"
-msgstr ""
+msgstr "Application"
 
 #: ../data/ui/shortcuts.blp:41
-#, fuzzy
-#| msgid "Preferences"
 msgctxt "shortcut window"
 msgid "Preferences"
 msgstr "Préférences"
@@ -259,24 +237,21 @@ msgstr "Préférences"
 #: ../data/ui/shortcuts.blp:46
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Quitter"
 
 #: ../data/ui/shortcuts.blp:51
 msgctxt "shortcut window"
 msgid "Help"
-msgstr ""
+msgstr "Aide"
 
 #: ../data/ui/shortcuts.blp:55
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Shortcuts"
 msgctxt "shortcut window"
 msgid "Display Shortcuts"
-msgstr "Raccourcis"
+msgstr "Afficher les raccourcis"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
-msgstr "Extrayez du texte de n'importe où"
+msgstr "Extrayez du texte depuis n’importe où"
 
 #: ../data/ui/welcome_page.blp:21
 msgid "Language"
@@ -309,22 +284,17 @@ msgid "_Open Image"
 msgstr "_Ouvrir une image"
 
 #: ../data/ui/welcome_page.blp:100
-#, fuzzy
-#| msgid "Paste from clipboard"
 msgctxt "Welcome screen"
 msgid "Paste image from clipboard"
-msgstr "Coller depuis le presse-papiers"
+msgstr "Coller une image depuis le presse-papiers"
 
 #: ../data/ui/welcome_page.blp:113
-#, fuzzy
-#| msgctxt "Welcome screen"
-#| msgid "Open Image"
 msgid "Paste Image"
-msgstr "Ouvrir une image"
+msgstr "Coller une image"
 
 #: ../data/ui/welcome_page.blp:146
 msgid "⭐ Star on GitHub"
-msgstr ""
+msgstr "⭐ Étoiler sur GitHub"
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -869,20 +839,22 @@ msgstr "Impossible de capturer l’écran."
 #: ../frog/widgets/preferences_languages_page.py:80
 msgid "Models location unreachable. Check your internet connection."
 msgstr ""
+"Emplacement des modèles inaccessible. Vérifiez votre connexion internet."
 
 #: ../frog/widgets/preferences_languages_page.py:86
 msgid "You are on a metered connection. Be careful to download languages."
 msgstr ""
+"Vous utilisez une connexion avec quotas. Soyez attentif au téléchargement "
+"des langues."
 
 #: ../frog/widgets/preferences_languages_page.py:123
 msgid "View all available languages"
 msgstr "Voir tous les langages disponibles"
 
 #: ../frog/widgets/share_row.py:48
-#, fuzzy, python-brace-format
-#| msgid "Share via Pocket"
+#, python-brace-format
 msgid "Share via {0}"
-msgstr "Partager via Pocket"
+msgstr "Partager via {0}"
 
 #~ msgid "Tender Owl"
 #~ msgstr "Tender Owl"
