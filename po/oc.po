@@ -1,19 +1,19 @@
-# Quentin PAGÈS <quentinantonin@free.fr>, 2023.
+# Quentin PAGÈS <quentinantonin@free.fr>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-25 11:43+0300\n"
-"PO-Revision-Date: 2023-10-13 18:01+0000\n"
+"PO-Revision-Date: 2024-02-04 10:01+0000\n"
 "Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
-"Language-Team: Occitan <https://hosted.weblate.org/projects/frog/default/oc/"
-">\n"
+"Language-Team: Occitan <https://hosted.weblate.org/projects/frog/default/oc/>"
+"\n"
 "Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.1-dev\n"
+"X-Generator: Weblate 5.4-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: data/ui\n"
@@ -108,34 +108,26 @@ msgid "Available Languages"
 msgstr "Lengas disponiblas"
 
 #: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
-#, fuzzy
-#| msgid "Search language"
 msgid "Search Languages…"
-msgstr "Cercar una lenga"
+msgstr "Cercar una lenga de lengas…"
 
 #: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
 msgid "No Results Found"
-msgstr ""
+msgstr "Cap de resultat"
 
 #: ../data/ui/language_popover.blp:77
-#, fuzzy
-#| msgid "Language"
 msgid "Add Language"
-msgstr "Lenga"
+msgstr "Apondre una lenga"
 
 #: ../data/ui/language_row.blp:21
-#, fuzzy
-#| msgid "Installed languages"
 msgctxt "Preferences Language Row"
 msgid "Install language"
-msgstr "Lengas installadas"
+msgstr "Installar una lenga"
 
 #: ../data/ui/language_row.blp:30
-#, fuzzy
-#| msgid "_Second language"
 msgctxt "Preferences Language Row"
 msgid "Remove language"
-msgstr "_Segonda lenga"
+msgstr "Suprimir la lenga"
 
 #: ../data/ui/preferences_general.blp:5
 msgid "_General"
@@ -179,11 +171,11 @@ msgstr "_Lengas"
 
 #: ../data/ui/preferences_languages.blp:24
 msgid "Models location unreachable. Check your internet connection"
-msgstr ""
+msgstr "Emplaçament dels modèls inaccessible. Verificatz la connexion internet"
 
 #: ../data/ui/preferences_languages.blp:26
 msgid "Retry"
-msgstr ""
+msgstr "Tornar ensajar"
 
 #: ../data/ui/preferences_languages.blp:42
 msgid "Installed languages"
@@ -203,43 +195,31 @@ msgid "Shortcuts"
 msgstr "Acorchis"
 
 #: ../data/ui/shortcuts.blp:12
-#, fuzzy
-#| msgid "_General"
 msgctxt "shortcut window"
 msgid "General"
-msgstr "_General"
+msgstr "General"
 
 #: ../data/ui/shortcuts.blp:16
-#, fuzzy
-#| msgid "Open image"
 msgctxt "shortcut window"
 msgid "Open image"
-msgstr "Dobrir un imatge"
+msgstr "Dobrir l'imatge"
 
 #: ../data/ui/shortcuts.blp:21
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Get screenshot and extract text"
 msgctxt "shortcut window"
 msgid "Take screenshot and extract text"
 msgstr "Prendre una captura d’ecran e traire lo tèxt"
 
 #: ../data/ui/shortcuts.blp:26
-#, fuzzy
-#| msgid "Extract Text to the Clipboard"
 msgctxt "shortcut window"
 msgid "Extract text and copy it to clipboard"
-msgstr "Extraire lo tèxte del quichapapièrs"
+msgstr "Extraire lo tèxte e lo copiar al quichapapièrs"
 
 #: ../data/ui/shortcuts.blp:27
 msgctxt "shortcut window"
 msgid "May not work properly on wayland"
-msgstr ""
+msgstr "Fonciona pas jos wayland"
 
 #: ../data/ui/shortcuts.blp:32
-#, fuzzy
-#| msgctxt "Extracted screen"
-#| msgid "Copy extracted text to clipboard"
 msgctxt "shortcut window"
 msgid "Copy extracted text to clipboard"
 msgstr "Copiar lo tèxt trach al quichapapièrs"
@@ -247,11 +227,9 @@ msgstr "Copiar lo tèxt trach al quichapapièrs"
 #: ../data/ui/shortcuts.blp:37
 msgctxt "shortcut window"
 msgid "Application"
-msgstr ""
+msgstr "Aplicacion"
 
 #: ../data/ui/shortcuts.blp:41
-#, fuzzy
-#| msgid "Preferences"
 msgctxt "shortcut window"
 msgid "Preferences"
 msgstr "Preferéncias"
@@ -259,20 +237,17 @@ msgstr "Preferéncias"
 #: ../data/ui/shortcuts.blp:46
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Quitar"
 
 #: ../data/ui/shortcuts.blp:51
 msgctxt "shortcut window"
 msgid "Help"
-msgstr ""
+msgstr "Ajuda"
 
 #: ../data/ui/shortcuts.blp:55
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Shortcuts"
 msgctxt "shortcut window"
 msgid "Display Shortcuts"
-msgstr "Acorchis"
+msgstr "Afichar los acorchis"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
@@ -309,22 +284,17 @@ msgid "_Open Image"
 msgstr "_Dobrir un imatge"
 
 #: ../data/ui/welcome_page.blp:100
-#, fuzzy
-#| msgid "Paste from clipboard"
 msgctxt "Welcome screen"
 msgid "Paste image from clipboard"
-msgstr "Pegar a partir del quichapapièrs"
+msgstr "Pegar un imatge a partir del quichapapièrs"
 
 #: ../data/ui/welcome_page.blp:113
-#, fuzzy
-#| msgctxt "Welcome screen"
-#| msgid "Open Image"
 msgid "Paste Image"
-msgstr "Dobrir un imatge"
+msgstr "Pegar un imatge"
 
 #: ../data/ui/welcome_page.blp:146
 msgid "⭐ Star on GitHub"
-msgstr ""
+msgstr "⭐ Marcar sus GitHub"
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -540,7 +510,7 @@ msgstr "Italian"
 
 #: ../frog/language_manager.py:119
 msgid "Italian - Old"
-msgstr ""
+msgstr "Italian - Ancian"
 
 #: ../frog/language_manager.py:120
 msgid "Javanese"
@@ -588,11 +558,11 @@ msgstr "Corean"
 
 #: ../frog/language_manager.py:131
 msgid "Korean (vertical)"
-msgstr ""
+msgstr "Corean (vertical)"
 
 #: ../frog/language_manager.py:132
 msgid "Lao"
-msgstr ""
+msgstr "Lao"
 
 #: ../frog/language_manager.py:133
 msgid "Latin"
@@ -664,7 +634,7 @@ msgstr ""
 
 #: ../frog/language_manager.py:150
 msgid "Orientation and script detection module"
-msgstr ""
+msgstr "Modul de deteccio' d'orientacion e de script d'escritura"
 
 #: ../frog/language_manager.py:151
 msgid "Panjabi; Punjabi"
@@ -832,11 +802,11 @@ msgstr "Copiats al quichapapièrs"
 
 #: ../frog/window.py:162
 msgid "QR-code URL opened"
-msgstr ""
+msgstr "URL del còdi QR dobèrta"
 
 #: ../frog/window.py:166
 msgid "QR-code contains URL."
-msgstr ""
+msgstr "Lo còdi QR conten una URL"
 
 #: ../frog/window.py:167
 msgid "Open"
@@ -863,27 +833,25 @@ msgid "No image in clipboard"
 msgstr "Cap d’imatge al quichapapièrs"
 
 #: ../frog/services/screenshot_service.py:94
-#, fuzzy
 msgid "Can't take a screenshot."
-msgstr "Prendre una captura"
+msgstr "Captura d'ecran impossible."
 
 #: ../frog/widgets/preferences_languages_page.py:80
 msgid "Models location unreachable. Check your internet connection."
-msgstr ""
+msgstr "Se podiá pas aténher l'emplaçament. Verificatz la connexion internet."
 
 #: ../frog/widgets/preferences_languages_page.py:86
 msgid "You are on a metered connection. Be careful to download languages."
-msgstr ""
+msgstr "Utilizatz una connexion limitada. Agachatz de telecargar de lengas."
 
 #: ../frog/widgets/preferences_languages_page.py:123
 msgid "View all available languages"
 msgstr "Veire totas las lengas disponiblas"
 
 #: ../frog/widgets/share_row.py:48
-#, fuzzy, python-brace-format
-#| msgid "Share via Pocket"
+#, python-brace-format
 msgid "Share via {0}"
-msgstr "Partejar via Pocket"
+msgstr "Partejar via {0}"
 
 #~ msgid "Tender Owl"
 #~ msgstr "Tender Owl"
