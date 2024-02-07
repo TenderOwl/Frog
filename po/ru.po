@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: frog 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-25 11:43+0300\n"
-"PO-Revision-Date: 2024-01-19 13:08+0000\n"
+"PO-Revision-Date: 2024-02-07 14:13+0000\n"
 "Last-Translator: Andrey M <meamka@ya.ru>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/frog/default/ru/>"
 "\n"
@@ -72,12 +72,12 @@ msgstr "Скопировать в буфер обмена"
 #: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
 msgid "Listen to text"
-msgstr ""
+msgstr "Прослушать текст"
 
 #: ../data/ui/extracted_page.blp:47
 msgctxt "Extracted screen"
 msgid "Cancel listening to text"
-msgstr ""
+msgstr "Отменить прослушивание"
 
 #: ../data/ui/extracted_page.blp:60
 #, fuzzy
