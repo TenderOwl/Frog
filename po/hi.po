@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: frog 1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-25 11:43+0300\n"
-"PO-Revision-Date: 2024-02-10 15:02+0000\n"
+"PO-Revision-Date: 2024-02-11 16:01+0000\n"
 "Last-Translator: Nitin Khalia <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/frog/default/hi/>\n"
 "Language: hi\n"
@@ -24,7 +24,7 @@ msgstr "Frog"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:7
 msgid "Extract text from images"
-msgstr "इमेजिस से टेक्स्ट निकालें"
+msgstr "छवियों से टेक्स्ट निकालें"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:9
 msgid ""
@@ -39,7 +39,7 @@ msgstr "टेक्स्ट निष्कर्षण उपकरण"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:5
 msgid "Extract text from any image, video or web page"
-msgstr "किसी भी इमेज, वीडियो या वेब पेज से टेक्स्ट निकालें"
+msgstr "किसी भी छवि, वीडियो या वेब पेज से टेक्स्ट निकालें"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:12
 msgid "OCR;Text;Extraction;"
@@ -47,7 +47,7 @@ msgstr "OCR;टेक्स्ट;निष्कर्षण;"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:18
 msgid "Extract Text to the Clipboard"
-msgstr "क्लिपबोर्ड पर टेक्स्ट निकालें"
+msgstr "टेक्स्ट को क्लिपबोर्ड पर निकालें"
 
 #: ../data/ui/extracted_page.blp:25
 msgid "Take a screenshot"
@@ -92,7 +92,7 @@ msgstr "Frog के बारे में"
 
 #: ../data/ui/extracted_page.blp:124 ../data/ui/welcome_page.blp:154
 msgid "Open image"
-msgstr "इमेज खोलें"
+msgstr "छवि खोलें"
 
 #: ../data/ui/extracted_page.blp:125 ../data/ui/welcome_page.blp:155
 msgid "Paste from clipboard"
@@ -162,7 +162,7 @@ msgstr "QR-कोड से स्वचालित रूप से लिं�
 
 #: ../data/ui/preferences_languages.blp:6
 msgid "_Languages"
-msgstr "_भाषा"
+msgstr "_भाषाएँ"
 
 #: ../data/ui/preferences_languages.blp:24
 msgid "Models location unreachable. Check your internet connection"
@@ -182,7 +182,7 @@ msgstr "Pocket के माध्यम से शेयर करें"
 
 #: ../data/ui/share_row.blp:22
 msgid "Pocket"
-msgstr "पॉकेट"
+msgstr "Pocket"
 
 #: ../data/ui/shortcuts.blp:5
 msgctxt "shortcut window"
@@ -197,7 +197,7 @@ msgstr "जनरल"
 #: ../data/ui/shortcuts.blp:16
 msgctxt "shortcut window"
 msgid "Open image"
-msgstr "इमेज खोलें"
+msgstr "छवि खोलें"
 
 #: ../data/ui/shortcuts.blp:21
 msgctxt "shortcut window"
@@ -212,7 +212,7 @@ msgstr "टेक्स्ट निकालें और उसे क्ल�
 #: ../data/ui/shortcuts.blp:27
 msgctxt "shortcut window"
 msgid "May not work properly on wayland"
-msgstr "Wayland पर ठीक से काम नहीं कर सकता"
+msgstr "शायद Wayland पर ठीक से काम न करे"
 
 #: ../data/ui/shortcuts.blp:32
 msgctxt "shortcut window"
@@ -272,20 +272,20 @@ msgstr "_एक स्क्रीनशॉट लें"
 #: ../data/ui/welcome_page.blp:79
 msgctxt "Welcome screen"
 msgid "Open Image"
-msgstr "इमेज खोलें"
+msgstr "छवि खोलें"
 
 #: ../data/ui/welcome_page.blp:92
 msgid "_Open Image"
-msgstr "_इमेज खोलें"
+msgstr "_छवि खोलें"
 
 #: ../data/ui/welcome_page.blp:100
 msgctxt "Welcome screen"
 msgid "Paste image from clipboard"
-msgstr "क्लिपबोर्ड से इमेज चिपकाएँ"
+msgstr "क्लिपबोर्ड से छवि चिपकाएँ"
 
 #: ../data/ui/welcome_page.blp:113
 msgid "Paste Image"
-msgstr "इमेज चिपकाएँ"
+msgstr "छवि चिपकाएँ"
 
 #: ../data/ui/welcome_page.blp:146
 msgid "⭐ Star on GitHub"
@@ -553,7 +553,7 @@ msgstr "कोरियाई"
 
 #: ../frog/language_manager.py:131
 msgid "Korean (vertical)"
-msgstr "कोरियाई (ऊर्ध्वाधर)"
+msgstr "कोरियाई (लंबवत)"
 
 #: ../frog/language_manager.py:132
 msgid "Lao"
@@ -785,7 +785,7 @@ msgstr "सीधे क्लिपबोर्ड में निकाले
 
 #: ../frog/main.py:194
 msgid "No text found. Try to grab another region."
-msgstr "कोई टेक्स्ट नहीं मिला. दूसरे क्षेत्र को हथियाने का प्रयास करें।"
+msgstr "कोई टेक्स्ट नहीं मिला. दूसरे क्षेत्र से खिचने का प्रयास करें।"
 
 #: ../frog/main.py:204
 msgid "Text extracted. You can paste it with Ctrl+V"
@@ -809,15 +809,15 @@ msgstr "खोले"
 
 #: ../frog/window.py:194
 msgid "Supported image files"
-msgstr "समर्थित इमेज फ़ाइलें"
+msgstr "समर्थित छवि फाइलें"
 
 #: ../frog/window.py:200
 msgid "Open image to extract text"
-msgstr "टेक्स्ट निकालने के लिए इमेज खोलें"
+msgstr "टेक्स्ट निकालने के लिए छवि खोलें"
 
 #: ../frog/window.py:260
 msgid "Only images can be processed that way."
-msgstr "केवल इमेजिस को इस तरह से संसाधित किया जा सकता है।"
+msgstr "केवल छवियों को इस तरह से संसाधित किया जा सकता है।"
 
 #: ../frog/window.py:293
 msgid "Text copied"
@@ -825,7 +825,7 @@ msgstr "टेक्स्ट कॉपी किया गया"
 
 #: ../frog/services/clipboard_service.py:54
 msgid "No image in clipboard"
-msgstr "क्लिपबोर्ड में कोई इमेज नहीं"
+msgstr "क्लिपबोर्ड में कोई छवि नहीं"
 
 #: ../frog/services/screenshot_service.py:94
 msgid "Can't take a screenshot."
