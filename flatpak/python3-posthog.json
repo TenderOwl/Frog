@@ -12,8 +12,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/64/62/428ef076be88fa93716b576e4a01f919d25968913e817077a386fcbe4f42/certifi-2023.11.17-py3-none-any.whl",
-            "sha256": "e036ab49d5b79556f99cfc2d9320b34cfbe5be05c5871b51de9329f0603b0474"
+            "url": "https://files.pythonhosted.org/packages/ba/06/a07f096c664aeb9f01624f858c3add0a4e913d6c96257acb4fce61e7de14/certifi-2024.2.2-py3-none-any.whl",
+            "sha256": "dc383c07b76109f368f6106eee2b593b04a011ea4d55f652c6ca24a754d1cdd1"
         },
         {
             "type": "file",
@@ -32,8 +32,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/e3/7a/5fd882a002c0b178d9007a79cf65cd939963567dc084877de4bd2794d766/posthog-3.3.2-py2.py3-none-any.whl",
-            "sha256": "14fb43ea95c40b353db59c49af2c09ff15188aa2963f48091fc7912fa9375263"
+            "url": "https://files.pythonhosted.org/packages/3b/90/86b624c98251a905a1b0cef7cf5f2e88ff13826a56be799d7d5efcc81b2d/posthog-3.4.0-py2.py3-none-any.whl",
+            "sha256": "922bdc1721a18f7275363130042b4be9bb49c88b3e9d1b30b0b3d33a664b3f10"
         },
         {
             "type": "file",
@@ -47,8 +47,8 @@
         },
         {
             "type": "file",
-            "url": "https://files.pythonhosted.org/packages/96/94/c31f58c7a7f470d5665935262ebd7455c7e4c7782eb525658d3dbf4b9403/urllib3-2.1.0-py3-none-any.whl",
-            "sha256": "55901e917a5896a349ff771be919f8bd99aff50b79fe58fec595eb37bbc56bb3"
+            "url": "https://files.pythonhosted.org/packages/88/75/311454fd3317aefe18415f04568edc20218453b709c63c58b9292c71be17/urllib3-2.2.0-py3-none-any.whl",
+            "sha256": "ce3711610ddce217e6d113a2732fafad960a03fd0318c91faa79481e35c11224"
         }
     ]
 }
