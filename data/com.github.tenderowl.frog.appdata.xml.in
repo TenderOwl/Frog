@@ -19,6 +19,11 @@
     </screenshots>
 
     <releases>
+        <release version="1.5.1" type="stable" date="2024-02-12">
+            <description translatable="no">
+            	<p>Updated translations.</p>
+            </description>
+        </release>
         <release version="1.5.0" type="stable" date="2024-01-22">
             <description translatable="no">
                 <p>What's new:</p>
