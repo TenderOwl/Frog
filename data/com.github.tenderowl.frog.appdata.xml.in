@@ -166,6 +166,9 @@
     </releases>
 
     <developer_name translate="no">Tender Owl</developer_name>
+    <developer id="io.github.tenderowl">
+        <name translate="no">Tender Owl</name>
+    </developer>
     <launchable type="desktop-id">com.github.tenderowl.frog.desktop</launchable>
     <translation type="gettext">frog</translation>
     <url type="homepage">https://getfrog.app</url>
