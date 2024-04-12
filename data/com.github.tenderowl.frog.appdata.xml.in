@@ -20,12 +20,12 @@
 
     <releases>
         <release version="1.5.1" type="stable" date="2024-02-12">
-            <description translatable="no">
+            <description translate="no">
             	<p>Updated translations.</p>
             </description>
         </release>
         <release version="1.5.0" type="stable" date="2024-01-22">
-            <description translatable="no">
+            <description translate="no">
                 <p>What's new:</p>
                 <ul>
                     <li>New look and feel for language selection popover.</li>
@@ -37,7 +37,7 @@
             </description>
         </release>
         <release version="1.4.2" type="stable" date="2023-08-31">
-            <description translatable="no">
+            <description translate="no">
                 <p>What's new:</p>
                 <ul>
                     <li>Translations updated.</li>
@@ -45,7 +45,7 @@
             </description>
         </release>
         <release version="1.4.0" type="stable" date="2023-08-22">
-            <description translatable="no">
+            <description translate="no">
                 <p>In this update, we've made a number of improvements to our app.</p>
                 <ul>
 		    <li>Share extracted text: This means you can now share your findings with the wider community.</li>
@@ -63,7 +63,7 @@
             </description>
         </release>
         <release version="1.3.0" type="stable" date="2023-03-21">
-            <description translatable="no">
+            <description translate="no">
                 <p>In this update, we've made a number of improvements to our app.</p>
                 <ul>
                     <li>We have redesigned the settings dialog to make it more user-friendly and understandable.</li>
@@ -77,7 +77,7 @@
             </description>
         </release>
         <release version="1.2.0" type="stable" date="2022-08-31">
-            <description translatable="no">
+            <description translate="no">
                 <p>What's new:</p>
                 <ul>
                     <li>Open image button now available.</li>
@@ -86,7 +86,7 @@
             </description>
         </release>
         <release version="1.1.3" type="stable" date="2022-06-15">
-            <description translatable="no">
+            <description translate="no">
                 <p>What's new:</p>
                 <ul>
                     <li>Translations updated.</li>
@@ -94,7 +94,7 @@
             </description>
         </release>
         <release version="1.1.1" type="stable" date="2022-06-07">
-            <description translatable="no">
+            <description translate="no">
                 <p>What's new:</p>
                 <ul>
                     <li>When no text is found, Frog returns to the main window.</li>
@@ -103,7 +103,7 @@
             </description>
         </release>
         <release version="1.1.0" type="stable" date="2022-06-06">
-            <description translatable="no">
+            <description translate="no">
                 <p>What's new:</p>
                 <ul>
                     <li>Updated UI</li>
@@ -112,7 +112,7 @@
             </description>
         </release>
         <release version="1.0.0" type="stable" date="2022-04-18">
-            <description translatable="no">
+            <description translate="no">
                 <p>What's new:</p>
                 <ul>
                     <li>Updated UI</li>
@@ -123,18 +123,18 @@
             </description>
         </release>
         <release version="0.3.0" type="stable" date="2022-03-21">
-            <description translatable="no">
+            <description translate="no">
                 <p>Frog now is available on the Flathub and use modern Portal implementation.
                 We also updated the UI accordingly to the GNOME HIG and fixed some bugs we've found :)</p>
             </description>
         </release>
         <release version="0.2.1" date="2021-12-11">
-            <description translatable="no">
+            <description translate="no">
                 <p>Now you're free to run Frog with `-e` option to extract text and instantly copy it to the clipboard.</p>
             </description>
         </release>
         <release version="0.2.0" timestamp="1639071856">
-            <description translatable="no">
+            <description translate="no">
                 <p>What's new:</p>
                 <ul>
                     <li>English model included with Frog itself</li>
@@ -145,12 +145,12 @@
             </description>
         </release>
         <release version="0.1.7" timestamp="1632324626" date="2021-09-22">
-            <description translatable="no">
+            <description translate="no">
                 <p>Fix language packs download.</p>
             </description>
         </release>
         <release version="0.1.6" timestamp="1631035973" date="2021-09-07">
-            <description translatable="no">
+            <description translate="no">
                 <p>Dark mode+</p>
                 <ul>
                     <li>Dark mode support.</li>
@@ -159,13 +159,16 @@
             </description>
         </release>
         <release version="0.1.5" timestamp="1630132049" date="2021-08-28">
-            <description translatable="no">
+            <description translate="no">
                 <p>Quickly extract any text from anywhere you need it: webpages, videos, photos, etc.</p>
             </description>
         </release>
     </releases>
 
-    <developer_name translatable="no">Tender Owl</developer_name>
+    <developer_name translate="no">Tender Owl</developer_name>
+    <developer id="io.github.tenderowl">
+        <name translate="no">Tender Owl</name>
+    </developer>
     <launchable type="desktop-id">com.github.tenderowl.frog.desktop</launchable>
     <translation type="gettext">frog</translation>
     <url type="homepage">https://getfrog.app</url>
