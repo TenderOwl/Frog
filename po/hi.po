@@ -2,20 +2,21 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the frog package.
 # Nitin Khalia <weblate.scrambled777@simplelogin.com>, 2024.
+# Scrambled777 <weblate.scrambled777@simplelogin.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog 1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-25 11:43+0300\n"
-"PO-Revision-Date: 2024-02-11 16:01+0000\n"
-"Last-Translator: Nitin Khalia <weblate.scrambled777@simplelogin.com>\n"
+"PO-Revision-Date: 2024-03-29 11:01+0000\n"
+"Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/frog/default/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.5-dev\n"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:6
 #: ../data/com.github.tenderowl.frog.desktop.in:3
@@ -43,7 +44,7 @@ msgstr "किसी भी छवि, वीडियो या वेब प�
 
 #: ../data/com.github.tenderowl.frog.desktop.in:12
 msgid "OCR;Text;Extraction;"
-msgstr "OCR;टेक्स्ट;निष्कर्षण;"
+msgstr "OCR;Text;Extraction;टेक्स्ट;निष्कर्षण;"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:18
 msgid "Extract Text to the Clipboard"
@@ -126,15 +127,15 @@ msgstr "भाषा हटाएँ"
 
 #: ../data/ui/preferences_general.blp:5
 msgid "_General"
-msgstr "__जनरल"
+msgstr "_जनरल (_G)"
 
 #: ../data/ui/preferences_general.blp:10
 msgid "Text Extracting"
-msgstr "टेक्स्ट निकालना"
+msgstr "टेक्स्ट निकला जा रहा है"
 
 #: ../data/ui/preferences_general.blp:13
 msgid "_Second language"
-msgstr "_द्वितीय भाषा"
+msgstr "द्वितीय भाषा (_S)"
 
 #: ../data/ui/preferences_general.blp:15
 msgid "Additional language used in text recognition"
@@ -146,7 +147,7 @@ msgstr "व्यवहार"
 
 #: ../data/ui/preferences_general.blp:23
 msgid "_Copy to clipboard"
-msgstr "_क्लिपबोर्ड पर कॉपी करें"
+msgstr "क्लिपबोर्ड पर कॉपी करें (_C)"
 
 #: ../data/ui/preferences_general.blp:25
 msgid "Automatically copy the extracted text to clipboard"
@@ -154,7 +155,7 @@ msgstr "निकाले गए टेक्स्ट को स्वचा�
 
 #: ../data/ui/preferences_general.blp:34
 msgid "_Open QR-code links"
-msgstr "_QR-कोड लिंक खोलें"
+msgstr "QR-कोड लिंक खोलें (_O)"
 
 #: ../data/ui/preferences_general.blp:36
 msgid "Automatically open links from QR-codes"
@@ -162,7 +163,7 @@ msgstr "QR-कोड से स्वचालित रूप से लिं�
 
 #: ../data/ui/preferences_languages.blp:6
 msgid "_Languages"
-msgstr "_भाषाएँ"
+msgstr "भाषाएँ (_L)"
 
 #: ../data/ui/preferences_languages.blp:24
 msgid "Models location unreachable. Check your internet connection"
@@ -267,7 +268,7 @@ msgstr "एक स्क्रीनशॉट लें"
 
 #: ../data/ui/welcome_page.blp:71
 msgid "_Take a Screenshot"
-msgstr "_एक स्क्रीनशॉट लें"
+msgstr "एक स्क्रीनशॉट लें (_T)"
 
 #: ../data/ui/welcome_page.blp:79
 msgctxt "Welcome screen"
@@ -276,16 +277,16 @@ msgstr "छवि खोलें"
 
 #: ../data/ui/welcome_page.blp:92
 msgid "_Open Image"
-msgstr "_छवि खोलें"
+msgstr "छवि खोलें (_O)"
 
 #: ../data/ui/welcome_page.blp:100
 msgctxt "Welcome screen"
 msgid "Paste image from clipboard"
-msgstr "क्लिपबोर्ड से छवि चिपकाएँ"
+msgstr "क्लिपबोर्ड से छवि पेस्ट करें"
 
 #: ../data/ui/welcome_page.blp:113
 msgid "Paste Image"
-msgstr "छवि चिपकाएँ"
+msgstr "पेस्ट छवि"
 
 #: ../data/ui/welcome_page.blp:146
 msgid "⭐ Star on GitHub"
@@ -357,11 +358,11 @@ msgstr "चेक"
 
 #: ../frog/language_manager.py:81
 msgid "Chinese - Simplified"
-msgstr "सरलीकृत चीनी"
+msgstr "चीनी - सरलीकृत"
 
 #: ../frog/language_manager.py:82
 msgid "Chinese - Traditional"
-msgstr "चीनी पारंपरिक"
+msgstr "चीनी - पारंपरिक"
 
 #: ../frog/language_manager.py:83
 msgid "Cherokee"
@@ -401,7 +402,7 @@ msgstr "एस्पेरांतो"
 
 #: ../frog/language_manager.py:93
 msgid "Math / equation detection module"
-msgstr "गणित/समीकरण पहचान मॉड्यूल"
+msgstr "गणित / समीकरण पहचान मॉड्यूल"
 
 #: ../frog/language_manager.py:94
 msgid "Estonian"
