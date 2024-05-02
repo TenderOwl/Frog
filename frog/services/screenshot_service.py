@@ -28,7 +28,7 @@
 import os
 from gettext import gettext as _
 
-from gi.repository import GObject, Gio, Xdp
+from gi.repository import GObject, Gio, GLib, Xdp
 from loguru import logger
 
 from frog.config import tessdata_config
@@ -101,6 +101,7 @@ class ScreenshotService(GObject.GObject):
         filename = self.portal.take_screenshot_finish(res)
         # Remove file:// from the path
         filename = filename[7:]
+        filename = GLib.Uri.unescape_string(filename)
         self.decode_image(lang, filename, copy, True)
 
     def decode_image(self,
@@ -142,8 +143,11 @@ class ScreenshotService(GObject.GObject):
 
         finally:
             if remove_source:
-                logger.debug(f"Removing {file}")
-                os.unlink(file)
+                try:
+                    logger.debug(f"Removing {file}")
+                    os.unlink(file)
+                except Exception as e:
+                        logger.debug(f"Error deleting {file}: {e}")
 
         if extracted:
             logger.debug("Extracted successfully")
