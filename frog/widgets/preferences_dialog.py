@@ -1,4 +1,4 @@
-# preferences_window.py
+# preferences_dialog.py
 #
 # Copyright 2021-2023 Andrey Maksimov
 #
@@ -35,16 +35,15 @@ from frog.widgets.preferences_general_page import PreferencesGeneralPage
 from frog.widgets.preferences_languages_page import PreferencesLanguagesPage
 
 
-@Gtk.Template(resource_path=f'{RESOURCE_PREFIX}/ui/preferences_window.ui')
-class PreferencesWindow(Adw.PreferencesWindow):
-    __gtype_name__ = 'PreferencesWindow'
+@Gtk.Template(resource_path=f'{RESOURCE_PREFIX}/ui/preferences_dialog.ui')
+class PreferencesDialog(Adw.PreferencesDialog):
+    __gtype_name__ = 'PreferencesDialog'
 
     general_page: PreferencesGeneralPage = Gtk.Template.Child()
     languages_page: PreferencesLanguagesPage = Gtk.Template.Child()
 
     def __init__(self, settings: Settings, parent: Adw.Window = None):
         super().__init__()
-        self.set_transient_for(parent)
 
         self.connect('show', lambda x: telemetry.capture_page_view('preferences'))
 

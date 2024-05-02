@@ -9,7 +9,7 @@
         <file preprocess="xml-stripblanks">ui/language_dialog.ui</file>
         <file preprocess="xml-stripblanks">ui/language_row.ui</file>
         <file preprocess="xml-stripblanks">ui/shortcuts.ui</file>
-        <file preprocess="xml-stripblanks">ui/preferences_window.ui</file>
+        <file preprocess="xml-stripblanks">ui/preferences_dialog.ui</file>
         <file preprocess="xml-stripblanks">ui/preferences_general.ui</file>
         <file preprocess="xml-stripblanks">ui/preferences_languages.ui</file>
         <file preprocess="xml-stripblanks">ui/share_row.ui</file>
