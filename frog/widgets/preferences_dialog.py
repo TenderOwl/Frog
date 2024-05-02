@@ -42,7 +42,7 @@ class PreferencesDialog(Adw.PreferencesDialog):
     general_page: PreferencesGeneralPage = Gtk.Template.Child()
     languages_page: PreferencesLanguagesPage = Gtk.Template.Child()
 
-    def __init__(self, settings: Settings, parent: Adw.Window = None):
+    def __init__(self):
         super().__init__()
 
         self.connect('show', lambda x: telemetry.capture_page_view('preferences'))

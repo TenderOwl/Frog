@@ -294,8 +294,7 @@ class FrogWindow(Adw.ApplicationWindow):
         self.show_toast(_("Text copied"))
 
     def show_preferences(self):
-        # dialog = LanguagePacksDialog(self)
-        dialog = PreferencesDialog(settings=self.settings, parent=self)
+        dialog = PreferencesDialog()
         dialog.present(self)
 
     def show_welcome_page(self, *_):

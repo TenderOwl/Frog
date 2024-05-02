@@ -55,7 +55,6 @@ subdir('icons')
 
 blueprints = custom_target('blueprints',
   input: files(
-    'ui/language_dialog.blp',
     'ui/preferences_dialog.blp',
     'ui/preferences_general.blp',
     'ui/preferences_languages.blp',
