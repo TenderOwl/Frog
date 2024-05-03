@@ -163,7 +163,7 @@ class FrogApplication(Adw.Application):
 
     def on_about(self, _action, _param):
         telemetry.capture('about activated')
-        about_window = Adw.AboutWindow(
+        about_window = Adw.AboutDialog(
             application_name="Frog",
             application_icon=APP_ID,
             version=self.version,
@@ -183,10 +183,9 @@ class FrogApplication(Adw.Application):
                 </ul>
                 <p>Full list of changes you may find in the repository.</p>
                 <p>We hope you enjoy our work!</p>
-            """,
-            transient_for=self.props.active_window
+            """
         )
-        about_window.present()
+        about_window.present(self.props.active_window)
 
     def on_shortcuts(self, _action, _param):
         telemetry.capture('shortcuts activated')

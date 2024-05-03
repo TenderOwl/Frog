@@ -1,7 +1,7 @@
 {
     "app-id" : "com.github.tenderowl.frog",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "45",
+    "runtime-version" : "46",
     "sdk" : "org.gnome.Sdk",
     "command" : "frog",
     "finish-args" : [

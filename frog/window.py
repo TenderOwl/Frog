@@ -42,7 +42,7 @@ from frog.services.screenshot_service import ScreenshotService
 from frog.services.share_service import ShareService
 from frog.widgets.extracted_page import ExtractedPage
 from frog.widgets.list_menu_row import ListMenuRow
-from frog.widgets.preferences_window import PreferencesWindow
+from frog.widgets.preferences_dialog import PreferencesDialog
 from frog.widgets.welcome_page import WelcomePage
 
 
@@ -294,9 +294,8 @@ class FrogWindow(Adw.ApplicationWindow):
         self.show_toast(_("Text copied"))
 
     def show_preferences(self):
-        # dialog = LanguagePacksDialog(self)
-        dialog = PreferencesWindow(settings=self.settings, parent=self)
-        dialog.present()
+        dialog = PreferencesDialog()
+        dialog.present(self)
 
     def show_welcome_page(self, *_):
         self.split_view.set_show_content(False)
