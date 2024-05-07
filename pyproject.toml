@@ -6,5 +6,4 @@ line-length = 120
 quote-style = "single"
 indent-style = "tab"
 docstring-code-format = true
-docstring-code-format = true
 docstring-code-line-length = 20
