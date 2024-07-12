@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: frog 1.4.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-25 11:43+0300\n"
-"PO-Revision-Date: 2024-03-29 11:01+0000\n"
+"PO-Revision-Date: 2024-05-23 10:09+0000\n"
 "Last-Translator: Scrambled777 <weblate.scrambled777@simplelogin.com>\n"
 "Language-Team: Hindi <https://hosted.weblate.org/projects/frog/default/hi/>\n"
 "Language: hi\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.6-dev\n"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:6
 #: ../data/com.github.tenderowl.frog.desktop.in:3
@@ -25,49 +25,49 @@ msgstr "Frog"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:7
 msgid "Extract text from images"
-msgstr "छवियों से टेक्स्ट निकालें"
+msgstr "छवियों से पाठ निकालें"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:9
 msgid ""
 "Extract text from images, websites, videos, and QR codes by taking a picture "
 "of the source."
 msgstr ""
-"स्रोत की तस्वीर लेकर छवियों, वेबसाइटों, वीडियो और QR कोड से टेक्स्ट निकालें।"
+"स्रोत की तस्वीर लेकर छवियों, वेबसाइटों, वीडियो और QR कोड से पाठ निकालें।"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:4
 msgid "Text extraction tool"
-msgstr "टेक्स्ट निष्कर्षण उपकरण"
+msgstr "पाठ निष्कर्षण उपकरण"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:5
 msgid "Extract text from any image, video or web page"
-msgstr "किसी भी छवि, वीडियो या वेब पेज से टेक्स्ट निकालें"
+msgstr "किसी भी छवि, वीडियो या वेब पेज से पाठ निकालें"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:12
 msgid "OCR;Text;Extraction;"
-msgstr "OCR;Text;Extraction;टेक्स्ट;निष्कर्षण;"
+msgstr "OCR;पाठ;निष्कर्षण;"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:18
 msgid "Extract Text to the Clipboard"
-msgstr "टेक्स्ट को क्लिपबोर्ड पर निकालें"
+msgstr "पाठ को क्लिपबोर्ड पर निकालें"
 
 #: ../data/ui/extracted_page.blp:25
 msgid "Take a screenshot"
-msgstr "एक स्क्रीनशॉट लें"
+msgstr "स्क्रीनशॉट लें"
 
 #: ../data/ui/extracted_page.blp:33
 msgctxt "Extracted screen"
 msgid "Copy extracted text to clipboard"
-msgstr "निकाले गए टेक्स्ट को क्लिपबोर्ड पर कॉपी करें"
+msgstr "निकाले गए पाठ को क्लिपबोर्ड पर कॉपी करें"
 
 #: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
 msgid "Listen to text"
-msgstr "टेक्स्ट सुनें"
+msgstr "पाठ सुनें"
 
 #: ../data/ui/extracted_page.blp:47
 msgctxt "Extracted screen"
 msgid "Cancel listening to text"
-msgstr "टेक्स्ट सुनना रद्द करें"
+msgstr "पाठ सुनना रद्द करें"
 
 #: ../data/ui/extracted_page.blp:60
 msgctxt "Extracted screen"
@@ -77,11 +77,11 @@ msgstr "मेनू खोलें"
 #: ../data/ui/extracted_page.blp:67
 msgctxt "Extracted screen"
 msgid "Share To"
-msgstr "शेयर करें"
+msgstr "इससे साझा करें"
 
 #: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:127
 msgid "Preferences"
-msgstr "प्राथमिकताएँ"
+msgstr "प्राथमिकताएं"
 
 #: ../data/ui/extracted_page.blp:111 ../data/ui/welcome_page.blp:134
 msgid "Keyboard Shortcuts"
@@ -101,11 +101,11 @@ msgstr "क्लिपबोर्ड से पेस्ट करें"
 
 #: ../data/ui/language_dialog.blp:14
 msgid "Available Languages"
-msgstr "उपलब्ध भाषाएँ"
+msgstr "उपलब्ध भाषाएं"
 
 #: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
 msgid "Search Languages…"
-msgstr "भाषाएँ खोजें…"
+msgstr "भाषाएं खोजें…"
 
 #: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
 msgid "No Results Found"
@@ -118,20 +118,20 @@ msgstr "भाषा जोड़ें"
 #: ../data/ui/language_row.blp:21
 msgctxt "Preferences Language Row"
 msgid "Install language"
-msgstr "भाषा इंस्टॉल करें"
+msgstr "भाषा स्थापित करें"
 
 #: ../data/ui/language_row.blp:30
 msgctxt "Preferences Language Row"
 msgid "Remove language"
-msgstr "भाषा हटाएँ"
+msgstr "भाषा हटाएं"
 
 #: ../data/ui/preferences_general.blp:5
 msgid "_General"
-msgstr "_जनरल (_G)"
+msgstr "सामान्य (_G)"
 
 #: ../data/ui/preferences_general.blp:10
 msgid "Text Extracting"
-msgstr "टेक्स्ट निकला जा रहा है"
+msgstr "पाठ निकला जा रहा है"
 
 #: ../data/ui/preferences_general.blp:13
 msgid "_Second language"
@@ -139,7 +139,7 @@ msgstr "द्वितीय भाषा (_S)"
 
 #: ../data/ui/preferences_general.blp:15
 msgid "Additional language used in text recognition"
-msgstr "टेक्स्ट पहचान में प्रयुक्त अतिरिक्त भाषा"
+msgstr "पाठ पहचान में प्रयुक्त अतिरिक्त भाषा"
 
 #: ../data/ui/preferences_general.blp:20
 msgid "Behavior"
@@ -151,7 +151,7 @@ msgstr "क्लिपबोर्ड पर कॉपी करें (_C)"
 
 #: ../data/ui/preferences_general.blp:25
 msgid "Automatically copy the extracted text to clipboard"
-msgstr "निकाले गए टेक्स्ट को स्वचालित रूप से क्लिपबोर्ड पर कॉपी करें"
+msgstr "निकाले गए पाठ को स्वचालित रूप से क्लिपबोर्ड पर कॉपी करें"
 
 #: ../data/ui/preferences_general.blp:34
 msgid "_Open QR-code links"
@@ -163,11 +163,11 @@ msgstr "QR-कोड से स्वचालित रूप से लिं�
 
 #: ../data/ui/preferences_languages.blp:6
 msgid "_Languages"
-msgstr "भाषाएँ (_L)"
+msgstr "भाषाएं (_L)"
 
 #: ../data/ui/preferences_languages.blp:24
 msgid "Models location unreachable. Check your internet connection"
-msgstr "मॉडल का स्थान पहुंच योग्य नहीं है. अपना इंटरनेट संपर्क जांचे"
+msgstr "मॉडल का स्थान पहुंच योग्य नहीं है। अपना इंटरनेट संपर्क जांचे"
 
 #: ../data/ui/preferences_languages.blp:26
 msgid "Retry"
@@ -175,11 +175,11 @@ msgstr "पुन: प्रयास करें"
 
 #: ../data/ui/preferences_languages.blp:42
 msgid "Installed languages"
-msgstr "इन्स्टॉल्ड भाषाएँ"
+msgstr "स्थापित भाषाएं"
 
 #: ../data/ui/share_row.blp:14
 msgid "Share via Pocket"
-msgstr "Pocket के माध्यम से शेयर करें"
+msgstr "Pocket के ज़रिए साझा करें"
 
 #: ../data/ui/share_row.blp:22
 msgid "Pocket"
@@ -193,7 +193,7 @@ msgstr "शॉर्टकट"
 #: ../data/ui/shortcuts.blp:12
 msgctxt "shortcut window"
 msgid "General"
-msgstr "जनरल"
+msgstr "सामान्य"
 
 #: ../data/ui/shortcuts.blp:16
 msgctxt "shortcut window"
@@ -203,12 +203,12 @@ msgstr "छवि खोलें"
 #: ../data/ui/shortcuts.blp:21
 msgctxt "shortcut window"
 msgid "Take screenshot and extract text"
-msgstr "स्क्रीनशॉट लें और टेक्स्ट निकालें"
+msgstr "स्क्रीनशॉट लें और पाठ निकालें"
 
 #: ../data/ui/shortcuts.blp:26
 msgctxt "shortcut window"
 msgid "Extract text and copy it to clipboard"
-msgstr "टेक्स्ट निकालें और उसे क्लिपबोर्ड पर कॉपी करें"
+msgstr "पाठ निकालें और उसे क्लिपबोर्ड पर कॉपी करें"
 
 #: ../data/ui/shortcuts.blp:27
 msgctxt "shortcut window"
@@ -218,17 +218,17 @@ msgstr "शायद Wayland पर ठीक से काम न करे"
 #: ../data/ui/shortcuts.blp:32
 msgctxt "shortcut window"
 msgid "Copy extracted text to clipboard"
-msgstr "निकाले गए टेक्स्ट को क्लिपबोर्ड पर कॉपी करें"
+msgstr "निकाले गए पाठ को क्लिपबोर्ड पर कॉपी करें"
 
 #: ../data/ui/shortcuts.blp:37
 msgctxt "shortcut window"
 msgid "Application"
-msgstr "एप्लिकेशन"
+msgstr "अनुप्रयोग"
 
 #: ../data/ui/shortcuts.blp:41
 msgctxt "shortcut window"
 msgid "Preferences"
-msgstr "प्राथमिकताएँ"
+msgstr "प्राथमिकताएं"
 
 #: ../data/ui/shortcuts.blp:46
 msgctxt "shortcut window"
@@ -247,7 +247,7 @@ msgstr "शॉर्टकट्स प्रदर्शित करें"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
-msgstr "कहीं से भी टेक्स्ट निकालें"
+msgstr "कहीं से भी पाठ निकालें"
 
 #: ../data/ui/welcome_page.blp:21
 msgid "Language"
@@ -264,11 +264,11 @@ msgstr "मेनू खोलें"
 #: ../data/ui/welcome_page.blp:58
 msgctxt "Welcome screen"
 msgid "Take a Screenshot"
-msgstr "एक स्क्रीनशॉट लें"
+msgstr "स्क्रीनशॉट लें"
 
 #: ../data/ui/welcome_page.blp:71
 msgid "_Take a Screenshot"
-msgstr "एक स्क्रीनशॉट लें (_T)"
+msgstr "स्क्रीनशॉट लें (_T)"
 
 #: ../data/ui/welcome_page.blp:79
 msgctxt "Welcome screen"
@@ -786,15 +786,15 @@ msgstr "सीधे क्लिपबोर्ड में निकाले
 
 #: ../frog/main.py:194
 msgid "No text found. Try to grab another region."
-msgstr "कोई टेक्स्ट नहीं मिला. दूसरे क्षेत्र से खिचने का प्रयास करें।"
+msgstr "कोई पाठ नहीं मिला. दूसरे क्षेत्र से खिचने का प्रयास करें।"
 
 #: ../frog/main.py:204
 msgid "Text extracted. You can paste it with Ctrl+V"
-msgstr "टेक्स्ट निकाला गया. आप इसे Ctrl+V से पेस्ट कर सकते हैं"
+msgstr "पाठ निकाला गया. आप इसे Ctrl+V से पेस्ट कर सकते हैं"
 
 #: ../frog/window.py:151
 msgid "Text copied to clipboard"
-msgstr "टेक्स्ट को क्लिपबोर्ड पर कॉपी किया गया"
+msgstr "पाठ को क्लिपबोर्ड पर कॉपी किया गया"
 
 #: ../frog/window.py:162
 msgid "QR-code URL opened"
@@ -814,7 +814,7 @@ msgstr "समर्थित छवि फाइलें"
 
 #: ../frog/window.py:200
 msgid "Open image to extract text"
-msgstr "टेक्स्ट निकालने के लिए छवि खोलें"
+msgstr "पाठ निकालने के लिए छवि खोलें"
 
 #: ../frog/window.py:260
 msgid "Only images can be processed that way."
@@ -822,7 +822,7 @@ msgstr "केवल छवियों को इस तरह से संस
 
 #: ../frog/window.py:293
 msgid "Text copied"
-msgstr "टेक्स्ट कॉपी किया गया"
+msgstr "पाठ कॉपी किया गया"
 
 #: ../frog/services/clipboard_service.py:54
 msgid "No image in clipboard"
@@ -842,7 +842,7 @@ msgstr "आप मीटर वाले कनेक्शन पर हैं.
 
 #: ../frog/widgets/preferences_languages_page.py:123
 msgid "View all available languages"
-msgstr "सभी उपलब्ध भाषाएँ देखें"
+msgstr "सभी उपलब्ध भाषाएं देखें"
 
 #: ../frog/widgets/share_row.py:48
 #, python-brace-format
