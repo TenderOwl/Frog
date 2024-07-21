@@ -1,14 +1,13 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the frog package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# ssantos <ssantos@web.de>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-25 11:43+0300\n"
-"PO-Revision-Date: 2023-04-07 18:52+0000\n"
+"PO-Revision-Date: 2024-07-12 16:09+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/frog/default/"
 "pt/>\n"
@@ -17,47 +16,46 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.17-dev\n"
+"X-Generator: Weblate 5.7-dev\n"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:6
 #: ../data/com.github.tenderowl.frog.desktop.in:3
 msgid "Frog"
-msgstr ""
+msgstr "Frog"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:7
 msgid "Extract text from images"
-msgstr ""
+msgstr "Extraia texto de imagens"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:9
 msgid ""
 "Extract text from images, websites, videos, and QR codes by taking a picture "
 "of the source."
 msgstr ""
+"Extraia texto de imagens, páginas da web, vídeos e códigos QR, tirando uma "
+"foto da fonte."
 
 #: ../data/com.github.tenderowl.frog.desktop.in:4
 msgid "Text extraction tool"
-msgstr ""
+msgstr "Ferramenta de extração de texto"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:5
 msgid "Extract text from any image, video or web page"
-msgstr ""
+msgstr "Extraia texto de qualquer imagem, vídeo ou página da web"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:12
 msgid "OCR;Text;Extraction;"
-msgstr ""
+msgstr "OCR;Text;Extraction;Texto;Extração;Extrair;Caracteres;QR;"
 
 #: ../data/com.github.tenderowl.frog.desktop.in:18
 msgid "Extract Text to the Clipboard"
-msgstr ""
+msgstr "Extrair texto para a área de transferência"
 
 #: ../data/ui/extracted_page.blp:25
 msgid "Take a screenshot"
 msgstr "Tirar uma captura de ecrã"
 
 #: ../data/ui/extracted_page.blp:33
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Copy extracted text to clipboard"
 msgctxt "Extracted screen"
 msgid "Copy extracted text to clipboard"
 msgstr "Copiar texto extraído para a área de transferência"
@@ -65,29 +63,26 @@ msgstr "Copiar texto extraído para a área de transferência"
 #: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
 msgid "Listen to text"
-msgstr ""
+msgstr "Ouvir texto"
 
 #: ../data/ui/extracted_page.blp:47
 msgctxt "Extracted screen"
 msgid "Cancel listening to text"
-msgstr ""
+msgstr "Cancelar audição do texto"
 
 #: ../data/ui/extracted_page.blp:60
 msgctxt "Extracted screen"
 msgid "Open menu"
-msgstr ""
+msgstr "Abrir menu"
 
 #: ../data/ui/extracted_page.blp:67
 msgctxt "Extracted screen"
 msgid "Share To"
-msgstr ""
+msgstr "Partilhar"
 
 #: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:127
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Display preferences"
 msgid "Preferences"
-msgstr "Preferências de exibição"
+msgstr "Preferências"
 
 #: ../data/ui/extracted_page.blp:111 ../data/ui/welcome_page.blp:134
 msgid "Keyboard Shortcuts"
@@ -99,118 +94,98 @@ msgstr "Sobre o Frog"
 
 #: ../data/ui/extracted_page.blp:124 ../data/ui/welcome_page.blp:154
 msgid "Open image"
-msgstr ""
+msgstr "Abrir imagem"
 
 #: ../data/ui/extracted_page.blp:125 ../data/ui/welcome_page.blp:155
 msgid "Paste from clipboard"
-msgstr ""
+msgstr "Colar da área de transferência"
 
 #: ../data/ui/language_dialog.blp:14
 msgid "Available Languages"
 msgstr "Idiomas Disponíveis"
 
 #: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
-#, fuzzy
-#| msgid "Language"
 msgid "Search Languages…"
-msgstr "Idioma"
+msgstr "Pesquisar idiomas…"
 
 #: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
 msgid "No Results Found"
-msgstr ""
+msgstr "Nenhum resultado encontrado"
 
 #: ../data/ui/language_popover.blp:77
-#, fuzzy
-#| msgid "Language"
 msgid "Add Language"
-msgstr "Idioma"
+msgstr "Adicionar idioma"
 
 #: ../data/ui/language_row.blp:21
-#, fuzzy
-#| msgid "Available Languages"
 msgctxt "Preferences Language Row"
 msgid "Install language"
-msgstr "Idiomas Disponíveis"
+msgstr "Instalar idioma"
 
 #: ../data/ui/language_row.blp:30
-#, fuzzy
-#| msgid "Language"
 msgctxt "Preferences Language Row"
 msgid "Remove language"
-msgstr "Idioma"
+msgstr "Remover idioma"
 
 #: ../data/ui/preferences_general.blp:5
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "_General"
-msgstr "Geral"
+msgstr "_Geral"
 
 #: ../data/ui/preferences_general.blp:10
 msgid "Text Extracting"
-msgstr ""
+msgstr "Extração de texto"
 
 #: ../data/ui/preferences_general.blp:13
 msgid "_Second language"
-msgstr ""
+msgstr "_Segundo idioma"
 
 #: ../data/ui/preferences_general.blp:15
 msgid "Additional language used in text recognition"
-msgstr ""
+msgstr "Idioma adicional usado no reconhecimento de texto"
 
 #: ../data/ui/preferences_general.blp:20
 msgid "Behavior"
-msgstr ""
+msgstr "Comportamento"
 
 #: ../data/ui/preferences_general.blp:23
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Copy extracted text to clipboard"
 msgid "_Copy to clipboard"
-msgstr "Copiar texto extraído para a área de transferência"
+msgstr "_Copiar para a área de transferência"
 
 #: ../data/ui/preferences_general.blp:25
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Copy extracted text to clipboard"
 msgid "Automatically copy the extracted text to clipboard"
-msgstr "Copiar texto extraído para a área de transferência"
+msgstr "Copiar automaticamente o texto extraído para a área de transferência"
 
 #: ../data/ui/preferences_general.blp:34
 msgid "_Open QR-code links"
-msgstr ""
+msgstr "_Abrir ligações de códigos QR"
 
 #: ../data/ui/preferences_general.blp:36
 msgid "Automatically open links from QR-codes"
-msgstr ""
+msgstr "Automaticamente abrir ligações de códigos QR"
 
 #: ../data/ui/preferences_languages.blp:6
-#, fuzzy
-#| msgid "Language"
 msgid "_Languages"
-msgstr "Idioma"
+msgstr "_Idiomas"
 
 #: ../data/ui/preferences_languages.blp:24
 msgid "Models location unreachable. Check your internet connection"
 msgstr ""
+"Não foi possível aceder o local dos modelos. Verifique a sua conexão de rede"
 
 #: ../data/ui/preferences_languages.blp:26
 msgid "Retry"
-msgstr ""
+msgstr "Tentar novamente"
 
 #: ../data/ui/preferences_languages.blp:42
-#, fuzzy
-#| msgid "Available Languages"
 msgid "Installed languages"
-msgstr "Idiomas Disponíveis"
+msgstr "Idiomas instalados"
 
 #: ../data/ui/share_row.blp:14
 msgid "Share via Pocket"
-msgstr ""
+msgstr "Partilhar via Pocket"
 
 #: ../data/ui/share_row.blp:22
 msgid "Pocket"
-msgstr ""
+msgstr "Pocket"
 
 #: ../data/ui/shortcuts.blp:5
 msgctxt "shortcut window"
@@ -218,9 +193,6 @@ msgid "Shortcuts"
 msgstr "Atalhos"
 
 #: ../data/ui/shortcuts.blp:12
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Geral"
@@ -228,32 +200,24 @@ msgstr "Geral"
 #: ../data/ui/shortcuts.blp:16
 msgctxt "shortcut window"
 msgid "Open image"
-msgstr ""
+msgstr "Abrir imagem"
 
 #: ../data/ui/shortcuts.blp:21
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Get screenshot and extract text"
 msgctxt "shortcut window"
 msgid "Take screenshot and extract text"
-msgstr "Capturar a tela e extrair texto"
+msgstr "Capturar o ecrã e extrair texto"
 
 #: ../data/ui/shortcuts.blp:26
-#, fuzzy
-#| msgid "Extract directly into the clipboard"
 msgctxt "shortcut window"
 msgid "Extract text and copy it to clipboard"
-msgstr "Extrair diretamente para a área de transferência"
+msgstr "Extrair texto e copiar para a área de transferência"
 
 #: ../data/ui/shortcuts.blp:27
 msgctxt "shortcut window"
 msgid "May not work properly on wayland"
-msgstr ""
+msgstr "Pode não funcionar corretamente no Wayland"
 
 #: ../data/ui/shortcuts.blp:32
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Copy extracted text to clipboard"
 msgctxt "shortcut window"
 msgid "Copy extracted text to clipboard"
 msgstr "Copiar texto extraído para a área de transferência"
@@ -261,33 +225,27 @@ msgstr "Copiar texto extraído para a área de transferência"
 #: ../data/ui/shortcuts.blp:37
 msgctxt "shortcut window"
 msgid "Application"
-msgstr ""
+msgstr "Aplicação"
 
 #: ../data/ui/shortcuts.blp:41
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Display preferences"
 msgctxt "shortcut window"
 msgid "Preferences"
-msgstr "Preferências de exibição"
+msgstr "Preferências"
 
 #: ../data/ui/shortcuts.blp:46
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Sair"
 
 #: ../data/ui/shortcuts.blp:51
 msgctxt "shortcut window"
 msgid "Help"
-msgstr ""
+msgstr "Ajuda"
 
 #: ../data/ui/shortcuts.blp:55
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Shortcuts"
 msgctxt "shortcut window"
 msgid "Display Shortcuts"
-msgstr "Atalhos"
+msgstr "Mostrar atalhos"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
@@ -303,42 +261,38 @@ msgstr "Selecione idioma para extrair"
 
 #: ../data/ui/welcome_page.blp:43
 msgid "Open menu"
-msgstr ""
+msgstr "Abrir menu"
 
 #: ../data/ui/welcome_page.blp:58
-#, fuzzy
-#| msgid "Take a Screenshot"
 msgctxt "Welcome screen"
 msgid "Take a Screenshot"
-msgstr "Tirar uma Captura de Tela"
+msgstr "Tirar uma captura de ecrã"
 
 #: ../data/ui/welcome_page.blp:71
-#, fuzzy
-#| msgid "Take a Screenshot"
 msgid "_Take a Screenshot"
-msgstr "Tirar uma Captura de Tela"
+msgstr "_Tirar uma captura de ecrã"
 
 #: ../data/ui/welcome_page.blp:79
 msgctxt "Welcome screen"
 msgid "Open Image"
-msgstr ""
+msgstr "Abrir imagem"
 
 #: ../data/ui/welcome_page.blp:92
 msgid "_Open Image"
-msgstr ""
+msgstr "_Abrir imagem"
 
 #: ../data/ui/welcome_page.blp:100
 msgctxt "Welcome screen"
 msgid "Paste image from clipboard"
-msgstr ""
+msgstr "Colar imagem da área de transferência"
 
 #: ../data/ui/welcome_page.blp:113
 msgid "Paste Image"
-msgstr ""
+msgstr "Colar imagem"
 
 #: ../data/ui/welcome_page.blp:146
 msgid "⭐ Star on GitHub"
-msgstr ""
+msgstr "⭐ Dê uma estrela no GitHub"
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -565,10 +519,8 @@ msgid "Japanese"
 msgstr "Japonês"
 
 #: ../frog/language_manager.py:122
-#, fuzzy
-#| msgid "Korean (vertical)"
 msgid "Japanese (vertical)"
-msgstr "Coreano (vertical)"
+msgstr "Japonês (vertical)"
 
 #: ../frog/language_manager.py:123
 msgid "Kannada"
@@ -844,27 +796,27 @@ msgstr "Texto extraído. Pode colá-lo com Ctrl+V"
 
 #: ../frog/window.py:151
 msgid "Text copied to clipboard"
-msgstr ""
+msgstr "Texto copiado para a área de transferência"
 
 #: ../frog/window.py:162
 msgid "QR-code URL opened"
-msgstr ""
+msgstr "URL do código QR aberta"
 
 #: ../frog/window.py:166
 msgid "QR-code contains URL."
-msgstr ""
+msgstr "O código QR contém uma URL."
 
 #: ../frog/window.py:167
 msgid "Open"
-msgstr ""
+msgstr "Abrir"
 
 #: ../frog/window.py:194
 msgid "Supported image files"
-msgstr ""
+msgstr "Ficheiros de imagem suportados"
 
 #: ../frog/window.py:200
 msgid "Open image to extract text"
-msgstr ""
+msgstr "Abrir imagem para extrair texto"
 
 #: ../frog/window.py:260
 msgid "Only images can be processed that way."
@@ -872,34 +824,33 @@ msgstr "Apenas imagens podem ser processadas daquela forma."
 
 #: ../frog/window.py:293
 msgid "Text copied"
-msgstr ""
+msgstr "Texto copiado"
 
 #: ../frog/services/clipboard_service.py:54
 msgid "No image in clipboard"
-msgstr ""
+msgstr "Nenhuma imagem na área de transferência"
 
 #: ../frog/services/screenshot_service.py:94
-#, fuzzy
-#| msgid "Take a screenshot"
 msgid "Can't take a screenshot."
-msgstr "Tirar uma captura de ecrã"
+msgstr "Não foi possível capturar o ecrã."
 
 #: ../frog/widgets/preferences_languages_page.py:80
 msgid "Models location unreachable. Check your internet connection."
 msgstr ""
+"Não foi possível aceder o local dos modelos. Verifique a sua conexão de rede."
 
 #: ../frog/widgets/preferences_languages_page.py:86
 msgid "You are on a metered connection. Be careful to download languages."
-msgstr ""
+msgstr "Está numa conexão com medição de dados. Cuidado ao descarregar idiomas."
 
 #: ../frog/widgets/preferences_languages_page.py:123
 msgid "View all available languages"
-msgstr ""
+msgstr "Ver todos os idiomas disponíveis"
 
 #: ../frog/widgets/share_row.py:48
 #, python-brace-format
 msgid "Share via {0}"
-msgstr ""
+msgstr "Partilhar via {0}"
 
 #, fuzzy
 #~| msgid "Select language to extract"
