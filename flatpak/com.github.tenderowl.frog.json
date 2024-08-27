@@ -33,7 +33,7 @@
                 {
                     "type" : "git",
                     "url" : "https://gitlab.gnome.org/jwestman/blueprint-compiler.git",
-                    "tag" : "v0.12.0"
+                    "tag" : "v0.14.0"
                 }
             ]
         },
@@ -41,12 +41,8 @@
         "tesseract.json",
         "libportal.json",
         "zbar.json",
-        "python3-nanoid.json",
-        "python3-loguru.json",
-        "python3-pytesseract.json",
-        "python3-pyzbar.json",
+        "python3-modules.json",
         "python3-gTTS.json",
-        "python3-posthog.json",
         {
             "name" : "frog",
             "builddir" : true,
