@@ -4,8 +4,8 @@ msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-25 11:43+0300\n"
-"PO-Revision-Date: 2024-01-22 13:01+0000\n"
-"Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
+"PO-Revision-Date: 2024-08-28 11:01+0000\n"
+"Last-Translator: albano battistella <albanobattistella@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/frog/default/it/>"
 "\n"
 "Language: it\n"
@@ -81,7 +81,7 @@ msgstr "Apri menu"
 #: ../data/ui/extracted_page.blp:67
 msgctxt "Extracted screen"
 msgid "Share To"
-msgstr "Condividi a"
+msgstr "Condividi su"
 
 #: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:127
 msgid "Preferences"
@@ -619,7 +619,7 @@ msgstr "Nepalese"
 
 #: ../frog/language_manager.py:146
 msgid "Dutch; Flemish"
-msgstr "Olandese; fiammingo"
+msgstr "Olandese; Fiammingo"
 
 #: ../frog/language_manager.py:147
 msgid "Norwegian"
@@ -1037,9 +1037,8 @@ msgstr "Condividi tramite {0}"
 #~ msgid "{language} language downloaded."
 #~ msgstr "{language} scaricato."
 
-#, fuzzy
 #~ msgid "Extract text from anywhere, even QR code"
-#~ msgstr "Estrai testo da dovunque"
+#~ msgstr "Estrai testo da qualsiasi luogo, anche dal codice QR"
 
 #~ msgid "Configure Languages"
 #~ msgstr "Configura lingue"
