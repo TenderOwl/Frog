@@ -1,12 +1,13 @@
 # This is a Translation File of Frog.
 # Andrey M <meamka@ya.ru>, 2023, 2024.
+# Степан Наумов <st250492@yandex.ru>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog 0.3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-25 11:43+0300\n"
-"PO-Revision-Date: 2024-02-07 14:13+0000\n"
-"Last-Translator: Andrey M <meamka@ya.ru>\n"
+"PO-Revision-Date: 2024-08-09 14:09+0000\n"
+"Last-Translator: Степан Наумов <st250492@yandex.ru>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/frog/default/ru/>"
 "\n"
 "Language: ru\n"
@@ -15,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.7-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: _\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -63,11 +64,9 @@ msgid "Take a screenshot"
 msgstr "Сделать снимок"
 
 #: ../data/ui/extracted_page.blp:33
-#, fuzzy
-#| msgid "Copy extracted text to clipboard"
 msgctxt "Extracted screen"
 msgid "Copy extracted text to clipboard"
-msgstr "Скопировать в буфер обмена"
+msgstr "Скопировать текст в буфер обмена"
 
 #: ../data/ui/extracted_page.blp:40
 msgctxt "Extracted screen"
@@ -80,8 +79,6 @@ msgid "Cancel listening to text"
 msgstr "Отменить прослушивание"
 
 #: ../data/ui/extracted_page.blp:60
-#, fuzzy
-#| msgid "Open menu"
 msgctxt "Extracted screen"
 msgid "Open menu"
 msgstr "Открыть меню"
@@ -116,34 +113,26 @@ msgid "Available Languages"
 msgstr "Доступные языки"
 
 #: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
-#, fuzzy
-#| msgid "Search language"
 msgid "Search Languages…"
-msgstr "Найти язык"
+msgstr "Найти язык…"
 
 #: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
 msgid "No Results Found"
 msgstr "Ничего не найдено"
 
 #: ../data/ui/language_popover.blp:77
-#, fuzzy
-#| msgid "Language"
 msgid "Add Language"
-msgstr "Язык"
+msgstr "Добавить язык"
 
 #: ../data/ui/language_row.blp:21
-#, fuzzy
-#| msgid "Installed languages"
 msgctxt "Preferences Language Row"
 msgid "Install language"
 msgstr "Установленные языки"
 
 #: ../data/ui/language_row.blp:30
-#, fuzzy
-#| msgid "_Second language"
 msgctxt "Preferences Language Row"
 msgid "Remove language"
-msgstr "_Дополнительный язык"
+msgstr "Удалить язык"
 
 #: ../data/ui/preferences_general.blp:5
 msgid "_General"
@@ -167,7 +156,7 @@ msgstr "Поведение"
 
 #: ../data/ui/preferences_general.blp:23
 msgid "_Copy to clipboard"
-msgstr "_Скопировать"
+msgstr "_Скопировать в буфер обмена"
 
 #: ../data/ui/preferences_general.blp:25
 msgid "Automatically copy the extracted text to clipboard"
@@ -216,26 +205,19 @@ msgid "General"
 msgstr "Общее"
 
 #: ../data/ui/shortcuts.blp:16
-#, fuzzy
-#| msgid "Open image"
 msgctxt "shortcut window"
 msgid "Open image"
 msgstr "Открыть изображение"
 
 #: ../data/ui/shortcuts.blp:21
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Get screenshot and extract text"
 msgctxt "shortcut window"
 msgid "Take screenshot and extract text"
-msgstr "Извлечь текст"
+msgstr "Сделать снимок экрана и извлечь текст"
 
 #: ../data/ui/shortcuts.blp:26
-#, fuzzy
-#| msgid "Extract Text to the Clipboard"
 msgctxt "shortcut window"
 msgid "Extract text and copy it to clipboard"
-msgstr "Извлечь и скопировать в буфер обмена"
+msgstr "Извлечь текст и скопировать его в буфер обмена"
 
 #: ../data/ui/shortcuts.blp:27
 msgctxt "shortcut window"
@@ -253,8 +235,6 @@ msgid "Application"
 msgstr "Приложение"
 
 #: ../data/ui/shortcuts.blp:41
-#, fuzzy
-#| msgid "Preferences"
 msgctxt "shortcut window"
 msgid "Preferences"
 msgstr "Параметры"
@@ -270,9 +250,6 @@ msgid "Help"
 msgstr "Помощь"
 
 #: ../data/ui/shortcuts.blp:55
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Shortcuts"
 msgctxt "shortcut window"
 msgid "Display Shortcuts"
 msgstr "Клавиатурные сочетания"
@@ -294,8 +271,6 @@ msgid "Open menu"
 msgstr "Открыть меню"
 
 #: ../data/ui/welcome_page.blp:58
-#, fuzzy
-#| msgid "Take a Screenshot"
 msgctxt "Welcome screen"
 msgid "Take a Screenshot"
 msgstr "Сделать снимок"
@@ -305,28 +280,22 @@ msgid "_Take a Screenshot"
 msgstr "_Сделать снимок"
 
 #: ../data/ui/welcome_page.blp:79
-#, fuzzy
-#| msgid "_Open Image"
 msgctxt "Welcome screen"
 msgid "Open Image"
-msgstr "_Открыть Изображение"
+msgstr "Открыть Изображение"
 
 #: ../data/ui/welcome_page.blp:92
 msgid "_Open Image"
 msgstr "_Открыть Изображение"
 
 #: ../data/ui/welcome_page.blp:100
-#, fuzzy
-#| msgid "Paste from clipboard"
 msgctxt "Welcome screen"
 msgid "Paste image from clipboard"
 msgstr "Вставить из буфера"
 
 #: ../data/ui/welcome_page.blp:113
-#, fuzzy
-#| msgid "_Open Image"
 msgid "Paste Image"
-msgstr "_Открыть Изображение"
+msgstr "Открыть Изображение"
 
 #: ../data/ui/welcome_page.blp:146
 msgid "⭐ Star on GitHub"
@@ -885,10 +854,9 @@ msgid "View all available languages"
 msgstr "Показать все доступные языки"
 
 #: ../frog/widgets/share_row.py:48
-#, fuzzy, python-brace-format
-#| msgid "Share via Pocket"
+#, python-brace-format
 msgid "Share via {0}"
-msgstr "Сохранить в Pocket"
+msgstr "Поделиться через {0}"
 
 #~ msgid "Tender Owl"
 #~ msgstr "Tender Owl"

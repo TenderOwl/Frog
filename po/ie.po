@@ -1,0 +1,849 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the frog package.
+# OIS <mistresssilvara@hotmail.com>, 2024.
+msgid ""
+msgstr ""
+"Project-Id-Version: frog 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-25 11:43+0300\n"
+"PO-Revision-Date: 2024-08-30 04:09+0000\n"
+"Last-Translator: OIS <mistresssilvara@hotmail.com>\n"
+"Language-Team: Occidental <https://hosted.weblate.org/projects/frog/default/"
+"ie/>\n"
+"Language: ie\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.7.1-dev\n"
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:6
+#: ../data/com.github.tenderowl.frog.desktop.in:3
+msgid "Frog"
+msgstr "Frog"
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:7
+msgid "Extract text from images"
+msgstr "Extraher textu de images"
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:9
+msgid ""
+"Extract text from images, websites, videos, and QR codes by taking a picture "
+"of the source."
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.desktop.in:4
+msgid "Text extraction tool"
+msgstr "Utensile de extraction de textu"
+
+#: ../data/com.github.tenderowl.frog.desktop.in:5
+msgid "Extract text from any image, video or web page"
+msgstr ""
+
+#: ../data/com.github.tenderowl.frog.desktop.in:12
+msgid "OCR;Text;Extraction;"
+msgstr "OCR;Textu;Extration;"
+
+#: ../data/com.github.tenderowl.frog.desktop.in:18
+msgid "Extract Text to the Clipboard"
+msgstr "Extraer li textu al Paperiere"
+
+#: ../data/ui/extracted_page.blp:25
+msgid "Take a screenshot"
+msgstr "Capturar li ecran"
+
+#: ../data/ui/extracted_page.blp:33
+msgctxt "Extracted screen"
+msgid "Copy extracted text to clipboard"
+msgstr "Copiar li extractet textu al Paperiere"
+
+#: ../data/ui/extracted_page.blp:40
+msgctxt "Extracted screen"
+msgid "Listen to text"
+msgstr "Escutar li textu"
+
+#: ../data/ui/extracted_page.blp:47
+msgctxt "Extracted screen"
+msgid "Cancel listening to text"
+msgstr "Interrupter li escuta"
+
+#: ../data/ui/extracted_page.blp:60
+msgctxt "Extracted screen"
+msgid "Open menu"
+msgstr "Aperter li menú"
+
+#: ../data/ui/extracted_page.blp:67
+msgctxt "Extracted screen"
+msgid "Share To"
+msgstr "Partir con"
+
+#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:127
+msgid "Preferences"
+msgstr "Preferenties"
+
+#: ../data/ui/extracted_page.blp:111 ../data/ui/welcome_page.blp:134
+msgid "Keyboard Shortcuts"
+msgstr "Rapid-tastes"
+
+#: ../data/ui/extracted_page.blp:116 ../data/ui/welcome_page.blp:139
+msgid "About Frog"
+msgstr "Pri Frog"
+
+#: ../data/ui/extracted_page.blp:124 ../data/ui/welcome_page.blp:154
+msgid "Open image"
+msgstr "Aperter un image"
+
+#: ../data/ui/extracted_page.blp:125 ../data/ui/welcome_page.blp:155
+msgid "Paste from clipboard"
+msgstr "Collar ex li Paperiere"
+
+#: ../data/ui/language_dialog.blp:14
+msgid "Available Languages"
+msgstr "Disponibil lingues"
+
+#: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
+msgid "Search Languages…"
+msgstr "Serchar por lingues…"
+
+#: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
+msgid "No Results Found"
+msgstr "Null resultates trovat"
+
+#: ../data/ui/language_popover.blp:77
+msgid "Add Language"
+msgstr "Adjunter un lingue"
+
+#: ../data/ui/language_row.blp:21
+msgctxt "Preferences Language Row"
+msgid "Install language"
+msgstr "Installar li lingue"
+
+#: ../data/ui/language_row.blp:30
+msgctxt "Preferences Language Row"
+msgid "Remove language"
+msgstr "Remover li lingue"
+
+#: ../data/ui/preferences_general.blp:5
+msgid "_General"
+msgstr "_General"
+
+#: ../data/ui/preferences_general.blp:10
+msgid "Text Extracting"
+msgstr "Extraction de textu"
+
+#: ../data/ui/preferences_general.blp:13
+msgid "_Second language"
+msgstr "_Secund lingue"
+
+#: ../data/ui/preferences_general.blp:15
+msgid "Additional language used in text recognition"
+msgstr "Additional lingues usat por renossement"
+
+#: ../data/ui/preferences_general.blp:20
+msgid "Behavior"
+msgstr "Conduida"
+
+#: ../data/ui/preferences_general.blp:23
+msgid "_Copy to clipboard"
+msgstr "_Copiar al Paperiere"
+
+#: ../data/ui/preferences_general.blp:25
+msgid "Automatically copy the extracted text to clipboard"
+msgstr ""
+
+#: ../data/ui/preferences_general.blp:34
+msgid "_Open QR-code links"
+msgstr "_Aperter ligamentes de codes QR"
+
+#: ../data/ui/preferences_general.blp:36
+msgid "Automatically open links from QR-codes"
+msgstr "Aperter automaticmen ligamentes de codes QR"
+
+#: ../data/ui/preferences_languages.blp:6
+msgid "_Languages"
+msgstr "_Lingues"
+
+#: ../data/ui/preferences_languages.blp:24
+msgid "Models location unreachable. Check your internet connection"
+msgstr ""
+
+#: ../data/ui/preferences_languages.blp:26
+msgid "Retry"
+msgstr "Repenar"
+
+#: ../data/ui/preferences_languages.blp:42
+msgid "Installed languages"
+msgstr "Installat lingues"
+
+#: ../data/ui/share_row.blp:14
+msgid "Share via Pocket"
+msgstr ""
+
+#: ../data/ui/share_row.blp:22
+msgid "Pocket"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:5
+msgctxt "shortcut window"
+msgid "Shortcuts"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:12
+msgctxt "shortcut window"
+msgid "General"
+msgstr "General"
+
+#: ../data/ui/shortcuts.blp:16
+msgctxt "shortcut window"
+msgid "Open image"
+msgstr "Aperter un image"
+
+#: ../data/ui/shortcuts.blp:21
+msgctxt "shortcut window"
+msgid "Take screenshot and extract text"
+msgstr "Capturar li ecran e extraer li textu"
+
+#: ../data/ui/shortcuts.blp:26
+msgctxt "shortcut window"
+msgid "Extract text and copy it to clipboard"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:27
+msgctxt "shortcut window"
+msgid "May not work properly on wayland"
+msgstr "Posse functionar íncorectmen in wayland"
+
+#: ../data/ui/shortcuts.blp:32
+msgctxt "shortcut window"
+msgid "Copy extracted text to clipboard"
+msgstr "Copiar li extractet textu al Paperiere"
+
+#: ../data/ui/shortcuts.blp:37
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Application"
+
+#: ../data/ui/shortcuts.blp:41
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:46
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:51
+msgctxt "shortcut window"
+msgid "Help"
+msgstr ""
+
+#: ../data/ui/shortcuts.blp:55
+msgctxt "shortcut window"
+msgid "Display Shortcuts"
+msgstr "Monstar li rapid-tastes"
+
+#: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
+msgid "Extract text from anywhere"
+msgstr "Extraer li textu de quelcunc medie"
+
+#: ../data/ui/welcome_page.blp:21
+msgid "Language"
+msgstr ""
+
+#: ../data/ui/welcome_page.blp:22
+msgid "Select language to extract"
+msgstr "Selecter li lingue"
+
+#: ../data/ui/welcome_page.blp:43
+msgid "Open menu"
+msgstr "Aperter li menú"
+
+#: ../data/ui/welcome_page.blp:58
+msgctxt "Welcome screen"
+msgid "Take a Screenshot"
+msgstr "Capturar li ecran"
+
+#: ../data/ui/welcome_page.blp:71
+msgid "_Take a Screenshot"
+msgstr "_Capturar li ecran"
+
+#: ../data/ui/welcome_page.blp:79
+msgctxt "Welcome screen"
+msgid "Open Image"
+msgstr "Aperter un image"
+
+#: ../data/ui/welcome_page.blp:92
+msgid "_Open Image"
+msgstr "_Aperter un image"
+
+#: ../data/ui/welcome_page.blp:100
+msgctxt "Welcome screen"
+msgid "Paste image from clipboard"
+msgstr "Collar un image del Paperiere"
+
+#: ../data/ui/welcome_page.blp:113
+msgid "Paste Image"
+msgstr "Collar un image"
+
+#: ../data/ui/welcome_page.blp:146
+msgid "⭐ Star on GitHub"
+msgstr "Adjunter⭐ che GitHub"
+
+#: ../frog/language_manager.py:54 ../frog/language_manager.py:90
+msgid "English"
+msgstr ""
+
+#: ../frog/language_manager.py:66
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+#: ../frog/language_manager.py:67
+msgid "Amharic"
+msgstr ""
+
+#: ../frog/language_manager.py:68
+msgid "Arabic"
+msgstr "Arabic"
+
+#: ../frog/language_manager.py:69
+msgid "Assamese"
+msgstr ""
+
+#: ../frog/language_manager.py:70
+msgid "Azerbaijani"
+msgstr ""
+
+#: ../frog/language_manager.py:71
+msgid "Azerbaijani - Cyrilic"
+msgstr ""
+
+#: ../frog/language_manager.py:72
+msgid "Belarusian"
+msgstr ""
+
+#: ../frog/language_manager.py:73
+msgid "Bengali"
+msgstr ""
+
+#: ../frog/language_manager.py:74
+msgid "Tibetan"
+msgstr ""
+
+#: ../frog/language_manager.py:75
+msgid "Bosnian"
+msgstr "Bosnian"
+
+#: ../frog/language_manager.py:76
+msgid "Breton"
+msgstr ""
+
+#: ../frog/language_manager.py:77
+msgid "Bulgarian"
+msgstr "Bulgarian"
+
+#: ../frog/language_manager.py:78
+msgid "Catalan; Valencian"
+msgstr "Catalan (Valencian)"
+
+#: ../frog/language_manager.py:79
+msgid "Cebuano"
+msgstr ""
+
+#: ../frog/language_manager.py:80
+msgid "Czech"
+msgstr "Tchec"
+
+#: ../frog/language_manager.py:81
+msgid "Chinese - Simplified"
+msgstr "Chinesi (simplificat)"
+
+#: ../frog/language_manager.py:82
+msgid "Chinese - Traditional"
+msgstr "Chinesi (traditional)"
+
+#: ../frog/language_manager.py:83
+msgid "Cherokee"
+msgstr ""
+
+#: ../frog/language_manager.py:84
+msgid "Corsican"
+msgstr "Corsican"
+
+#: ../frog/language_manager.py:85
+msgid "Welsh"
+msgstr "Vallesi"
+
+#: ../frog/language_manager.py:86
+msgid "Danish"
+msgstr ""
+
+#: ../frog/language_manager.py:87
+msgid "German"
+msgstr ""
+
+#: ../frog/language_manager.py:88
+msgid "Dzongkha"
+msgstr ""
+
+#: ../frog/language_manager.py:89
+msgid "Greek, Modern (1453-)"
+msgstr "Grec (modern)"
+
+#: ../frog/language_manager.py:91
+msgid "English, Middle (1100-1500)"
+msgstr "Anglesi (medial, 1100-1500)"
+
+#: ../frog/language_manager.py:92
+msgid "Esperanto"
+msgstr "Esperanto"
+
+#: ../frog/language_manager.py:93
+msgid "Math / equation detection module"
+msgstr "Module de detection de equationes"
+
+#: ../frog/language_manager.py:94
+msgid "Estonian"
+msgstr "Estonian"
+
+#: ../frog/language_manager.py:95
+msgid "Basque"
+msgstr ""
+
+#: ../frog/language_manager.py:96
+msgid "Faroese"
+msgstr ""
+
+#: ../frog/language_manager.py:97
+msgid "Persian"
+msgstr ""
+
+#: ../frog/language_manager.py:98
+msgid "Filipino (old - Tagalog)"
+msgstr ""
+
+#: ../frog/language_manager.py:99
+msgid "Finnish"
+msgstr ""
+
+#: ../frog/language_manager.py:100
+msgid "French"
+msgstr ""
+
+#: ../frog/language_manager.py:101
+msgid "German - Fraktur"
+msgstr "German (Fraktur)"
+
+#: ../frog/language_manager.py:102
+msgid "French, Middle (ca.1400-1600)"
+msgstr "Francesi (medial, ca 1400-1600)"
+
+#: ../frog/language_manager.py:103
+msgid "Western Frisian"
+msgstr "West-Frisian"
+
+#: ../frog/language_manager.py:104
+msgid "Scottish Gaelic"
+msgstr ""
+
+#: ../frog/language_manager.py:105
+msgid "Irish"
+msgstr ""
+
+#: ../frog/language_manager.py:106
+msgid "Galician"
+msgstr "Galician"
+
+#: ../frog/language_manager.py:107
+msgid "Greek, Ancient (to 1453) (contrib)"
+msgstr "Grec, antiqui (contribuet)"
+
+#: ../frog/language_manager.py:108
+msgid "Gujarati"
+msgstr ""
+
+#: ../frog/language_manager.py:109
+msgid "Haitian; Haitian Creole"
+msgstr "Haitian (creol)"
+
+#: ../frog/language_manager.py:110
+msgid "Hebrew"
+msgstr "Hebreic"
+
+#: ../frog/language_manager.py:111
+msgid "Hindi"
+msgstr ""
+
+#: ../frog/language_manager.py:112
+msgid "Croatian"
+msgstr "Croatian"
+
+#: ../frog/language_manager.py:113
+msgid "Hungarian"
+msgstr "Hungarian"
+
+#: ../frog/language_manager.py:114
+msgid "Armenian"
+msgstr "Armenian"
+
+#: ../frog/language_manager.py:115
+msgid "Inuktitut"
+msgstr ""
+
+#: ../frog/language_manager.py:116
+msgid "Indonesian"
+msgstr "Indonesian"
+
+#: ../frog/language_manager.py:117
+msgid "Icelandic"
+msgstr "Islandesi"
+
+#: ../frog/language_manager.py:118
+msgid "Italian"
+msgstr "Italian"
+
+#: ../frog/language_manager.py:119
+msgid "Italian - Old"
+msgstr ""
+
+#: ../frog/language_manager.py:120
+msgid "Javanese"
+msgstr ""
+
+#: ../frog/language_manager.py:121
+msgid "Japanese"
+msgstr "Japanesi"
+
+#: ../frog/language_manager.py:122
+msgid "Japanese (vertical)"
+msgstr "Japanesi (vertical)"
+
+#: ../frog/language_manager.py:123
+msgid "Kannada"
+msgstr ""
+
+#: ../frog/language_manager.py:124
+msgid "Georgian"
+msgstr ""
+
+#: ../frog/language_manager.py:125
+msgid "Georgian - Old"
+msgstr ""
+
+#: ../frog/language_manager.py:126
+msgid "Kazakh"
+msgstr ""
+
+#: ../frog/language_manager.py:127
+msgid "Central Khmer"
+msgstr ""
+
+#: ../frog/language_manager.py:128
+msgid "Kirghiz; Kyrgyz"
+msgstr ""
+
+#: ../frog/language_manager.py:129
+msgid "Kurmanji (Kurdish - Latin Script)"
+msgstr ""
+
+#: ../frog/language_manager.py:130
+msgid "Korean"
+msgstr ""
+
+#: ../frog/language_manager.py:131
+msgid "Korean (vertical)"
+msgstr ""
+
+#: ../frog/language_manager.py:132
+msgid "Lao"
+msgstr ""
+
+#: ../frog/language_manager.py:133
+msgid "Latin"
+msgstr ""
+
+#: ../frog/language_manager.py:134
+msgid "Latvian"
+msgstr ""
+
+#: ../frog/language_manager.py:135
+msgid "Lithuanian"
+msgstr ""
+
+#: ../frog/language_manager.py:136
+msgid "Luxembourgish"
+msgstr ""
+
+#: ../frog/language_manager.py:137
+msgid "Malayalam"
+msgstr ""
+
+#: ../frog/language_manager.py:138
+msgid "Marathi"
+msgstr ""
+
+#: ../frog/language_manager.py:139
+msgid "Macedonian"
+msgstr ""
+
+#: ../frog/language_manager.py:140
+msgid "Maltese"
+msgstr "Maltesi"
+
+#: ../frog/language_manager.py:141
+msgid "Mongolian"
+msgstr "Mongolian"
+
+#: ../frog/language_manager.py:142
+msgid "Maori"
+msgstr ""
+
+#: ../frog/language_manager.py:143
+msgid "Malay"
+msgstr ""
+
+#: ../frog/language_manager.py:144
+msgid "Burmese"
+msgstr ""
+
+#: ../frog/language_manager.py:145
+msgid "Nepali"
+msgstr ""
+
+#: ../frog/language_manager.py:146
+msgid "Dutch; Flemish"
+msgstr ""
+
+#: ../frog/language_manager.py:147
+msgid "Norwegian"
+msgstr ""
+
+#: ../frog/language_manager.py:148
+msgid "Occitan (post 1500)"
+msgstr ""
+
+#: ../frog/language_manager.py:149
+msgid "Oriya"
+msgstr ""
+
+#: ../frog/language_manager.py:150
+msgid "Orientation and script detection module"
+msgstr "Module de detection de scriptura e de orientation"
+
+#: ../frog/language_manager.py:151
+msgid "Panjabi; Punjabi"
+msgstr ""
+
+#: ../frog/language_manager.py:152
+msgid "Polish"
+msgstr ""
+
+#: ../frog/language_manager.py:153
+msgid "Portuguese"
+msgstr "Portuguesi"
+
+#: ../frog/language_manager.py:154
+msgid "Pushto; Pashto"
+msgstr ""
+
+#: ../frog/language_manager.py:155
+msgid "Quechua"
+msgstr ""
+
+#: ../frog/language_manager.py:156
+msgid "Romanian; Moldavian; Moldovan"
+msgstr "Romanian e moldovan"
+
+#: ../frog/language_manager.py:157
+msgid "Russian"
+msgstr "Russ"
+
+#: ../frog/language_manager.py:158
+msgid "Sanskrit"
+msgstr ""
+
+#: ../frog/language_manager.py:159
+msgid "Sinhala; Sinhalese"
+msgstr ""
+
+#: ../frog/language_manager.py:160
+msgid "Slovak"
+msgstr "Slovac"
+
+#: ../frog/language_manager.py:161
+msgid "Slovenian"
+msgstr "Slovenian"
+
+#: ../frog/language_manager.py:162
+msgid "Sindhi"
+msgstr ""
+
+#: ../frog/language_manager.py:163
+msgid "Spanish; Castilian"
+msgstr ""
+
+#: ../frog/language_manager.py:164
+msgid "Spanish; Castilian - Old"
+msgstr ""
+
+#: ../frog/language_manager.py:165
+msgid "Albanian"
+msgstr ""
+
+#: ../frog/language_manager.py:166
+msgid "Serbian"
+msgstr ""
+
+#: ../frog/language_manager.py:167
+msgid "Serbian - Latin"
+msgstr "Serbian (latin)"
+
+#: ../frog/language_manager.py:168
+msgid "Sundanese"
+msgstr ""
+
+#: ../frog/language_manager.py:169
+msgid "Swahili"
+msgstr ""
+
+#: ../frog/language_manager.py:170
+msgid "Swedish"
+msgstr "Svedesi"
+
+#: ../frog/language_manager.py:171
+msgid "Syriac"
+msgstr "Sirian"
+
+#: ../frog/language_manager.py:172
+msgid "Tamil"
+msgstr ""
+
+#: ../frog/language_manager.py:173
+msgid "Tatar"
+msgstr ""
+
+#: ../frog/language_manager.py:174
+msgid "Telugu"
+msgstr ""
+
+#: ../frog/language_manager.py:175
+msgid "Tajik"
+msgstr ""
+
+#: ../frog/language_manager.py:176
+msgid "Thai"
+msgstr ""
+
+#: ../frog/language_manager.py:177
+msgid "Tigrinya"
+msgstr ""
+
+#: ../frog/language_manager.py:178
+msgid "Tonga"
+msgstr ""
+
+#: ../frog/language_manager.py:179
+msgid "Turkish"
+msgstr "Turcian"
+
+#: ../frog/language_manager.py:180
+msgid "Uighur; Uyghur"
+msgstr ""
+
+#: ../frog/language_manager.py:181
+msgid "Ukrainian"
+msgstr ""
+
+#: ../frog/language_manager.py:182
+msgid "Urdu"
+msgstr ""
+
+#: ../frog/language_manager.py:183
+msgid "Uzbek"
+msgstr ""
+
+#: ../frog/language_manager.py:184
+msgid "Uzbek - Cyrilic"
+msgstr ""
+
+#: ../frog/language_manager.py:185
+msgid "Vietnamese"
+msgstr ""
+
+#: ../frog/language_manager.py:186
+msgid "Yiddish"
+msgstr ""
+
+#: ../frog/language_manager.py:187
+msgid "Yoruba"
+msgstr ""
+
+#: ../frog/main.py:63 ../frog/main.py:83
+msgid "Extract directly into the clipboard"
+msgstr "Extraer directmen al Paperiere"
+
+#: ../frog/main.py:194
+msgid "No text found. Try to grab another region."
+msgstr ""
+
+#: ../frog/main.py:204
+msgid "Text extracted. You can paste it with Ctrl+V"
+msgstr ""
+
+#: ../frog/window.py:151
+msgid "Text copied to clipboard"
+msgstr "Li textu sta copiat al Paperiere"
+
+#: ../frog/window.py:162
+msgid "QR-code URL opened"
+msgstr "Adresse del code QR sta apertet"
+
+#: ../frog/window.py:166
+msgid "QR-code contains URL."
+msgstr "Li code QR contene un adresse."
+
+#: ../frog/window.py:167
+msgid "Open"
+msgstr "Aperter"
+
+#: ../frog/window.py:194
+msgid "Supported image files"
+msgstr "Supportat files de images"
+
+#: ../frog/window.py:200
+msgid "Open image to extract text"
+msgstr "Aperter un image por extraer textu"
+
+#: ../frog/window.py:260
+msgid "Only images can be processed that way."
+msgstr ""
+
+#: ../frog/window.py:293
+msgid "Text copied"
+msgstr "Textu sta copiat"
+
+#: ../frog/services/clipboard_service.py:54
+msgid "No image in clipboard"
+msgstr "Hay null image in li Paperiere"
+
+#: ../frog/services/screenshot_service.py:94
+msgid "Can't take a screenshot."
+msgstr "Ne successat capter li ecran."
+
+#: ../frog/widgets/preferences_languages_page.py:80
+msgid "Models location unreachable. Check your internet connection."
+msgstr ""
+
+#: ../frog/widgets/preferences_languages_page.py:86
+msgid "You are on a metered connection. Be careful to download languages."
+msgstr ""
+
+#: ../frog/widgets/preferences_languages_page.py:123
+msgid "View all available languages"
+msgstr "Vider omni disponibil lingues"
+
+#: ../frog/widgets/share_row.py:48
+#, python-brace-format
+msgid "Share via {0}"
+msgstr "Partir med {0}"
