@@ -129,7 +129,6 @@ class FrogWindow(Adw.ApplicationWindow):
     def get_screenshot(self, copy: bool = False) -> None:
         self.extracted_page.listen_cancel()
         lang = self.get_language()
-        # self.welcome_page.spinner.start()
         self.hide()
         self.backend.capture(lang, copy)
 
@@ -178,11 +177,11 @@ class FrogWindow(Adw.ApplicationWindow):
 
         finally:
             self.present()
-            self.welcome_page.spinner.stop()
+            self.welcome_page.spinner.set_visible(False)
 
     def on_shot_error(self, sender, message: str) -> None:
         self.present()
-        self.welcome_page.spinner.stop()
+        self.welcome_page.spinner.set_visible(False)
         if message:
             self.show_toast(message)
             # self.display_error(self, message)
@@ -207,7 +206,7 @@ class FrogWindow(Adw.ApplicationWindow):
         try:
             item = dialog.open_finish(result)
             lang = self.get_language()
-            self.welcome_page.spinner.start()
+            self.welcome_page.spinner.set_visible(True)
             GObjectWorker.call(self.backend.decode_image, (lang, item.get_path()))
         except GLib.Error as e:
             if not e.matches(Gio.io_error_quark(), Gio.IOErrorEnum.CANCELLED):
@@ -219,7 +218,7 @@ class FrogWindow(Adw.ApplicationWindow):
         pngbytes = BytesIO(texture.save_to_png_bytes().get_data())
         try:
             lang = self.get_language()
-            self.welcome_page.spinner.start()
+            self.welcome_page.spinner.set_visible(True)
             GObjectWorker.call(self.backend.decode_image, (lang, pngbytes))
         except GLib.Error as e:
             if not e.matches(Gio.io_error_quark(), Gio.IOErrorEnum.CANCELLED):
@@ -261,7 +260,7 @@ class FrogWindow(Adw.ApplicationWindow):
             return self.show_toast(_("Only images can be processed that way."))
 
         lang = self.get_language()
-        self.welcome_page.spinner.start()
+        self.welcome_page.spinner.set_visible(True)
         GObjectWorker.call(self.backend.decode_image, (lang, item.get_path()))
 
     def on_configure_event(self, window, event):
