@@ -1,0 +1,855 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the frog package.
+# Čarvanavoki <dmega5941@gmail.com>, 2025.
+msgid ""
+msgstr ""
+"Project-Id-Version: frog 1.4.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-25 11:43+0300\n"
+"PO-Revision-Date: 2025-02-25 20:08+0000\n"
+"Last-Translator: Čarvanavoki <dmega5941@gmail.com>\n"
+"Language-Team: Belarusian (Latin script) <https://hosted.weblate.org/"
+"projects/frog/default/be_Latn/>\n"
+"Language: be_Latn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.10.2-dev\n"
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:6
+#: ../data/com.github.tenderowl.frog.desktop.in:3
+msgid "Frog"
+msgstr "Žaba"
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:7
+msgid "Extract text from images"
+msgstr "Vymańnie tekstu z vyjavaŭ"
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:9
+msgid ""
+"Extract text from images, websites, videos, and QR codes by taking a picture "
+"of the source."
+msgstr ""
+"Vymajcie tekst z vyjavaŭ veb-sajtaŭ, videa j QR-kodaŭ, fatahrafujučy krynicu."
+
+#: ../data/com.github.tenderowl.frog.desktop.in:4
+msgid "Text extraction tool"
+msgstr "Instrument dla vymańnia tekstu"
+
+#: ../data/com.github.tenderowl.frog.desktop.in:5
+msgid "Extract text from any image, video or web page"
+msgstr "Vymajcie tekst ź lubych malunkaŭ, videa ci veb-staronkaŭ"
+
+#: ../data/com.github.tenderowl.frog.desktop.in:12
+msgid "OCR;Text;Extraction;"
+msgstr "OCR;Tekst;Vymańnie;"
+
+#: ../data/com.github.tenderowl.frog.desktop.in:18
+msgid "Extract Text to the Clipboard"
+msgstr "Vyniać i skapijavać u bufar pamieny"
+
+#: ../data/ui/extracted_page.blp:25
+msgid "Take a screenshot"
+msgstr "Zrabić ekranny zdymak"
+
+#: ../data/ui/extracted_page.blp:33
+msgctxt "Extracted screen"
+msgid "Copy extracted text to clipboard"
+msgstr "Skapijavać vyniaty tekst u bufar pamienu"
+
+#: ../data/ui/extracted_page.blp:40
+msgctxt "Extracted screen"
+msgid "Listen to text"
+msgstr "Prasłuchać tekst"
+
+#: ../data/ui/extracted_page.blp:47
+msgctxt "Extracted screen"
+msgid "Cancel listening to text"
+msgstr "Skasavać prasłuchoŭvańnie tekstu"
+
+#: ../data/ui/extracted_page.blp:60
+msgctxt "Extracted screen"
+msgid "Open menu"
+msgstr "Adčynić meniu"
+
+#: ../data/ui/extracted_page.blp:67
+msgctxt "Extracted screen"
+msgid "Share To"
+msgstr "Abahulić"
+
+#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:127
+msgid "Preferences"
+msgstr "Nałady"
+
+#: ../data/ui/extracted_page.blp:111 ../data/ui/welcome_page.blp:134
+msgid "Keyboard Shortcuts"
+msgstr "Haračyja klavišy"
+
+#: ../data/ui/extracted_page.blp:116 ../data/ui/welcome_page.blp:139
+msgid "About Frog"
+msgstr "Ab Žabie"
+
+#: ../data/ui/extracted_page.blp:124 ../data/ui/welcome_page.blp:154
+msgid "Open image"
+msgstr "Adkryć vyjavu"
+
+#: ../data/ui/extracted_page.blp:125 ../data/ui/welcome_page.blp:155
+msgid "Paste from clipboard"
+msgstr "Ustavić z bufara pamienu"
+
+#: ../data/ui/language_dialog.blp:14
+msgid "Available Languages"
+msgstr "Dastupnyja movy"
+
+#: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
+msgid "Search Languages…"
+msgstr "Znajści movy…"
+
+#: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
+msgid "No Results Found"
+msgstr "Aničoha nia znojdziena"
+
+#: ../data/ui/language_popover.blp:77
+msgid "Add Language"
+msgstr "Dadać movu"
+
+#: ../data/ui/language_row.blp:21
+msgctxt "Preferences Language Row"
+msgid "Install language"
+msgstr "Ustalavanyja movy"
+
+#: ../data/ui/language_row.blp:30
+msgctxt "Preferences Language Row"
+msgid "Remove language"
+msgstr "Vydalić movu"
+
+#: ../data/ui/preferences_general.blp:5
+msgid "_General"
+msgstr "_Ahulnaje"
+
+#: ../data/ui/preferences_general.blp:10
+msgid "Text Extracting"
+msgstr "Vymańnie tekstu"
+
+#: ../data/ui/preferences_general.blp:13
+msgid "_Second language"
+msgstr "_Druhaja mova"
+
+#: ../data/ui/preferences_general.blp:15
+msgid "Additional language used in text recognition"
+msgstr "Dadatkovaja mova vykarystujemaja pry raspaznańni tekstu"
+
+#: ../data/ui/preferences_general.blp:20
+msgid "Behavior"
+msgstr "Pavodziny"
+
+#: ../data/ui/preferences_general.blp:23
+msgid "_Copy to clipboard"
+msgstr "_Skapijavać u bufar pamienu"
+
+#: ../data/ui/preferences_general.blp:25
+msgid "Automatically copy the extracted text to clipboard"
+msgstr "Autamatyčna kapijavać vyniaty tekst u bufar pamienu"
+
+#: ../data/ui/preferences_general.blp:34
+msgid "_Open QR-code links"
+msgstr "_Adčyniać spasyłki z QR-kodaŭ"
+
+#: ../data/ui/preferences_general.blp:36
+msgid "Automatically open links from QR-codes"
+msgstr "Aŭtamatyčna adčyniać spasyłki z QR-kodaŭ"
+
+#: ../data/ui/preferences_languages.blp:6
+msgid "_Languages"
+msgstr "_Movy"
+
+#: ../data/ui/preferences_languages.blp:24
+msgid "Models location unreachable. Check your internet connection"
+msgstr ""
+"Znachodžańnie madelaŭ niadasiahalna. Praviercie vašaje jynternet-padłučeńnie"
+
+#: ../data/ui/preferences_languages.blp:26
+msgid "Retry"
+msgstr "Paŭtaryć"
+
+#: ../data/ui/preferences_languages.blp:42
+msgid "Installed languages"
+msgstr "Ustalavanyja movy"
+
+#: ../data/ui/share_row.blp:14
+msgid "Share via Pocket"
+msgstr "Zachavać u Kišeni [Pocket]"
+
+#: ../data/ui/share_row.blp:22
+msgid "Pocket"
+msgstr "Kišenia [Pocket]"
+
+#: ../data/ui/shortcuts.blp:5
+msgctxt "shortcut window"
+msgid "Shortcuts"
+msgstr "Haračyja klavišy"
+
+#: ../data/ui/shortcuts.blp:12
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Ahulnaje"
+
+#: ../data/ui/shortcuts.blp:16
+msgctxt "shortcut window"
+msgid "Open image"
+msgstr "Adkryć vyjavu"
+
+#: ../data/ui/shortcuts.blp:21
+msgctxt "shortcut window"
+msgid "Take screenshot and extract text"
+msgstr "Zrabić ekranny zdymak i vyniać tekst"
+
+#: ../data/ui/shortcuts.blp:26
+msgctxt "shortcut window"
+msgid "Extract text and copy it to clipboard"
+msgstr "Vyniać tekst i skapijavać jaho ŭ bufar pamienu"
+
+#: ../data/ui/shortcuts.blp:27
+msgctxt "shortcut window"
+msgid "May not work properly on wayland"
+msgstr "Moža nia pracavać na Šlamje [Wayland]"
+
+#: ../data/ui/shortcuts.blp:32
+msgctxt "shortcut window"
+msgid "Copy extracted text to clipboard"
+msgstr "Skapijavać vyniaty tekst u bufar pamienu"
+
+#: ../data/ui/shortcuts.blp:37
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Aplikacyja"
+
+#: ../data/ui/shortcuts.blp:41
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "Nałady"
+
+#: ../data/ui/shortcuts.blp:46
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Vyjści"
+
+#: ../data/ui/shortcuts.blp:51
+msgctxt "shortcut window"
+msgid "Help"
+msgstr "Dapamoha"
+
+#: ../data/ui/shortcuts.blp:55
+msgctxt "shortcut window"
+msgid "Display Shortcuts"
+msgstr "Pakazać haračyja klavišy"
+
+#: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
+msgid "Extract text from anywhere"
+msgstr "Vymajcie tekst adusiul"
+
+#: ../data/ui/welcome_page.blp:21
+msgid "Language"
+msgstr "Mova"
+
+#: ../data/ui/welcome_page.blp:22
+msgid "Select language to extract"
+msgstr "Abiarycie movy dla vymańnia"
+
+#: ../data/ui/welcome_page.blp:43
+msgid "Open menu"
+msgstr "Adkryć meniu"
+
+#: ../data/ui/welcome_page.blp:58
+msgctxt "Welcome screen"
+msgid "Take a Screenshot"
+msgstr "Zrabić ekranny zdymak"
+
+#: ../data/ui/welcome_page.blp:71
+msgid "_Take a Screenshot"
+msgstr "_Zrabić ekranny zdymak"
+
+#: ../data/ui/welcome_page.blp:79
+msgctxt "Welcome screen"
+msgid "Open Image"
+msgstr "Adkryć vyjavu"
+
+#: ../data/ui/welcome_page.blp:92
+msgid "_Open Image"
+msgstr "_Adkryć vyjavu"
+
+#: ../data/ui/welcome_page.blp:100
+msgctxt "Welcome screen"
+msgid "Paste image from clipboard"
+msgstr "Ustavić z bufara pamienu"
+
+#: ../data/ui/welcome_page.blp:113
+msgid "Paste Image"
+msgstr "Ustavić vyjavu"
+
+#: ../data/ui/welcome_page.blp:146
+msgid "⭐ Star on GitHub"
+msgstr "Paznačyć ⭐ na GitHub"
+
+#: ../frog/language_manager.py:54 ../frog/language_manager.py:90
+msgid "English"
+msgstr "Angjelskaja"
+
+#: ../frog/language_manager.py:66
+msgid "Afrikaans"
+msgstr "Afrykanskaja"
+
+#: ../frog/language_manager.py:67
+msgid "Amharic"
+msgstr "Amharskaja"
+
+#: ../frog/language_manager.py:68
+msgid "Arabic"
+msgstr "Arabskaja"
+
+#: ../frog/language_manager.py:69
+msgid "Assamese"
+msgstr "Asamskaja"
+
+#: ../frog/language_manager.py:70
+msgid "Azerbaijani"
+msgstr "Azerbajdžanskaja"
+
+#: ../frog/language_manager.py:71
+msgid "Azerbaijani - Cyrilic"
+msgstr "Azerbajdžanskaja - Kirylica"
+
+#: ../frog/language_manager.py:72
+msgid "Belarusian"
+msgstr "Biełaruskaja"
+
+#: ../frog/language_manager.py:73
+msgid "Bengali"
+msgstr "Benhalskaja"
+
+#: ../frog/language_manager.py:74
+msgid "Tibetan"
+msgstr "Tybieckaja"
+
+#: ../frog/language_manager.py:75
+msgid "Bosnian"
+msgstr "Baśnijskaja"
+
+#: ../frog/language_manager.py:76
+msgid "Breton"
+msgstr "Bretonskaja"
+
+#: ../frog/language_manager.py:77
+msgid "Bulgarian"
+msgstr "Baŭharskaja"
+
+#: ../frog/language_manager.py:78
+msgid "Catalan; Valencian"
+msgstr "Katałonskaja; Valensijskaja"
+
+#: ../frog/language_manager.py:79
+msgid "Cebuano"
+msgstr "Siebuanskaja"
+
+#: ../frog/language_manager.py:80
+msgid "Czech"
+msgstr "Českaja"
+
+#: ../frog/language_manager.py:81
+msgid "Chinese - Simplified"
+msgstr "Kitajskaja - Sproščanaja"
+
+#: ../frog/language_manager.py:82
+msgid "Chinese - Traditional"
+msgstr "Kitajskaja — Tradycyjnaja"
+
+#: ../frog/language_manager.py:83
+msgid "Cherokee"
+msgstr "Čerockaja"
+
+#: ../frog/language_manager.py:84
+msgid "Corsican"
+msgstr "Karsikanskaja"
+
+#: ../frog/language_manager.py:85
+msgid "Welsh"
+msgstr "Valijskaja"
+
+#: ../frog/language_manager.py:86
+msgid "Danish"
+msgstr "Dackaja"
+
+#: ../frog/language_manager.py:87
+msgid "German"
+msgstr "Niamieckaja"
+
+#: ../frog/language_manager.py:88
+msgid "Dzongkha"
+msgstr "Dzonhchaskaja"
+
+#: ../frog/language_manager.py:89
+msgid "Greek, Modern (1453-)"
+msgstr "Hreckaja, Sučasnaja (1453-)"
+
+#: ../frog/language_manager.py:91
+msgid "English, Middle (1100-1500)"
+msgstr "Angjelskaja, Siaredniavieckaja (1100-1500)"
+
+#: ../frog/language_manager.py:92
+msgid "Esperanto"
+msgstr "Esperanta"
+
+#: ../frog/language_manager.py:93
+msgid "Math / equation detection module"
+msgstr "Matematyčnyja vyrazy"
+
+#: ../frog/language_manager.py:94
+msgid "Estonian"
+msgstr "Estonskaja"
+
+#: ../frog/language_manager.py:95
+msgid "Basque"
+msgstr "Basckaja"
+
+#: ../frog/language_manager.py:96
+msgid "Faroese"
+msgstr "Farerskaja"
+
+#: ../frog/language_manager.py:97
+msgid "Persian"
+msgstr "Persydzkaja"
+
+#: ../frog/language_manager.py:98
+msgid "Filipino (old - Tagalog)"
+msgstr "Filipinskaja (stary — Tahaloh)"
+
+#: ../frog/language_manager.py:99
+msgid "Finnish"
+msgstr "Finskaja"
+
+#: ../frog/language_manager.py:100
+msgid "French"
+msgstr "Francuskaja"
+
+#: ../frog/language_manager.py:101
+msgid "German - Fraktur"
+msgstr "Niamieckaja - Pierałomnaja"
+
+#: ../frog/language_manager.py:102
+msgid "French, Middle (ca.1400-1600)"
+msgstr "Francuskaja, Siaredniavieckaja (kala 1400-1600)"
+
+#: ../frog/language_manager.py:103
+msgid "Western Frisian"
+msgstr "Zachodniefryskaja"
+
+#: ../frog/language_manager.py:104
+msgid "Scottish Gaelic"
+msgstr "Šatlandzkaja Helskaja"
+
+#: ../frog/language_manager.py:105
+msgid "Irish"
+msgstr "Irlandzkaja"
+
+#: ../frog/language_manager.py:106
+msgid "Galician"
+msgstr "Halisijskaja"
+
+#: ../frog/language_manager.py:107
+msgid "Greek, Ancient (to 1453) (contrib)"
+msgstr "Hreckaja, Staražytnaja (da 1453)"
+
+#: ../frog/language_manager.py:108
+msgid "Gujarati"
+msgstr "Hudžarackaja"
+
+#: ../frog/language_manager.py:109
+msgid "Haitian; Haitian Creole"
+msgstr "Hajicianskaja; Hajicianskaja kreolskaja"
+
+#: ../frog/language_manager.py:110
+msgid "Hebrew"
+msgstr "Žydoŭskaja (Iŭryt)"
+
+#: ../frog/language_manager.py:111
+msgid "Hindi"
+msgstr "Hindziskaja"
+
+#: ../frog/language_manager.py:112
+msgid "Croatian"
+msgstr "Charvackaja"
+
+#: ../frog/language_manager.py:113
+msgid "Hungarian"
+msgstr "Vuhorskaja"
+
+#: ../frog/language_manager.py:114
+msgid "Armenian"
+msgstr "Armianskaja"
+
+#: ../frog/language_manager.py:115
+msgid "Inuktitut"
+msgstr "Inuktytut"
+
+#: ../frog/language_manager.py:116
+msgid "Indonesian"
+msgstr "Indanezijskaja"
+
+#: ../frog/language_manager.py:117
+msgid "Icelandic"
+msgstr "Iślandzkaja"
+
+#: ../frog/language_manager.py:118
+msgid "Italian"
+msgstr "Italjanskaja"
+
+#: ../frog/language_manager.py:119
+msgid "Italian - Old"
+msgstr "Italjanskaja - Staraja"
+
+#: ../frog/language_manager.py:120
+msgid "Javanese"
+msgstr "Javanskaja"
+
+#: ../frog/language_manager.py:121
+msgid "Japanese"
+msgstr "Japonskaja"
+
+#: ../frog/language_manager.py:122
+msgid "Japanese (vertical)"
+msgstr "Japonskaja (vertykalnaja)"
+
+#: ../frog/language_manager.py:123
+msgid "Kannada"
+msgstr "Kannada"
+
+#: ../frog/language_manager.py:124
+msgid "Georgian"
+msgstr "Hruzinskaja"
+
+#: ../frog/language_manager.py:125
+msgid "Georgian - Old"
+msgstr "Hruzinskaja - Staraja"
+
+#: ../frog/language_manager.py:126
+msgid "Kazakh"
+msgstr "Kazaskaja"
+
+#: ../frog/language_manager.py:127
+msgid "Central Khmer"
+msgstr "Centralnakhmerskaja"
+
+#: ../frog/language_manager.py:128
+msgid "Kirghiz; Kyrgyz"
+msgstr "Kirhiskaja"
+
+#: ../frog/language_manager.py:129
+msgid "Kurmanji (Kurdish - Latin Script)"
+msgstr "Kurmandžy (Kurdzkaja - Łacinka)"
+
+#: ../frog/language_manager.py:130
+msgid "Korean"
+msgstr "Karejskaja"
+
+#: ../frog/language_manager.py:131
+msgid "Korean (vertical)"
+msgstr "Karejskaja (vertykalnaja)"
+
+#: ../frog/language_manager.py:132
+msgid "Lao"
+msgstr "Łaoskaja"
+
+#: ../frog/language_manager.py:133
+msgid "Latin"
+msgstr "Łacinskaja"
+
+#: ../frog/language_manager.py:134
+msgid "Latvian"
+msgstr "Łatyskaja"
+
+#: ../frog/language_manager.py:135
+msgid "Lithuanian"
+msgstr "Litoŭskaja"
+
+#: ../frog/language_manager.py:136
+msgid "Luxembourgish"
+msgstr "Luksemburskaja"
+
+#: ../frog/language_manager.py:137
+msgid "Malayalam"
+msgstr "Małajałam"
+
+#: ../frog/language_manager.py:138
+msgid "Marathi"
+msgstr "Maratchi"
+
+#: ../frog/language_manager.py:139
+msgid "Macedonian"
+msgstr "Makiedonskaja"
+
+#: ../frog/language_manager.py:140
+msgid "Maltese"
+msgstr "Maltyjskaja"
+
+#: ../frog/language_manager.py:141
+msgid "Mongolian"
+msgstr "Mangolskaja"
+
+#: ../frog/language_manager.py:142
+msgid "Maori"
+msgstr "Maory"
+
+#: ../frog/language_manager.py:143
+msgid "Malay"
+msgstr "Małajskaja"
+
+#: ../frog/language_manager.py:144
+msgid "Burmese"
+msgstr "Birmanskaja"
+
+#: ../frog/language_manager.py:145
+msgid "Nepali"
+msgstr "Nepalskaja"
+
+#: ../frog/language_manager.py:146
+msgid "Dutch; Flemish"
+msgstr "Halandzkaja; Flamandzkaja"
+
+#: ../frog/language_manager.py:147
+msgid "Norwegian"
+msgstr "Narveskaja"
+
+#: ../frog/language_manager.py:148
+msgid "Occitan (post 1500)"
+msgstr "Aksitanskaja (paśla 1500)"
+
+#: ../frog/language_manager.py:149
+msgid "Oriya"
+msgstr "Oryja"
+
+#: ../frog/language_manager.py:150
+msgid "Orientation and script detection module"
+msgstr "Modul vyjaŭleńnia aryjentacyju j scenaru"
+
+#: ../frog/language_manager.py:151
+msgid "Panjabi; Punjabi"
+msgstr "Panžabi; Paniabi"
+
+#: ../frog/language_manager.py:152
+msgid "Polish"
+msgstr "Polskaja"
+
+#: ../frog/language_manager.py:153
+msgid "Portuguese"
+msgstr "Partuhalskaja"
+
+#: ../frog/language_manager.py:154
+msgid "Pushto; Pashto"
+msgstr "Puštuskaja"
+
+#: ../frog/language_manager.py:155
+msgid "Quechua"
+msgstr "Kiečuaskaja"
+
+#: ../frog/language_manager.py:156
+msgid "Romanian; Moldavian; Moldovan"
+msgstr "Rumynskaja; Małdaŭskaja"
+
+#: ../frog/language_manager.py:157
+msgid "Russian"
+msgstr "Rasejskaja"
+
+#: ../frog/language_manager.py:158
+msgid "Sanskrit"
+msgstr "Sanskryt"
+
+#: ../frog/language_manager.py:159
+msgid "Sinhala; Sinhalese"
+msgstr "Sinhalskaja"
+
+#: ../frog/language_manager.py:160
+msgid "Slovak"
+msgstr "Słavackaja"
+
+#: ../frog/language_manager.py:161
+msgid "Slovenian"
+msgstr "Słavienskaja"
+
+#: ../frog/language_manager.py:162
+msgid "Sindhi"
+msgstr "Cindchi"
+
+#: ../frog/language_manager.py:163
+msgid "Spanish; Castilian"
+msgstr "Hišpanskaja; Kastylskaja"
+
+#: ../frog/language_manager.py:164
+msgid "Spanish; Castilian - Old"
+msgstr "Hišpanskaja; Kastylskaja - Staražytnaja"
+
+#: ../frog/language_manager.py:165
+msgid "Albanian"
+msgstr "Albanskaja"
+
+#: ../frog/language_manager.py:166
+msgid "Serbian"
+msgstr "Serbskaja"
+
+#: ../frog/language_manager.py:167
+msgid "Serbian - Latin"
+msgstr "Serbskaja - Łacinka"
+
+#: ../frog/language_manager.py:168
+msgid "Sundanese"
+msgstr "Sundanskaja"
+
+#: ../frog/language_manager.py:169
+msgid "Swahili"
+msgstr "Suachili"
+
+#: ../frog/language_manager.py:170
+msgid "Swedish"
+msgstr "Švedzkaja"
+
+#: ../frog/language_manager.py:171
+msgid "Syriac"
+msgstr "Syryjskaja"
+
+#: ../frog/language_manager.py:172
+msgid "Tamil"
+msgstr "Tamilskaja"
+
+#: ../frog/language_manager.py:173
+msgid "Tatar"
+msgstr "Tatarskaja"
+
+#: ../frog/language_manager.py:174
+msgid "Telugu"
+msgstr "Tełuhu"
+
+#: ../frog/language_manager.py:175
+msgid "Tajik"
+msgstr "Tadžyckaja"
+
+#: ../frog/language_manager.py:176
+msgid "Thai"
+msgstr "Tajskaja"
+
+#: ../frog/language_manager.py:177
+msgid "Tigrinya"
+msgstr "Tyhryńja"
+
+#: ../frog/language_manager.py:178
+msgid "Tonga"
+msgstr "Tonha"
+
+#: ../frog/language_manager.py:179
+msgid "Turkish"
+msgstr "Tureckaja"
+
+#: ../frog/language_manager.py:180
+msgid "Uighur; Uyghur"
+msgstr "Vujhurskaja"
+
+#: ../frog/language_manager.py:181
+msgid "Ukrainian"
+msgstr "Ukrajinskaja"
+
+#: ../frog/language_manager.py:182
+msgid "Urdu"
+msgstr "Urdu"
+
+#: ../frog/language_manager.py:183
+msgid "Uzbek"
+msgstr "Uzbeckaja"
+
+#: ../frog/language_manager.py:184
+msgid "Uzbek - Cyrilic"
+msgstr "Uzbeckaja — Kirylica"
+
+#: ../frog/language_manager.py:185
+msgid "Vietnamese"
+msgstr "Vijetnamskaja"
+
+#: ../frog/language_manager.py:186
+msgid "Yiddish"
+msgstr "Jidyš"
+
+#: ../frog/language_manager.py:187
+msgid "Yoruba"
+msgstr "Joruba"
+
+#: ../frog/main.py:63 ../frog/main.py:83
+msgid "Extract directly into the clipboard"
+msgstr "Vyniać napramuju ŭ bufar pamienu"
+
+#: ../frog/main.py:194
+msgid "No text found. Try to grab another region."
+msgstr "Tekst nia znojdzieny. Pasprabujcie abrać inšyju vobłaść."
+
+#: ../frog/main.py:204
+msgid "Text extracted. You can paste it with Ctrl+V"
+msgstr "Tekst vyniaty. Vy možacie ŭstavić jaho praz Ctrl+V"
+
+#: ../frog/window.py:151
+msgid "Text copied to clipboard"
+msgstr "Tekst skapijavany u bufar pamienu"
+
+#: ../frog/window.py:162
+msgid "QR-code URL opened"
+msgstr "URL z QR-kodu adčynieny"
+
+#: ../frog/window.py:166
+msgid "QR-code contains URL."
+msgstr "QR-kod źmiaščaje URL."
+
+#: ../frog/window.py:167
+msgid "Open"
+msgstr "Adkryć"
+
+#: ../frog/window.py:194
+msgid "Supported image files"
+msgstr "Farmaty vyjavaŭ jakia padtrymoŭvajucca"
+
+#: ../frog/window.py:200
+msgid "Open image to extract text"
+msgstr "Adkryć vyjavu kab vyniać tekst"
+
+#: ../frog/window.py:260
+msgid "Only images can be processed that way."
+msgstr "Tolki vyjavy mohuć być apracavanya takim čynam."
+
+#: ../frog/window.py:293
+msgid "Text copied"
+msgstr "Tekst skapijavany"
+
+#: ../frog/services/clipboard_service.py:54
+msgid "No image in clipboard"
+msgstr "Niama vyjavy ŭ bufary pamienu"
+
+#: ../frog/services/screenshot_service.py:94
+msgid "Can't take a screenshot."
+msgstr "Nia atrymoŭvajecca zrabić ekranny zdymak."
+
+#: ../frog/widgets/preferences_languages_page.py:80
+msgid "Models location unreachable. Check your internet connection."
+msgstr ""
+"Miescaznachodžańnie madelaŭ niadasiahalnaje. Praviercie jynternet-"
+"padłučeńnie."
+
+#: ../frog/widgets/preferences_languages_page.py:86
+msgid "You are on a metered connection. Be careful to download languages."
+msgstr ""
+"U vas limitavanaje złučeńnie. Budzcie aściarožniej pry zapampoŭcy movaŭ."
+
+#: ../frog/widgets/preferences_languages_page.py:123
+msgid "View all available languages"
+msgstr "Pakazać usie dastupnyja movy"
+
+#: ../frog/widgets/share_row.py:48
+#, python-brace-format
+msgid "Share via {0}"
+msgstr "Abahulić praz {0}"
