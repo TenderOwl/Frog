@@ -1,4 +1,4 @@
-# Copyright 2023 Andrey Maksimov
+# Copyright 2023-2025 Andrey Maksimov
 #
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
