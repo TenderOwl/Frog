@@ -143,7 +143,7 @@ class FrogApplication(Adw.Application):
         telemetry.set_installation_id(self.installation_id)
 
     def on_settings_changed(self, settings, key):
-        logger.debug('SETTINGS: %s changed', key)
+        logger.debug('SETTINGS: {} changed', key)
         if key == "telemetry":
             value = settings.get_boolean(key)
             if value:
