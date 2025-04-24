@@ -25,7 +25,8 @@
 # holders shall not be used in advertising or otherwise to promote the sale,
 # use or other dealings in this Software without prior written
 # authorization.
-
+import asyncio
+from gi.events import GLibEventLoopPolicy
 import datetime
 import sys
 from gettext import gettext as _
@@ -272,5 +273,6 @@ class FrogApplication(Adw.Application):
 
 
 def main(version):
+    asyncio.set_event_loop_policy(GLibEventLoopPolicy())
     app = FrogApplication(version)
     return app.run(sys.argv)
