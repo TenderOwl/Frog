@@ -19,6 +19,18 @@
     </screenshots>
 
     <releases>
+        <release version="1.6.0" type="stable" date="2025-04-25">
+            <description translate="no">
+            	<p>Frog has been updated to version 1.6.0! This release includes a number of improvements and bug fixes. Thank you for your continued
+support!</p>
+                <ul>
+                    <li>Improved user interface.</li>
+                    <li>Translations available in Belarusian, Occidental and Tamil.</li>
+                    <li>Better performance and stability.</li>
+                </ul>
+                <p>We hope you enjoy our work!</p>
+            </description>
+        </release>
         <release version="1.5.2" type="stable" date="2024-08-27">
             <description translate="no">
             	<p>Fixes.</p>
