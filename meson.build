@@ -1,6 +1,6 @@
 project('frog',
-          version: '1.5.2',
-    meson_version: '>= 0.50.0',
+          version: '1.6.0',
+    meson_version: '>= 1.5.0',
   default_options: [ 'warning_level=2',
                    ],
 )
