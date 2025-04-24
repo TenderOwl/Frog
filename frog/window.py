@@ -81,7 +81,7 @@ class FrogWindow(Adw.ApplicationWindow):
         #
         # self.main_leaflet.append(self.infobar)  # , False, True, 2)
 
-        self.install_action("window.share", "provider", self._on_share)
+        self.install_action("window.share", "s", self._on_share)
 
         # Init drag-n-drop controller
         drop_target_main: Gtk.DropTarget = Gtk.DropTarget.new(
@@ -300,7 +300,7 @@ class FrogWindow(Adw.ApplicationWindow):
         self.split_view.set_show_content(False)
         self.extracted_page.listen_cancel()
 
-    def _on_share(self, _sender, _action_name: str, provider: GLib.Variant):
+    def _on_share(self, _sender: Gtk.Widget, _action_name: str, provider: GLib.Variant):
         service = ShareService()
         provider_name: str = provider.get_string().lower()
         text = self.extracted_page.extracted_text
