@@ -6,9 +6,10 @@
 <img src="https://hosted.weblate.org/widgets/frog/-/default/svg-badge.svg" alt="Translation status" />
 </a>
 
+
 <div align="center">
 <figure>
-<img src="https://github.com/TenderOwl/Frog/assets/519146/e9199a65-bf72-4a96-a06f-0c456b406df7" alt="Frog window" />
+<img src="https://github.com/user-attachments/assets/f292b6ce-b530-4e8e-b9db-8770a1e27946" alt="Frog window" />
 </figure>
 </div>
 
