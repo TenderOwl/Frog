@@ -39,9 +39,9 @@ class PreferencesGeneralPage(Adw.PreferencesPage):
     __gtype_name__ = 'PreferencesGeneralPage'
 
     extra_language_combo: Adw.ComboRow = Gtk.Template.Child()
-    autocopy_switch: Gtk.Switch = Gtk.Template.Child()
-    autolinks_switch: Gtk.Switch = Gtk.Template.Child()
-    telemetry_switch: Gtk.Switch = Gtk.Template.Child()
+    autocopy_switch: Adw.SwitchRow = Gtk.Template.Child()
+    autolinks_switch: Adw.SwitchRow = Gtk.Template.Child()
+    telemetry_switch: Adw.SwitchRow = Gtk.Template.Child()
 
     def __init__(self):
         super().__init__()

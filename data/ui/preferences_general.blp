@@ -19,41 +19,26 @@ template $PreferencesGeneralPage : Adw.PreferencesPage {
   Adw.PreferencesGroup {
     title: _("Behavior");
 
-    Adw.ActionRow {
+    Adw.SwitchRow autocopy_switch {
       title: _("_Copy to clipboard");
       use-underline: true;
       subtitle: _("Automatically copy the extracted text to clipboard");
-      activatable-widget: autocopy_switch;
-
-      Switch autocopy_switch {
-        valign: center;
-      }
     }
 
-    Adw.ActionRow {
+    Adw.SwitchRow autolinks_switch {
       title: _("_Open QR-code links");
       use-underline: true;
       subtitle: _("Automatically open links from QR-codes");
-      activatable-widget: autolinks_switch;
-
-      Switch autolinks_switch {
-        valign: center;
-      }
     }
   }
 
   Adw.PreferencesGroup {
     title: _("Telemetry");
 
-    Adw.ActionRow {
+    Adw.SwitchRow telemetry_switch {
       title: _("Collect analytics");
       use-underline: true;
       subtitle: _("Allow anonymous analytics.");
-      activatable-widget: telemetry_switch;
-
-      Switch telemetry_switch {
-        valign: center;
-      }
     }
   }
 }
