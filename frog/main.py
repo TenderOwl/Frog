@@ -174,15 +174,13 @@ class FrogApplication(Adw.Application):
             license_type=Gtk.License.MIT_X11,
             developer_name="TenderOwl Team",
             developers=["Andrey Maksimov"],
-            release_notes="""<p>In this update, we've made a number of improvements to our app.</p>
+            release_notes="""<p>Frog has been updated to version 1.6.0! This release includes a number of improvements and bug fixes. Thank you for your continued 
+support!</p>
                 <ul>
-                    <li>New look and feel for language selection popover.</li>
-                    <li>Now Frog deletes only its temporary files.</li>
-                    <li>Temporarily disabled Text-to-Speech until we find a better "offline" solution.</li>
-                    <li>We decided to collect anonymous usage data. You can disable it in the preferences.</li>
-                    <li>Updated translations.</li>
+                    <li>Improved user interface.</li>
+                    <li>Translations available in Belarusian, Occidental and Tamil.</li>
+                    <li>Better performance and stability.</li>
                 </ul>
-                <p>Full list of changes you may find in the repository.</p>
                 <p>We hope you enjoy our work!</p>
             """
         )
