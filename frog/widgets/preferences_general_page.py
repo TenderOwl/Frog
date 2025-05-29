@@ -41,6 +41,7 @@ class PreferencesGeneralPage(Adw.PreferencesPage):
     extra_language_combo: Adw.ComboRow = Gtk.Template.Child()
     autocopy_switch: Adw.SwitchRow = Gtk.Template.Child()
     autolinks_switch: Adw.SwitchRow = Gtk.Template.Child()
+    autoscreen_switch: Adw.SwitchRow = Gtk.Template.Child()
     telemetry_switch: Adw.SwitchRow = Gtk.Template.Child()
 
     def __init__(self):
@@ -50,6 +51,7 @@ class PreferencesGeneralPage(Adw.PreferencesPage):
 
         self.settings.bind('autocopy', self.autocopy_switch, 'active', Gio.SettingsBindFlags.DEFAULT)
         self.settings.bind('autolinks', self.autolinks_switch, 'active', Gio.SettingsBindFlags.DEFAULT)
+        self.settings.bind('autoscreen', self.autoscreen_switch, 'active', Gio.SettingsBindFlags.DEFAULT)
         self.settings.bind('telemetry', self.telemetry_switch, 'active', Gio.SettingsBindFlags.DEFAULT)
 
         downloaded_langs = language_manager.get_downloaded_languages()

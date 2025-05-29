@@ -36,6 +36,11 @@
       <summary>Autocopy text to clipboard</summary>
       <description>Automatically copy the extracted text to the clipboard.</description>
     </key>
+    <key name="autoscreen" type="b">
+      <default>false</default>
+      <summary>Automatically take Screenshot at start</summary>
+      <description>Automatically take Screenshot at application launch.</description>
+    </key>
     <key name="autolinks" type="b">
       <default>false</default>
       <summary>Open QR-code links</summary>

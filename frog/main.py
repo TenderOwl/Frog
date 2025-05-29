@@ -80,7 +80,6 @@ class FrogApplication(Adw.Application):
 
     def do_startup(self, *args, **kwargs):
         Adw.Application.do_startup(self)
-
         # create command line option entries
         shortcut_entry = GLib.OptionEntry()
         shortcut_entry.long_name = 'extract_to_clipboard'
@@ -113,6 +112,8 @@ class FrogApplication(Adw.Application):
         self.create_action('github_star', self.on_github_star)
 
         self.settings.connect("changed", self.on_settings_changed)
+        if self.settings.get_boolean('autoscreen'):
+            self.backend.capture(self.settings.get_string("active-language"), True)
 
     def do_activate(self):
         win = self.props.active_window
