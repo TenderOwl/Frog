@@ -232,14 +232,18 @@ class LanguageManager(GObject.GObject):
                                       for lang_file in os.listdir(tessdata_dir)]
             self._need_update_cache = False
             logger.debug(f"Cache downloaded codes: {self._downloaded_codes}")
-        return sorted(self._downloaded_codes, key=lambda x: self.get_language(x))
+
+        recognized_codes = []
+        for code in self._downloaded_codes:
+            if code not in self._languages:
+                logger.warning(f'Unrecognized language code: {code}')
+                continue
+            recognized_codes.append(code)
+
+        return sorted(recognized_codes, key=lambda x: self.get_language(x))
 
     def get_downloaded_languages(self, force: bool = False) -> List[str]:
-        languages = []
-        for code in self.get_downloaded_codes(force):
-            if code in self._languages:
-                languages.append(self.get_language(code))
-        return sorted(languages)
+        return sorted({self.get_language(code) for code in self.get_downloaded_codes(force)})
 
     def download(self, code):
         self.emit('added', code)
