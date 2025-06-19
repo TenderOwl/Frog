@@ -41,4 +41,4 @@ if not os.path.exists(os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata')):
 tessdata_url = "https://github.com/tesseract-ocr/tessdata/raw/main/"
 tessdata_best_url = "https://github.com/tesseract-ocr/tessdata_best/raw/main/"
 tessdata_dir = os.path.join(os.environ['XDG_DATA_HOME'], 'tessdata')
-tessdata_config = f'--tessdata-dir {tessdata_dir} –psm 0 --oem 1'
+tessdata_config = f'--tessdata-dir {tessdata_dir} --oem 1'
