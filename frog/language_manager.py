@@ -99,7 +99,7 @@ class LanguageManager(GObject.GObject):
         self._languages["fil"] = _("Filipino (old - Tagalog)")
         self._languages["fin"] = _("Finnish")
         self._languages["fra"] = _("French")
-        self._languages["frk"] = _("German - Fraktur")
+        self._languages["deu_latf"] = _("German - Fraktur")
         self._languages["frm"] = _("French, Middle (ca.1400-1600)")
         self._languages["fry"] = _("Western Frisian")
         self._languages["gla"] = _("Scottish Gaelic")
