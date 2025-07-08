@@ -72,6 +72,15 @@ class FrogApplication(Adw.Application):
             None
         )
 
+        self.add_main_option(
+            'server',
+            ord('s'),
+            GLib.OptionFlags.NONE,
+            GLib.OptionArg.NONE,
+            _("Run in server mode without GUI."),
+            None
+        )
+
         # Initialize tesseract data files storage.
         language_manager.init_tessdata()
 
@@ -123,6 +132,11 @@ class FrogApplication(Adw.Application):
     def do_command_line(self, command_line):
         options = command_line.get_options_dict()
         options = options.end().unpack()
+
+        if "server" in options:
+            logger.info("Server mode activated. Backend is running.")
+            self.hold()
+            return 0
 
         if "extract_to_clipboard" in options:
             self.backend.capture(self.settings.get_string("active-language"), True)

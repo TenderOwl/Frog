@@ -36,10 +36,11 @@ import locale
 
 VERSION = '@VERSION@'
 pkgdatadir = '@pkgdatadir@'
+pythondir = '@pythondir@'
 localedir = '@localedir@'
 project_name = '@projectname@'
 
-sys.path.insert(1, pkgdatadir)
+sys.path.insert(1, pythondir)
 signal.signal(signal.SIGINT, signal.SIG_DFL)
 
 # L10n
