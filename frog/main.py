@@ -54,6 +54,9 @@ class FrogApplication(Adw.Application):
     def __init__(self, version=None):
         super().__init__(application_id=APP_ID,
                          flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE)
+
+        GLib.set_application_name("Frog")
+
         self.backend = None
         self.version = version
 
