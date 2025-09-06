@@ -1,0 +1,855 @@
+# Frog - Slovak language translation.
+# Copyright (c) 2022-2025 Andrey Maksimov
+# This file is distributed under the same license as the frog package.
+# Jozef Gaal <preklady@mayday.sk>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Frog 1.6.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-25 11:43+0300\n"
+"PO-Revision-Date: 2025-09-06 02:11+0200\n"
+"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
+"Language-Team: Jozef Gaal <preklady@mayday.sk>\n"
+"Language: sk_SK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:6
+#: ../data/com.github.tenderowl.frog.desktop.in:3
+msgid "Frog"
+msgstr "Frog"
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:7
+msgid "Extract text from images"
+msgstr "Extrahovať text z obrázkov"
+
+#: ../data/com.github.tenderowl.frog.appdata.xml.in:9
+msgid ""
+"Extract text from images, websites, videos, and QR codes by taking a picture "
+"of the source."
+msgstr ""
+"Extrahujte text z obrázkov, webových stránok, videí a QR kódov pomocou "
+"fotografie zdroja."
+
+#: ../data/com.github.tenderowl.frog.desktop.in:4
+msgid "Text extraction tool"
+msgstr "Nástroj na extrakciu textu"
+
+#: ../data/com.github.tenderowl.frog.desktop.in:5
+msgid "Extract text from any image, video or web page"
+msgstr "Extrahujte text z akéhokoľvek obrázku, videa alebo webovej stránky"
+
+#: ../data/com.github.tenderowl.frog.desktop.in:12
+msgid "OCR;Text;Extraction;"
+msgstr "OCR;Text;Extrakcia;"
+
+#: ../data/com.github.tenderowl.frog.desktop.in:18
+msgid "Extract Text to the Clipboard"
+msgstr "Extrahovať text do schránky"
+
+#: ../data/ui/extracted_page.blp:25
+msgid "Take a screenshot"
+msgstr "Vytvoriť snímku obrazovky"
+
+#: ../data/ui/extracted_page.blp:33
+msgctxt "Extracted screen"
+msgid "Copy extracted text to clipboard"
+msgstr "Kopírovať extrahovaný text do schránky"
+
+#: ../data/ui/extracted_page.blp:40
+msgctxt "Extracted screen"
+msgid "Listen to text"
+msgstr "Vypočuť si text"
+
+#: ../data/ui/extracted_page.blp:47
+msgctxt "Extracted screen"
+msgid "Cancel listening to text"
+msgstr "Zrušiť počúvanie textu"
+
+#: ../data/ui/extracted_page.blp:60
+msgctxt "Extracted screen"
+msgid "Open menu"
+msgstr "Otvoriť ponuku"
+
+#: ../data/ui/extracted_page.blp:67
+msgctxt "Extracted screen"
+msgid "Share To"
+msgstr "Zdieľať cez"
+
+#: ../data/ui/extracted_page.blp:104 ../data/ui/welcome_page.blp:127
+msgid "Preferences"
+msgstr "Predvoľby"
+
+#: ../data/ui/extracted_page.blp:111 ../data/ui/welcome_page.blp:134
+msgid "Keyboard Shortcuts"
+msgstr "Klávesové skratky"
+
+#: ../data/ui/extracted_page.blp:116 ../data/ui/welcome_page.blp:139
+msgid "About Frog"
+msgstr "O aplikácii Frog"
+
+#: ../data/ui/extracted_page.blp:124 ../data/ui/welcome_page.blp:154
+msgid "Open image"
+msgstr "Otvoriť obrázok"
+
+#: ../data/ui/extracted_page.blp:125 ../data/ui/welcome_page.blp:155
+msgid "Paste from clipboard"
+msgstr "Vložiť zo schránky"
+
+#: ../data/ui/language_dialog.blp:14
+msgid "Available Languages"
+msgstr "Dostupné jazyky"
+
+#: ../data/ui/language_popover.blp:21 ../data/ui/preferences_languages.blp:19
+msgid "Search Languages…"
+msgstr "Hľadať jazyky…"
+
+#: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
+msgid "No Results Found"
+msgstr "Neboli nájdené žiadne výsledky"
+
+#: ../data/ui/language_popover.blp:77
+msgid "Add Language"
+msgstr "Pridať jazyk"
+
+#: ../data/ui/language_row.blp:21
+msgctxt "Preferences Language Row"
+msgid "Install language"
+msgstr "Inštalovať jazyk"
+
+#: ../data/ui/language_row.blp:30
+msgctxt "Preferences Language Row"
+msgid "Remove language"
+msgstr "Odstrániť jazyk"
+
+#: ../data/ui/preferences_general.blp:5
+msgid "_General"
+msgstr "_Všeobecné"
+
+#: ../data/ui/preferences_general.blp:10
+msgid "Text Extracting"
+msgstr "Extrahovanie textu"
+
+#: ../data/ui/preferences_general.blp:13
+msgid "_Second language"
+msgstr "_Druhý jazyk"
+
+#: ../data/ui/preferences_general.blp:15
+msgid "Additional language used in text recognition"
+msgstr "Dodatočný jazyk, ktorý sa použije pri rozpoznávaní textu"
+
+#: ../data/ui/preferences_general.blp:20
+msgid "Behavior"
+msgstr "Správanie"
+
+#: ../data/ui/preferences_general.blp:23
+msgid "_Copy to clipboard"
+msgstr "_Kopírovať do schránky"
+
+#: ../data/ui/preferences_general.blp:25
+msgid "Automatically copy the extracted text to clipboard"
+msgstr "Automaticky skopírovať extrahovaný text do schránky"
+
+#: ../data/ui/preferences_general.blp:34
+msgid "_Open QR-code links"
+msgstr "_Otvoriť odkazy QR kódu"
+
+#: ../data/ui/preferences_general.blp:36
+msgid "Automatically open links from QR-codes"
+msgstr "Automaticky otvárať odkazy z QR kódov"
+
+#: ../data/ui/preferences_languages.blp:6
+msgid "_Languages"
+msgstr "_Jazyky"
+
+#: ../data/ui/preferences_languages.blp:24
+msgid "Models location unreachable. Check your internet connection"
+msgstr "Umiestnenie modelov je nedostupné. Skontrolujte pripojenie k internetu"
+
+#: ../data/ui/preferences_languages.blp:26
+msgid "Retry"
+msgstr "Skúsiť znova"
+
+#: ../data/ui/preferences_languages.blp:42
+msgid "Installed languages"
+msgstr "Inštalované jazyky"
+
+#: ../data/ui/share_row.blp:14
+msgid "Share via Pocket"
+msgstr "Zdieľať cez Pocket"
+
+#: ../data/ui/share_row.blp:22
+msgid "Pocket"
+msgstr "Pocket"
+
+#: ../data/ui/shortcuts.blp:5
+msgctxt "shortcut window"
+msgid "Shortcuts"
+msgstr "Klávesové skratky"
+
+#: ../data/ui/shortcuts.blp:12
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Všeobecné"
+
+#: ../data/ui/shortcuts.blp:16
+msgctxt "shortcut window"
+msgid "Open image"
+msgstr "Otvoriť obrázok"
+
+#: ../data/ui/shortcuts.blp:21
+msgctxt "shortcut window"
+msgid "Take screenshot and extract text"
+msgstr "Vytvoriť snímku obrazovky a extrahovať text"
+
+#: ../data/ui/shortcuts.blp:26
+msgctxt "shortcut window"
+msgid "Extract text and copy it to clipboard"
+msgstr "Extrahovať text a skopírovať ho do schránky"
+
+#: ../data/ui/shortcuts.blp:27
+msgctxt "shortcut window"
+msgid "May not work properly on wayland"
+msgstr "Nemusí fungovať správne na Wayland"
+
+#: ../data/ui/shortcuts.blp:32
+msgctxt "shortcut window"
+msgid "Copy extracted text to clipboard"
+msgstr "Kopírovať extrahovaný text do schránky"
+
+#: ../data/ui/shortcuts.blp:37
+msgctxt "shortcut window"
+msgid "Application"
+msgstr "Aplikácia"
+
+#: ../data/ui/shortcuts.blp:41
+msgctxt "shortcut window"
+msgid "Preferences"
+msgstr "Predvoľby"
+
+#: ../data/ui/shortcuts.blp:46
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Ukončiť"
+
+#: ../data/ui/shortcuts.blp:51
+msgctxt "shortcut window"
+msgid "Help"
+msgstr "Pomoc"
+
+#: ../data/ui/shortcuts.blp:55
+msgctxt "shortcut window"
+msgid "Display Shortcuts"
+msgstr "Zobraziť skratky"
+
+#: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
+msgid "Extract text from anywhere"
+msgstr "Extrahujte text z akéhokoľvek miesta"
+
+#: ../data/ui/welcome_page.blp:21
+msgid "Language"
+msgstr "Jazyk"
+
+#: ../data/ui/welcome_page.blp:22
+msgid "Select language to extract"
+msgstr "Vyberte jazyk, ktorý chcete extrahovať"
+
+#: ../data/ui/welcome_page.blp:43
+msgid "Open menu"
+msgstr "Otvoriť ponuku"
+
+#: ../data/ui/welcome_page.blp:58
+msgctxt "Welcome screen"
+msgid "Take a Screenshot"
+msgstr "Vytvoriť snímku obrazovky"
+
+#: ../data/ui/welcome_page.blp:71
+msgid "_Take a Screenshot"
+msgstr "Vytvoriť _snímku obrazovky"
+
+#: ../data/ui/welcome_page.blp:79
+msgctxt "Welcome screen"
+msgid "Open Image"
+msgstr "Otvoriť obrázok"
+
+#: ../data/ui/welcome_page.blp:92
+msgid "_Open Image"
+msgstr "_Otvoriť obrázok"
+
+#: ../data/ui/welcome_page.blp:100
+msgctxt "Welcome screen"
+msgid "Paste image from clipboard"
+msgstr "Vložiť obrázok zo schránky"
+
+#: ../data/ui/welcome_page.blp:113
+msgid "Paste Image"
+msgstr "Vložiť obrázok"
+
+#: ../data/ui/welcome_page.blp:146
+msgid "⭐ Star on GitHub"
+msgstr "⭐ Hviezda na stránke GitHub"
+
+#: ../frog/language_manager.py:54 ../frog/language_manager.py:90
+msgid "English"
+msgstr "Angličtina"
+
+#: ../frog/language_manager.py:66
+msgid "Afrikaans"
+msgstr "Afrikánčina"
+
+#: ../frog/language_manager.py:67
+msgid "Amharic"
+msgstr "Amharčina"
+
+#: ../frog/language_manager.py:68
+msgid "Arabic"
+msgstr "Arabčina"
+
+#: ../frog/language_manager.py:69
+msgid "Assamese"
+msgstr "Asámčina"
+
+#: ../frog/language_manager.py:70
+msgid "Azerbaijani"
+msgstr "Azerbajdžančina"
+
+#: ../frog/language_manager.py:71
+msgid "Azerbaijani - Cyrilic"
+msgstr "Azerbajdžančina – cyrilika"
+
+#: ../frog/language_manager.py:72
+msgid "Belarusian"
+msgstr "Bieloruština"
+
+#: ../frog/language_manager.py:73
+msgid "Bengali"
+msgstr "Bengálčina"
+
+#: ../frog/language_manager.py:74
+msgid "Tibetan"
+msgstr "Tibetčina"
+
+#: ../frog/language_manager.py:75
+msgid "Bosnian"
+msgstr "Bosniačina"
+
+#: ../frog/language_manager.py:76
+msgid "Breton"
+msgstr "Bretónčina"
+
+#: ../frog/language_manager.py:77
+msgid "Bulgarian"
+msgstr "Bulharčina"
+
+#: ../frog/language_manager.py:78
+msgid "Catalan; Valencian"
+msgstr "Katalánčina; Valencijčina"
+
+#: ../frog/language_manager.py:79
+msgid "Cebuano"
+msgstr "Cebuano"
+
+#: ../frog/language_manager.py:80
+msgid "Czech"
+msgstr "Čeština"
+
+#: ../frog/language_manager.py:81
+msgid "Chinese - Simplified"
+msgstr "Čínština - zjednodušená"
+
+#: ../frog/language_manager.py:82
+msgid "Chinese - Traditional"
+msgstr "Čínština - tradičná"
+
+#: ../frog/language_manager.py:83
+msgid "Cherokee"
+msgstr "Čerokézština"
+
+#: ../frog/language_manager.py:84
+msgid "Corsican"
+msgstr "Korsický jazyk"
+
+#: ../frog/language_manager.py:85
+msgid "Welsh"
+msgstr "Welština"
+
+#: ../frog/language_manager.py:86
+msgid "Danish"
+msgstr "Dánčina"
+
+#: ../frog/language_manager.py:87
+msgid "German"
+msgstr "Nemčina"
+
+#: ../frog/language_manager.py:88
+msgid "Dzongkha"
+msgstr "Dzongkha"
+
+#: ../frog/language_manager.py:89
+msgid "Greek, Modern (1453-)"
+msgstr "Gréčtina, moderná (1453-)"
+
+#: ../frog/language_manager.py:91
+msgid "English, Middle (1100-1500)"
+msgstr "Angličtina, stredoveká (1100-1500)"
+
+#: ../frog/language_manager.py:92
+msgid "Esperanto"
+msgstr "Esperanto"
+
+#: ../frog/language_manager.py:93
+msgid "Math / equation detection module"
+msgstr "Modul na detekciu matematických výrazov a rovníc"
+
+#: ../frog/language_manager.py:94
+msgid "Estonian"
+msgstr "Estónčina"
+
+#: ../frog/language_manager.py:95
+msgid "Basque"
+msgstr "Baskičtina"
+
+#: ../frog/language_manager.py:96
+msgid "Faroese"
+msgstr "Faerský jazyk"
+
+#: ../frog/language_manager.py:97
+msgid "Persian"
+msgstr "Perzština"
+
+#: ../frog/language_manager.py:98
+msgid "Filipino (old - Tagalog)"
+msgstr "Filipínčina (stará - Tagalog)"
+
+#: ../frog/language_manager.py:99
+msgid "Finnish"
+msgstr "Fínčina"
+
+#: ../frog/language_manager.py:100
+msgid "French"
+msgstr "Francúzština"
+
+#: ../frog/language_manager.py:101
+msgid "German - Fraktur"
+msgstr "Nemčina – Fraktur"
+
+#: ../frog/language_manager.py:102
+msgid "French, Middle (ca.1400-1600)"
+msgstr "Francúzština - Stredovek (cca 1400–1600)"
+
+#: ../frog/language_manager.py:103
+msgid "Western Frisian"
+msgstr "Západná frízština"
+
+#: ../frog/language_manager.py:104
+msgid "Scottish Gaelic"
+msgstr "Škótska gaelčina"
+
+#: ../frog/language_manager.py:105
+msgid "Irish"
+msgstr "Írčina"
+
+#: ../frog/language_manager.py:106
+msgid "Galician"
+msgstr "Galícijčina"
+
+#: ../frog/language_manager.py:107
+msgid "Greek, Ancient (to 1453) (contrib)"
+msgstr "Staroveká gréčtina (do roku 1453) (príspevok)"
+
+#: ../frog/language_manager.py:108
+msgid "Gujarati"
+msgstr "Gudžarátčina"
+
+#: ../frog/language_manager.py:109
+msgid "Haitian; Haitian Creole"
+msgstr "Haitčina; haitská kreolčina"
+
+#: ../frog/language_manager.py:110
+msgid "Hebrew"
+msgstr "Hebrejčina"
+
+#: ../frog/language_manager.py:111
+msgid "Hindi"
+msgstr "Hindčina"
+
+#: ../frog/language_manager.py:112
+msgid "Croatian"
+msgstr "Chorvátčina"
+
+#: ../frog/language_manager.py:113
+msgid "Hungarian"
+msgstr "Maďarčina"
+
+#: ../frog/language_manager.py:114
+msgid "Armenian"
+msgstr "Arménčina"
+
+#: ../frog/language_manager.py:115
+msgid "Inuktitut"
+msgstr "Inuktitut"
+
+#: ../frog/language_manager.py:116
+msgid "Indonesian"
+msgstr "Indonézština"
+
+#: ../frog/language_manager.py:117
+msgid "Icelandic"
+msgstr "Islandčina"
+
+#: ../frog/language_manager.py:118
+msgid "Italian"
+msgstr "Taliančina"
+
+#: ../frog/language_manager.py:119
+msgid "Italian - Old"
+msgstr "Taliančina - stará"
+
+#: ../frog/language_manager.py:120
+msgid "Javanese"
+msgstr "Jávčina"
+
+#: ../frog/language_manager.py:121
+msgid "Japanese"
+msgstr "Japončina"
+
+#: ../frog/language_manager.py:122
+msgid "Japanese (vertical)"
+msgstr "Japončina - vertikálne"
+
+#: ../frog/language_manager.py:123
+msgid "Kannada"
+msgstr "Kannadčina"
+
+#: ../frog/language_manager.py:124
+msgid "Georgian"
+msgstr "Gruzínčina"
+
+#: ../frog/language_manager.py:125
+msgid "Georgian - Old"
+msgstr "Gruzínčina - stará"
+
+#: ../frog/language_manager.py:126
+msgid "Kazakh"
+msgstr "Kazaština"
+
+#: ../frog/language_manager.py:127
+msgid "Central Khmer"
+msgstr "Centrálna khmérčina"
+
+#: ../frog/language_manager.py:128
+msgid "Kirghiz; Kyrgyz"
+msgstr "Kirgizský jazyk"
+
+#: ../frog/language_manager.py:129
+msgid "Kurmanji (Kurdish - Latin Script)"
+msgstr "Kurmandží (Kurdčina – latinka)"
+
+#: ../frog/language_manager.py:130
+msgid "Korean"
+msgstr "Kórejčina"
+
+#: ../frog/language_manager.py:131
+msgid "Korean (vertical)"
+msgstr "Kórejčina (vertikálna)"
+
+#: ../frog/language_manager.py:132
+msgid "Lao"
+msgstr "Laoština"
+
+#: ../frog/language_manager.py:133
+msgid "Latin"
+msgstr "Latinčina"
+
+#: ../frog/language_manager.py:134
+msgid "Latvian"
+msgstr "Lotyština"
+
+#: ../frog/language_manager.py:135
+msgid "Lithuanian"
+msgstr "Litovčina"
+
+#: ../frog/language_manager.py:136
+msgid "Luxembourgish"
+msgstr "Luxemburčina"
+
+#: ../frog/language_manager.py:137
+msgid "Malayalam"
+msgstr "Malajálamčina"
+
+#: ../frog/language_manager.py:138
+msgid "Marathi"
+msgstr "Maráthčina"
+
+#: ../frog/language_manager.py:139
+msgid "Macedonian"
+msgstr "Macedónčina"
+
+#: ../frog/language_manager.py:140
+msgid "Maltese"
+msgstr "Maltčina"
+
+#: ../frog/language_manager.py:141
+msgid "Mongolian"
+msgstr "Mongolčina"
+
+#: ../frog/language_manager.py:142
+msgid "Maori"
+msgstr "Maorčina"
+
+#: ../frog/language_manager.py:143
+msgid "Malay"
+msgstr "Malajčina"
+
+#: ../frog/language_manager.py:144
+msgid "Burmese"
+msgstr "Barmčina"
+
+#: ../frog/language_manager.py:145
+msgid "Nepali"
+msgstr "Nepálčina"
+
+#: ../frog/language_manager.py:146
+msgid "Dutch; Flemish"
+msgstr "Holandčina; Flámčina"
+
+#: ../frog/language_manager.py:147
+msgid "Norwegian"
+msgstr "Nórčina"
+
+#: ../frog/language_manager.py:148
+msgid "Occitan (post 1500)"
+msgstr "Oksitánčina (po roku 1500)"
+
+#: ../frog/language_manager.py:149
+msgid "Oriya"
+msgstr "Oriya"
+
+#: ../frog/language_manager.py:150
+msgid "Orientation and script detection module"
+msgstr "Modul na detekciu orientácie a písma"
+
+#: ../frog/language_manager.py:151
+msgid "Panjabi; Punjabi"
+msgstr "Pandžábčina"
+
+#: ../frog/language_manager.py:152
+msgid "Polish"
+msgstr "Poľština"
+
+#: ../frog/language_manager.py:153
+msgid "Portuguese"
+msgstr "Portugalčina"
+
+#: ../frog/language_manager.py:154
+msgid "Pushto; Pashto"
+msgstr "Paštčina"
+
+#: ../frog/language_manager.py:155
+msgid "Quechua"
+msgstr "Kečuánčina"
+
+#: ../frog/language_manager.py:156
+msgid "Romanian; Moldavian; Moldovan"
+msgstr "Rumunčina; Moldavčina"
+
+#: ../frog/language_manager.py:157
+msgid "Russian"
+msgstr "Ruština"
+
+#: ../frog/language_manager.py:158
+msgid "Sanskrit"
+msgstr "Sanskrt"
+
+#: ../frog/language_manager.py:159
+msgid "Sinhala; Sinhalese"
+msgstr "Sinhálčina"
+
+#: ../frog/language_manager.py:160
+msgid "Slovak"
+msgstr "Slovenčina"
+
+#: ../frog/language_manager.py:161
+msgid "Slovenian"
+msgstr "Slovinčina"
+
+#: ../frog/language_manager.py:162
+msgid "Sindhi"
+msgstr "Sindhi"
+
+#: ../frog/language_manager.py:163
+msgid "Spanish; Castilian"
+msgstr "Španielčina; Kastílčina"
+
+#: ../frog/language_manager.py:164
+msgid "Spanish; Castilian - Old"
+msgstr "Španielčina; Kastílčina – stará"
+
+#: ../frog/language_manager.py:165
+msgid "Albanian"
+msgstr "Albánčina"
+
+#: ../frog/language_manager.py:166
+msgid "Serbian"
+msgstr "Srbčina"
+
+#: ../frog/language_manager.py:167
+msgid "Serbian - Latin"
+msgstr "Srbčina – latinka"
+
+#: ../frog/language_manager.py:168
+msgid "Sundanese"
+msgstr "Sundánčina"
+
+#: ../frog/language_manager.py:169
+msgid "Swahili"
+msgstr "Svahilčina"
+
+#: ../frog/language_manager.py:170
+msgid "Swedish"
+msgstr "Švédčina"
+
+#: ../frog/language_manager.py:171
+msgid "Syriac"
+msgstr "Sýrčina"
+
+#: ../frog/language_manager.py:172
+msgid "Tamil"
+msgstr "Tamilčina"
+
+#: ../frog/language_manager.py:173
+msgid "Tatar"
+msgstr "Tatarčina"
+
+#: ../frog/language_manager.py:174
+msgid "Telugu"
+msgstr "Telugčina"
+
+#: ../frog/language_manager.py:175
+msgid "Tajik"
+msgstr "Tadžikčina"
+
+#: ../frog/language_manager.py:176
+msgid "Thai"
+msgstr "Thajčina"
+
+#: ../frog/language_manager.py:177
+msgid "Tigrinya"
+msgstr "Tigriňčina"
+
+#: ../frog/language_manager.py:178
+msgid "Tonga"
+msgstr "Tongčina"
+
+#: ../frog/language_manager.py:179
+msgid "Turkish"
+msgstr "Turečtina"
+
+#: ../frog/language_manager.py:180
+msgid "Uighur; Uyghur"
+msgstr "Ujgurčina"
+
+#: ../frog/language_manager.py:181
+msgid "Ukrainian"
+msgstr "Ukrajinčina"
+
+#: ../frog/language_manager.py:182
+msgid "Urdu"
+msgstr "Urdčina"
+
+#: ../frog/language_manager.py:183
+msgid "Uzbek"
+msgstr "Uzbekčina"
+
+#: ../frog/language_manager.py:184
+msgid "Uzbek - Cyrilic"
+msgstr "Uzbekčina - cyrilika"
+
+#: ../frog/language_manager.py:185
+msgid "Vietnamese"
+msgstr "Vietnamčina"
+
+#: ../frog/language_manager.py:186
+msgid "Yiddish"
+msgstr "Jidiš"
+
+#: ../frog/language_manager.py:187
+msgid "Yoruba"
+msgstr "Jorubčina"
+
+#: ../frog/main.py:63 ../frog/main.py:83
+msgid "Extract directly into the clipboard"
+msgstr "Extrahovať priamo do schránky"
+
+#: ../frog/main.py:194
+msgid "No text found. Try to grab another region."
+msgstr "Nenašiel sa žiadny text. Skúste vybrať inú oblasť."
+
+#: ../frog/main.py:204
+msgid "Text extracted. You can paste it with Ctrl+V"
+msgstr ""
+"Text bol extrahovaný. Môžete ho vložiť pomocou klávesovej skratky Ctrl+V"
+
+#: ../frog/window.py:151
+msgid "Text copied to clipboard"
+msgstr "Odkaz bol skopírovaný do schránky"
+
+#: ../frog/window.py:162
+msgid "QR-code URL opened"
+msgstr "URL adresa QR kódu bola otvorená"
+
+#: ../frog/window.py:166
+msgid "QR-code contains URL."
+msgstr "QR kód obsahuje URL adresu."
+
+#: ../frog/window.py:167
+msgid "Open"
+msgstr "Otvoriť"
+
+#: ../frog/window.py:194
+msgid "Supported image files"
+msgstr "Podporované obrázkové súbory"
+
+#: ../frog/window.py:200
+msgid "Open image to extract text"
+msgstr "Otvorte obrázok a extrahujte text"
+
+#: ../frog/window.py:260
+msgid "Only images can be processed that way."
+msgstr "Týmto spôsobom je možné spracovávať iba obrázky."
+
+#: ../frog/window.py:293
+msgid "Text copied"
+msgstr "Text skopírovaný"
+
+#: ../frog/services/clipboard_service.py:54
+msgid "No image in clipboard"
+msgstr "Žiadny obrázok v schránke"
+
+#: ../frog/services/screenshot_service.py:94
+msgid "Can't take a screenshot."
+msgstr "Nie je možné vytvoriť snímku obrazovky."
+
+#: ../frog/widgets/preferences_languages_page.py:80
+msgid "Models location unreachable. Check your internet connection."
+msgstr ""
+"Umiestnenie modelov nie je dostupné. Skontrolujte pripojenie k internetu."
+
+#: ../frog/widgets/preferences_languages_page.py:86
+msgid "You are on a metered connection. Be careful to download languages."
+msgstr ""
+"Používate pripojenie s obmedzeným objemom dát. Buďte opatrní pri sťahovaní "
+"jazykov."
+
+#: ../frog/widgets/preferences_languages_page.py:123
+msgid "View all available languages"
+msgstr "Zobraziť všetky dostupné jazyky"
+
+#: ../frog/widgets/share_row.py:48
+#, python-brace-format
+msgid "Share via {0}"
+msgstr "Zdieľať cez {0}"
