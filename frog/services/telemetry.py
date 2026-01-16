@@ -36,14 +36,9 @@ from posthog import Posthog
 class TelemetryService(GObject.GObject):
     _gtype_name = 'TelemetryService'
 
-    posthog: Posthog | None
+    posthog: Posthog | None = None
     installation_id: str | None
     is_active: bool = True
-
-    def __init__(self):
-        super().__init__()
-        self.posthog = Posthog(project_api_key='phc_HpETCN6yQKZIr8gr6mBQTd3H0SjKUBrNMI3AizoX97f',
-                               host='https://eu.posthog.com')
 
     def set_installation_id(self, installation_id: str):
         self.installation_id = installation_id
