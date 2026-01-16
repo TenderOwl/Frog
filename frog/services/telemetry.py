@@ -50,13 +50,20 @@ class TelemetryService(GObject.GObject):
 
     def set_is_active(self, is_active: bool):
         self.is_active = is_active
+        if is_active and self.posthog is None:
+            self.posthog = Posthog(project_api_key='phc_HpETCN6yQKZIr8gr6mBQTd3H0SjKUBrNMI3AizoX97f',
+                               host='https://eu.posthog.com')
+        elif (not is_active) and self.posthog is not None:
+            self.posthog.shutdown()
+            self.posthog = None
 
     def capture(self, event: str, props: Any = None):
-        if self.posthog and self.is_active:
+        if self.posthog:
             self.posthog.capture(self.installation_id, event, props)
 
     def capture_page_view(self, page_name: str):
-        self.posthog.capture(self.installation_id, '$pageview', {'$current_url': page_name})
+        if self.posthog:
+            self.posthog.capture(self.installation_id, '$pageview', {'$current_url': page_name})
 
 
 telemetry = TelemetryService()
