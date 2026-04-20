@@ -1,21 +1,21 @@
 # This is a Translation File of Frog.
 # 小山田 純 <oyamadajun@outlook.jp>, 2022.
-# Ryo Nakano <ryonakaknock3@gmail.com>, 2024.
+# Ryo Nakano <ryonakaknock3@gmail.com>, 2024, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-25 11:43+0300\n"
-"PO-Revision-Date: 2024-04-18 13:03+0000\n"
+"PO-Revision-Date: 2026-04-04 15:09+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/frog/default/ja/"
-">\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/frog/default/"
+"ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -127,7 +127,7 @@ msgstr "言語を削除"
 
 #: ../data/ui/preferences_general.blp:5
 msgid "_General"
-msgstr "一般(_G)"
+msgstr "全般(_G)"
 
 #: ../data/ui/preferences_general.blp:10
 msgid "Text Extracting"
@@ -193,7 +193,7 @@ msgstr "ショートカット"
 #: ../data/ui/shortcuts.blp:12
 msgctxt "shortcut window"
 msgid "General"
-msgstr "一般"
+msgstr "全般"
 
 #: ../data/ui/shortcuts.blp:16
 msgctxt "shortcut window"

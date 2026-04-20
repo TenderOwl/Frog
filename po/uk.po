@@ -1,12 +1,13 @@
 # volkov <d2oo1dle2x@gmail.com>, 2023.
 # Andrii Serbovets <serbovets.translation@gmail.com>, 2024.
+# Димко <Term0@ukr.net>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-25 11:43+0300\n"
-"PO-Revision-Date: 2024-03-08 10:01+0000\n"
-"Last-Translator: Andrii Serbovets <serbovets.translation@gmail.com>\n"
+"PO-Revision-Date: 2026-02-13 12:09+0000\n"
+"Last-Translator: Димко <Term0@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/frog/default/"
 "uk/>\n"
 "Language: uk\n"
@@ -15,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: data/ui\n"
@@ -58,7 +59,7 @@ msgstr "Отримати і скопіювати у буфер обміну"
 
 #: ../data/ui/extracted_page.blp:25
 msgid "Take a screenshot"
-msgstr "Зробити скриншот"
+msgstr "Зробити знімок"
 
 #: ../data/ui/extracted_page.blp:33
 msgctxt "Extracted screen"
@@ -115,7 +116,7 @@ msgstr "Шукати мову…"
 
 #: ../data/ui/language_popover.blp:70 ../data/ui/preferences_languages.blp:101
 msgid "No Results Found"
-msgstr ""
+msgstr "Нічого не знайдено"
 
 #: ../data/ui/language_popover.blp:77
 msgid "Add Language"
@@ -173,11 +174,11 @@ msgstr "_Мови"
 
 #: ../data/ui/preferences_languages.blp:24
 msgid "Models location unreachable. Check your internet connection"
-msgstr ""
+msgstr "Моделі недоступні. Перевірте підключення до Інтернету"
 
 #: ../data/ui/preferences_languages.blp:26
 msgid "Retry"
-msgstr ""
+msgstr "Повторити"
 
 #: ../data/ui/preferences_languages.blp:42
 msgid "Installed languages"
@@ -197,43 +198,31 @@ msgid "Shortcuts"
 msgstr "Короткі сполучення"
 
 #: ../data/ui/shortcuts.blp:12
-#, fuzzy
-#| msgid "_General"
 msgctxt "shortcut window"
 msgid "General"
-msgstr "_Загальні"
+msgstr "Загальні"
 
 #: ../data/ui/shortcuts.blp:16
-#, fuzzy
-#| msgid "Open image"
 msgctxt "shortcut window"
 msgid "Open image"
 msgstr "Відкрити зображення"
 
 #: ../data/ui/shortcuts.blp:21
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Get screenshot and extract text"
 msgctxt "shortcut window"
 msgid "Take screenshot and extract text"
-msgstr "Витягнення тексту"
+msgstr "Зробити знімок та витягти текст"
 
 #: ../data/ui/shortcuts.blp:26
-#, fuzzy
-#| msgid "Extract Text to the Clipboard"
 msgctxt "shortcut window"
 msgid "Extract text and copy it to clipboard"
-msgstr "Отримати і скопіювати у буфер обміну"
+msgstr "Витягти текст і скопіювати в буфер обміну"
 
 #: ../data/ui/shortcuts.blp:27
 msgctxt "shortcut window"
 msgid "May not work properly on wayland"
-msgstr ""
+msgstr "Може не працювати в Wayland"
 
 #: ../data/ui/shortcuts.blp:32
-#, fuzzy
-#| msgctxt "Extracted screen"
-#| msgid "Copy extracted text to clipboard"
 msgctxt "shortcut window"
 msgid "Copy extracted text to clipboard"
 msgstr "Скопіювати отриманий текст у буфер обміну"
@@ -241,11 +230,9 @@ msgstr "Скопіювати отриманий текст у буфер обм�
 #: ../data/ui/shortcuts.blp:37
 msgctxt "shortcut window"
 msgid "Application"
-msgstr ""
+msgstr "Застосунок"
 
 #: ../data/ui/shortcuts.blp:41
-#, fuzzy
-#| msgid "Preferences"
 msgctxt "shortcut window"
 msgid "Preferences"
 msgstr "Налаштування"
@@ -253,24 +240,21 @@ msgstr "Налаштування"
 #: ../data/ui/shortcuts.blp:46
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Вийти"
 
 #: ../data/ui/shortcuts.blp:51
 msgctxt "shortcut window"
 msgid "Help"
-msgstr ""
+msgstr "Довідка"
 
 #: ../data/ui/shortcuts.blp:55
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Shortcuts"
 msgctxt "shortcut window"
 msgid "Display Shortcuts"
 msgstr "Короткі сполучення"
 
 #: ../data/ui/welcome_page.blp:12 ../data/ui/welcome_page.blp:49
 msgid "Extract text from anywhere"
-msgstr "Отримати текст із будь-чого"
+msgstr "Отримати текст з будь-чого"
 
 #: ../data/ui/welcome_page.blp:21
 msgid "Language"
@@ -287,11 +271,11 @@ msgstr "Відкрити меню"
 #: ../data/ui/welcome_page.blp:58
 msgctxt "Welcome screen"
 msgid "Take a Screenshot"
-msgstr "Зробити скриншот"
+msgstr "Зробити знімок"
 
 #: ../data/ui/welcome_page.blp:71
 msgid "_Take a Screenshot"
-msgstr "_Зробити скриншот"
+msgstr "_Зробити знімок"
 
 #: ../data/ui/welcome_page.blp:79
 msgctxt "Welcome screen"
@@ -303,22 +287,17 @@ msgid "_Open Image"
 msgstr "_Відкрити зображення"
 
 #: ../data/ui/welcome_page.blp:100
-#, fuzzy
-#| msgid "Paste from clipboard"
 msgctxt "Welcome screen"
 msgid "Paste image from clipboard"
-msgstr "Вставити із буферу обміну"
+msgstr "Вставити зображення з буфера"
 
 #: ../data/ui/welcome_page.blp:113
-#, fuzzy
-#| msgctxt "Welcome screen"
-#| msgid "Open Image"
 msgid "Paste Image"
-msgstr "Відкрити зображення"
+msgstr "Вставити зображення"
 
 #: ../data/ui/welcome_page.blp:146
 msgid "⭐ Star on GitHub"
-msgstr ""
+msgstr "⭐ Поставити зірку на GitHub"
 
 #: ../frog/language_manager.py:54 ../frog/language_manager.py:90
 msgid "English"
@@ -858,25 +837,24 @@ msgstr "Не знайдено зображення у буфері обміну"
 
 #: ../frog/services/screenshot_service.py:94
 msgid "Can't take a screenshot."
-msgstr "Не вдалося зробити скриншот."
+msgstr "Не вдалося зробити знімок."
 
 #: ../frog/widgets/preferences_languages_page.py:80
 msgid "Models location unreachable. Check your internet connection."
-msgstr ""
+msgstr "Моделі недоступні. Перевірте підключення до Інтернету."
 
 #: ../frog/widgets/preferences_languages_page.py:86
 msgid "You are on a metered connection. Be careful to download languages."
-msgstr ""
+msgstr "Ви на лімітованому з’єднанні. Обережно завантажуйте мовні пакети."
 
 #: ../frog/widgets/preferences_languages_page.py:123
 msgid "View all available languages"
 msgstr "Переглянути усі доступні мови"
 
 #: ../frog/widgets/share_row.py:48
-#, fuzzy, python-brace-format
-#| msgid "Share via Pocket"
+#, python-brace-format
 msgid "Share via {0}"
-msgstr "Поділитися через Pocket"
+msgstr "Поділитися через {0}"
 
 #~ msgid "Tender Owl"
 #~ msgstr "Tender Owl"

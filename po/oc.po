@@ -1,10 +1,10 @@
-# Quentin PAGÈS <quentinantonin@free.fr>, 2023, 2024.
+# Quentin PAGÈS <quentinantonin@free.fr>, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-25 11:43+0300\n"
-"PO-Revision-Date: 2024-02-04 10:01+0000\n"
+"PO-Revision-Date: 2025-07-23 10:01+0000\n"
 "Last-Translator: Quentin PAGÈS <quentinantonin@free.fr>\n"
 "Language-Team: Occitan <https://hosted.weblate.org/projects/frog/default/oc/>"
 "\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: data/ui\n"
@@ -750,7 +750,7 @@ msgstr ""
 
 #: ../frog/language_manager.py:179
 msgid "Turkish"
-msgstr ""
+msgstr "Turc"
 
 #: ../frog/language_manager.py:180
 msgid "Uighur; Uyghur"
@@ -774,7 +774,7 @@ msgstr ""
 
 #: ../frog/language_manager.py:185
 msgid "Vietnamese"
-msgstr ""
+msgstr "Vietnamian"
 
 #: ../frog/language_manager.py:186
 msgid "Yiddish"
@@ -786,7 +786,7 @@ msgstr ""
 
 #: ../frog/main.py:63 ../frog/main.py:83
 msgid "Extract directly into the clipboard"
-msgstr ""
+msgstr "Traire dirèctament al quichapapièrs"
 
 #: ../frog/main.py:194
 msgid "No text found. Try to grab another region."
@@ -794,7 +794,7 @@ msgstr "Cap de tèxte pas trobar. Ensajatz de trapar una autra region."
 
 #: ../frog/main.py:204
 msgid "Text extracted. You can paste it with Ctrl+V"
-msgstr ""
+msgstr "Tèxt trach. Lo podètz pegar amb Ctrl+V"
 
 #: ../frog/window.py:151
 msgid "Text copied to clipboard"
@@ -822,7 +822,7 @@ msgstr "Dobrir un imatge per extraire lo tèxte"
 
 #: ../frog/window.py:260
 msgid "Only images can be processed that way."
-msgstr ""
+msgstr "Se pòt pas que tractar los imatges d'aquesta manièra."
 
 #: ../frog/window.py:293
 msgid "Text copied"

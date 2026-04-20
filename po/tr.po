@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the frog package.
 #
 # Sabri Ünal <libreajans@gmail.com>, 2023, 2024.
+# Sabri Ünal <yakushabb@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: frog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-25 11:43+0300\n"
-"PO-Revision-Date: 2024-02-02 19:01+0000\n"
-"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
+"PO-Revision-Date: 2026-04-07 22:09+0000\n"
+"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/frog/default/tr/>"
 "\n"
 "Language: tr\n"
@@ -17,12 +18,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:6
 #: ../data/com.github.tenderowl.frog.desktop.in:3
 msgid "Frog"
-msgstr "Kurbağa"
+msgstr "Frog"
 
 #: ../data/com.github.tenderowl.frog.appdata.xml.in:7
 msgid "Extract text from images"
@@ -91,7 +92,7 @@ msgstr "Klavye Kısayolları"
 
 #: ../data/ui/extracted_page.blp:116 ../data/ui/welcome_page.blp:139
 msgid "About Frog"
-msgstr "Kurbağa Hakkında"
+msgstr "Frog Hakkında"
 
 #: ../data/ui/extracted_page.blp:124 ../data/ui/welcome_page.blp:154
 msgid "Open image"
